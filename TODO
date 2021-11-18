@@ -1,0 +1,59 @@
+* Generator
+   * [ ] Add 'save as markdown file'
+   * [ ] Add 'generate PDF'
+   * [ ] Integrate with other tools / map generators?
+   * [ ] Support more game editions/systems
+   * [ ] Allow parameterisation?
+   * [ ] Allow regenerating based on seed value?
+   * [ ] Generate the hex map graphics?
+* Model
+   * Hex Map
+      * [ ] Add more hex types (lakes, jungle, swamps, sea)
+   * Taverns & Inns
+      * [ ] Add food menus / services & prices
+      * [ ] Add staff NPCs
+   * Dungeons
+      * [ ] Add traps!
+      * [ ] Improved foreshadowing based on monster classes
+      * [ ] Generate doors passphrases
+      * [ ] Additional dungeon types (old mines, ruins)
+      * [ ] Add organic caves graphics for caverns
+      * [ ] Add additional areas
+      * [ ] Adjust debris and decor based on dungeon type
+      * [ ] Adjust debris and decor based on area type
+      * [ ] Add dungeon levels?
+   * Quests
+      * [ ] Add quest tiers (lower/higher level)
+      * [ ] Add more quest types (revenge, deliveries, etc.)
+   * Realm
+      * [ ] Add additional structure, realm quests, etc.
+      * [ ] Add ruler-related NPCs (guards, sages, etc)
+   * Factions
+      * [ ] Add faction membership rumors?
+      * [ ] Add inter-faction relations
+   * NPCs
+      * [ ] Add competing parties
+   * Breakglass
+      * [ ] Add visions and dreams?
+* Content
+   * NPCs
+      * [ ] Add variety to NPCs descriptions
+   * Realm
+      * [ ] Add additional realm background stories
+   * Hex Map
+      * [ ] Add more unique hex descriptions
+      * [ ] Add more dungeon entrances based on hex type
+      * [ ] Add more hex feature locations based on hex type
+      * [ ] Add additional landmarks and descriptions
+   * Dungeons
+      * [ ] Add variety to dungeon debris and decor
+      * [ ] Add variety to foreshadowing based-on features
+      * [ ] Additional door features & descriptions
+   * Quests
+      * [ ] Add variety to quest descriptions and rumors
+   * Settlements
+      * [ ] Additional shop inventories and services offered
+   * Taverns & Inns
+      * [ ] Add variety to tavern/inn names
+   * Factions
+      * [ ] Add more faction types and purposes
