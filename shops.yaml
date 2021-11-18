@@ -1,0 +1,702 @@
+MagicItems:
+  $extends: Shop
+  Title: Magic Items
+  Noun:
+    - staff
+    - orb
+    - dust
+    - star
+    - light
+    - illusion
+    - gremlin
+
+Bakery:
+  $extends: Shop
+  Title: Bakery
+  Noun:
+    - loaf
+    - bagette
+    - bun
+
+
+GeneralGoods:
+  $extends: Shop
+  Title: General Goods
+  Noun:
+    - goods
+    - supply
+
+
+Bookstore:
+  $extends: Shop
+  Title: Bookstore
+  Noun:
+    - scrolls
+    - pages
+    - books
+
+
+Grocer:
+  $extends: Shop
+  Items:
+    $rollsome:
+      $class: Food
+      $min: 2
+      $max: 3
+  Noun:
+    - groceries
+    - tomato
+    - supply
+  
+
+Pet:
+  $subclass:
+    - PetCat
+    - PetDog
+    - PetRaven
+    - PetRat
+
+
+PetCat:
+  $extends: Pet
+  Title: Pet Cat
+  Cost: 1 gp
+
+
+PetDog:
+  $extends: Pet
+  Title: Pet Dog
+  Cost: 2 gp
+
+
+PetRaven:
+  $extends: Pet
+  Title: Pet Raven
+  Cost: 3 gp
+
+
+PetRat:
+  $extends: Pet
+  Title: Pet Rat
+  Cost: 3 gp
+
+
+PetShop:
+  $extends: Shop
+  Title: 
+  Items:
+    $rollsome:
+      $class: Pet
+      $min: 1
+      $max: 3
+  Noun:
+    - petshop
+    - sidekicks
+    - friends
+
+
+Herbalist:
+  $extends: Shop
+  Title: Herbalist
+  Noun:
+    - greens
+    - weeds
+    - mushroom
+
+
+Potion:
+  $extends: Shop
+  Title: Poitions
+
+
+ExoticGoods:
+  $extends: Shop
+  Title: Exotic Goods
+  Noun:
+    - exotic
+    - curiosities
+
+
+Jeweler:
+  $extends: Shop
+  Title: Jeweler
+  Noun:
+    - gems
+    - jewels
+    - sparkly things
+
+
+Bunkhouse:
+  $extends: Shop
+  Title: Bunkhouse
+
+
+Carpenter:
+  $extends: Shop
+  Title: Carpenter
+  Noun:
+    - carpentry
+    - woodcraft
+    - workshop
+
+
+Mount:
+  $subclass:
+    - Camel
+    - DraftHorse
+    - RidingHorse
+    - WarHorse
+    - Mule
+
+
+Stables:
+  $extends: Shop
+  Title: Stables
+  Items:
+    $rollsome:
+      $class: Mount
+      $min: 2
+      $max: 6
+  Noun:
+    - mounts
+    - stallions
+    - riders
+
+
+ArmorWeapons:
+  $extends: Shop
+  Title: Armor & Weapons
+  Items:
+    $rollsome:
+      $class: ArmorWeapon
+      $min: 2
+      $max: 6
+  Noun:
+    - blade
+    - shield & sword
+    - spear
+    - archer
+
+
+Hatter:
+  $extends: Shop
+  Title: Hatter
+  Noun:
+    - cap
+    - top hat
+   
+
+Butchery:
+  $extends: Shop
+  Title: Butchery
+  Noun:
+    - beef & pork
+    - prime cut
+    - steak
+
+
+Clothing:
+  $extends: Shop
+  Title: Clothing
+  Items:
+    $rollsome:
+      $class: Wearables
+      $min: 2
+      $max: 6
+  Noun:
+    - fashion
+    - wearables
+    - boutique
+
+
+Blacksmith:
+  $extends: Shop
+  Title: Blacksmith
+  Noun:
+    - anvil
+    - iron
+    - blade
+    - forge
+    - hammer
+    - fire
+   
+  Items:
+    $rollsome:
+      $class: ArmorWeapon
+      $min: 2
+      $max: 6
+
+
+Barber:
+  $extends: Shop
+  Title: Barber
+  Noun:
+    - scissors
+    - razor
+    - salon
+
+
+Liquor:
+  $extends: Shop
+  Title: Liquor
+  Noun:
+    - liquor
+    - spirits
+
+
+Craft:
+  $extends: Shop
+  Title: Craft
+  Noun:
+    - crafts
+    - handmades
+
+
+Music:
+  $extends: Shop
+  Title: Music
+  Noun:
+    - instruments
+    - guitar & flute
+    - harp & lute
+
+
+Salon:
+  $extends: Shop
+  Title: Salon
+  Noun:
+    - salon
+    - styles
+
+
+Cartographer:
+  $extends: Shop
+  Title: Cartographer
+  Noun:
+    - maps
+    - mapmakers
+    - cartography
+
+
+Spice:
+  $extends: Shop
+  Title: Spices
+  Noun:
+    - spices
+    - salt & pepper
+
+
+Bathhouse:
+  $extends: Shop
+  Title: Bathhouse
+  Noun:
+    - baths
+    - steam & bath
+
+
+Casino:
+  $extends: Shop
+  Title: Casino
+  Noun:
+    - easy-money
+    - casino
+    - dicerollers
+
+
+AnimalSupplies:
+  $extends: Shop
+  Title: Animal Supplies
+  Noun:
+    - barn & yarn
+
+
+Occult:
+  $extends: Shop
+  Title: Occult
+  Noun:
+    - ritual goods
+    - witchcraft materials
+
+
+Winery:
+  $extends: Shop
+  Title: Winery
+  Noun:
+    - wines
+    - fine wines
+
+
+Brewery:
+  $extends: Shop
+  Title: Brewery
+  Noun:
+    - good stuff
+    - brews
+
+
+Distillery:
+  $extends: Shop
+  Title: Distillery
+
+
+Flower:
+  $extends: Shop
+  Title: Flower Shop
+  Noun:
+    - bouquets
+    - flowers
+    - roses
+    - tulips
+
+
+Cobbler:
+  $extends: Shop
+  Title: Cobbler
+  Noun:
+    - shoes
+    - shoemakers
+
+
+Tinkerer:
+  $extends: Shop
+  Title: Tinkerer
+  Noun:
+    - devices
+    - fix-it-all
+
+
+Weaver:
+  $extends: Shop
+  Title: Weaver
+  Noun:
+    - fabrics
+    - garments
+
+
+Scribe:
+  $extends: Shop
+  Title: Scribe
+  Noun:
+    - copywriters
+    - ink & feather
+
+
+Veterinarian:
+  $extends: Shop
+  Title: Veterinarian
+  Noun:
+    - pet hospital
+    - horse healers
+    - sheep whisperer
+
+
+BlackMarket:
+  $extends: Shop
+  Title: Black Market
+
+
+Brothel:
+  $extends: Shop
+  Title: Brothel
+  Noun:
+    - companions
+
+
+Bank:
+  $extends: Service
+  Title: Bank
+
+
+GlassBlower:
+  $extends: Shop
+  Title: Glass Blower
+  Noun:
+    - glassworks
+    - tubes
+    - bottlemakers
+
+
+Leatherworker:
+  $extends: Shop
+  Title: Leatherworker
+  Items:
+    $rollsome:
+      $class: Storage
+      $min: 2
+      $max: 6
+  Noun:
+    - leathers
+    - bags and such
+
+
+Physician:
+  $extends: Shop
+  Title: Physician
+  Noun:
+    - clinic
+
+
+Barracks:
+  $extends: Service
+  Title: Barracks
+
+
+School:
+  $extends: Service
+  Title: School
+
+
+Daycare:
+  $extends: Service
+  Title: Daycare
+
+
+Museum:
+  $extends: Service
+  Title: Museum
+
+
+Library:
+  $extends: Service
+  Title: Library
+
+
+Lawyer:
+  $extends: Shop
+  Title: Lawyer
+
+
+TinWorker:
+  $extends: Shop
+  Title: Tin Worker
+
+
+IndoorMarket:
+  $extends: Shop
+  Title: Indoor Market
+
+
+Nightclub:
+  $extends: Shop
+  Title: Nightclub
+
+
+CityHall:
+  $extends: Shop
+  Title: CityHall
+
+
+FishMarket:
+  $extends: Shop
+  Title: Fish Market
+
+
+Nunnery:
+  $extends: Service
+  Title: Nunnery
+
+
+Tailor:
+  $extends: Shop
+  Title: Tailor
+  Items:
+    $rollsome:
+      $class: Wearables
+      $min: 2
+      $max: 6
+
+
+Prison:
+  $extends: Service
+  Title: Prison
+
+
+CityGuard:
+  $extends: Service
+  Title: City guard
+
+
+EventHall:
+  $extends: Shop
+  Title: Event Hall
+
+
+Orphanage:
+  $extends: Service
+  Title: Orphanage
+
+
+Enchanter:
+  $extends: Shop
+  Title: Enchanter
+
+
+PostOffice:
+  $extends: Shop
+  Title: Post Office
+
+
+Mill:
+  $extends: Shop
+  Title: Mill
+
+
+Smokehouse:
+  $extends: Shop
+  Title: Smokehouse
+
+
+GameShop:
+  $extends: Shop
+  Title: Game Shop
+
+
+Theater:
+  $extends: Service
+  Title: Theater
+
+
+Witch:
+  $extends: Shop
+  Title: Witch
+
+
+College:
+  $extends: Service
+  Title: College
+
+
+PrintingPress:
+  $extends: Shop
+  Title: Printing Press
+
+
+AnimalPound:
+  $extends: Service
+  Title: Animal Pound
+
+
+EventPlanner:
+  $extends: Shop
+  Title: Event Planner
+
+
+Mortician:
+  $extends: Service
+  Title: Mortician
+
+
+Restaurant:
+  $extends: Shop
+  Title: Restaurant
+
+
+Tanner:
+  $extends: Shop
+  Title: Tanner
+
+
+Registry:
+  $extends: Service
+  Title: Registery
+
+
+TradePost:
+  $extends: Shop
+  Title: Trade Post
+
+
+VehicleMaker:
+  $extends: Shop
+  Title: Vehicle Maker
+
+
+Archive:
+  $extends: Service
+  Title: Archive
+
+
+FortuneTeller:
+  $extends: Shop
+  Title: Fortune Teller
+
+
+Matchmaker:
+  $extends: Shop
+  Title: Matchmaker
+
+
+ArtistsGuild:
+  $extends: Guild
+  Title: Artist Guild
+
+
+HuntersGuild:
+  $extends: Guild
+  Title: Hunters Guild
+
+
+FishermenGuild:
+  $extends: Guild
+  Title: Fishermen Guild
+
+
+ThievesGuild:
+  $extends: Guild
+  Title: Thieves Guild
+  Items:
+    $rollsome:
+      $class: Tools
+      $min: 2
+      $max: 6
+
+
+MerchantsGuild:
+  $extends: Guild
+  Title: Merchants Guild
+
+
+ScholarsGuild:
+  $extends: Guild
+  Title: Scholars Guild
+
+
+WritersGuild:
+  $extends: Guild
+  Title: Writers Guild
+
+
+AdventurersGuild:
+  $extends: Guild
+  Title: Adventurers Guild
+  Items:
+    $rollsome:
+      $class: Gear
+      $min: 2
+      $max: 6
+
+
+MagesGuild:
+  $extends: Guild
+  Title: Mages Guild
+
+
+BardsGuild:
+  $extends: Guild
+  Title: Bards Guild
+
+
+ArchitectsGuild:
+  $extends: Guild
+  Title: Architects Guild
+
+
+SailorsGuild:
+  $extends: Guild
+  Title: Sailors Guild
+
+
+KnightsGuild:
+  $extends: Guild
+  Title: Knights Guild
+

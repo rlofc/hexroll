@@ -1,0 +1,314 @@
+AllEncounter:
+  $subclass:
+    #HD1:
+    - Acolyte
+    - Bandit
+    - Brigand
+    - Buccaneer
+    - Dervish
+    - DwarfMonster
+    - Gnome
+    - SmallHerdAnimal
+    - Merchant
+    - Merman
+    - Nixie
+    - Nomad
+    - Orc
+    - Pirate
+    - Pterodactyl
+    - ShrewGiant
+    - Skeleton
+    - Trader
+    - Veteran
+    - Pixie
+    - SpittingCobra
+    - Stirge
+    - Medium
+    #HD2:
+    - GiantBat
+    - GiantVampireBat
+    - Camel
+    - CaveLocust
+    - NormalCrocodile
+    - GiantBass
+    - Gnoll
+    - RidingHorse
+    - WildHorse
+    - InsectSwarm
+    - Mule
+    - NeanderthalCaveman
+    - RobberFly
+    - RockBaboon
+    - BullShark
+    - Zombie
+    - OilBeetle
+    - Dryad
+    - Ghoul
+    - GreenSlime
+    - PitViper
+    - CrabSpider
+    - Troglodyte
+    - YellowMould
+    #HD3:
+    - Boar
+    - CrabGiant
+    - Hellhound
+    - MediumHerdAnimal
+    - DraftHorse
+    - WarHorse
+    - CrystalLivingStatue
+    - Noble
+    - Shrieker
+    - GreyOoze
+    - Harpy
+    - Wererat
+    - SeaSnake
+    - BlackWidow
+    - Wight
+    - Thoul
+    #HD4:
+    - ApeWhite
+    - BlackBear
+    - Panther
+    - Centaur
+    - Gargoyle
+    - LargeHerdAnimal
+    - IronLivingStatue
+    - MakoShark
+    - SaltwaterTermite
+    - BlinkDog
+    - Doppelgänger
+    - DriverAnt
+    - GelatinousCube
+    - Werewolf
+    - ScorpionGiant
+    - GiantRattler
+    - Tarantella
+    - Unicorn
+    - Medusa
+    - Wraith
+    #HD5:
+    - GrizzlyBear
+    - Lion
+    - Hydra
+    - OwlBear
+    - Pteranodon
+    - RustMonster
+    - HornedChameleon
+    - Weretiger
+    - OchreJelly
+    - RockPython
+    - Cockatrice
+    - RockLivingStatue
+    #HD6:
+    - PolarBear
+    - Tiger
+    - LargeCrocodile
+    - LeechGiant
+    - Tuatara
+    - Minotaur
+    - NormalRhinoceros
+    - SmallRoc
+    - SeaSerpentLesser
+    - SquidGiant
+    - KillerWhale
+    - Caecilia
+    - Werebear
+    - WarpBeast
+    - WhiteDragon
+    - Spectre
+    #HD7:
+    - CaveBear
+    - Griffon
+    - Vampire
+    - Wyvern
+    - BlackDragon
+    #HD8:
+    - SabreToothedTiger
+    - HillGiant
+    - BoneGolem
+    - OctopusGiant
+    - WoollyRhinoceros
+    - GreatWhiteShark
+    - Treant
+    - Gorgon
+    - InvisibleStalkerMonster
+    - GreenDragon
+    - SeaDragon
+    #HD9:
+    - Elephant
+    - StoneGiant
+    - DevilSwine
+    - Chimera
+    - BlueDragon
+    #HD10:
+    - BlackPudding
+    - EfreetiLesser
+    - RedDragon
+    - AmberGolem
+    #HD11:
+    - Stegosaurus
+    - Triceratops
+    - GoldDragon
+    #HD12:
+    - LargeRoc
+    - Titanothere
+    - Narwhal
+    #HD13:
+    - Cyclops
+    #HD15:
+    - GiantCrocodile
+    - StormGiant
+    - Mastodon
+    - PurpleWorm
+    #HD20:
+    - TyrannosaurusRex
+    - BronzeGolem
+
+MountainsEncounter:
+  $subclass:
+    - Ogre
+    - Ogre
+    - Ogre
+    - Hobgoblin
+    - Hobgoblin
+    - Hobgoblin
+    - Hobgoblin
+    - Goblin
+    - Goblin
+    - Goblin
+    - Goblin
+    - Goblin
+    - CaveBear
+    - CaveBear
+    - CaveBear
+    - MountainLion
+      ###- NormalHawk
+      ###- Mule
+      ###- RockBaboon
+    - PitViper
+    - GiantRattler
+    - NormalWolf
+    - DireWolf
+    - Gargoyle
+    - Griffon
+    - Harpy
+      ###- NormalHawk
+      ###- GiantHawk
+    - Hippogriff
+    - Manticore
+      ###- Pegasus
+    - SmallRoc
+    - LargeRoc
+    - GiantRoc
+      #- Dwarf
+    - CloudGiant
+    - CloudGiant
+    - FrostGiant
+    - FrostGiant
+    - HillGiant
+    - HillGiant
+    - StoneGiant
+    - StoneGiant
+    - StormGiant
+    - StormGiant
+      ###- Gnome
+    - Kobold
+    - Kobold
+    - Kobold
+    - Orc
+    - Orc
+    - Orc
+    - Troglodyte
+    - Troll
+    - Troll
+    - Troll
+    # humams
+      #- Bandit 	            
+      #- Berserker 	        
+      #- Berserker 	        
+      #- Brigand 	            
+      #- Brigand 	            
+      #- Expert Adventurers 	
+      #- High-Level Cleric 	
+      #    - High-Level Fighter 	
+      #- High-Level MU 	    
+      #- Merchant 	            
+      #    - Neanderthal 	        
+      #    - Neanderthal 	        
+    # dragons
+    - Chimera
+    - BlackDragon
+    - BlueDragon
+    - GoldDragon
+    - GreenDragon
+    - RedDragon
+    - WhiteDragon
+    - Hydra
+    - Wyvern
+    - Basilisk
+    # unusuals
+    - Basilisk
+    - BlinkDog
+    - Centaur
+    - Gorgon
+    - Werebear
+    - Wereboar
+    - Wererat
+    - Weretiger
+    - Werewolf
+    - Medusa
+    - Treant
+    - WarpBeast
+
+ForestEncounter:
+  $subclass:
+    - Boar
+    - Panther
+    - Tiger
+      ###- NormalHawk
+    - Gecko
+    - Tuatara
+    - PitViper
+    - CrabSpider
+    - Unicorn
+    - NormalWolf
+    - DireWolf
+    - Bugbear
+    - Cyclops
+    - Dryad
+      #- Elf
+    - HillGiant
+    - Gnoll
+    - Goblin
+    - Hobgoblin
+    - Ogre
+    - Orc
+    - Thoul
+    - Troll
+    # Dragons
+    - Chimera
+    - BlackDragon
+    - BlueDragon
+    - GoldDragon
+    - GreenDragon
+    - RedDragon
+    - WhiteDragon
+    - Hydra
+    - Hydra
+    - Wyvern
+    - Basilisk
+    # Flyer
+    - Cockatrice
+    - Gargoyle
+    - Griffon
+    - GiantHawk
+    - Hippogriff
+    - KillerBee
+    - Pegasus
+    - Pixie
+    - RobberFly
+    - SmallRoc
+    - Sprite
+    - Stirge
+

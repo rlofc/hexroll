@@ -1,0 +1,220 @@
+CaveEncounterTier1:
+  $subclass:
+    - DungeonEncounterHumanoidsTier1
+    - DungeonEncounterVerminsTier1
+    - DungeonEncounterOozesTier1
+    - DungeonEncounterAbberationsTier1
+
+
+CaveEncounterTier2:
+  $subclass:
+    - DungeonEncounterVerminsTier2
+    - DungeonEncounterOozesTier2
+    - DungeonEncounterAbberationsTier2
+
+
+CaveEncounterTier3:
+  $subclass:
+    - DungeonEncounterVerminsTier3
+    - DungeonEncounterOozesTier3
+    - DungeonEncounterAbberationsTier3
+
+
+CaveFeatureTier1:
+  $subclass:
+    - CaveEncounterTier1
+    - CaveEncounterTier1
+    - DungeonContainers
+    - DungeonRemains
+    - DungeonFungi
+
+
+CaveFeatureTier2:
+  $subclass:
+    - CaveEncounterTier2
+    - CaveEncounterTier2
+    - DungeonContainers
+    - DungeonRemains
+    - DungeonFungi
+
+
+CaveFeatureTier3:
+  $subclass:
+    - CaveEncounterTier3
+    - CaveEncounterTier3
+    - DungeonContainers
+    - DungeonRemains
+    - DungeonFungi
+
+
+Cavern:
+  $extends: Dungeon
+
+  NamePrefix:
+    - caverns
+    - lair
+    - hideout
+
+  Name:
+    $roll:
+      $class: DungeonName
+      $inject:
+        $values:
+          Type: !ref NamePrefix
+
+  $context:
+    $attr: DungeonContext
+    $values:
+      - Name
+      - Hex
+
+  $collections:
+    dungeon_encounters:
+      $collect: DungeonEncounter
+
+  Map:
+    $roll: 
+      $class: DungeonShape
+      $bootstrap:
+        DungeonFeatureTier1: CaveFeatureTier1
+        DungeonFeatureTier2: CaveFeatureTier2
+        DungeonFeatureTier3: CaveFeatureTier3
+
+
+TombFeatureTier1:
+  $subclass:
+    - DungeonEncounterVerminsTier1
+    - DungeonEncounterVerminsTier1
+    - DungeonContainers
+    - DungeonRemains
+    - DungeonFungi
+
+
+TombFeatureTier2:
+  $subclass:
+    - DungeonEncounterUndead
+    - DungeonEncounterUndead
+    - DungeonContainers
+    - DungeonRemains
+    - DungeonFungi
+
+
+TombFeatureTier3:
+  $subclass:
+    - DungeonEncounterUndeadHD7
+    - DungeonEncounterUndeadHD7
+    - DungeonContainers
+    - DungeonRemains
+    - DungeonFungi
+
+
+Tomb:
+  $extends: Dungeon
+
+  NamePrefix:
+    - tomb
+    - crypt
+
+  #  - The Tomb of Blackness
+  #  - The Tomb of Lost Souls
+  #  - The Tomb of Nak'Hatop
+  #  - The Tomb of Betraying Spider
+  #  - The Tomb of the Grey Lich
+  #  - The Tomb of Corrupted Desires
+  Name:
+    $roll:
+      $class: DungeonName
+      $inject:
+        $values:
+          Type: !ref NamePrefix
+
+  $context:
+    $attr: DungeonContext
+    $values: 
+      - Name
+      - Hex
+
+  $collections:
+    dungeon_encounters:
+      $collect: DungeonEncounter
+
+  Map:
+    $roll: 
+      $class: DungeonShape
+      $bootstrap:
+        DungeonFeatureTier1: TombFeatureTier1
+        DungeonFeatureTier2: TombFeatureTier2
+        DungeonFeatureTier3: TombFeatureTier3
+
+
+TempleEncounterTier1:
+  $subclass:
+    - DungeonEncounterCultists
+    - DungeonEncounterTempleAnimals
+
+
+TempleEncounterTier2:
+  $subclass:
+    - DungeonEncounterMagicalTier2
+
+
+TempleEncounterTier3:
+  $subclass:
+    - DungeonEncounterMagicalTier3
+
+
+TempleFeatureTier1:
+  $subclass:
+    - TempleEncounterTier1
+    - TempleEncounterTier1
+    - DungeonContainers
+    - DungeonRemains
+
+
+TempleFeatureTier2:
+  $subclass:
+    - TempleEncounterTier2
+    - TempleEncounterTier2
+    - DungeonContainers
+    - DungeonRemains
+
+
+TempleFeatureTier3:
+  $subclass:
+    - TempleEncounterTier3
+    - TempleEncounterTier3
+    - DungeonContainers
+    - DungeonRemains
+
+
+Temple:
+  $extends: Dungeon
+
+  NamePrefix:
+    - temple
+    - shrine
+
+  Name:
+    $roll:
+      $class: DungeonName
+      $inject:
+        $values:
+          Type: !ref NamePrefix
+
+  $context:
+    $attr: DungeonContext
+    $values:
+      - Name
+      - Hex
+
+  $collections:
+    dungeon_encounters:
+      $collect: DungeonEncounter
+
+  Map:
+    $roll: 
+      $class: DungeonShape
+      $bootstrap:
+        DungeonFeatureTier1: TempleFeatureTier1
+        DungeonFeatureTier2: TempleFeatureTier2
+        DungeonFeatureTier3: TempleFeatureTier3

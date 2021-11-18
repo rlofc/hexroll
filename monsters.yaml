@@ -1,0 +1,4664 @@
+# This document contains Open Game Content, subject to the Open Game License,
+# released un the Open Game License, Version 1.0a (enclosed in the LICENSE
+# file), as described in Section 1(d) of the License.
+
+Monster:
+  Stats: !jinja |
+    __Armour Class:__ {{ArmourClass}} __Hit Dice:__ {{ExHitDice}} __Attacks:__ {{Attacks}}
+    __THAC0:__ {{THAC0}} __Movement:__ {{Movement}} __Saving Throws:__ {{SavingThrows}}
+    __Morale:__ {{Morale}} __Alignment:__ {{Alignment}} __XP:__ {{XP}} 
+  TitlePluralizedByRoaming: !jinja |
+    {{Title}}{%if NumberAppearingRoaming > 1%}s{%endif%}
+
+
+Acolyte:
+  $extends: Monster
+  Title: "Acolyte"
+  Intelligent: True
+  ArmourClass: "2 [17]"
+  HitDice: "1 (4hp)"
+  ExHitDice: 1
+  HitDiceRoll: 1d8
+  Attacks: "1 × mace (1d6)"
+  THAC0: "19 [0]"
+  Movement: "60’ (20’)"
+  SavingThrows: "D11 W12 P14 B16 S15 (C1)"
+  Morale: "7"
+  Alignment: "Any"
+  XP: "10"
+  NumberAppearingRoaming:
+    $diceroll: 1d8 
+  NumberAppearingLair:
+    $diceroll: 1d20
+  TreasureType: 
+    $roll: TreasureTypeU
+
+
+ApeWhite:
+  $extends: Monster
+  Title: "White Ape"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "4 (18hp)"
+  ExHitDice: 4
+  HitDiceRoll: 4d8
+  Attacks: "2 × claw(1d4) or 1 × thrown rock (1d6)"
+  THAC0: "16 [+3]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14B15 S16 (2)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "75"
+  NumberAppearingRoaming: 
+    $diceroll: 1d6 
+  NumberAppearingLair: 
+    $diceroll: 2d4
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+Bandit:
+  $extends: Monster
+  Title: "Bandit"
+  Intelligent: True
+  ArmourClass: "6 [13]"
+  HitDice: "1 (4hp)"
+  ExHitDice: 1
+  HitDiceRoll: 1d8
+  Attacks: "1 × weapon (1d6 or by weapon)"
+  THAC0: "19 [0]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D13 W14 P13 B16 S15 (T1)"
+  Morale: "8"
+  Alignment: "Neutral or Chaotic"
+  XP: "10"
+  NumberAppearingRoaming: 
+    $diceroll: 1d8 
+  NumberAppearingLair: 
+    $diceroll: 3d10
+  TreasureType: 
+    $roll: TreasureTypeU # (A)
+
+
+Basilisk:
+  $extends: Monster
+  Title: "Basilisk"
+  Intelligent: False
+  ArmourClass: "4 [15]"
+  HitDice: "6+1** (28hp)"
+  ExHitDice: 6+1
+  HitDiceRoll: 6d8+1
+  Attacks: "Att 1 × bite (1d10 + petrification), 1 × gaze (petrification)"
+  THAC0: "13 [+6]"
+  Movement: "60’ (20’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (6)"
+  Morale: "9"
+  Alignment: "Neutral"
+  XP: "950"
+  NumberAppearingRoaming:
+    $diceroll: 1d6 
+  NumberAppearingLair:
+    $diceroll: 1d6
+  TreasureType: 
+    $roll: TreasureTypeF
+
+
+GiantBat:
+  $extends: Monster
+  Title: "Giant Bat"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "2 (9hp)"
+  ExHitDice: 2
+  HitDiceRoll: 2d8
+  Attacks: "1 × bite(1d4)"
+  THAC0: "18 [+1]"
+  Movement: "30’ (10’) /180’ (60’) flying"
+  SavingThrows: "D12 W13 P14 B15S16 (1)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "20"
+  NumberAppearingRoaming:
+    $diceroll: 1d10 
+  NumberAppearingLair:
+    $diceroll: 1d10
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+GiantVampireBat:
+  $extends: Monster
+  Title: "Giant Vampire Bat"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "2 (9hp)"
+  ExHitDice: 2
+  HitDiceRoll: 2d8
+  Attacks: "1 × bite (1d4 + unconsciousness)"
+  THAC0: "18 [+1]"
+  Movement: "30’ (10’) / 180’ (60’) flying"
+  SavingThrows: "D12W13 P14 B15 S16 (1)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "20"
+  NumberAppearingRoaming:
+    $diceroll: 1d10 
+  NumberAppearingLair:
+    $diceroll: 1d10
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+NormalBat:
+  $extends: Monster
+  Title: "Bat"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "1hp"
+  ExHitDice: 1hp
+  HitDiceRoll: 1d1
+  Attacks: "1 × swarm (confusion)"
+  THAC0: "20 [–1]"
+  Movement: "9’ (3’) / 120’ (40’) flying"
+  SavingThrows: "D14 W15 P16 B17 S18 (NH)"
+  Morale: "6"
+  Alignment: "Neutral"
+  XP: "5"
+  NumberAppearingRoaming:
+    $diceroll: 1d100 
+  NumberAppearingLair:
+    $diceroll: 1d100
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+BlackBear:
+  $extends: Monster
+  Title: "Black Bear"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "4 (18hp)"
+  ExHitDice: 4
+  HitDiceRoll: 4d8
+  Attacks: "2 × claw(1d3), 1 × bite(1d6)"
+  THAC0: "16 [+3]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16(2)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "75"
+  NumberAppearingRoaming:
+    $diceroll: 1d4
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeU
+
+
+CaveBear:
+  $extends: Monster
+  Title: "Cave Bear"
+  Intelligent: False
+  ArmourClass: "5 [14]"
+  HitDice: "7 (31hp)"
+  ExHitDice: 7
+  HitDiceRoll: 7d8
+  Attacks: "2 × claw(1d8), 1 × bite(2d6)"
+  THAC0: "13 [+6]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16(3)"
+  Morale: "9"
+  Alignment: "Neutral"
+  XP: "450"
+  NumberAppearingRoaming:
+    $diceroll: 1d2
+  NumberAppearingLair:
+    $diceroll: 1d2
+  TreasureType: 
+    $roll: TreasureTypeV
+
+
+GrizzlyBear:
+  $extends: Monster
+  Title: "Grizzly Bear"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "5 (22hp)"
+  ExHitDice: 5
+  HitDiceRoll: 5d8
+  Attacks: "2 × claw(1d4), 1 × bite(1d8)"
+  THAC0: "15 [+4]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15S16 (2)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "175"
+  NumberAppearingRoaming: 1
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeU
+
+
+PolarBear:
+  $extends: Monster
+  Title: "Polar Bear"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "6 (27hp)"
+  ExHitDice: 6
+  HitDiceRoll: 6d8
+  Attacks: "2 × claw(1d6), 1 × bite(1d10)"
+  THAC0: "14 [+5]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15S16 (3)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "275"
+  NumberAppearingRoaming: 1
+  NumberAppearingLair:
+    $diceroll: 1d2
+  TreasureType: 
+    $roll: TreasureTypeU
+
+
+FireBeetle:
+  $extends: Monster
+  Title: "Fire Beetle"
+  Intelligent: False
+  ArmourClass: "4 [15]"
+  HitDice: "1+2 (6hp)"
+  ExHitDice: 1+2
+  HitDiceRoll: 1d8+2
+  Attacks: "1 × bite(2d4)"
+  THAC0: "18 [+1]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "15"
+  NumberAppearingRoaming:
+    $diceroll: 1d8 
+  NumberAppearingLair:
+    $diceroll: 2d6
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+OilBeetle:
+  $extends: Monster
+  Title: "Oil Beetle"
+  Intelligent: False
+  ArmourClass: "4 [15]"
+  HitDice: "2* (9hp)"
+  ExHitDice: 2
+  HitDiceRoll: 2d8
+  Attacks: "1 × bite (1d6)"
+  THAC0: "18 [+1]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14B15 S16 (1)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "25"
+  NumberAppearingRoaming:
+    $diceroll: 1d8 
+  NumberAppearingLair:
+    $diceroll: 2d6
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+TigerBeetle:
+  $extends: Monster
+  Title: "Tiger Beetle"
+  Intelligent: False
+  ArmourClass: "3 [16]"
+  HitDice: "3+1 (14hp)"
+  ExHitDice: 3+1
+  HitDiceRoll: 3d8+1
+  Attacks: "1 × bite (2d6)"
+  THAC0: "16 [+3]"
+  Movement: "150’ (50’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "9"
+  Alignment: "Neutral"
+  XP: "50"
+  NumberAppearingRoaming:
+    $diceroll: 1d6 
+  NumberAppearingLair:
+    $diceroll: 2d4
+  TreasureType: 
+    $roll: TreasureTypeU
+
+
+Berserker:
+  $extends: Monster
+  Title: "Berserker"
+  Intelligent: True
+  ArmourClass: "7 [12]"
+  HitDice: "1+1* (5hp)"
+  ExHitDice: 1+1
+  HitDiceRoll: 1d8+1
+  Attacks: "1 × weapon (1d8 or by weapon)"
+  THAC0: "18 [+1]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "12"
+  Alignment: "Neutral"
+  XP: "19"
+  NumberAppearingRoaming:
+    $diceroll: 1d6 
+  NumberAppearingLair:
+    $diceroll: 3d10
+  TreasureType: 
+    $roll: TreasureTypeP # (B)
+
+
+BlackPudding:
+  $extends: Monster
+  Title: "Black Pudding"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "10* (45hp)"
+  ExHitDice: 10
+  HitDiceRoll: 10d8
+  Attacks: "1 × touch (3d8)"
+  THAC0: "11 [+8]"
+  Movement: "60’ (20’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (5)"
+  Morale: "12"
+  Alignment: "Neutral"
+  XP: "1,600"
+  NumberAppearingRoaming: 1 
+  NumberAppearingLair: 0
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+BlinkDog:
+  $extends: Monster
+  Title: "Blink Dog"
+  Intelligent: False
+  ArmourClass: "5 [14]"
+  HitDice: "4* (18hp)"
+  ExHitDice: 4
+  HitDiceRoll: 4d8
+  Attacks: "1 × bite (1d6)"
+  THAC0: "16 [+3]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (4)"
+  Morale: "6"
+  Alignment: "Lawful"
+  XP: "125"
+  NumberAppearingRoaming:
+    $diceroll: 1d6 
+  NumberAppearingLair:
+    $diceroll: 1d6
+  TreasureType: 
+    $roll: TreasureTypeC
+
+
+Boar:
+  $extends: Monster
+  Title: "Boar"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "3 (13hp)"
+  ExHitDice: 3
+  HitDiceRoll: 3d8
+  Attacks: "1 × tusk(2d4)"
+  THAC0: "17 [+2]"
+  Movement: "150’ (50’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "9"
+  Alignment: "Neutral"
+  XP: "35"
+  NumberAppearingRoaming:
+    $diceroll: 1d6 
+  NumberAppearingLair:
+    $diceroll: 1d6
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+Brigand:
+  $extends: Monster
+  Title: "Brigand"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "1 (4hp)"
+  ExHitDice: 1
+  HitDiceRoll: 1d8
+  Attacks: "1 × weapon (1d6 or by weapon)"
+  THAC0: "19 [0]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "8"
+  Alignment: "Chaotic"
+  XP: "10"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d4x10
+  TreasureType: 
+    $roll: TreasureTypeA
+
+
+Buccaneer:
+  $extends: Monster
+  Title: "Buccaneer"
+  Intelligent: True
+  ArmourClass: "7 [12] or 5 [14]"
+  HitDice: "1 (4hp)"
+  ExHitDice: 1
+  HitDiceRoll: 1d8
+  Attacks: "1 ×weapon (1d6 or by weapon)"
+  THAC0: "19[0]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15S16 (1)"
+  Morale: "6"
+  Alignment: "Neutral"
+  XP: "10"
+  NumberAppearingRoaming: 0
+  NumberAppearingLair: 0
+  TreasureType: 
+    $roll: TreasureTypeA
+
+
+Bugbear:
+  $extends: Monster
+  Title: "Bugbear"
+  Intelligent: True
+  ArmourClass: "5 [14]"
+  HitDice: "3+1 (14hp)"
+  ExHitDice: 3+1
+  HitDiceRoll: 3d8+1
+  Attacks: "1 × weapon (2d4 or by weapon +1)"
+  THAC0: "16[+3]"
+  Movement: "90’ (30’)"
+  SavingThrows: "D12 W13 P14 B15S16 (3)"
+  Morale: "9"
+  Alignment: "Chaotic"
+  XP: "50"
+  NumberAppearingRoaming:
+    $diceroll: 2d4 
+  NumberAppearingLair:
+    $diceroll: 5d4
+  TreasureType: 
+    $roll: TreasureTypeB
+
+
+Caecilia:
+  $extends: Monster
+  Title: "Caecilia"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "6* (27hp)"
+  ExHitDice: 6
+  HitDiceRoll: 6d8
+  Attacks: "1 × bite (1d8)"
+  THAC0: "14 [+5]"
+  Movement: "60’ (20’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (3)"
+  Morale: "9"
+  Alignment: "Neutral"
+  XP: "500"
+  NumberAppearingRoaming:
+    $diceroll: 1d3 
+  NumberAppearingLair:
+    $diceroll: 1d3
+  TreasureType: 
+    $roll: TreasureTypeB
+
+
+Camel:
+  $extends: Monster
+  Title: "Camel"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "2 (9hp)"
+  ExHitDice: 2
+  HitDiceRoll: 2d8
+  Attacks: "1 × bite (1), 1 × hoof (1d4)"
+  THAC0: "18 [+1]"
+  Movement: "150’(50’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "20"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 2d4
+  TreasureType: 
+    $roll: TreasureTypeNone
+  Cost: 100 gp
+
+
+CarcassCrawler:
+  $extends: Monster
+  Title: "Carcass Crawler"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "3+1* (14hp)"
+  ExHitDice: 3+1
+  HitDiceRoll: 3d8+1
+  Attacks: "8 × tentacle (paralysis)"
+  THAC0: "16 [+3]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "9"
+  Alignment: "Neutral"
+  XP: "75"
+  NumberAppearingRoaming:
+    $diceroll: 1d3 
+  NumberAppearingLair:
+    $diceroll: 1d3
+  TreasureType: 
+    $roll: TreasureTypeB
+
+
+Lion:
+  $extends: Monster
+  Title: "Lion"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "5 (22hp)"
+  ExHitDice: 5
+  HitDiceRoll: 5d8
+  Attacks: "2 × claw (1d4+1), 1 × bite (1d10)"
+  THAC0: "15 [+4]"
+  Movement: "150’ (50’)"
+  SavingThrows: "D12 W13 P14 B15 S16(3)"
+  Morale: "9"
+  Alignment: "Neutral"
+  XP: "175"
+  NumberAppearingRoaming:
+    $diceroll: 1d4
+  NumberAppearingLair:
+    $diceroll: 1d8
+  TreasureType: 
+    $roll: TreasureTypeU
+
+
+MountainLion:
+  $extends: Monster
+  Title: "Mountain Lion"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "3+2 (15hp)"
+  ExHitDice: 3+2
+  HitDiceRoll: 3d8+2
+  Attacks: "2 × claw (1d3), 1 × bite (1d6)"
+  THAC0: "16 [+3]"
+  Movement: "150’ (50’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "50"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeU
+
+
+Panther:
+  $extends: Monster
+  Title: "Panther"
+  Intelligent: False
+  ArmourClass: "4 [15]"
+  HitDice: "4 (18hp)"
+  ExHitDice: 4
+  HitDiceRoll: 4d8
+  Attacks: "2 × claw (1d4), 1 × bite (1d8)"
+  THAC0: "16 [+3]"
+  Movement: "210’ (70’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "75"
+  NumberAppearingRoaming:
+    $diceroll: 1d2 
+  NumberAppearingLair:
+    $diceroll: 1d6
+  TreasureType: 
+    $roll: TreasureTypeU
+
+
+SabreToothedTiger:
+  $extends: Monster
+  Title: "Sabre-Toothed Tiger"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "8 (36hp)"
+  ExHitDice: 8
+  HitDiceRoll: 8d8
+  Attacks: "2 × claw (1d8), 1 × bite (2d8)"
+  THAC0: "12 [+7]"
+  Movement: "150’ (50’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (4)"
+  Morale: "10"
+  Alignment: "Neutral"
+  XP: "650"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeV
+
+
+Tiger:
+  $extends: Monster
+  Title: "Tiger"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "6 (27hp)"
+  ExHitDice: 6
+  HitDiceRoll: 6d8
+  Attacks: "2 × claw (1d6), 1 × bite (2d6)"
+  THAC0: "14 [+5]"
+  Movement: "150’ (50’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (3)"
+  Morale: "9"
+  Alignment: "Neutral"
+  XP: "275"
+  NumberAppearingRoaming: 1 
+  NumberAppearingLair:
+    $diceroll: 1d3
+  TreasureType: 
+    $roll: TreasureTypeU
+
+
+CaveLocust:
+  $extends: Monster
+  Title: "Cave Locust"
+  Intelligent: False
+  ArmourClass: "4 [15]"
+  HitDice: "2 (9hp)"
+  ExHitDice: 2
+  HitDiceRoll: 2d8
+  Attacks: "1 × bite (1d2) or 1 × jump (1d4) or 1 × spit (stench)"
+  THAC0: "18 [+1]"
+  Movement: "60’ (20’) / 180’ (60’) flying"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "5"
+  Alignment: "Neutral"
+  XP: "20"
+  NumberAppearingRoaming:
+    $diceroll: 2d10 
+  NumberAppearingLair:
+    $diceroll: 1d10
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+Centaur:
+  $extends: Monster
+  Title: "Centaur"
+  Intelligent: True
+  ArmourClass: "5 [14]"
+  HitDice: "4 (18hp)"
+  ExHitDice: 4
+  HitDiceRoll: 4d8
+  Attacks: "2 × hoof (1d6), 1 × weapon (1d6 or by weapon),"
+  THAC0: "16 [+3]"
+  Movement: "180’ (60’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (4)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "75"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 2d10
+  TreasureType: 
+    $roll: TreasureTypeA
+
+
+CentipedeGiant:
+  $extends: Monster
+  Title: "Giant Centipede"
+  Intelligent: False
+  ArmourClass: "9 [10]"
+  HitDice: "½* (2hp)"
+  ExHitDice: ½
+  HitDiceRoll: 1d4
+  Attacks: "1 × bite (poison)"
+  THAC0: "19 [0]"
+  Movement: "60’ (20’)"
+  SavingThrows: "D14 W15 P16 B17 S18 (NH)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "6"
+  NumberAppearingRoaming:
+    $diceroll: 2d4 
+  NumberAppearingLair:
+    $diceroll: 1d8
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+Chimera:
+  $extends: Monster
+  Title: "Chimera"
+  Intelligent: False
+  ArmourClass: "4 [15]"
+  HitDice: "9** (40hp)"
+  ExHitDice: 9
+  HitDiceRoll: 9d8
+  Attacks: "2 × claw (1d3), goat: 1 × gore (2d4), lion: 1 × bite (2d4), dragon: 1 × bite (3d4) or 1 × breath (3d6)"
+  THAC0: "12 [+7]"
+  Movement: "120’ (40’) / 180’ (60’) flying"
+  SavingThrows: "D8 W9 P10 B10 S12 (9)"
+  Morale: "9"
+  Alignment: "Chaotic"
+  XP: "2,300"
+  NumberAppearingRoaming:
+    $diceroll: 1d2 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeF
+
+
+Cockatrice:
+  $extends: Monster
+  Title: "Cockatrice"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "5** (22hp)"
+  ExHitDice: 5
+  HitDiceRoll: 5d8
+  Attacks: "1 × beak (1d6 + petrification)"
+  THAC0: "15 [+4]"
+  Movement: "90’ (30’) / 180’ (60’) flying"
+  SavingThrows: "D10 W11 P12 B13 S14 (5)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "425"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d8
+  TreasureType: 
+    $roll: TreasureTypeD
+
+
+CrabGiant:
+  $extends: Monster
+  Title: "Giant Crab"
+  Intelligent: False
+  ArmourClass: "2 [17]"
+  HitDice: "3 (13hp)"
+  ExHitDice: 3
+  HitDiceRoll: 3d8
+  Attacks: "2 × pincer (2d6)"
+  THAC0: "17 [+2]"
+  Movement: "60’ (20’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "35"
+  NumberAppearingRoaming:
+    $diceroll: 1d2 
+  NumberAppearingLair:
+    $diceroll: 1d6
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+GiantCrocodile:
+  $extends: Monster
+  Title: "Giant Crocodile"
+  Intelligent: False
+  ArmourClass: "1 [18]"
+  HitDice: "15 (67hp)"
+  ExHitDice: 15
+  HitDiceRoll: 15d8
+  Attacks: "1 × bite (3d8)"
+  THAC0: "9 [+10]"
+  Movement: "90’ (30’) / 90’ (30’) swimming"
+  SavingThrows: "D8 W9 P10 B10 S12 (8)"
+  Morale: "9"
+  Alignment: "Neutral"
+  XP: "1,350"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d3
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+LargeCrocodile:
+  $extends: Monster
+  Title: "Large Crocodile"
+  Intelligent: False
+  ArmourClass: "3 [16]"
+  HitDice: "6 (27hp)"
+  ExHitDice: 6
+  HitDiceRoll: 6d8
+  Attacks: "1 × bite (2d8)"
+  THAC0: "14 [+5]"
+  Movement: "90’ (30’) / 90’ (30’) swimming"
+  SavingThrows: "D12 W13 P14 B15 S16 (3)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "275"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+NormalCrocodile:
+  $extends: Monster
+  Title: "Crocodile"
+  Intelligent: False
+  ArmourClass: "5 [14]"
+  HitDice: "2 (9hp)"
+  ExHitDice: 2
+  HitDiceRoll: 2d8
+  Attacks: "1 × bite (1d8)"
+  THAC0: "18 [+1]"
+  Movement: "90’ (30’) / 90’ (30’) swimming"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "20"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d8
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+Cyclops:
+  $extends: Monster
+  Title: "Cyclops"
+  Intelligent: True
+  ArmourClass: "5 [14]"
+  HitDice: "13* (58hp)"
+  ExHitDice: 13
+  HitDiceRoll: 13d8
+  Attacks: "1 × club (3d10) or 1 × rock (3d6)"
+  THAC0: "10 [+9]"
+  Movement: "90’ (30’)"
+  SavingThrows: "D4 W5 P6 B5 S8 (13)"
+  Morale: "9"
+  Alignment: "Chaotic"
+  XP: "2,300"
+  NumberAppearingRoaming: 1 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeE # + 5,000gp
+
+
+Dervish:
+  $extends: Monster
+  Title: "Dervish"
+  Intelligent: True
+  ArmourClass: "6 [13] or 4 [15]"
+  HitDice: "1 (4hp)"
+  ExHitDice: 1
+  HitDiceRoll: 1d8
+  Attacks: "1 × weapon (1d6 or by weapon)"
+  THAC0: "19 [0]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "10"
+  Alignment: "Lawful"
+  XP: "10"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d6+1x10
+  TreasureType: 
+    $roll: TreasureTypeA
+
+
+DjinniLesser:
+  $extends: Monster
+  Title: "Djinni"
+  Intelligent: True
+  ArmourClass: "5 [14]"
+  HitDice: "7+1* (32hp)"
+  ExHitDice: 7+1
+  HitDiceRoll: 7d8+1
+  Attacks: "1 × fists (2d8), magic"
+  THAC0: "12 [+7]"
+  Movement: "90’ (30’) / 240’ (80’) flying"
+  SavingThrows: "D4 W5 P6 B5 S8 (14)"
+  Morale: "12"
+  Alignment: "Neutral"
+  XP: "850"
+  NumberAppearingRoaming: 1 
+  NumberAppearingLair: 1
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+Doppelgänger:
+  $extends: Monster
+  Title: "Doppelgänger"
+  Intelligent: True
+  ArmourClass: "5 [14]"
+  HitDice: "4* (18hp)"
+  ExHitDice: 4
+  HitDiceRoll: 4d8
+  Attacks: "1 × bite (1d12)"
+  THAC0: "16 [+3]"
+  Movement: "90’ (30’)"
+  SavingThrows: "D6 W7 P8 B8 S10 (10)"
+  Morale: "10"
+  Alignment: "Chaotic"
+  XP: "125"
+  NumberAppearingRoaming:
+    $diceroll: 1d6 
+  NumberAppearingLair:
+    $diceroll: 1d6
+  TreasureType: 
+    $roll: TreasureTypeE
+
+
+BlackDragon:
+  $extends: Monster
+  Title: "Black Dragon"
+  Intelligent: True
+  ArmourClass: "2 [17]"
+  HitDice: "7** (31hp)"
+  ExHitDice: 7
+  HitDiceRoll: 7d8
+  Attacks: "[2 × claw (1d4 + 1), 1 × bite (2d10)] or breath"
+  THAC0: "13 [+6]"
+  Movement: "90’ (30’) / 240’ (80’) flying"
+  SavingThrows: "D8 W9 P10 B10 S12 (7)"
+  Morale: "8"
+  Alignment: "Chaotic"
+  XP: "1,250"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeH
+
+
+BlueDragon:
+  $extends: Monster
+  Title: "Blue Dragon"
+  Intelligent: True
+  ArmourClass: "0 [19]"
+  HitDice: "9** (40hp)"
+  ExHitDice: 9
+  HitDiceRoll: 9d8
+  Attacks: "[2 × claw (1d6 + 1), 1 × bite (3d10)] or breath"
+  THAC0: "12 [+7]"
+  Movement: "90’ (30’) / 240’ (80’) flying"
+  SavingThrows: "D8 W9 P10 B10 S12 (9)"
+  Morale: "9"
+  Alignment: "Neutral"
+  XP: "2,300"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeH
+
+
+GoldDragon:
+  $extends: Monster
+  Title: "Gold Dragon"
+  Intelligent: True
+  ArmourClass: "–2 [21]"
+  HitDice: "11** (49hp)"
+  ExHitDice: 11
+  HitDiceRoll: 11d8
+  Attacks: "[2 × claw (2d4), 1 × bite (6d6)] or breath"
+  THAC0: "11 [+8]"
+  Movement: "90’ (30’) / 240’ (80’) flying"
+  SavingThrows: "D6 W7 P8 B8 S10 (11)"
+  Morale: "10"
+  Alignment: "Lawful"
+  XP: "2,700"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeH
+
+
+GreenDragon:
+  $extends: Monster
+  Title: "Green Dragon"
+  Intelligent: True
+  ArmourClass: "1 [18]"
+  HitDice: "8** (36hp)"
+  ExHitDice: 8
+  HitDiceRoll: 8d8
+  Attacks: "[2 × claw (1d6), 1 × bite (3d8)] or breath"
+  THAC0: "12 [+7]"
+  Movement: "90’ (30’) / 240’ (80’) flying"
+  SavingThrows: "D8 W9 P10 B10 S12 (8)"
+  Morale: "9"
+  Alignment: "Chaotic"
+  XP: "1,750"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeH
+
+
+RedDragon:
+  $extends: Monster
+  Title: "Red Dragon"
+  Intelligent: True
+  ArmourClass: "–1 [20]"
+  HitDice: "10** (45hp)"
+  ExHitDice: 10
+  HitDiceRoll: 10d8
+  Attacks: "[2 × claw (1d8), 1 × bite (4d8)] or breath"
+  THAC0: "11 [+8]"
+  Movement: "90’ (30’) / 240’ (80’) flying"
+  SavingThrows: "D6 W7 P8 B8 S10 (10)"
+  Morale: "10"
+  Alignment: "Chaotic"
+  XP: "2,300"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeH
+
+
+SeaDragon:
+  $extends: Monster
+  Title: "Sea Dragon"
+  Intelligent: True
+  ArmourClass: "1 [18]"
+  HitDice: "8** (36hp)"
+  ExHitDice: 8
+  HitDiceRoll: 8d8
+  Attacks: "1 × bite (3d8) or breath"
+  THAC0: "12 [+7]"
+  Movement: "180’ (60’) swimming / 180’ (60’) gliding"
+  SavingThrows: "D8 W9 P10 B10 S12 (8)"
+  Morale: "9"
+  Alignment: "Neutral"
+  XP: "1,750"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeH
+
+
+WhiteDragon:
+  $extends: Monster
+  Title: "White Dragon"
+  Intelligent: True
+  ArmourClass: "3 [16]"
+  HitDice: "6** (27hp)"
+  ExHitDice: 6
+  HitDiceRoll: 6d8
+  Attacks: "[2 × claw (1d4), 1 × bite (2d8)] or breath"
+  THAC0: "14 [+5]"
+  Movement: "90’ (30’) / 240’ (80’) flying"
+  SavingThrows: "D10 W11 P12 B13 S14 (6)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "725"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeH
+
+
+DragonTurtle:
+  $extends: Monster
+  Title: "Dragon Turtle"
+  Intelligent: False
+  ArmourClass: "–2 [21]"
+  HitDice: "30* (135hp)"
+  ExHitDice: 30
+  HitDiceRoll: 30d8
+  Attacks: "2 × claw (1d8), 1 × bite (1d6 × 10) or breath"
+  THAC0: "5 [+14]"
+  Movement: "30’ (10’) / 90’ (30’) swimming"
+  SavingThrows: "D4 W5 P6 B5 S8 (15)"
+  Morale: "10"
+  Alignment: "Chaotic"
+  XP: "9,000"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair: 1
+  TreasureType: 
+    $roll: TreasureTypeH
+
+
+DriverAnt:
+  $extends: Monster
+  Title: "Driver Ant"
+  Intelligent: False
+  ArmourClass: "3 [16]"
+  HitDice: "4* (18hp)"
+  ExHitDice: 4
+  HitDiceRoll: 4d8
+  Attacks: "1 × bite (2d6)"
+  THAC0: "16 [+3]"
+  Movement: "180’ (60’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "7 (12 in melee)"
+  Alignment: "Neutral"
+  XP: "125"
+  NumberAppearingRoaming:
+    $diceroll: 2d4 
+  NumberAppearingLair:
+    $diceroll: 4d6
+  TreasureType: 
+    $roll: TreasureTypeU # (see below)
+
+
+Dryad:
+  $extends: Monster
+  Title: "Dryad"
+  Intelligent: True
+  ArmourClass: "5 [14]"
+  HitDice: "2* (9hp)"
+  ExHitDice: 2
+  HitDiceRoll: 2d8
+  Attacks: "1 × magic (charm)"
+  THAC0: "18 [+1]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (4)"
+  Morale: "6"
+  Alignment: "Neutral"
+  XP: "25"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d6
+  TreasureType: 
+    $roll: TreasureTypeD
+
+
+DwarfMonster:
+  $extends: Monster
+  Title: "Dwarf (Monster)"
+  Intelligent: True
+  ArmourClass: "4 [15]"
+  HitDice: "1 (4hp)"
+  ExHitDice: 1
+  HitDiceRoll: 1d8
+  Attacks: "1 × weapon (1d8 or by weapon)"
+  THAC0: "19 [0]"
+  Movement: "60’ (20’)"
+  SavingThrows: "D8 W9 P10 B13 S12 (D1)"
+  Morale: "8 (10 with leader)"
+  Alignment: "Lawful or Neutral"
+  XP: "10"
+  NumberAppearingRoaming:
+    $diceroll: 1d6 
+  NumberAppearingLair:
+    $diceroll: 5d8
+  TreasureType: 
+    $roll: TreasureTypeG
+
+
+EfreetiLesser:
+  $extends: Monster
+  Title: "Efreeti"
+  Intelligent: True
+  ArmourClass: "3 [16]"
+  HitDice: "10* (45hp)"
+  ExHitDice: 10
+  HitDiceRoll: 10d8
+  Attacks: "1 × fists (2d8), magic"
+  THAC0: "11 [+8]"
+  Movement: "90’ (30’) / 240’ (80’) flying"
+  SavingThrows: "D4 W5 P6 B5 S8 (15)"
+  Morale: "12"
+  Alignment: "Chaotic"
+  XP: "1,600"
+  NumberAppearingRoaming: 1 
+  NumberAppearingLair: 1
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+AirElemental:
+  $extends: Monster
+  Title: "Air Elemental"
+  Intelligent: False
+  ArmourClass: "2 [17] / 0 [19] / –2 [21]"
+  HitDice: "8/12/16* (36/54/72hp)"
+  ExHitDice: 8/12/16
+  HitDiceRoll: 12d8
+  Attacks: "1 × blow (1d8/2d8/3d8)"
+  THAC0: "12 [+7] / 10 [+9] / 8 [+11]"
+  Movement: "360’ (120’) flying"
+  SavingThrows: "See main entry (8/12/16)"
+  Morale: "10"
+  Alignment: "Neutral"
+  XP: "1,200/1,900/2,300"
+  NumberAppearingRoaming: 1 
+  NumberAppearingLair: 1
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+EarthElemental:
+  $extends: Monster
+  Title: "Earth Elemental"
+  Intelligent: False
+  ArmourClass: "2 [17] / 0 [19] / –2 [21]"
+  HitDice: "8/12/16* (36/54/72hp)"
+  ExHitDice: 8/12/16
+  HitDiceRoll: 12d8
+  Attacks: "1 × blow (1d8/2d8/3d8)"
+  THAC0: "12 [+7] / 10 [+9] / 8 [+11]"
+  Movement: "60’ (20’)"
+  SavingThrows: "See main entry (8/12/16)"
+  Morale: "10"
+  Alignment: "Neutral"
+  XP: "1,200/1,900/2,300"
+  NumberAppearingRoaming: 1 
+  NumberAppearingLair: 1
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+FireElemental:
+  $extends: Monster
+  Title: "Fire Elemental"
+  Intelligent: False
+  ArmourClass: "2 [17] / 0 [19] / –2 [21]"
+  HitDice: "8/12/16* (36/54/72hp)"
+  ExHitDice: 8/12/16
+  HitDiceRoll: 12d8
+  Attacks: "1 × blow (1d8/2d8/3d8)"
+  THAC0: "12 [+7] / 10 [+9] / 8 [+11]"
+  Movement: "120’ (40’)"
+  SavingThrows: "See main entry (8/12/16)"
+  Morale: "10"
+  Alignment: "Neutral"
+  XP: "1,200/1,900/2,300"
+  NumberAppearingRoaming: 1 
+  NumberAppearingLair: 1
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+WaterElemental:
+  $extends: Monster
+  Title: "Water Elemental"
+  Intelligent: False
+  ArmourClass: "2 [17] / 0 [19] / –2 [21]"
+  HitDice: "8/12/16* (36/54/72hp)"
+  ExHitDice: 8/12/16
+  HitDiceRoll: 12d8
+  Attacks: "1 × blow (1d8/2d8/3d8)"
+  THAC0: "12 [+7] / 10 [+9] / 8 [+11]"
+  Movement: "60’ (20’) / 180’ (60’) swimming"
+  SavingThrows: "See main entry (8/12/16)"
+  Morale: "10"
+  Alignment: "Neutral"
+  XP: "1,200/1,900/2,300"
+  NumberAppearingRoaming: 1 
+  NumberAppearingLair: 1
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+Elephant:
+  $extends: Monster
+  Title: "Elephant"
+  Intelligent: False
+  ArmourClass: "5 [14]"
+  HitDice: "9 (40hp)"
+  ExHitDice: 9
+  HitDiceRoll: 9d8
+  Attacks: "2 × tusk (2d4) or 1 × trample (4d8)"
+  THAC0: "12 [+7]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (5)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "900"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d20
+  TreasureType: 
+    $roll: TreasureTypeTusks
+
+
+ElfMonster:
+  $extends: Monster
+  Title: "Elf (Monster)"
+  Intelligent: True
+  ArmourClass: "5 [14]"
+  HitDice: "1+1* (5hp)"
+  ExHitDice: 1+1
+  HitDiceRoll: 1d8+1
+  Attacks: "1 × weapon (1d8 or by weapon)"
+  THAC0: "18 [+1]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P13 B15 S15 (E1)"
+  Morale: "8 (10 with leader)"
+  Alignment: "Neutral"
+  XP: "19"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 2d12
+  TreasureType: 
+    $roll: TreasureTypeE
+
+
+FerretGiant:
+  $extends: Monster
+  Title: "Giant Ferret"
+  Intelligent: False
+  ArmourClass: "5 [14]"
+  HitDice: "1+1 (5hp)"
+  ExHitDice: 1+1
+  HitDiceRoll: 1d8+1
+  Attacks: "1 × bite (1d8)"
+  THAC0: "18 [+1]"
+  Movement: "150’ (50’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "15"
+  NumberAppearingRoaming:
+    $diceroll: 1d8 
+  NumberAppearingLair:
+    $diceroll: 1d12
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+GiantBass:
+  $extends: Monster
+  Title: "Giant Bass"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "2 (9hp)"
+  ExHitDice: 2
+  HitDiceRoll: 2d8
+  Attacks: "1 × bite (1d6)"
+  THAC0: "18 [+1]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "20"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 2d4
+  TreasureType: 
+    $roll: TreasureTypeNone #(1)
+
+
+GiantCatfish:
+  $extends: Monster
+  Title: "Giant Catfish"
+  Intelligent: False
+  ArmourClass: "4 [15]"
+  HitDice: "8+3 (39hp)"
+  ExHitDice: 8+3
+  HitDiceRoll: 8d8+3
+  Attacks: "Att 1 × bite (2d8), 4 × feeler (1d4)"
+  THAC0: "12 [+7]"
+  Movement: "90’ (30’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (4)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "650"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d2
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+GiantPiranha:
+  $extends: Monster
+  Title: "Giant Piranha"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "3+3 (16hp)"
+  ExHitDice: 3+3
+  HitDiceRoll: 3d8+3
+  Attacks: "1 × bite (1d8)"
+  THAC0: "16 [+3]"
+  Movement: "150’ (50’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "50"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 2d4
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+GiantRockfish:
+  $extends: Monster
+  Title: "Giant Rockfish"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "5+5* (27hp)"
+  ExHitDice: 5+5
+  HitDiceRoll: 5d8+5
+  Attacks: "4 × spine (1d4 + poison)"
+  THAC0: "14 [+5]"
+  Movement: "180’ (60’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (3)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "400"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 2d4
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+GiantSturgeon:
+  $extends: Monster
+  Title: "Giant Sturgeon"
+  Intelligent: False
+  ArmourClass: "0 [19]"
+  HitDice: "10+2* (47hp)"
+  ExHitDice: 10+2
+  HitDiceRoll: 10d8+2
+  Attacks: "1 × bite (2d10)"
+  THAC0: "11 [+8]"
+  Movement: "180’ (60’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (5)"
+  Morale: "9"
+  Alignment: "Neutral"
+  XP: "1,600"
+  NumberAppearingRoaming: 0 
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+Gargoyle:
+  $extends: Monster
+  Title: "Gargoyle"
+  Intelligent: True
+  ArmourClass: "5 [14]"
+  HitDice: "4 (18hp)"
+  ExHitDice: 4
+  HitDiceRoll: 4d8
+  Attacks: "2 × claw (1d3), 1 × bite (1d6), 1 × horn (1d4)"
+  THAC0: "16 [+3]"
+  Movement: "90’ (30’) / 150’ (50’) flying"
+  SavingThrows: "D8 W9 P10 B10 S12 (8)"
+  Morale: "11"
+  Alignment: "Chaotic"
+  XP: "75"
+  NumberAppearingRoaming:
+    $diceroll: 1d6 
+  NumberAppearingLair:
+    $diceroll: 2d4
+  TreasureType: 
+    $roll: TreasureTypeC
+
+
+GelatinousCube:
+  $extends: Monster
+  Title: "Gelatinous Cube"
+  Intelligent: False
+  ArmourClass: "8 [11]"
+  HitDice: "4* (18hp)"
+  ExHitDice: 4
+  HitDiceRoll: 4d8
+  Attacks: "1 × touch (2d4 + paralysis)"
+  THAC0: "16 [+3]"
+  Movement: "60’ (20’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "12"
+  Alignment: "Neutral"
+  XP: "125"
+  NumberAppearingRoaming: 1 
+  NumberAppearingLair: 0
+  TreasureType: 
+    $roll: TreasureTypeV
+
+
+Ghoul:
+  $extends: Monster
+  Title: "Ghoul"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "2* (9hp)"
+  ExHitDice: 2
+  HitDiceRoll: 2d8
+  Attacks: "2 × claw (1d3 + paralysis), 1 × bite (1d3 + paralysis)"
+  THAC0: "18 [+1]"
+  Movement: "90’ (30’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "9"
+  Alignment: "Chaotic"
+  XP: "25"
+  NumberAppearingRoaming:
+    $diceroll: 1d6 
+  NumberAppearingLair:
+    $diceroll: 2d8
+  TreasureType: 
+    $roll: TreasureTypeB
+
+
+CloudGiant:
+  $extends: Monster
+  Title: "Cloud Giant"
+  Intelligent: True
+  ArmourClass: "4 [15]"
+  HitDice: "12+3 (57hp)"
+  ExHitDice: 12+3
+  HitDiceRoll: 12d8+3
+  Attacks: "1 × weapon (6d6) or 1 × boulder (3d6)"
+  THAC0: "10 [+9]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D6 W7 P8 B8 S10 (12)"
+  Morale: "10"
+  Alignment: "Neutral"
+  XP: "1,100"
+  NumberAppearingRoaming:
+    $diceroll: 1d2 
+  NumberAppearingLair:
+    $diceroll: 1d3
+  TreasureType: 
+    $roll: TreasureTypeE # + 5,000gp
+
+
+FireGiant:
+  $extends: Monster
+  Title: "Fire Giant"
+  Intelligent: True
+  ArmourClass: "4 [15]"
+  HitDice: "11+2 (51hp)"
+  ExHitDice: 11+2
+  HitDiceRoll: 11d8+2
+  Attacks: "1 × weapon (5d6) or 1 × boulder (3d6)"
+  THAC0: "10 [+9]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D6 W7 P8 B8 S10 (11)"
+  Morale: "9"
+  Alignment: "Chaotic"
+  XP: "1,100"
+  NumberAppearingRoaming:
+    $diceroll: 1d2 
+  NumberAppearingLair:
+    $diceroll: 1d3
+  TreasureType: 
+    $roll: TreasureTypeE # + 5,000gp
+
+
+FrostGiant:
+  $extends: Monster
+  Title: "Frost Giant"
+  Intelligent: True
+  ArmourClass: "4 [15]"
+  HitDice: "10+1 (46hp)"
+  ExHitDice: 10+1
+  HitDiceRoll: 10d8+1
+  Attacks: "1 × weapon (4d6) or 1 × boulder (3d6)"
+  THAC0: "11 [+8]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D6 W7 P8 B8 S10 (10)"
+  Morale: "9"
+  Alignment: "Chaotic"
+  XP: "900"
+  NumberAppearingRoaming:
+    $diceroll: 1d2 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeE # + 5,000gp
+
+
+HillGiant:
+  $extends: Monster
+  Title: "Hill Giant"
+  Intelligent: True
+  ArmourClass: "4 [15]"
+  HitDice: "8 (36hp)"
+  ExHitDice: 8
+  HitDiceRoll: 8d8
+  Attacks: "1 × weapon (2d8)"
+  THAC0: "12 [+7]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D8 W9 P10 B10 S12 (8)"
+  Morale: "8"
+  Alignment: "Chaotic"
+  XP: "650"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 2d4
+  TreasureType: 
+    $roll: TreasureTypeE # + 5,000gp
+
+
+StoneGiant:
+  $extends: Monster
+  Title: "Stone Giant"
+  Intelligent: True
+  ArmourClass: "4 [15]"
+  HitDice: "9 (40hp)"
+  ExHitDice: 9
+  HitDiceRoll: 9d8
+  Attacks: "1 × weapon (3d6) or 1 × boulder (3d6)"
+  THAC0: "12 [+7]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D8 W9 P10 B10 S12 (9)"
+  Morale: "9"
+  Alignment: "Neutral"
+  XP: "900"
+  NumberAppearingRoaming:
+    $diceroll: 1d2 
+  NumberAppearingLair:
+    $diceroll: 1d6
+  TreasureType: 
+    $roll: TreasureTypeE # + 5,000gp
+
+
+StormGiant:
+  $extends: Monster
+  Title: "Storm Giant"
+  Intelligent: True
+  ArmourClass: "2 [17]"
+  HitDice: "15 (67hp)"
+  ExHitDice: 15
+  HitDiceRoll: 15d8
+  Attacks: "1 × weapon (8d6), 1 × lightning bolt"
+  THAC0: "9 [+10]"
+  Movement: "150’ (50’)"
+  SavingThrows: "D4 W5 P6 B5 S8 (15)"
+  Morale: "10"
+  Alignment: "Lawful"
+  XP: "1,350"
+  NumberAppearingRoaming: 1 
+  NumberAppearingLair:
+    $diceroll: 1d3
+  TreasureType: 
+    $roll: TreasureTypeE # + 5,000gp
+
+
+Gnoll:
+  $extends: Monster
+  Title: "Gnoll"
+  Intelligent: True
+  ArmourClass: "5 [14]"
+  HitDice: "2 (9hp)"
+  ExHitDice: 2
+  HitDiceRoll: 2d8
+  Attacks: "1 × weapon (2d4 or by weapon + 1)"
+  THAC0: "18 [+1]"
+  Movement: "90’ (30’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "8"
+  Alignment: "Chaotic"
+  XP: "20 (leader: 35)"
+  NumberAppearingRoaming:
+    $diceroll: 1d6 
+  NumberAppearingLair:
+    $diceroll: 3d6
+  TreasureType: 
+    $roll: TreasureTypeD
+
+
+Gnome:
+  $extends: Monster
+  Title: "Gnome"
+  Intelligent: True
+  ArmourClass: "5 [14]"
+  HitDice: "1 (4hp)"
+  ExHitDice: 1
+  HitDiceRoll: 1d8
+  Attacks: "1 × weapon (1d6 or by weapon)"
+  THAC0: "19 [0]"
+  Movement: "60’ (20’)"
+  SavingThrows: "D8 W9 P10 B13 S12 (D1)"
+  Morale: "8 (10 in sight of leader or chieftain)"
+  Alignment: "Lawful or Neutral"
+  XP: "10"
+  NumberAppearingRoaming:
+    $diceroll: 1d8 
+  NumberAppearingLair:
+    $diceroll: 5d8
+  TreasureType: 
+    $roll: TreasureTypeC
+
+
+Goblin:
+  $extends: Monster
+  Title: "Goblin"
+  Intelligent: True
+  ArmourClass: "6 [13]"
+  HitDice: "1–1 (3hp)"
+  ExHitDice: 1–1
+  HitDiceRoll: 1d8-1
+  Attacks: "1 × weapon (1d6 or by weapon)"
+  THAC0: "19 [0]"
+  Movement: "60’ (20’)"
+  SavingThrows: "D14 W15 P16 B17 S18 (NH)"
+  Morale: "7 (9 with king)"
+  Alignment: "Chaotic"
+  XP: "5 (bodyguard: 20, king: 35)"
+  NumberAppearingRoaming:
+    $diceroll: 2d4 
+  NumberAppearingLair:
+    $diceroll: 6d10
+  TreasureType: 
+    $roll: TreasureTypeR # (C)
+
+
+AmberGolem:
+  $extends: Monster
+  Title: "Amber Golem"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "10** (45hp)"
+  ExHitDice: 10
+  HitDiceRoll: 10d8
+  Attacks: "2 × claw (2d6), 1 × bite (2d10)"
+  THAC0: "11 [+8]"
+  Movement: "180’ (60’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (5)"
+  Morale: "12"
+  Alignment: "Neutral"
+  XP: "2,300"
+  NumberAppearingRoaming: 1 
+  NumberAppearingLair: 1
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+BoneGolem:
+  $extends: Monster
+  Title: "Bone Golem"
+  Intelligent: False
+  ArmourClass: "2 [17]"
+  HitDice: "8 (36hp)"
+  ExHitDice: 8
+  HitDiceRoll: 8d8
+  Attacks: "2 or 4 × weapon (1d6 or by weapon)"
+  THAC0: "12 [+7]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (4)"
+  Morale: "12"
+  Alignment: "Neutral"
+  XP: "650"
+  NumberAppearingRoaming: 1 
+  NumberAppearingLair: 1
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+BronzeGolem:
+  $extends: Monster
+  Title: "Bronze Golem"
+  Intelligent: False
+  ArmourClass: "0 [19]"
+  HitDice: "20** (90hp)"
+  ExHitDice: 20
+  HitDiceRoll: 20d8
+  Attacks: "1 × fist (3d10 + 1d10 heat)"
+  THAC0: "6 [+13]"
+  Movement: "240’ (80’)"
+  SavingThrows: "D6 W7 P8 B8 S10 (10)"
+  Morale: "12"
+  Alignment: "Neutral"
+  XP: "4"
+  NumberAppearingRoaming: 1 
+  NumberAppearingLair: 1
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+WoodGolem:
+  $extends: Monster
+  Title: "Wood Golem"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "2+2 (11hp)"
+  ExHitDice: 2+2
+  HitDiceRoll: 2d8+2
+  Attacks: "1 × fist (1d8)"
+  THAC0: "17 [+2]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "12"
+  Alignment: "Neutral"
+  XP: "25"
+  NumberAppearingRoaming: 1 
+  NumberAppearingLair: 1
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+Gorgon:
+  $extends: Monster
+  Title: "Gorgon"
+  Intelligent: False
+  ArmourClass: "2 [17]"
+  HitDice: "8* (36hp)"
+  ExHitDice: 8
+  HitDiceRoll: 8d8
+  Attacks: "1 × gore (2d6) or 1 × breath (petrify)"
+  THAC0: "12 [+7]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D8 W9 P10 B10 S12 (8)"
+  Morale: "8"
+  Alignment: "Chaotic"
+  XP: "1,200"
+  NumberAppearingRoaming:
+    $diceroll: 1d2 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeE
+
+
+GreenSlime:
+  $extends: Monster
+  Title: "Green Slime"
+  Intelligent: False
+  ArmourClass: "No hit roll required"
+  HitDice: "2* (9hp)"
+  ExHitDice: 2
+  HitDiceRoll: 2d8
+  Attacks: "1 × touch (consume flesh)"
+  THAC0: "18 [+1]"
+  Movement: "3’ (1’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "12"
+  Alignment: "Neutral"
+  XP: "25"
+  NumberAppearingRoaming: 1 
+  NumberAppearingLair: 0
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+GreyOoze:
+  $extends: Monster
+  Title: "Grey Ooze"
+  Intelligent: False
+  ArmourClass: "8 [11]"
+  HitDice: "3* (13hp)"
+  ExHitDice: 3
+  HitDiceRoll: 3d8
+  Attacks: "1 × touch (2d8)"
+  THAC0: "17 [+2]"
+  Movement: "10’ (3’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "12"
+  Alignment: "Neutral"
+  XP: "50"
+  NumberAppearingRoaming: 1 
+  NumberAppearingLair: 1
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+Griffon:
+  $extends: Monster
+  Title: "Griffon"
+  Intelligent: True
+  ArmourClass: "5 [14]"
+  HitDice: "7 (31hp)"
+  ExHitDice: 7
+  HitDiceRoll: 7d8
+  Attacks: "2 × claw (1d4), 1 × bite (2d8)"
+  THAC0: "13 [+6]"
+  Movement: "120’ (40’) / 360’ (120’) flying"
+  SavingThrows: "D10 W11 P12 B13 S14 (4)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "450"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 2d8
+  TreasureType: 
+    $roll: TreasureTypeE
+
+
+HalflingMonster:
+  $extends: Monster
+  Title: "Halfling (Monster)"
+  Intelligent: True
+  ArmourClass: "7 [12]"
+  HitDice: "1–1 (3hp)"
+  ExHitDice: 1–1
+  HitDiceRoll: 1d8-1
+  Attacks: "1 × weapon (1d6 or by weapon)"
+  THAC0: "19 [0]"
+  Movement: "90’ (30’)"
+  SavingThrows: "D8 W9 P10 B13 S12 (H1)"
+  Morale: "7"
+  Alignment: "Lawful"
+  XP: "5 (guard: 20)"
+  NumberAppearingRoaming:
+    $diceroll: 3d6 
+  NumberAppearingLair:
+    $diceroll: 5d8
+  TreasureType: 
+    $roll: TreasureTypeV # (B)
+
+
+Harpy:
+  $extends: Monster
+  Title: "Harpy"
+  Intelligent: True
+  ArmourClass: "7 [12]"
+  HitDice: "3* (13hp)"
+  ExHitDice: 3
+  HitDiceRoll: 3d8
+  Attacks: "2 × claw (1d4), 1 × weapon (1d6 or by weapon), 1 × song (charm)"
+  THAC0: "17 [+2]"
+  Movement: "60’ (20’) / 150’ (50’) flying"
+  SavingThrows: "D12 W13 P14 B15 S16 (3)"
+  Morale: "7"
+  Alignment: "Chaotic"
+  XP: "50"
+  NumberAppearingRoaming:
+    $diceroll: 1d6 
+  NumberAppearingLair:
+    $diceroll: 2d4
+  TreasureType: 
+    $roll: TreasureTypeC
+
+
+GiantHawk:
+  $extends: Monster
+  Title: "Giant Hawk"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "3+3 (16hp)"
+  ExHitDice: 3+3
+  HitDiceRoll: 3d8+3
+  Attacks: "1 × talons or beak (1d6)"
+  THAC0: "16 [+3]"
+  Movement: "450’ (150’) flying"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "50"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d3
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+NormalHawk:
+  $extends: Monster
+  Title: "Hawk"
+  Intelligent: False
+  ArmourClass: "8 [11]"
+  HitDice: "½ (2hp)"
+  ExHitDice: ½
+  HitDiceRoll: 1d4
+  Attacks: "1 × talons or beak (1d2)"
+  THAC0: "19 [0]"
+  Movement: "480’ (160’) flying"
+  SavingThrows: "D14 W15 P16 B17 S18 (NH)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "5"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d6
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+Hellhound:
+  $extends: Monster
+  Title: "Hellhound"
+  Intelligent: False
+  ArmourClass: "4 [15]"
+  HitDice: "3 to 7* (13/18/22/27/ 31hp)"
+  ExHitDice: 3
+  HitDiceRoll: 3d8
+  Attacks: "1 × bite (1d6) or 1 × breath (1d6 per HD)"
+  THAC0: "By HD (17 [+2] to 13 [+6])"
+  Movement: "120’ (40’)"
+  SavingThrows: "By HD"
+  Morale: "9"
+  Alignment: "Chaotic"
+  XP: "50/125/300/500/850"
+  NumberAppearingRoaming:
+    $diceroll: 2d4 
+  NumberAppearingLair:
+    $diceroll: 2d4
+  TreasureType: 
+    $roll: TreasureTypeC
+
+
+LargeHerdAnimal:
+  $extends: Monster
+  Title: "Large Herd Animal"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "4 (18hp)"
+  ExHitDice: 4
+  HitDiceRoll: 4d8
+  Attacks: "1 × butt (1d8)"
+  THAC0: "16 [+3]"
+  Movement: "240’ (80’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "5"
+  Alignment: "Neutral"
+  XP: "75"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 3d10
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+MediumHerdAnimal:
+  $extends: Monster
+  Title: "Medium Herd Animal"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "3 (13hp)"
+  ExHitDice: 3
+  HitDiceRoll: 3d8
+  Attacks: "1 × butt (1d6)"
+  THAC0: "17 [+2]"
+  Movement: "240’ (80’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "5"
+  Alignment: "Neutral"
+  XP: "35"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 3d10
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+SmallHerdAnimal:
+  $extends: Monster
+  Title: "Small Herd Animal"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "1 to 2 (4/9hp)"
+  ExHitDice: 1
+  HitDiceRoll: 1d8
+  Attacks: "1 × butt (1d4)"
+  THAC0: "19 [0]/18 [+1]"
+  Movement: "240’ (80’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "5"
+  Alignment: "Neutral"
+  XP: "10/20"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 3d10
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+Hippogriff:
+  $extends: Monster
+  Title: "Hippogriff"
+  Intelligent: False
+  ArmourClass: "5 [14]"
+  HitDice: "3+1 (14hp)"
+  ExHitDice: 3+1
+  HitDiceRoll: 3d8+1
+  Attacks: "2 × claw (1d6), 1 × bite (1d10)"
+  THAC0: "16 [+3]"
+  Movement: "180’ (60’) / 360’ (120’) flying"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "50"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 2d8
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+Hobgoblin:
+  $extends: Monster
+  Title: "Hobgoblin"
+  Intelligent: True
+  ArmourClass: "6 [13]"
+  HitDice: "1+1 (5hp)"
+  ExHitDice: 1+1
+  HitDiceRoll: 1d8+1
+  Attacks: "1 × weapon (1d8 or by weapon)"
+  THAC0: "18 [+1]"
+  Movement: "90’ (30’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "8 (10 with king)"
+  Alignment: "Chaotic"
+  XP: "15 (bodyguard: 75"
+  NumberAppearingRoaming:
+    $diceroll: 1d6 
+  NumberAppearingLair:
+    $diceroll: 4d6
+  TreasureType: 
+    $roll: TreasureTypeD
+
+
+DraftHorse:
+  $extends: Monster
+  Title: "Draft Horse"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "3 (13hp)"
+  ExHitDice: 3
+  HitDiceRoll: 3d8
+  Attacks: "None"
+  THAC0: "17 [+2]"
+  Movement: "90’ (30’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "6"
+  Alignment: "Neutral"
+  XP: "35"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair: 0
+  TreasureType: 
+    $roll: TreasureTypeNone
+  Cost: 40 gp
+
+
+RidingHorse:
+  $extends: Monster
+  Title: "Riding Horse"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "2 (9hp)"
+  ExHitDice: 2
+  HitDiceRoll: 2d8
+  Attacks: "2 × hoof (1d4)"
+  THAC0: "18 [+1]"
+  Movement: "240’ (80’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "20"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair: 0
+  TreasureType: 
+    $roll: TreasureTypeNone
+  Cost: 75 gp
+
+
+WarHorse:
+  $extends: Monster
+  Title: "War Horse"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "3 (13hp)"
+  ExHitDice: 3
+  HitDiceRoll: 3d8
+  Attacks: "2 × hoof (1d6)"
+  THAC0: "17 [+2]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "9"
+  Alignment: "Neutral"
+  XP: "35"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair: 0
+  TreasureType: 
+    $roll: TreasureTypeNone
+  Cost: 250 gp
+
+
+WildHorse:
+  $extends: Monster
+  Title: "Wild Horse"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "2 (9hp)"
+  ExHitDice: 2
+  HitDiceRoll: 2d8
+  Attacks: "2 × hoof (1d4)"
+  THAC0: "18 [+1]"
+  Movement: "240’ (80’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "20"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d10x10
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+Hydra:
+  $extends: Monster
+  Title: "Hydra"
+  Intelligent: False
+  ArmourClass: "5 [14]"
+  HitDice: "5 to 12 (8hp per HD)"
+  ExHitDice: 5
+  HitDiceRoll: 5d8
+  Attacks: "5 to 12 × bite (1d10)"
+  THAC0: "By HD (15 [+4] to 10 [+9])"
+  Movement: "120’ (40’)"
+  SavingThrows: "By HD"
+  Morale: "9"
+  Alignment: "Neutral"
+  XP: "175/275/450/50/900/900/1,100/1,100"
+  NumberAppearingRoaming: 1 
+  NumberAppearingLair: 1
+  TreasureType: 
+    $roll: TreasureTypeB
+
+
+InsectSwarm:
+  $extends: Monster
+  Title: "Insect Swarm"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "2 to 4 (9/13/18hp)"
+  ExHitDice: 2
+  HitDiceRoll: 2d8
+  Attacks: "1 × swarm (2 or 4hp)"
+  THAC0: "18 [+1]/17 [+2]/16 [+3]"
+  Movement: "30’ (10’) / 60’ (20’) flying"
+  SavingThrows: "D14 W15 P16 B17 S18 (NH)"
+  Morale: "11"
+  Alignment: "Neutral"
+  XP: "20/35/75"
+  NumberAppearingRoaming: 1 
+  NumberAppearingLair:
+    $diceroll: 1d3
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+InvisibleStalkerMonster:
+  $extends: Monster
+  Title: "Invisible Stalker (Monster)"
+  Intelligent: False
+  ArmourClass: "3 [16]"
+  HitDice: "8* (36hp)"
+  ExHitDice: 8
+  HitDiceRoll: 8d8
+  Attacks: "1 × blow (4d4)"
+  THAC0: "12 [+7]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D8 W9 P10 B10 S12 (8)"
+  Morale: "12"
+  Alignment: "Neutral"
+  XP: "1,200"
+  NumberAppearingRoaming: 1 
+  NumberAppearingLair: 1
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+KillerBee:
+  $extends: Monster
+  Title: "Killer Bee"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "½* (2hp)"
+  ExHitDice: ½
+  HitDiceRoll: 1d4
+  Attacks: "1 × sting (1d3 + poison + lodged stinger)"
+  THAC0: "19 [0]"
+  Movement: "150’ (50’) flying"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "9"
+  Alignment: "Neutral"
+  XP: "6 (guard: 13"
+  NumberAppearingRoaming:
+    $diceroll: 1d6 
+  NumberAppearingLair:
+    $diceroll: 5d6
+  TreasureType: 
+    $roll: TreasureTypeHoney
+
+
+Kobold:
+  $extends: Monster
+  Title: "Kobold"
+  Intelligent: True
+  ArmourClass: "7 [12]"
+  HitDice: "½ (2hp)"
+  ExHitDice: ½
+  HitDiceRoll: 1d4
+  Attacks: "1 × weapon (1d4 or by weapon – 1)"
+  THAC0: "19 [0]"
+  Movement: "60’ (20’)"
+  SavingThrows: "D14 W15 P16 B17 S18 (NH)"
+  Morale: "6 (8 with chieftain)"
+  Alignment: "Chaotic"
+  XP: "5 (bodyguard: 15, chieftain: 20)"
+  NumberAppearingRoaming:
+    $diceroll: 4d4 
+  NumberAppearingLair:
+    $diceroll: 6d10
+  TreasureType: 
+    $roll: TreasureTypeP # (J)
+
+
+LeechGiant:
+  $extends: Monster
+  Title: "Giant Leech"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "6 (27hp)"
+  ExHitDice: 6
+  HitDiceRoll: 6d8
+  Attacks: "1 × bite (1d6 + blood drain)"
+  THAC0: "14 [+5]"
+  Movement: "90’ (30’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (3)"
+  Morale: "10"
+  Alignment: "Neutral"
+  XP: "275"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+CrystalLivingStatue:
+  $extends: Monster
+  Title: "Crystal Living Statue"
+  Intelligent: False
+  ArmourClass: "4 [15]"
+  HitDice: "3 (13hp)"
+  ExHitDice: 3
+  HitDiceRoll: 3d8
+  Attacks: "2 × blow (1d6)"
+  THAC0: "17 [+2]"
+  Movement: "90’ (30’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (3)"
+  Morale: "11"
+  Alignment: "Lawful"
+  XP: "35"
+  NumberAppearingRoaming:
+    $diceroll: 1d6 
+  NumberAppearingLair:
+    $diceroll: 1d6
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+IronLivingStatue:
+  $extends: Monster
+  Title: "Iron Living Statue"
+  Intelligent: False
+  ArmourClass: "2 [17]"
+  HitDice: "4 (18hp)"
+  ExHitDice: 4
+  HitDiceRoll: 4d8
+  Attacks: "2 × blow (1d8)"
+  THAC0: "16 [+3]"
+  Movement: "30’ (10’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (4)"
+  Morale: "11"
+  Alignment: "Neutral"
+  XP: "75"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+RockLivingStatue:
+  $extends: Monster
+  Title: "Rock Living Statue"
+  Intelligent: False
+  ArmourClass: "4 [15]"
+  HitDice: "5** (22hp)"
+  ExHitDice: 5
+  HitDiceRoll: 5d8
+  Attacks: "2 × magma jet (2d6)"
+  THAC0: "15 [+4]"
+  Movement: "60’ (20’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (5)"
+  Morale: "11"
+  Alignment: "Chaotic"
+  XP: "425"
+  NumberAppearingRoaming:
+    $diceroll: 1d3 
+  NumberAppearingLair:
+    $diceroll: 1d3
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+Draco:
+  $extends: Monster
+  Title: "Draco"
+  Intelligent: False
+  ArmourClass: "5 [14]"
+  HitDice: "4+2 (20hp)"
+  ExHitDice: 4+2
+  HitDiceRoll: 4d8+2
+  Attacks: "1 × bite (1d10)"
+  THAC0: "15 [+4]"
+  Movement: "120’ (40’) / 210’ (70’) gliding"
+  SavingThrows: "D12 W13 P14 B15 S16 (3)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "125"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d8
+  TreasureType: 
+    $roll: TreasureTypeU # B15 S16 (2)
+
+
+Gecko:
+  $extends: Monster
+  Title: "Gecko"
+  Intelligent: False
+  ArmourClass: "5 [14]"
+  HitDice: "3+1 (14hp)"
+  ExHitDice: 3+1
+  HitDiceRoll: 3d8+1
+  Attacks: "1 × bite (1d8)"
+  THAC0: "16 [+3]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "50"
+  NumberAppearingRoaming:
+    $diceroll: 1d6 
+  NumberAppearingLair:
+    $diceroll: 1d10
+  TreasureType: 
+    $roll: TreasureTypeU
+
+
+HornedChameleon:
+  $extends: Monster
+  Title: "Horned Chameleon"
+  Intelligent: False
+  ArmourClass: "2 [17]"
+  HitDice: "5* (22hp)"
+  ExHitDice: 5
+  HitDiceRoll: 5d8
+  Attacks: "1 × tongue/bite (2d4), 1 × horn (1d6), 1 × tail (knock down"
+  THAC0: "15 [+4]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (3)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "300"
+  NumberAppearingRoaming:
+    $diceroll: 1d3 
+  NumberAppearingLair:
+    $diceroll: 1d6
+  TreasureType: 
+    $roll: TreasureTypeU
+
+
+Tuatara:
+  $extends: Monster
+  Title: "Tuatara"
+  Intelligent: False
+  ArmourClass: "4 [15]"
+  HitDice: "6 (27hp)"
+  ExHitDice: 6
+  HitDiceRoll: 6d8
+  Attacks: "2 × claw (1d4)"
+  THAC0: "14 [+5]"
+  Movement: "90’ (30’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (4)"
+  Morale: "6"
+  Alignment: "Neutral"
+  XP: "275"
+  NumberAppearingRoaming:
+    $diceroll: 1d2 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeV
+
+
+LizardMan:
+  $extends: Monster
+  Title: "Lizard Man"
+  Intelligent: True
+  ArmourClass: "5 [14]"
+  HitDice: "2+1 (10hp)"
+  ExHitDice: 2+1
+  HitDiceRoll: 2d8+1
+  Attacks: "1 × weapon (1d6+1 or by weapon + 1)"
+  THAC0: "17 [+2]"
+  Movement: "60’ (20’) / 120’ (40’) in water"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "12"
+  Alignment: "Neutral"
+  XP: "25"
+  NumberAppearingRoaming:
+    $diceroll: 2d4 
+  NumberAppearingLair:
+    $diceroll: 6d6
+  TreasureType: 
+    $roll: TreasureTypeD
+
+
+DevilSwine:
+  $extends: Monster
+  Title: "Devil Swine"
+  Intelligent: True
+  ArmourClass: "3 [16] (9 [10] in human form)"
+  HitDice: "9* (40hp)"
+  ExHitDice: 9
+  HitDiceRoll: 9d8
+  Attacks: "1 × gore (2d6) or 1 × weapon (1d6 or by weapon) or 1 × magic (charm)"
+  THAC0: "12 [+7]"
+  Movement: "180’ (60’) / 120’ (40’) in human form"
+  SavingThrows: "D8 W9 P10 B10 S12 (9)"
+  Morale: "10"
+  Alignment: "Chaotic"
+  XP: "1,600"
+  NumberAppearingRoaming:
+    $diceroll: 1d3 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeC
+
+
+Werebear:
+  $extends: Monster
+  Title: "Werebear"
+  Intelligent: True
+  ArmourClass: "2 [17] (8 [11] in human form)"
+  HitDice: "6* (27hp)"
+  ExHitDice: 6
+  HitDiceRoll: 6d8
+  Attacks: "2 × claw (2d4), 1 × bite (2d8)"
+  THAC0: "14 [+5]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (6)"
+  Morale: "10"
+  Alignment: "Neutral"
+  XP: "500"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeC
+
+
+Wereboar:
+  $extends: Monster
+  Title: "Wereboar"
+  Intelligent: True
+  ArmourClass: "4 [15] (9 [10] in human form)"
+  HitDice: "4+1* (19hp)"
+  ExHitDice: 4+1
+  HitDiceRoll: 4d8+1
+  Attacks: "1 × tusk/bite (2d6)"
+  THAC0: "15 [+4]"
+  Movement: "150’ (50’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (4)"
+  Morale: "9"
+  Alignment: "Neutral"
+  XP: "200"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 2d4
+  TreasureType: 
+    $roll: TreasureTypeC
+
+
+Wererat:
+  $extends: Monster
+  Title: "Wererat"
+  Intelligent: True
+  ArmourClass: "7 [12] (9 [10] in human form)"
+  HitDice: "3* (13hp)"
+  ExHitDice: 3
+  HitDiceRoll: 3d8
+  Attacks: "1 × bite (1d4) or 1 × weapon (1d6 or by weapon)"
+  THAC0: "17 [+2]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (3)"
+  Morale: "8"
+  Alignment: "Chaotic"
+  XP: "50"
+  NumberAppearingRoaming:
+    $diceroll: 1d8 
+  NumberAppearingLair:
+    $diceroll: 2d8
+  TreasureType: 
+    $roll: TreasureTypeC
+
+
+Weretiger:
+  $extends: Monster
+  Title: "Weretiger"
+  Intelligent: True
+  ArmourClass: "3 [16] (9 [10] in human form)"
+  HitDice: "5* (22hp)"
+  ExHitDice: 5
+  HitDiceRoll: 5d8
+  Attacks: "2 × claw (1d6), 1 × bite (2d6)"
+  THAC0: "15 [+4]"
+  Movement: "150’ (50’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (5)"
+  Morale: "9"
+  Alignment: "Neutral"
+  XP: "300"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeC
+
+
+Werewolf:
+  $extends: Monster
+  Title: "Werewolf"
+  Intelligent: True
+  ArmourClass: "5 [14] (9 [10] in human form)"
+  HitDice: "4* (18hp)"
+  ExHitDice: 4
+  HitDiceRoll: 4d8
+  Attacks: "1 × bite (2d4)"
+  THAC0: "16 [+3]"
+  Movement: "180’ (60’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (4)"
+  Morale: "8"
+  Alignment: "Chaotic"
+  XP: "125 (leader: 300)"
+  NumberAppearingRoaming:
+    $diceroll: 1d6 
+  NumberAppearingLair:
+    $diceroll: 2d6
+  TreasureType: 
+    $roll: TreasureTypeC
+
+
+Manticore:
+  $extends: Monster
+  Title: "Manticore"
+  Intelligent: False
+  ArmourClass: "4 [15]"
+  HitDice: "6+1 (28hp)"
+  ExHitDice: 6+1
+  HitDiceRoll: 6d8+1
+  Attacks: "[2 × claw (1d4), 1 × bite (2d4)] or 6 × tail spike (1d6)"
+  THAC0: "13 [+6]"
+  Movement: "120’ (40’) / 180’ (60’) flying"
+  SavingThrows: "D10 W11 P12 B13 S14 (6)"
+  Morale: "9"
+  Alignment: "Chaotic"
+  XP: "350"
+  NumberAppearingRoaming:
+    $diceroll: 1d2 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeD
+
+
+Mastodon:
+  $extends: Monster
+  Title: "Mastodon"
+  Intelligent: False
+  ArmourClass: "3 [16]"
+  HitDice: "15 (67hp)"
+  ExHitDice: 15
+  HitDiceRoll: 15d8
+  Attacks: "2 × tusk (2d6) or 1 × trample (4d8)"
+  THAC0: "9 [+10]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D8 W9 P10 B10 S12 (8)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "1,350"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 2d8
+  TreasureType: 
+    $roll: TreasureTypeTusks
+
+
+Medium:
+  $extends: Monster
+  Title: "Medium"
+  Intelligent: True
+  ArmourClass: "9 [10]"
+  HitDice: "1** (4hp)"
+  ExHitDice: 1
+  HitDiceRoll: 1d8
+  Attacks: "1 × dagger (1d4) or 1 × spell"
+  THAC0: "19 [0]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D13 W14 P13 B16 S15 (MU1)"
+  Morale: "7"
+  Alignment: "Any"
+  XP: "16"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d12
+  TreasureType: 
+    $roll: TreasureTypeV
+
+
+Medusa:
+  $extends: Monster
+  Title: "Medusa"
+  Intelligent: True
+  ArmourClass: "8 [11]"
+  HitDice: "4** (18hp)"
+  ExHitDice: 4
+  HitDiceRoll: 4d8
+  Attacks: "1 × snakebites (1d6 + poison)"
+  THAC0: "16 [+3]"
+  Movement: "90’ (30’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (4)"
+  Morale: "8"
+  Alignment: "Chaotic"
+  XP: "175"
+  NumberAppearingRoaming:
+    $diceroll: 1d3 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeF
+
+
+Merchant:
+  $extends: Monster
+  Title: "Merchant"
+  Intelligent: True
+  ArmourClass: "5 [14]"
+  HitDice: "1 (4hp)"
+  ExHitDice: 1
+  HitDiceRoll: 1d8
+  Attacks: "1 × weapon (1d6 or by weapon)"
+  THAC0: "19 [0]"
+  Movement: "90’ (30’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "Varies"
+  Alignment: "Neutral"
+  XP: "10"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d20
+  TreasureType: 
+    $roll: TreasureTypeA
+
+
+Merman:
+  $extends: Monster
+  Title: "Merman"
+  Intelligent: True
+  ArmourClass: "6 [13]"
+  HitDice: "1 (4hp)"
+  ExHitDice: 1
+  HitDiceRoll: 1d8
+  Attacks: "1 × weapon (1d6 or by weapon)"
+  THAC0: "19 [0]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "10 (leader: 20/75)"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d20
+  TreasureType: 
+    $roll: TreasureTypeA
+
+
+Minotaur:
+  $extends: Monster
+  Title: "Minotaur"
+  Intelligent: True
+  ArmourClass: "6 [13]"
+  HitDice: "6 (27hp)"
+  ExHitDice: 6
+  HitDiceRoll: 6d8
+  Attacks: "[1 × gore (1d6), 1 × bite] or 1 × weapon (1d6 + 2 or by weapon + 2)"
+  THAC0: "14 [+5]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (6)"
+  Morale: "12"
+  Alignment: "Chaotic"
+  XP: "275"
+  NumberAppearingRoaming:
+    $diceroll: 1d6 
+  NumberAppearingLair:
+    $diceroll: 1d8
+  TreasureType: 
+    $roll: TreasureTypeC
+
+
+Mule:
+  $extends: Monster
+  Title: "Mule"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "2 (9hp)"
+  ExHitDice: 2
+  HitDiceRoll: 2d8
+  Attacks: "1 × kick (1d4) or 1 × bite (1d3)"
+  THAC0: "18 [+1]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D14 W15 P16 B17 S18 (NH)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "20"
+  NumberAppearingRoaming:
+    $diceroll: 1d8 
+  NumberAppearingLair:
+    $diceroll: 2d6
+  TreasureType: 
+    $roll: TreasureTypeNone
+  Cost: 30 gp
+
+
+Mummy:
+  $extends: Monster
+  Title: "Mummy"
+  Intelligent: False
+  ArmourClass: "3 [16]"
+  HitDice: "5+1* (23hp)"
+  ExHitDice: 5+1
+  HitDiceRoll: 5d8+1
+  Attacks: "1 × touch (1d12 + disease)"
+  THAC0: "14 [+5]"
+  Movement: "60’ (20’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (5)"
+  Morale: "12"
+  Alignment: "Chaotic"
+  XP: "400"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d12
+  TreasureType: 
+    $roll: TreasureTypeD
+
+
+NeanderthalCaveman:
+  $extends: Monster
+  Title: "Neanderthal (Caveman)"
+  Intelligent: False
+  ArmourClass: "8 [11]"
+  HitDice: "2 (9hp)"
+  ExHitDice: 2
+  HitDiceRoll: 2d8
+  Attacks: "1 × weapon (2d4 or by weapon + 1)"
+  THAC0: "18 [+1]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "7"
+  Alignment: "Lawful"
+  XP: "20"
+  NumberAppearingRoaming:
+    $diceroll: 1d10 
+  NumberAppearingLair:
+    $diceroll: 1d4x10
+  TreasureType: 
+    $roll: TreasureTypeC
+
+
+Nixie:
+  $extends: Monster
+  Title: "Nixie"
+  Intelligent: True
+  ArmourClass: "7 [12]"
+  HitDice: "1 (4hp)"
+  ExHitDice: 1
+  HitDiceRoll: 1d8
+  Attacks: "1 × weapon (1d4) or 1 × group spell (charm)"
+  THAC0: "19 [0]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P13 B15 S15 (E1)"
+  Morale: "6"
+  Alignment: "Neutral"
+  XP: "10"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 2d20
+  TreasureType: 
+    $roll: TreasureTypeB
+
+
+Noble:
+  $extends: Monster
+  Title: "Noble"
+  Intelligent: True
+  ArmourClass: "2 [17]"
+  HitDice: "3 (13hp)"
+  ExHitDice: 3
+  HitDiceRoll: 3d8
+  Attacks: "1 × weapon (1d8 or by weapon)"
+  THAC0: "17 [+2]"
+  Movement: "60’ (20’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (3)"
+  Morale: "8"
+  Alignment: "Any"
+  XP: "35"
+  NumberAppearingRoaming:
+    $diceroll: 2d6 
+  NumberAppearingLair:
+    $diceroll: 2d6
+  TreasureType: 
+    $roll: TreasureTypeV # × 3
+
+
+Nomad:
+  $extends: Monster
+  Title: "Nomad"
+  Intelligent: True
+  ArmourClass: "7 [12] to 4"
+  HitDice: "1 (4hp)"
+  ExHitDice: 1
+  HitDiceRoll: 1d8
+  Attacks: "1 × weapon (1d6 or by weapon)"
+  THAC0: "19 [0]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "8"
+  Alignment: "Any"
+  XP: "10"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d4x10
+  TreasureType: 
+    $roll: TreasureTypeA
+
+
+NormalHuman:
+  $extends: Monster
+  Title: "Human"
+  Intelligent: True
+  ArmourClass: "9 [10]"
+  HitDice: "½ (2hp)"
+  ExHitDice: ½
+  HitDiceRoll: 1d4
+  Attacks: "1 × weapon (1d6 or by weapon)"
+  THAC0: "20 [–1]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D14 W15 P16 B17 S18 (NH)"
+  Morale: "6"
+  Alignment: "Any"
+  XP: "5"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d20
+  TreasureType: 
+    $roll: TreasureTypeU
+
+
+OchreJelly:
+  $extends: Monster
+  Title: "Ochre Jelly"
+  Intelligent: False
+  ArmourClass: "8 [11]"
+  HitDice: "5* (22hp)"
+  ExHitDice: 5
+  HitDiceRoll: 5d8
+  Attacks: "1 × touch (2d6)"
+  THAC0: "15 [+4]"
+  Movement: "30’ (10’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (3)"
+  Morale: "12"
+  Alignment: "Neutral"
+  XP: "300"
+  NumberAppearingRoaming: 1 
+  NumberAppearingLair: 0
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+OctopusGiant:
+  $extends: Monster
+  Title: "Giant Octopus"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "8 (36hp)"
+  ExHitDice: 8
+  HitDiceRoll: 8d8
+  Attacks: "8 × tentacle (1d3 + constriction), 1 × bite (1d6)"
+  THAC0: "12 [+7]"
+  Movement: "90’ (30’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (4)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "650"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d2
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+Ogre:
+  $extends: Monster
+  Title: "Ogre"
+  Intelligent: True
+  ArmourClass: "5 [14]"
+  HitDice: "4+1 (19hp)"
+  ExHitDice: 4+1
+  HitDiceRoll: 4d8+1
+  Attacks: "1 × club (1d10)"
+  THAC0: "15 [+4]"
+  Movement: "90’ (30’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (4)"
+  Morale: "10"
+  Alignment: "Chaotic"
+  XP: "125"
+  NumberAppearingRoaming:
+    $diceroll: 1d6 
+  NumberAppearingLair:
+    $diceroll: 2d6
+  TreasureType: 
+    $roll: TreasureTypeC # + 1
+
+
+Orc:
+  $extends: Monster
+  Title: "Orc"
+  Intelligent: True
+  ArmourClass: "6 [13]"
+  HitDice: "1 (4hp)"
+  ExHitDice: 1
+  HitDiceRoll: 1d8
+  Attacks: "1 × weapon (1d6 or by weapon)"
+  THAC0: "19 [0]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "6 (8 with leader)"
+  Alignment: "Chaotic"
+  XP: "10 (leader: 10"
+  NumberAppearingRoaming:
+    $diceroll: 2d4 
+  NumberAppearingLair:
+    $diceroll: 1d6x10
+  TreasureType: 
+    $roll: TreasureTypeD
+
+
+OwlBear:
+  $extends: Monster
+  Title: "Owl Bear"
+  Intelligent: False
+  ArmourClass: "5 [14]"
+  HitDice: "5 (22hp)"
+  ExHitDice: 5
+  HitDiceRoll: 5d8
+  Attacks: "2 × claw (1d8), 1 × bite (1d8)"
+  THAC0: "15 [+4]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (3)"
+  Morale: "9"
+  Alignment: "Neutral"
+  XP: "175"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeC
+
+
+Pegasus:
+  $extends: Monster
+  Title: "Pegasus"
+  Intelligent: True
+  ArmourClass: "6 [13]"
+  HitDice: "2+2 (11hp)"
+  ExHitDice: 2+2
+  HitDiceRoll: 2d8+2
+  Attacks: "2 × hoof (1d6)"
+  THAC0: "17 [+2]"
+  Movement: "240’ (80’) / 480’ (160’) flying"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "8"
+  Alignment: "Lawful"
+  XP: "25"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d12
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+Pirate:
+  $extends: Monster
+  Title: "Pirate"
+  Intelligent: True
+  ArmourClass: "7 [12] or 5"
+  HitDice: "1 (4hp)"
+  ExHitDice: 1
+  HitDiceRoll: 1d8
+  Attacks: "1 × weapon (1d6 or by weapon)"
+  THAC0: "19 [0]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "7"
+  Alignment: "Chaotic"
+  XP: "10"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair: 0
+  TreasureType: 
+    $roll: TreasureTypeA
+
+
+Pixie:
+  $extends: Monster
+  Title: "Pixie"
+  Intelligent: True
+  ArmourClass: "3 [16]"
+  HitDice: "1* (4hp)"
+  ExHitDice: 1
+  HitDiceRoll: 1d8
+  Attacks: "1 × dagger (1d4)"
+  THAC0: "19 [0]"
+  Movement: "90’ (30’) / 180’ (60’) flying"
+  SavingThrows: "D12 W13 P13 B15 S15 (E1)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "13"
+  NumberAppearingRoaming:
+    $diceroll: 2d4 
+  NumberAppearingLair:
+    $diceroll: 1d4x10
+  TreasureType: 
+    $roll: TreasureTypeR # + S
+
+
+Pteranodon:
+  $extends: Monster
+  Title: "Pteranodon"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "5 (22hp)"
+  ExHitDice: 5
+  HitDiceRoll: 5d8
+  Attacks: "1 × bite (1d12)"
+  THAC0: "15 [+4]"
+  Movement: "240’ (80’) flying"
+  SavingThrows: "D12 W13 P14 B15 S16 (3)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "175"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeV
+
+
+Pterodactyl:
+  $extends: Monster
+  Title: "Pterodactyl"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "1 (4hp)"
+  ExHitDice: 1
+  HitDiceRoll: 1d8
+  Attacks: "1 × bite (1d3)"
+  THAC0: "19 [0]"
+  Movement: "180’ (60’) flying"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "10"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 2d4
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+PurpleWorm:
+  $extends: Monster
+  Title: "Purple Worm"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "15* (67hp)"
+  ExHitDice: 15
+  HitDiceRoll: 15d8
+  Attacks: "1 × bite (2d8), 1 × sting (1d8 + poison)"
+  THAC0: "9 [+10]"
+  Movement: "60’ (20’)"
+  SavingThrows: "D8 W9 P10 B10 S12 (8)"
+  Morale: "10"
+  Alignment: "Neutral"
+  XP: "2,300"
+  NumberAppearingRoaming:
+    $diceroll: 1d2 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeD
+
+
+GiantRat:
+  $extends: Monster
+  Title: "Giant Rat"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "½ (2hp)"
+  ExHitDice: ½
+  HitDiceRoll: 1d4
+  Attacks: "1 × bite (1d3 + disease)"
+  THAC0: "19 [0]"
+  Movement: "120’ (40’) / 60’ (20’) swimming"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "5"
+  NumberAppearingRoaming:
+    $diceroll: 3d6 
+  NumberAppearingLair:
+    $diceroll: 3d10
+  TreasureType: 
+    $roll: TreasureTypeC
+
+
+NormalRat:
+  $extends: Monster
+  Title: "Rat"
+  Intelligent: False
+  ArmourClass: "9 [10]"
+  HitDice: "1hp"
+  ExHitDice: 1hp
+  HitDiceRoll: 1d1
+  Attacks: "1 × bite per pack (1d6 + disease)"
+  THAC0: "19 [0]"
+  Movement: "60’ (20’) / 30’ (10’) swimming"
+  SavingThrows: "D14 W15 P16 B17 S18 (NH)"
+  Morale: "5"
+  Alignment: "Neutral"
+  XP: "5"
+  NumberAppearingRoaming:
+    $diceroll: 5d10 
+  NumberAppearingLair:
+    $diceroll: 2d10
+  TreasureType: 
+    $roll: TreasureTypeL
+
+
+Rhagodessa:
+  $extends: Monster
+  Title: "Rhagodessa"
+  Intelligent: False
+  ArmourClass: "5 [14]"
+  HitDice: "4+2 (20hp)"
+  ExHitDice: 4+2
+  HitDiceRoll: 4d8+2
+  Attacks: "1 × sucker (grab), 1 × bite (2d8)"
+  THAC0: "15 [+4]"
+  Movement: "150’ (50’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "9"
+  Alignment: "Neutral"
+  XP: "125"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d6
+  TreasureType: 
+    $roll: TreasureTypeU
+
+
+NormalRhinoceros:
+  $extends: Monster
+  Title: "Rhinoceros"
+  Intelligent: False
+  ArmourClass: "5 [14]"
+  HitDice: "6 (27hp)"
+  ExHitDice: 6
+  HitDiceRoll: 6d8
+  Attacks: "1 × horn (2d4) or 1 × trample (2d8)"
+  THAC0: "14 [+5]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (3)"
+  Morale: "6"
+  Alignment: "Neutral"
+  XP: "275"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d12
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+WoollyRhinoceros:
+  $extends: Monster
+  Title: "Woolly Rhinoceros"
+  Intelligent: False
+  ArmourClass: "4 [15]"
+  HitDice: "8 (36hp)"
+  ExHitDice: 8
+  HitDiceRoll: 8d8
+  Attacks: "1 × horn (2d6) or 1 × trample (2d12)"
+  THAC0: "12 [+7]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (4)"
+  Morale: "6"
+  Alignment: "Neutral"
+  XP: "650"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d8
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+RobberFly:
+  $extends: Monster
+  Title: "Robber Fly"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "2 (9hp)"
+  ExHitDice: 2
+  HitDiceRoll: 2d8
+  Attacks: "1 × bite (1d8)"
+  THAC0: "18 [+1]"
+  Movement: "90’ (30’) / 180’ (60’) flying"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "20"
+  NumberAppearingRoaming:
+    $diceroll: 1d6 
+  NumberAppearingLair:
+    $diceroll: 2d6
+  TreasureType: 
+    $roll: TreasureTypeU
+
+
+GiantRoc:
+  $extends: Monster
+  Title: "Giant Roc"
+  Intelligent: False
+  ArmourClass: "0 [19]"
+  HitDice: "36 (162hp)"
+  ExHitDice: 36
+  HitDiceRoll: 36d8
+  Attacks: "2 × claw (3d6), 1 × bite (8d6)"
+  THAC0: "5 [+14]"
+  Movement: "60’ (20’) / 480’ (160’) flying"
+  SavingThrows: "D2 W3 P4 B3 S6 (18)"
+  Morale: "10 (12 in lair)"
+  Alignment: "Lawful"
+  XP: "6,250"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair: 1
+  TreasureType: 
+    $roll: TreasureTypeI
+
+
+LargeRoc:
+  $extends: Monster
+  Title: "Large Roc"
+  Intelligent: False
+  ArmourClass: "2 [17]"
+  HitDice: "12 (54hp)"
+  ExHitDice: 12
+  HitDiceRoll: 12d8
+  Attacks: "2 × claw (1d8), 1 × bite (2d10)"
+  THAC0: "10 [+9]"
+  Movement: "60’ (20’) / 480’ (160’) flying"
+  SavingThrows: "D10 W11 P12 B13 S14 (6)"
+  Morale: "9 (12 in lair)"
+  Alignment: "Lawful"
+  XP: "1,100"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d8
+  TreasureType: 
+    $roll: TreasureTypeI
+
+
+SmallRoc:
+  $extends: Monster
+  Title: "Small Roc"
+  Intelligent: False
+  ArmourClass: "4 [15]"
+  HitDice: "6 (27hp)"
+  ExHitDice: 6
+  HitDiceRoll: 6d8
+  Attacks: "2 × claw (1d4+1), 1 × bite (2d6)"
+  THAC0: "14 [+5]"
+  Movement: "60’ (20’) / 480’ (160’) flying"
+  SavingThrows: "D12 W13 P14 B15 S16 (3)"
+  Morale: "8 (12 in lair)"
+  Alignment: "Lawful"
+  XP: "275"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d12
+  TreasureType: 
+    $roll: TreasureTypeI
+
+
+RockBaboon:
+  $extends: Monster
+  Title: "Rock Baboon"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "2 (9hp)"
+  ExHitDice: 2
+  HitDiceRoll: 2d8
+  Attacks: "1 × club (1d6), 1 × bite (1d3)"
+  THAC0: "18 [+1]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "20"
+  NumberAppearingRoaming:
+    $diceroll: 2d6 
+  NumberAppearingLair:
+    $diceroll: 5d6
+  TreasureType: 
+    $roll: TreasureTypeU
+
+
+RustMonster:
+  $extends: Monster
+  Title: "Rust Monster"
+  Intelligent: False
+  ArmourClass: "2 [17]"
+  HitDice: "5 (22hp)"
+  ExHitDice: 5
+  HitDiceRoll: 5d8
+  Attacks: "1 × feeler (rusting)"
+  THAC0: "15 [+4]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (3)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "175"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+FlameSalamander:
+  $extends: Monster
+  Title: "Flame Salamander"
+  Intelligent: False
+  ArmourClass: "2 [17]"
+  HitDice: "8* (36hp)"
+  ExHitDice: 8
+  HitDiceRoll: 8d8
+  Attacks: "2 × claw (1d4), 1 × bite (1d8), 1 × heat aura (1d8)"
+  THAC0: "12 [+7]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D8 W9 P10 B10 S12 (8)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "1,200"
+  NumberAppearingRoaming:
+    $diceroll: 1d4+1 
+  NumberAppearingLair:
+    $diceroll: 2d4
+  TreasureType: 
+    $roll: TreasureTypeF
+
+
+FrostSalamander:
+  $extends: Monster
+  Title: "Frost Salamander"
+  Intelligent: False
+  ArmourClass: "3 [16]"
+  HitDice: "12* (54hp)"
+  ExHitDice: 12
+  HitDiceRoll: 12d8
+  Attacks: "4 × claw (1d6), 1 × bite (2d6), 1 × cold aura (1d8)"
+  THAC0: "10 [+9]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D6 W7 P8 B8 S10 (12)"
+  Morale: "9"
+  Alignment: "Chaotic"
+  XP: "1,900"
+  NumberAppearingRoaming:
+    $diceroll: 1d3 
+  NumberAppearingLair:
+    $diceroll: 1d3
+  TreasureType: 
+    $roll: TreasureTypeE
+
+
+ScorpionGiant:
+  $extends: Monster
+  Title: "Giant Scorpion"
+  Intelligent: False
+  ArmourClass: "2 [17]"
+  HitDice: "4* (18hp)"
+  ExHitDice: 4
+  HitDiceRoll: 4d8
+  Attacks: "2 × claw (1d10), 1 × sting (1d4 + poison)"
+  THAC0: "16 [+3]"
+  Movement: "150’ (50’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "11"
+  Alignment: "Chaotic"
+  XP: "125"
+  NumberAppearingRoaming:
+    $diceroll: 1d6 
+  NumberAppearingLair:
+    $diceroll: 1d6
+  TreasureType: 
+    $roll: TreasureTypeV
+
+
+SeaSerpentLesser:
+  $extends: Monster
+  Title: "Sea Serpent"
+  Intelligent: False
+  ArmourClass: "5 [14]"
+  HitDice: "6 (27hp)"
+  ExHitDice: 6
+  HitDiceRoll: 6d8
+  Attacks: "1 × bite (2d6) or 1 × squeeze (1d10 hull damage)"
+  THAC0: "14 [+5]"
+  Movement: "150’ (50’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (3)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "275"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 2d6
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+Shadow:
+  $extends: Monster
+  Title: "Shadow"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "2+2* (11hp)"
+  ExHitDice: 2+2
+  HitDiceRoll: 2d8+2
+  Attacks: "1 × touch (1d4 + strength drain)"
+  THAC0: "17 [+2]"
+  Movement: "90’ (30’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "12"
+  Alignment: "Chaotic"
+  XP: "35"
+  NumberAppearingRoaming:
+    $diceroll: 1d8 
+  NumberAppearingLair:
+    $diceroll: 1d12
+  TreasureType: 
+    $roll: TreasureTypeF
+
+
+BullShark:
+  $extends: Monster
+  Title: "Bull Shark"
+  Intelligent: False
+  ArmourClass: "4 [15]"
+  HitDice: "2 (9hp)"
+  ExHitDice: 2
+  HitDiceRoll: 2d8
+  Attacks: "1 × bite (2d4) or 1 × ram (stun)"
+  THAC0: "18 [+1]"
+  Movement: "180’ (60’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "20"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 3d6
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+GreatWhiteShark:
+  $extends: Monster
+  Title: "Great White Shark"
+  Intelligent: False
+  ArmourClass: "4 [15]"
+  HitDice: "8 (36hp)"
+  ExHitDice: 8
+  HitDiceRoll: 8d8
+  Attacks: "1 × bite (2d10)"
+  THAC0: "12 [+7]"
+  Movement: "180’ (60’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (4)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "650"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+MakoShark:
+  $extends: Monster
+  Title: "Mako Shark"
+  Intelligent: False
+  ArmourClass: "4 [15]"
+  HitDice: "4 (18hp)"
+  ExHitDice: 4
+  HitDiceRoll: 4d8
+  Attacks: "1 × bite (2d6)"
+  THAC0: "16 [+3]"
+  Movement: "180’ (60’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "75"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 2d6
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+ShrewGiant:
+  $extends: Monster
+  Title: "Giant Shrew"
+  Intelligent: False
+  ArmourClass: "4 [15]"
+  HitDice: "1 (4hp)"
+  ExHitDice: 1
+  HitDiceRoll: 1d8
+  Attacks: "2 × bite (1d6)"
+  THAC0: "19 [0]"
+  Movement: "180’ (60’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "10"
+  Alignment: "Neutral"
+  XP: "10"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d8
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+Shrieker:
+  $extends: Monster
+  Title: "Shrieker"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "3 (13hp)"
+  ExHitDice: 3
+  HitDiceRoll: 3d8
+  Attacks: "None"
+  THAC0: "17 [+2]"
+  Movement: "9’ (3’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "12"
+  Alignment: "Neutral"
+  XP: "35"
+  NumberAppearingRoaming:
+    $diceroll: 1d8 
+  NumberAppearingLair: 0
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+Skeleton:
+  $extends: Monster
+  Title: "Skeleton"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "1 (4hp)"
+  ExHitDice: 1
+  HitDiceRoll: 1d8
+  Attacks: "1 × weapon (1d6 or by weapon)"
+  THAC0: "19 [0]"
+  Movement: "60’ (20’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "12"
+  Alignment: "Chaotic"
+  XP: "10"
+  NumberAppearingRoaming:
+    $diceroll: 3d4 
+  NumberAppearingLair:
+    $diceroll: 3d10
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+GiantRattler:
+  $extends: Monster
+  Title: "Giant Rattler"
+  Intelligent: False
+  ArmourClass: "5 [14]"
+  HitDice: "4* (18hp)"
+  ExHitDice: 4
+  HitDiceRoll: 4d8
+  Attacks: "2 × bite (1d4 + poison)"
+  THAC0: "16 [+3]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "125"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeU
+
+
+PitViper:
+  $extends: Monster
+  Title: "Pit Viper"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "2* (9hp)"
+  ExHitDice: 2
+  HitDiceRoll: 2d8
+  Attacks: "1 × bite (1d4 + poison)"
+  THAC0: "18 [+1]"
+  Movement: "90’ (30’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "25"
+  NumberAppearingRoaming:
+    $diceroll: 1d8 
+  NumberAppearingLair:
+    $diceroll: 1d8
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+RockPython:
+  $extends: Monster
+  Title: "Rock Python"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "5* (22hp)"
+  ExHitDice: 5
+  HitDiceRoll: 5d8
+  Attacks: "1 × bite (1d4 + constriction)"
+  THAC0: "15 [+4]"
+  Movement: "90’ (30’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (3)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "300"
+  NumberAppearingRoaming:
+    $diceroll: 1d3 
+  NumberAppearingLair:
+    $diceroll: 1d3
+  TreasureType: 
+    $roll: TreasureTypeU
+
+
+SeaSnake:
+  $extends: Monster
+  Title: "Sea Snake"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "3* (13hp)"
+  ExHitDice: 3
+  HitDiceRoll: 3d8
+  Attacks: "1 × bite (1hp + poison)"
+  THAC0: "17 [+2]"
+  Movement: "90’ (30’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "50"
+  NumberAppearingRoaming:
+    $diceroll: 1d8 
+  NumberAppearingLair:
+    $diceroll: 1d8
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+SpittingCobra:
+  $extends: Monster
+  Title: "Spitting Cobra"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "1* (4hp)"
+  ExHitDice: 1
+  HitDiceRoll: 1d8
+  Attacks: "1 × spit (blindness) or 1 × bite (1d3 + poison)"
+  THAC0: "19 [0]"
+  Movement: "90’ (30’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "13"
+  NumberAppearingRoaming:
+    $diceroll: 1d6 
+  NumberAppearingLair:
+    $diceroll: 1d6
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+Spectre:
+  $extends: Monster
+  Title: "Spectre"
+  Intelligent: False
+  ArmourClass: "2 [17]"
+  HitDice: "6** (27hp)"
+  ExHitDice: 6
+  HitDiceRoll: 6d8
+  Attacks: "1 × touch (1d8 + energy drain)"
+  THAC0: "14 [+5]"
+  Movement: "150’ (50’) / 300’ (100’) flying"
+  SavingThrows: "D10 W11 P12 B13 S14 (6)"
+  Morale: "11"
+  Alignment: "Chaotic"
+  XP: "725"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d8
+  TreasureType: 
+    $roll: TreasureTypeE
+
+
+BlackWidow:
+  $extends: Monster
+  Title: "Black Widow"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "3* (13hp)"
+  ExHitDice: 3
+  HitDiceRoll: 3d8
+  Attacks: "1 × bite (2d6 + poison)"
+  THAC0: "17 [+2]"
+  Movement: "60’ (20’) / 120’ (40’) in webs"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "50"
+  NumberAppearingRoaming:
+    $diceroll: 1d3 
+  NumberAppearingLair:
+    $diceroll: 1d3
+  TreasureType: 
+    $roll: TreasureTypeU
+
+
+CrabSpider:
+  $extends: Monster
+  Title: "Crab Spider"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "2* (9hp)"
+  ExHitDice: 2
+  HitDiceRoll: 2d8
+  Attacks: "1 × bite (1d8 + poison)"
+  THAC0: "18 [+1]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "25"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeU
+
+
+Tarantella:
+  $extends: Monster
+  Title: "Tarantella"
+  Intelligent: False
+  ArmourClass: "5 [14]"
+  HitDice: "4* (18hp)"
+  ExHitDice: 4
+  HitDiceRoll: 4d8
+  Attacks: "1 × bite (1d8 + poison)"
+  THAC0: "16 [+3]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "125"
+  NumberAppearingRoaming:
+    $diceroll: 1d3 
+  NumberAppearingLair:
+    $diceroll: 1d3
+  TreasureType: 
+    $roll: TreasureTypeU
+
+
+Sprite:
+  $extends: Monster
+  Title: "Sprite"
+  Intelligent: True
+  ArmourClass: "5 [14]"
+  HitDice: "½* (2hp)"
+  ExHitDice: ½
+  HitDiceRoll: 1d4
+  Attacks: "1 × spell (curse)"
+  THAC0: "19 [0]"
+  Movement: "60’ (20’) / 180’ (60’) flying"
+  SavingThrows: "D12 W13 P13 B15 S15 (E1)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "6"
+  NumberAppearingRoaming:
+    $diceroll: 3d6 
+  NumberAppearingLair:
+    $diceroll: 5d8
+  TreasureType: 
+    $roll: TreasureTypeS
+
+
+SquidGiant:
+  $extends: Monster
+  Title: "Giant Squid"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "6 (27hp)"
+  ExHitDice: 6
+  HitDiceRoll: 6d8
+  Attacks: "8 × small tentacle (1d4 + constriction), 2 × large tentacle (1d4 + constriction or 1d10 hull damage), 1 × beak (1d10 or 2 hull damage)"
+  THAC0: "14 [+5]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (3)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "275"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeV
+
+
+Stegosaurus:
+  $extends: Monster
+  Title: "Stegosaurus"
+  Intelligent: False
+  ArmourClass: "3 [16]"
+  HitDice: "11 (49hp)"
+  ExHitDice: 11
+  HitDiceRoll: 11d8
+  Attacks: "1 × tail (2d8) or 1 × trample (2d8)"
+  THAC0: "11 [+8]"
+  Movement: "60’ (20’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (6)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "1,100"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+Stirge:
+  $extends: Monster
+  Title: "Stirge"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "1* (4hp)"
+  ExHitDice: 1
+  HitDiceRoll: 1d8
+  Attacks: "1 × beak (1d3 + blood sucking)"
+  THAC0: "19 [0]"
+  Movement: "30’ (10’) / 180’ (60’) flying"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "9"
+  Alignment: "Neutral"
+  XP: "13"
+  NumberAppearingRoaming:
+    $diceroll: 1d10 
+  NumberAppearingLair:
+    $diceroll: 3d12
+  TreasureType: 
+    $roll: TreasureTypeL
+
+
+Thoul:
+  $extends: Monster
+  Title: "Thoul"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "3** (13hp)"
+  ExHitDice: 3
+  HitDiceRoll: 3d8
+  Attacks: "2 × claw (1d3 + paralysis) or 1 × weapon (1d6 or by weapon)"
+  THAC0: "17 [+2]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (3)"
+  Morale: "10"
+  Alignment: "Chaotic"
+  XP: "65"
+  NumberAppearingRoaming:
+    $diceroll: 1d6 
+  NumberAppearingLair:
+    $diceroll: 1d10
+  TreasureType: 
+    $roll: TreasureTypeC
+
+
+Titanothere:
+  $extends: Monster
+  Title: "Titanothere"
+  Intelligent: False
+  ArmourClass: "5 [14]"
+  HitDice: "12 (54hp)"
+  ExHitDice: 12
+  HitDiceRoll: 12d8
+  Attacks: "1 × butt (2d6) or 1 × trample (3d8)"
+  THAC0: "10 [+9]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (6)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "1,100"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d6
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+ToadGiant:
+  $extends: Monster
+  Title: "Giant Toad"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "2+2 (11hp)"
+  ExHitDice: 2+2
+  HitDiceRoll: 2d8+2
+  Attacks: "1 × bite (1d4+1)"
+  THAC0: "17 [+2]"
+  Movement: "90’ (30’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "6"
+  Alignment: "Neutral"
+  XP: "25"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+Trader:
+  $extends: Monster
+  Title: "Trader"
+  Intelligent: True
+  ArmourClass: "6 [13]"
+  HitDice: "1 (4hp)"
+  ExHitDice: 1
+  HitDiceRoll: 1d8
+  Attacks: "1 × weapon (1d6 or by weapon)"
+  THAC0: "19 [0]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "7"
+  Alignment: "Any"
+  XP: "10"
+  NumberAppearingRoaming:
+    $diceroll: 1d8 
+  NumberAppearingLair:
+    $diceroll: 3d6
+  TreasureType: 
+    $roll: TreasureTypeU # + V
+
+
+Treant:
+  $extends: Monster
+  Title: "Treant"
+  Intelligent: True
+  ArmourClass: "2 [17]"
+  HitDice: "8 (36hp)"
+  ExHitDice: 8
+  HitDiceRoll: 8d8
+  Attacks: "2 × fist (2d6)"
+  THAC0: "12 [+7]"
+  Movement: "60’ (20’)"
+  SavingThrows: "D8 W9 P10 B10 S12 (8)"
+  Morale: "9"
+  Alignment: "Lawful"
+  XP: "650"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d8
+  TreasureType: 
+    $roll: TreasureTypeC
+
+
+Triceratops:
+  $extends: Monster
+  Title: "Triceratops"
+  Intelligent: False
+  ArmourClass: "2 [17]"
+  HitDice: "11 (49hp)"
+  ExHitDice: 11
+  HitDiceRoll: 11d8
+  Attacks: "1 × gore (3d6) or 1 × trample (3d6)"
+  THAC0: "11 [+8]"
+  Movement: "90’ (30’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (6)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "1,100"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+Troglodyte:
+  $extends: Monster
+  Title: "Troglodyte"
+  Intelligent: False
+  ArmourClass: "5 [14]"
+  HitDice: "2* (9hp)"
+  ExHitDice: 2
+  HitDiceRoll: 2d8
+  Attacks: "Att 2 x claw (1d4), 1 x bite (1d4)"
+  THAC0: "18 [+1]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "9"
+  Alignment: "Chaotic"
+  XP: "25"
+  NumberAppearingRoaming:
+    $diceroll: 1d8 
+  NumberAppearingLair:
+    $diceroll: 5d8
+  TreasureType: 
+    $roll: TreasureTypeA
+
+
+Troll:
+  $extends: Monster
+  Title: "Troll"
+  Intelligent: True
+  ArmourClass: "4 [15]"
+  HitDice: "6+3* (30hp)"
+  ExHitDice: 6+3
+  HitDiceRoll: 6d8+3
+  Attacks: "2 × talon (1d6), 1 × bite (1d10)"
+  THAC0: "13 [+6]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (6)"
+  Morale: "10 (8 fear of fire)"
+  Alignment: "Chaotic"
+  XP: "650"
+  NumberAppearingRoaming:
+    $diceroll: 1d8 
+  NumberAppearingLair:
+    $diceroll: 1d8
+  TreasureType: 
+    $roll: TreasureTypeD
+
+TyrannosaurusRex:
+  $extends: Monster
+  Title: "Tyrannosaurus Rex"
+  Intelligent: False
+  ArmourClass: "3 [16]"
+  HitDice: "20 (90hp)"
+  ExHitDice: 20
+  HitDiceRoll: 20d8
+  Attacks: "1 × bite (6d6)"
+  THAC0: "6 [+13]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D6 W7 P8 B8 S10 (10)"
+  Morale: "11"
+  Alignment: "Neutral"
+  XP: "2,000"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair: 1
+  TreasureType: 
+    $roll: TreasureTypeV # × 3
+
+Unicorn:
+  $extends: Monster
+  Title: "Unicorn"
+  Intelligent: True
+  ArmourClass: "2 [17]"
+  HitDice: "4* (18hp)"
+  ExHitDice: 4
+  HitDiceRoll: 4d8
+  Attacks: "2 × hoof (1d8), 1 × horn (1d8)"
+  THAC0: "16 [+3]"
+  Movement: "240’ (80’)"
+  SavingThrows: "D8 W9 P10 B10 S12 (8)"
+  Morale: "7"
+  Alignment: "Lawful"
+  XP: "125"
+  NumberAppearingRoaming:
+    $diceroll: 1d6 
+  NumberAppearingLair:
+    $diceroll: 1d8
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+Vampire:
+  $extends: Monster
+  Title: "Vampire"
+  Intelligent: True
+  ArmourClass: "2 [17]"
+  HitDice: "7 to 9** (31/36/40hp)"
+  ExHitDice: 7
+  HitDiceRoll: 7d8
+  Attacks: "1 × touch (1d10 + energy drain) or 1 × gaze (charm)"
+  THAC0: "13 [+6]/12 [+7]/12 [+7]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D8 W9 P10 B10 S12 (7 to 9)"
+  Morale: "11"
+  Alignment: "Chaotic"
+  XP: "1,250/1,750/2,300"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d6
+  TreasureType: 
+    $roll: TreasureTypeF
+
+
+Veteran:
+  $extends: Monster
+  Title: "Veteran"
+  Intelligent: True
+  ArmourClass: "2 [17]"
+  HitDice: "1 to 3 (4/9/13hp)"
+  ExHitDice: 1
+  HitDiceRoll: 1d8
+  Attacks: "1 × weapon (1d8 or by weapon)"
+  THAC0: "19 [0]"
+  Movement: "60’ (20’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (F1 to F3)"
+  Morale: "9"
+  Alignment: "Any"
+  XP: "10/20/35"
+  NumberAppearingRoaming:
+    $diceroll: 2d4 
+  NumberAppearingLair:
+    $diceroll: 2d6
+  TreasureType: 
+    $roll: TreasureTypeV
+
+
+WarpBeast:
+  $extends: Monster
+  Title: "Warp Beast"
+  Intelligent: False
+  ArmourClass: "4 [15]"
+  HitDice: "6* (27hp)"
+  ExHitDice: 6
+  HitDiceRoll: 6d8
+  Attacks: "2 × tentacle (2d4)"
+  THAC0: "14 [+5]"
+  Movement: "150’ (50’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (6)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "500"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeD
+
+
+FreshwaterTermite:
+  $extends: Monster
+  Title: "Freshwater Termite"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "2+1 (10hp)"
+  ExHitDice: 2+1
+  HitDiceRoll: 2d8+1
+  Attacks: "1 × bite (1d4) or 1 × spray (stun)"
+  THAC0: "17 [+2]"
+  Movement: "120’ (40’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "25"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d3
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+SaltwaterTermite:
+  $extends: Monster
+  Title: "Saltwater Termite"
+  Intelligent: False
+  ArmourClass: "5 [14]"
+  HitDice: "4 (18hp)"
+  ExHitDice: 4
+  HitDiceRoll: 4d8
+  Attacks: "1 × bite (1d6) or 1 × spray (stun)"
+  THAC0: "16 [+3]"
+  Movement: "180’ (60’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (3)"
+  Morale: "11"
+  Alignment: "Neutral"
+  XP: "75"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d6+1
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+SwampTermite:
+  $extends: Monster
+  Title: "Swamp Termite"
+  Intelligent: False
+  ArmourClass: "4 [15]"
+  HitDice: "1+1 (5hp)"
+  ExHitDice: 1+1
+  HitDiceRoll: 1d8+1
+  Attacks: "1 × bite (1d3) or 1 × spray (stun)"
+  THAC0: "18 [+1]"
+  Movement: "90’ (30’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "10"
+  Alignment: "Neutral"
+  XP: "15"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+WeaselGiant:
+  $extends: Monster
+  Title: "Giant Weasel"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "4+4 (22hp)"
+  ExHitDice: 4+4
+  HitDiceRoll: 4d8+4
+  Attacks: "1 × bite (2d4 + blood sucking)"
+  THAC0: "15 [+4]"
+  Movement: "150’ (50’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (3)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "125"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d6
+  TreasureType: 
+    $roll: TreasureTypeV
+
+
+KillerWhale:
+  $extends: Monster
+  Title: "Killer Whale"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "6 (27hp)"
+  ExHitDice: 6
+  HitDiceRoll: 6d8
+  Attacks: "1 × bite (1d20)"
+  THAC0: "14 [+5]"
+  Movement: "240’ (80’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (3)"
+  Morale: "10"
+  Alignment: "Neutral"
+  XP: "275"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d6
+  TreasureType: 
+    $roll: TreasureTypeV
+
+
+Narwhal:
+  $extends: Monster
+  Title: "Narwhal"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "12 (54hp)"
+  ExHitDice: 12
+  HitDiceRoll: 12d8
+  Attacks: "1 × bite (1d8), 1 × horn (2d6)"
+  THAC0: "10 [+9]"
+  Movement: "180’ (60’)"
+  SavingThrows: "D6 W7 P8 B8 S10 (12)"
+  Morale: "8"
+  Alignment: "Lawful"
+  XP: "1,100"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeHorn
+
+
+SpermWhale:
+  $extends: Monster
+  Title: "Sperm Whale"
+  Intelligent: True
+  ArmourClass: "6 [13]"
+  HitDice: "36 (162hp)"
+  ExHitDice: 36
+  HitDiceRoll: 36d8
+  Attacks: "1 × bite (3d20) or 1 × ram (6d6 hull damage)"
+  THAC0: "5 [+14]"
+  Movement: "180’ (60’)"
+  SavingThrows: "D4 W5 P6 B5 S8 (15)"
+  Morale: "7"
+  Alignment: "Neutral"
+  XP: "6,250"
+  NumberAppearingRoaming: 0 
+  NumberAppearingLair:
+    $diceroll: 1d3
+  TreasureType: 
+    $roll: TreasureTypeV
+
+
+Wight:
+  $extends: Monster
+  Title: "Wight"
+  Intelligent: False
+  ArmourClass: "5 [14]"
+  HitDice: "3* (13hp)"
+  ExHitDice: 3
+  HitDiceRoll: 3d8
+  Attacks: "1 × touch (energy drain)"
+  THAC0: "17 [+2]"
+  Movement: "90’ (30’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (3)"
+  Morale: "12"
+  Alignment: "Chaotic"
+  XP: "50"
+  NumberAppearingRoaming:
+    $diceroll: 1d6 
+  NumberAppearingLair:
+    $diceroll: 1d8
+  TreasureType: 
+    $roll: TreasureTypeB
+
+
+DireWolf:
+  $extends: Monster
+  Title: "Dire Wolf"
+  Intelligent: False
+  ArmourClass: "6 [13]"
+  HitDice: "4+1 (19hp)"
+  ExHitDice: 4+1
+  HitDiceRoll: 4d8+1
+  Attacks: "1 × bite (2d4)"
+  THAC0: "15 [+4]"
+  Movement: "150’ (50’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "8"
+  Alignment: "Neutral"
+  XP: "125"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 2d4
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+NormalWolf:
+  $extends: Monster
+  Title: "Wolf"
+  Intelligent: False
+  ArmourClass: "7 [12]"
+  HitDice: "2+2 (11hp)"
+  ExHitDice: 2+2
+  HitDiceRoll: 2d8+2
+  Attacks: "1 × bite (1d6)"
+  THAC0: "17 [+2]"
+  Movement: "180’ (60’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "6 (8 in larger packs)"
+  Alignment: "Neutral"
+  XP: "25"
+  NumberAppearingRoaming:
+    $diceroll: 2d6 
+  NumberAppearingLair:
+    $diceroll: 3d6
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+Wraith:
+  $extends: Monster
+  Title: "Wraith"
+  Intelligent: False
+  ArmourClass: "3 [16]"
+  HitDice: "4** (18hp)"
+  ExHitDice: 4
+  HitDiceRoll: 4d8
+  Attacks: "1 × touch (1d6 + energy drain)"
+  THAC0: "16 [+3]"
+  Movement: "120’ (40’) / 240’ (80’) flying"
+  SavingThrows: "D10 W11 P12 B13 S14 (4)"
+  Morale: "12"
+  Alignment: "Chaotic"
+  XP: "175"
+  NumberAppearingRoaming:
+    $diceroll: 1d4 
+  NumberAppearingLair:
+    $diceroll: 1d6
+  TreasureType: 
+    $roll: TreasureTypeE
+
+
+Wyvern:
+  $extends: Monster
+  Title: "Wyvern"
+  Intelligent: False
+  ArmourClass: "3 [16]"
+  HitDice: "7* (31hp)"
+  ExHitDice: 7
+  HitDiceRoll: 7d8
+  Attacks: "1 × bite (2d8), 1 × sting (1d6 + poison)"
+  THAC0: "13 [+6]"
+  Movement: "90’ (30’) / 240’ (80’) flying"
+  SavingThrows: "D10 W11 P12 B13 S14 (4)"
+  Morale: "9"
+  Alignment: "Chaotic"
+  XP: "850"
+  NumberAppearingRoaming:
+    $diceroll: 1d2 
+  NumberAppearingLair:
+    $diceroll: 1d6
+  TreasureType: 
+    $roll: TreasureTypeE
+
+
+YellowMould:
+  $extends: Monster
+  Title: "Yellow Mould"
+  Intelligent: False
+  ArmourClass: "No hit roll required"
+  HitDice: "2* (9hp)"
+  ExHitDice: 2
+  HitDiceRoll: 2d8
+  Attacks: "1 × spores (1d6 + choking)"
+  THAC0: "18 [+1]"
+  Movement: "0"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "12"
+  Alignment: "Neutral"
+  XP: "25"
+  NumberAppearingRoaming:
+    $diceroll: 1d8 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType: 
+    $roll: TreasureTypeNone
+
+
+Zombie:
+  $extends: Monster
+  Title: "Zombie"
+  Intelligent: False
+  ArmourClass: "8 [11]"
+  HitDice: "2 (9hp)"
+  ExHitDice: 2
+  HitDiceRoll: 2d8
+  Attacks: "1 × weapon (1d8 or by weapon)"
+  THAC0: "18 [+1]"
+  Movement: "60’ (20’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1)"
+  Morale: "12"
+  Alignment: "Chaotic"
+  XP: "20"
+  NumberAppearingRoaming:
+    $diceroll: 2d4 
+  NumberAppearingLair:
+    $diceroll: 4d6
+  TreasureType: 
+    $roll: TreasureTypeNone

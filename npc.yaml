@@ -1,0 +1,2276 @@
+# This document contains Open Game Content, subject to the Open Game License,
+# released un the Open Game License, Version 1.0a (enclosed in the LICENSE
+# file), as described in Section 1(d) of the License.
+
+ClericSpellLevel1: &ClericSpellLevel1
+  - Cure Light Wounds (Cause Lt. Wounds)
+  - Detect Evil
+  - Detect Magic
+  - Light (Darkness)
+  - Protection from Evil
+  - Purify Food and Water
+  - Remove Fear (Cause Fear)
+  - Resist Cold
+
+
+ClericSpellLevel2: &ClericSpellLevel2
+  - Bless (Blight)
+  - Find Traps
+  - Hold Person
+  - Know Alignment
+  - Resist Fire
+  - Silence 15’ Radius
+  - Snake Charm
+  - Speak with Animals
+
+
+ClericSpellLevel3: &ClericSpellLevel3
+  - Continual Light (Continual Darkness)
+  - Cure Disease (Cause Disease)
+  - Growth of Animal
+  - Locate Object
+  - Remove Curse (Curse)
+  - Striking
+
+
+ClericSpellLevel4: &ClericSpellLevel4
+  - Create Water
+  - Cure Serious Wounds (Cause Sr. Wounds)
+  - Neutralize Poison
+  - Protection from Evil 10’ Radius
+  - Speak with Plants
+  - Sticks to Snakes
+
+
+ClericSpellLevel5: &ClericSpellLevel5
+  - Commune
+  - Create Food
+  - Dispel Evil
+  - Insect Plague
+  - Quest (Remove Quest)
+  - Raise Dead (Finger of Death)
+    
+
+MagicuserSpellLevel1: &MagicuserSpellLevel1
+  - Charm Person
+  - Detect Magic
+  - Floating Disc
+  - Hold Portal
+  - Light (Darkness)
+  - Magic Missile
+  - Protection from Evil
+  - Read Languages
+  - Read Magic
+  - Shield
+  - Sleep
+  - Ventriloquism
+
+
+MagicuserSpellLevel2: &MagicuserSpellLevel2
+  - Continual Light (Continual Darkness)
+  - Detect Evil
+  - Detect Invisible
+  - ESP
+  - Invisibility
+  - Knock
+  - Levitate
+  - Locate Object
+  - Mirror Image
+  - Phantasmal Force
+  - Web
+  - Wizard Lock
+ 
+ 
+MagicuserSpellLevel3: &MagicuserSpellLevel3
+  - Clairvoyance
+  - Dispel Magic
+  - Fire Ball
+  - Fly
+  - Haste
+  - Hold Person
+  - Infravision
+  - Invisibility 10’ Radius
+  - Lightning Bolt
+  - Protection from Evil 10’ Radius
+  - Protection from Normal Missiles
+  - Water Breathing
+
+
+MagicuserSpellLevel4: &MagicuserSpellLevel4
+  - Charm Monster
+  - Confusion
+  - Dimension Door
+  - Growth of Plants
+  - Hallucinatory Terrain
+  - Massmorph
+  - Polymorph Others
+  - Polymorph Self
+  - Remove Curse (Curse)
+  - Wall of Fire
+  - Wall of Ice
+  - Wizard Eye
+
+
+MagicuserSpellLevel5: &MagicuserSpellLevel5
+  - Animate Dead
+  - Cloudkill
+  - Conjure Elemental
+  - Contact Higher Plane
+  - Feeblemind
+  - Hold Monster
+  - Magic Jar
+  - Pass-Wall
+  - Telekinesis
+  - Teleport
+  - Transmute Rock to Mud (Mud to Rock)
+  - Wall of Stone
+
+
+MagicuserSpellLevel6: &MagicuserSpellLevel6
+  - Anti-Magic Shell
+  - Control Weather
+  - Death Spell
+  - Disintegrate
+  - Geas (Remove Geas)
+  - Invisible Stalker
+  - Lower Water
+  - Move Earth
+  - Part Water
+  - Projected Image
+  - Reincarnation
+  - Stone to Flesh (Flesh to Stone)
+
+
+PrimaryAttribute: &PrimaryAttribute
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+
+
+SecondaryAttribute: &SecondaryAttribute
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+
+
+LesserAttribute: &LesserAttribute
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+
+
+Character:
+  Gender:
+    $roll: Gender
+
+  Name:
+    $roll:
+      $class: Name
+      $bootstrap:
+        Gender: !ref Gender
+
+  Description: !jinja |
+    {{Name.Full}}.
+    {{Gender.Pronoun|capitalize}} {{Gender.Pos}} {{Gender.Feature}}, {{Feature1}} and {{Feature2}}.
+    (*{{State}}*)
+
+    {{Association}}
+    {{Story2.Description}}
+    {%if t is defined%}
+    * {{Name.First}} likes spending {{Gender.Pronoun2}} time in the {{t.Full}} Tavern.
+    {%endif%}
+
+  FeatureX1:
+    - !jinja >
+      {%if Alignment=='Lawful'%}wise{%endif%}{%if Alignment=='Chaotic'%}evil{%endif%} dark eyes
+    - !jinja >
+      {%if Alignment=='Lawful'%}warm{%else%}cold{%endif%} dark eyes
+    - crystal blue eyes
+    - deep blue eyes
+    - !jinja >
+      {%if Alignment=='Lawful'%}enchanting{%else%}mesmerising{%endif%} green eyes
+    - wild green eyes
+    - !jinja >
+      {%if Alignment=='Lawful'%}wise{%else%}piercing{%endif%} brown eyes
+
+  Feature1:
+    - wise dark eyes
+    - cold dark eyes
+    - crystal blue eyes
+    - deep blue eyes
+    - enchanting green eyes
+    - wild green eyes
+    - wise brown eyes
+
+  Feature2:
+    - a nose ring
+    - a deep scar on the cheek
+    - freckles
+    - a face tattoo
+    - an earring
+    - a neck band
+ 
+
+  $context:
+    $attr: CharacterContext
+    $values:
+      - Name
+
+  State:
+    $roll: NPCState
+
+
+ArmorClass:
+  Format: !jinja >
+    {%if NPC.DEX < 4 %}
+    {{AC+3}} [{{AAC-3}}] {{Text}}
+    {%elif NPC.DEX >= 4 and NPC.DEX <= 5 %}
+    {{AC+2}} [{{AAC-2}}] {{Text}}
+    {%elif NPC.DEX >=6 and NPC.DEX <=8 %}
+    {{AC+1}} [{{AAC-1}}] {{Text}}
+    {%elif NPC.DEX >=13 and NPC.DEX <=15 %}
+    {{AC-1}} [{{AAC+1}}] {{Text}}
+    {%elif NPC.DEX >=17 and NPC.DEX <=17 %}
+    {{AC-2}} [{{AAC+2}}] {{Text}}
+    {%elif NPC.DEX >17 %}
+    {{AC-3}} [{{AAC+3}}] {{Text}}
+    {%else%}
+    {{AC}} [{{AAC}}] {{Text}}
+    {%endif%}
+
+
+NoArmor:
+  $extends: ArmorClass
+  Text: Unarmored
+  AC: 9
+  AAC: 10
+
+
+LeatherArmor:
+  $extends: ArmorClass
+  Text: Leather armor
+  AC: 7
+  AAC: 12
+
+
+LeatherArmorWithShield:
+  $extends: ArmorClass
+  Text: Leather armor + Shield
+  AC: 6
+  AAC: 13
+
+
+ChainmailArmor:
+  $extends: ArmorClass
+  Text: Chainmail armor
+  AC: 5
+  AAC: 14
+
+
+ChainmailArmorWithShield:
+  $extends: ArmorClass
+  Text: Chainmail armor + Shield
+  AC: 4
+  AAC: 15
+
+
+PlatemailArmor:
+  $extends: ArmorClass
+  Text: Plate-mail armor
+  AC: 3
+  AAC: 16
+
+
+PlatemailArmorWithShield:
+  $extends: ArmorClass
+  Text: Plate-mail armor + Shield
+  AC: 2
+  AAC: 17
+
+
+NPC:
+  $extends: Character
+  Description: !jinja |
+    __{{Name.Full}}__, a level {{Level}} {{Class}}.
+    {{Gender.Pronoun|capitalize}} {{Gender.Pos}} {{Gender.Feature}}, {{Feature1}} and {{Feature2}}.
+  
+  UNUSED1: >
+    {{Name.First}} likes spending {{Gender.Pronoun2}} time in the dark inn.
+
+  Stats: !jinja |
+    {% set CONMod = {3:-3,4:-2,5:-2,6:-1,7:-1,8:-1,9:0,10:0,11:0,12:0,13:+1,14:+1,15:+1,16:+2,17:+2,18:+3} %}
+    {% set HPRolls = HD.split('d')[0] | int %}
+
+    __Armour Class__ {{Armor.Format}}
+    __Hit Points__ {{HP+CONMod[CON]*HPRolls}}
+    __Attacks__ 1 × {{Weapon.Title}} ({{Weapon.Damage}}) {%if Spell1%}or 1 × spell {%endif%}
+    __THAC0__ {{THAC0}}
+    __Movement Rate__ 90' (30')
+    __Saves__ {{SavingThrows}}
+    __Alignment__ {{Alignment}}
+    __STR__ {{STR}} __INT__ {{INT}} __WIS__ {{WIS}}
+    __DEX__ {{DEX}} __CON__ {{CON}} __CHA__ {{CHA}}
+    __Spells__ 
+    {%if Spell1%}{{Spell1}}{%endif%}
+    {%if Spell2%}, {{Spell2}}{%endif%}
+    {%if Spell3%}, {{Spell3}}{%endif%}
+    {%if Spell4%}, {{Spell4}}{%endif%}
+    {%if Spell5%}, {{Spell5}}{%endif%}
+    {%if Spell6%}, {{Spell6}}{%endif%}
+    {%if Spell7%}, {{Spell7}}{%endif%}
+    {%if Spell8%}, {{Spell8}}{%endif%}
+    {%if Spell9%}, {{Spell9}}{%endif%}
+    {%if Spell10%}, {{Spell10}}{%endif%}
+    {%if Spell11%}, {{Spell11}}{%endif%}
+    {%if Spell12%}, {{Spell12}}{%endif%}
+    {%if Spell13%}, {{Spell13}}{%endif%}
+    {%if Spell14%}, {{Spell14}}{%endif%}
+    {%if Spell15%}, {{Spell15}}{%endif%}
+    {%if Spell16%}, {{Spell16}}{%endif%}
+    {%if Spell17%}, {{Spell17}}{%endif%}
+    {%if Spell18%}, {{Spell18}}{%endif%}
+    {%if Spell19%}, {{Spell19}}{%endif%}
+    {%if Spell20%}, {{Spell20}}{%endif%}
+    {%if Spell21%}, {{Spell21}}{%endif%}
+    {%if Spell22%}, {{Spell22}}{%endif%}
+    {%if Spell23%}, {{Spell23}}{%endif%}
+    {%if Spell24%}, {{Spell24}}{%endif%}
+    {%if Spell25%}, {{Spell25}}{%endif%}
+
+
+  $collection: npcs
+
+  Alignment:
+    - Neutral
+
+
+Magic-user:
+  $extends: NPC
+  INT: *PrimaryAttribute
+  CON: *PrimaryAttribute
+  DEX: *SecondaryAttribute
+  WIS: *SecondaryAttribute
+  CHA: *LesserAttribute
+  STR: *LesserAttribute
+  $context:
+    $attr: NPC
+    $values:
+      - DEX
+
+  Class: Magic-user
+  Armor:
+    $roll:
+      $class:
+        - NoArmor
+  Weapon:
+    $roll:
+      $class:
+        - Dagger
+
+  Feature2:
+    - long, skinny fingers
+    - a star tattooed on the forehead
+    - a nose ring
+    - long black robe
+    - long crimson robe
+
+
+Magic-userLevel1:
+  $extends: Magic-user
+  Level: 1
+  HD: 1d4
+  THAC0: 19 [0]
+  SavingThrows: D13 W14 P13 B16 S15
+  HP:
+    $diceroll: 1d4
+  Spell1: *MagicuserSpellLevel1
+
+
+Magic-userLevel2:
+  $extends: Magic-user
+  Level: 2
+  HD: 2d4
+  THAC0: 19 [0]
+  SavingThrows: D13 W14 P13 B16 S15
+  HP:
+    $diceroll: 2d4
+  Spell1: *MagicuserSpellLevel1
+  Spell2: *MagicuserSpellLevel1
+
+
+Magic-userLevel3:
+  $extends: Magic-user
+  Level: 3
+  HD: 3d4
+  THAC0: 19 [0]
+  SavingThrows: D13 W14 P13 B16 S15
+  HP:
+    $diceroll: 3d4
+  Spell1: *MagicuserSpellLevel1
+  Spell2: *MagicuserSpellLevel1
+
+  Spell3: *MagicuserSpellLevel2
+
+
+Magic-userLevel4:
+  $extends: Magic-user
+  Level: 4
+  HD: 4d4
+  THAC0: 19 [0]
+  SavingThrows: D13 W14 P13 B16 S15
+  HP:
+    $diceroll: 4d4
+  Spell1: *MagicuserSpellLevel1
+  Spell2: *MagicuserSpellLevel1
+
+  Spell3: *MagicuserSpellLevel2
+  Spell4: *MagicuserSpellLevel2
+
+
+Magic-userLevel5:
+  $extends: Magic-user
+  Level: 5
+  HD: 5d4
+  THAC0: 19 [0]
+  SavingThrows: D13 W14 P13 B16 S15
+  HP:
+    $diceroll: 5d4
+  Spell1: *MagicuserSpellLevel1
+  Spell2: *MagicuserSpellLevel1
+
+  Spell3: *MagicuserSpellLevel2
+  Spell4: *MagicuserSpellLevel2
+
+  Spell5: *MagicuserSpellLevel3
+
+
+Magic-userLevel6:
+  $extends: Magic-user
+  Level: 6
+  HD: 6d4
+  THAC0: 17 [+2]
+  SavingThrows: D11 W12 P11 B14 S12
+  HP:
+    $diceroll: 6d4
+  Spell1: *MagicuserSpellLevel1
+  Spell2: *MagicuserSpellLevel1
+
+  Spell3: *MagicuserSpellLevel2
+  Spell4: *MagicuserSpellLevel2
+
+  Spell5: *MagicuserSpellLevel3
+  Spell6: *MagicuserSpellLevel3
+
+
+Magic-userLevel7:
+  $extends: Magic-user
+  Level: 7
+  HD: 7d4
+  THAC0: 17 [+2]
+  SavingThrows: D11 W12 P11 B14 S12
+  HP:
+    $diceroll: 7d4
+  Spell1: *MagicuserSpellLevel1
+  Spell2: *MagicuserSpellLevel1
+  Spell3: *MagicuserSpellLevel1
+
+  Spell4: *MagicuserSpellLevel2
+  Spell5: *MagicuserSpellLevel2
+
+  Spell6: *MagicuserSpellLevel3
+  Spell7: *MagicuserSpellLevel3
+
+  Spell8: *MagicuserSpellLevel4
+
+
+Magic-userLevel8:
+  $extends: Magic-user
+  Level: 8
+  HD: 8d4
+  THAC0: 17 [+2]
+  SavingThrows: D11 W12 P11 B14 S12
+  HP:
+    $diceroll: 8d4
+
+  Spell1: *MagicuserSpellLevel1
+  Spell2: *MagicuserSpellLevel1
+  Spell3: *MagicuserSpellLevel1
+
+  Spell4: *MagicuserSpellLevel2
+  Spell5: *MagicuserSpellLevel2
+  Spell6: *MagicuserSpellLevel2
+
+  Spell7: *MagicuserSpellLevel3
+  Spell8: *MagicuserSpellLevel3
+
+  Spell9: *MagicuserSpellLevel4
+  Spell10: *MagicuserSpellLevel4
+
+
+Magic-userLevel9:
+  $extends: Magic-user
+  Level: 9
+  HD: 9d4
+  THAC0: 17 [+2]
+  SavingThrows: D11 W12 P11 B14 S12
+  HP:
+    $diceroll: 9d4
+
+  Spell1: *MagicuserSpellLevel1
+  Spell2: *MagicuserSpellLevel1
+  Spell3: *MagicuserSpellLevel1
+
+  Spell4: *MagicuserSpellLevel2
+  Spell5: *MagicuserSpellLevel2
+  Spell6: *MagicuserSpellLevel2
+
+  Spell7: *MagicuserSpellLevel3
+  Spell8: *MagicuserSpellLevel3
+  Spell9: *MagicuserSpellLevel3
+
+  Spell10: *MagicuserSpellLevel4
+  Spell11: *MagicuserSpellLevel4
+
+  Spell12: *MagicuserSpellLevel5
+
+
+Magic-userLevel10:
+  $extends: Magic-user
+  Level: 10
+  HD: 9d4+1
+  THAC0: 17 [+2]
+  SavingThrows: D11 W12 P11 B14 S12
+  HP:
+    $diceroll: 9d4+1
+
+  Spell1: *MagicuserSpellLevel1
+  Spell2: *MagicuserSpellLevel1
+  Spell3: *MagicuserSpellLevel1
+
+  Spell4: *MagicuserSpellLevel2
+  Spell5: *MagicuserSpellLevel2
+  Spell6: *MagicuserSpellLevel2
+
+  Spell7: *MagicuserSpellLevel3
+  Spell8: *MagicuserSpellLevel3
+  Spell9: *MagicuserSpellLevel3
+
+  Spell10: *MagicuserSpellLevel4
+  Spell11: *MagicuserSpellLevel4
+  Spell12: *MagicuserSpellLevel4
+
+  Spell13: *MagicuserSpellLevel5
+  Spell14: *MagicuserSpellLevel5
+
+
+Magic-userLevel11:
+  $extends: Magic-user
+  Level: 11
+  HD: 9d4+2
+  THAC0: 14 [+5]
+  SavingThrows: D8 W9 P8 B11 S8
+  HP:
+    $diceroll: 9d4+2
+
+  Spell1: *MagicuserSpellLevel1
+  Spell2: *MagicuserSpellLevel1
+  Spell3: *MagicuserSpellLevel1
+  Spell4: *MagicuserSpellLevel1
+
+  Spell5: *MagicuserSpellLevel2
+  Spell6: *MagicuserSpellLevel2
+  Spell7: *MagicuserSpellLevel2
+
+  Spell8: *MagicuserSpellLevel3
+  Spell9: *MagicuserSpellLevel3
+  Spell10: *MagicuserSpellLevel3
+
+  Spell11: *MagicuserSpellLevel4
+  Spell12: *MagicuserSpellLevel4
+  Spell13: *MagicuserSpellLevel4
+
+  Spell14: *MagicuserSpellLevel5
+  Spell15: *MagicuserSpellLevel5
+
+  Spell16: *MagicuserSpellLevel6
+
+
+Magic-userLevel12:
+  $extends: Magic-user
+  Level: 12
+  HD: 9d4+3
+  THAC0: 14 [+5]
+  SavingThrows: D8 W9 P8 B11 S8
+  HP:
+    $diceroll: 9d4+3
+
+  Spell1: *MagicuserSpellLevel1
+  Spell2: *MagicuserSpellLevel1
+  Spell3: *MagicuserSpellLevel1
+  Spell4: *MagicuserSpellLevel1
+
+  Spell5: *MagicuserSpellLevel2
+  Spell6: *MagicuserSpellLevel2
+  Spell7: *MagicuserSpellLevel2
+  Spell8: *MagicuserSpellLevel2
+
+  Spell9: *MagicuserSpellLevel3
+  Spell10: *MagicuserSpellLevel3
+  Spell11: *MagicuserSpellLevel3
+
+  Spell12: *MagicuserSpellLevel4
+  Spell13: *MagicuserSpellLevel4
+  Spell14: *MagicuserSpellLevel4
+
+  Spell15: *MagicuserSpellLevel5
+  Spell16: *MagicuserSpellLevel5
+  Spell17: *MagicuserSpellLevel5
+
+  Spell18: *MagicuserSpellLevel6
+  Spell19: *MagicuserSpellLevel6
+
+
+Magic-userLevel13:
+  $extends: Magic-user
+  Level: 13
+  HD: 9d4+4
+  THAC0: 14 [+5]
+  SavingThrows: D8 W9 P8 B11 S8
+  HP:
+    $diceroll: 9d4+4
+
+  Spell1: *MagicuserSpellLevel1
+  Spell2: *MagicuserSpellLevel1
+  Spell3: *MagicuserSpellLevel1
+  Spell4: *MagicuserSpellLevel1
+
+  Spell5: *MagicuserSpellLevel2
+  Spell6: *MagicuserSpellLevel2
+  Spell7: *MagicuserSpellLevel2
+  Spell8: *MagicuserSpellLevel2
+
+  Spell9: *MagicuserSpellLevel3
+  Spell10: *MagicuserSpellLevel3
+  Spell11: *MagicuserSpellLevel3
+  Spell12: *MagicuserSpellLevel3
+
+  Spell13: *MagicuserSpellLevel4
+  Spell14: *MagicuserSpellLevel4
+  Spell15: *MagicuserSpellLevel4
+
+  Spell16: *MagicuserSpellLevel5
+  Spell17: *MagicuserSpellLevel5
+  Spell18: *MagicuserSpellLevel5
+
+  Spell19: *MagicuserSpellLevel6
+  Spell20: *MagicuserSpellLevel6
+  Spell21: *MagicuserSpellLevel6
+
+
+Magic-userLevel14:
+  $extends: Magic-user
+  Level: 14
+  HD: 9d4+5
+  THAC0: 14 [+5]
+  SavingThrows: D8 W9 P8 B11 S8
+  HP:
+    $diceroll: 9d4+5
+
+  Spell1: *MagicuserSpellLevel1
+  Spell2: *MagicuserSpellLevel1
+  Spell3: *MagicuserSpellLevel1
+  Spell4: *MagicuserSpellLevel1
+
+  Spell5: *MagicuserSpellLevel2
+  Spell6: *MagicuserSpellLevel2
+  Spell7: *MagicuserSpellLevel2
+  Spell8: *MagicuserSpellLevel2
+
+  Spell9: *MagicuserSpellLevel3
+  Spell10: *MagicuserSpellLevel3
+  Spell11: *MagicuserSpellLevel3
+  Spell12: *MagicuserSpellLevel3
+
+  Spell13: *MagicuserSpellLevel4
+  Spell14: *MagicuserSpellLevel4
+  Spell15: *MagicuserSpellLevel4
+  Spell16: *MagicuserSpellLevel4
+
+  Spell17: *MagicuserSpellLevel5
+  Spell18: *MagicuserSpellLevel5
+  Spell19: *MagicuserSpellLevel5
+
+  Spell20: *MagicuserSpellLevel6
+  Spell21: *MagicuserSpellLevel6
+  Spell22: *MagicuserSpellLevel6
+
+
+Fighter:
+  $extends: NPC
+
+  Class: Fighter
+  STR: *PrimaryAttribute
+  DEX: *PrimaryAttribute
+  CON: *SecondaryAttribute
+  CHA: *SecondaryAttribute
+  WIS: *LesserAttribute
+  INT: *LesserAttribute
+
+  $context:
+    $attr: NPC
+    $values:
+      - DEX
+
+  Armor:
+    $roll:
+      $class:
+        - LeatherArmor
+        - ChainmailArmor
+        - PlatemailArmor
+        - LeatherArmorWithShield
+        - ChainmailArmorWithShield
+        - PlatemailArmorWithShield
+
+  Weapon:
+    $roll:
+      $class:
+        - BattleAxe
+        - Club
+        - CrossBow
+        - Dagger
+        - HandAxe
+        - Javelin
+        - Lance
+        - LongBow
+        - Mace
+        - Polearm
+        - ShortBow
+        - ShortSword
+        - SilverDagger
+        - Sling
+        - Spear
+        - Staff
+        - Sword
+        - TwoHandedSword
+        - Warhammer
+
+  Feature2:
+    - strong, muscular physique
+    - deep scar on the right arm
+    - a big nose-ring
+    - a missing middle-finger
+
+
+FighterLevel1:
+  $extends: Fighter
+  Level: 1
+  HD: 1d8
+  THAC0: 19 [0]
+  SavingThrows: D12 W13 P14 B15 S16
+  HP:
+    $diceroll: 1d8
+
+
+FighterLevel2:
+  $extends: Fighter
+  Level: 2
+  HD: 2d8
+  THAC0: 19 [0]
+  SavingThrows: D12 W13 P14 B15 S16
+  HP:
+    $diceroll: 2d8
+
+
+FighterLevel3:
+  $extends: Fighter
+  Level: 3
+  HD: 3d8
+  THAC0: 19 [0]
+  SavingThrows: D12 W13 P14 B15 S16
+  HP:
+    $diceroll: 3d8
+
+
+FighterLevel4:
+  $extends: Fighter
+  Level: 4
+  HD: 4d8
+  THAC0: 17 [+2]
+  SavingThrows: D10 W11 P12 B13 S14
+  HP:
+    $diceroll: 4d8
+
+
+FighterLevel5:
+  $extends: Fighter
+  Level: 5
+  HD: 5d8
+  THAC0: 17 [+2]
+  SavingThrows: D10 W11 P12 B13 S14
+  HP:
+    $diceroll: 5d8
+
+
+FighterLevel6:
+  $extends: Fighter
+  Level: 6
+  HD: 6d8
+  THAC0: 17 [+2]
+  SavingThrows: D10 W11 P12 B13 S14
+  HP:
+    $diceroll: 6d8
+
+
+FighterLevel7:
+  $extends: Fighter
+  Level: 7
+  HD: 7d8
+  THAC0: 14 [+5]
+  SavingThrows: D8 W9 P10 B10 S12
+  HP:
+    $diceroll: 7d8
+
+
+FighterLevel8:
+  $extends: Fighter
+  Level: 8
+  HD: 8d8
+  THAC0: 14 [+5]
+  SavingThrows: D8 W9 P10 B10 S12
+  HP:
+    $diceroll: 8d8
+
+
+FighterLevel9:
+  $extends: Fighter
+  Level: 9
+  HD: 9d8
+  THAC0: 14 [+5]
+  SavingThrows: D8 W9 P10 B10 S12
+  HP:
+    $diceroll: 9d8
+
+
+FighterLevel10:
+  $extends: Fighter
+  Level: 10
+  HD: 9d8+2
+  THAC0: 12 [+7]
+  SavingThrows: D6 W7 P8 B8 S10
+  HP:
+    $diceroll: 9d8+2
+
+
+FighterLevel11:
+  $extends: Fighter
+  Level: 11
+  HD: 9d8+4
+  THAC0: 12 [+7]
+  SavingThrows: D12 W13 P14 B15 S16
+  HP:
+    $diceroll: 9d8+4
+
+
+FighterLevel12:
+  $extends: Fighter
+  Level: 12
+  HD: 9d8+6
+  THAC0: 12 [+7]
+  SavingThrows: D6 W7 P8 B8 S10
+  HP:
+    $diceroll: 9d8+6
+
+
+FighterLevel13:
+  $extends: Fighter
+  Level: 13
+  HD: 9d8+8
+  THAC0: 10 [+9]
+  SavingThrows: D4 W5 P6 B5 S8
+  HP:
+    $diceroll: 9d8+8
+
+
+FighterLevel14:
+  $extends: Fighter
+  Level: 14
+  HD: 9d8+10
+  THAC0: 10 [+9]
+  SavingThrows: D4 W5 P6 B5 S8
+  HP:
+    $diceroll: 9d8+10
+
+
+Cleric:
+  $extends: NPC
+
+  Class: Cleric
+  WIS: *PrimaryAttribute
+  STR: *SecondaryAttribute
+  CON: *SecondaryAttribute
+  INT: *SecondaryAttribute
+  DEX: *LesserAttribute
+  CHA: *LesserAttribute
+  $context:
+    $attr: NPC
+    $values:
+      - DEX
+  Armor:
+    $roll:
+      $class:
+        - LeatherArmor
+        - ChainmailArmor
+        - PlatemailArmor
+        - LeatherArmorWithShield
+        - ChainmailArmorWithShield
+        - PlatemailArmorWithShield
+
+  Weapon:
+    $roll:
+      $class:
+        - Club
+        - Mace
+        - Sling
+        - Staff
+        - Warhammer
+
+  Feature2:
+    - long, skinny fingers
+    - a holy symbol tattooed on the forehead
+    - a nose ring
+    - strong-looking hands
+
+
+ClericLevel1:
+  $extends: Cleric
+  Level: 1
+  HD: 1d6
+  THAC0: 19 [0]
+  SavingThrows: D11 W12 P14 B16 S15
+  HP:
+    $diceroll: 1d6
+
+
+ClericLevel2:
+  $extends: Cleric
+  Level: 2
+  HD: 2d6
+  THAC0: 19 [0]
+  SavingThrows: D11 W12 P14 B16 S15
+  HP:
+    $diceroll: 2d6
+
+  Spell1: *ClericSpellLevel1
+
+
+ClericLevel3:
+  $extends: Cleric
+  Level: 3
+  HD: 3d6
+  THAC0: 19 [0]
+  SavingThrows: D11 W12 P14 B16 S15
+  HP:
+    $diceroll: 3d6
+
+  Spell1: *ClericSpellLevel1
+  Spell2: *ClericSpellLevel1
+
+
+ClericLevel4:
+  $extends: Cleric
+  Level: 4
+  HD: 4d6
+  THAC0: 19 [0]
+  SavingThrows: D11 W12 P14 B16 S15
+  HP:
+    $diceroll: 4d6
+
+  Spell1: *ClericSpellLevel1
+  Spell2: *ClericSpellLevel1
+
+  Spell3: *ClericSpellLevel2
+
+
+ClericLevel5:
+  $extends: Cleric
+  Level: 5
+  HD: 5d6
+  THAC0: 17 [+2]
+  SavingThrows: D9 W10 P12 B14 S12
+  HP:
+    $diceroll: 5d6
+
+  Spell1: *ClericSpellLevel1
+  Spell2: *ClericSpellLevel1
+
+  Spell3: *ClericSpellLevel2
+  Spell4: *ClericSpellLevel2
+
+
+ClericLevel6:
+  $extends: Cleric
+  Level: 6
+  HD: 6d6
+  THAC0: 17 [+2]
+  SavingThrows: D9 W10 P12 B14 S12
+  HP:
+    $diceroll: 6d6
+
+  Spell1: *ClericSpellLevel1
+  Spell2: *ClericSpellLevel1
+
+  Spell3: *ClericSpellLevel2
+  Spell4: *ClericSpellLevel2
+
+  Spell5: *ClericSpellLevel3
+
+  Spell6: *ClericSpellLevel4
+
+
+ClericLevel7:
+  $extends: Cleric
+  Level: 7
+  HD: 7d6
+  THAC0: 17 [+2]
+  SavingThrows: D9 W10 P12 B14 S12
+  HP:
+    $diceroll: 7d6
+
+  Spell1: *ClericSpellLevel1
+  Spell2: *ClericSpellLevel1
+
+  Spell3: *ClericSpellLevel2
+  Spell4: *ClericSpellLevel2
+
+  Spell5: *ClericSpellLevel3
+  Spell6: *ClericSpellLevel3
+
+  Spell7: *ClericSpellLevel4
+
+  Spell8: *ClericSpellLevel5
+
+
+ClericLevel8:
+  $extends: Cleric
+  Level: 8
+  HD: 8d6
+  THAC0: 17 [+2]
+  SavingThrows: D9 W10 P12 B14 S12
+  HP:
+    $diceroll: 8d6
+
+  Spell1: *ClericSpellLevel1
+  Spell2: *ClericSpellLevel1
+  Spell3: *ClericSpellLevel1
+
+  Spell4: *ClericSpellLevel2
+  Spell5: *ClericSpellLevel2
+  Spell6: *ClericSpellLevel2
+
+  Spell7: *ClericSpellLevel3
+  Spell8: *ClericSpellLevel3
+
+  Spell9: *ClericSpellLevel4
+  Spell10: *ClericSpellLevel4
+
+  Spell11: *ClericSpellLevel5
+
+
+ClericLevel9:
+  $extends: Cleric
+  Level: 9
+  HD: 9d6
+  THAC0: 14 [+5]
+  SavingThrows: D6 W7 P9 B11 S9
+  HP:
+    $diceroll: 9d6
+
+  Spell1: *ClericSpellLevel1
+  Spell2: *ClericSpellLevel1
+  Spell3: *ClericSpellLevel1
+
+  Spell4: *ClericSpellLevel2
+  Spell5: *ClericSpellLevel2
+  Spell6: *ClericSpellLevel2
+
+  Spell7: *ClericSpellLevel3
+  Spell8: *ClericSpellLevel3
+  Spell9: *ClericSpellLevel3
+
+  Spell10: *ClericSpellLevel4
+  Spell11: *ClericSpellLevel4
+
+  Spell12: *ClericSpellLevel5
+  Spell13: *ClericSpellLevel5
+
+
+ClericLevel10:
+  $extends: Cleric
+  Level: 10 
+  HD: 9d6+1
+  THAC0: 14 [+5]
+  SavingThrows: D6 W7 P9 B11 S9
+  HP:
+    $diceroll: 9d6+1
+
+  Spell1: *ClericSpellLevel1
+  Spell2: *ClericSpellLevel1
+  Spell3: *ClericSpellLevel1
+  Spell4: *ClericSpellLevel1
+
+  Spell5: *ClericSpellLevel2
+  Spell6: *ClericSpellLevel2
+  Spell7: *ClericSpellLevel2
+  Spell8: *ClericSpellLevel2
+
+  Spell9: *ClericSpellLevel3
+  Spell10: *ClericSpellLevel3
+  Spell11: *ClericSpellLevel3
+
+  Spell12: *ClericSpellLevel4
+  Spell13: *ClericSpellLevel4
+  Spell14: *ClericSpellLevel4
+
+  Spell15: *ClericSpellLevel5
+  Spell16: *ClericSpellLevel5
+
+
+ClericLevel11:
+  $extends: Cleric
+  Level: 11 
+  HD: 9d6+2
+  THAC0: 14 [+5]
+  SavingThrows: D6 W7 P9 B11 S9
+  HP:
+    $diceroll: 9d6+2
+
+  Spell1: *ClericSpellLevel1
+  Spell2: *ClericSpellLevel1
+  Spell3: *ClericSpellLevel1
+  Spell4: *ClericSpellLevel1
+
+  Spell5: *ClericSpellLevel2
+  Spell6: *ClericSpellLevel2
+  Spell7: *ClericSpellLevel2
+  Spell8: *ClericSpellLevel2
+
+  Spell9: *ClericSpellLevel3
+  Spell10: *ClericSpellLevel3
+  Spell11: *ClericSpellLevel3
+  Spell12: *ClericSpellLevel3
+
+  Spell13: *ClericSpellLevel4
+  Spell14: *ClericSpellLevel4
+  Spell15: *ClericSpellLevel4
+
+  Spell16: *ClericSpellLevel5
+  Spell17: *ClericSpellLevel5
+  Spell18: *ClericSpellLevel5
+
+
+
+ClericLevel12:
+  $extends: Cleric
+  Level: 12 
+  HD: 9d6+3
+  THAC0: 14 [+5]
+  SavingThrows: D6 W7 P9 B11 S9
+  HP:
+    $diceroll: 9d6+3
+
+  Spell1: *ClericSpellLevel1
+  Spell2: *ClericSpellLevel1
+  Spell3: *ClericSpellLevel1
+  Spell4: *ClericSpellLevel1
+  Spell5: *ClericSpellLevel1
+
+  Spell6: *ClericSpellLevel2
+  Spell7: *ClericSpellLevel2
+  Spell8: *ClericSpellLevel2
+  Spell9: *ClericSpellLevel2
+  Spell10: *ClericSpellLevel2
+
+  Spell11: *ClericSpellLevel3
+  Spell12: *ClericSpellLevel3
+  Spell13: *ClericSpellLevel3
+  Spell14: *ClericSpellLevel3
+
+  Spell15: *ClericSpellLevel4
+  Spell16: *ClericSpellLevel4
+  Spell17: *ClericSpellLevel4
+  Spell18: *ClericSpellLevel4
+
+  Spell19: *ClericSpellLevel5
+  Spell20: *ClericSpellLevel5
+  Spell21: *ClericSpellLevel5
+
+
+
+ClericLevel13:
+  $extends: Cleric
+  Level: 13 
+  HD: 9d6+4
+  THAC0: 12 [+7]
+  SavingThrows: D3 W5 P7 B8 S7
+  HP:
+    $diceroll: 9d6+4
+
+  Spell1: *ClericSpellLevel1
+  Spell2: *ClericSpellLevel1
+  Spell3: *ClericSpellLevel1
+  Spell4: *ClericSpellLevel1
+  Spell5: *ClericSpellLevel1
+
+  Spell6: *ClericSpellLevel2
+  Spell7: *ClericSpellLevel2
+  Spell8: *ClericSpellLevel2
+  Spell9: *ClericSpellLevel2
+  Spell10: *ClericSpellLevel2
+
+  Spell11: *ClericSpellLevel3
+  Spell12: *ClericSpellLevel3
+  Spell13: *ClericSpellLevel3
+  Spell14: *ClericSpellLevel3
+  Spell15: *ClericSpellLevel3
+
+  Spell16: *ClericSpellLevel4
+  Spell17: *ClericSpellLevel4
+  Spell18: *ClericSpellLevel4
+  Spell19: *ClericSpellLevel4
+
+  Spell20: *ClericSpellLevel5
+  Spell21: *ClericSpellLevel5
+  Spell22: *ClericSpellLevel5
+  Spell23: *ClericSpellLevel5
+
+
+ClericLevel14:
+  $extends: Cleric
+  Level: 14 
+  HD: 9d6+5
+  THAC0: 12 [+7]
+  SavingThrows: D3 W5 P7 B8 S7
+  HP:
+    $diceroll: 9d6+5
+
+  Spell1: *ClericSpellLevel1
+  Spell2: *ClericSpellLevel1
+  Spell3: *ClericSpellLevel1
+  Spell4: *ClericSpellLevel1
+  Spell5: *ClericSpellLevel1
+  Spell6: *ClericSpellLevel1
+
+  Spell7: *ClericSpellLevel2
+  Spell8: *ClericSpellLevel2
+  Spell9: *ClericSpellLevel2
+  Spell10: *ClericSpellLevel2
+  Spell11: *ClericSpellLevel2
+
+  Spell12: *ClericSpellLevel3
+  Spell13: *ClericSpellLevel3
+  Spell14: *ClericSpellLevel3
+  Spell15: *ClericSpellLevel3
+  Spell16: *ClericSpellLevel3
+
+  Spell17: *ClericSpellLevel4
+  Spell18: *ClericSpellLevel4
+  Spell19: *ClericSpellLevel4
+  Spell20: *ClericSpellLevel4
+  Spell21: *ClericSpellLevel4
+
+  Spell22: *ClericSpellLevel5
+  Spell23: *ClericSpellLevel5
+  Spell24: *ClericSpellLevel5
+  Spell25: *ClericSpellLevel5
+
+
+Gender:
+  $subclass: !weighted
+    - Male^50
+    - Female^50
+    - Fluid
+
+Male:
+  $extends: Gender
+  Pronoun: he
+  Pronoun2: his
+  Pronoun3: him
+  Pos: has
+  Feature:
+    - a long white beard
+    - short dark beard
+    - no hair
+    - short red hair
+    - short blonde hair
+    - short black hair
+    - short brown hair
+    - short almond hair
+
+Female:
+  $extends: Gender
+  Pronoun: she
+  Pronoun2: her
+  Pronoun3: her
+  Pos: has
+  Feature:
+    - long and silky red hair
+    - long and silky blonde hair
+    - long and silky black hair
+    - long and silky brown hair
+    - long and silky almond hair
+    - short red hair
+    - short blonde hair
+    - short black hair
+    - short brown hair
+    - short almond hair
+
+Fluid:
+  $extends: Gender
+  Pronoun: they
+  Pronoun2: their
+  Pronoun3: them
+  Pos: have
+  Feature:
+    - long and silky red hair
+    - long and silky blonde hair
+    - long and silky black hair
+    - long and silky brown hair
+    - long and silky almond hair
+    - short red hair
+    - short blonde hair
+    - short black hair
+    - short brown hair
+    - short almond hair
+    - a long white beard
+    - short dark beard
+    - no hair
+    - short red hair
+    - short blonde hair
+    - short black hair
+    - short brown hair
+    - short almond hair
+
+
+NPCState:
+  - Aggressive
+  - Aghast
+  - Agitated
+  - Alone
+  - Angry
+  - Annoyed
+  - Anxious
+  - Apprehensive
+  - Arrogant
+  - Ashamed
+  - Bothered
+  - Calm
+  - Cheerful
+  - Confident
+  - Contented
+  - Crushed
+  - Delighted
+  - Depressed
+  - Desperate
+  - Determined
+  - Disorganized
+  - Disoriented
+  - Distressed
+  - Drained
+  - Ecstatic
+  - Elated
+  - Embarrassed
+  - Energetic
+  - Enraged
+  - Excited
+  - Exhausted
+  - Fearful
+  - Forceful
+  - Frustrated
+  - Guilty
+  - Happy
+  - Heartbroken
+  - Helpless
+  - Hopeless
+  - Horny
+  - Horrified
+  - Hurt
+  - Joyful
+  - Livid
+  - Lazy
+  - Lifeless
+  - Lost
+  - Irritated
+  - Mellow
+  - Moody
+  - Nervous
+  - Offended
+  - Outraged
+  - Overwhelmed
+  - Pained
+  - Panicky
+  - Paranoid
+  - Persuasive
+  - Petrified
+  - Pleased
+  - Proud
+  - Puzzled
+  - Queasy
+  - Rejected
+  - Relieved
+  - Remorseful
+  - Repentant
+  - Sad
+  - Satisfied
+  - Scared
+  - Shocked
+  - Sickened
+  - Sorrowful
+  - Surprised
+  - Terrified
+  - Timid
+  - Tired
+  - Troubled
+  - Uncomfortable
+  - Unimpressed
+  - Unsatisfied
+  - Unsure
+  - Upset
+  - Worried
+  - Worthless
+
+
+Dwarf:
+  $extends: NPC
+
+  Class: Dwarf
+  STR: *PrimaryAttribute
+  CON: *PrimaryAttribute
+  DEX: *SecondaryAttribute
+  WIS: *SecondaryAttribute
+  INT: *LesserAttribute
+  CHA: *LesserAttribute
+
+  $context:
+    $attr: NPC
+    $values:
+      - DEX
+
+  Armor:
+    $roll:
+      $class:
+        - LeatherArmor
+        - ChainmailArmor
+        - PlatemailArmor
+        - LeatherArmorWithShield
+        - ChainmailArmorWithShield
+        - PlatemailArmorWithShield
+
+  Weapon:
+    $roll:
+      $class:
+        - BattleAxe
+        - Club
+        - CrossBow
+        - Dagger
+        - HandAxe
+        - Javelin
+        - Lance
+        - Mace
+        - Polearm
+        - ShortBow
+        - ShortSword
+        - SilverDagger
+        - Sling
+        - Spear
+        - Staff
+        - Sword
+        - Warhammer
+
+  Feature2:
+    - big, bulbous nose 
+    - short, fat fingers
+    - a golden tooth
+    - big red cheeks
+
+
+DwarfLevel1:
+  $extends: Dwarf
+  Level: 1
+  HD: 1d8
+  THAC0: 19 [0]
+  SavingThrows: D8 W9 P10 B13 S12
+  HP:
+    $diceroll: 1d8
+
+
+DwarfLevel2:
+  $extends: Dwarf
+  Level: 2
+  HD: 2d8
+  THAC0: 19 [0]
+  SavingThrows: D8 W9 P10 B13 S12
+  HP:
+    $diceroll: 2d8
+
+
+DwarfLevel3:
+  $extends: Dwarf
+  Level: 3
+  HD: 3d8
+  THAC0: 19 [0]
+  SavingThrows: D8 W9 P10 B13 S12
+  HP:
+    $diceroll: 3d8
+
+
+DwarfLevel4:
+  $extends: Dwarf
+  Level: 4
+  HD: 4d8
+  THAC0: 17 [+2]
+  SavingThrows: D6 W7 P8 B10 S10
+  HP:
+    $diceroll: 4d8
+
+
+DwarfLevel5:
+  $extends: Dwarf
+  Level: 5
+  HD: 5d8
+  THAC0: 17 [+2]
+  SavingThrows: D6 W7 P8 B10 S10
+  HP:
+    $diceroll: 5d8
+
+
+DwarfLevel6:
+  $extends: Dwarf
+  Level: 6
+  HD: 6d8
+  THAC0: 17 [+2]
+  SavingThrows: D6 W7 P8 B10 S10
+  HP:
+    $diceroll: 6d8
+
+
+DwarfLevel7:
+  $extends: Dwarf
+  Level: 7
+  HD: 7d8
+  THAC0: 14 [+5]
+  SavingThrows: D4 W5 P6 B7 S8
+  HP:
+    $diceroll: 7d8
+
+
+DwarfLevel8:
+  $extends: Dwarf
+  Level: 8
+  HD: 8d8
+  THAC0: 14 [+5]
+  SavingThrows: D4 W5 P6 B7 S8
+  HP:
+    $diceroll: 8d8
+
+
+DwarfLevel9:
+  $extends: Dwarf
+  Level: 9
+  HD: 9d8
+  THAC0: 14 [+5]
+  SavingThrows: D4 W5 P6 B7 S8
+  HP:
+    $diceroll: 9d8
+
+
+DwarfLevel10:
+  $extends: Dwarf
+  Level: 10
+  HD: 9d8+3
+  THAC0: 12 [+7]
+  SavingThrows: D2 W3 P4 B4 S6
+  HP:
+    $diceroll: 9d8+2
+
+
+DwarfLevel11:
+  $extends: Dwarf
+  Level: 11
+  HD: 9d8+6
+  THAC0: 12 [+7]
+  SavingThrows: D2 W3 P4 B4 S6
+  HP:
+    $diceroll: 9d8+4
+
+
+DwarfLevel12:
+  $extends: Dwarf
+  Level: 12
+  HD: 9d8+9
+  THAC0: 12 [+7]
+  SavingThrows: D2 W3 P4 B4 S6
+  HP:
+    $diceroll: 9d8+6
+
+
+Elf:
+  $extends: NPC
+
+  Class: Elf
+  INT: *PrimaryAttribute
+  STR: *PrimaryAttribute
+  DEX: *SecondaryAttribute
+  CON: *SecondaryAttribute
+  WIS: *SecondaryAttribute
+  CHA: *LesserAttribute
+
+  $context:
+    $attr: NPC
+    $values:
+      - DEX
+
+  Armor:
+    $roll:
+      $class:
+        - LeatherArmor
+        - ChainmailArmor
+        - PlatemailArmor
+        - LeatherArmorWithShield
+        - ChainmailArmorWithShield
+        - PlatemailArmorWithShield
+
+  Weapon:
+    $roll:
+      $class:
+        - BattleAxe
+        - Club
+        - CrossBow
+        - Dagger
+        - HandAxe
+        - Javelin
+        - Lance
+        - LongBow
+        - Mace
+        - Polearm
+        - ShortBow
+        - ShortSword
+        - SilverDagger
+        - Sling
+        - Spear
+        - Staff
+        - Sword
+        - TwoHandedSword
+        - Warhammer
+
+  Feature2:
+    - long, pointy ears
+    - long, skinny fingers
+    - a sigil tattooed on the neck
+    - a nose ring
+    - silky light skin
+    - silky dark skin
+
+
+ElfLevel1:
+  $extends: Elf
+  Level: 1
+  HD: 1d6
+  THAC0: 19 [0]
+  SavingThrows: D12 W13 P13 B15 S15
+  HP:
+    $diceroll: 1d6
+
+  Spell1: *MagicuserSpellLevel1
+
+
+ElfLevel2:
+  $extends: Elf
+  Level: 2
+  HD: 2d6
+  THAC0: 19 [0]
+  SavingThrows: D12 W13 P13 B15 S15
+  HP:
+    $diceroll: 2d6
+
+  Spell1: *MagicuserSpellLevel1
+  Spell2: *MagicuserSpellLevel1
+
+
+ElfLevel3:
+  $extends: Elf
+  Level: 3
+  HD: 3d6
+  THAC0: 19 [0]
+  SavingThrows: D12 W13 P13 B15 S15
+  HP:
+    $diceroll: 3d6
+
+  Spell1: *MagicuserSpellLevel1
+  Spell2: *MagicuserSpellLevel1
+
+  Spell3: *MagicuserSpellLevel2
+
+
+ElfLevel4:
+  $extends: Elf
+  Level: 4
+  HD: 4d6
+  THAC0: 17 [+2]
+  SavingThrows: D10 W11 P11 B13 S12
+  HP:
+    $diceroll: 4d6
+
+  Spell1: *MagicuserSpellLevel1
+  Spell2: *MagicuserSpellLevel1
+
+  Spell3: *MagicuserSpellLevel2
+  Spell4: *MagicuserSpellLevel2
+
+
+ElfLevel5:
+  $extends: Elf
+  Level: 5
+  HD: 5d6
+  THAC0: 17 [+2]
+  SavingThrows: D10 W11 P11 B13 S12
+  HP:
+    $diceroll: 5d6
+
+  Spell1: *MagicuserSpellLevel1
+  Spell2: *MagicuserSpellLevel1
+
+  Spell3: *MagicuserSpellLevel2
+  Spell4: *MagicuserSpellLevel2
+
+  Spell5: *MagicuserSpellLevel3
+
+
+ElfLevel6:
+  $extends: Elf
+  Level: 6
+  HD: 6d6
+  THAC0: 17 [+2]
+  SavingThrows: D10 W11 P11 B13 S12
+  HP:
+    $diceroll: 6d6
+
+  Spell1: *MagicuserSpellLevel1
+  Spell2: *MagicuserSpellLevel1
+
+  Spell3: *MagicuserSpellLevel2
+  Spell4: *MagicuserSpellLevel2
+
+  Spell5: *MagicuserSpellLevel3
+  Spell6: *MagicuserSpellLevel3
+
+
+ElfLevel7:
+  $extends: Elf
+  Level: 7
+  HD: 7d6
+  THAC0: 14 [+5]
+  SavingThrows: D8 W9 P9 B10 S10
+  HP:
+    $diceroll: 7d6
+
+  Spell1: *MagicuserSpellLevel1
+  Spell2: *MagicuserSpellLevel1
+  Spell3: *MagicuserSpellLevel1
+
+  Spell4: *MagicuserSpellLevel2
+  Spell5: *MagicuserSpellLevel2
+
+  Spell6: *MagicuserSpellLevel3
+  Spell7: *MagicuserSpellLevel3
+
+  Spell8: *MagicuserSpellLevel4
+
+
+ElfLevel8:
+  $extends: Elf
+  Level: 8
+  HD: 8d6
+  THAC0: 14 [+5]
+  SavingThrows: D8 W9 P9 B10 S10
+  HP:
+    $diceroll: 8d6
+
+  Spell1: *MagicuserSpellLevel1
+  Spell2: *MagicuserSpellLevel1
+  Spell3: *MagicuserSpellLevel1
+
+  Spell4: *MagicuserSpellLevel2
+  Spell5: *MagicuserSpellLevel2
+  Spell6: *MagicuserSpellLevel2
+
+  Spell7: *MagicuserSpellLevel3
+  Spell8: *MagicuserSpellLevel3
+
+  Spell9: *MagicuserSpellLevel4
+  Spell10: *MagicuserSpellLevel4
+
+
+ElfLevel9:
+  $extends: Elf
+  Level: 9
+  HD: 9d6
+  THAC0: 14 [+5]
+  SavingThrows: D8 W9 P9 B10 S10
+  HP:
+    $diceroll: 9d6
+
+  Spell1: *MagicuserSpellLevel1
+  Spell2: *MagicuserSpellLevel1
+  Spell3: *MagicuserSpellLevel1
+
+  Spell4: *MagicuserSpellLevel2
+  Spell5: *MagicuserSpellLevel2
+  Spell6: *MagicuserSpellLevel2
+
+  Spell7: *MagicuserSpellLevel3
+  Spell8: *MagicuserSpellLevel3
+  Spell9: *MagicuserSpellLevel3
+
+  Spell10: *MagicuserSpellLevel4
+  Spell11: *MagicuserSpellLevel4
+
+  Spell12: *MagicuserSpellLevel5
+
+
+ElfLevel10:
+  $extends: Elf
+  Level: 10
+  HD: 9d6+2
+  THAC0: 12 [+7]
+  SavingThrows: D6 W7 P8 B8 S8
+  HP:
+    $diceroll: 9d6+2
+
+  Spell1: *MagicuserSpellLevel1
+  Spell2: *MagicuserSpellLevel1
+  Spell3: *MagicuserSpellLevel1
+
+  Spell4: *MagicuserSpellLevel2
+  Spell5: *MagicuserSpellLevel2
+  Spell6: *MagicuserSpellLevel2
+
+  Spell7: *MagicuserSpellLevel3
+  Spell8: *MagicuserSpellLevel3
+  Spell9: *MagicuserSpellLevel3
+
+  Spell10: *MagicuserSpellLevel4
+  Spell11: *MagicuserSpellLevel4
+  Spell12: *MagicuserSpellLevel4
+
+  Spell13: *MagicuserSpellLevel5
+  Spell14: *MagicuserSpellLevel5
+
+
+Halfling:
+  $extends: NPC
+
+  Class: Halfling
+  DEX: *PrimaryAttribute
+  STR: *PrimaryAttribute
+  CHA: *SecondaryAttribute
+  CON: *SecondaryAttribute
+  WIS: *LesserAttribute
+  INT: *LesserAttribute
+
+  $context:
+    $attr: NPC
+    $values:
+      - DEX
+
+  Armor:
+    $roll:
+      $class:
+        - LeatherArmor
+        - ChainmailArmor
+        - PlatemailArmor
+        - LeatherArmorWithShield
+        - ChainmailArmorWithShield
+        - PlatemailArmorWithShield
+
+  Weapon:
+    $roll:
+      $class:
+        - BattleAxe
+        - Club
+        - CrossBow
+        - Dagger
+        - HandAxe
+        - Javelin
+        - Lance
+        - Mace
+        - Polearm
+        - ShortBow
+        - ShortSword
+        - SilverDagger
+        - Sling
+        - Spear
+        - Staff
+        - Sword
+        - Warhammer
+
+  Feature2:
+    - short, chunky fingers
+    - extremely large feet, even for a halfling
+    - round, bulbous nose
+    - big red cheeks
+
+
+HalflingLevel1:
+  $extends: Halfling
+  Level: 1
+  HD: 1d6
+  THAC0: 19 [0]
+  SavingThrows: D8 W9 P10 B13 S12
+  HP:
+    $diceroll: 1d6
+
+
+HalflingLevel2:
+  $extends: Halfling
+  Level: 2
+  HD: 2d6
+  THAC0: 19 [0]
+  SavingThrows: D8 W9 P10 B13 S12
+  HP:
+    $diceroll: 2d6
+
+
+HalflingLevel3:
+  $extends: Halfling
+  Level: 3
+  HD: 3d6
+  THAC0: 19 [0]
+  SavingThrows: D8 W9 P10 B13 S12
+  HP:
+    $diceroll: 3d6
+
+
+HalflingLevel4:
+  $extends: Halfling
+  Level: 4
+  HD: 4d6
+  THAC0: 17 [+2]
+  SavingThrows: D6 W7 P8 B10 S10
+  HP:
+    $diceroll: 4d6
+
+
+HalflingLevel5:
+  $extends: Halfling
+  Level: 5
+  HD: 5d6
+  THAC0: 17 [+2]
+  SavingThrows: D6 W7 P8 B10 S10
+  HP:
+    $diceroll: 5d6
+
+
+HalflingLevel6:
+  $extends: Halfling
+  Level: 6
+  HD: 6d6
+  THAC0: 17 [+2]
+  SavingThrows: D6 W7 P8 B10 S10
+  HP:
+    $diceroll: 6d6
+
+
+HalflingLevel7:
+  $extends: Halfling
+  Level: 7
+  HD: 7d6
+  THAC0: 14 [+5]
+  SavingThrows: D4 W5 P6 B7 S8
+  HP:
+    $diceroll: 7d6
+
+
+HalflingLevel8:
+  $extends: Halfling
+  Level: 8
+  HD: 8d6
+  THAC0: 14 [+5]
+  SavingThrows: D4 W5 P6 B7 S8
+  HP:
+    $diceroll: 8d6
+
+
+Thief:
+  $extends: NPC
+
+  Class: Thief
+  DEX: *PrimaryAttribute
+  CHA: *PrimaryAttribute
+  STR: *SecondaryAttribute
+  CON: *SecondaryAttribute
+  INT: *LesserAttribute
+  WIS: *LesserAttribute
+
+  $context:
+    $attr: NPC
+    $values:
+      - DEX
+
+  Armor:
+    $roll:
+      $class:
+        - LeatherArmor
+
+  Weapon:
+    $roll:
+      $class:
+        - BattleAxe
+        - Club
+        - CrossBow
+        - Dagger
+        - HandAxe
+        - Javelin
+        - Lance
+        - LongBow
+        - Mace
+        - Polearm
+        - ShortBow
+        - ShortSword
+        - SilverDagger
+        - Sling
+        - Spear
+        - Staff
+        - Sword
+        - TwoHandedSword
+        - Warhammer
+
+  Feature2:
+    - long, skinny fingers
+    - a sigil tattooed behind the ear
+    - a nose ring
+    - a scar across the eye
+    - small, thin lips
+    - sharp, pointy nose
+
+
+ThiefLevel1:
+  $extends: Thief
+  Level: 1
+  HD: 1d4
+  THAC0: 19 [0]
+  SavingThrows: D13 W14 P13 B16 S15
+  HP:
+    $diceroll: 1d4
+
+
+ThiefLevel2:
+  $extends: Thief
+  Level: 2
+  HD: 2d4
+  THAC0: 19 [0]
+  SavingThrows: D13 W14 P13 B16 S15
+  HP:
+    $diceroll: 2d4
+
+
+ThiefLevel3:
+  $extends: Thief
+  Level: 3
+  HD: 3d4
+  THAC0: 19 [0]
+  SavingThrows: D13 W14 P13 B16 S15
+  HP:
+    $diceroll: 3d4
+
+
+ThiefLevel4:
+  $extends: Thief
+  Level: 4
+  HD: 4d4
+  THAC0: 19 [0]
+  SavingThrows: D13 W14 P13 B16 S15
+  HP:
+    $diceroll: 4d4
+
+
+ThiefLevel5:
+  $extends: Thief
+  Level: 5
+  HD: 5d4
+  THAC0: 17 [+2]
+  SavingThrows: D12 W13 P11 B14 S13
+  HP:
+    $diceroll: 5d4
+
+
+ThiefLevel6:
+  $extends: Thief
+  Level: 6
+  HD: 6d4
+  THAC0: 17 [+2]
+  SavingThrows: D12 W13 P11 B14 S13
+  HP:
+    $diceroll: 6d4
+
+
+ThiefLevel7:
+  $extends: Thief
+  Level: 7
+  HD: 7d4
+  THAC0: 17 [+2]
+  SavingThrows: D12 W13 P11 B14 S13
+  HP:
+    $diceroll: 7d4
+
+
+ThiefLevel8:
+  $extends: Thief
+  Level: 8
+  HD: 8d4
+  THAC0: 17 [+2]
+  SavingThrows: D12 W13 P11 B14 S13
+  HP:
+    $diceroll: 8d4
+
+
+ThiefLevel9:
+  $extends: Thief
+  Level: 9
+  HD: 9d4
+  THAC0: 14 [+5]
+  SavingThrows: D10 W11 P9 B12 S10
+  HP:
+    $diceroll: 9d4
+
+
+ThiefLevel10:
+  $extends: Thief
+  Level: 10
+  HD: 9d4+2
+  THAC0: 14 [+5]
+  SavingThrows: D10 W11 P9 B12 S10
+  HP:
+    $diceroll: 9d4+2
+
+
+ThiefLevel11:
+  $extends: Thief
+  Level: 11
+  HD: 9d4+4
+  THAC0: 14 [+5]
+  SavingThrows: D10 W11 P9 B12 S10
+  HP:
+    $diceroll: 9d4+4
+
+
+ThiefLevel12:
+  $extends: Thief
+  Level: 12
+  HD: 9d4+6
+  THAC0: 14 [+5]
+  SavingThrows: D10 W11 P9 B12 S10
+  HP:
+    $diceroll: 9d4+6
+
+
+ThiefLevel13:
+  $extends: Thief
+  Level: 13
+  HD: 9d4+8
+  THAC0: 12 [+7]
+  SavingThrows: D8 W9 P7 B10 S8
+  HP:
+    $diceroll: 9d4+8
+
+
+ThiefLevel14:
+  $extends: Thief
+  Level: 14
+  HD: 9d4+10
+  THAC0: 12 [+7]
+  SavingThrows: D8 W9 P7 B10 S8
+  HP:
+    $diceroll: 9d4+10
+
+
+TavernVisitor:
+  $subclass: !weighted
+    - ClericLevel1^10
+    - ClericLevel2^5
+    - ClericLevel3^3
+    - ClericLevel4^2
+    - ClericLevel5
+    - ClericLevel6
+    - ClericLevel7
+    - ClericLevel8
+    - Magic-userLevel1^10
+    - Magic-userLevel2^5
+    - Magic-userLevel3^3
+    - Magic-userLevel4^2
+    - Magic-userLevel5
+    - Magic-userLevel6
+    - Magic-userLevel7
+    - Magic-userLevel8
+    - FighterLevel1^10
+    - FighterLevel2^5
+    - FighterLevel3^3
+    - FighterLevel4^2
+    - FighterLevel5
+    - FighterLevel6
+    - FighterLevel7
+    - FighterLevel8
+    - ThiefLevel1^10
+    - ThiefLevel2^5
+    - ThiefLevel3^3
+    - ThiefLevel4^2
+    - ThiefLevel5
+    - ThiefLevel6
+    - ThiefLevel7
+    - ThiefLevel8
+    - HalflingLevel1^10
+    - HalflingLevel2^5
+    - HalflingLevel3^3
+    - HalflingLevel4^2
+    - HalflingLevel5
+    - HalflingLevel6
+    - HalflingLevel7
+    - HalflingLevel8
+    - ElfLevel1^10
+    - ElfLevel2^5
+    - ElfLevel3^3
+    - ElfLevel4^2
+    - ElfLevel5
+    - ElfLevel6
+    - ElfLevel7
+    - ElfLevel8
+    - DwarfLevel1^10
+    - DwarfLevel2^5
+    - DwarfLevel3^3
+    - DwarfLevel4^2
+    - DwarfLevel5
+    - DwarfLevel6
+    - DwarfLevel7
+    - DwarfLevel8

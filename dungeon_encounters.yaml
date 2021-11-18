@@ -1,0 +1,286 @@
+MonstersHumanoidTier1:
+  $subclass: !weighted
+    - HumanoidHD1^2
+    - HumanoidHD2
+
+
+MonstersVerminTier1:
+  $subclass: !weighted
+    - VerminHD1^3
+    - VerminHD2^2
+    - VerminHD3
+
+
+MonstersVerminTier2:
+  $subclass:
+    - VerminHD3
+    - VerminHD4
+    - VerminHD5
+
+
+MonstersVerminTier3:
+  $subclass:
+    - VerminHD6
+    - VerminHD15
+
+
+MonstersOozeTier1:
+  $subclass:
+    - OozeHD2
+
+
+MonstersOozeTier2:
+  $subclass:
+    - OozeHD3
+    - OozeHD4
+    - OozeHD5
+
+
+MonstersOozeTier3:
+  $subclass:
+    - OozeHD10
+
+
+MonstersAbberationTier1:
+  $subclass:
+    - AbberationHD1
+
+
+MonstersAbberationTier2:
+  $subclass:
+    - AbberationHD3
+    - AbberationHD5
+
+
+MonstersAbberationTier3:
+  $subclass:
+    - AbberationHD6
+    - AbberationHD8
+    - AbberationHD9
+    - AbberationHD13
+
+
+DungeonEncounterHumanoids:
+  $extends: DungeonEncounter
+  Foreshadow: !jinja >
+    When listening from outside,
+    {%if Monster.NumberAppearingRoaming > 1%}__speaking {{Monster.Title}}s__
+    {%else%}__footsteps__{%endif%}
+    can be faintly heard from inside this area
+  Hint: 
+    - You see glowing eyes staring at you from inside
+  Undead: False
+
+
+DungeonEncounterHumanoidsTier1:
+  $extends: DungeonEncounterHumanoids
+  Monster:
+    $roll: MonstersHumanoidTier1
+
+
+DungeonEncounterVermins:
+  $extends: DungeonEncounter
+  Foreshadow: !jinja |
+    A succesfull listening roll could detect the __sounds__ that the
+    __{{Monster.TitlePluralizedByRoaming}}__ {%if
+    Monster.NumberAppearingRoaming>1%}are{%else%}is{%endif%} making inside this
+    area
+
+  Hint: 
+    - There’s also a foul smell of decay and rot
+  Undead: False
+
+
+DungeonEncounterVerminsTier1:
+  $extends: DungeonEncounterVermins
+  Monster:
+    $roll: MonstersVerminTier1
+
+
+DungeonEncounterVerminsTier2:
+  $extends: DungeonEncounterVermins
+  Monster:
+    $roll: MonstersVerminTier2
+
+
+DungeonEncounterVerminsTier3:
+  $extends: DungeonEncounterVermins
+  Monster:
+    $roll: MonstersVerminTier3
+
+
+DungeonEncounterOozes:
+  $extends: DungeonEncounter
+  Foreshadow: !jinja >
+    There's a good chance players could sense the vile __stench__ that the
+    __{{Monster.TitlePluralizedByRoaming}}__ {%if
+    Monster.NumberAppearingRoaming>1%}are{%else%}is{%endif%} emitting from
+    inside this area
+
+  Hint: 
+    - There’s also a very strong acidic stench here, making breathing almost
+      unbearable
+
+  Undead: False
+
+
+DungeonEncounterOozesTier1:
+  $extends: DungeonEncounterOozes
+  Monster:
+    $roll: MonstersOozeTier1
+
+
+DungeonEncounterOozesTier2:
+  $extends: DungeonEncounterOozes
+  Monster:
+    $roll: MonstersOozeTier2
+
+
+DungeonEncounterOozesTier3:
+  $extends: DungeonEncounterOozes
+  Monster:
+    $roll: MonstersOozeTier3
+
+
+DungeonEncounterAbberations:
+  $extends: DungeonEncounter
+  Foreshadow: !jinja >
+    A succesfull listening roll could detect the __sounds__
+    that the __{{Monster.TitlePluralizedByRoaming}}__
+    {%if Monster.NumberAppearingRoaming>1%}are{%else%}is{%endif%}
+    making inside this area
+  Hint: 
+    - Red eyes are glowing inside like fire, and you hear a growl
+    - Looking down, you realize you just stepped into a pool of blood
+    - You feel the warm stench of a monster's breath
+
+  Undead: False
+
+
+DungeonEncounterAbberationsTier1:
+  $extends: DungeonEncounterAbberations
+  Monster:
+    $roll: MonstersAbberationTier1
+
+
+DungeonEncounterAbberationsTier2:
+  $extends: DungeonEncounterAbberations
+  Monster:
+    $roll: MonstersAbberationTier2
+
+
+DungeonEncounterAbberationsTier3:
+  $extends: DungeonEncounterAbberations
+  Monster:
+    $roll: MonstersAbberationTier3
+
+
+DungeonEncounterCultistsClasses:
+  $subclass:
+    - Acolyte
+    - Medium
+
+
+DungeonEncounterCultists:
+  $extends: DungeonEncounter
+  Foreshadow: >
+    If listening to one of the doors here is successfull, the faint voices
+    of __chanting by cultists__ could be heard
+
+  Hint:
+    - There are cultists inside
+  Undead: False
+  Monster:
+    $roll: DungeonEncounterCultistsClasses
+
+
+DungeonEncounterTempleAnimalsClasses:
+  $subclass:
+    - ApeWhite
+    - Tiger
+
+
+DungeonEncounterTempleAnimals:
+  $extends: DungeonEncounter
+  Foreshadow: !jinja >
+    A succesfull listening roll could detect the __sounds__ that the
+    __{{Monster.TitlePluralizedByRoaming}}__ {%if
+    Monster.NumberAppearingRoaming>1%}are{%else%}is{%endif%} making inside this
+    area
+
+  Hint:
+    - There’s some sort of a beast inside
+  Undead: False
+  Monster:
+    $roll: DungeonEncounterTempleAnimalsClasses
+
+
+MonstersMagicalTier2:
+  $subclass:
+    - MagicalHD4
+    - MagicalHD5
+
+
+MonstersMagicalTier3:
+  $subclass:
+    - BlackDragon
+    - MagicalHD8
+    - MagicalHD10
+
+
+DungeonEncounterMagical:
+  $extends: DungeonEncounter
+  Foreshadow: !jinja >
+    A succesfull listening roll could detect the sounds that the
+    {{Monster.TitlePluralizedByRoaming}} {%if
+    Monster.NumberAppearingRoaming>1%}are{%else%}is{%endif%} making inside this
+    area
+
+  Hint:
+    - You're not alone here
+    - This is not looking good
+    - There’s something moving inside
+
+  Undead: False
+
+
+DungeonEncounterMagicalTier2:
+  $extends: DungeonEncounterMagical
+  Monster:
+    $roll: MonstersMagicalTier2
+
+
+DungeonEncounterMagicalTier3:
+  $extends: DungeonEncounterMagical
+  Monster:
+    $roll: MonstersMagicalTier3
+
+
+DungeonEncounterUndead:
+  $extends: DungeonEncounter
+  Hint: 
+    - You feel the chill of death rising up your spine
+    - You hear nothing but the silence of death in here
+    - Looking down, you realize you just stepped into a pool of blood
+
+  Undead: True
+  Monster:
+    $roll: UndeadMonster
+
+
+DungeonEncounterUndeadHD7:
+  $extends: DungeonEncounterUndead
+  Monster:
+    $roll: UndeadHD7
+
+  Rumor:
+    $roll:
+      $class: Rumor
+      $inject:
+        $namespace: encounter
+        $values:
+          Details: !jinja >
+            There’s a __{{encounter.Monster.Title}}__ in
+            __{{encounter.DungeonContext.Name.Title | title}}__
+
+

@@ -1,0 +1,377 @@
+# This document contains Open Game Content, subject to the Open Game License,
+# released un the Open Game License, Version 1.0a (enclosed in the LICENSE
+# file), as described in Section 1(d) of the License.
+
+Equipment:
+  $subclass:
+    - Gear
+
+
+Gear:
+  $subclass:
+    - Storage
+    - Food
+    - HolyItems
+    - Tools
+    - Lighting
+    - Wearables
+
+
+Wearables:
+  $extends: Gear
+  $subclass:
+    - Wolfsbane
+    - ClothesCommon
+    - ClothesFine
+    - ClothesAdventurer
+    - ClothesUniform
+
+
+Tools:
+  $extends: Gear
+  $subclass:
+    - StakesAndMallet
+    - Crowbar
+    - GrapplingHook
+    - SmallHammer
+    - IronSpikes
+    - ThieveTools
+    - Pole
+    - Rope
+    - Mirror
+
+
+Lighting:
+  $extends: Gear
+  $subclass:
+    - Lantern
+    - Oil
+    - TinderBox
+    - SixTorches
+
+
+HolyItems:
+  $extends: Gear
+  $subclass:
+    - HolySymbol
+    - HolyWater
+
+
+Storage:
+  $extends: Gear
+  $subclass:
+    - SmallSack
+    - LargeSack
+    - Backpack
+
+
+Food:
+  $extends: Gear
+  $subclass:
+    - IronRations
+    - Rations
+    - Waterskin
+    - Wine
+    - Garlic
+
+
+ArmorWeapon:
+  $extends: Equipment
+  $subclass:
+    - BattleAxe
+    - Club
+    - CrossBow
+    - Dagger
+    - HandAxe
+    - Javelin
+    - Lance
+    - LongBow
+    - Mace
+    - Polearm
+    - ShortBow
+    - ShortSword
+    - SilverDagger
+    - Sling
+    - Spear
+    - Staff
+    - Sword
+    - TwoHandedSword
+    - Warhammer
+
+
+Sword:
+  Title: Sword
+  Cost: 5 gp
+
+
+Backpack:
+  Title: Backback
+  Cost: "5 gp"
+
+
+Crowbar:
+  Title: Crowbar
+  Cost: "10 gp"
+
+
+Garlic:
+  Title: Garlic
+  Cost: "5 gp"
+
+
+GrapplingHook:
+  Title: Grappling hook
+  Cost: "25 gp"
+
+
+SmallHammer:
+  Title: Hammer (small)
+  Cost: "2 gp"
+
+
+HolySymbol:
+  Title: Holy symbol
+  Cost: "25 gp"
+
+
+HolyWater:
+  Title: Holy water (vial)
+  Cost: "25 gp"
+
+
+IronSpikes:
+  Title: Iron spikes (12)
+  Cost: "1 gp"
+
+
+Lantern:
+  Title: Lantern
+  Cost: "10 gp"
+
+
+Mirror:
+  Title: Mirror (hand-sized, steel)
+  Cost: "5 gp"
+
+
+Oil:
+  Title: Oil (1 flask)
+  Cost: "2 gp"
+
+
+Pole:
+  Title: Pole (10’ long, wooden)
+  Cost: "1 gp"
+
+
+IronRations:
+  Title: Rations (iron, 7 days)
+  Cost: "15 gp"
+
+
+Rations:
+  Title: Rations (standard, 7 days)
+  Cost: "5 gp"
+
+
+Rope:
+  Title: Rope (50’)
+  Cost: "1 gp"
+
+
+SmallSack:
+  Title: Sack (small)
+  Cost: "1 gp"
+
+
+LargeSack:
+  Title: Sack (large)
+  Cost: "2 gp"
+
+
+StakesAndMallet:
+  Title: Stakes (3) and mallet
+  Cost: "3 gp"
+
+
+ThieveTools:
+  Title: Thieves’ tools
+  Cost: "25 gp"
+
+
+TinderBox:
+  Title: Tinder box (flint & steel)
+  Cost: "3 gp"
+
+
+SixTorches:
+  Title: Torches (6)
+  Cost: "1 gp"
+
+
+Waterskin:
+  Title: Waterskin
+  Cost: "1 gp"
+
+
+Wine:
+  Title: Wine (2 pints)
+  Cost: "1 gp"
+
+
+Wolfsbane:
+  Title: Wolfsbane (1 bunch)
+  Cost: "10 gp"
+
+
+ClothesCommon:
+  Title: Clothes, Common
+  Cost: "10 gp"
+
+
+ClothesFine:
+  Title: Clothes, Fine
+  Cost: "10 gp"
+
+
+ClothesAdventurer:
+  Title: Clothes, Adventurer's
+  Cost: "10 gp"
+
+
+ClothesUniform:
+  Title: Clothes, Uniform
+  Cost: "10 gp"
+
+
+BattleAxe:
+  $extends: ArmorWeapon
+  Title: Battle Axe
+  Damage: 1d8
+  Cost: 7 gp
+
+
+Club:
+  $extends: ArmorWeapon
+  Title: Club
+  Damage: 1d4
+  Cost: 3 gp
+
+
+CrossBow:
+  $extends: ArmorWeapon
+  Title: Cross Bow
+  Damage: 1d6
+  Cost: 30 gp
+
+
+Dagger:
+  $extends: ArmorWeapon
+  Title: Dagger
+  Damage: 1d4
+  Cost: 3 gp
+
+
+HandAxe:
+  $extends: ArmorWeapon
+  Title: Hand Axe
+  Damage: 1d6
+  Cost: 4 gp
+
+
+Javelin:
+  $extends: ArmorWeapon
+  Title: Javelin
+  Damage: 1d4
+  Cost: 1 gp
+
+
+Lance:
+  $extends: ArmorWeapon
+  Title: Lance
+  Damage: 1d6
+  Cost: 5 gp
+
+
+LongBow:
+  $extends: ArmorWeapon
+  Title: Long Bow
+  Damage: 1d6
+  Cost: 40 gp
+
+
+Mace:
+  $extends: ArmorWeapon
+  Title: Mace
+  Damage: 1d6
+  Cost: 5 gp
+
+
+Polearm:
+  $extends: ArmorWeapon
+  Title: Polearm
+  Damage: 1d10
+  Cost: 7 gp
+
+
+ShortBow:
+  $extends: ArmorWeapon
+  Title: Short Bow
+  Damage: 1d6
+  Cost: 25 gp
+
+
+ShortSword:
+  $extends: ArmorWeapon
+  Title: Short Sword
+  Damage: 1d6
+  Cost: 7 gp
+
+
+SilverDagger:
+  $extends: ArmorWeapon
+  Title: Silver Dagger
+  Damage: 1d4
+  Cost: 30 gp
+
+
+Sling:
+  $extends: ArmorWeapon
+  Title: Sling
+  Damage: 1d4
+  Cost: 2 gp
+
+
+Spear:
+  $extends: ArmorWeapon
+  Title: Spear
+  Damage: 1d6
+  Cost: 4 gp
+
+
+Staff:
+  $extends: ArmorWeapon
+  Title: Staff
+  Damage: 1d4
+  Cost: 2 gp
+
+
+Sword:
+  $extends: ArmorWeapon
+  Title: Sword
+  Damage: 1d8
+  Cost: 10 gp
+
+
+TwoHandedSword:
+  $extends: ArmorWeapon
+  Title: Two-Handed Sword
+  Damage: 1d10
+  Cost: 15 gp
+
+
+Warhammer:
+  $extends: ArmorWeapon
+  Title: Warhammer
+  Damage: 1d6
+  Cost: 5 gp

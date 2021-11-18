@@ -1,0 +1,244 @@
+# This document contains Open Game Content, subject to the Open Game License,
+# released un the Open Game License, Version 1.0a (enclosed in the LICENSE
+# file), as described in Section 1(d) of the License.
+
+RandomPotion:
+  Description: !jinja "{{Item}}"
+  Item: !weighted
+    - Potion of Clairaudience^3
+    - Potion of Clairvoyance^4
+    - Potion of Control Animal^3
+    - Potion of Control Dragon^3
+    - Potion of Control Giant^3
+    - Potion of Control Human^3
+    - Potion of Control Plant^3
+    - Potion of Control Undead^3
+    - Potion of Delusion^6
+    - Potion of Diminution^3
+    - Potion of ESP^4
+    - Potion of Fire Resistance^4
+    - Potion of Flying^4
+    - Potion of Gaseous Form^4
+    - Potion of Giant Strength^4
+    - Potion of Growth^4
+    - Potion of Healing^4
+    - Potion of Heroism^5
+    - Potion of Invisibility^4
+    - Potion of Invulnerability^4
+    - Potion of Levitation^4
+    - Potion of Longevity^4
+    - Potion of Poison^2
+    - Potion of Polymorph Self^3
+    - Potion of Speed^8
+    - Potion of Treasure Finding^3
+
+
+RandomMagicArmor:
+  Description: !jinja "{{Item}}"
+  Item: !weighted
+    - Armour +1^15
+    - Armour +1, Shield +1^11
+    - Armour +1, Shield +2^3
+    - Armour +1, Shield +3
+    - Armour +2^4
+    - Armour +2, Shield +1^3
+    - Armour +2, Shield +2^5
+    - Armour +2, Shield +3
+    - Armour +3^3
+    - Armour +3, Shield +1
+    - Armour +3, Shield +2
+    - Armour +3, Shield +3
+    - Cursed Armour -1^3
+    - Cursed Armour -2^2
+    - Cursed Armour -2 with Shield +1
+    - Cursed Armour, AC 9 [10]^2
+    - Cursed Shield -2^6
+    - Cursed Shield, AC 9 [10]^3
+    - Shield +1^20
+    - Shield +2^10
+    - Shield +3^5
+
+
+RandomRing:
+  Description: !jinja "{{Item}}"
+  Item: !weighted
+    - Ring of Control Animals^5
+    - Ring of Control Humans^5
+    - Ring of Control Plants^5
+    - Ring of Delusion^10
+    - Ring of Djinni Summoning^3
+    - Ring of Fire Resistance^10
+    - Ring of Invisibility^10
+    - Ring of Protection +1, 5’ radius^5
+    - Ring of Protection +1^15
+    - Ring of Regeneration^2
+    - Ring of Spell Storing^2
+    - Ring of Spell Turning^6
+    - Ring of Telekinesis^2
+    - Ring of Water Walking^6
+    - Ring of Weakness^6
+    - Ring of Wishes, 1–2^2
+    - Ring of Wishes, 1–3
+    - Ring of Wishes, 2–4
+    - Ring of X-Ray Vision^2
+
+
+RandomRodStaffWand:
+  Description: !jinja "{{Item}}"
+  Item: !weighted
+    - Rod of Cancellation^8
+    - Staff of Commanding^3
+    - Staff of Healing^10
+    - Staff of Power^2
+    - Staff of Snakes^5
+    - Staff of Striking^3
+    - Staff of Withering^3
+    - Staff of Wizardry
+    - Wand of Cold^5
+    - Wand of Enemy Detection^5
+    - Wand of Fear^5
+    - Wand of Fire Balls^5
+    - Wand of Illusion^5
+    - Wand of Lightning Bolts^5
+    - Wand of Magic Detection^10
+    - Wand of Negation^5
+    - Wand of Paralysation^5
+    - Wand of Polymorph^5
+    - Wand of Secret Door Detection^5
+    - Wand of Trap Detection^5
+    
+    
+RandomMagicSword:
+  Description: !jinja "{{Item}}"
+  Item: !weighted
+    - Sword –1, Cursed^2
+    - Sword –2, Cursed^2
+    - Sword +1^39
+    - Sword +1, +2 vs Lycanthropes^6
+    - Sword +1, +2 vs Spell Users^6
+    - Sword +1, +3 vs Dragons^6
+    - Sword +1, +3 vs Enchanted Creatures^5
+    - Sword +1, +3 vs Regenerating Creatures^6
+    - Sword +1, +3 vs Undead^6
+    - Sword +1, Energy Drain
+    - Sword +1, Flaming^4
+    - Sword +1, Light^8
+    - Sword +1, Locate Objects^4
+    - Sword +1, Wishes
+    - Sword +2^3
+    - Sword +2, Charm Person^2
+    - Sword +3^2
+ 
+RandomMagicWeapon:
+  Description: !jinja "{{Item}}"
+  Item: !weighted
+    - Arrows +1(3d10 arrows)^2
+    - "Arrows +1 (Basic: 10; Expert: 2d6 arrows)^10"
+    - Arrows +2(1d6 arrows)^6
+    - Axe +1^9
+    - Axe +2^3
+    - Bow +1^3
+    - Crossbow Bolts +1 (2d6 bolts)^10
+    - Crossbow Bolts +1 (3d10 bolts)^2
+    - Crossbow Bolts +2 (1d6 bolts)^7
+    - Dagger +1^3
+    - Dagger +2, +3 vs orcs, goblins, and kobolds
+    - Mace +1^8
+    - Mace +2^3
+    - Mace +3
+    - Sling +1^6
+    - Spear +1^8
+    - Spear +2^4
+    - Spear +3
+    - War Hammer +1^7
+    - War Hammer +2^5
+    - War Hammer +3, Dwarven Thrower 
+
+
+RandomMiscItem:
+  Description: !jinja "{{Item}}"
+  Item: !weighted
+    - Amulet of Protection Against Scrying^3
+    - Bag of Devouring^2
+    - Bag of Holding^6
+    - Boots of Levitation^5
+    - Boots of Speed^5
+    - Boots of Travelling and Leaping^5
+    - Broom of Flying^5
+    - Crystal Ball^4
+    - Crystal Ball with Clairaudience^2
+    - Crystal Ball with ESP
+    - Displacer Cloak^2
+    - Drums of Panic
+    - Efreeti Bottle
+    - "Elemental Summoning Device: Air"
+    - "Elemental Summoning Device: Earth"
+    - "Elemental Summoning Device: Fire"
+    - "Elemental Summoning Device: Water"
+    - Elven Cloak and Boots^10
+    - Flying Carpet
+    - Gauntlets of Ogre Power^7
+    - Girdle of Giant Strength^2
+    - Helm of Alignment Changing^11
+    - Helm of Reading Languages and Magic^5
+    - Helm of Telepathy
+    - Helm of Teleportation
+    - Horn of Blasting
+    - Medallion of ESP 30’^6
+    - Medallion of ESP 90’^3
+    - Mirror of Life Trapping
+    - Rope of Climbing^3
+    - Scarab of Protection^3
+
+
+RandomMagicItemsOnBody:
+  Description: !jinja "{{Item}}"
+  Item: !weighted
+    - Armour +1^15
+    - Armour +1, Shield +1^11
+    - Armour +1, Shield +2^3
+    - Armour +1, Shield +3
+    - Armour +2^4
+    - Armour +2, Shield +1^3
+    - Armour +2, Shield +2^2
+    - Armour +2, Shield +3
+    - Armour +3^3
+    - Armour +3, Shield +1
+    - Armour +3, Shield +2
+    - Armour +3, Shield +3
+    - Cursed Armour -1^3
+    - Cursed Armour -2^2
+    - Cursed Armour -2 with Shield +1
+    - Cursed Armour, AC 9 [10]^2
+    - Cursed Shield -2^6
+    - Cursed Shield, AC 9 [10]^3
+    - Shield +1^20
+    - Shield +2^10
+    - Shield +3^5
+    - Potion of Clairaudience^3
+    - Potion of Clairvoyance^4
+    - Potion of Control Animal^3
+    - Potion of Control Dragon^3
+    - Potion of Control Giant^3
+    - Potion of Control Human^3
+    - Potion of Control Plant^3
+    - Potion of Control Undead^3
+    - Potion of Delusion^6
+    - Potion of Diminution^3
+    - Potion of ESP^4
+    - Potion of Fire Resistance^4
+    - Potion of Flying^4
+    - Potion of Gaseous Form^4
+    - Potion of Giant Strength^4
+    - Potion of Growth^4
+    - Potion of Healing^4
+    - Potion of Heroism^5
+    - Potion of Invisibility^4
+    - Potion of Invulnerability^4
+    - Potion of Levitation^4
+    - Potion of Longevity^4
+    - Potion of Poison^2
+    - Potion of Polymorph Self^3
+    - Potion of Speed^8
+    - Potion of Treasure Finding^3
+

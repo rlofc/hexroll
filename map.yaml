@@ -1,0 +1,211 @@
+Cluster:
+  Description: !jinja |
+    ### {{Name.Full}} {{Suffix}}
+    {% for hex in Hexmap %}
+    {{hex.Details}}
+    {% endfor %}
+  Name:
+    $roll: RegionNames
+  $subclass:
+    - MountainsCluster
+    - PlainsCluster
+    - ForestCluster
+    - DesertCluster
+    - CoastCluster
+
+
+MountainsCluster:
+  $extends: Cluster
+
+  Suffix:
+    - Mountains
+    - Ridge
+    - Range
+    - Peaks
+    - Teeth
+  $context:
+    $attr: Cluster
+    $values:
+      - Name
+      - Suffix
+  Hexmap:
+    $rollsome:
+      $class: MountainsHex
+      $min: 3
+      $max: 8
+
+
+PlainsCluster:
+  $extends: Cluster
+  Suffix:
+    - Plains
+  $context:
+    $attr: Cluster
+    $values:
+      - Name
+      - Suffix
+  Hexmap:
+    $rollsome:
+      $class: PlainsHex
+      $min: 3
+      $max: 8
+
+
+ForestCluster:
+  $extends: Cluster
+  Suffix:
+    - Forest
+    - Woods
+  $context:
+    $attr: Cluster
+    $values:
+      - Name
+      - Suffix
+  Hexmap:
+    $rollsome:
+      $class: ForestHex
+      $min: 3
+      $max: 8
+
+
+DesertCluster:
+  $extends: Cluster
+  Suffix:
+    - Dunes
+    - Desert
+    - Wastelands
+  $context:
+    $attr: Cluster
+    $values:
+      - Name
+      - Suffix
+  Hexmap:
+    $rollsome:
+      $class: DesertHex
+      $min: 3
+      $max: 8
+
+
+CoastCluster:
+  $extends: Cluster
+  Suffix:
+    - Coastline
+    - Shores
+  $context:
+    $attr: Cluster
+    $values:
+      - Name
+      - Suffix
+  Hexmap:
+    $rollsome:
+      $class: CoastHex
+      $min: 3
+      $max: 8
+
+
+Hex:
+  $inc:
+    $global: HexCounter
+    $value: 1
+  Details: !jinja |
+    {%if DungeonDesc != "!"%}
+    #### Hex {{'%02d' %  HexCounter}}: {{DungeonDesc}}
+    {%elif SettlementDesc != "!"%}
+    #### Hex {{'%02d' %  HexCounter}}: {{SettlementDesc}}
+    {%elif InnDesc != "!"%}
+    #### Hex {{'%02d' %  HexCounter}}: {{InnDesc}}
+    {%elif EncounterDesc != "!"%}
+    #### Hex {{'%02d' %  HexCounter}}: {{EncounterName}}
+    {%else%}
+    #### Hex {{'%02d' %  HexCounter}}: {{Feature.Name}}
+    {%endif%}
+
+    {{Terrain.Flair}}
+
+    {%if DungeonDesc != "!"%}
+    The {{DungeonDesc}} is hidden
+    {%if Terrain.Hideout%}{{Terrain.Hideout}}{%endif%} somewhere {{Terrain.Location}}.
+    ##### Entrances
+    {{DungeonEntrance}}
+    {%elif SettlementDesc != "!"%}
+    The {{SettlementDetails}} {{SettlementConnector}} {{Terrain.Location}}.
+    {{SettlementFlair}}
+    {%elif InnDesc != "!"%}
+    {{InnDesc}} is welcoming travellers and adventurers {{Terrain.Location}}.
+    {%elif EncounterDesc != "!"%}
+    {{EncounterDesc}} {{Terrain.Location}}.
+    {{EncounterProbability}}
+    {{EncounterFlair}}
+    {%else%}
+    {{Feature.Description}} {{Feature.Connector}} {{Terrain.Location}}.
+    {{Feature.Probability}}
+    {{Feature.Flair}}
+
+    {%endif%}
+  $sublcass:
+    - MountainsHex
+    - PlainsHex
+    - ForestHex
+    - DesertHex
+    - CoastHex
+  Feature:
+    $roll: Feature
+  DungeonDesc: "!"
+  SettlementDesc: "!"
+  InnDesc: "!"
+  EncounterDesc: "!"
+
+
+MountainsHex:
+  $extends: Hex
+  Terrain:
+    $roll: Mountains
+  Monster:
+    $roll: MountainsEncounter
+  Feature:
+    $roll: 
+      $class: Feature
+
+
+PlainsHex:
+  $extends: Hex
+  Terrain:
+    $roll: Plains
+  Monster:
+    $roll: MountainsEncounter
+  Feature:
+    $roll: 
+      $class: Feature
+
+
+ForestHex:
+  $extends: Hex
+  Terrain:
+    $roll: Forest
+  Monster:
+    $roll: ForestEncounter
+  Feature:
+    $roll: 
+      $class: Feature
+
+
+DesertHex:
+  $extends: Hex
+  Terrain:
+    $roll: Desert
+  Monster:
+    $roll: MountainsEncounter
+  Feature:
+    $roll: 
+      $class: Feature
+
+
+CoastHex:
+  $extends: Hex
+  Terrain:
+    $roll: Coast
+  Monster:
+    $roll: MountainsEncounter
+  Feature:
+    $roll: 
+      $class: Feature

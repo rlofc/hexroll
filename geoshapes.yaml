@@ -1,0 +1,2281 @@
+DungeonShape:
+  $subclass:
+    - DungeonShapeSmall
+    - DungeonShapeSmall2
+    - DungeonShapeSmall3
+    - DungeonShapeSmall4
+    - DungeonShapeSmall
+    - DungeonShapeSmall2
+    - DungeonShapeSmall3
+    - DungeonShapeSmall4
+    - DungeonShapeLarge
+    - DungeonShapeLarge2
+    - DungeonShapeLarge3
+    - DungeonShapeLarge4
+    - DungeonShapeMedium
+    - DungeonShapeMedium2
+    - DungeonShapeMedium3
+    - DungeonShapeMedium4
+
+
+DungeonShapeSmall:
+  Details: !jinja |
+    {{TopLeft.Details}}
+    {{Top.Details}}
+    {{TopRight.Details}}
+    {{Left.Details}}
+    {{Center.Details}}
+    {{Right.Details}}
+    {{BottomLeft.Details}}
+    {{Bottom.Details}}
+    {{BottomRight.Details}}
+
+  Shape: |
+    [[ 'TopLeft',    'Top',      'TopRight'],
+     [ 'Left',       'Center',   'Right'],
+     [ 'BottomLeft', 'Bottom',   'BottomRight' ]]
+
+  $set:
+    $global: Counter
+    $value: 0
+
+  TopLeft:
+    $roll: 
+      $class: GeomorphCornerEntrance
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+  Top:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+  TopRight:
+    $roll: 
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  Left:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+  Center: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Right:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  BottomLeft:
+    $roll: 
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+  Bottom:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  BottomRight:
+    $roll:
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+
+DungeonShapeSmall2:
+  Details: !jinja |
+    {{BottomLeft.Details}}
+    {{Bottom.Details}}
+    {{BottomRight.Details}}
+    {{Left.Details}}
+    {{Center.Details}}
+    {{Right.Details}}
+    {{TopLeft.Details}}
+    {{Top.Details}}
+    {{TopRight.Details}}
+
+  Shape: |
+    [[ 'TopLeft',    'Top',      'TopRight'],
+     [ 'Left',       'Center',   'Right'],
+    [ 'BottomLeft', 'Bottom',   'BottomRight' ]]
+
+  $set:
+    $global: Counter
+    $value: 0
+
+  BottomLeft:
+    $roll: 
+      $class: GeomorphCornerEntrance
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+
+  Bottom:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  BottomRight:
+    $roll:
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  Left:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+  Center: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Right:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  TopLeft:
+    $roll: 
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+  Top:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+  TopRight:
+    $roll: 
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+
+DungeonShapeSmall3:
+  Details: !jinja |
+    {{BottomRight.Details}}
+    {{Bottom.Details}}
+    {{BottomLeft.Details}}
+    {{Right.Details}}
+    {{Center.Details}}
+    {{Left.Details}}
+    {{TopRight.Details}}
+    {{Top.Details}}
+    {{TopLeft.Details}}
+
+  Shape: |
+    [[ 'TopLeft',    'Top',      'TopRight'],
+     [ 'Left',       'Center',   'Right'],
+    [ 'BottomLeft', 'Bottom',   'BottomRight' ]]
+
+  $set:
+    $global: Counter
+    $value: 0
+
+  BottomRight:
+    $roll:
+      $class: GeomorphCornerEntrance
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  Bottom:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  BottomLeft:
+    $roll: 
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+  Right:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  Center: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Left:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+  TopRight:
+    $roll: 
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  Top:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+  TopLeft:
+    $roll: 
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+
+DungeonShapeSmall4:
+  Details: !jinja |
+    {{TopRight.Details}}
+    {{Top.Details}}
+    {{TopLeft.Details}}
+    {{Right.Details}}
+    {{Center.Details}}
+    {{Left.Details}}
+    {{BottomRight.Details}}
+    {{Bottom.Details}}
+    {{BottomLeft.Details}}
+
+  Shape: |
+    [[ 'TopLeft',    'Top',      'TopRight'],
+     [ 'Left',       'Center',   'Right'],
+    [ 'BottomLeft', 'Bottom',   'BottomRight' ]]
+
+  $set:
+    $global: Counter
+    $value: 0
+
+  TopRight:
+    $roll: 
+      $class: GeomorphCornerEntrance
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  Top:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+  TopLeft:
+    $roll: 
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+
+  Right:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  Center: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Left:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+  BottomRight:
+    $roll:
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  Bottom:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  BottomLeft:
+    $roll: 
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+
+
+
+DungeonShapeLarge:
+  Details: !jinja |
+    {{TopLeft.Details}}
+    {{Top01.Details}}
+    {{Top02.Details}}
+    {{Top03.Details}}
+    {{TopRight.Details}}
+
+    {{Left10.Details}}
+    {{Center11.Details}}
+    {{Center12.Details}}
+    {{Center13.Details}}
+    {{Right10.Details}}
+
+    {{Left20.Details}}
+    {{Center21.Details}}
+    {{Center22.Details}}
+    {{Center23.Details}}
+    {{Right20.Details}}
+
+    {{Left30.Details}}
+    {{Center31.Details}}
+    {{Center32.Details}}
+    {{Center33.Details}}
+    {{Right30.Details}}
+
+    {{BottomLeft.Details}}
+    {{Bottom41.Details}}
+    {{Bottom42.Details}}
+    {{Bottom43.Details}}
+    {{BottomRight.Details}}
+
+  Shape: |
+    [[ 'TopLeft',     'Top01',    'Top02',    'Top03',    'TopRight'],
+     [ 'Left10',      'Center11', 'Center12', 'Center13', 'Right10'],
+     [ 'Left20',      'Center21', 'Center22', 'Center23', 'Right20'],
+     [ 'Left30',      'Center31', 'Center32', 'Center33', 'Right30'],
+     [ 'BottomLeft',  'Bottom41', 'Bottom42', 'Bottom43', 'BottomRight' ]]
+
+  $set:
+    $global: Counter
+    $value: 0
+
+  TopLeft:
+    $roll: 
+      $class: GeomorphCornerEntrance
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+
+  Top01:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+
+  Top02:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+
+  Top03:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+
+  TopRight:
+    $roll: 
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  Left10:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+  Center11: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+
+  Center12: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+
+  Center13: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Right10:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  Left20:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+  Center21: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center22: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center23: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Right20:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  Left30:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+  Center31: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center32: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center33: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Right30:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  BottomLeft:
+    $roll: 
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+  Bottom41:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  Bottom42:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  Bottom43:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  BottomRight:
+    $roll:
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+
+DungeonShapeLarge2:
+  Details: !jinja |
+    {{BottomLeft.Details}}
+    {{Bottom41.Details}}
+    {{Bottom42.Details}}
+    {{Bottom43.Details}}
+    {{BottomRight.Details}}
+
+    {{Left30.Details}}
+    {{Center31.Details}}
+    {{Center32.Details}}
+    {{Center33.Details}}
+    {{Right30.Details}}
+
+    {{Left20.Details}}
+    {{Center21.Details}}
+    {{Center22.Details}}
+    {{Center23.Details}}
+    {{Right20.Details}}
+
+    {{Left10.Details}}
+    {{Center11.Details}}
+    {{Center12.Details}}
+    {{Center13.Details}}
+    {{Right10.Details}}
+
+    {{TopLeft.Details}}
+    {{Top01.Details}}
+    {{Top02.Details}}
+    {{Top03.Details}}
+    {{TopRight.Details}}
+
+
+  Shape: |
+    [[ 'TopLeft',     'Top01',    'Top02',    'Top03',    'TopRight'],
+     [ 'Left10',      'Center11', 'Center12', 'Center13', 'Right10'],
+     [ 'Left20',      'Center21', 'Center22', 'Center23', 'Right20'],
+     [ 'Left30',      'Center31', 'Center32', 'Center33', 'Right30'],
+     [ 'BottomLeft',  'Bottom41', 'Bottom42', 'Bottom43', 'BottomRight' ]]
+
+  $set:
+    $global: Counter
+    $value: 0
+
+  BottomLeft:
+    $roll: 
+      $class: GeomorphCornerEntrance
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+  Bottom41:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  Bottom42:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  Bottom43:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  BottomRight:
+    $roll:
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  Left30:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+  Center31: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center32: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center33: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Right30:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  Left20:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+  Center21: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center22: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center23: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Right20:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  Left10:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+  Center11: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+
+  Center12: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+
+  Center13: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Right10:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  TopLeft:
+    $roll: 
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+
+  Top01:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+
+  Top02:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+
+  Top03:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+
+  TopRight:
+    $roll: 
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+
+DungeonShapeLarge3:
+  Details: !jinja |
+    {{BottomRight.Details}}
+    {{Bottom43.Details}}
+    {{Bottom42.Details}}
+    {{Bottom41.Details}}
+    {{BottomLeft.Details}}
+
+    {{Right30.Details}}
+    {{Center33.Details}}
+    {{Center32.Details}}
+    {{Center31.Details}}
+    {{Left30.Details}}
+
+    {{Right20.Details}}
+    {{Center23.Details}}
+    {{Center22.Details}}
+    {{Center21.Details}}
+    {{Left20.Details}}
+
+    {{Right10.Details}}
+    {{Center13.Details}}
+    {{Center12.Details}}
+    {{Center11.Details}}
+    {{Left10.Details}}
+
+    {{TopRight.Details}}
+    {{Top03.Details}}
+    {{Top02.Details}}
+    {{Top01.Details}}
+    {{TopLeft.Details}}
+
+
+  Shape: |
+    [[ 'TopLeft',     'Top01',    'Top02',    'Top03',    'TopRight'],
+     [ 'Left10',      'Center11', 'Center12', 'Center13', 'Right10'],
+     [ 'Left20',      'Center21', 'Center22', 'Center23', 'Right20'],
+     [ 'Left30',      'Center31', 'Center32', 'Center33', 'Right30'],
+     [ 'BottomLeft',  'Bottom41', 'Bottom42', 'Bottom43', 'BottomRight' ]]
+
+  $set:
+    $global: Counter
+    $value: 0
+
+  BottomRight:
+    $roll:
+      $class: GeomorphCornerEntrance
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  Bottom43:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  Bottom42:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  Bottom41:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  BottomLeft:
+    $roll: 
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+
+  Right30:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  Center33: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center32: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center31: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Left30:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+
+  Right20:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  Center23: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center22: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center21: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Left20:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+
+  Right10:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  Center13: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center12: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center11: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Left10:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+
+  TopRight:
+    $roll: 
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  Top03:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+  Top02:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+  Top01:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+  TopLeft:
+    $roll: 
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+
+DungeonShapeLarge4:
+  Details: !jinja |
+    {{TopRight.Details}}
+    {{Top03.Details}}
+    {{Top02.Details}}
+    {{Top01.Details}}
+    {{TopLeft.Details}}
+
+    {{Right10.Details}}
+    {{Center13.Details}}
+    {{Center12.Details}}
+    {{Center11.Details}}
+    {{Left10.Details}}
+
+    {{Right20.Details}}
+    {{Center23.Details}}
+    {{Center22.Details}}
+    {{Center21.Details}}
+    {{Left20.Details}}
+
+    {{Right30.Details}}
+    {{Center33.Details}}
+    {{Center32.Details}}
+    {{Center31.Details}}
+    {{Left30.Details}}
+
+    {{BottomRight.Details}}
+    {{Bottom43.Details}}
+    {{Bottom42.Details}}
+    {{Bottom41.Details}}
+    {{BottomLeft.Details}}
+
+
+
+  Shape: |
+    [[ 'TopLeft',     'Top01',    'Top02',    'Top03',    'TopRight'],
+     [ 'Left10',      'Center11', 'Center12', 'Center13', 'Right10'],
+     [ 'Left20',      'Center21', 'Center22', 'Center23', 'Right20'],
+     [ 'Left30',      'Center31', 'Center32', 'Center33', 'Right30'],
+     [ 'BottomLeft',  'Bottom41', 'Bottom42', 'Bottom43', 'BottomRight' ]]
+
+  $set:
+    $global: Counter
+    $value: 0
+
+
+  TopRight:
+    $roll: 
+      $class: GeomorphCornerEntrance
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  Top03:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+  Top02:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+  Top01:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+  TopLeft:
+    $roll: 
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+
+  Right10:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  Center13: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center12: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center11: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Left10:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+
+
+  Right20:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  Center23: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center22: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center21: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Left20:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+
+  Right30:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  Center33: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center32: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center31: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Left30:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+
+  BottomRight:
+    $roll:
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  Bottom43:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  Bottom42:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  Bottom41:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  BottomLeft:
+    $roll: 
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+
+DungeonShapeMedium:
+  Details: !jinja |
+    {{TopLeft.Details}}
+    {{Top01.Details}}
+    {{Top02.Details}}
+    {{TopRight.Details}}
+
+    {{Left10.Details}}
+    {{Center11.Details}}
+    {{Center12.Details}}
+    {{Right10.Details}}
+
+    {{Left20.Details}}
+    {{Center21.Details}}
+    {{Center22.Details}}
+    {{Right20.Details}}
+
+    {{BottomLeft.Details}}
+    {{Bottom41.Details}}
+    {{Bottom42.Details}}
+    {{BottomRight.Details}}
+
+  Shape: |
+    [[ 'TopLeft',     'Top01',    'Top02',     'TopRight'],
+     [ 'Left10',      'Center11', 'Center12',  'Right10'],
+     [ 'Left20',      'Center21', 'Center22',  'Right20'],
+     [ 'BottomLeft',  'Bottom41', 'Bottom42',  'BottomRight' ]]
+
+  $set:
+    $global: Counter
+    $value: 0
+
+  TopLeft:
+    $roll: 
+      $class: GeomorphCornerEntrance
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+  Top01:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+  Top02:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+  TopRight:
+    $roll: 
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  Left10:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+  Center11: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center12: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Right10:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  Left20:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+  Center21: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center22: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Right20:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  BottomLeft:
+    $roll: 
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+  Bottom41:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  Bottom42:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  BottomRight:
+    $roll:
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+
+
+DungeonShapeMedium2:
+  Details: !jinja |
+    {{BottomLeft.Details}}
+    {{Bottom41.Details}}
+    {{Bottom42.Details}}
+    {{BottomRight.Details}}
+
+    {{Left20.Details}}
+    {{Center21.Details}}
+    {{Center22.Details}}
+    {{Right20.Details}}
+
+    {{Left10.Details}}
+    {{Center11.Details}}
+    {{Center12.Details}}
+    {{Right10.Details}}
+
+    {{TopLeft.Details}}
+    {{Top01.Details}}
+    {{Top02.Details}}
+    {{TopRight.Details}}
+
+  Shape: |
+    [[ 'TopLeft',     'Top01',    'Top02',     'TopRight'],
+     [ 'Left10',      'Center11', 'Center12',  'Right10'],
+     [ 'Left20',      'Center21', 'Center22',  'Right20'],
+     [ 'BottomLeft',  'Bottom41', 'Bottom42',  'BottomRight' ]]
+
+  $set:
+    $global: Counter
+    $value: 0
+
+  BottomLeft:
+    $roll: 
+      $class: GeomorphCornerEntrance
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+  Bottom41:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  Bottom42:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  BottomRight:
+    $roll:
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+
+  Left20:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+  Center21: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center22: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Right20:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+
+  Left10:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+  Center11: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center12: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Right10:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+
+  TopLeft:
+    $roll: 
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+  Top01:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+  Top02:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+  TopRight:
+    $roll: 
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+
+DungeonShapeMedium3:
+  Details: !jinja |
+    {{BottomRight.Details}}
+    {{Bottom42.Details}}
+    {{Bottom41.Details}}
+    {{BottomLeft.Details}}
+
+    {{Right20.Details}}
+    {{Center22.Details}}
+    {{Center21.Details}}
+    {{Left20.Details}}
+
+    {{Right10.Details}}
+    {{Center12.Details}}
+    {{Center11.Details}}
+    {{Left10.Details}}
+
+    {{TopRight.Details}}
+    {{Top02.Details}}
+    {{Top01.Details}}
+    {{TopLeft.Details}}
+
+  Shape: |
+    [[ 'TopLeft',     'Top01',    'Top02',     'TopRight'],
+     [ 'Left10',      'Center11', 'Center12',  'Right10'],
+     [ 'Left20',      'Center21', 'Center22',  'Right20'],
+     [ 'BottomLeft',  'Bottom41', 'Bottom42',  'BottomRight' ]]
+
+  $set:
+    $global: Counter
+    $value: 0
+
+  BottomRight:
+    $roll:
+      $class: GeomorphCornerEntrance
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  Bottom42:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  Bottom41:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  BottomLeft:
+    $roll: 
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+
+  Right20:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  Center22: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center21: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Left20:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+
+  Right10:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  Center12: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center11: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Left10:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+
+  TopRight:
+    $roll: 
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  Top02:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+  Top01:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+  TopLeft:
+    $roll: 
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+
+DungeonShapeMedium4:
+  Details: !jinja |
+    {{TopRight.Details}}
+    {{Top02.Details}}
+    {{Top01.Details}}
+    {{TopLeft.Details}}
+
+    {{Right10.Details}}
+    {{Center12.Details}}
+    {{Center11.Details}}
+    {{Left10.Details}}
+
+    {{Right20.Details}}
+    {{Center22.Details}}
+    {{Center21.Details}}
+    {{Left20.Details}}
+
+    {{BottomRight.Details}}
+    {{Bottom42.Details}}
+    {{Bottom41.Details}}
+    {{BottomLeft.Details}}
+
+
+  Shape: |
+    [[ 'TopLeft',     'Top01',    'Top02',     'TopRight'],
+     [ 'Left10',      'Center11', 'Center12',  'Right10'],
+     [ 'Left20',      'Center21', 'Center22',  'Right20'],
+     [ 'BottomLeft',  'Bottom41', 'Bottom42',  'BottomRight' ]]
+
+  $set:
+    $global: Counter
+    $value: 0
+
+  TopRight:
+    $roll: 
+      $class: GeomorphCornerEntrance
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  Top02:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+  Top01:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+  TopLeft:
+    $roll: 
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r000
+
+  Right10:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  Center12: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center11: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Left10:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+
+  Right20:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r270
+  Center22: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Center21: 
+    $roll: 
+      $class: GeomorphBlock
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation:
+          - r000
+          - r090
+          - r180
+          - r270
+  Left20:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090
+
+
+  BottomRight:
+    $roll:
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  Bottom42:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  Bottom41:
+    $roll:
+      $class: GeomorphBorder
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r180
+  BottomLeft:
+    $roll: 
+      $class: GeomorphCorner
+      $bootstrap:
+        DungeonFeatureTier1: !ref DungeonFeatureTier1
+        DungeonFeatureTier2: !ref DungeonFeatureTier2
+        DungeonFeatureTier3: !ref DungeonFeatureTier3
+        Orientation: r090

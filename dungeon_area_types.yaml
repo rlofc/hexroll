@@ -1,0 +1,107 @@
+RoomType:
+  $subclass:
+    - RoomTypePantry
+    - RoomTypeShrine
+    - RoomTypeLibrary
+    - RoomTypeTortureChamber
+    - RoomTypeCrypt
+    - RoomTypeLaboratory
+    - RoomTypeCeremonial
+
+
+RoomTypePantry:
+  Title: Pantry
+  Preface:
+    - It is dark and damp here
+    - You hear water drops falling to the ground
+    - This area is dark and cold
+    - This area stinks from excrements
+    - The air in this area is dense and misty
+    - There are stains of what seems to be blood on the ceiling
+    - Dense spiderwebs cover the corners of the walls
+    - This area was likely used as a pantry
+    - Countless creepy crawlies on the floor and walls rush back into the darkness
+    - A vile smell of rot welcomes you
+
+
+RoomTypeShrine:
+  Title: Shrine
+  Preface:
+    - It is dark and damp here
+    - You hear water drops falling to the ground
+    - This area is dark and cold
+    - This area stinks from excrements
+    - The air in this area is dense and misty
+    - Dense spiderwebs cover the corners of the walls
+    - Countless creepy crawlies on the floor and walls rush back into the darkness
+    - A vile smell of rot welcomes you
+
+   
+RoomTypeLibrary:
+  Title: Library
+  Preface:
+    - It is dark and damp here
+    - You hear water drops falling to the ground
+    - This area is dark and cold
+    - This area stinks from excrements
+    - The air in this area is dense and misty
+    - Dense spiderwebs cover the corners of the walls
+    - Countless creepy crawlies on the floor and walls rush back into the darkness
+    - A vile smell of rot welcomes you
+
+   
+RoomTypeTortureChamber:
+  Title: Torture Chamber
+  Preface:
+    - It is dark and damp here
+    - You hear water drops falling to the ground
+    - This area is dark and cold
+    - This area stinks from excrements
+    - The air in this area is dense and misty
+    - There are stains of what seems to be blood on the ceiling
+    - Dense spiderwebs cover the corners of the walls
+    - This place seems to be an old dungeon cell
+    - Countless creepy crawlies on the floor and walls rush back into the darkness
+    - A vile smell of rot welcomes you
+
+   
+RoomTypeCrypt:
+  Title: Crypt
+  Preface:
+    - It is dark and damp here
+    - You hear water drops falling to the ground
+    - This area is dark and cold
+    - This area stinks from excrements
+    - There are stains of what seems to be blood on the ceiling
+    - The air in this area is dense and misty
+    - Dense spiderwebs cover the corners of the walls
+    - Countless creepy crawlies on the floor and walls rush back into the darkness
+    - A vile smell of rot welcomes you
+
+   
+RoomTypeLaboratory:
+  Title: Laboratory
+  Preface:
+    - It is dark and damp here
+    - You hear water drops falling to the ground
+    - This area is dark and cold
+    - This area stinks from excrements
+    - There are stains of what seems to be blood on the ceiling
+    - The air in this area is dense and misty
+    - Dense spiderwebs cover the corners of the walls
+    - Countless creepy crawlies on the floor and walls rush back into the darkness
+    - A vile smell of rot welcomes you
+
+   
+RoomTypeCeremonial:
+  Title: Ceremonial Chamber
+  Preface:
+    - It is dark and damp here
+    - You hear water drops falling to the ground
+    - This area is dark and cold
+    - This area stinks from excrements
+    - There are stains of what seems to be blood on the ceiling
+    - The air in this area is dense and misty
+    - Dense spiderwebs cover the corners of the walls
+    - Countless creepy crawlies on the floor and walls rush back into the darkness
+    - A vile smell of rot welcomes you

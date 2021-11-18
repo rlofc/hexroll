@@ -1,0 +1,227 @@
+Terrain:
+  $subclass:
+    - Mountains
+    - Forest
+    - Coast
+    - Desert
+    - Plains
+
+
+Mountains:
+  Name: Mountains
+  Flair:
+    - A thundering waterfall drops hundreds of feet down from an overhang in the
+      steep slopes, forming a cloud of raging water at the base. 
+
+    - A giant peak stands taller than any of the mountains around it. An eerie
+      red glow can be seen around its top.
+
+    - Waterfalls of lava flows from cracks in a cliff, melting pieces of rock as
+      they go down into a river of inferno in the deep canyon.
+
+    - The skeleton of a huge dragon was fossilised in one of the cliff faces
+      here. Its wings are spread as if it was about to fly into the sky once
+      again.
+
+    - Multiple plateaus separated by seemingly bottomless chasms are connected
+      with fragile rope bridges.  The strong wind swings the brides from side to
+      side, making crossing them a terrifying experience.
+
+    - Giant boulders are hanging in mid air by some kind of invisible magic.
+      Some have rope ladders attached, reaching all the way down for anyone to
+      climb.
+
+    - A small patch of dark clouds circle an even darker peak.  Jolts of
+      lightnings flash from within, followed by rumbling thunders.
+
+    - The narrow and winding trails here are on the faces of the cliffs.
+      Carelessness or combat are especially risky here.
+
+    - The passages here are surrounded with steep vertical cliffs and are
+      branching to all directions like a fragmented maze.
+      
+
+  Location:
+    - on the edge of the cliffs, at the end of a winding steep trail
+    - high in the mountains
+    - across a seemingly bottomless chasm, where a rope bridge meets an overhang
+    - near the base of a steep cliff
+    - near the base of the tallest mountain
+
+  Hideout:
+    - behind a waterfall
+    - inside a cave on the cliff
+    - inside an old volcano
+
+
+Forest:
+  Name: Forest
+  Flair:
+    - Giant red, purple and blue mushrooms grow beside the trees here, their
+      colors are vibrant and bright, much like gem stones.
+
+    - The trees here are naked and twisted. Their branches reach down like bony
+      claws. Was this place cursed in days long gone?
+
+    - So big and tall are the trees here. Their tops are almost hidden by the
+      dense mist.  Their trunks are as wide as a hut. Some of them have planks
+      of wood attached, forming a ladder.
+
+    - A huge, lush tree is standing in a clearing here, covered with colorful
+      flowers and holding a sweet berry inside. Birds fly cheerfully around it.
+
+    - Moss covered ruins of an ancient stone structure emerge from within the
+      vegetation. Carvings of spirals and swirls decorate some of the larger
+      stones.
+
+    - The forest is dense and dark here, but countless clusters of
+      phosphorescent fungi are growing near the base of the trunks, creating a
+      luminous colorful glow above the ground.
+
+    - Dense ivy and vegetation cover an old dragon skeleton, as if sleeping
+      peacefully in a clearing surrounded by the trees. 
+
+    - Ropes tangle down from the branches here. On some of them, humanoid- size
+      straw-made figures are hanging by their canvas covered heads.
+
+    - Dozens of giant dead tree trunks are laying on the ground here, covered
+      with moss and undergrowth. Some of them seem to have a face, with a 
+      frozen expression of agony.
+
+    - !jinja >
+      An oversized statue of {{StatusSubject | articlize}} holding a sword against the
+      ground stands proudly in a clearing here. Fresh flowers were recently
+      placed near its base.
+
+  StatusSubject:
+    - warrior
+    - king
+    - queen
+
+  Location:
+    - near a water stream
+    - next to a clearing
+    - deep in the woods
+    - where the woods meet a tall mountain
+
+  Hideout:
+    - under the ruins of an ancient city
+    - hidden in one of the tree covered hills
+    - near an abandoned stronghold, deep in the woods
+
+
+Coast:
+  Name: Coast
+  Flair:
+    - The ruins of an abandoned lighthouse stand on a rock on the edge of a
+      cove, now a temporary home to a flock sea birds.
+
+    - The skeleton of a giant whale emerges above the shallow waves near the
+      coastline. Kelp and birds decorate its old and wet bones.
+
+    - An old rotting shipwreck was washed to the sands here, a huge hole, the
+      size of a giant tentacle is burst through its hull.
+
+    - The sands here are soft and warm and the turquoise water are crystal
+      clear.
+
+    - A giant stone statue of a head was washed ashore here. It seams like it
+      was detached from a full statue of a body at the neck.
+
+    - A smoking volcano stands not far form the coastline here.  The lush green
+      vegetation that covers it indicates it did not erupt for a while now.
+
+    - Dozens of posts were planted in the sand here. At their tops, the old red
+      fabric of what used to be flags still wave against the wind.
+
+    - Tall cliffs separate the sea from the land here. Fierce waves 
+      crash against the sharp blackened rocks hundreds of feet down.
+
+    - The coastline here is barricaded with giant boulders, forming a wall
+      against the raging waves. It extremely difficult for boats to come in or
+      out.
+
+    - An rocky islet is merely a short swim away from the coast here, (or a wet
+      walk when the tide is low).
+
+  Location:
+    - near the coastline
+    - on one of the coastal cliffs
+    - near an estuary
+    - in a rocky cove
+
+Desert:
+  Name: Desert
+  Flair:
+    - The sand here is as dark as the night. Not a fire nor a vulcano could have
+      been the cause.
+
+    - You can clearly see bones revealing under the sand when the wind shifts
+      the sand.  This was no land of peace.
+
+    - Surrounded by the soft dunes, a huge rock shaped like a dome is planted in
+      the sand. It is almost too slippery to climb on.
+
+    - Either wind or some other force creates dozens of giant sand vortexes
+      here, as tall as the eye can see. 
+
+    - There are numerous sinkholes in the sands here. Some of them are big
+      enough to swallow an inn.
+
+    - The wind here is gentle and the sand is soft and warm. Large canopied
+      desert trees provide enough shadow to rest or camp under.
+
+    - Vast dunes stretch in all directions, shimmering in the desert heat. The
+      sun makes the sand scroching hot.
+
+  Location: 
+    - on the dunes sands
+    - near an oasis
+    - between two giant dunes
+
+
+Plains:
+  Name: Plains
+  Flair:
+    - There are several large craters in the green fields here. Something
+      violent must have hit the ground from the sky in the past.
+
+    - Crushed skulls and rusted swords are scattered around the hills here. 
+      You can almost hear the noises and screams of the ancient battlefield.
+
+    - a tall stone tower fell and now lay crushed on the ground. A few small
+      bunnies run and hide under its stone bricks.
+
+    - A violent earthquake left the ground here cracked with deep and narrow
+      chasms. If listening carefully, one can hear eerie sounds coming from 
+      deep inside.
+
+    - Several large geysers discharge boiling streams of water and vapour every few
+      minutes.
+
+    - A vast field of colorful flowers covers the shallow hills here. Butterflies
+      and bees hop from flower to flower.
+
+    - There’s a perfect circle of large stones, each standing tall above
+      the ground. In the center, a shallow pit seems to have hosted a bonfire not
+      too long ago.
+
+    - A pile of stones form a pyramid of steps, tall enough to provide a better
+      vantage point over the region. At its top, a rusted old sword is planted 
+      with its blade in the ground.
+
+  Location:
+    - in a valley
+    - at the top of a hill
+    - between two hills
+    - on a hill’s slope
+    - on the terraced hills
+    - in the grasslands
+    - atop a rocky hill
+
+  Hideout:
+    - behind a waterfall
+    - under the ruins of an old fortress
+    - inside an oak
+
+

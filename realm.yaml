@@ -1,0 +1,225 @@
+Realm:
+  Name: 
+    - !jinja "{{Prefix}}{{Center}}{{Suffix}}"
+    - !jinja "{{Prefix2}}{{Center2}}{{Suffix2}}"
+
+  Type: !jinja "{{Ruler.RealmType}}"
+
+  Title: 
+    - !jinja "The {{Type|title}} of {{Name}}"
+
+  Prefix:
+    - Ca
+    - Al
+    - El
+    - Va
+    - Vo
+    - Ne
+    - Jo
+  Center:
+    - ""
+    - saf
+    - dar
+    - der
+    - nar
+    - sil
+    - v
+    - r
+
+  Suffix:
+    - a
+    - ia
+    - ana
+    - iana
+    - "'il"
+
+  Prefix2:
+    - A
+    - E
+    - O
+    - I
+    - U
+
+  Center2:
+    - ra
+    - ze
+    - re
+    - sha
+
+  Suffix2:
+    - zar
+    - zor
+    - bar
+    - bor
+    - nar
+    - nor
+    - dar
+    - dor
+
+  Background:
+    - The danger of an imminent invasion keeps the people of these lands in
+      constant fear. But is it real, or is it just fear-mongering conducted by
+      an evil faction?
+
+    - !jinja Brutal wars shaped the lands of {{Name}} for ages, but peace was
+      finally restored. There are however those who seek to bring {{Name}} back
+      into darkness.
+
+    - !jinja A tyrannical {{Ruler.Title}} rules these lands with a heavy hand.
+      Will heroes rise up to help the people with their quest for freedom?
+
+    - !jinja A prophacy tells of a young child who will bring a new age
+      of prosperity to {{Name}}, but why is it that some find this
+      undesirable, and are they secretly acting to prevent this?
+
+    - !jinja A peculiar plague is ravaging the land. Some say it is a curse
+      from the gods while others blame the wrongdoing of a faction.
+
+    - !jinja >
+      {{Ruler.Title | title}} {{Ruler.NPC.Name.First}} is
+      on {{Ruler.NPC.Gender.Pronoun2}} deathbed.
+      There's a rumor of a young legal heir, raised as a common somewhere in
+      the {{Ruler.RealmType}}. 
+
+  Ruler:
+    $roll: Ruler
+
+Ruler:
+  $subclass:
+    - Noble
+    - Bishop
+    - Monarch
+    - Warexpert
+    - Necromancer
+
+
+Noble:
+  $extends: Ruler
+  Title: !jinja >
+    {%if NPC.Gender.subclass_=='Male'-%}
+    duke
+    {%-elif NPC.Gender.subclass_=='Female'-%}
+    duchess
+    {%-else-%}
+    duches
+    {%-endif-%}
+  RealmType:
+    - duchy
+  Weapon:
+    $roll: RulerSword
+  NPC:
+    $roll:
+      $class:
+        - FighterLevel12
+        - FighterLevel13
+        - ElfLevel10
+        - DwarfLevel11
+        - HalflingLevel8
+      $inject:
+        $values:
+          Weapon: !ref Weapon
+
+
+Bishop:
+  $extends: Ruler
+  Title: bishop
+  RealmType:
+    - empire
+    - lands
+  Weapon:
+    $roll: RulerWarhammer
+  NPC:
+    $roll:
+      $class:
+        - ClericLevel12
+        - ClericLevel13
+      $inject:
+        $values:
+          Weapon: !ref Weapon
+
+RulerSword:
+  $extends: ArmorWeapon
+  Title: Sword + 3
+  Damage: 1d8+3
+
+RulerWarhammer:
+  $extends: ArmorWeapon
+  Title: Warhammer + 3
+  Damage: 1d6+3
+
+RulerStaff:
+  $extends: ArmorWeapon
+  Title: Staff of Wizardry
+  Damage: see item description
+
+Monarch:
+  $extends: Ruler
+  Title: !jinja >
+    {%-if NPC.Gender.subclass_=='Male'-%}
+    king
+    {%-elif NPC.Gender.subclass_=='Female'-%}
+    queen
+    {%-else-%}
+    monarch
+    {%-endif-%}
+  RealmType:
+    - kingdom
+  Weapon:
+    $roll: RulerSword
+  NPC:
+    $roll:
+      $class:
+        - FighterLevel12
+        - FighterLevel13
+        - ElfLevel10
+        - DwarfLevel11
+        - HalflingLevel8
+      $inject:
+        $values:
+          Weapon: !ref Weapon
+
+
+Warexpert:
+  $extends: Ruler
+  Title: !jinja >
+    {%-if NPC.Gender.subclass_=='Male'-%}
+    warlord
+    {%-elif NPC.Gender.subclass_=='Female'-%}
+    warlady
+    {%-else-%}
+    Warexpert
+    {%-endif-%}
+  Title: warlord
+  RealmType:
+    - lands
+  Weapon:
+    $roll: RulerSword
+  NPC:
+    $roll:
+      $class:
+        - FighterLevel12
+        - FighterLevel13
+        - ElfLevel10
+        - DwarfLevel11
+        - HalflingLevel8
+      $inject:
+        $values:
+          Weapon: !ref Weapon
+
+
+Necromancer:
+  $extends: Ruler
+  Title: necromancer
+  RealmType:
+    - empire
+    - lands
+  Weapon:
+    $roll: RulerStaff
+  NPC:
+    $roll:
+      $class:
+        - Magic-userLevel12
+        - Magic-userLevel13
+      $inject:
+        $values:
+          Weapon: !ref Weapon

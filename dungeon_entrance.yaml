@@ -1,0 +1,58 @@
+DungeonEntrance:
+  Description: !jinja >
+    Stairs leading down into area __{{CounterSnapshot+1}}__ in the dungeon are
+    {%if DungeonContext.Hex == 'MountainsHex'%}
+    {{MountainLocation}}.
+    {%elif DungeonContext.Hex == 'ForestHex'%}
+    {{ForestLocation}}.
+    {%elif DungeonContext.Hex == 'PlainsHex'%}
+    {{PlainsLocation}}.
+    {%elif DungeonContext.Hex == 'DesertHex'%}
+    {{DesertLocation}}.
+    {%else%}
+    {{DefaultLocation}}.
+    {%endif%}
+
+  MountainLocation:
+    - in a cave on the face of cliff, at the end of a rope bridge above a chasm
+    - inside a cave, hidden behind a raging waterfall
+    - inside an adandoned mine
+    - inside a cave on the face of a steep cliff
+    - under the ruines of an old fortress
+    - in the basement of an abandoned inn
+    - inside an abandoned wooden cabin, under loose floor boards
+
+  ForestLocation:
+    - deep inside the trunk of a giant oak, at the bottom of an excavated spiral staircase
+    - under an ancient temple ruins, masked by dense undergrowth
+    - deep inside the mouth of a giant stone skull, entirely covered with moss and ivy
+    - in the basement of an abandoned inn
+    - inside an abandoned wooden cabin, under loose floor boards
+
+  PlainsLocation:
+    - hidden deep inside a burial mound
+    - deep inside the mouth of a giant stone skull
+    - under a wooden trapdoor buried 5 feet in the ground
+    - under the ruines of an old fortress
+    - at the bottom of a false outhouse
+    - in the basement of an abandoned inn
+    - inside an adandoned mine
+    - inside an abandoned wooden hut, under loose floor boards
+
+  DesertLocation:
+    - under a wooden trapdoor buried 5 feet into the sand, with only an arrow-shaped sign pointing down hinting on the location
+    - deep inside the mouth of a giant stone craved skull, partly buried under a dune
+    - in the basement of an abandoned inn
+    - inside a cave on a formation of rock surrounded by dunes
+    - inside an abandoned wooden hut, under loose floor boards
+
+
+  DefaultLocation:
+    - located behind a giant skull's gaping mouth
+    - under a wooden trapdoor buried 5 feet in the ground
+  Location: !jinja >
+    {%if DungeonContext.Hex == 'MountainsHex'%}{{MountainLocation}}
+    {%elif DungeonContext.Hex == 'ForestHex'%}{{ForestLocation}}
+    {%elif DungeonContext.Hex == 'PlainsHex'%}{{PlainsLocation}}
+    {%elif DungeonContext.Hex == 'DesertHex'%}{{DesertLocation}}
+    {%else%}{{DefaultLocation}}{%endif%}

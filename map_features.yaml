@@ -1,0 +1,225 @@
+Rumor:
+  Details: ""
+
+
+Feature:
+  $subclass: !weighted
+    - Landmark^17
+    - Portal
+
+
+DungeonProxy:
+  Name: Dungeon
+  Probability:
+    The chance to finding it is 2 in 6 (accidental) or 4 in 6 (when searching)
+  $collections:
+    entrances:
+      $collect: DungeonEntrance
+  Hex:
+    $popone:
+        $collection: hexs
+        $inject:
+            $namespace: proxy
+            $values:
+              DungeonDesc: !jinja |
+                {{proxy.Dungeon.Title}}
+              DungeonEntrance: !jinja |
+                {% for e in proxy.entrances %}
+                * {{e.Description}}
+                {% endfor %}
+  Dungeon:
+    $roll:
+      $class: Dungeon
+      $bootstrap:
+        Hex: !jymbol "{{Hex.subclass_}}"
+  Rumor:
+    $roll:
+      $class: Rumor
+      $inject:
+        $namespace: proxy
+        $values:
+          Details: !jinja >
+            The __{{proxy.Dungeon.Name.Title | title}}__ is 
+            __{{proxy.Hex.Terrain.Location}}, somewhere in
+            {{proxy.Hex.Cluster.Name.Full}} {{proxy.Hex.Cluster.Suffix}}__
+
+
+SettlementProxy:
+  Name: Settlement
+  Probability:
+    The chance to finding it is 2 in 6 (accidental) or 4 in 6 (when searching)
+  Settlement:
+    $roll: Settlement
+  Hex:
+    $popone:
+        $collection: hexs
+        $inject:
+            $namespace: sproxy
+            $values:
+              SettlementDesc: !jinja |
+                {{sproxy.Settlement.Description}}
+              SettlementFlair: !jinja |
+                {{sproxy.Settlement.Flair}}
+              SettlementDetails: !jinja |
+                {{sproxy.Settlement.Description}}
+              SettlementConnector: !jinja |
+                {{sproxy.Settlement.Connector}}
+
+
+Nothing:
+  Name: Nothing  
+
+
+Inn:
+  Name: !jinja >
+    {{Tavern.Name.Full}}
+  Description: !jinja >
+    {{Tavern.Name.Full}} is welcoming travellers and adventurers
+  Details: !jinja |
+
+    ### {{Tavern.Name.Full }}
+
+    {{Tavern.Description}}
+  Hex:
+    $popone:
+        $collection: hexs
+        $inject:
+            $namespace: proxy
+            $values:
+              InnDesc: !jinja |
+                {{proxy.Tavern.Name.Full}}
+  Tavern:
+    $roll: 
+      $class: Tavern
+      # This is injected to allow the militia description
+      # include the location of the Inn if they chose it as
+      # their gathering place.
+      $inject:
+        $namespace: Inn
+        $values:
+          ClusterValue: !jinja >
+            __{{Inn.Hex.Cluster.Name.Full}} {{Inn.Hex.Cluster.Suffix}}__
+
+
+Encounter:
+  NeutralState:
+    - wandering
+    - sleeping
+    - foraging
+  ChaoticState:
+    - lurking
+    - prowling
+    - scavenging
+    - wandering
+    - hiding
+    - sleeping
+  Lair:
+    - a well-hidden cave
+    - an old abandoned copper mine
+    - an old forgotten gold mine
+    - the ruins of an abandoned stronghold
+    - the ruins of a forgotten keep
+    - the nearest dungeon
+
+  Hex:
+    $popone:
+        $collection: hexs
+        $inject:
+            $namespace: proxy
+            $values:
+              EncounterName: !jinja >
+                {%if Monster.NumberAppearingLair==1%}A {{Monster.Title}}
+                {%else%}{{Monster.Title}}s{%endif%}
+              EncounterDesc: !jinja >
+                {%if Monster.NumberAppearingLair==1%}A {{Monster.Title}} is
+                {%else%}{{Monster.NumberAppearingLair}} {{Monster.Title}}s are{%endif%}
+                {%if Monster.Alignment=='Chaotic'%}{{proxy.ChaoticState}}
+                {%else%}{{proxy.NeutralState}}{%endif%}
+              EncounterProbability: !jinja >
+                There’s a __2-in-6__ chance of encountering 
+                {%if Monster.NumberAppearingLair==1%}it.
+                {%else%}at least one of them outside
+                (the rest will be in their lair inside {{proxy.Lair}}.{%endif%}
+              EncounterFlair: !jinja >
+
+                __{{Monster.Title}}__
+
+
+                ---
+
+                {{Monster.Stats}}
+                {%if Monster.NumberAppearingLair<10%}
+
+
+                {%for m in range(Monster.NumberAppearingLair)%}
+                <small>{% for hp in range(Monster.HitDiceRoll | diceroll) %}❏{%endfor%}</small><br/>{%endfor%}
+                {%endif%}
+
+
+                ---
+
+                {%if not Monster.TreasureType.Empty%}
+                * __Lair__ hoard (__1-in-6__ base chance of finding if an encouter occured):
+                {{Monster.TreasureType.Details}}
+                {%endif%}
+
+  Rumor:
+    $roll:
+      $class: Rumor
+      $inject:
+        $namespace: hexenc
+        $values:
+          Details: !jinja >
+            There’s __{{hexenc.Hex.Monster.Title | articlize}}__ somewhere in
+            __{{hexenc.Hex.Cluster.Name.Full}} {{hexenc.Hex.Cluster.Suffix}}__.
+
+
+
+
+Portal:
+  Name: Portal
+  Description: There’s a magical portal to another hex
+  Flair: !jinja |
+    The portal is large slab of dark rock that has a seamingly hollow
+    arch-shaped stone gate on top.  There’s a strange {{Glow}} glow surrounding
+    it. Anyone or anything passing through the gate will get teleported into a
+    different hex (preselected by the referee), but there’s a 1-in-6 chance
+    that the portal {{UndesiredEffect}}. 
+
+  Glow:
+    - blue
+    - red
+    - purple
+    - green
+
+  UndesiredEffect:
+    - will teleport to a completely random hex instead
+    - will lose half of the character’s carried gold (roll per character)
+    - will change the character’s alignment (roll per character)
+    - will give the character donkey ears (roll per character)
+
+
+Landmark:
+  $subclass:
+    - Bridge
+    - Watchtower
+#   - CaravansPark
+
+
+Watchtower:
+  Name: Watchtower
+  Description: There’s an old abandoned watchtower
+
+
+CaravansPark:
+  Name: CaravansPark
+  Description: There’s a colorful and noisy caravans park
+
+
+Bridge:
+  Name: Bridge
+  Description:
+    - There’s a half-broken stone bridge
+    - There’s a recently built wood bridge
+    - There’s a dangerous looking rope bridge
+

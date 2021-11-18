@@ -1,0 +1,674 @@
+# This document contains Open Game Content, subject to the Open Game License,
+# released un the Open Game License, Version 1.0a (enclosed in the LICENSE
+# file), as described in Section 1(d) of the License.
+
+UndeadMonster:
+  $subclass:
+    - Ghoul
+    - Mummy
+    - Skeleton
+    - Spectre
+    - Wight
+    - Wraith
+    - Zombie
+
+
+UndeadHD1:
+  $subclass:
+    - Skeleton
+
+
+UndeadHD2:
+  $subclass:
+    - Zombie
+    - Ghoul
+
+
+UndeadHD3:
+  $subclass:
+    - Wight
+
+
+UndeadHD4:
+  $subclass:
+    - Wraith
+
+
+UndeadHD6:
+  $subclass:
+    - Spectre
+
+
+UndeadHD7:
+  $subclass:
+    - Vampire
+
+
+BeastMonster:
+  $subclass:
+    - GiantBat
+    - GiantVampireBat
+    - InsectSwarm
+    - CrabSpider
+    - Troglodyte
+    - Hellhound
+    - Shrieker
+    - Harpy
+    - Wererat
+    - BlackWidow
+
+
+VerminHD1:
+  $subclass:
+    - SpittingCobra
+    - NormalRat
+    - GiantRat
+    - NormalBat
+    - KillerBee
+
+
+VerminHD2:
+  $subclass:
+    - CaveLocust
+    - InsectSwarm
+    - RobberFly
+    - OilBeetle
+    - PitViper
+    - CrabSpider
+    - GiantBat
+    - GiantVampireBat
+
+
+VerminHD3:
+  $subclass:
+    - BlackWidow
+    - CarcassCrawler
+
+
+VerminHD4:
+  $subclass:
+    - DriverAnt
+    - ScorpionGiant
+    - GiantRattler
+    - Tarantella
+
+
+VerminHD5:
+  $subclass:
+    - RockPython
+
+
+VerminHD6:
+  $subclass:
+    - LeechGiant
+    - Caecilia
+
+
+VerminHD15:
+  $subclass:
+    - PurpleWorm
+
+
+OozeHD2:
+  $subclass:
+    - GreenSlime
+    - YellowMould
+
+
+OozeHD3:
+  $subclass:
+    - GreyOoze
+
+
+OozeHD4:
+  $subclass:
+    - GelatinousCube
+
+
+OozeHD5:
+  $subclass:
+    - OchreJelly
+
+
+OozeHD10:
+  $subclass:
+    - BlackPudding
+
+
+HumanoidHD1:
+  $subclass:
+    - Goblin
+    - Orc
+    - Kobold
+
+
+HumanoidHD2:
+  $subclass:
+    - Gnoll
+    - Troglodyte
+
+
+HumanoidHD3:
+  $subclass:
+    - Thoul
+
+
+HumanoidHD6:
+  $subclass:
+    - Hobgoblin
+
+
+HumanHD1:
+  $subclass:
+    - Acolyte
+    - Bandit
+    - Brigand
+    - Buccaneer
+    - Dervish
+    - Pirate
+    - Trader
+    - Veteran
+    - Medium
+
+
+HumanHD3:
+  $subclass:
+    - Noble
+
+
+LycanthropeHD3:
+  $subclass:
+    - Wererat
+
+
+LycanthropeHD4:
+  $subclass:
+    - Werewolf
+
+
+LycanthropeHD5:
+  $subclass:
+    - Weretiger
+
+
+LycanthropeHD6:
+  $subclass:
+    - Werebear
+
+
+MagicalHD1:
+  $subclass:
+    - Medium
+
+
+MagicalHD2:
+  $subclass:
+    - Shadow
+    - WoodGolem
+
+
+MagicalHD3:
+  $subclass:
+    - CrystalLivingStatue
+
+
+MagicalHD4:
+  $subclass:
+    - Gargoyle
+    - IronLivingStatue
+    - BlinkDog
+    - Doppelgänger
+    - Medusa
+
+
+MagicalHD5:
+  $subclass:
+    - RustMonster
+    - HornedChameleon
+    - Cockatrice
+    - RockLivingStatue
+
+
+MagicalHD8:
+  $subclass:
+    - BoneGolem
+    - Gorgon
+    - InvisibleStalkerMonster
+
+
+MagicalHD10:
+  $subclass:
+    - EfreetiLesser
+    - AmberGolem
+
+
+MagicalHD13:
+  $subclass:
+    - Cyclops
+
+
+MagicalHD20:
+  $subclass:
+    - BronzeGolem
+
+
+
+DragonHD5:
+  $subclass:
+    - Hydra
+
+
+DragonHD6:
+  $subclass:
+    - WhiteDragon
+
+
+DragonHD7:
+  $subclass:
+    - BlackDragon
+
+
+DragonHD8:
+  $subclass:
+    - GreenDragon
+    - SeaDragon
+
+
+DragonHD9:
+  $subclass:
+    - Chimera
+    - BlueDragon
+
+
+DragonHD10:
+  $subclass:
+    - RedDragon
+
+
+DragonHD11:
+  $subclass:
+    - GoldDragon
+
+
+SwimmerHD1:
+  $subclass:
+    - Merman
+
+
+SwimmerHD2:
+  $subclass:
+    - GiantBass
+    - BullShark
+
+
+SwimmerHD3:
+  $subclass:
+    - CrabGiant
+    - SeaSnake
+
+
+SwimmerHD4:
+  $subclass:
+    - MakoShark
+    - SaltwaterTermite
+
+
+SwimmerHD6:
+  $subclass:
+    - SeaSerpentLesser
+    - Caecilia
+    - SquidGiant
+
+
+SwimmerHD8:
+  $subclass:
+    - SeaDragon
+    - GreatWhiteShark
+    - OctopusGiant
+
+
+SwimmerHD12:
+  $subclass:
+    - Narwhal
+
+
+DynoHD1:
+  $subclass:
+    - Pterodactyl
+
+
+DynoHD2:
+  $subclass:
+    - NeanderthalCaveman
+
+
+DynoHD3:
+  $subclass:
+    - Boar
+    - SeaSnake
+
+
+DynoHD4:
+  $subclass:
+    - ApeWhite
+    - BlackBear
+    - Panther
+    - ScorpionGiant
+    - GiantRattler
+
+
+DynoHD5:
+  $subclass:
+    - GrizzlyBear
+    - Lion
+    - Pteranodon
+    - RockPython
+
+
+DynoHD6:
+  $subclass:
+    - PolarBear
+    - Tiger
+    - NormalRhinoceros
+    - SeaSerpentLesser
+
+
+DynoHD7:
+  $subclass:
+    - CaveBear
+
+
+DynoHD8:
+  $subclass:
+    - SabreToothedTiger
+    - WoollyRhinoceros
+
+
+DynoHD9:
+  $subclass:
+    - Elephant
+
+
+DynoHD11:
+  $subclass:
+    - Stegosaurus
+    - Triceratops
+
+
+DynoHD12:
+  $subclass:
+    - Titanothere
+
+
+DynoHD13:
+  $subclass:
+    - Cyclops
+
+
+DynoHD15:
+  $subclass:
+    - GiantCrocodile
+    - Mastodon
+
+
+DynoHD20:
+  $subclass:
+    - TyrannosaurusRex
+
+
+AbberationHD1:
+  $subclass:
+    - Stirge
+
+
+AbberationHD3:
+  $subclass:
+    - Hellhound
+    - Shrieker
+    - Harpy
+
+
+AbberationHD5:
+  $subclass:
+    - Hydra
+    - OwlBear
+    - RustMonster
+    - HornedChameleon
+    - Cockatrice
+
+
+AbberationHD6:
+  $subclass:
+    - Minotaur
+    - WarpBeast
+
+
+AbberationHD8:
+  $subclass:
+    - Gorgon
+
+
+AbberationHD9:
+  $subclass:
+    - DevilSwine
+
+
+AbberationHD13:
+  $subclass:
+    - Cyclops
+
+
+AbberationHD15:
+  $subclass:
+    - PurpleWorm
+
+
+MonsterHD1:
+  $subclass:
+    - Acolyte
+    - Bandit
+    - Brigand
+    - Buccaneer
+    - Dervish
+    - DwarfMonster
+    - Gnome
+    - SmallHerdAnimal
+    - Merchant
+    - Merman
+    - Nixie
+    - Nomad
+    - Orc
+    - Pirate
+    - Pterodactyl
+    - ShrewGiant
+    - Skeleton
+    - Trader
+    - Veteran
+    - Pixie
+    - SpittingCobra
+    - Stirge
+    - Medium
+
+
+MonsterHD2:
+  $subclass:
+    - GiantBat
+    - GiantVampireBat
+    - Camel
+    - CaveLocust
+    - NormalCrocodile
+    - GiantBass
+    - Gnoll
+    - RidingHorse
+    - WildHorse
+    - InsectSwarm
+    - Mule
+    - NeanderthalCaveman
+    - RobberFly
+    - RockBaboon
+    - BullShark
+    - Zombie
+    - OilBeetle
+    - Dryad
+    - Ghoul
+    - GreenSlime
+    - PitViper
+    - CrabSpider
+    - Troglodyte
+    - YellowMould
+
+
+MonsterHD3:
+  $subclass:
+    - Boar
+    - CrabGiant
+    - Hellhound
+    - MediumHerdAnimal
+    - DraftHorse
+    - WarHorse
+    - CrystalLivingStatue
+    - Noble
+    - Shrieker
+    - GreyOoze
+    - Harpy
+    - Wererat
+    - SeaSnake
+    - BlackWidow
+    - Wight
+    - Thoul
+
+
+MonsterHD4:
+  $subclass:
+    - ApeWhite
+    - BlackBear
+    - Panther
+    - Centaur
+    - Gargoyle
+    - LargeHerdAnimal
+    - IronLivingStatue
+    - MakoShark
+    - SaltwaterTermite
+    - BlinkDog
+    - Doppelgänger
+    - DriverAnt
+    - GelatinousCube
+    - Werewolf
+    - ScorpionGiant
+    - GiantRattler
+    - Tarantella
+    - Unicorn
+    - Medusa
+    - Wraith
+
+
+MonsterHD5:
+  $subclass:
+    - GrizzlyBear
+    - Lion
+    - Hydra
+    - OwlBear
+    - Pteranodon
+    - RustMonster
+    - HornedChameleon
+    - Weretiger
+    - OchreJelly
+    - RockPython
+    - Cockatrice
+    - RockLivingStatue
+
+
+MonsterHD6:
+  $subclass:
+    - PolarBear
+    - Tiger
+    - LargeCrocodile
+    - LeechGiant
+    - Tuatara
+    - Minotaur
+    - NormalRhinoceros
+    - SmallRoc
+    - SeaSerpentLesser
+    - SquidGiant
+    - KillerWhale
+    - Caecilia
+    - Werebear
+    - WarpBeast
+    - WhiteDragon
+    - Spectre
+
+
+MonsterHD7:
+  $subclass:
+    - CaveBear
+    - Griffon
+    - Vampire
+    - Wyvern
+    - BlackDragon
+
+
+MonsterHD8:
+  $subclass:
+    - SabreToothedTiger
+    - HillGiant
+    - BoneGolem
+    - OctopusGiant
+    - WoollyRhinoceros
+    - GreatWhiteShark
+    - Treant
+    - Gorgon
+    - InvisibleStalkerMonster
+    - FlameSalamander
+    - GreenDragon
+    - SeaDragon
+
+
+MonsterHD9:
+  $subclass:
+    - Elephant
+    - StoneGiant
+    - DevilSwine
+    - Chimera
+    - BlueDragon
+
+
+MonsterHD10:
+  $subclass:
+    - BlackPudding
+    - EfreetiLesser
+    - RedDragon
+    - AmberGolem
+
+
+MonsterHD11:
+  $subclass:
+    - Stegosaurus
+    - Triceratops
+    - GoldDragon
+
+
+MonsterHD12:
+  $subclass:
+    - LargeRoc
+    - Titanothere
+    - Narwhal
+    - FrostSalamander
+
+
+MonsterHD13:
+  $subclass:
+    - Cyclops
+
+
+MonsterHD15:
+  $subclass:
+    - GiantCrocodile
+    - StormGiant
+    - Mastodon
+    - PurpleWorm
+
+
+MonsterHD20:
+  $subclass:
+    - TyrannosaurusRex
+    - BronzeGolem

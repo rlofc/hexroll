@@ -1,0 +1,150 @@
+DungeonDoorKey:
+  Title: Key
+  Active: null
+
+
+DungeonDoorLever:
+  Title: Lever
+  Active: null
+
+
+DungeonDoor:
+  Description: !jinja >
+    {{Shape}} {{Material}} door (__{{State.Description}}__)
+
+  Material: !weighted
+    - wooden^4
+    - iron^2
+    - bronze^2
+    - marble
+    
+  Shape: !weighted
+    - rectangular^5
+    - arched^4
+    - round^3
+    - triangle
+    - odd-shaped
+
+  $context:
+    $attr: Link
+    $values:
+      - Material
+      - Shape
+
+  State:
+    $roll: 
+      $class: DungeonDoorState
+      $bootstrap:
+        Ref: !ref Ref
+        DoorPosition: !ref DoorPosition
+
+
+DungeonDoorState:
+  $subclass:
+    - DungeonDoorLocked
+    - DungeonDoorStuck
+    - DungeonDoorBarricaded
+    - DungeonDoorHalfBroken
+
+
+KeySecret:
+  $extends: Secret
+  Details: !jinja >
+    {% if Key %}
+    * The key to unlock the {{Link.Shape}} {{Link.Material}} in area {{Ref}}
+      in the {{DungeonContext.Name.Title | title}} is in area {{Key.RoomContext.Ref}} 
+    {% endif %}
+
+
+LeverSecret:
+  $extends: Secret
+  Details: !jinja >
+    * The lever to open the secret door in area {{Ref}}
+      in the {{DungeonContext.Name.Title | title}} is in area
+      {{Lever.RoomContext.Ref}}
+
+
+DungeonDoorLocked:
+  Description: !jinja >
+    Locked <span class='alchemy'>{{Sigil.Symbol}}</span>
+
+  Sigil:
+    $roll: Sigil
+
+  Key:
+    $pop:
+      $collection: dungeon_keys
+      $inject:
+        $namespace: key
+        $values:
+          Active: !jinja >
+            key (<span class='alchemy'>{{key.Sigil.Symbol}}</span>) to unlock the
+            {{key.Link.Shape}} {{key.Link.Material}} door
+            (to the {{key.DoorPosition}}) in area {{key.Ref}}
+
+  Secret:
+    $roll:
+      $class: KeySecret
+      $bootstrap:
+        Ref: !ref Ref
+        Key: !ref Key
+
+
+DungeonDoorStuck:
+  Description: Stuck
+
+
+DungeonDoorBarricaded:
+  Description: Barricaded
+
+
+DungeonDoorHalfBroken:
+  Description: Half-broken
+
+
+DungeonSecretDoor:
+  Description: !jinja >
+    secret door (operated by {{SecretDoorTrigger.Description}})
+
+  SecretDoorTrigger:
+    $roll:
+      $class: DungeonSecretDoorTrigger
+      $bootstrap:
+        Ref: !ref Ref
+        DoorPosition: !ref DoorPosition
+
+
+DungeonSecretDoorTrigger:
+  $subclass:
+    - DungeonSecretDoorLever
+    - DungeonSecretDoorPassphrase
+
+
+DungeonSecretDoorPassphrase:
+  Description: a passphrase
+
+
+DungeonSecretDoorLever:
+  Description: !jinja >
+    {{Type | articlize}} lever somewhere in the dungeon
+  Lever:
+    $pop:
+      $collection: dungeon_levers
+      $inject:
+        $namespace: lever
+        $values:
+          Active: !jinja >
+            __{{lever.Type}} lever__ that can open the secret door in area
+            {{lever.Ref}} ({{lever.DoorPosition}})
+
+  Secret:
+    $roll:
+      $class: LeverSecret
+      $bootstrap:
+        Ref: !ref Ref
+        Lever: !ref Lever
+
+  Type:
+    - rope-pull
+    - crank
+    - pressure plate

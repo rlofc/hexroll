@@ -1,0 +1,220 @@
+Faction:
+  $collection: factions
+
+  FullName: !jinja >
+    The {{Name_Prefix|title}} {{Name_Suffix|title}}
+
+  Details: !jinja |
+
+
+    The {{subclass_}} leader is a {{Leader.Description}}
+
+    __{{Leader.Name.Full}}__ (Level {{Leader.Level}} {{Leader.Class}})
+
+    ---
+
+    {{Leader.Stats}}
+
+    ---
+
+    #### Members
+
+    {% for m in Members %}
+
+    * {{m.Name.Full}}
+
+    {% endfor %}
+
+
+    #### Collaborators
+
+    {% for c in Collaborators %}
+
+    * {{c.Name.Full}}
+
+    {% endfor %}
+
+
+  PurposeRumor:
+    $roll:
+      $class: Rumor
+      $inject:
+        $namespace: faction
+        $values:
+          Details: !jinja >
+            __{{faction.FullName}}__ are {{faction.Verb}}
+            __{{faction.Purpose}}__.
+
+
+  Collaborators:
+    $popsome: 
+      $collection: characters
+      $min: 3
+      $max: 5
+      $inject:
+        $namespace: faction
+        $values:
+          Association: !jinja >
+            * Collaborates with the {{faction.FullName}}.
+
+
+  Members:
+    $popsome: 
+      $collection: characters
+      $min: 10
+      $max: 20
+      $inject:
+        $namespace: faction
+        $values:
+          Association: !jinja >
+            * Member of the {{faction.FullName}}.
+
+
+  $subclass:
+    - Cult
+    - Militia
+    #- Coven
+    #- Smugglers
+    #- Thieves
+    #- Tribe
+
+
+Cult:
+  $extends: Faction
+  Header: !jinja |
+    ### The {{Name_Prefix|title}} {{Name_Suffix|title}}
+
+    The {{Name_Prefix|title}} {{Name_Suffix|title}} 
+    {{subclass_}} are {{Purpose}}.
+    The {{subclass_}} hideout is the {{Lair.Name.Title}}.
+
+  Name_Prefix:
+    - dark
+    - defiled
+    - white
+    - black
+    - burning
+    - flaming
+    - desecrated
+    - foul
+    - corrupt
+
+  Name_Suffix:
+    - horrors
+    - sun
+    - followers
+    - truthseekers
+    - saviors
+    - scrolls
+    - saints
+    - bones
+    - lambs
+    - wolves
+
+  Race:
+    - humans
+    - elves
+    - gnolls
+    - kobolds
+
+  Verb: secretly 
+
+  Purpose:
+    - conducting horrid experiments in humanoids
+    - sacrificing humans
+    - attempting demons summoning rituals
+
+  Leader:
+    $roll:
+      $class:
+        - Magic-userLevel6
+        - Magic-userLevel7
+        - Magic-userLevel8
+        - Magic-userLevel9
+        - ClericLevel6
+        - ClericLevel7
+        - ClericLevel8
+        - ClericLevel9
+      $inject:
+        $values:
+          Alignment: Chaotic  
+  Lair:
+    $pop:
+      - temples
+      - lairs
+
+  LairRumor:
+    $roll:
+      $class: Rumor
+      $inject:
+        $namespace: faction
+        $values:
+          Details: !jinja >
+            __{{faction.FullName}}__ are using the
+            __{{faction.Lair.Name.Title | title}}__ as their hideout.
+
+
+Militia:
+  $extends: Faction
+  Header: !jinja >
+    
+    ### The {{Name_Prefix|title}} {{Name_Suffix|title}}
+
+
+    The {{Name_Prefix|title}} {{Name_Suffix|title}} 
+    {{subclass_}} are {{Verb}} {{Purpose}}.
+    The {{subclass_}} usual gathering venue is __{{Tavern.Name.Full}}__ in
+    {%if Tavern.CityContext%}__{{Tavern.CityContext.NamePart|title}}__{%else%}
+    {{Tavern.ClusterValue}}
+    {%endif%}
+
+  Name_Prefix:
+    - fists
+    - swords
+    - spears
+    - arrows
+    - hammers
+    - army
+    - defenders
+
+  Name_Suffix:
+    - of hope
+    - of justice
+    - of power
+    - of honor
+    - of victory
+    - of valor
+    - of fire
+    - of revival
+
+  Race:
+    - humans
+    - elves
+    - gnolls
+    - kobolds
+
+  Verb:
+    - conspiring to
+    - plotting to
+
+  Purpose:
+    - overthrow the ruler of the realm
+    - abolish all magic-users
+    - eliminate all cultists
+
+  Tavern:
+    $popone:
+      $collection: taverns
+
+  Leader:
+    $roll:
+      $class:
+        - FighterLevel6
+        - FighterLevel7
+        - FighterLevel8
+        - FighterLevel9
+        - FighterLevel10
+      $inject:
+        $values:
+          Alignment: Neutral  
+

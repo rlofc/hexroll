@@ -1,0 +1,974 @@
+Guard:
+  $subclass:
+    - FighterLevel3
+    - FighterLevel4
+    - FighterLevel5
+    - FighterLevel6
+
+
+Settlement:
+  $collection: settlements
+
+  $subclass: !weighted
+    - Village^3
+    - Town^3
+    - City^2
+#   - Hut x1
+
+  Name: !jinja "{{subclass_|capitalize}} of {{NamePart|title}}"
+
+  Description: !jinja |
+    {{subclass_|capitalize}} of {{NamePart|title}}
+
+  NamePart:
+    $roll: TownName
+
+
+Village:
+  $extends: Settlement
+  Details: !jinja >
+
+    ### {{subclass_|capitalize}} of {{NamePart|title}}
+
+    #### Village Shops & Services
+
+    Tavern: {{District.Tavern.Name.Full}}
+
+
+    {{District.Tavern.Description}}
+
+
+    {{District.Description}}
+
+  $context:
+    $attr: CityContext
+    $values:
+      - NamePart
+
+  Connector: 
+    - blends seamlessly with its surroundings
+
+  District:
+    $roll: VillageDistrict
+
+
+Town:
+  $extends: Settlement
+  Details: !jinja >
+
+    ### {{subclass_|capitalize}} of {{NamePart|title}}
+
+    #### Town Shops & Services
+
+    Tavern: {{District.Tavern.Name.Full}}
+
+
+    {{District.Tavern.Description}}
+
+
+    {{District.Description}}
+
+  $context:
+    $attr: CityContext
+    $values:
+      - NamePart
+
+  Connector:
+    - stands secure on high grounds
+    - sits behind a wall
+
+  District:
+    $roll: TownDistrict
+
+
+
+City:
+  $extends: Settlement
+
+  Details: !jinja >
+
+    ### {{subclass_|capitalize}} of {{NamePart|title}}
+
+    {{NamePart|title}} has the following districts:
+
+    {% for d in districts %}
+
+    #### {{d.Title}}
+
+    {{d.Tavern.Description}}
+
+
+    {{d.Description}}
+
+    {% endfor %}
+  $context:
+    $attr: CityContext
+    $values:
+      - NamePart
+  Flair: !jinja |
+    {{NamePart|title}} is ruled by {{CityRuler}} and
+    is known for its {{CityFeature}}.
+
+  CityRuler:
+    - a fanatic cult leader
+    - an honest but weak mayor
+
+  CityFeature:
+    - beautiful hanging gardens
+    - cheerful taverns
+    - developed culture life
+    - helpful by naive habitats
+
+
+  Connector: 
+    - stands majestically
+    - stands boldly behinds its tall walls
+    - decorates the horizon
+
+  districts:
+    $rollsome:
+      $class: CityDistrict
+      $min: 4
+      $max: 10
+
+
+Hut:
+  $extends: Settlement
+  Description: None
+  Details: "..."
+
+
+Tavern:
+  Name:
+    $roll: TavernName
+  Description: !jinja |
+
+    ##### {{Name.Full}}
+
+
+    ###### Patrons & Visitors
+
+    {%for p in patrons%}
+
+    ---
+
+    {{p.Name.Full}} (when not in shop)
+
+    {%endfor%}{%for v in visitors%}
+
+    ---
+
+    {{v.Description}}
+
+    {{v.Stats}}
+
+    {%endfor%}
+
+    {%if adverts|length > 0%}
+    | Bulletin |
+    | ------ |{%for a in (adverts|shuffle)%}
+    | {{a.Details}} |{%endfor%}
+
+    ---{%endif%}
+
+    {%set counter = namespace(value=0)%}
+    d6 | Rumor
+    ---- | -----{%for r in (gc_rumors|shuffle)[:6]%}{%set counter.value = counter.value+1%}
+    {{counter.value}} | {{r.Details}} {%endfor%}
+
+  visitors:
+    $rollsome:
+      $class: TavernVisitor
+      $min: 4
+      $max: 10
+
+
+DistrictTavern:
+  $extends: Tavern
+  patrons:
+    $popsome: 
+      $collection: district_characters_for_tavern
+      $min: 2
+      $max: 5
+      $inject:
+        $values:
+          t: !ref Name
+
+  adverts:
+    $popsome: 
+      $collection: district_adverts_for_tavern
+      $min: 2
+      $max: 5
+
+
+District:
+  $collections:
+    district_adverts_for_tavern:
+      $collect: Advert
+    district_characters_for_tavern:
+      $collect: Folk
+
+        #$reset: district_characters_for_tavern
+
+  $subclass:
+    - ResidentialDistrict
+    - PalaceDistrict
+    - CastleDistrict
+    - TempleDistrict
+    - CraftingDistrict
+    - HarborDistrict
+    - MarketDistrict
+      #- GuildsDistrict
+      #- ArcaneDistrict
+      #- GardenDistrict
+      #- CultureDistrict
+      #- CouncilDistrict
+  Description: !jinja >
+
+    ##### Guards
+
+    {% set counter = namespace(value=0) %}
+    {% for g in Guards %}
+    {% set counter.value = counter.value + 1 %}
+
+
+    __Guard #{{counter.value}}__
+
+
+    {{g.Description}}
+
+    ---
+
+
+    {{g.Stats}}
+
+
+    ---
+
+
+
+    {% endfor %}
+    
+    {% for s in shops %}
+
+    ##### {{s.Name}}
+
+    {{s.Inventory}}
+
+    __{{s.OwnerTitle}}:__
+
+    {{s.Owner.Description}}
+
+    {% endfor %}
+
+  Guards:
+    $rollsome:
+      $class: Guard
+      $min: 1
+      $max: 3
+
+
+CityDistrict:
+  $subclass: !weighted
+    - ResidentialDistrict^4
+    - PalaceDistrict
+      #- CastleDistrict
+    - TempleDistrict
+    - CraftingDistrict
+    - HarborDistrict
+    - MarketDistrict
+
+
+VillageDistrict:
+  $extends: District
+
+  shops:
+    $rollsome:
+      $class: TownShops
+      $min: 5
+      $max: 19
+
+  Tavern:
+    $roll: DistrictTavern
+
+
+TownDistrict:
+  $extends: District
+
+  shops:
+    $rollsome:
+      $class: TownShops
+      $min: 12
+      $max: 34
+
+  Tavern:
+    $roll: DistrictTavern
+
+
+ResidentialDistrict:
+  Title:
+    - Peasants District
+    - Townsfolk District
+    - Common District
+    - The Dwellers District
+
+  $extends: District
+
+  shops:
+    $rollsome:
+      $class: ResidentialDistrictShop
+      $min: 2
+      $max: 5
+
+  Tavern:
+    $roll: DistrictTavern
+
+
+PalaceDistrict:
+  $extends: District
+  Title: Palace District
+  shops:
+    $rollsome:
+      $class: PalaceDistrictShop
+      $min: 2
+      $max: 5
+  Tavern:
+    $roll: DistrictTavern
+
+
+CastleDistrict:
+  $extends: District
+  Title: Castle District
+  shops:
+    $rollsome:
+      $class: CastleDistrictShop
+      $min: 2
+      $max: 5
+  Tavern:
+    $roll: DistrictTavern
+
+
+TempleDistrict:
+  $extends: District
+  Title: Temple District
+  shops:
+    $rollsome:
+      $class: TempleDistrictShop
+      $min: 2
+      $max: 4
+  Tavern:
+    $roll: DistrictTavern
+
+
+CraftingDistrict:
+  $extends: District
+  Title: Crafting District
+  shops:
+    $rollsome:
+      $class: CraftingDistrictShop
+      $min: 7
+      $max: 10
+  Tavern:
+    $roll: DistrictTavern
+
+
+HarborDistrict:
+  $extends: District
+  Title: Harbor District
+  shops:
+    $rollsome:
+      $class: HarborDistrictShop
+      $min: 4
+      $max: 7
+  Tavern:
+    $roll: DistrictTavern
+
+
+MarketDistrict:
+  $extends: District
+  Title: Market District
+  shops:
+    $rollsome:
+      $class: MarketDistrictShop
+      $min: 10
+      $max: 20
+  Tavern:
+    $roll: DistrictTavern
+
+
+ResidentialDistrictShop:
+  $subclass:
+    - Bakery
+    - GeneralGoods
+    - Bookstore
+    - Grocer
+    - PetShop
+    - Herbalist
+    - Carpenter
+    - Stables
+    - Hatter
+    - Butchery
+    - Clothing
+    - Barber
+    - Liquor
+    - Craft
+    - Music
+    - Salon
+    - Spice
+    - Bathhouse
+    - AnimalSupplies
+    - Winery
+    - Brewery
+    - Distillery
+    - Flower
+    - Cobbler
+    - Tinkerer
+    - Weaver
+    - Scribe
+    - Veterinarian
+    - BlackMarket
+    - Bank
+    - Physician
+    - School
+    - Daycare
+    - IndoorMarket
+    - Nunnery
+    - Tailor
+    - Orphanage
+    - Restaurant
+
+
+PalaceDistrictShop:
+  $subclass:
+    - Bookstore
+    - ExoticGoods
+    - Jeweler
+    - Stables
+    - ArmorWeapons
+    - Hatter
+    - Clothing
+    - Blacksmith
+    - Barber
+    - Liquor
+    - Music
+    - Salon
+    - Cartographer
+    - Bathhouse
+    - Casino
+    - Occult
+    - Winery
+    - Flower
+    - Scribe
+    - Bank
+    - Physician
+    - Barracks
+    - Museum
+    - Library
+    - Lawyer
+    - CityGuard
+    - EventHall
+    - Enchanter
+    - Theater
+    - EventPlanner
+    - Restaurant
+    - Registry
+    - TradePost
+    - Archive
+
+PalaceDistrictGuild:
+  $subclass:
+    - ArtistsGuild
+    - WritersGuild
+    - KnightsGuild
+
+
+TempleDistrictShop:
+  $subclass:
+    - Bakery
+    - GeneralGoods
+    - Bookstore
+    - Herbalist
+    - ExoticGoods
+    - Jeweler
+    - Hatter
+    - Clothing
+    - Music
+    - Occult
+    - Winery
+    - Flower
+    - Scribe
+    - Bank
+    - Physician
+    - School
+    - Museum
+    - Library
+    - Enchanter
+    - Theater
+    - College
+    - Archive
+    - FortuneTeller
+    - Matchmaker
+
+TempleDistrictGuild:
+  $subclass:
+    - ArtistsGuild
+    - ScholarsGuild
+    - WritersGuild
+
+
+CraftingDistrictShop:
+  $subclass:
+    - GeneralGoods
+    - Bookstore
+    - Herbalist
+    - ExoticGoods
+    - Jeweler
+    - Carpenter
+    - ArmorWeapons
+    - Hatter
+    - Clothing
+    - Blacksmith
+    - Liquor
+    - Craft
+    - Music
+    - Cartographer
+    - Spice
+    - Brewery
+    - Distillery
+    - Cobbler
+    - Tinkerer
+    - Weaver
+    - Scribe
+    - BlackMarket
+    - GlassBlower
+    - Leatherworker
+    - TinWorker
+    - IndoorMarket
+    - Tailor
+    - GameShop
+    - PrintingPress
+    - Tanner
+    - VehicleMaker
+
+
+CraftingDistrictGuild:
+  $subclass:
+    - WritersGuild
+
+
+HarborDistrictShop:
+  $subclass:
+    - Bakery
+    - GeneralGoods
+    - Bookstore
+    - Grocer
+    - PetShop
+    - Herbalist
+    - ExoticGoods
+    - Jeweler
+    - Bunkhouse
+    - Carpenter
+    - Stables
+    - ArmorWeapons
+    - Hatter
+    - Butchery
+    - Clothing
+    - Blacksmith
+    - Barber
+    - Liquor
+    - Craft
+    - Music
+    - Salon
+    - Cartographer
+    - Spice
+    - Bathhouse
+    - Casino
+    - AnimalSupplies
+    - Winery
+    - Brewery
+    - Distillery
+    - Cobbler
+    - Tinkerer
+    - Weaver
+    - Scribe
+    - Veterinarian
+    - BlackMarket
+    - Brothel
+    - Bank
+    - GlassBlower
+    - Leatherworker
+    - Physician
+    - Lawyer
+    - TinWorker
+    - IndoorMarket
+    - Nightclub
+    - FishMarket
+    - Tailor
+    - PostOffice
+    - Mill
+    - Smokehouse
+    - GameShop
+    - PrintingPress
+    - AnimalPound
+    - Restaurant
+    - Tanner
+    - Registry
+    - TradePost
+    - VehicleMaker
+    - FortuneTeller
+
+HarborDistrictGuild:
+  $subclass:
+    - FishermenGuild
+    - MerchantsGuild
+    - AdventurersGuild
+    - BardsGuild
+    - SailorsGuild
+
+
+MarketDistrictShop:
+  $subclass:
+    - Bakery
+    - GeneralGoods
+    - Bookstore
+    - Grocer
+    - PetShop
+    - Herbalist
+    - ExoticGoods
+    - Jeweler
+    - Carpenter
+    - Stables
+    - ArmorWeapons
+    - Hatter
+    - Butchery
+    - Clothing
+    - Blacksmith
+    - Barber
+    - Liquor
+    - Craft
+    - Music
+    - Salon
+    - Spice
+    - Bathhouse
+    - Casino
+    - AnimalSupplies
+    - Occult
+    - Winery
+    - Brewery
+    - Distillery
+    - Flower
+    - Cobbler
+    - Tinkerer
+    - Weaver
+    - Scribe
+    - Veterinarian
+    - BlackMarket
+    - Brothel
+    - Bank
+    - GlassBlower
+    - Leatherworker
+    - TinWorker
+    - IndoorMarket
+    - FishMarket
+    - Tailor
+    - PostOffice
+    - Mill
+    - Smokehouse
+    - GameShop
+    - PrintingPress
+    - AnimalPound
+    - Restaurant
+    - Tanner
+    - TradePost
+    - VehicleMaker
+
+MarketDistrictGuild:
+  $subclass:
+    - HuntersGuild
+    - ThievesGuild
+    - MerchantsGuild
+
+Folk:
+  $extends: Character
+  $context:
+    $attr: FolkContext
+    $values:
+      - Name
+  Story2:
+    $roll: Quest
+
+
+Shop:
+  OwnerTitle: Owner
+  Owner:
+    $roll: Folk
+
+  Name: 
+    - !jinja "{{Owner.Name.First}}'s {{Noun}} (*{{Title}}*)"
+
+  Inventory: !jinja |
+    {% if Items %}
+    Item | Price
+    ---- | -----{% for i in Items %}
+    {{i.Title}} | {{i.Cost}}{% endfor %}
+
+    {% endif %}
+
+
+Service:
+  OwnerTitle: Manager
+  Owner:
+    $roll: Folk
+
+  Name: 
+    - !jinja "*{{Title}}*"
+
+  Inventory: !jinja |
+    {% if Services %}
+    Service | Price
+    ---- | -----{% for i in Services %}
+    {{i.Title}} | {{i.Cost}}{% endfor %}
+
+    {% endif %}
+
+Guild:
+  GuildHead:
+    $roll: Folk
+
+
+DistrictShop:
+  $subclass:
+    - Bakery
+    - GeneralGoods
+    - Bookstore
+    - Grocer
+    - PetShop
+    - Herbalist
+    - ExoticGoods
+    - Jeweler
+    - Bunkhouse
+    - Carpenter
+    - Stables
+    - ArmorWeapons
+    - Hatter
+    - Butchery
+    - Clothing
+    - Blacksmith
+    - Barber
+    - Liquor
+    - Craft
+    - Music
+    - Salon
+    - Cartographer
+    - Spice
+    - Bathhouse
+    - Casino
+    - AnimalSupplies
+    - Occult
+    - Winery
+    - Brewery
+    - Distillery
+    - Flower
+    - Cobbler
+    - Tinkerer
+    - Weaver
+    - Scribe
+    - Veterinarian
+    - BlackMarket
+    - Brothel
+    - Bank
+    - GlassBlower
+    - Leatherworker
+    - Physician
+    - Barracks
+    - School
+    - Daycare
+    - Museum
+    - Library
+    - Lawyer
+    - TinWorker
+    - IndoorMarket
+    - Nightclub
+    - CityHall
+    - FishMarket
+    - Nunnery
+    - Tailor
+    - Prison
+    - CityGuard
+    - EventHall
+    - Orphanage
+    - Enchanter
+    - PostOffice
+    - Mill
+    - Smokehouse
+    - GameShop
+    - Theater
+    - Witch
+    - College
+    - PrintingPress
+    - AnimalPound
+    - EventPlanner
+    - Mortician
+    - Restaurant
+    - Tanner
+    - Registry
+    - TradePost
+    - VehicleMaker
+    - Archive
+    - FortuneTeller
+    - Matchmaker
+
+DistrictGuilds:
+  $subclass:
+    - ArtistsGuild
+    - HuntersGuild
+    - FishermenGuild
+    - ThievesGuild
+    - MerchantsGuild
+    - ScholarsGuild
+    - WritersGuild
+    - AdventurersGuild
+    - MagesGuild
+    - BardsGuild
+    - ArchitectsGuild
+    - SailorsGuild
+    - KnightsGuild
+
+
+TownShops:
+  $subclass:
+    - Bakery
+    - GeneralGoods
+    - Bookstore
+    - Grocer
+    - PetShop
+    - Herbalist
+    - Jeweler
+    - Bunkhouse
+    - Carpenter
+    - Stables
+    - ArmorWeapons
+    - Hatter
+    - Butchery
+    - Clothing
+    - Blacksmith
+    - Barber
+    - Liquor
+    - Craft
+    - Music
+    - Salon
+    - Spice
+    - Bathhouse
+    - AnimalSupplies
+    - Brewery
+    - Distillery
+    - Flower
+    - Cobbler
+    - Tinkerer
+    - Weaver
+    - Veterinarian
+    - Brothel
+    - Bank
+    - GlassBlower
+    - Leatherworker
+    - Physician
+    - Barracks
+    - School
+    - Daycare
+    - Library
+    - Lawyer
+    - TinWorker
+    - FishMarket
+    - Nunnery
+    - Tailor
+    - Prison
+    - PostOffice
+    - Mill
+    - Smokehouse
+    - GameShop
+    - Witch
+    - PrintingPress
+    - AnimalPound
+    - Mortician
+    - Restaurant
+    - Tanner
+    - Registry
+    - TradePost
+    - VehicleMaker
+    - FortuneTeller
+    - Matchmaker
+
+
+TavernName:
+  Full:
+    - !jinja "The {{Creature}} & The {{LivingAdjective}} {{Title}}"
+    - !jinja "The {{LivingAdjective}} {{Creature}}"
+    - !jinja "{{StaticAdjective}} {{Object}} Tavern"
+    - !jinja "The {{StaticAdjective}} {{Object}}"
+    - !jinja "The {{Title}}'s {{Object}} Inn"
+
+  Creature:
+    - Ghoul
+    - Mummy
+    - Skeleton
+    - Spectre
+    - Wight
+    - Wraith
+    - Zombie
+    - Werewolf
+    - Hawk
+    - Harpy
+    - Dragon
+    - Vampire
+    - Pixie
+    - Unicorn
+    - Orc
+    - Goblin
+    - Gnoll
+    - Ogre
+    - Troll
+
+  Title:
+    - Devil
+    - Queen
+    - King
+    - Knight
+    - Hunter
+    - Baker
+    - Brewer
+    - Wizard
+    - Bard
+    - Rogue
+    - Mage
+    - Witch
+    - Paladin
+    - Peasant
+
+  Object:
+    - Sword
+    - Mace
+    - Stone
+    - Torch
+    - Arrow
+    - Spear
+    - Staff
+
+  LivingAdjective:
+    - Bleeding
+    - Fearless
+    - Gloomy
+    - Sad
+    - Crying
+    - Laughing
+    - Cursed
+
+  StaticAdjective:
+    - Flaming
+    - Glowing
+    - Magic
+    - Black
+    - Cursed
+    - Lost
+
+
+
