@@ -17,6 +17,7 @@ GeomorphBlock:
     - GeomorphBlock2^2
     - GeomorphBlock3^2
     - GeomorphBlock11^2
+    - GeomorphBlock12^2
     - GeomorphBlock4
 
 
@@ -721,6 +722,156 @@ GeomorphBlock11:
       $bootstrap:
         DoorPosition: *CtxOriSouth
         Ref: !jinja "{{GeomorphContext.Counter + 4}}"
+
+
+GeomorphBlock12:
+  $extends: GeomorphBlock
+
+  Tile: 
+    - center12.png
+  Coords:
+    - "[(5,1), (9,1), (2,6), (8,6), (6,10)]"
+
+  Details: !jinja |
+
+    #### {{Counter+1}} : {{Room1.Title}}
+
+    {{Room1.Foreshadow}}
+
+    ##### Doorways
+
+    * __{{OriWest|capitalize}}__ side - a {{Door1.Description}}
+
+
+    {{Room1.Description}}
+
+    #### {{Counter+2}} : Dead Ends
+
+
+    #### {{Counter+3}} : {{Room2.Title}}
+
+    {{Room2.Foreshadow}}
+
+    ##### Doorways
+
+    * __{{OriNorth|capitalize}}__ side - a {{Door2.Description}}
+    * __{{OriSouth|capitalize}}__ side - a {{Door3.Description}}
+    * A {{SecretDoor1.Description}} on the __{{OriWest}}__ side is
+      leading to a hidden storage room.
+
+
+    {{Room2.Description}}
+    
+    #### {{Counter+4}} : Secret Storage Room
+
+    {{Room3.Foreshadow}}
+
+    ##### Doorways
+
+    * The {{SecretDoor1.Description}} from area {{Counter+3}} is on
+      the  __{{OriEast}}__ side.
+
+    {{Room3.Description}}
+    
+    #### {{Counter+5}} : {{Room4.Title}}
+
+    {{Room4.Foreshadow}}
+
+    ##### Doorways
+
+    * __{{OriEast|capitalize}}__ side - a {{Door4.Description}}
+    * __{{OriWest|capitalize}}__ side - a {{Door5.Description}}
+
+
+    {{Room4.Description}}
+
+  $inc:
+    $global: Counter
+    $value: 5
+
+  $context:
+    $attr: GeomorphContext
+    $values:
+      - Counter
+      - OriNorth
+      - OriWest
+      - OriSouth
+      - OriEast
+      - Orientation
+
+  Room1:
+    $roll:
+      $class: RoomDescription
+      $bootstrap:
+        CounterSnapshot: !ref Counter
+        FeatureLevelClass: !ref DungeonFeatureTier1
+        Ref: !jinja "{{CounterSnapshot + 1}}"
+
+  Room2:
+    $roll:
+      $class: RoomDescription
+      $bootstrap:
+        CounterSnapshot: !ref Counter
+        FeatureLevelClass: !ref DungeonFeatureTier2
+        Ref: !jinja "{{CounterSnapshot + 3}}"
+
+  Room3:
+    $roll:
+      $class: RoomDescription
+      $bootstrap:
+        CounterSnapshot: !ref Counter
+        FeatureLevelClass: !ref DungeonFeatureTier3
+        Ref: !jinja "{{CounterSnapshot + 4}}"
+
+  Room4:
+    $roll:
+      $class: RoomDescription
+      $bootstrap:
+        CounterSnapshot: !ref Counter
+        FeatureLevelClass: !ref DungeonFeatureTier2
+        Ref: !jinja "{{CounterSnapshot + 5}}"
+
+  Door1:
+    $roll:
+      $class: DungeonDoor
+      $bootstrap:
+        DoorPosition: *CtxOriEast
+        Ref: !jinja "{{GeomorphContext.Counter + 1}}"
+
+  Door2:
+    $roll:
+      $class: DungeonDoor
+      $bootstrap:
+        DoorPosition: *CtxOriNorth
+        Ref: !jinja "{{GeomorphContext.Counter + 3}}"
+
+  Door3:
+    $roll:
+      $class: DungeonDoor
+      $bootstrap:
+        DoorPosition: *CtxOriSouth
+        Ref: !jinja "{{GeomorphContext.Counter + 3}}"
+
+  Door4:
+    $roll:
+      $class: DungeonDoor
+      $bootstrap:
+        DoorPosition: *CtxOriEast
+        Ref: !jinja "{{GeomorphContext.Counter + 5}}"
+
+  Door5:
+    $roll:
+      $class: DungeonDoor
+      $bootstrap:
+        DoorPosition: *CtxOriWest
+        Ref: !jinja "{{GeomorphContext.Counter + 5}}"
+
+  SecretDoor1:
+    $roll:
+      $class: DungeonSecretDoor
+      $bootstrap:
+        DoorPosition: *CtxOriWest
+        Ref: !jinja "{{GeomorphContext.Counter + 3}}"
 
 
 GeomorphCorner1:
