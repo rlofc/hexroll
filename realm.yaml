@@ -69,17 +69,18 @@ Realm:
       Will heroes rise up to help the people with their quest for freedom?
 
     - !jinja A prophacy tells of a young child who will bring a new age
-      of prosperity to {{Name}}, but why is it that some find this
-      undesirable, and are they secretly acting to prevent this?
+      of prosperity to {{Name}}, but some find this undesirable and
+      are secretly working to undermine this possibility.
 
     - !jinja A peculiar plague is ravaging the land. Some say it is a curse
       from the gods while others blame the wrongdoing of a faction.
 
     - !jinja >
-      {{Ruler.Title | title}} {{Ruler.NPC.Name.First}} is
-      on {{Ruler.NPC.Gender.Pronoun2}} deathbed.
-      There's a rumor of a young legal heir, raised as a common somewhere in
-      the {{Ruler.RealmType}}. 
+      The seamingly childless {{Ruler.Title | title}} {{Ruler.NPC.Name.First}}
+      is on {{Ruler.NPC.Gender.Pronoun2}} deathbed.
+      A rumor of a legal heir raised as a commoner somewhere in
+      the {{Ruler.RealmType}} brings hope to most, but is a threat to some.
+
 
   Ruler:
     $roll: Ruler
