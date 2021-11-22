@@ -140,7 +140,7 @@ Encounter:
                 There’s a __2-in-6__ chance of encountering 
                 {%if Monster.NumberAppearingLair==1%}it.
                 {%else%}at least one of them outside
-                (the rest will be in their lair inside {{proxy.Lair}}.{%endif%}
+                (the rest will be in their lair inside {{proxy.Lair}}).{%endif%}
               EncounterFlair: !jinja >
 
                 __{{Monster.Title}}__
