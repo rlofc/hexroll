@@ -190,7 +190,6 @@ Warexpert:
     {%-else-%}
     Warexpert
     {%-endif-%}
-  Title: warlord
   RealmType:
     - lands
   Weapon:
