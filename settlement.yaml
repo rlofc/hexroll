@@ -180,8 +180,17 @@ Tavern:
 
     {%set counter = namespace(value=0)%}
     d6 | Rumor
-    ---- | -----{%for r in (gc_rumors|shuffle)[:6]%}{%set counter.value = counter.value+1%}
-    {{counter.value}} | {{r.Details}} {%endfor%}
+    ---- | -----
+    {%-if rumors-%}
+    {%-for r in rumors-%}
+    {%-set counter.value = counter.value+1%}
+    {{counter.value}} | {{r.Details}}
+    {%-endfor-%}
+    {%-endif-%}
+    {%-for r in (gc_rumors|shuffle)[:6-counter.value]-%}
+    {%-set counter.value = counter.value+1%}
+    {{counter.value}} | {{r.Details}}
+    {%-endfor-%}
 
   visitors:
     $rollsome:
@@ -207,6 +216,11 @@ DistrictTavern:
       $min: 2
       $max: 5
 
+  rumors:
+    $popsome:
+      $collection: district_rumors_for_tavern
+      $min: 2
+      $max: 5
 
 District:
   $collections:
@@ -214,6 +228,8 @@ District:
       $collect: Advert
     district_characters_for_tavern:
       $collect: Folk
+    district_rumors_for_tavern:
+      $collect: Rumor
 
         #$reset: district_characters_for_tavern
 
