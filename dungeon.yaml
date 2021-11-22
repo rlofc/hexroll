@@ -24,7 +24,7 @@ Dungeon:
 
   Details: !jinja >
 
-    ### {{NamePrefix | capitalize}} of the {{ Name.Adjective | capitalize}} {{Name.Noun | capitalize}}
+    ### <a name='{{uuid}}'></a>{{NamePrefix | capitalize}} of the {{ Name.Adjective | capitalize}} {{Name.Noun | capitalize}}
 
 
     <a href='{{uuid}}.png'><img src='{{uuid}}.png'/></a>

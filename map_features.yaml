@@ -21,6 +21,7 @@ DungeonProxy:
         $inject:
             $namespace: proxy
             $values:
+              DungeonUUID: !jinja "{{proxy.Dungeon.uuid}}"
               DungeonDesc: !jinja |
                 {{proxy.Dungeon.Title}}
               DungeonEntrance: !jinja |
