@@ -60,8 +60,9 @@ TreasureQuest:
   $extends: Quest
   Description: !jinja |
     * __{{Artifact.Appearance | title}}__ is lost (or so claimed).
-     (Secret: This is actually a __{{Artifact.ActualItem}}__ and it is currently
-     somewhere in the __{{Location.DungeonContext.Name.Title}}__)
+     (Secret: This is actually __{{Artifact.ActualItem | articlize}}__
+     and it is currently somewhere in the
+     __{{Location.DungeonContext.Name.Title}}__)
     * Reward is __{{Reward}}__
 
   Rumor:
