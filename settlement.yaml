@@ -26,6 +26,7 @@ Settlement:
 
 Village:
   $extends: Settlement
+  Title: !jinja "village of {{NamePart | title}}"
   Details: !jinja >
 
     ### {{subclass_|capitalize}} of {{NamePart|title}}
@@ -44,6 +45,7 @@ Village:
     $attr: CityContext
     $values:
       - NamePart
+      - Title
 
   Connector: 
     - blends seamlessly with its surroundings
@@ -54,6 +56,7 @@ Village:
 
 Town:
   $extends: Settlement
+  Title: !jinja "town of {{NamePart | title}}"
   Details: !jinja >
 
     ### {{subclass_|capitalize}} of {{NamePart|title}}
@@ -72,6 +75,7 @@ Town:
     $attr: CityContext
     $values:
       - NamePart
+      - Title
 
   Connector:
     - stands secure on high grounds
@@ -84,6 +88,7 @@ Town:
 
 City:
   $extends: Settlement
+  Title: !jinja "city of {{NamePart | title}}"
 
   Details: !jinja >
 
@@ -105,6 +110,8 @@ City:
     $attr: CityContext
     $values:
       - NamePart
+      - Title
+
   Flair: !jinja |
     {{NamePart|title}} is ruled by {{CityRuler}} and
     is known for its {{CityFeature}}.
@@ -152,13 +159,13 @@ Tavern:
 
     ---
 
-    {{p.Name.Full}} (when not in shop)
+    [{{p.Name.Full}}](#{{p.uuid}}) (when not in shop)
 
     {%endfor%}{%for v in visitors%}
 
     ---
 
-    {{v.Description}}
+    <a name='{{v.uuid}}'></a>{{v.Description}}
 
     {{v.Stats}}
 
@@ -251,7 +258,7 @@ District:
     
     {% for s in shops %}
 
-    ##### {{s.Name}}
+    ##### <a name="{{s.Owner.uuid}}"></a>{{s.Name}}
 
     {{s.Inventory}}
 
@@ -694,6 +701,7 @@ Folk:
     $attr: FolkContext
     $values:
       - Name
+      - uuid
   Story2:
     $roll: Quest
 
@@ -701,7 +709,13 @@ Folk:
 Shop:
   OwnerTitle: Owner
   Owner:
-    $roll: Folk
+    $roll:
+      $class: Folk
+      $inject:
+        $namespace: shop
+        $values:
+          Profession: !jinja >
+            {{shop.OwnerTitle | lower}} of the {{shop.Title | lower}} shop
 
   Name: 
     - !jinja "{{Owner.Name.First}}'s {{Noun}} (*{{Title}}*)"
@@ -718,7 +732,13 @@ Shop:
 Service:
   OwnerTitle: Manager
   Owner:
-    $roll: Folk
+    $roll:
+      $class: Folk
+      $inject:
+        $namespace: service
+        $values:
+          Profession: !jinja >
+            {{service.OwnerTitle | lower}} of the {{service.Title | lower}}
 
   Name: 
     - !jinja "*{{Title}}*"

@@ -21,7 +21,7 @@ Faction:
 
     {% for m in Members %}
 
-    * {{m.Name.Full}}
+    * [{{m.Name.Full}}](#{{m.uuid}}) {{m.Profession if m.Profession}}{%if m.CityContext%} from the {{m.CityContext.Title}}{%endif%}
 
     {% endfor %}
 
@@ -30,7 +30,7 @@ Faction:
 
     {% for c in Collaborators %}
 
-    * {{c.Name.Full}}
+    * {{c.Name.Full}} {{c.Profession if c.Profession}}{%if c.CityContext%} from the {{c.CityContext.Title}}{%endif%}
 
     {% endfor %}
 
@@ -55,7 +55,7 @@ Faction:
         $namespace: faction
         $values:
           Association: !jinja >
-            * Collaborates with the {{faction.FullName}}.
+            * Collaborates with the [__{{faction.FullName}}__](#{{faction.uuid}}).
 
 
   Members:
@@ -67,7 +67,7 @@ Faction:
         $namespace: faction
         $values:
           Association: !jinja >
-            * Member of the {{faction.FullName}}.
+            * Member of the [__{{faction.FullName}}__](#{{faction.uuid}}).
 
 
   $subclass:
@@ -82,7 +82,8 @@ Faction:
 Cult:
   $extends: Faction
   Header: !jinja |
-    ### The {{Name_Prefix|title}} {{Name_Suffix|title}}
+    
+    ### <a name='{{uuid}}'></a>The {{Name_Prefix|title}} {{Name_Suffix|title}}
 
     The {{Name_Prefix|title}} {{Name_Suffix|title}} 
     {{subclass_}} are {{Purpose}}.
@@ -158,7 +159,7 @@ Militia:
   $extends: Faction
   Header: !jinja >
     
-    ### The {{Name_Prefix|title}} {{Name_Suffix|title}}
+    ### <a name='{{uuid}}'></a> The {{Name_Prefix|title}} {{Name_Suffix|title}}
 
 
     The {{Name_Prefix|title}} {{Name_Suffix|title}} 

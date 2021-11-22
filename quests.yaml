@@ -71,9 +71,10 @@ TreasureQuest:
         $namespace: quest
         $values:
           Details: !jinja >
-            __{{quest.FolkContext.Name.Full}}’s__ 
-            __{{quest.Artifact.Appearance | title}}__ (actually a __{{quest.Artifact.ActualItem}}__)
-            is somewhere in the {{quest.Location.DungeonContext.Name.Title}}
+            [__{{quest.FolkContext.Name.Full}}’s__](#{{quest.FolkContext.uuid}})
+            __{{quest.Artifact.Appearance | title}}__ (actually
+            __{{quest.Artifact.ActualItem | articlize}}__) is somewhere in the
+            {{quest.Location.DungeonContext.Name.Title}}
   Advert:
     $roll:
       $class: Advert
@@ -84,10 +85,12 @@ TreasureQuest:
             - !jinja >
               “__Help requested!__  A heirloom of sentimental value was stolen
               from me.  I will reward anyone who is kind enough to get it back.
-              Yours, __{{quest.FolkContext.Name.Full}}__”
+              Yours, 
+              [__{{quest.FolkContext.Name.Full}}__](#{{quest.FolkContext.uuid}})”
             - !jinja >
               “__Item LOST!__ A possession of mine was lost. 
-              Finders reward is guaranteed.  __{{quest.FolkContext.Name.Full}}__”
+              Finders reward is guaranteed.
+              [__{{quest.FolkContext.Name.Full}}__](#{{quest.FolkContext.uuid}})”
 
 
   Artifact:
@@ -105,7 +108,8 @@ TreasureQuest:
         $namespace: quest
         $values:
           Active: !jinja |
-            {{quest.TreasureContainer}} contains __{{quest.FolkContext.Name.Full}}’s__
+            {{quest.TreasureContainer}} contains 
+            [__{{quest.FolkContext.Name.Full}}’s__](#{{quest.FolkContext.uuid}})
             (from __{{quest.CityContext.NamePart|title}}__) 
             __{{quest.Artifact.Appearance | title}}__
             (actually __{{quest.Artifact.ActualItem | articlize}}__)
@@ -213,8 +217,8 @@ MissingPersonQuest:
         $namespace: quest
         $values:
           Details: !jinja >
-            __{{quest.FolkContext.Name.Full}}’s {{quest.Relation.Type}}__
-            is held captive in the
+            [__{{quest.FolkContext.Name.Full}}’s__](#{{quest.FolkContext.uuid}})
+            __{{quest.Relation.Type}}__ is held captive in the
             __{{quest.Location.DungeonContext.Name.Title | title}}__
 
   Advert:
@@ -229,7 +233,7 @@ MissingPersonQuest:
               My dear {{quest.Relation.Type}} is missing.
               I am worried sick and will reward anyone who will help.
               Yours faithfully,
-              __{{quest.FolkContext.Name.Full}}__”
+              [__{{quest.FolkContext.Name.Full}}__](#{{quest.FolkContext.uuid}})”
             - !jinja >
               “__Urgent!!__
               My {{quest.Relation.Type}} did not return home 
@@ -238,12 +242,12 @@ MissingPersonQuest:
               {{quest.Relation.Gender.Pronoun3}}, please contact me
               as soon as possible.
               Yours,
-              __{{quest.FolkContext.Name.Full}}__”
+              [__{{quest.FolkContext.Name.Full}}__](#{{quest.FolkContext.uuid}})”
             - !jinja >
               “__{{quest.Relation.Type|capitalize}} is missing!__
               My {{quest.Relation.Type}} is missing since {{quest.Timeframe}}.
               Please reach out to me if you can help.
-              __{{quest.FolkContext.Name.Full}}__”
+              [__{{quest.FolkContext.Name.Full}}__](#{{quest.FolkContext.uuid}})”
 
 
   Relation:
@@ -256,7 +260,8 @@ MissingPersonQuest:
         $namespace: quest
         $values:
           Active: !jinja |
-            The __chained person__ is __{{quest.FolkContext.Name.Full}}’s
+            The __chained person__ is 
+            [__{{quest.FolkContext.Name.Full}}’s__](#{{quest.FolkContext.uuid}})
             {{quest.Relation.Type}}__ from {{quest.CityContext.NamePart|title}}
 
   Secret:
@@ -270,7 +275,7 @@ MissingPersonQuest:
 
 LostItem:
   Description: !jinja >
-    __{{Appearance | title}}__ (actually a __{{ActualItem}}__)
+    __{{Appearance | title}}__ (actually __{{ActualItem | articlize}}__)
   $subclass: !weighted
     - LostItemSword^11
     - LostItemArmor^5
