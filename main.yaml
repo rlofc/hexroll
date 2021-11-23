@@ -1,34 +1,3 @@
-$include: 
-  - dungeon.yaml 
-  - dungeon_area_types.yaml
-  - dungeon_doors.yaml
-  - dungeon_encounters.yaml
-  - dungeon_entrance.yaml
-  - dungeon_types.yaml 
-  - encounters.yaml
-  - equipment.yaml
-  - factions.yaml
-  - geomorphs.yaml
-  - geoshapes.yaml
-  - magic_items.yaml
-  - map.yaml
-  - map_features.yaml
-  - monster_groups.yaml
-  - monsters.yaml
-  - names.yaml
-  - npc.yaml
-  - quests.yaml
-  - realm.yaml
-  - settlement.yaml 
-  - shops.yaml
-  - sigils.yaml
-  - terrains.yaml
-  - treasures.yaml
-
-
-$seed: 0
-
-
 $main:
   Realm:
     $roll: Realm
