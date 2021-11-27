@@ -108,13 +108,13 @@ Hex:
     $global: HexCounter
     $value: 1
   Details: !jinja |
-    {%if DungeonDesc != "!"%}
+    {%if DungeonDesc%}
     #### Hex {{'%02d' %  HexCounter}}: {{DungeonDesc}}
-    {%elif SettlementDesc != "!"%}
+    {%elif SettlementDesc%}
     #### Hex {{'%02d' %  HexCounter}}: {{SettlementDesc}}
-    {%elif InnDesc != "!"%}
+    {%elif InnDesc%}
     #### Hex {{'%02d' %  HexCounter}}: {{InnDesc}}
-    {%elif EncounterDesc != "!"%}
+    {%elif EncounterDesc%}
     #### Hex {{'%02d' %  HexCounter}}: {{EncounterName}}
     {%else%}
     #### Hex {{'%02d' %  HexCounter}}: {{Feature.Name}}
@@ -122,17 +122,17 @@ Hex:
 
     {{Terrain.Flair}}
 
-    {%if DungeonDesc != "!"%}
+    {%if DungeonDesc%}
     The [__{{DungeonDesc}}__](#{{DungeonUUID}}) is hidden
     {%if Terrain.Hideout%}{{Terrain.Hideout}}{%endif%} somewhere {{Terrain.Location}}.
     ##### Entrances
     {{DungeonEntrance}}
-    {%elif SettlementDesc != "!"%}
+    {%elif SettlementDesc%}
     The {{SettlementDetails}} {{SettlementConnector}} {{Terrain.Location}}.
     {{SettlementFlair}}
-    {%elif InnDesc != "!"%}
+    {%elif InnDesc%}
     {{InnDesc}} is welcoming travellers and adventurers {{Terrain.Location}}.
-    {%elif EncounterDesc != "!"%}
+    {%elif EncounterDesc%}
     {{EncounterDesc}} {{Terrain.Location}}.
     {{EncounterProbability}}
     {{EncounterFlair}}
@@ -150,10 +150,11 @@ Hex:
     - CoastHex
   Feature:
     $roll: Feature
-  DungeonDesc: "!"
-  SettlementDesc: "!"
-  InnDesc: "!"
-  EncounterDesc: "!"
+
+  DungeonDesc: null
+  SettlementDesc: null
+  InnDesc: null
+  EncounterDesc: null
 
 
 MountainsHex:
