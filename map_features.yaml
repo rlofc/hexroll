@@ -57,6 +57,8 @@ SettlementProxy:
         $inject:
             $namespace: sproxy
             $values:
+              SettlementClass: !jymbol >
+                {{Settlement.subclass_}}
               SettlementDesc: !jinja |
                 {{sproxy.Settlement.Description}}
               SettlementFlair: !jinja |
