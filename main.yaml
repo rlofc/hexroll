@@ -5,7 +5,7 @@ $main:
   Output: !jinja |
     # {{Realm.Title}}
 
-    <a href='{{uuid}}.png'><img src='{{uuid}}.png'/></a>
+    <a href='{{uuid}}.png'><img alt='' src='{{uuid}}s.png'/></a>
     
     ## Background
     {{Realm.Background}}
