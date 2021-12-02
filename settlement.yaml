@@ -256,6 +256,8 @@ District:
       #- GardenDistrict
       #- CultureDistrict
       #- CouncilDistrict
+  Index: !jinja "{{ shops | map(attribute='InvertedName') | join(', ')}}"
+
   Description: !jinja >
 
     ##### Guards
@@ -299,6 +301,14 @@ District:
       $class: Guard
       $min: 1
       $max: 3
+      $inject:
+        $values:
+          # Most guards are lawful, other are neutral
+          # but some will be chaotic (if set so by their
+          # membership to a cult for example).
+          Alignment: !weighted
+            - Lawful^5
+            - Neutral
 
 
 CityDistrict:
@@ -745,6 +755,9 @@ Shop:
 
   Name: 
     - !jinja "{{Owner.Name.First}}'s {{Noun}} (*{{Title}}*)"
+
+  InvertedName: 
+    - !jinja "[__{{Title}}__ ({{Owner.Name.First}}'s {{Noun}})](#{{Owner.uuid}})"
 
   Inventory: !jinja |
     {% if Items %}
