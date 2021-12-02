@@ -42,7 +42,7 @@ Faction:
         $namespace: faction
         $values:
           Details: !jinja >
-            __{{faction.FullName}}__ are {{faction.Verb}}
+            [__{{faction.FullName}}__](#{{faction.uuid}}) are {{faction.Verb}}
             __{{faction.Purpose}}__.
 
 
