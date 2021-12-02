@@ -75,13 +75,13 @@ Nothing:
 
 
 Inn:
-  Name: !jinja >
-    {{Tavern.Name.Full}}
+  Name:
+    $roll: InnName
   Description: !jinja >
     {{Tavern.Name.Full}} is welcoming travellers and adventurers
   Details: !jinja |
 
-    ### {{Tavern.Name.Full }}
+    ### {{Name.Full }}
 
     {{Tavern.Description}}
   Hex:

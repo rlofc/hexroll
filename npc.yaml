@@ -200,7 +200,7 @@ Character:
     {{Association}}
     {{Story2.Description}}
     {%if t is defined%}
-    * {{Name.First}} likes spending {{Gender.Pronoun2}} time in the {{t.Full}} Tavern.
+    * {{Name.First}} likes spending {{Gender.Pronoun2}} time in the {{t.Full}}.
     {%endif%}
 
   FeatureX1:

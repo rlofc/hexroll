@@ -33,7 +33,7 @@ Village:
 
     #### Village Shops & Services
 
-    Tavern: {{District.Tavern.Name.Full}}
+    ##### {{District.Tavern.Title}}
 
 
     {{District.Tavern.Description}}
@@ -63,7 +63,7 @@ Town:
 
     #### Town Shops & Services
 
-    Tavern: {{District.Tavern.Name.Full}}
+    ##### {{District.Tavern.Title}}
 
 
     {{District.Tavern.Description}}
@@ -93,11 +93,22 @@ City:
 
     ### <a name='{{uuid}}'></a>{{subclass_|capitalize}} of {{NamePart|title}}
 
-    {{NamePart|title}} has the following districts:
+    #### Shops & services overview
+
+    {% for d in districts %}
+
+    ##### {{d.Title}}
+
+    [__{{d.Tavern.Name.Type}}__ ({{d.Tavern.Name.Full}})](#{{d.Tavern.uuid}}), {{d.Index}}
+
+    {% endfor %}
+
 
     {% for d in districts %}
 
     #### {{d.Title}}
+
+    ##### {{d.Tavern.Title}}
 
     {{d.Tavern.Description}}
 
@@ -147,10 +158,8 @@ Hut:
 Tavern:
   Name:
     $roll: TavernName
+  Title: !jinja "<a name='{{uuid}}'></a>{{Name.Full}}"
   Description: !jinja |
-
-    ##### {{Name.Full}}
-
 
     ###### Patrons & Visitors
 
@@ -200,6 +209,8 @@ Tavern:
 
 DistrictTavern:
   $extends: Tavern
+  Name:
+    $roll: InnName
   patrons:
     $popsome: 
       $collection: district_characters_for_tavern
@@ -936,11 +947,14 @@ TownShops:
 
 TavernName:
   Full:
-    - !jinja "The {{Creature}} & The {{LivingAdjective}} {{Title}}"
-    - !jinja "The {{LivingAdjective}} {{Creature}}"
-    - !jinja "{{StaticAdjective}} {{Object}} Tavern"
-    - !jinja "The {{StaticAdjective}} {{Object}}"
-    - !jinja "The {{Title}}'s {{Object}} Inn"
+    - !jinja "The {{Creature}} & The {{LivingAdjective}} {{Title}} {{Type}}"
+    - !jinja "The {{LivingAdjective}} {{Creature}} {{Type}}"
+    - !jinja "{{StaticAdjective}} {{Object}} {{Type}}"
+    - !jinja "The {{StaticAdjective}} {{Object}} {{Type}}"
+    - !jinja "The {{Title}}'s {{Object}} {{Type}}"
+
+  Type:
+    - Tavern
 
   Creature:
     - Ghoul
@@ -1006,4 +1020,9 @@ TavernName:
     - Lost
 
 
+InnName:
+  $extends: TavernName
+  Type:
+    - Inn
+    - Lodge
 
