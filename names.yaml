@@ -1195,13 +1195,33 @@ TownName:
   - Windhead
   - Springvale
     
+CavernName:
+  $extends: DungeonName
+  NamePrefix:
+    - caverns
+    - lair
+    - hideout
+
+
+TombName:
+  $extends: DungeonName
+  NamePrefix:
+    - tomb
+    - crypt
+
+TempleName:
+  $extends: DungeonName
+  NamePrefix:
+    - temple
+    - shrine
+
 
 DungeonName:
   Noun:
     $roll: DungeonNameNoun
   Adjective:
     $roll: DungeonNameAdjective
-  Title: !jinja "{{Type | capitalize}} of the {{ Adjective }} {{Noun}}"
+  Title: !jinja "{{NamePrefix | capitalize}} of the {{ Adjective | capitalize}} {{Noun | capitalize}}"
 
 
 DungeonNameNoun:

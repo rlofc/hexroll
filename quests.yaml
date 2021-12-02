@@ -204,7 +204,7 @@ MissingPersonQuest:
   $extends: Quest
   Description: !jinja |
     * {{Relation.Type}} is missing since last week.  (Secret:
-      Held captive in the {{Location.DungeonContext.Name.Title | title}})
+      Held captive in the {{Location.DungeonContext.Name.Title}})
 
   Timeframe:
     - two days ago

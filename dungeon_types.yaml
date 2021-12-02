@@ -50,17 +50,8 @@ CaveFeatureTier3:
 Cavern:
   $extends: Dungeon
 
-  NamePrefix:
-    - caverns
-    - lair
-    - hideout
-
   Name:
-    $roll:
-      $class: DungeonName
-      $inject:
-        $values:
-          Type: !ref NamePrefix
+    $roll: CavernName
 
   $context:
     $attr: DungeonContext
@@ -122,11 +113,7 @@ Tomb:
   #  - The Tomb of the Grey Lich
   #  - The Tomb of Corrupted Desires
   Name:
-    $roll:
-      $class: DungeonName
-      $inject:
-        $values:
-          Type: !ref NamePrefix
+    $roll: TombName
 
   $context:
     $attr: DungeonContext
@@ -190,16 +177,8 @@ TempleFeatureTier3:
 Temple:
   $extends: Dungeon
 
-  NamePrefix:
-    - temple
-    - shrine
-
   Name:
-    $roll:
-      $class: DungeonName
-      $inject:
-        $values:
-          Type: !ref NamePrefix
+    $roll: TempleName
 
   $context:
     $attr: DungeonContext
