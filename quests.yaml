@@ -263,7 +263,7 @@ MissingPersonQuest:
           Active: !jinja |
             The __chained person__ is 
             [__{{quest.FolkContext.Name.Full}}’s__](#{{quest.FolkContext.uuid}})
-            {{quest.Relation.Type}}__ from {{quest.CityContext.NamePart|title}}
+            __{{quest.Relation.Type}}__ from {{quest.CityContext.NamePart|title}}
 
   Secret:
     $roll:
