@@ -57,6 +57,7 @@ SettlementProxy:
         $inject:
             $namespace: sproxy
             $values:
+              SettlementUUID: !jinja "{{sproxy.Settlement.uuid}}"
               SettlementClass: !jymbol >
                 {{Settlement.subclass_}}
               SettlementDesc: !jinja |

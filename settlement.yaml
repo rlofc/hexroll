@@ -29,7 +29,7 @@ Village:
   Title: !jinja "village of {{NamePart | title}}"
   Details: !jinja >
 
-    ### {{subclass_|capitalize}} of {{NamePart|title}}
+    ### <a name='{{uuid}}'></a>{{subclass_|capitalize}} of {{NamePart|title}}
 
     #### Village Shops & Services
 
@@ -59,7 +59,7 @@ Town:
   Title: !jinja "town of {{NamePart | title}}"
   Details: !jinja >
 
-    ### {{subclass_|capitalize}} of {{NamePart|title}}
+    ### <a name='{{uuid}}'></a>{{subclass_|capitalize}} of {{NamePart|title}}
 
     #### Town Shops & Services
 
@@ -85,14 +85,13 @@ Town:
     $roll: TownDistrict
 
 
-
 City:
   $extends: Settlement
   Title: !jinja "city of {{NamePart | title}}"
 
   Details: !jinja >
 
-    ### {{subclass_|capitalize}} of {{NamePart|title}}
+    ### <a name='{{uuid}}'></a>{{subclass_|capitalize}} of {{NamePart|title}}
 
     {{NamePart|title}} has the following districts:
 

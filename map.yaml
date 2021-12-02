@@ -128,7 +128,7 @@ Hex:
     ##### Entrances
     {{DungeonEntrance}}
     {%elif SettlementDesc%}
-    The {{SettlementDetails}} {{SettlementConnector}} {{Terrain.Location}}.
+    The [__{{SettlementDetails}}__](#{{SettlementUUID}}) {{SettlementConnector}} {{Terrain.Location}}.
     {{SettlementFlair}}
     {%elif InnDesc%}
     {{InnDesc}} is welcoming travellers and adventurers {{Terrain.Location}}.
