@@ -33,6 +33,8 @@ Village:
 
     #### Village Shops & Services
 
+    <small>{{District.Index}}</small>
+
     ##### {{District.Tavern.Title}}
 
 
@@ -62,6 +64,8 @@ Town:
     ### <a name='{{uuid}}'></a>{{subclass_|capitalize}} of {{NamePart|title}}
 
     #### Town Shops & Services
+
+    <small>{{District.Index}}</small>
 
     ##### {{District.Tavern.Title}}
 
@@ -99,7 +103,7 @@ City:
 
     ##### {{d.Title}}
 
-    [__{{d.Tavern.Name.Type}}__ ({{d.Tavern.Name.Full}})](#{{d.Tavern.uuid}}), {{d.Index}}
+    {{d.Index}}
 
     {% endfor %}
 
@@ -107,6 +111,8 @@ City:
     {% for d in districts %}
 
     #### {{d.Title}}
+
+    <small>{{d.Index}}</small>
 
     ##### {{d.Tavern.Title}}
 
@@ -256,11 +262,14 @@ District:
       #- GardenDistrict
       #- CultureDistrict
       #- CouncilDistrict
-  Index: !jinja "{{ shops | map(attribute='InvertedName') | join(', ')}}"
+  Index: !jinja >
+    [__{{Tavern.Name.Type}}__ ({{Tavern.Name.Full}})](#{{Tavern.uuid}}),
+    [__Guards__ ({{Guards | map(attribute='Name.First') | join(', ')}})](#{{uuid}}_guards),
+    {{ shops | map(attribute='InvertedName') | join(', ')}}
 
   Description: !jinja >
 
-    ##### Guards
+    ##### <a name='{{uuid}}_guards'></a>Guards
 
     {% set counter = namespace(value=0) %}
     {% for g in Guards %}
