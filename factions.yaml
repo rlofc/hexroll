@@ -68,6 +68,7 @@ Faction:
         $values:
           Association: !jinja >
             * Member of the [__{{faction.FullName}}__](#{{faction.uuid}}).
+          Alignment: !jinja "{{faction.AcceptedAlignment}}"
 
 
   $subclass:
@@ -88,6 +89,9 @@ Cult:
     The {{Name_Prefix|title}} {{Name_Suffix|title}} 
     {{subclass_}} are {{Purpose}}.
     The {{subclass_}} hideout is the {{Lair.Name.Title}}.
+
+  AcceptedAlignment:
+    - Chaotic
 
   Name_Prefix:
     - dark
@@ -168,6 +172,10 @@ Militia:
     {%if Tavern.CityContext%}__{{Tavern.CityContext.NamePart|title}}__{%else%}
     {{Tavern.ClusterValue}}
     {%endif%}
+
+  AcceptedAlignment:
+    - Chaotic
+    - Neutral
 
   Name_Prefix:
     - fists
