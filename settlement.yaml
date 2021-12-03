@@ -216,7 +216,11 @@ Tavern:
 DistrictTavern:
   $extends: Tavern
   Name:
-    $roll: InnName
+    $roll:
+      $class: !weighted
+        - InnName
+        - TavernName^2
+
   patrons:
     $popsome: 
       $collection: district_characters_for_tavern
