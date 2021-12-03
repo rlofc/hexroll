@@ -269,7 +269,7 @@ District:
   Index: !jinja >
     [__{{Tavern.Name.Type}}__ ({{Tavern.Name.Full}})](#{{Tavern.uuid}}),
     [__Guards__ ({{Guards | map(attribute='Name.First') | join(', ')}})](#{{uuid}}_guards),
-    {{ shops | map(attribute='InvertedName') | join(', ')}}
+    {{ shops | map(attribute='InvertedName') | reject('undefined') | join(', ')}}
 
   Description: !jinja >
 
