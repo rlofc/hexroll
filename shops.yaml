@@ -83,7 +83,7 @@ PetRat:
 
 PetShop:
   $extends: Shop
-  Title: 
+  Title: Pet Shop
   Items:
     $rollsome:
       $class: Pet
