@@ -78,10 +78,10 @@ Inn:
   Name:
     $roll: InnName
   Description: !jinja >
-    {{Tavern.Name.Full}} is welcoming travellers and adventurers
+    __{{Name.Full}}__ is welcoming travellers and adventurers
   Details: !jinja |
 
-    ### {{Name.Full }}
+    ### <a name='{{uuid}}'></a>{{Name.Full }}
 
     {{Tavern.Description}}
   Hex:
@@ -90,8 +90,8 @@ Inn:
         $inject:
             $namespace: proxy
             $values:
-              InnDesc: !jinja |
-                {{proxy.Tavern.Name.Full}}
+              InnDesc: !jinja "{{proxy.Name.Full}}"
+              InnUUID: !jinja "{{proxy.uuid}}"
   Tavern:
     $roll: 
       $class: Tavern
