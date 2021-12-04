@@ -170,7 +170,7 @@ Militia:
     {{subclass_}} are {{Verb}} {{Purpose}}.
     The {{subclass_}} usual gathering venue is __{{Tavern.Name.Full}}__ in
     {%if Tavern.CityContext%}__{{Tavern.CityContext.NamePart|title}}__{%else%}
-    {{Tavern.ClusterValue}}
+    {{Tavern.RegionValue}}
     {%endif%}
 
   AcceptedAlignment:

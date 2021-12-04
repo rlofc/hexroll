@@ -42,7 +42,7 @@ DungeonProxy:
           Details: !jinja >
             The __{{proxy.Dungeon.Name.Title | title}}__ is 
             __{{proxy.Hex.Terrain.Location}}, somewhere in
-            {{proxy.Hex.Cluster.Name.Full}} {{proxy.Hex.Cluster.Suffix}}__
+            {{proxy.Hex.Region.Name.Full}} {{proxy.Hex.Region.Suffix}}__
 
 
 SettlementProxy:
@@ -101,8 +101,8 @@ Inn:
       $inject:
         $namespace: Inn
         $values:
-          ClusterValue: !jinja >
-            __{{Inn.Hex.Cluster.Name.Full}} {{Inn.Hex.Cluster.Suffix}}__
+          RegionValue: !jinja >
+            __{{Inn.Hex.Region.Name.Full}} {{Inn.Hex.Region.Suffix}}__
 
 
 Encounter:
@@ -175,7 +175,7 @@ Encounter:
         $values:
           Details: !jinja >
             There’s __{{hexenc.Hex.Monster.Title | articlize}}__ somewhere in
-            __{{hexenc.Hex.Cluster.Name.Full}} {{hexenc.Hex.Cluster.Suffix}}__.
+            __{{hexenc.Hex.Region.Name.Full}} {{hexenc.Hex.Region.Suffix}}__.
 
 
 

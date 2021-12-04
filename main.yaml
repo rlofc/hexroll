@@ -15,8 +15,8 @@ $main:
     {{Realm.Ruler.NPC.Stats}}
 
     ## Regions
-    {% for hex in clusters %}
-    {{hex.Description}}{% endfor %}    
+    {% for r in regions %}
+    {{r.Description}}{% endfor %}    
 
     ## Settlements
     {% for s in settlements %}
@@ -211,10 +211,10 @@ $main:
     hexs:
       $collect: Hex
 
-    clusters:
+    regions:
       $rollsome:
-        $debug: Generating clusters
-        $class: Cluster
+        $debug: Generating regions
+        $class: Region
         $min: 8
         $max: 12
 

@@ -1,4 +1,4 @@
-Cluster:
+Region:
   Description: !jinja |
     ### {{Name.Full}} {{Suffix}}
     {% for hex in Hexmap %}
@@ -7,15 +7,15 @@ Cluster:
   Name:
     $roll: RegionNames
   $subclass:
-    - MountainsCluster
-    - PlainsCluster
-    - ForestCluster
-    - DesertCluster
-    - CoastCluster
+    - MountainsRegion
+    - PlainsRegion
+    - ForestRegion
+    - DesertRegion
+    - CoastRegion
 
 
-MountainsCluster:
-  $extends: Cluster
+MountainsRegion:
+  $extends: Region
 
   Suffix:
     - Mountains
@@ -24,7 +24,7 @@ MountainsCluster:
     - Peaks
     - Teeth
   $context:
-    $attr: Cluster
+    $attr: Region
     $values:
       - Name
       - Suffix
@@ -35,12 +35,12 @@ MountainsCluster:
       $max: 8
 
 
-PlainsCluster:
-  $extends: Cluster
+PlainsRegion:
+  $extends: Region
   Suffix:
     - Plains
   $context:
-    $attr: Cluster
+    $attr: Region
     $values:
       - Name
       - Suffix
@@ -51,13 +51,13 @@ PlainsCluster:
       $max: 8
 
 
-ForestCluster:
-  $extends: Cluster
+ForestRegion:
+  $extends: Region
   Suffix:
     - Forest
     - Woods
   $context:
-    $attr: Cluster
+    $attr: Region
     $values:
       - Name
       - Suffix
@@ -68,14 +68,14 @@ ForestCluster:
       $max: 8
 
 
-DesertCluster:
-  $extends: Cluster
+DesertRegion:
+  $extends: Region
   Suffix:
     - Dunes
     - Desert
     - Wastelands
   $context:
-    $attr: Cluster
+    $attr: Region
     $values:
       - Name
       - Suffix
@@ -86,13 +86,13 @@ DesertCluster:
       $max: 8
 
 
-CoastCluster:
-  $extends: Cluster
+CoastRegion:
+  $extends: Region
   Suffix:
     - Coastline
     - Shores
   $context:
-    $attr: Cluster
+    $attr: Region
     $values:
       - Name
       - Suffix
