@@ -68,7 +68,7 @@ Realm:
     - !jinja A tyrannical {{Ruler.Title}} rules these lands with a heavy hand.
       Will heroes rise up to help the people with their quest for freedom?
 
-    - !jinja A prophacy tells of a young child who will bring a new age
+    - !jinja A prophecy tells of a young child who will bring a new age
       of prosperity to {{Name}}, but some find this possibility undesirable
       and are secretly working to undermine it.
 
