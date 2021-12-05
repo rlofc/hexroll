@@ -5,7 +5,7 @@ $main:
   Output: !jinja |
     # {{Realm.Title}}
 
-    <a href='{{uuid}}.png'><img alt='Realm hex map' src='{{uuid}}.png'/></a>
+    <a href='{{uuid}}.webp'><img alt='Realm hex map' src='{{uuid}}.webp'/></a>
     
     ## Background
     {{Realm.Background}}

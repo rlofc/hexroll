@@ -27,7 +27,7 @@ Dungeon:
     ### <a name='{{uuid}}'></a>{{Name.Title}}
 
 
-    <a href='{{uuid}}.png'><img src='{{uuid}}.png'/></a>
+    <a href='{{uuid}}.webp'><img src='{{uuid}}.webp'/></a>
 
 
     {{Map.Details}}
