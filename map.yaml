@@ -155,6 +155,7 @@ Hex:
   SettlementDesc: null
   InnDesc: null
   EncounterDesc: null
+  HexNumber: !jinja "{{'%02d' % HexCounter}}"
 
 
 MountainsHex:

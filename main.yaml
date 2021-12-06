@@ -170,6 +170,30 @@ $main:
 
       Hexroll is copyright © 2021 pendicepaper.com.
 
+  Handout: !jinja |
+    # {{Realm.Title}}
+
+    <a href='{{uuid}}.webp'><img alt='Realm hex map' src='{{uuid}}.webp'/></a>
+
+    ## Background
+    {{Realm.Background}}
+
+    Ruled by __{{Realm.Ruler.Title}}__.
+
+    {%set homebase = namespace(uuid = settlements[0].uuid)%}
+    {% for r in regions %}
+    {% for h in r.Hexmap %}
+    {% if h.SettlementUUID == homebase.uuid %}
+
+    ## Hex {{h.HexNumber}}: Homebase
+
+    {{ h.sproxy.Settlement.Handout }}
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+
+    Hexroll is copyright © 2021 pendicepaper.com.
+
   $set:
     $global: HexCounter
     $value: 0
