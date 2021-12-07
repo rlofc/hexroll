@@ -3,10 +3,8 @@ Realm:
     - !jinja "{{Prefix}}{{Center}}{{Suffix}}"
     - !jinja "{{Prefix2}}{{Center2}}{{Suffix2}}"
 
-  Type: !jinja "{{Ruler.RealmType}}"
-
   Title: 
-    - !jinja "The {{Type|title}} of {{Name}}"
+    - !jinja "The {{subclass_|title}} of {{Name}}"
 
   Prefix:
     - Ca
@@ -79,11 +77,50 @@ Realm:
       The seamingly childless {{Ruler.Title | title}} {{Ruler.NPC.Name.First}}
       is on {{Ruler.NPC.Gender.Pronoun2}} deathbed.
       A rumor of a legal heir raised as a commoner somewhere in
-      the {{Ruler.RealmType}} brings hope to most, but is a threat to some.
+      the {{subclass_}} brings hope to most, but is a threat to some.
+
+  $subclass:
+    - Empire
+    - Kingdom
+    - Duchy
+    - Lands
 
 
+Empire:
+  $extends: Realm
   Ruler:
-    $roll: Ruler
+    $roll:
+      $class:
+        - Bishop
+        - Necromancer
+        - Warexpert
+
+
+Kingdom:
+  $extends: Realm
+  Ruler:
+    $roll:
+      $class:
+        - Monarch
+
+
+Duchy:
+  $extends: Realm
+  Ruler:
+    $roll:
+      $class:
+        - Noble
+
+
+Lands:
+  $extends: Realm
+  Ruler:
+    $roll:
+      $class:
+        - Bishop
+        - Warexpert
+        - Necromancer
+
 
 Ruler:
   $subclass:
@@ -104,8 +141,6 @@ Noble:
     {%-else-%}
     duches
     {%-endif-%}
-  RealmType:
-    - duchy
   Weapon:
     $roll: RulerSword
   NPC:
@@ -124,9 +159,6 @@ Noble:
 Bishop:
   $extends: Ruler
   Title: bishop
-  RealmType:
-    - empire
-    - lands
   Weapon:
     $roll: RulerWarhammer
   NPC:
@@ -138,20 +170,24 @@ Bishop:
         $values:
           Weapon: !ref Weapon
 
+
 RulerSword:
   $extends: ArmorWeapon
   Title: Sword + 3
   Damage: 1d8+3
+
 
 RulerWarhammer:
   $extends: ArmorWeapon
   Title: Warhammer + 3
   Damage: 1d6+3
 
+
 RulerStaff:
   $extends: ArmorWeapon
   Title: Staff of Wizardry
   Damage: see item description
+
 
 Monarch:
   $extends: Ruler
@@ -163,8 +199,6 @@ Monarch:
     {%-else-%}
     monarch
     {%-endif-%}
-  RealmType:
-    - kingdom
   Weapon:
     $roll: RulerSword
   NPC:
@@ -190,8 +224,6 @@ Warexpert:
     {%-else-%}
     Warexpert
     {%-endif-%}
-  RealmType:
-    - lands
   Weapon:
     $roll: RulerSword
   NPC:
@@ -210,9 +242,6 @@ Warexpert:
 Necromancer:
   $extends: Ruler
   Title: necromancer
-  RealmType:
-    - empire
-    - lands
   Weapon:
     $roll: RulerStaff
   NPC:
