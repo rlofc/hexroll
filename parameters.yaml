@@ -24,11 +24,11 @@ defaults:
   maximum_number_of_settlements: 9
 
   region_classes: !weighted
-    - MountainsRegion
-    - PlainsRegion
-    - ForestRegion
-    - DesertRegion
-    - CoastRegion
+    - MountainsRegion^3
+    - PlainsRegion^3
+    - ForestRegion^3
+    - DesertRegion^3
+    - CoastRegion^2
 
   settlement_classes: !weighted
     - Village^3
