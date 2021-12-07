@@ -767,7 +767,7 @@ Name:
 
 
 RegionNames:
-  Full:
+  Full: !avoid_duplicates
     - Stargazer
     - Dark Storm
     - Ironhammer
@@ -1224,7 +1224,7 @@ DungeonName:
   Title: !jinja "{{NamePrefix | capitalize}} of the {{ Adjective | capitalize}} {{Noun | capitalize}}"
 
 
-DungeonNameNoun:
+DungeonNameNoun: !avoid_duplicates
   - skeletons
   - ogre
   - lich
@@ -1244,7 +1244,7 @@ DungeonNameNoun:
   - slaves
 
 
-DungeonNameAdjective:
+DungeonNameAdjective: !avoid_duplicates 
   - betraying
   - corrupted
   - grey
