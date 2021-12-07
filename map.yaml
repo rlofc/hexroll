@@ -6,12 +6,8 @@ Region:
     {% endfor %}
   Name:
     $roll: RegionNames
-  $subclass:
-    - MountainsRegion
-    - PlainsRegion
-    - ForestRegion
-    - DesertRegion
-    - CoastRegion
+
+  $subclass: !parameter region_classes
 
 
 MountainsRegion:
@@ -31,8 +27,8 @@ MountainsRegion:
   Hexmap:
     $rollsome:
       $class: MountainsHex
-      $min: 3
-      $max: 8
+      $min: !parameter minimum_tiles_per_mountains_region
+      $max: !parameter maximum_tiles_per_mountains_region
 
 
 PlainsRegion:
@@ -47,8 +43,8 @@ PlainsRegion:
   Hexmap:
     $rollsome:
       $class: PlainsHex
-      $min: 3
-      $max: 8
+      $min: !parameter minimum_tiles_per_plains_region
+      $max: !parameter maximum_tiles_per_plains_region
 
 
 ForestRegion:
@@ -64,8 +60,8 @@ ForestRegion:
   Hexmap:
     $rollsome:
       $class: ForestHex
-      $min: 3
-      $max: 8
+      $min: !parameter minimum_tiles_per_forest_region
+      $max: !parameter maximum_tiles_per_forest_region
 
 
 DesertRegion:
@@ -82,8 +78,8 @@ DesertRegion:
   Hexmap:
     $rollsome:
       $class: DesertHex
-      $min: 3
-      $max: 8
+      $min: !parameter minimum_tiles_per_desert_region
+      $max: !parameter maximum_tiles_per_desert_region
 
 
 CoastRegion:
@@ -99,8 +95,8 @@ CoastRegion:
   Hexmap:
     $rollsome:
       $class: CoastHex
-      $min: 3
-      $max: 8
+      $min: !parameter minimum_tiles_per_coast_region
+      $max: !parameter maximum_tiles_per_coast_region
 
 
 Hex:

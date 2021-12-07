@@ -239,8 +239,8 @@ $main:
       $rollsome:
         $debug: Generating regions
         $class: Region
-        $min: 8
-        $max: 12
+        $min: !parameter minimum_number_of_regions
+        $max: !parameter maximum_number_of_regions
 
     dungeons:
       $collect: Dungeon
@@ -249,15 +249,15 @@ $main:
       $rollsome:
         $debug: Generating dungeons
         $class: DungeonProxy
-        $min: 9
-        $max: 13
+        $min: !parameter minimum_number_of_dungeons
+        $max: !parameter maximum_number_of_dungeons
 
     settlementproxies:
       $rollsome:
         $debug: Generating settlements
         $class: SettlementProxy
-        $min: 6
-        $max: 9
+        $min: !parameter minimum_number_of_settlements
+        $max: !parameter maximum_number_of_settlements
 
     encounterproxies:
       $rollsome:

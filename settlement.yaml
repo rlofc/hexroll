@@ -9,11 +9,7 @@ Guard:
 Settlement:
   $collection: settlements
 
-  $subclass: !weighted
-    - Village^3
-    - Town^3
-    - City^2
-#   - Hut x1
+  $subclass: !parameter settlement_classes
 
   Name: !jinja "{{subclass_|capitalize}} of {{NamePart|title}}"
 

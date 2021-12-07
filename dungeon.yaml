@@ -5,12 +5,7 @@ Globals:
 
 Dungeon:
   $collection: dungeons
-  $subclass:
-    - Cavern
-    - Temple
-    - Tomb
-#   - Mine
-#   - Ruins
+  $subclass: !parameter dungeon_classes
 
   $collections:
     dungeon_locks:
