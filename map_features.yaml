@@ -204,15 +204,27 @@ Portal:
 
 
 Landmark:
-  $subclass:
+  $subclass: !avoid_repeating
+    - Bridge
     - Bridge
     - Watchtower
+    - DeadAdventurers
+    - DeadAdventurers
+    - Wagons
+    - Wagons
+    - AbandonedVillage
+    - Altar
+#   - Stronghold?
 #   - CaravansPark
 
 
 Watchtower:
   Name: Watchtower
-  Description: There’s an old abandoned watchtower
+  Description: 
+    - The ruins of an ancient watchtower are
+    - There’s an old abandoned watchtower
+    - There's a recently built but seemingly unstaffed watchtower
+
 
 
 CaravansPark:
@@ -227,3 +239,28 @@ Bridge:
     - There’s a recently built wood bridge
     - There’s a dangerous looking rope bridge
 
+AbandonedVillage:
+  Name: Abandoned Village
+  Description:
+    - The burned remains of a small village could be found
+    - There's an recently abandoned village
+
+Altar:
+  Name: Altar
+  Description:
+    - The crumbling ruins of an ancient altar could be found
+
+Wagons:
+  Name: Wagons
+  Description:
+    - There are several abandoned and half-broken wagons
+
+DeadAdventurers:
+  Name: Dead Adventurers
+  Number:
+    - three
+    - four
+    - five
+    - six
+  Description:
+    - !jinja "The bodies of {{Number}} dead adventurers were thrown to rot"
