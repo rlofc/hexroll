@@ -178,14 +178,14 @@ $main:
     ## Background
     {{Realm.Background}}
 
-    Ruled by __{{Realm.Ruler.Title}}__.
+    This Ruled by __{{Realm.Ruler.Title}}__ __{{Realm.Ruler.NPC.Name.Full}}__.
 
     {%set homebase = namespace(uuid = settlements[0].uuid)%}
     {% for r in regions %}
     {% for h in r.Hexmap %}
     {% if h.SettlementUUID == homebase.uuid %}
 
-    ## Hex {{h.HexNumber}}: Homebase
+    ## Your home in hex {{h.HexNumber}} is the:
 
     {{ h.sproxy.Settlement.Handout }}
     {% endif %}

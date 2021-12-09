@@ -45,7 +45,7 @@ Village:
 
     #### Village Shops & Services
 
-    {{District.Index}}
+    {{District.Handout}}
 
   $context:
     $attr: CityContext
@@ -85,7 +85,7 @@ Town:
 
     #### Town Shops & Services
 
-    {{District.Index}}
+    {{District.Handout}}
 
   $context:
     $attr: CityContext
@@ -145,7 +145,7 @@ City:
 
     ##### {{d.Title}}
 
-    {{d.Index}}
+    {{d.Handout}}
 
     {% endfor %}
 
@@ -297,6 +297,12 @@ District:
     [__{{Tavern.Name.Type}}__ ({{Tavern.Name.Full}})](#{{Tavern.uuid}}),
     [__Guards__ ({{Guards | map(attribute='Name.First') | join(', ')}})](#{{uuid}}_guards),
     {{ shops | map(attribute='InvertedName') | reject('undefined') | join(', ')}}
+
+  Handout: !jinja >
+    __{{Tavern.Name.Type}}__ ({{Tavern.Name.Full}}),
+    __Guards__ ({{Guards | map(attribute='Name.First') | join(', ')}}),
+    {{ shops | map(attribute='InvertedHandoutName') | reject('undefined') | join(', ')}}
+
 
   Description: !jinja >
 
@@ -798,6 +804,9 @@ Shop:
 
   InvertedName: 
     - !jinja "[__{{Title}}__ ({{Owner.Name.First}}'s {{Noun}})](#{{Owner.uuid}})"
+
+  InvertedHandoutName: 
+    - !jinja "__{{Title}}__ ({{Owner.Name.First}}'s {{Noun}})"
 
   Inventory: !jinja |
     {% if Items %}

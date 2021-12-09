@@ -38,6 +38,7 @@ Bookstore:
 
 Grocer:
   $extends: Shop
+  Title: Grocer
   Items:
     $rollsome:
       $class: Food
