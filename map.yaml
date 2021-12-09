@@ -137,6 +137,17 @@ Hex:
     {{Feature.Probability}}
     {{Feature.Flair}}
 
+
+    ##### Random encounter
+    
+    There's a __1 in 6__ chance when exploring (or __2 in 6__ chance if camping overnight) to be ambushed or preyed upon by:
+
+    {%set counter = namespace(value=1)%}
+    <small>1d4</small> | <small>Encounter</small> | <small>stats</small>
+    ---- | ------- | -----{%for e in OtherEncounters%}
+    <small>{{counter.value}}</small> | <small>{{e.Title}}{%if e.NumberAppearingLair>3%}s ({{"%d" | format((e.NumberAppearingLair/3) | round(method='ceil'))}}) {%endif%}</small> | <small>{{e.Stats}}</small>
+    {%-set counter.value = counter.value+1-%}{%-endfor%}
+
     {%endif%}
   $sublcass:
     - MountainsHex
@@ -159,7 +170,12 @@ MountainsHex:
   Terrain:
     $roll: Mountains
   Monster:
-    $roll: MountainsEncounter
+    $roll: MountainsFeatureEncounter
+  OtherEncounters:
+    $rollsome:
+      $class: MountainsRandomEncounter
+      $min: 4
+      $max: 4
   Feature:
     $roll: 
       $class: Feature
@@ -170,7 +186,12 @@ PlainsHex:
   Terrain:
     $roll: Plains
   Monster:
-    $roll: MountainsEncounter
+    $roll: MountainsFeatureEncounter
+  OtherEncounters:
+    $rollsome:
+      $class: MountainsRandomEncounter
+      $min: 4
+      $max: 4
   Feature:
     $roll: 
       $class: Feature
@@ -181,7 +202,12 @@ ForestHex:
   Terrain:
     $roll: Forest
   Monster:
-    $roll: ForestEncounter
+    $roll: ForestFeatureEncounter
+  OtherEncounters:
+    $rollsome:
+      $class: ForestRandomEncounter
+      $min: 4
+      $max: 4
   Feature:
     $roll: 
       $class: Feature
@@ -192,7 +218,12 @@ DesertHex:
   Terrain:
     $roll: Desert
   Monster:
-    $roll: MountainsEncounter
+    $roll: DesertFeatureEncounter
+  OtherEncounters:
+    $rollsome:
+      $class: DesertRandomEncounter
+      $min: 4
+      $max: 4
   Feature:
     $roll: 
       $class: Feature
@@ -203,7 +234,12 @@ CoastHex:
   Terrain:
     $roll: Coast
   Monster:
-    $roll: MountainsEncounter
+    $roll: MountainsFeatureEncounter
+  OtherEncounters:
+    $rollsome:
+      $class: MountainsRandomEncounter
+      $min: 4
+      $max: 4
   Feature:
     $roll: 
       $class: Feature

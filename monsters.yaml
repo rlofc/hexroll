@@ -3,7 +3,7 @@
 # file), as described in Section 1(d) of the License.
 
 Monster:
-  Stats: !jinja |
+  Stats: !jinja >
     __Armour Class:__ {{ArmourClass}} __Hit Dice:__ {{ExHitDice}} __Attacks:__ {{Attacks}}
     __THAC0:__ {{THAC0}} __Movement:__ {{Movement}} __Saving Throws:__ {{SavingThrows}}
     __Morale:__ {{Morale}} __Alignment:__ {{Alignment}} __XP:__ {{XP}} 
@@ -2908,7 +2908,7 @@ Mummy:
 
 NeanderthalCaveman:
   $extends: Monster
-  Title: "Neanderthal (Caveman)"
+  Title: "Neanderthal"
   Intelligent: False
   ArmourClass: "8 [11]"
   HitDice: "2 (9hp)"

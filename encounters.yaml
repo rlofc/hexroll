@@ -165,77 +165,32 @@ AllEncounter:
     - TyrannosaurusRex
     - BronzeGolem
 
-MountainsEncounter:
-  $subclass:
-    - Ogre
-    - Ogre
-    - Ogre
-    - Hobgoblin
-    - Hobgoblin
-    - Hobgoblin
-    - Hobgoblin
-    - Goblin
-    - Goblin
-    - Goblin
-    - Goblin
-    - Goblin
-    - CaveBear
-    - CaveBear
-    - CaveBear
+MountainsFeatureEncounter:
+  $subclass: !weighted
+    - Ogre^3
+    - Hobgoblin^4
+    - Goblin^5
+    - CaveBear^3
     - MountainLion
-      ###- NormalHawk
-      ###- Mule
-      ###- RockBaboon
     - PitViper
     - GiantRattler
-    - NormalWolf
     - DireWolf
     - Gargoyle
     - Griffon
     - Harpy
-      ###- NormalHawk
-      ###- GiantHawk
     - Hippogriff
     - Manticore
-      ###- Pegasus
-    - SmallRoc
     - LargeRoc
     - GiantRoc
-      #- Dwarf
-    - CloudGiant
-    - CloudGiant
-    - FrostGiant
-    - FrostGiant
-    - HillGiant
-    - HillGiant
-    - StoneGiant
-    - StoneGiant
-    - StormGiant
-    - StormGiant
-      ###- Gnome
-    - Kobold
-    - Kobold
-    - Kobold
-    - Orc
-    - Orc
-    - Orc
+    - CloudGiant^2
+    - FrostGiant^2
+    - HillGiant^2
+    - StoneGiant^4
+    - Kobold^3
+    - Orc^3
     - Troglodyte
-    - Troll
-    - Troll
-    - Troll
+    - Troll^3
     # humams
-      #- Bandit 	            
-      #- Berserker 	        
-      #- Berserker 	        
-      #- Brigand 	            
-      #- Brigand 	            
-      #- Expert Adventurers 	
-      #- High-Level Cleric 	
-      #    - High-Level Fighter 	
-      #- High-Level MU 	    
-      #- Merchant 	            
-      #    - Neanderthal 	        
-      #    - Neanderthal 	        
     # dragons
     - Chimera
     - BlackDragon
@@ -261,8 +216,27 @@ MountainsEncounter:
     - Treant
     - WarpBeast
 
-ForestEncounter:
-  $subclass:
+MountainsRandomEncounter:
+  $subclass: !weighted
+    - Ogre^3
+    - Hobgoblin^4
+    - Goblin^5
+    - CaveBear^3
+    - MountainLion
+    - PitViper
+    - GiantRattler
+    - NormalWolf
+    - SmallRoc
+    - Kobold^3
+    - Orc^3
+    - Troll^3
+    - Bandit^10
+    - Berserker^3
+    - NeanderthalCaveman^2
+
+
+ForestFeatureEncounter:
+  $subclass: !weighted
     - Boar
     - Panther
     - Tiger
@@ -312,3 +286,54 @@ ForestEncounter:
     - Sprite
     - Stirge
 
+ForestRandomEncounter:
+  $subclass: !weighted
+    - Boar
+    - Panther
+    - Tiger
+    - Gecko
+    - Tuatara
+    - PitViper
+    - CrabSpider
+    - NormalWolf
+    - Gnoll
+    - Goblin
+    - Hobgoblin
+    - Ogre
+    - Orc
+    - KillerBee
+    - RobberFly
+    - SmallRoc
+    - Sprite
+    - Stirge
+    - Bandit^10
+    - Berserker^3
+
+DesertFeatureEncounter:
+  $subclass: !weighted
+    - Tarantella^4
+    - Gargoyle^2
+    - Griffon
+    - GiantRattler^4
+    - GiantHawk^3
+    - Manticore^3
+    - LargeRoc
+    - GiantRoc
+    - FireGiant
+    - Hobgoblin^3
+    - Ogre^3
+    - Thoul
+
+DesertRandomEncounter:
+  $subclass: !weighted
+    - SmallHerdAnimal^3
+    - Camel^5
+    - Lion^3
+    - Gecko^3
+    - Tuatara^2
+    - PitViper^2
+    - SmallRoc
+    - Goblin
+    - Hobgoblin^3
+    - Ogre^1
+    - Orc^5
