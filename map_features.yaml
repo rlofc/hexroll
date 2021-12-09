@@ -4,7 +4,7 @@ Rumor:
 
 Feature:
   $subclass: !weighted
-    - Landmark^28
+    - Landmark^23
     - Portal
 
 
