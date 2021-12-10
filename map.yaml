@@ -143,10 +143,16 @@ Hex:
     There's a __1 in 6__ chance when exploring (or __2 in 6__ chance if camping overnight) to be ambushed or preyed upon by:
 
     {%set counter = namespace(value=1)%}
-    <small>1d4</small> | <small>Encounter</small> | <small>stats</small>
-    ---- | ------- | -----{%for e in OtherEncounters%}
-    <small>{{counter.value}}</small> | <small>{{e.Title}}{%if e.NumberAppearingLair>3%}s ({{"%d" | format((e.NumberAppearingLair/3) | round(method='ceil'))}}) {%endif%}</small> | <small>{{e.Stats}}</small>
+    <table class='randenc'>
+    <thead>
+    <tr><th>1d4</th><th>Encounter</th><th>stats</th></tr>
+    </thead>
+    <tbody>
+    {%for e in OtherEncounters%}
+    <tr><td>{{counter.value}}</td><td><strong>{{e.Title}}{%if e.NumberAppearingLair>RandomEncountersNumberAppearingFactor%}s</strong> ({{"%d" | format((e.NumberAppearingLair/RandomEncountersNumberAppearingFactor) | round(method='ceil'))}}){%else%}</strong>{%endif%}</td><td> {{e.Stats}}</td></tr>
     {%-set counter.value = counter.value+1-%}{%-endfor%}
+    </tbody>
+    </table>
 
     {%endif%}
   $sublcass:
@@ -163,6 +169,7 @@ Hex:
   InnDesc: null
   EncounterDesc: null
   HexNumber: !jinja "{{'%02d' % HexCounter}}"
+  RandomEncountersNumberAppearingFactor: 3
 
 
 MountainsHex:

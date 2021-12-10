@@ -6,36 +6,68 @@ $main:
     # {{Realm.Title}}
 
     <a href='{{uuid}}.webp'><img alt='Realm hex map' src='{{uuid}}.webp'/></a>
-    
+
     ## Background
+
+    %%begin_div
+
     {{Realm.Background}}
 
     Ruled by __{{Realm.Ruler.Title}}__ {{Realm.Ruler.NPC.Description}}
 
     {{Realm.Ruler.NPC.Stats}}
 
+    %%end_div
+    
     ## Regions
+
+    %%begin_div
+
     {% for r in regions %}
     {{r.Description}}{% endfor %}    
 
+    %%end_div
+    
     ## Settlements
+
+    %%begin_div
+
     {% for s in settlements %}
     {{s.Details}}{% endfor %}    
 
+    %%end_div
+    
     ## Inns
+
+    %%begin_div
+
     {% for i in inns %}
     {{i.Details}}{% endfor %}    
 
+    %%end_div
+    
     ## Dungeons
+
+    %%begin_div
+
     {% for d in dungeons %}
     {{d.Details}}{% endfor %}    
 
+    %%end_div
+    
     ## Factions
+
+    %%begin_div
+
     {% for f in factions %}
     {{f.Header}}
     {{f.Details}}{% endfor %}    
 
+    %%end_div
+    
     ## Breakglass
+
+    %%begin_div
 
     ### Rumors
     {% for r in rumors %}
@@ -45,6 +77,8 @@ $main:
     {% for s in secrets %}
     {{s.Details}}{% endfor %}    
 
+    %%end_div
+    
     ## Legal
 
     ### Designation of Open Game Content

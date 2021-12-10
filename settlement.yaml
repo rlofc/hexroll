@@ -212,12 +212,15 @@ Tavern:
 
     {%endfor%}
 
+    %%end_div
+
     {%if adverts|length > 0%}
     | Bulletin |
     | ------ |{%for a in (adverts|shuffle)%}
     | {{a.Details}} |{%endfor%}
+    {%endif%}
 
-    ---{%endif%}
+    <br/>
 
     {%set counter = namespace(value=0)%}
     d6 | Rumor
@@ -231,8 +234,11 @@ Tavern:
     {%-for r in (gc_rumors|shuffle)[:6-counter.value]-%}
     {%-set counter.value = counter.value+1%}
     {{counter.value}} | {{r.Details}}
-    {%-endfor-%}
+    {%-endfor%}
 
+    <br/>
+
+    %%begin_div
   visitors:
     $rollsome:
       $class: TavernVisitor

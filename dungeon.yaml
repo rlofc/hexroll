@@ -19,11 +19,17 @@ Dungeon:
 
   Details: !jinja >
 
+    %%end_div
+
+    <div class='pagebreak'> </div>
+
     ### <a name='{{uuid}}'></a>{{Name.Title}}
 
 
     <a href='{{uuid}}.webp'><img src='{{uuid}}.webp'/></a>
 
+
+    %%begin_div
 
     {{Map.Details}}
 
@@ -216,7 +222,7 @@ DungeonEncounter:
 
     {{Monster.Stats}}
     {%if Monster.NumberAppearingRoaming<10%}{%for m in range(Monster.NumberAppearingRoaming)%}
-    <small>{% for hp in range(Monster.HitDiceRoll | diceroll) %}❏{%endfor%}</small><br/> {%endfor%}{%endif%}
+    <sub>{% for hp in range(Monster.HitDiceRoll | diceroll) %}❏{%endfor%}</sub><br/> {%endfor%}{%endif%}
 
     ---
 
