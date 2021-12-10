@@ -4,7 +4,7 @@ Name:
     - !jinja "{%if Gender.Pronoun=='he'%}{{MaleFirst}}{%else%}{{FemaleFirst}}{%endif%} of {{Origin | capitalize}}"
   First: !jinja "{%if Gender.Pronoun=='he'%}{{MaleFirst}}{%else%}{{FemaleFirst}}{%endif%}"
   Origin:
-    $roll: TownName
+    $roll: TownNameAsLastName
   MaleFirst:
     - Adger
     - Almer
@@ -838,7 +838,7 @@ RegionNames:
     - Emerald
 
 
-TownName:
+TownNameAsLastName:
   - Aqualin
   - Arazar
   - Azdar
@@ -1153,7 +1153,6 @@ TownName:
   - zelata
   - zeriti
   - zutan
-  # modded
   - Arelon
   - Aquareen
   - Eramoor
@@ -1194,6 +1193,364 @@ TownName:
   - Whitecliff
   - Windhead
   - Springvale
+
+
+TownName: !avoid_duplicates
+  - Aqualin
+  - Arazar
+  - Azdar
+  - Ashamar
+  - Albadir
+  - Blackshadow
+  - Blazing Wind
+  - Briul
+  - Cessesta
+  - Cevarra
+  - Dreyolla
+  - Devilhorn
+  - Bazuul
+  - Brewfish
+  - Bullshire
+  - Erabor
+  - Thalanor
+  - Fercenta
+  - Tallamor
+  - Goldwell
+  - Greenfell
+  - Lillin
+  - Ferabor
+  - Odrea
+  - Thelema
+  - Oshar
+  - Edria
+  - Zofara
+  - Zosaal
+  - Saal-Nivana
+  - Nivana
+  - Boroxxa
+  - Willowdale
+  - Earfar
+  - Everdale
+  - Farglen
+  - Silverbend
+  - aberius
+  - afari
+  - agadar
+  - agara
+  - akaana
+  - akeba
+  - akkis
+  - albor
+  - ankar
+  - aphaki
+  - aral
+  - arga
+  - arkon
+  - arkonna
+  - ashra
+  - askia
+  - askias
+  - askin
+  - atali
+  - azem
+  - azira
+  - aziri
+  - azora
+  - bahari
+  - barin
+  - belesa
+  - beserker
+  - balaal
+  - bokka
+  - berak
+  - brokar
+  - caaran
+  - caer
+  - cahal
+  - caladon
+  - calidar
+  - calissa
+  - calazi
+  - canedar
+  - capeya
+  - cazar
+  - citara
+  - cobir
+  - darza
+  - devilmask
+  - devilville
+  - devillia
+  - dokar
+  - dragonia
+  - ellal
+  - ekkar
+  - envar
+  - enza
+  - ephosia
+  - erdon
+  - fal
+  - farin
+  - feki
+  - feria
+  - fryda
+  - galaka
+  - gezai
+  - gayan
+  - gazal
+  - gazali
+  - gandar
+  - gorah
+  - gorm
+  - gorn
+  - guja
+  - gura
+  - halfboot
+  - hammering
+  - sevenhand
+  - handsworth
+  - hannes
+  - haraan
+  - harad
+  - haral
+  - hawkmen
+  - hawkston
+  - headbone
+  - headsmen
+  - hebra
+  - heldra
+  - hellgate
+  - hellhorn
+  - innara
+  - inndera
+  - ironhead
+  - ithar
+  - izan
+  - jandar
+  - jaluba
+  - jiral
+  - jokka
+  - kaan
+  - kafar
+  - kafieh
+  - kaldar
+  - kandar
+  - karaja
+  - karan
+  - katai
+  - khari
+  - khaza
+  - khezal
+  - kirah
+  - koja
+  - kojar
+  - komor
+  - koru
+  - korveka
+  - korvela
+  - kothian
+  - kraan
+  - kull
+  - laan
+  - lafai
+  - lankar
+  - lantis
+  - larsha
+  - larth
+  - lieth
+  - lifel
+  - lightstand
+  - lillin
+  - loga
+  - ludya
+  - lukor
+  - luxxur
+  - lyana
+  - lyin
+  - madesus
+  - magicka
+  - majeste
+  - makkan
+  - marook
+  - medes
+  - mishara
+  - nadan
+  - nafar
+  - naka
+  - nakari
+  - nakaris
+  - nanaia
+  - nanu
+  - naram
+  - narouk
+  - narus
+  - narxes
+  - natalas
+  - nightfel
+  - northland
+  - nyaro
+  - oldun
+  - ofelia
+  - ogashu
+  - olfey
+  - onher
+  - ophar
+  - orkhan
+  - orova
+  - overa
+  - overi
+  - palatea
+  - palaia
+  - panjani
+  - partha
+  - patil
+  - paulherman
+  - payin
+  - pellia
+  - petia
+  - preya
+  - qona
+  - qurra
+  - ragor
+  - raihna
+  - rakha
+  - rayk
+  - reyk
+  - reza
+  - rahdor
+  - riverborne
+  - rockfel
+  - rognar
+  - rohmer
+  - ryku
+  - sadeka
+  - sagoth
+  - samari
+  - sarai
+  - saraga
+  - saragol
+  - sargon
+  - sathan
+  - socubba
+  - scrya
+  - sephania
+  - shadizar
+  - sibuyan
+  - sicca
+  - sidena
+  - sigatona
+  - silvergray
+  - sorath
+  - sothar
+  - spearhorn
+  - spidera
+  - starfield
+  - starra
+  - sulis
+  - syro
+  - taia
+  - tair
+  - taleka
+  - tamir
+  - tanasu
+  - tenza
+  - taramis
+  - turan
+  - talima
+  - thalia
+  - thalis
+  - thenara
+  - thodar
+  - thoga
+  - thoraka
+  - tuzan
+  - tybor
+  - ulthar
+  - ungar
+  - upa
+  - uriana
+  - usin
+  - usor
+  - uthak
+  - vakallar
+  - valasia
+  - valeria
+  - valka
+  - venaria
+  - vezia
+  - villehard
+  - wakla
+  - wikana
+  - wildslide
+  - willya
+  - wolfa
+  - wolfraven
+  - wolfshead
+  - woolfel
+  - willfell
+  - xapur
+  - xara
+  - xathar
+  - xizul
+  - xothal
+  - xul
+  - xuthil
+  - yaja
+  - yakadar
+  - yakkis
+  - yaara
+  - yaruk
+  - yateli
+  - yazar
+  - yezud
+  - yizil
+  - yuul
+  - zakar
+  - zamara
+  - zamoria
+  - zelata
+  - zeriti
+  - zutan
+  - Arelon
+  - Aquareen
+  - Eramoor
+  - Azmaar
+  - Battleshield
+  - Bulmaar
+  - Cerran
+  - Coalfield
+  - Darkhold
+  - Northhaven
+  - Ecrean
+  - Farrwater
+  - Firebell
+  - Frostfyord
+  - Silvercrest
+  - Goldenclover
+  - Sorak's Well
+  - Moundfar
+  - Hogsfoot
+  - Hollyheart
+  - Icemeld
+  - Ironfort
+  - Gilli's Outpost
+  - Cona’s Vale
+  - Knifeblade
+  - Lakesail
+  - Millrock
+  - Moonglow
+  - Westpass
+  - Oakslide
+  - Obeshire
+  - Oziryn
+  - Balaz’s Wish
+  - Pinepass
+  - Kingstown
+  - Crimson Hawk
+  - Swordgrip
+  - Whitecliff
+  - Windhead
+  - Springvale
+
     
 CavernName:
   $extends: DungeonName
