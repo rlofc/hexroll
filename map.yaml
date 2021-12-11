@@ -183,9 +183,6 @@ MountainsHex:
       $class: MountainsRandomEncounter
       $min: 4
       $max: 4
-  Feature:
-    $roll: 
-      $class: Feature
 
 
 PlainsHex:
@@ -199,9 +196,6 @@ PlainsHex:
       $class: MountainsRandomEncounter
       $min: 4
       $max: 4
-  Feature:
-    $roll: 
-      $class: Feature
 
 
 ForestHex:
@@ -215,9 +209,6 @@ ForestHex:
       $class: ForestRandomEncounter
       $min: 4
       $max: 4
-  Feature:
-    $roll: 
-      $class: Feature
 
 
 DesertHex:
@@ -231,9 +222,6 @@ DesertHex:
       $class: DesertRandomEncounter
       $min: 4
       $max: 4
-  Feature:
-    $roll: 
-      $class: Feature
 
 
 CoastHex:
@@ -247,6 +235,3 @@ CoastHex:
       $class: MountainsRandomEncounter
       $min: 4
       $max: 4
-  Feature:
-    $roll: 
-      $class: Feature
