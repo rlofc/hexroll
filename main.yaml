@@ -297,8 +297,8 @@ $main:
       $rollsome:
         $debug: Generating encounters
         $class: Encounter
-        $min: 9
-        $max: 12
+        $min: !parameter minimum_number_of_wilderness_encounters
+        $max: !parameter maximum_number_of_wilderness_encounters
 
     innproxies:
       $rollsome:
