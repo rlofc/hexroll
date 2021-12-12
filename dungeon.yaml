@@ -223,9 +223,6 @@ DungeonEncounter:
     {%if Monster.NumberAppearingRoaming==1%}There’s {{Monster.Title | articlize}}{%else%} There are {{Monster.NumberAppearingRoaming}} {{Monster.Title}}s {%endif%} inside.
     {%if Monster.Intelligent %}Roll or decide for reaction.
     {%else%}{%if Monster.NumberAppearingRoaming==1%}It {%else%} They {%endif%} will attack anyone stepping in. {%endif%}
-    {%if not Undead%}
-    The noises {{'it' if Monster.NumberAppearingRoaming==1 else 'they'}} makes could be heard if listening from outside.
-    {%endif%}
 
     __{{Monster.Title}}__
 
