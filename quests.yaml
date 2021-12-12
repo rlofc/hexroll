@@ -264,6 +264,8 @@ MissingPersonQuest:
             The __chained person__ is 
             [__{{quest.FolkContext.Name.Full}}’s__](#{{quest.FolkContext.uuid}})
             __{{quest.Relation.Type}}__ from {{quest.CityContext.NamePart|title}}
+          Pronoun: !jinja "{{quest.Relation.Gender.Pronoun}}"
+          Pronoun2: !jinja "{{quest.Relation.Gender.Pronoun2}}"
 
   Secret:
     $roll:

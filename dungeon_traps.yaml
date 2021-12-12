@@ -1,0 +1,109 @@
+AreaTrap:
+  $subclass: !weighted
+    - NoTrap^10
+    - PitTrap
+    - SwingingBladeTrap
+    - SpringedDeviceTrap
+    - ProjectilesTrap
+    - VapourTrap
+   #- AlarmTrap
+
+NoTrap:
+  Description: null
+
+PitTrap:
+  Description: 
+    - !jinja >
+      There's a __deadly pit__ here, 6' deep, {{Cover}}.
+      If undetected, there's a __2 in 6__ chance of falling in.
+      {{Damage}}.
+
+  Cover:
+    - covered only by the darkness
+    - __hidden__ under __canvas and dirt__
+    - covered under __thin wood planks__
+
+  Damage:
+    - __Save vs Death__ or sustain __1d6 damage__ from long rusty spikes at the
+      bottom.
+
+    - __Save vs Poison__ or sustain __1d4 damage for 1d4 turns__ from dozens
+      poisonous snakes at the bottom.
+
+
+TrapTriggers: &TrapTriggers
+  - stepping on __pressure plate__
+  - stepping through its __trip wire__
+  - causing a __sound sensitive membrane__ to vibrate
+  - __removing a specific object__ from its original place
+
+
+SwingingBladeTrap:
+  Description:
+    - !jinja >
+      There's a razor-sharp 4' tall __swinging blade trap__ here, __hidden__
+      inside a thin long __wall slit__.  If undetected, there's a __2 in 6__
+      chance of triggering if {{Trigger}}.  __Save vs Breath__ or sustain __2d4
+      damage__.
+
+    - !jinja >
+      There's a crushing __swinging boulder trap__ here, __hidden__ inside the
+      __wall__.  If undetected, there's a __2 in 6__ chance of triggering if
+      {{Trigger}}.  __Save vs Breath__ or sustain __2d4 damage__.
+
+    - There's a razor-sharp 5' tall __swinging blade trap__ here, going back
+      and forth __periodically__.  If undetected, there's a chance of __2 in
+      6__ of passing it at the wrong time.  __Save vs Breath__ or sustain __2d4
+      damage__.
+
+    - There's a crushing __swinging boulder trap__ here, going back and forth
+      __periodically__.  If undetected, there's a chance of __2 in 6__ of
+      passing it at the wrong time.  __Save vs Breath__ or sustain __2d4
+      damage__.
+
+  Trigger: *TrapTriggers
+
+
+SpringedDeviceTrap:
+  Description:
+    - !jinja >
+      There's a __spring-loaded spears trap__ here, hidden inside __shafts in
+      the floor__.  If undetected, there's a __2 in 6 chance__ of triggering if
+      {{Trigger}}.  __Save vs Death__ or sustain __1d6 damage__ from the
+      violent thrust of the jumping spears.
+
+  Trigger: *TrapTriggers
+
+
+ProjectilesTrap:
+  Description:
+    - !jinja >
+      There's a __shooting darts trap__ here, hidden inside __shafts in the
+      wall__.  If undetected, there's a 2 in 6 chance of triggering it by
+      {{Trigger}}.  __Save vs Poison__ or sustain __1d4 damage for 1d4 turns__
+      from a dozen poisonous darts.
+
+    - !jinja >
+      There's a __crossbow trap__ here, hidden inside __niche in the wall__.
+      If undetected, there's a 2 in 6 chance of triggering if {{Trigger}}.
+      __Save vs Breath__ or sustain __1d6 damage__ from the fast and sharp
+      arrow.
+
+  Trigger: *TrapTriggers
+
+
+VapourTrap:
+  Description:
+    - !jinja >
+      There's a __poisonous gas trap__ here. If undetected, there's a 2 in 6
+      chance of triggering if {{Trigger}}, causing the gas to come out of
+      __cracks in the wall__.  __Save vs Poison__ or sustain __1d4 damage for
+      1d4 turns__ from the poison.
+
+    - !jinja >
+      There's an __acidic vapour trap__ here. If undetected, there's a 2 in 6
+      chance of triggering if {{Trigger}}, causing a spray of acid to come out
+      of a __hole in the wall__.  __Save vs Death__ or sustain __1d4 damage__
+      by acid.
+
+  Trigger: *TrapTriggers

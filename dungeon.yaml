@@ -49,6 +49,11 @@ RoomDescription:
     {{Feature.Hint}}{%if Cell.Active%} and {{Cell.Hint}}{%endif%}.
 
 
+    {%if AreaTrap.Description and Feature.subclass_=='DungeonRemains' -%}
+    * {{AreaTrap.Description}} 
+    {%-endif%}
+
+
     * {{Feature.Description}}
 
 
@@ -59,19 +64,21 @@ RoomDescription:
     * Searching will uncover {{KeyHide}} holding the {{Key.Active}}
     {%endif%}
 
-
     {%if Lever.Active%}
     * There’s {{Lever.Active | articlize}}
     {%endif%}
-
 
     {%if TreasureHiding.Active%}
     * {{TreasureHiding.Active}}
     {%endif%}
 
-
     {%if Cell.Active%}
-    * {{Cell.Active}}
+    * {{Cell.Active}}.
+      {%if AreaTrap.Description 
+           and Feature.subclass_=='DungeonRemains'
+           and (range(1,3+1) | random)==3-%}
+      Though {{Cell.Pronoun2}} mouth is gagged, {{Cell.Pronoun}} will
+      try to warn about the trap.{%-endif%}
     {%endif%}
 
   Debris:
@@ -89,6 +96,10 @@ RoomDescription:
   Feature:
     $roll:
       $class: !indirect FeatureLevelClass
+
+
+  AreaTrap:
+    $roll: AreaTrap
 
   Key:
     $roll: DungeonDoorKey
