@@ -1,3 +1,50 @@
+ContainerTrap:
+  $subclass: !weighted
+    - NoTrap
+    - ContainerNeedleTrap
+    - ContainerVapourTrap
+    - ContainerTouchTrap
+    - ContainerRubbleTrap
+
+
+PoisonTrapDamage: &PoisonTrapDamage
+  - __Save vs Poison__ or sustain __1d6 turns of uncontrolled spasms__.
+  - __Save vs Poison__ or __die in 1d4 turns__.
+
+
+ContainerNeedleTrap:
+  Description:
+    - !jinja >
+      There's a __poisoned needle__ {{AgentLocation}}.  If undetected, there's
+      a __2 in 6__ chance of getting pricked.  {{Damage}}
+  Damage: *PoisonTrapDamage
+
+
+ContainerVapourTrap:
+  Description:
+    - !jinja >
+      There's a small __gas-filled blister__ made of goat's intestine
+      {{AgentLocation}}.  If undetected, there's a __2 in 6__ chance of popping
+      it.  {{Damage}}
+  Damage: *PoisonTrapDamage
+
+
+ContainerTouchTrap:
+  Description:
+    - !jinja > 
+      An acidic ointment was smeared on the {{Type}}.
+      If undetected, there's a __2 in 6__ chance of touching it.
+      __Save vs Petrification__ or sustain __1d6 damage__.
+
+ContainerRubbleTrap:
+  Description:
+    - !jinja > 
+      __Loose ruble__ is locked above the {{Type}}, released when a __switch__
+      {{AgentLocation}} is triggered.  If undetected, there's a __2 in 6__
+      chance the loose rubble will fall down.  __Save vs Petrification__ or
+      sustain __1d8 damage__.
+
+
 AreaTrap:
   $subclass: !weighted
     - NoTrap^10
@@ -13,22 +60,43 @@ NoTrap:
 
 PitTrap:
   Description: 
+    - !jinja |
+      There's a __deadly pit__ here, 6' deep, {{Cover}}.  If undetected,
+      there's a __2 in 6__ chance of falling in.  {%if
+      Monster.NumberAppearingRoaming==1%}{{Monster.Title | articlize |
+      capitalize}} is {%else%}{{Monster.NumberAppearingRoaming}}
+      {{Monster.Title}}s are {%endif%} waiting at the bottom.
+
+      ---
+
+      {{Monster.Stats}}
+
+      {%if Monster.NumberAppearingRoaming<10%}{%for m in
+      range(Monster.NumberAppearingRoaming)%} <sub>{% for hp in
+      range(Monster.HitDiceRoll | diceroll) %}❏{%endfor%}</sub><br/>
+      {%endfor%}{%endif%}
+
+      ---
+
+
     - !jinja >
       There's a __deadly pit__ here, 6' deep, {{Cover}}.
       If undetected, there's a __2 in 6__ chance of falling in.
-      {{Damage}}.
+      __Save vs Death__ or sustain __1d6 damage__ from long rusty spikes at the
+      bottom.
 
   Cover:
     - covered only by the darkness
     - __hidden__ under __canvas and dirt__
     - covered under __thin wood planks__
 
-  Damage:
-    - __Save vs Death__ or sustain __1d6 damage__ from long rusty spikes at the
-      bottom.
-
-    - __Save vs Poison__ or sustain __1d4 damage for 1d4 turns__ from dozens
-      poisonous snakes at the bottom.
+  Monster:
+    $roll:
+      $class:
+        - NormalRat
+        - InsectSwarm
+        - SpittingCobra
+      
 
 
 TrapTriggers: &TrapTriggers
@@ -68,7 +136,7 @@ SpringedDeviceTrap:
   Description:
     - !jinja >
       There's a __spring-loaded spears trap__ here, hidden inside __shafts in
-      the floor__.  If undetected, there's a __2 in 6 chance__ of triggering if
+      the floor__.  If undetected, there's a __2 in 6 chance__ of triggering it if
       {{Trigger}}.  __Save vs Death__ or sustain __1d6 damage__ from the
       violent thrust of the jumping spears.
 
@@ -78,17 +146,18 @@ SpringedDeviceTrap:
 ProjectilesTrap:
   Description:
     - !jinja >
-      There's a __shooting darts trap__ here, hidden inside __shafts in the
-      wall__.  If undetected, there's a 2 in 6 chance of triggering it by
-      {{Trigger}}.  __Save vs Poison__ or sustain __1d4 damage for 1d4 turns__
-      from a dozen poisonous darts.
+      There's a __poisonous darts trap__ here, hidden inside __shafts in the
+      wall__.  If undetected, there's a 2 in 6 chance of triggering it if 
+      {{Trigger}}.
+      {{Damage}}
 
     - !jinja >
-      There's a __crossbow trap__ here, hidden inside __niche in the wall__.
-      If undetected, there's a 2 in 6 chance of triggering if {{Trigger}}.
+      There's a __crossbow trap__ here, hidden inside a __niche in the wall__.
+      If undetected, there's a 2 in 6 chance of triggering it if {{Trigger}}.
       __Save vs Breath__ or sustain __1d6 damage__ from the fast and sharp
       arrow.
 
+  Damage: *PoisonTrapDamage
   Trigger: *TrapTriggers
 
 
@@ -97,13 +166,15 @@ VapourTrap:
     - !jinja >
       There's a __poisonous gas trap__ here. If undetected, there's a 2 in 6
       chance of triggering if {{Trigger}}, causing the gas to come out of
-      __cracks in the wall__.  __Save vs Poison__ or sustain __1d4 damage for
-      1d4 turns__ from the poison.
+      __cracks in the wall__.
+      {{PoisonDamage}}
 
     - !jinja >
       There's an __acidic vapour trap__ here. If undetected, there's a 2 in 6
       chance of triggering if {{Trigger}}, causing a spray of acid to come out
-      of a __hole in the wall__.  __Save vs Death__ or sustain __1d4 damage__
+      of a __hole in the wall__.  __Save vs Death__ or sustain __1d6 damage__
       by acid.
+
+  PoisonDamage: *PoisonTrapDamage
 
   Trigger: *TrapTriggers

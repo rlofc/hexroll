@@ -254,10 +254,12 @@ DungeonContainers:
     {{Type}}{{'' if Quantity=='single' else 's'}} near the far wall
 
   Description: !jinja >
-    There’s a 2-in-6 chance the {{Type}}{{'' if Quantity=='single' else 's'}}
-    contain{{'s' if Quantity=='single' else ''}} {{Treasure.Details}}
+    {%if Trap.Description%}The {{Type}}{{' is' if Quantity=='single' else 's are'}} trapped. {{Trap.Description}}
 
-    Otherwise, this place was already looted earlier.
+
+    * {%-endif%} There’s a 2-in-6 chance the {{Type}}{{'' if Quantity=='single' else 's'}}
+      contain{{'s' if Quantity=='single' else ''}}:  {{Treasure.Details}}
+        Otherwise, this place was already looted earlier.
 
   Foreshadow: 
     - A few single silver pieces could be found if examining the ground near
@@ -282,6 +284,21 @@ DungeonContainers:
     - small
     - very big
     - big
+  Trap:
+    $roll:
+      $class: ContainerTrap
+      $inject:
+        $namespace: container
+        $values:
+          Type: !jinja "{{container.Type}}{{'' if container.Quantity=='single' else 's'}}"
+          AgentLocation: !jinja >
+            {{ {'jar'   : 'embedded in a handle',
+                'chest' : 'hidden under a pulling ring',
+                'crate' : 'embedded in one of the wooden planks',
+                'barrel': 'hidden in a rim',
+                'bag'   : 'thrown casually inside'}[container.Type] }} 
+
+
 
   Treasure:
     $roll: TreasureTypeZ
