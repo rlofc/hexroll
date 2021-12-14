@@ -394,8 +394,13 @@ Magic-user:
     - long, skinny fingers
     - a star tattooed on the forehead
     - a nose ring
+    - a nose ring decorated with a skull
+    - a nose ring decorated with a star
     - long black robe
     - long crimson robe
+    - decorated book linked to a strap around the chest
+    - an oversized pointy hat made of dark leather
+
 
 
 Magic-userLevel1:
@@ -778,8 +783,8 @@ Fighter:
         - Warhammer
 
   Feature2:
-    - strong, muscular physique
-    - deep scar on the right arm
+    - a strong, muscular physique
+    - a deep scar on the right arm
     - a big nose-ring
     - a missing middle-finger
 
@@ -1313,21 +1318,68 @@ Gender:
     - Female^50
     - Fluid
 
+GenderFeature:
+  HairColor:
+    - red
+    - blonde
+    - black
+    - brown
+    - almond
+    - white
+  HairLength:
+    - long
+    - short
+
+
+MasculineFeature:
+  $extends: GenderFeature
+  Feature: !weighted
+    - !jinja "a {{HairLength}} {{HairColor}} beard^3"
+    - !jinja "short {{HairColor}} hair^5"
+    - no hair
+    - thick bushy eyebrows
+    - a strong, prominent chin
+    - a two day stubble
+    - a scruff
+    - a thick moustache
+    - a goatee beard
+    - a frowny expression
+    - a long smoking pipe in his mouth
+    - a big round belly
+
+
+FeminineFeature:
+  $extends: GenderFeature
+  Feature:
+    - !jinja "{{HairLength}} and {{HairTrait}} {{HairColor}} hair"
+    - !jinja "{{HairLength}} {{HairColor}} hair"
+    - !jinja "{{HairTrait}} {{HairColor}} hair"
+    - !jinja "{{HairLength}} {{HairColor}} pony-tail"
+    - soft gentle features
+    - delicate features
+  HairTrait:
+    - silky
+    - flowing
+    - curly
+    - wavy
+    - braided
+    - wild
+    - well-brushed
+
+
 Male:
   $extends: Gender
   Pronoun: he
   Pronoun2: his
   Pronoun3: him
   Pos: has
-  Feature:
-    - a long white beard
-    - short dark beard
-    - no hair
-    - short red hair
-    - short blonde hair
-    - short black hair
-    - short brown hair
-    - short almond hair
+  Feature: !jinja "{{GenderFeature.Feature}}"
+  GenderFeature:
+    $roll:
+      $class: !weighted
+        - MasculineFeature^100
+        - FeminineFeature
+
 
 Female:
   $extends: Gender
@@ -1335,17 +1387,13 @@ Female:
   Pronoun2: her
   Pronoun3: her
   Pos: has
-  Feature:
-    - long and silky red hair
-    - long and silky blonde hair
-    - long and silky black hair
-    - long and silky brown hair
-    - long and silky almond hair
-    - short red hair
-    - short blonde hair
-    - short black hair
-    - short brown hair
-    - short almond hair
+  Feature: !jinja "{{GenderFeature.Feature}}"
+  GenderFeature:
+    $roll:
+      $class: !weighted
+        - FeminineFeature^100
+        - MasculineFeature
+
 
 Fluid:
   $extends: Gender
@@ -1353,25 +1401,12 @@ Fluid:
   Pronoun2: their
   Pronoun3: them
   Pos: have
-  Feature:
-    - long and silky red hair
-    - long and silky blonde hair
-    - long and silky black hair
-    - long and silky brown hair
-    - long and silky almond hair
-    - short red hair
-    - short blonde hair
-    - short black hair
-    - short brown hair
-    - short almond hair
-    - a long white beard
-    - short dark beard
-    - no hair
-    - short red hair
-    - short blonde hair
-    - short black hair
-    - short brown hair
-    - short almond hair
+  Feature: !jinja "{{GenderFeature.Feature}}"
+  GenderFeature:
+    $roll:
+      $class: !weighted
+        - MasculineFeature
+        - FeminineFeature
 
 
 NPCState:
@@ -1941,7 +1976,6 @@ Halfling:
     - extremely large feet, even for a halfling
     - round, bulbous nose
     - big red cheeks
-
 
 HalflingLevel1:
   $extends: Halfling
