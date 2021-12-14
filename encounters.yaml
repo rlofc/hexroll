@@ -306,7 +306,7 @@ ForestRandomEncounter:
     - SmallRoc
     - Sprite
     - Stirge
-    - Bandit^10
+    - Bandit^5
     - Berserker^3
 
 DesertFeatureEncounter:
