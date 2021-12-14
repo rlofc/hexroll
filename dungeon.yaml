@@ -300,8 +300,24 @@ DungeonContainers:
 
 
 
+
+
+DungeonTreasureTier1:
+  $extends: DungeonContainers
   Treasure:
-    $roll: TreasureTypeZ
+    $roll: TreasureTypeTier1
+
+
+DungeonTreasureTier2:
+  $extends: DungeonContainers
+  Treasure:
+    $roll: TreasureTypeTier2
+
+
+DungeonTreasureTier3:
+  $extends: DungeonContainers
+  Treasure:
+    $roll: TreasureTypeTier3
 
 
 DungeonFungi:

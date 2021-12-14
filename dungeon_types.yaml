@@ -24,7 +24,7 @@ CaveFeatureTier1:
   $subclass:
     - CaveEncounterTier1
     - CaveEncounterTier1
-    - DungeonContainers
+    - DungeonTreasureTier1
     - DungeonRemains
     - DungeonFungi
 
@@ -33,7 +33,7 @@ CaveFeatureTier2:
   $subclass:
     - CaveEncounterTier2
     - CaveEncounterTier2
-    - DungeonContainers
+    - DungeonTreasureTier2
     - DungeonRemains
     - DungeonFungi
 
@@ -42,7 +42,7 @@ CaveFeatureTier3:
   $subclass:
     - CaveEncounterTier3
     - CaveEncounterTier3
-    - DungeonContainers
+    - DungeonTreasureTier3
     - DungeonRemains
     - DungeonFungi
 
@@ -76,7 +76,7 @@ TombFeatureTier1:
   $subclass:
     - DungeonEncounterVerminsTier1
     - DungeonEncounterVerminsTier1
-    - DungeonContainers
+    - DungeonTreasureTier1
     - DungeonRemains
     - DungeonFungi
 
@@ -85,7 +85,7 @@ TombFeatureTier2:
   $subclass:
     - DungeonEncounterUndead
     - DungeonEncounterUndead
-    - DungeonContainers
+    - DungeonTreasureTier2
     - DungeonRemains
     - DungeonFungi
 
@@ -94,7 +94,7 @@ TombFeatureTier3:
   $subclass:
     - DungeonEncounterUndeadHD7
     - DungeonEncounterUndeadHD7
-    - DungeonContainers
+    - DungeonTreasureTier3
     - DungeonRemains
     - DungeonFungi
 
@@ -154,7 +154,7 @@ TempleFeatureTier1:
   $subclass:
     - TempleEncounterTier1
     - TempleEncounterTier1
-    - DungeonContainers
+    - DungeonTreasureTier1
     - DungeonRemains
 
 
@@ -162,7 +162,7 @@ TempleFeatureTier2:
   $subclass:
     - TempleEncounterTier2
     - TempleEncounterTier2
-    - DungeonContainers
+    - DungeonTreasureTier2
     - DungeonRemains
 
 
@@ -170,7 +170,7 @@ TempleFeatureTier3:
   $subclass:
     - TempleEncounterTier3
     - TempleEncounterTier3
-    - DungeonContainers
+    - DungeonTreasureTier3
     - DungeonRemains
 
 
