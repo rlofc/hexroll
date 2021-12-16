@@ -70,14 +70,7 @@ Faction:
             * Member of the [__{{faction.FullName}}__](#{{faction.uuid}}).
           Alignment: !jinja "{{faction.AcceptedAlignment}}"
 
-
-  $subclass:
-    - Cult
-    - Militia
-    #- Coven
-    #- Smugglers
-    #- Thieves
-    #- Tribe
+  $subclass: !parameter faction_classes
 
 
 Cult:

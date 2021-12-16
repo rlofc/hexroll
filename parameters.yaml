@@ -23,6 +23,12 @@ defaults:
   minimum_number_of_settlements: 6
   maximum_number_of_settlements: 9
 
+  minimum_number_of_inns: 2
+  maximum_number_of_inns: 3
+
+  minimum_number_of_factions: 3
+  maximum_number_of_factions: 5
+
   minimum_number_of_wilderness_encounters: 9
   maximum_number_of_wilderness_encounters: 12
 
@@ -45,3 +51,11 @@ defaults:
     - Tomb
     # - Mine
     # - Ruins
+
+  faction_classes: !weighted
+    - Cult
+    - Militia
+    #- Coven
+    #- Smugglers
+    #- Thieves
+    #- Tribe

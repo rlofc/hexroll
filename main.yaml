@@ -304,15 +304,15 @@ $main:
       $rollsome:
         $debug: Generating inns
         $class: Inn
-        $min: 2
-        $max: 3
+        $min: !parameter minimum_number_of_inns
+        $max: !parameter maximum_number_of_inns
 
     factions:
       $rollsome:
         $debug: Generating factions
         $class: Faction
-        $min: 3
-        $max: 5
+        $min: !parameter minimum_number_of_factions
+        $max: !parameter maximum_number_of_factions
 
     npcs:
       $collect: NPC
