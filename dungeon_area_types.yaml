@@ -13,98 +13,104 @@ RoomTypePantry:
   Title: Pantry
   Preface:
     - It is dark and damp here
-    - You hear water drops falling to the ground
+    - You hear the sound of water dripping down
     - This area is dark and cold
     - This area stinks from excrements
     - The air in this area is dense and misty
-    - There are stains of what seems to be blood on the ceiling
-    - Dense spiderwebs cover the corners of the walls
+    - There are stains of what seems to be blood all over the place
+    - Dense spiderwebs cover the corners of the room
     - This area was likely used as a pantry
-    - Countless creepy crawlies on the floor and walls rush back into the darkness
-    - A vile smell of rot welcomes you
+    - Countless creepy crawlies all over rush back into the darkness
+    - A few small rats, so it seems, scurried back into hiding
 
 
 RoomTypeShrine:
   Title: Shrine
   Preface:
     - It is dark and damp here
-    - You hear water drops falling to the ground
+    - You hear the sound of water dripping down
     - This area is dark and cold
     - This area stinks from excrements
     - The air in this area is dense and misty
-    - Dense spiderwebs cover the corners of the walls
-    - Countless creepy crawlies on the floor and walls rush back into the darkness
-    - A vile smell of rot welcomes you
+    - Dense spiderwebs cover the corners of the room
+    - Countless creepy crawlies all over rush back into the darkness
+    - Large symbols and letters were painted all over the place
+    - Countless humanoid skulls “decorate” the boundries here
+    - A large pentagram was painted here
+    - A small wooden altar is located at the center of this room
 
    
 RoomTypeLibrary:
   Title: Library
   Preface:
     - It is dark and damp here
-    - You hear water drops falling to the ground
+    - You hear the sound of water dripping down
     - This area is dark and cold
     - This area stinks from excrements
     - The air in this area is dense and misty
-    - Dense spiderwebs cover the corners of the walls
-    - Countless creepy crawlies on the floor and walls rush back into the darkness
-    - A vile smell of rot welcomes you
+    - Dense spiderwebs cover the corners of the room
+    - Countless creepy crawlies all over rush back into the darkness
+    - Numerous fragments of torn paper are scattered all over the place
+    - Tall shelves made of rotting wood are fixtured here
 
    
 RoomTypeTortureChamber:
   Title: Torture Chamber
   Preface:
     - It is dark and damp here
-    - You hear water drops falling to the ground
+    - You hear the sound of water dripping down
     - This area is dark and cold
     - This area stinks from excrements
     - The air in this area is dense and misty
-    - There are stains of what seems to be blood on the ceiling
-    - Dense spiderwebs cover the corners of the walls
+    - There are stains of what seems to be blood all over the place
+    - Dense spiderwebs cover the corners of the room
+    - Countless creepy crawlies all over rush back into the darkness
     - This place seems to be an old dungeon cell
-    - Countless creepy crawlies on the floor and walls rush back into the darkness
-    - A vile smell of rot welcomes you
+    - Several wooden racks were fixtured here
 
    
 RoomTypeCrypt:
   Title: Crypt
   Preface:
     - It is dark and damp here
-    - You hear water drops falling to the ground
+    - You hear the sound of water dripping down
     - This area is dark and cold
     - This area stinks from excrements
-    - There are stains of what seems to be blood on the ceiling
+    - There are stains of what seems to be blood all over the place
     - The air in this area is dense and misty
-    - Dense spiderwebs cover the corners of the walls
-    - Countless creepy crawlies on the floor and walls rush back into the darkness
-    - A vile smell of rot welcomes you
+    - Dense spiderwebs cover the corners of the room
+    - Countless creepy crawlies all over rush back into the darkness
 
    
 RoomTypeLaboratory:
   Title: Laboratory
   Preface:
     - It is dark and damp here
-    - You hear water drops falling to the ground
+    - You hear the sound of water dripping down
     - This area is dark and cold
     - This area stinks from excrements
-    - There are stains of what seems to be blood on the ceiling
+    - There are stains of what seems to be blood all over the place
     - The air in this area is dense and misty
-    - Dense spiderwebs cover the corners of the walls
-    - Countless creepy crawlies on the floor and walls rush back into the darkness
-    - A vile smell of rot welcomes you
+    - Dense spiderwebs cover the corners of the room
+    - Countless creepy crawlies all over rush back into the darkness
+    - Broken vials and beakers are scattered all over the place
 
    
 RoomTypeCeremonial:
   Title: Ceremonial Chamber
   Preface:
     - It is dark and damp here
-    - You hear water drops falling to the ground
+    - You hear the sound of water dripping down
     - This area is dark and cold
     - This area stinks from excrements
-    - There are stains of what seems to be blood on the ceiling
+    - There are stains of what seems to be blood all over the place
     - The air in this area is dense and misty
-    - Dense spiderwebs cover the corners of the walls
-    - Countless creepy crawlies on the floor and walls rush back into the darkness
-    - A vile smell of rot welcomes you
+    - Dense spiderwebs cover the corners of the room
+    - Countless creepy crawlies all over rush back into the darkness
+    - Large symbols and letters were painted all over the place
+    - Countless humanoid skulls “decorate” the boundries here
+    - A large pentagram was painted here
+    - A small wooden altar is located at the center of this room
 
 
 CaveType:
@@ -117,17 +123,19 @@ CaveType:
     - CaveTypeDig
   Preface:
     - It is dark and damp here
-    - You hear water drops falling to the ground
+    - You hear the sound of water dripping down
     - This area is dark and cold
     - The flowstone on the ground shimmers through the darkness
     - This area stinks from excrements
     - The air in this area is dense and misty
     - There are stains of what seems to be blood on the ground
-    - Dense spiderwebs cover the dolomites and stalagmites
+    - Dense spiderwebs cover the stalactites and stalagmites
     - Dense spiderwebs are stretched between cave columns
     - The cave earth here makes the ground feel sticky
-    - There are several cave blisters here
-    - A vile smell of rot welcomes you
+    - This area is covered with egg-like cave blisters
+    - Pools of dark sludge are scattered all over the place
+    - Oversized fossilised mushrooms are covering this area
+    - Fossils of underwater creatures decorate the formations here
 
 
 CaveTypeChamber:
