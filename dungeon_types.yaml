@@ -102,10 +102,6 @@ TombFeatureTier3:
 Tomb:
   $extends: Dungeon
 
-  NamePrefix:
-    - tomb
-    - crypt
-
   #  - The Tomb of Blackness
   #  - The Tomb of Lost Souls
   #  - The Tomb of Nak'Hatop
