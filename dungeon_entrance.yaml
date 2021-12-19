@@ -1,6 +1,6 @@
 DungeonEntrance:
   Description: !jinja >
-    Stairs leading down into area __{{CounterSnapshot+1}}__ in the dungeon are
+    {{EntranceDescLeadingTo}} __{{CounterSnapshot+1}}__ {{EntranceLocationPrefix}}
     {%if DungeonContext.Hex == 'MountainsHex'%}
     {{MountainLocation}}.
     {%elif DungeonContext.Hex == 'ForestHex'%}

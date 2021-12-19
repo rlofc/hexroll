@@ -65,7 +65,7 @@ Cavern:
 
   Map:
     $roll: 
-      $class: DungeonShape
+      $class: DungeonCaveShape
       $bootstrap:
         DungeonFeatureTier1: CaveFeatureTier1
         DungeonFeatureTier2: CaveFeatureTier2

@@ -105,3 +105,56 @@ RoomTypeCeremonial:
     - Dense spiderwebs cover the corners of the walls
     - Countless creepy crawlies on the floor and walls rush back into the darkness
     - A vile smell of rot welcomes you
+
+
+CaveType:
+  $subclass:
+    - CaveTypeChamber
+    - CaveTypeRoom
+    - CaveTypeCavern
+    - CaveTypeHall
+    - CaveTypeGrotto
+    - CaveTypeDig
+  Preface:
+    - It is dark and damp here
+    - You hear water drops falling to the ground
+    - This area is dark and cold
+    - The flowstone on the ground shimmers through the darkness
+    - This area stinks from excrements
+    - The air in this area is dense and misty
+    - There are stains of what seems to be blood on the ground
+    - Dense spiderwebs cover the dolomites and stalagmites
+    - Dense spiderwebs are stretched between cave columns
+    - The cave earth here makes the ground feel sticky
+    - There are several cave blisters here
+    - A vile smell of rot welcomes you
+
+
+CaveTypeChamber:
+  $extends: CaveType
+  Title: Chamber
+
+
+CaveTypeRoom:
+  $extends: CaveType
+  Title: Cave Room
+
+
+CaveTypeCavern:
+  $extends: CaveType
+  Title: Cavern
+
+
+CaveTypeHall:
+  $extends: CaveType
+  Title: Cave Hall
+
+
+CaveTypeGrotto:
+  $extends: CaveType
+  Title: Grotto
+
+
+CaveTypeDig:
+  $extends: CaveType
+  Title: Cave Dig

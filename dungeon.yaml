@@ -36,11 +36,8 @@ Dungeon:
   Title: !jinja "{{Name.Title}}"
 
 
-RoomDescription:
+AreaDescription:
   Title: !jinja "{{RoomType.Title}}"
-
-  RoomType:
-    $roll: RoomType
 
   Description: !jinja >
     ##### Description
@@ -142,6 +139,18 @@ RoomDescription:
     {%endif%}
 
     {%endif%}
+
+
+RoomDescription:
+  $extends: AreaDescription
+  RoomType:
+    $roll: RoomType
+
+
+CaveDescription:
+  $extends: AreaDescription
+  RoomType:
+    $roll: CaveType
 
 
 DungeonDebris:
@@ -263,10 +272,10 @@ DungeonContainers:
 
   Foreshadow: 
     - A few single silver pieces could be found if examining the ground near
-      the doors to this area
+      the entrances to this area
     
     - Traces of something heavy dragged on the ground could be found if examining
-      around the doors to this area
+      around the entrances to this area
 
   Type:
     - jar
