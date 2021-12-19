@@ -233,6 +233,9 @@ $main:
     $value: 0
 
   $collections:
+    dungeon_names:
+      $collect: DungeonName
+
     secrets:
       $collect: Secret
 
