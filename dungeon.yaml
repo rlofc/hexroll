@@ -81,9 +81,6 @@ AreaDescription:
   Debris:
     $roll: DungeonDebris
 
-  Decor:
-    $roll: DungeonDecor
-
   $context:
     $attr: RoomContext
     $values:
@@ -143,12 +140,18 @@ AreaDescription:
 
 RoomDescription:
   $extends: AreaDescription
+  Decor:
+    $roll: DungeonDecor
+
   RoomType:
     $roll: RoomType
 
 
 CaveDescription:
   $extends: AreaDescription
+  Decor:
+    $roll: CaveDecor
+
   RoomType:
     $roll: CaveType
 
@@ -188,19 +191,26 @@ DungeonDebris:
 
 
 DungeonDecor:
-  Description: !jinja >
-    there are {{Quantity}} {{Cover}} on the {{Part}}
+  Description:
+    - !jinja >
+      there are {{Quantity}} {{Cover}} on the {{Part}}
+    - !jinja >
+      the {{Part}} {{'have' if Part|last=='s' else 'has'}} {{Quantity}} {{Cover}} on
+    - !jinja >
+      the {{Part}} {{'are' if Part|last=='s' else 'is'}} covered with {{Cover}}
 
-  Part:
+  Part: !avoid_repeating
     - walls
     - ground
     - ceiling
 
   Cover:
-    - blood stains
+    - dark splatters
     - claw marks
     - burn marks
+    - scorch marks
     - cracks
+    - fractures
     - spots of green rot
     - spots of yellow ooze
 
@@ -212,6 +222,15 @@ DungeonDecor:
     - a few
     - some
     - several
+
+
+CaveDecor:
+  $extends: DungeonDecor
+  Part: !avoid_repeating
+    - stalagmites
+    - stalactites
+    - ground
+    - canopy
 
 
 DungeonFeature:
