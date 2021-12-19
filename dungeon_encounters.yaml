@@ -88,6 +88,8 @@ DungeonEncounterVermins:
 
   Hint: 
     - There’s also a foul smell of decay and rot
+    - Looking down, you see countless fragments of small animal skeletons
+
   Undead: False
 
 
@@ -120,6 +122,7 @@ DungeonEncounterOozes:
   Hint: 
     - There’s also a very strong acidic stench here, making breathing almost
       unbearable
+    - There are bones on the ground, clean bones.. almost bleach-white
 
   Undead: False
 
@@ -189,6 +192,10 @@ DungeonEncounterCultists:
 
   Hint:
     - There are cultists inside
+    - There are cloaked and hooded humans inside
+    - There are humans wearing red robes inside
+    - There are humans wearing dark robes inside
+
   Undead: False
   Monster:
     $roll: DungeonEncounterCultistsClasses
@@ -210,6 +217,7 @@ DungeonEncounterTempleAnimals:
 
   Hint:
     - There’s some sort of a beast inside
+
   Undead: False
   Monster:
     $roll: DungeonEncounterTempleAnimalsClasses
