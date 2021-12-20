@@ -127,10 +127,10 @@ AreaDescription:
 
     {% if Cell.Active!='!' %}
     {% if Feature.Monster %}
-    * A successful listening roll will also reveal __screams of fear__
+    * A successful listening roll will {{'also' if Feature.Foreshadow else ''}} reveal __screams of fear__
       coming from inside this area.
     {%else%}
-    * A successful listening roll will also reveal a faint __sound of crying__
+    * A successful listening roll will {{'also' if Feature.Foreshadow else ''}} reveal a faint __sound of crying__
       coming from inside this area.
     {%endif%}
     {%endif%}
