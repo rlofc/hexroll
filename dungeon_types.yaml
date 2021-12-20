@@ -102,8 +102,9 @@ TombFeatureTier3:
 
 
 TombFeatureTier4:
-  $subclass:
-    - DungeonEncounterUndeadTier4
+  $subclass: !weighted
+    - DungeonEncounterUndeadTier4^10
+    - DungeonTreasureTier4
 
 
 Tomb:
@@ -187,8 +188,9 @@ TempleFeatureTier3:
 
 
 TempleFeatureTier4:
-  $subclass:
-    - TempleEncounterTier4
+  $subclass: !weighted
+    - TempleEncounterTier4^10
+    - DungeonTreasureTier4
 
 
 Temple:

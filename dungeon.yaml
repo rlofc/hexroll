@@ -288,9 +288,9 @@ DungeonContainers:
     {%if Trap.Description%}The {{Type}}{{' is' if Quantity=='single' else 's are'}} trapped. {{Trap.Description}}
 
 
-    * {%-endif%} There’s a 2-in-6 chance the {{Type}}{{'' if Quantity=='single' else 's'}}
+    * {%-endif%} {%if (Treasure.Details | trim)==''%} The treasure here, if any, was __already looted__.{%else%}There’s a 2-in-6 chance the {{Type}}{{'' if Quantity=='single' else 's'}}
       contain{{'s' if Quantity=='single' else ''}}:  {{Treasure.Details}}
-        Otherwise, this place was already looted earlier.
+        Otherwise, this place was already looted earlier.{%endif%}
 
   Foreshadow: 
     - A few single silver pieces could be found if examining the ground near
@@ -346,6 +346,12 @@ DungeonTreasureTier2:
 
 
 DungeonTreasureTier3:
+  $extends: DungeonContainers
+  Treasure:
+    $roll: TreasureTypeTier3
+
+
+DungeonTreasureTier4:
   $extends: DungeonContainers
   Treasure:
     $roll: TreasureTypeTier3
