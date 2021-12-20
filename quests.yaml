@@ -3,7 +3,7 @@ Advert:
 
 
 QuestTreasureHiding:
-  Active: '!'
+  Active: null
   Listening: ""
   Hint: "There’s a chest"
   Description: "Inside the chest you find a treasure"
@@ -197,7 +197,7 @@ MissingPersonHusband:
 
 MissingPersonQuestCell:
   Hint: "a person is chained to the wall"
-  Active: '!'
+  Active: null
 
 
 MissingPersonQuest:

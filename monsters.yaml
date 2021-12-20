@@ -978,8 +978,7 @@ BlackDragon:
   Morale: "8"
   Alignment: "Chaotic"
   XP: "1,250"
-  NumberAppearingRoaming:
-    $diceroll: 1d4 
+  NumberAppearingRoaming: 1
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
@@ -1001,8 +1000,7 @@ BlueDragon:
   Morale: "9"
   Alignment: "Neutral"
   XP: "2,300"
-  NumberAppearingRoaming:
-    $diceroll: 1d4 
+  NumberAppearingRoaming: 1
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
@@ -1024,8 +1022,7 @@ GoldDragon:
   Morale: "10"
   Alignment: "Lawful"
   XP: "2,700"
-  NumberAppearingRoaming:
-    $diceroll: 1d4 
+  NumberAppearingRoaming: 1
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
@@ -1070,8 +1067,7 @@ RedDragon:
   Morale: "10"
   Alignment: "Chaotic"
   XP: "2,300"
-  NumberAppearingRoaming:
-    $diceroll: 1d4 
+  NumberAppearingRoaming: 1
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
@@ -2381,6 +2377,27 @@ LeechGiant:
     $roll: TreasureTypeNone
 
 
+Lich:
+  $extends: Monster
+  Title: "Lich"
+  Intelligent: True
+  ArmourClass: "0 [19+]"
+  HitDice: "12"
+  ExHitDice: 12
+  HitDiceRoll: 10d8+2
+  Attacks: "1 × touch, weapon or spell"
+  THAC0: "14 [+5]"
+  Movement: "90’ (30’)"
+  SavingThrows: "D8 W9 P8 B11 S8"
+  Morale: "8"
+  Alignment: "Chaotic"
+  XP: "1,490"
+  NumberAppearingRoaming: 1
+  NumberAppearingLair: 0
+  TreasureType: 
+    $roll: TreasureTypeG
+
+
 CrystalLivingStatue:
   $extends: Monster
   Title: "Crystal Living Statue"
@@ -3287,6 +3304,7 @@ GiantRat:
     $diceroll: 3d10
   TreasureType: 
     $roll: TreasureTypeC
+  Sound: shriek
 
 
 NormalRat:
@@ -3310,6 +3328,7 @@ NormalRat:
     $diceroll: 2d10
   TreasureType: 
     $roll: TreasureTypeL
+  Sound: shriek
 
 
 Rhagodessa:
@@ -4056,6 +4075,7 @@ Stirge:
     $diceroll: 3d12
   TreasureType: 
     $roll: TreasureTypeL
+  Sound: screech
 
 
 Thoul:

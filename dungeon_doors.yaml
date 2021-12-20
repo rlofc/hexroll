@@ -1,11 +1,11 @@
 DungeonDoorKey:
   Title: Key
-  Active: '!'
+  Active: null
 
 
 DungeonDoorLever:
   Title: Lever
-  Active: '!'
+  Active: null
 
 
 DungeonDoor:

@@ -166,7 +166,7 @@ VapourTrap:
     - !jinja >
       There's a __poisonous gas trap__ here. If undetected, there's a 2 in 6
       chance of triggering if {{Trigger}}, causing the gas to come out of
-      __cracks in the wall__.
+      __slits in the wall__.
       {{PoisonDamage}}
 
     - !jinja >

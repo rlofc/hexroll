@@ -18,6 +18,7 @@ CaveEncounterTier3:
     - DungeonEncounterVerminsTier3
     - DungeonEncounterOozesTier3
     - DungeonEncounterAbberationsTier3
+    - DungeonEncounterDragonsTier3
 
 
 CaveFeatureTier1:
@@ -70,6 +71,7 @@ Cavern:
         DungeonFeatureTier1: CaveFeatureTier1
         DungeonFeatureTier2: CaveFeatureTier2
         DungeonFeatureTier3: CaveFeatureTier3
+        DungeonFeatureTier4: CaveFeatureTier3
 
 
 TombFeatureTier1:
@@ -92,11 +94,16 @@ TombFeatureTier2:
 
 TombFeatureTier3:
   $subclass:
-    - DungeonEncounterUndeadHD7
-    - DungeonEncounterUndeadHD7
+    - DungeonEncounterUndeadTier3
+    - DungeonEncounterUndeadTier3
     - DungeonTreasureTier3
     - DungeonRemains
     - DungeonFungi
+
+
+TombFeatureTier4:
+  $subclass:
+    - DungeonEncounterUndeadTier4
 
 
 Tomb:
@@ -123,11 +130,14 @@ Tomb:
 
   Map:
     $roll: 
-      $class: DungeonShape
+      $class: !weighted
+        - DungeonShape^2
+        - DungeonIrregularShape
       $bootstrap:
         DungeonFeatureTier1: TombFeatureTier1
         DungeonFeatureTier2: TombFeatureTier2
         DungeonFeatureTier3: TombFeatureTier3
+        DungeonFeatureTier4: TombFeatureTier4
 
 
 TempleEncounterTier1:
@@ -144,6 +154,12 @@ TempleEncounterTier2:
 TempleEncounterTier3:
   $subclass:
     - DungeonEncounterMagicalTier3
+
+
+TempleEncounterTier4:
+  $subclass: !weighted
+    - DungeonEncounterDragonsTier3^3
+    - DungeonEncounterDragonsTier4
 
 
 TempleFeatureTier1:
@@ -170,6 +186,11 @@ TempleFeatureTier3:
     - DungeonRemains
 
 
+TempleFeatureTier4:
+  $subclass:
+    - TempleEncounterTier4
+
+
 Temple:
   $extends: Dungeon
 
@@ -193,3 +214,4 @@ Temple:
         DungeonFeatureTier1: TempleFeatureTier1
         DungeonFeatureTier2: TempleFeatureTier2
         DungeonFeatureTier3: TempleFeatureTier3
+        DungeonFeatureTier4: TempleFeatureTier4

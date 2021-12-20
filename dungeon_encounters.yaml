@@ -60,6 +60,17 @@ MonstersAbberationTier3:
     - AbberationHD13
 
 
+MonstersDragonsTier3:
+  $subclass:
+    - DragonHD7
+    - DragonHD9
+
+
+MonstersDragonsTier4:
+  $subclass:
+    - DragonHD10
+
+
 DungeonEncounterHumanoids:
   $extends: DungeonEncounter
   Foreshadow: !jinja >
@@ -109,6 +120,16 @@ DungeonEncounterVerminsTier3:
   $extends: DungeonEncounterVermins
   Monster:
     $roll: MonstersVerminTier3
+  Rumor:
+    $roll:
+      $class: Rumor
+      $inject:
+        $namespace: encounter
+        $values:
+          Details: !jinja >
+            There’s __{{encounter.Monster.Title | articlize}}__ in
+            __{{encounter.DungeonContext.Name.Title | title}}__
+
 
 
 DungeonEncounterOozes:
@@ -143,6 +164,16 @@ DungeonEncounterOozesTier3:
   $extends: DungeonEncounterOozes
   Monster:
     $roll: MonstersOozeTier3
+  Rumor:
+    $roll:
+      $class: Rumor
+      $inject:
+        $namespace: encounter
+        $values:
+          Details: !jinja >
+            There’s __{{encounter.Monster.Title | articlize}}__ in
+            __{{encounter.DungeonContext.Name.Title | title}}__
+
 
 
 DungeonEncounterAbberations:
@@ -153,9 +184,12 @@ DungeonEncounterAbberations:
     {%if Monster.NumberAppearingRoaming>1%}are{%else%}is{%endif%}
     making inside this area
   Hint: 
-    - Red eyes are glowing inside like fire, and you hear a growl
+    - !jinja >
+      Red eyes are glowing inside like fire, and you hear a
+      {%-if Monster.Sound%} {{Monster.Sound}}{%else%}growl{%endif-%}
     - Looking down, you realize you just stepped into a pool of blood
     - You feel the warm stench of a monster's breath
+
 
   Undead: False
 
@@ -176,6 +210,16 @@ DungeonEncounterAbberationsTier3:
   $extends: DungeonEncounterAbberations
   Monster:
     $roll: MonstersAbberationTier3
+  Rumor:
+    $roll:
+      $class: Rumor
+      $inject:
+        $namespace: encounter
+        $values:
+          Details: !jinja >
+            There’s __{{encounter.Monster.Title | articlize}}__ in
+            __{{encounter.DungeonContext.Name.Title | title}}__
+
 
 
 DungeonEncounterCultistsClasses:
@@ -205,6 +249,10 @@ DungeonEncounterTempleAnimalsClasses:
   $subclass:
     - ApeWhite
     - Tiger
+    - BlackBear
+    - NormalCrocodile
+    - SpittingCobra
+    - ToadGiant
 
 
 DungeonEncounterTempleAnimals:
@@ -262,6 +310,45 @@ DungeonEncounterMagicalTier3:
   $extends: DungeonEncounterMagical
   Monster:
     $roll: MonstersMagicalTier3
+  Rumor:
+    $roll:
+      $class: Rumor
+      $inject:
+        $namespace: encounter
+        $values:
+          Details: !jinja >
+            There’s __{{encounter.Monster.Title | articlize}}__ in
+            __{{encounter.DungeonContext.Name.Title | title}}__
+
+
+DungeonEncounterDragonsTier3:
+  $extends: DungeonEncounterMagical
+  Monster:
+    $roll: MonstersDragonsTier3
+  Rumor:
+    $roll:
+      $class: Rumor
+      $inject:
+        $namespace: encounter
+        $values:
+          Details: !jinja >
+            There’s __{{encounter.Monster.Title | articlize}}__ in
+            __{{encounter.DungeonContext.Name.Title | title}}__
+
+
+DungeonEncounterDragonsTier4:
+  $extends: DungeonEncounterMagical
+  Monster:
+    $roll: MonstersDragonsTier4
+  Rumor:
+    $roll:
+      $class: Rumor
+      $inject:
+        $namespace: encounter
+        $values:
+          Details: !jinja >
+            There’s __{{encounter.Monster.Title | articlize}}__ in
+            __{{encounter.DungeonContext.Name.Title | title}}__
 
 
 DungeonEncounterUndead:
@@ -276,7 +363,7 @@ DungeonEncounterUndead:
     $roll: UndeadMonster
 
 
-DungeonEncounterUndeadHD7:
+DungeonEncounterUndeadTier3:
   $extends: DungeonEncounterUndead
   Monster:
     $roll: UndeadHD7
@@ -288,7 +375,22 @@ DungeonEncounterUndeadHD7:
         $namespace: encounter
         $values:
           Details: !jinja >
-            There’s a __{{encounter.Monster.Title}}__ in
+            There’s __{{encounter.Monster.Title | articlize}}__ in
             __{{encounter.DungeonContext.Name.Title | title}}__
 
+
+DungeonEncounterUndeadTier4:
+  $extends: DungeonEncounterUndead
+  Monster:
+    $roll: UndeadHD12
+
+  Rumor:
+    $roll:
+      $class: Rumor
+      $inject:
+        $namespace: encounter
+        $values:
+          Details: !jinja >
+            There’s __{{encounter.Monster.Title | articlize}}__ in
+            __{{encounter.DungeonContext.Name.Title | title}}__
 
