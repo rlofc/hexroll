@@ -33,7 +33,12 @@ Acolyte:
   NumberAppearingLair:
     $diceroll: 1d20
   TreasureType: 
-    $roll: TreasureTypeU
+    $roll:
+      $class: TreasureTypeU
+      $bootstrap:
+        MaxNumberAppearingRoaming: 8
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 ApeWhite:
@@ -56,7 +61,12 @@ ApeWhite:
   NumberAppearingLair: 
     $diceroll: 2d4
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 6
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Bandit:
@@ -79,7 +89,12 @@ Bandit:
   NumberAppearingLair: 
     $diceroll: 3d10
   TreasureType: 
-    $roll: TreasureTypeU # (A)
+    $roll:
+      $class: TreasureTypeU # (A)
+      $bootstrap:
+        MaxNumberAppearingRoaming: 8
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Basilisk:
@@ -102,7 +117,12 @@ Basilisk:
   NumberAppearingLair:
     $diceroll: 1d6
   TreasureType: 
-    $roll: TreasureTypeF
+    $roll:
+      $class: TreasureTypeF
+      $bootstrap:
+        MaxNumberAppearingRoaming: 6
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 GiantBat:
@@ -125,7 +145,12 @@ GiantBat:
   NumberAppearingLair:
     $diceroll: 1d10
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 10
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 GiantVampireBat:
@@ -148,7 +173,12 @@ GiantVampireBat:
   NumberAppearingLair:
     $diceroll: 1d10
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 10 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 NormalBat:
@@ -171,7 +201,12 @@ NormalBat:
   NumberAppearingLair:
     $diceroll: 1d100
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 100 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 BlackBear:
@@ -194,7 +229,12 @@ BlackBear:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeU
+    $roll:
+      $class: TreasureTypeU
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 CaveBear:
@@ -217,7 +257,12 @@ CaveBear:
   NumberAppearingLair:
     $diceroll: 1d2
   TreasureType: 
-    $roll: TreasureTypeV
+    $roll:
+      $class: TreasureTypeV
+      $bootstrap:
+        MaxNumberAppearingRoaming: 2
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 GrizzlyBear:
@@ -239,7 +284,11 @@ GrizzlyBear:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeU
+    $roll:
+      $class: TreasureTypeU
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 PolarBear:
@@ -261,7 +310,11 @@ PolarBear:
   NumberAppearingLair:
     $diceroll: 1d2
   TreasureType: 
-    $roll: TreasureTypeU
+    $roll:
+      $class: TreasureTypeU
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 FireBeetle:
@@ -284,7 +337,12 @@ FireBeetle:
   NumberAppearingLair:
     $diceroll: 2d6
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 8 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 OilBeetle:
@@ -307,7 +365,12 @@ OilBeetle:
   NumberAppearingLair:
     $diceroll: 2d6
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 8 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 TigerBeetle:
@@ -330,7 +393,12 @@ TigerBeetle:
   NumberAppearingLair:
     $diceroll: 2d4
   TreasureType: 
-    $roll: TreasureTypeU
+    $roll:
+      $class: TreasureTypeU
+      $bootstrap:
+        MaxNumberAppearingRoaming: 6 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Berserker:
@@ -353,7 +421,12 @@ Berserker:
   NumberAppearingLair:
     $diceroll: 3d10
   TreasureType: 
-    $roll: TreasureTypeP # (B)
+    $roll:
+      $class: TreasureTypeP # (B)
+      $bootstrap:
+        MaxNumberAppearingRoaming: 6 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 BlackPudding:
@@ -374,7 +447,11 @@ BlackPudding:
   NumberAppearingRoaming: 1 
   NumberAppearingLair: 0
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 BlinkDog:
@@ -397,7 +474,12 @@ BlinkDog:
   NumberAppearingLair:
     $diceroll: 1d6
   TreasureType: 
-    $roll: TreasureTypeC
+    $roll:
+      $class: TreasureTypeC
+      $bootstrap:
+        MaxNumberAppearingRoaming: 6 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Boar:
@@ -420,7 +502,12 @@ Boar:
   NumberAppearingLair:
     $diceroll: 1d6
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 6 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Brigand:
@@ -442,7 +529,11 @@ Brigand:
   NumberAppearingLair:
     $diceroll: 1d4x10
   TreasureType: 
-    $roll: TreasureTypeA
+    $roll:
+      $class: TreasureTypeA
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Buccaneer:
@@ -463,7 +554,11 @@ Buccaneer:
   NumberAppearingRoaming: 0
   NumberAppearingLair: 0
   TreasureType: 
-    $roll: TreasureTypeA
+    $roll:
+      $class: TreasureTypeA
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Bugbear:
@@ -486,7 +581,12 @@ Bugbear:
   NumberAppearingLair:
     $diceroll: 5d4
   TreasureType: 
-    $roll: TreasureTypeB
+    $roll:
+      $class: TreasureTypeB
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Caecilia:
@@ -509,7 +609,12 @@ Caecilia:
   NumberAppearingLair:
     $diceroll: 1d3
   TreasureType: 
-    $roll: TreasureTypeB
+    $roll:
+      $class: TreasureTypeB
+      $bootstrap:
+        MaxNumberAppearingRoaming: 3 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Camel:
@@ -531,7 +636,11 @@ Camel:
   NumberAppearingLair:
     $diceroll: 2d4
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
   Cost: 100 gp
 
 
@@ -555,7 +664,12 @@ CarcassCrawler:
   NumberAppearingLair:
     $diceroll: 1d3
   TreasureType: 
-    $roll: TreasureTypeB
+    $roll:
+      $class: TreasureTypeB
+      $bootstrap:
+        MaxNumberAppearingRoaming: 3 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Lion:
@@ -578,7 +692,12 @@ Lion:
   NumberAppearingLair:
     $diceroll: 1d8
   TreasureType: 
-    $roll: TreasureTypeU
+    $roll:
+      $class: TreasureTypeU
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 MountainLion:
@@ -601,7 +720,12 @@ MountainLion:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeU
+    $roll:
+      $class: TreasureTypeU
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Panther:
@@ -624,7 +748,12 @@ Panther:
   NumberAppearingLair:
     $diceroll: 1d6
   TreasureType: 
-    $roll: TreasureTypeU
+    $roll:
+      $class: TreasureTypeU
+      $bootstrap:
+        MaxNumberAppearingRoaming: 2 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 SabreToothedTiger:
@@ -647,7 +776,12 @@ SabreToothedTiger:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeV
+    $roll:
+      $class: TreasureTypeV
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Tiger:
@@ -669,7 +803,11 @@ Tiger:
   NumberAppearingLair:
     $diceroll: 1d3
   TreasureType: 
-    $roll: TreasureTypeU
+    $roll:
+      $class: TreasureTypeU
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 CaveLocust:
@@ -692,7 +830,12 @@ CaveLocust:
   NumberAppearingLair:
     $diceroll: 1d10
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 20 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Centaur:
@@ -714,7 +857,11 @@ Centaur:
   NumberAppearingLair:
     $diceroll: 2d10
   TreasureType: 
-    $roll: TreasureTypeA
+    $roll:
+      $class: TreasureTypeA
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 CentipedeGiant:
@@ -737,7 +884,12 @@ CentipedeGiant:
   NumberAppearingLair:
     $diceroll: 1d8
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 8 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Chimera:
@@ -760,7 +912,12 @@ Chimera:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeF
+    $roll:
+      $class: TreasureTypeF
+      $bootstrap:
+        MaxNumberAppearingRoaming: 2 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Cockatrice:
@@ -783,7 +940,12 @@ Cockatrice:
   NumberAppearingLair:
     $diceroll: 1d8
   TreasureType: 
-    $roll: TreasureTypeD
+    $roll:
+      $class: TreasureTypeD
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 CrabGiant:
@@ -806,7 +968,12 @@ CrabGiant:
   NumberAppearingLair:
     $diceroll: 1d6
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 2 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 GiantCrocodile:
@@ -828,7 +995,11 @@ GiantCrocodile:
   NumberAppearingLair:
     $diceroll: 1d3
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 LargeCrocodile:
@@ -850,7 +1021,11 @@ LargeCrocodile:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 NormalCrocodile:
@@ -872,7 +1047,11 @@ NormalCrocodile:
   NumberAppearingLair:
     $diceroll: 1d8
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Cyclops:
@@ -894,7 +1073,11 @@ Cyclops:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeE # + 5,000gp
+    $roll:
+      $class: TreasureTypeE # + 5,000gp
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Dervish:
@@ -916,7 +1099,11 @@ Dervish:
   NumberAppearingLair:
     $diceroll: 1d6+1x10
   TreasureType: 
-    $roll: TreasureTypeA
+    $roll:
+      $class: TreasureTypeA
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 DjinniLesser:
@@ -937,7 +1124,11 @@ DjinniLesser:
   NumberAppearingRoaming: 1 
   NumberAppearingLair: 1
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Doppelgänger:
@@ -960,7 +1151,12 @@ Doppelgänger:
   NumberAppearingLair:
     $diceroll: 1d6
   TreasureType: 
-    $roll: TreasureTypeE
+    $roll:
+      $class: TreasureTypeE
+      $bootstrap:
+        MaxNumberAppearingRoaming: 6 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 BlackDragon:
@@ -982,7 +1178,11 @@ BlackDragon:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeH
+    $roll:
+      $class: TreasureTypeH
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 BlueDragon:
@@ -1004,7 +1204,11 @@ BlueDragon:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeH
+    $roll:
+      $class: TreasureTypeH
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 GoldDragon:
@@ -1026,7 +1230,11 @@ GoldDragon:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeH
+    $roll:
+      $class: TreasureTypeH
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 GreenDragon:
@@ -1049,7 +1257,12 @@ GreenDragon:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeH
+    $roll:
+      $class: TreasureTypeH
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 RedDragon:
@@ -1071,7 +1284,11 @@ RedDragon:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeH
+    $roll:
+      $class: TreasureTypeH
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 SeaDragon:
@@ -1093,7 +1310,11 @@ SeaDragon:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeH
+    $roll:
+      $class: TreasureTypeH
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 WhiteDragon:
@@ -1116,7 +1337,12 @@ WhiteDragon:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeH
+    $roll:
+      $class: TreasureTypeH
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 DragonTurtle:
@@ -1137,7 +1363,11 @@ DragonTurtle:
   NumberAppearingRoaming: 0 
   NumberAppearingLair: 1
   TreasureType: 
-    $roll: TreasureTypeH
+    $roll:
+      $class: TreasureTypeH
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 DriverAnt:
@@ -1160,7 +1390,12 @@ DriverAnt:
   NumberAppearingLair:
     $diceroll: 4d6
   TreasureType: 
-    $roll: TreasureTypeU # (see below)
+    $roll:
+      $class: TreasureTypeU # (see below)
+      $bootstrap:
+        MaxNumberAppearingRoaming: 8 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Dryad:
@@ -1182,7 +1417,11 @@ Dryad:
   NumberAppearingLair:
     $diceroll: 1d6
   TreasureType: 
-    $roll: TreasureTypeD
+    $roll:
+      $class: TreasureTypeD
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 DwarfMonster:
@@ -1205,7 +1444,12 @@ DwarfMonster:
   NumberAppearingLair:
     $diceroll: 5d8
   TreasureType: 
-    $roll: TreasureTypeG
+    $roll:
+      $class: TreasureTypeG
+      $bootstrap:
+        MaxNumberAppearingRoaming: 6 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 EfreetiLesser:
@@ -1226,7 +1470,11 @@ EfreetiLesser:
   NumberAppearingRoaming: 1 
   NumberAppearingLair: 1
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 AirElemental:
@@ -1247,7 +1495,11 @@ AirElemental:
   NumberAppearingRoaming: 1 
   NumberAppearingLair: 1
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 EarthElemental:
@@ -1268,7 +1520,11 @@ EarthElemental:
   NumberAppearingRoaming: 1 
   NumberAppearingLair: 1
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 FireElemental:
@@ -1289,7 +1545,11 @@ FireElemental:
   NumberAppearingRoaming: 1 
   NumberAppearingLair: 1
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 WaterElemental:
@@ -1310,7 +1570,11 @@ WaterElemental:
   NumberAppearingRoaming: 1 
   NumberAppearingLair: 1
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Elephant:
@@ -1332,7 +1596,11 @@ Elephant:
   NumberAppearingLair:
     $diceroll: 1d20
   TreasureType: 
-    $roll: TreasureTypeTusks
+    $roll:
+      $class: TreasureTypeTusks
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 ElfMonster:
@@ -1355,7 +1623,12 @@ ElfMonster:
   NumberAppearingLair:
     $diceroll: 2d12
   TreasureType: 
-    $roll: TreasureTypeE
+    $roll:
+      $class: TreasureTypeE
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 FerretGiant:
@@ -1378,7 +1651,12 @@ FerretGiant:
   NumberAppearingLair:
     $diceroll: 1d12
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 8 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 GiantBass:
@@ -1400,7 +1678,11 @@ GiantBass:
   NumberAppearingLair:
     $diceroll: 2d4
   TreasureType: 
-    $roll: TreasureTypeNone #(1)
+    $roll:
+      $class: TreasureTypeNone #(1)
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 GiantCatfish:
@@ -1422,7 +1704,11 @@ GiantCatfish:
   NumberAppearingLair:
     $diceroll: 1d2
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 GiantPiranha:
@@ -1444,7 +1730,11 @@ GiantPiranha:
   NumberAppearingLair:
     $diceroll: 2d4
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 GiantRockfish:
@@ -1466,7 +1756,11 @@ GiantRockfish:
   NumberAppearingLair:
     $diceroll: 2d4
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 GiantSturgeon:
@@ -1486,7 +1780,11 @@ GiantSturgeon:
   XP: "1,600"
   NumberAppearingRoaming: 0 
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Gargoyle:
@@ -1509,7 +1807,12 @@ Gargoyle:
   NumberAppearingLair:
     $diceroll: 2d4
   TreasureType: 
-    $roll: TreasureTypeC
+    $roll:
+      $class: TreasureTypeC
+      $bootstrap:
+        MaxNumberAppearingRoaming: 6 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 GelatinousCube:
@@ -1530,7 +1833,11 @@ GelatinousCube:
   NumberAppearingRoaming: 1 
   NumberAppearingLair: 0
   TreasureType: 
-    $roll: TreasureTypeV
+    $roll:
+      $class: TreasureTypeV
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Ghoul:
@@ -1553,7 +1860,12 @@ Ghoul:
   NumberAppearingLair:
     $diceroll: 2d8
   TreasureType: 
-    $roll: TreasureTypeB
+    $roll:
+      $class: TreasureTypeB
+      $bootstrap:
+        MaxNumberAppearingRoaming: 6 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 CloudGiant:
@@ -1576,7 +1888,12 @@ CloudGiant:
   NumberAppearingLair:
     $diceroll: 1d3
   TreasureType: 
-    $roll: TreasureTypeE # + 5,000gp
+    $roll:
+      $class: TreasureTypeE # + 5,000gp
+      $bootstrap:
+        MaxNumberAppearingRoaming: 2 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 FireGiant:
@@ -1599,7 +1916,12 @@ FireGiant:
   NumberAppearingLair:
     $diceroll: 1d3
   TreasureType: 
-    $roll: TreasureTypeE # + 5,000gp
+    $roll:
+      $class: TreasureTypeE # + 5,000gp
+      $bootstrap:
+        MaxNumberAppearingRoaming: 2 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 FrostGiant:
@@ -1622,7 +1944,12 @@ FrostGiant:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeE # + 5,000gp
+    $roll:
+      $class: TreasureTypeE # + 5,000gp
+      $bootstrap:
+        MaxNumberAppearingRoaming: 2 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 HillGiant:
@@ -1645,7 +1972,12 @@ HillGiant:
   NumberAppearingLair:
     $diceroll: 2d4
   TreasureType: 
-    $roll: TreasureTypeE # + 5,000gp
+    $roll:
+      $class: TreasureTypeE # + 5,000gp
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 StoneGiant:
@@ -1668,7 +2000,12 @@ StoneGiant:
   NumberAppearingLair:
     $diceroll: 1d6
   TreasureType: 
-    $roll: TreasureTypeE # + 5,000gp
+    $roll:
+      $class: TreasureTypeE # + 5,000gp
+      $bootstrap:
+        MaxNumberAppearingRoaming: 2 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 StormGiant:
@@ -1690,7 +2027,11 @@ StormGiant:
   NumberAppearingLair:
     $diceroll: 1d3
   TreasureType: 
-    $roll: TreasureTypeE # + 5,000gp
+    $roll:
+      $class: TreasureTypeE # + 5,000gp
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Gnoll:
@@ -1713,7 +2054,12 @@ Gnoll:
   NumberAppearingLair:
     $diceroll: 3d6
   TreasureType: 
-    $roll: TreasureTypeD
+    $roll:
+      $class: TreasureTypeD
+      $bootstrap:
+        MaxNumberAppearingRoaming: 6 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Gnome:
@@ -1736,7 +2082,12 @@ Gnome:
   NumberAppearingLair:
     $diceroll: 5d8
   TreasureType: 
-    $roll: TreasureTypeC
+    $roll:
+      $class: TreasureTypeC
+      $bootstrap:
+        MaxNumberAppearingRoaming: 8 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Goblin:
@@ -1759,7 +2110,12 @@ Goblin:
   NumberAppearingLair:
     $diceroll: 6d10
   TreasureType: 
-    $roll: TreasureTypeR # (C)
+    $roll:
+      $class: TreasureTypeR # (C)
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 AmberGolem:
@@ -1780,7 +2136,11 @@ AmberGolem:
   NumberAppearingRoaming: 1 
   NumberAppearingLair: 1
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 BoneGolem:
@@ -1801,7 +2161,11 @@ BoneGolem:
   NumberAppearingRoaming: 1 
   NumberAppearingLair: 1
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 BronzeGolem:
@@ -1822,7 +2186,11 @@ BronzeGolem:
   NumberAppearingRoaming: 1 
   NumberAppearingLair: 1
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 WoodGolem:
@@ -1843,7 +2211,11 @@ WoodGolem:
   NumberAppearingRoaming: 1 
   NumberAppearingLair: 1
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Gorgon:
@@ -1866,7 +2238,12 @@ Gorgon:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeE
+    $roll:
+      $class: TreasureTypeE
+      $bootstrap:
+        MaxNumberAppearingRoaming: 2 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 GreenSlime:
@@ -1887,7 +2264,11 @@ GreenSlime:
   NumberAppearingRoaming: 1 
   NumberAppearingLair: 0
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 GreyOoze:
@@ -1908,7 +2289,11 @@ GreyOoze:
   NumberAppearingRoaming: 1 
   NumberAppearingLair: 1
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Griffon:
@@ -1930,7 +2315,11 @@ Griffon:
   NumberAppearingLair:
     $diceroll: 2d8
   TreasureType: 
-    $roll: TreasureTypeE
+    $roll:
+      $class: TreasureTypeE
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 HalflingMonster:
@@ -1953,7 +2342,12 @@ HalflingMonster:
   NumberAppearingLair:
     $diceroll: 5d8
   TreasureType: 
-    $roll: TreasureTypeV # (B)
+    $roll:
+      $class: TreasureTypeV # (B)
+      $bootstrap:
+        MaxNumberAppearingRoaming: 18
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Harpy:
@@ -1976,7 +2370,12 @@ Harpy:
   NumberAppearingLair:
     $diceroll: 2d4
   TreasureType: 
-    $roll: TreasureTypeC
+    $roll:
+      $class: TreasureTypeC
+      $bootstrap:
+        MaxNumberAppearingRoaming: 6 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 GiantHawk:
@@ -1998,7 +2397,11 @@ GiantHawk:
   NumberAppearingLair:
     $diceroll: 1d3
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 NormalHawk:
@@ -2020,7 +2423,11 @@ NormalHawk:
   NumberAppearingLair:
     $diceroll: 1d6
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Hellhound:
@@ -2043,7 +2450,12 @@ Hellhound:
   NumberAppearingLair:
     $diceroll: 2d4
   TreasureType: 
-    $roll: TreasureTypeC
+    $roll:
+      $class: TreasureTypeC
+      $bootstrap:
+        MaxNumberAppearingRoaming: 8
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 LargeHerdAnimal:
@@ -2065,7 +2477,11 @@ LargeHerdAnimal:
   NumberAppearingLair:
     $diceroll: 3d10
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 MediumHerdAnimal:
@@ -2087,7 +2503,11 @@ MediumHerdAnimal:
   NumberAppearingLair:
     $diceroll: 3d10
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 SmallHerdAnimal:
@@ -2109,7 +2529,11 @@ SmallHerdAnimal:
   NumberAppearingLair:
     $diceroll: 3d10
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Hippogriff:
@@ -2131,7 +2555,11 @@ Hippogriff:
   NumberAppearingLair:
     $diceroll: 2d8
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Hobgoblin:
@@ -2154,7 +2582,12 @@ Hobgoblin:
   NumberAppearingLair:
     $diceroll: 4d6
   TreasureType: 
-    $roll: TreasureTypeD
+    $roll:
+      $class: TreasureTypeD
+      $bootstrap:
+        MaxNumberAppearingRoaming: 6 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 DraftHorse:
@@ -2175,7 +2608,11 @@ DraftHorse:
   NumberAppearingRoaming: 0 
   NumberAppearingLair: 0
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
   Cost: 40 gp
 
 
@@ -2197,7 +2634,11 @@ RidingHorse:
   NumberAppearingRoaming: 0 
   NumberAppearingLair: 0
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
   Cost: 75 gp
 
 
@@ -2219,7 +2660,11 @@ WarHorse:
   NumberAppearingRoaming: 0 
   NumberAppearingLair: 0
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
   Cost: 250 gp
 
 
@@ -2242,7 +2687,11 @@ WildHorse:
   NumberAppearingLair:
     $diceroll: 1d10x10
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Hydra:
@@ -2263,7 +2712,11 @@ Hydra:
   NumberAppearingRoaming: 1 
   NumberAppearingLair: 1
   TreasureType: 
-    $roll: TreasureTypeB
+    $roll:
+      $class: TreasureTypeB
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 InsectSwarm:
@@ -2285,7 +2738,11 @@ InsectSwarm:
   NumberAppearingLair:
     $diceroll: 1d3
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 InvisibleStalkerMonster:
@@ -2306,7 +2763,11 @@ InvisibleStalkerMonster:
   NumberAppearingRoaming: 1 
   NumberAppearingLair: 1
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 KillerBee:
@@ -2329,7 +2790,12 @@ KillerBee:
   NumberAppearingLair:
     $diceroll: 5d6
   TreasureType: 
-    $roll: TreasureTypeHoney
+    $roll:
+      $class: TreasureTypeHoney
+      $bootstrap:
+        MaxNumberAppearingRoaming: 6 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Kobold:
@@ -2352,7 +2818,12 @@ Kobold:
   NumberAppearingLair:
     $diceroll: 6d10
   TreasureType: 
-    $roll: TreasureTypeP # (J)
+    $roll:
+      $class: TreasureTypeP # (J)
+      $bootstrap:
+        MaxNumberAppearingRoaming: 18
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 LeechGiant:
@@ -2374,7 +2845,11 @@ LeechGiant:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Lich:
@@ -2395,7 +2870,11 @@ Lich:
   NumberAppearingRoaming: 1
   NumberAppearingLair: 0
   TreasureType: 
-    $roll: TreasureTypeG
+    $roll:
+      $class: TreasureTypeG
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 CrystalLivingStatue:
@@ -2418,7 +2897,12 @@ CrystalLivingStatue:
   NumberAppearingLair:
     $diceroll: 1d6
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 6 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 IronLivingStatue:
@@ -2441,7 +2925,12 @@ IronLivingStatue:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 RockLivingStatue:
@@ -2464,7 +2953,12 @@ RockLivingStatue:
   NumberAppearingLair:
     $diceroll: 1d3
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 3 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Draco:
@@ -2487,7 +2981,12 @@ Draco:
   NumberAppearingLair:
     $diceroll: 1d8
   TreasureType: 
-    $roll: TreasureTypeU # B15 S16 (2)
+    $roll:
+      $class: TreasureTypeU # B15 S16 (2)
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Gecko:
@@ -2510,7 +3009,12 @@ Gecko:
   NumberAppearingLair:
     $diceroll: 1d10
   TreasureType: 
-    $roll: TreasureTypeU
+    $roll:
+      $class: TreasureTypeU
+      $bootstrap:
+        MaxNumberAppearingRoaming: 6 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 HornedChameleon:
@@ -2533,7 +3037,12 @@ HornedChameleon:
   NumberAppearingLair:
     $diceroll: 1d6
   TreasureType: 
-    $roll: TreasureTypeU
+    $roll:
+      $class: TreasureTypeU
+      $bootstrap:
+        MaxNumberAppearingRoaming: 3 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Tuatara:
@@ -2556,7 +3065,12 @@ Tuatara:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeV
+    $roll:
+      $class: TreasureTypeV
+      $bootstrap:
+        MaxNumberAppearingRoaming: 2 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 LizardMan:
@@ -2579,7 +3093,12 @@ LizardMan:
   NumberAppearingLair:
     $diceroll: 6d6
   TreasureType: 
-    $roll: TreasureTypeD
+    $roll:
+      $class: TreasureTypeD
+      $bootstrap:
+        MaxNumberAppearingRoaming: 8
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 DevilSwine:
@@ -2602,7 +3121,12 @@ DevilSwine:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeC
+    $roll:
+      $class: TreasureTypeC
+      $bootstrap:
+        MaxNumberAppearingRoaming: 3 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Werebear:
@@ -2625,7 +3149,12 @@ Werebear:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeC
+    $roll:
+      $class: TreasureTypeC
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Wereboar:
@@ -2648,7 +3177,12 @@ Wereboar:
   NumberAppearingLair:
     $diceroll: 2d4
   TreasureType: 
-    $roll: TreasureTypeC
+    $roll:
+      $class: TreasureTypeC
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Wererat:
@@ -2671,7 +3205,12 @@ Wererat:
   NumberAppearingLair:
     $diceroll: 2d8
   TreasureType: 
-    $roll: TreasureTypeC
+    $roll:
+      $class: TreasureTypeC
+      $bootstrap:
+        MaxNumberAppearingRoaming: 8 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Weretiger:
@@ -2694,7 +3233,12 @@ Weretiger:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeC
+    $roll:
+      $class: TreasureTypeC
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Werewolf:
@@ -2717,7 +3261,12 @@ Werewolf:
   NumberAppearingLair:
     $diceroll: 2d6
   TreasureType: 
-    $roll: TreasureTypeC
+    $roll:
+      $class: TreasureTypeC
+      $bootstrap:
+        MaxNumberAppearingRoaming: 6 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Manticore:
@@ -2740,7 +3289,12 @@ Manticore:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeD
+    $roll:
+      $class: TreasureTypeD
+      $bootstrap:
+        MaxNumberAppearingRoaming: 2 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Mastodon:
@@ -2762,7 +3316,11 @@ Mastodon:
   NumberAppearingLair:
     $diceroll: 2d8
   TreasureType: 
-    $roll: TreasureTypeTusks
+    $roll:
+      $class: TreasureTypeTusks
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Medium:
@@ -2785,7 +3343,12 @@ Medium:
   NumberAppearingLair:
     $diceroll: 1d12
   TreasureType: 
-    $roll: TreasureTypeV
+    $roll:
+      $class: TreasureTypeV
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Medusa:
@@ -2808,7 +3371,12 @@ Medusa:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeF
+    $roll:
+      $class: TreasureTypeF
+      $bootstrap:
+        MaxNumberAppearingRoaming: 3 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Merchant:
@@ -2830,7 +3398,11 @@ Merchant:
   NumberAppearingLair:
     $diceroll: 1d20
   TreasureType: 
-    $roll: TreasureTypeA
+    $roll:
+      $class: TreasureTypeA
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Merman:
@@ -2852,7 +3424,11 @@ Merman:
   NumberAppearingLair:
     $diceroll: 1d20
   TreasureType: 
-    $roll: TreasureTypeA
+    $roll:
+      $class: TreasureTypeA
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Minotaur:
@@ -2875,7 +3451,12 @@ Minotaur:
   NumberAppearingLair:
     $diceroll: 1d8
   TreasureType: 
-    $roll: TreasureTypeC
+    $roll:
+      $class: TreasureTypeC
+      $bootstrap:
+        MaxNumberAppearingRoaming: 6 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Mule:
@@ -2898,7 +3479,12 @@ Mule:
   NumberAppearingLair:
     $diceroll: 2d6
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 8 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
   Cost: 30 gp
 
 
@@ -2922,7 +3508,12 @@ Mummy:
   NumberAppearingLair:
     $diceroll: 1d12
   TreasureType: 
-    $roll: TreasureTypeD
+    $roll:
+      $class: TreasureTypeD
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 NeanderthalCaveman:
@@ -2945,7 +3536,12 @@ NeanderthalCaveman:
   NumberAppearingLair:
     $diceroll: 1d4x10
   TreasureType: 
-    $roll: TreasureTypeC
+    $roll:
+      $class: TreasureTypeC
+      $bootstrap:
+        MaxNumberAppearingRoaming: 10 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Nixie:
@@ -2967,7 +3563,11 @@ Nixie:
   NumberAppearingLair:
     $diceroll: 2d20
   TreasureType: 
-    $roll: TreasureTypeB
+    $roll:
+      $class: TreasureTypeB
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Noble:
@@ -2990,7 +3590,12 @@ Noble:
   NumberAppearingLair:
     $diceroll: 2d6
   TreasureType: 
-    $roll: TreasureTypeV # × 3
+    $roll:
+      $class: TreasureTypeV # × 3
+      $bootstrap:
+        MaxNumberAppearingRoaming: 12
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Nomad:
@@ -3012,7 +3617,11 @@ Nomad:
   NumberAppearingLair:
     $diceroll: 1d4x10
   TreasureType: 
-    $roll: TreasureTypeA
+    $roll:
+      $class: TreasureTypeA
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 NormalHuman:
@@ -3035,7 +3644,12 @@ NormalHuman:
   NumberAppearingLair:
     $diceroll: 1d20
   TreasureType: 
-    $roll: TreasureTypeU
+    $roll:
+      $class: TreasureTypeU
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 OchreJelly:
@@ -3056,7 +3670,11 @@ OchreJelly:
   NumberAppearingRoaming: 1 
   NumberAppearingLair: 0
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 OctopusGiant:
@@ -3078,7 +3696,11 @@ OctopusGiant:
   NumberAppearingLair:
     $diceroll: 1d2
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Ogre:
@@ -3101,7 +3723,12 @@ Ogre:
   NumberAppearingLair:
     $diceroll: 2d6
   TreasureType: 
-    $roll: TreasureTypeC # + 1
+    $roll:
+      $class: TreasureTypeC # + 1
+      $bootstrap:
+        MaxNumberAppearingRoaming: 6 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Orc:
@@ -3124,7 +3751,12 @@ Orc:
   NumberAppearingLair:
     $diceroll: 1d6x10
   TreasureType: 
-    $roll: TreasureTypeD
+    $roll:
+      $class: TreasureTypeD
+      $bootstrap:
+        MaxNumberAppearingRoaming: 8
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 OwlBear:
@@ -3147,7 +3779,12 @@ OwlBear:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeC
+    $roll:
+      $class: TreasureTypeC
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Pegasus:
@@ -3169,7 +3806,11 @@ Pegasus:
   NumberAppearingLair:
     $diceroll: 1d12
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Pirate:
@@ -3190,7 +3831,11 @@ Pirate:
   NumberAppearingRoaming: 0 
   NumberAppearingLair: 0
   TreasureType: 
-    $roll: TreasureTypeA
+    $roll:
+      $class: TreasureTypeA
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Pixie:
@@ -3213,7 +3858,12 @@ Pixie:
   NumberAppearingLair:
     $diceroll: 1d4x10
   TreasureType: 
-    $roll: TreasureTypeR # + S
+    $roll:
+      $class: TreasureTypeR # + S
+      $bootstrap:
+        MaxNumberAppearingRoaming: 8
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Pteranodon:
@@ -3235,7 +3885,11 @@ Pteranodon:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeV
+    $roll:
+      $class: TreasureTypeV
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Pterodactyl:
@@ -3257,7 +3911,11 @@ Pterodactyl:
   NumberAppearingLair:
     $diceroll: 2d4
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 PurpleWorm:
@@ -3280,7 +3938,12 @@ PurpleWorm:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeD
+    $roll:
+      $class: TreasureTypeD
+      $bootstrap:
+        MaxNumberAppearingRoaming: 2 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 GiantRat:
@@ -3303,7 +3966,12 @@ GiantRat:
   NumberAppearingLair:
     $diceroll: 3d10
   TreasureType: 
-    $roll: TreasureTypeC
+    $roll:
+      $class: TreasureTypeC
+      $bootstrap:
+        MaxNumberAppearingRoaming: 18
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
   Sound: shriek
 
 
@@ -3327,7 +3995,12 @@ NormalRat:
   NumberAppearingLair:
     $diceroll: 2d10
   TreasureType: 
-    $roll: TreasureTypeL
+    $roll:
+      $class: TreasureTypeL
+      $bootstrap:
+        MaxNumberAppearingRoaming: 50 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
   Sound: shriek
 
 
@@ -3351,7 +4024,12 @@ Rhagodessa:
   NumberAppearingLair:
     $diceroll: 1d6
   TreasureType: 
-    $roll: TreasureTypeU
+    $roll:
+      $class: TreasureTypeU
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 NormalRhinoceros:
@@ -3373,7 +4051,11 @@ NormalRhinoceros:
   NumberAppearingLair:
     $diceroll: 1d12
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 WoollyRhinoceros:
@@ -3395,7 +4077,11 @@ WoollyRhinoceros:
   NumberAppearingLair:
     $diceroll: 1d8
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 RobberFly:
@@ -3418,7 +4104,12 @@ RobberFly:
   NumberAppearingLair:
     $diceroll: 2d6
   TreasureType: 
-    $roll: TreasureTypeU
+    $roll:
+      $class: TreasureTypeU
+      $bootstrap:
+        MaxNumberAppearingRoaming: 6 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 GiantRoc:
@@ -3439,7 +4130,11 @@ GiantRoc:
   NumberAppearingRoaming: 0 
   NumberAppearingLair: 1
   TreasureType: 
-    $roll: TreasureTypeI
+    $roll:
+      $class: TreasureTypeI
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 LargeRoc:
@@ -3461,7 +4156,11 @@ LargeRoc:
   NumberAppearingLair:
     $diceroll: 1d8
   TreasureType: 
-    $roll: TreasureTypeI
+    $roll:
+      $class: TreasureTypeI
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 SmallRoc:
@@ -3483,7 +4182,11 @@ SmallRoc:
   NumberAppearingLair:
     $diceroll: 1d12
   TreasureType: 
-    $roll: TreasureTypeI
+    $roll:
+      $class: TreasureTypeI
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 RockBaboon:
@@ -3506,7 +4209,12 @@ RockBaboon:
   NumberAppearingLair:
     $diceroll: 5d6
   TreasureType: 
-    $roll: TreasureTypeU
+    $roll:
+      $class: TreasureTypeU
+      $bootstrap:
+        MaxNumberAppearingRoaming: 12
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 RustMonster:
@@ -3529,7 +4237,12 @@ RustMonster:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 FlameSalamander:
@@ -3552,7 +4265,12 @@ FlameSalamander:
   NumberAppearingLair:
     $diceroll: 2d4
   TreasureType: 
-    $roll: TreasureTypeF
+    $roll:
+      $class: TreasureTypeF
+      $bootstrap:
+        MaxNumberAppearingRoaming: 5
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 FrostSalamander:
@@ -3575,7 +4293,12 @@ FrostSalamander:
   NumberAppearingLair:
     $diceroll: 1d3
   TreasureType: 
-    $roll: TreasureTypeE
+    $roll:
+      $class: TreasureTypeE
+      $bootstrap:
+        MaxNumberAppearingRoaming: 3 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 ScorpionGiant:
@@ -3598,7 +4321,12 @@ ScorpionGiant:
   NumberAppearingLair:
     $diceroll: 1d6
   TreasureType: 
-    $roll: TreasureTypeV
+    $roll:
+      $class: TreasureTypeV
+      $bootstrap:
+        MaxNumberAppearingRoaming: 6 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 SeaSerpentLesser:
@@ -3620,7 +4348,11 @@ SeaSerpentLesser:
   NumberAppearingLair:
     $diceroll: 2d6
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Shadow:
@@ -3643,7 +4375,12 @@ Shadow:
   NumberAppearingLair:
     $diceroll: 1d12
   TreasureType: 
-    $roll: TreasureTypeF
+    $roll:
+      $class: TreasureTypeF
+      $bootstrap:
+        MaxNumberAppearingRoaming: 8 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 BullShark:
@@ -3665,7 +4402,11 @@ BullShark:
   NumberAppearingLair:
     $diceroll: 3d6
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 GreatWhiteShark:
@@ -3687,7 +4428,11 @@ GreatWhiteShark:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 MakoShark:
@@ -3709,7 +4454,11 @@ MakoShark:
   NumberAppearingLair:
     $diceroll: 2d6
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 ShrewGiant:
@@ -3732,7 +4481,12 @@ ShrewGiant:
   NumberAppearingLair:
     $diceroll: 1d8
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Shrieker:
@@ -3754,7 +4508,12 @@ Shrieker:
     $diceroll: 1d8 
   NumberAppearingLair: 0
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 8 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Skeleton:
@@ -3777,7 +4536,12 @@ Skeleton:
   NumberAppearingLair:
     $diceroll: 3d10
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 12
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 GiantRattler:
@@ -3800,7 +4564,12 @@ GiantRattler:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeU
+    $roll:
+      $class: TreasureTypeU
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 PitViper:
@@ -3823,7 +4592,12 @@ PitViper:
   NumberAppearingLair:
     $diceroll: 1d8
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 8 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 RockPython:
@@ -3846,7 +4620,12 @@ RockPython:
   NumberAppearingLair:
     $diceroll: 1d3
   TreasureType: 
-    $roll: TreasureTypeU
+    $roll:
+      $class: TreasureTypeU
+      $bootstrap:
+        MaxNumberAppearingRoaming: 3 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 SeaSnake:
@@ -3869,7 +4648,12 @@ SeaSnake:
   NumberAppearingLair:
     $diceroll: 1d8
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 8 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 SpittingCobra:
@@ -3892,7 +4676,12 @@ SpittingCobra:
   NumberAppearingLair:
     $diceroll: 1d6
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 6 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Spectre:
@@ -3915,7 +4704,12 @@ Spectre:
   NumberAppearingLair:
     $diceroll: 1d8
   TreasureType: 
-    $roll: TreasureTypeE
+    $roll:
+      $class: TreasureTypeE
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 BlackWidow:
@@ -3938,7 +4732,12 @@ BlackWidow:
   NumberAppearingLair:
     $diceroll: 1d3
   TreasureType: 
-    $roll: TreasureTypeU
+    $roll:
+      $class: TreasureTypeU
+      $bootstrap:
+        MaxNumberAppearingRoaming: 3 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 CrabSpider:
@@ -3961,7 +4760,12 @@ CrabSpider:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeU
+    $roll:
+      $class: TreasureTypeU
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Tarantella:
@@ -3984,7 +4788,12 @@ Tarantella:
   NumberAppearingLair:
     $diceroll: 1d3
   TreasureType: 
-    $roll: TreasureTypeU
+    $roll:
+      $class: TreasureTypeU
+      $bootstrap:
+        MaxNumberAppearingRoaming: 3 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Sprite:
@@ -4007,7 +4816,12 @@ Sprite:
   NumberAppearingLair:
     $diceroll: 5d8
   TreasureType: 
-    $roll: TreasureTypeS
+    $roll:
+      $class: TreasureTypeS
+      $bootstrap:
+        MaxNumberAppearingRoaming: 18
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 SquidGiant:
@@ -4029,7 +4843,11 @@ SquidGiant:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeV
+    $roll:
+      $class: TreasureTypeV
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Stegosaurus:
@@ -4051,7 +4869,11 @@ Stegosaurus:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Stirge:
@@ -4074,7 +4896,12 @@ Stirge:
   NumberAppearingLair:
     $diceroll: 3d12
   TreasureType: 
-    $roll: TreasureTypeL
+    $roll:
+      $class: TreasureTypeL
+      $bootstrap:
+        MaxNumberAppearingRoaming: 10 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
   Sound: screech
 
 
@@ -4098,7 +4925,12 @@ Thoul:
   NumberAppearingLair:
     $diceroll: 1d10
   TreasureType: 
-    $roll: TreasureTypeC
+    $roll:
+      $class: TreasureTypeC
+      $bootstrap:
+        MaxNumberAppearingRoaming: 6 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Titanothere:
@@ -4120,7 +4952,11 @@ Titanothere:
   NumberAppearingLair:
     $diceroll: 1d6
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 ToadGiant:
@@ -4143,7 +4979,12 @@ ToadGiant:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Trader:
@@ -4166,7 +5007,12 @@ Trader:
   NumberAppearingLair:
     $diceroll: 3d6
   TreasureType: 
-    $roll: TreasureTypeU # + V
+    $roll:
+      $class: TreasureTypeU # + V
+      $bootstrap:
+        MaxNumberAppearingRoaming: 8 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Treant:
@@ -4188,7 +5034,11 @@ Treant:
   NumberAppearingLair:
     $diceroll: 1d8
   TreasureType: 
-    $roll: TreasureTypeC
+    $roll:
+      $class: TreasureTypeC
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Triceratops:
@@ -4210,7 +5060,11 @@ Triceratops:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Troglodyte:
@@ -4233,7 +5087,12 @@ Troglodyte:
   NumberAppearingLair:
     $diceroll: 5d8
   TreasureType: 
-    $roll: TreasureTypeA
+    $roll:
+      $class: TreasureTypeA
+      $bootstrap:
+        MaxNumberAppearingRoaming: 8 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Troll:
@@ -4256,7 +5115,12 @@ Troll:
   NumberAppearingLair:
     $diceroll: 1d8
   TreasureType: 
-    $roll: TreasureTypeD
+    $roll:
+      $class: TreasureTypeD
+      $bootstrap:
+        MaxNumberAppearingRoaming: 8 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 TyrannosaurusRex:
   $extends: Monster
@@ -4276,7 +5140,11 @@ TyrannosaurusRex:
   NumberAppearingRoaming: 0 
   NumberAppearingLair: 1
   TreasureType: 
-    $roll: TreasureTypeV # × 3
+    $roll:
+      $class: TreasureTypeV # × 3
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 Unicorn:
   $extends: Monster
@@ -4298,7 +5166,12 @@ Unicorn:
   NumberAppearingLair:
     $diceroll: 1d8
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 6 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Vampire:
@@ -4321,7 +5194,12 @@ Vampire:
   NumberAppearingLair:
     $diceroll: 1d6
   TreasureType: 
-    $roll: TreasureTypeF
+    $roll:
+      $class: TreasureTypeF
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Veteran:
@@ -4344,7 +5222,12 @@ Veteran:
   NumberAppearingLair:
     $diceroll: 2d6
   TreasureType: 
-    $roll: TreasureTypeV
+    $roll:
+      $class: TreasureTypeV
+      $bootstrap:
+        MaxNumberAppearingRoaming: 8
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 WarpBeast:
@@ -4367,7 +5250,12 @@ WarpBeast:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeD
+    $roll:
+      $class: TreasureTypeD
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 FreshwaterTermite:
@@ -4389,7 +5277,11 @@ FreshwaterTermite:
   NumberAppearingLair:
     $diceroll: 1d3
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 SaltwaterTermite:
@@ -4411,7 +5303,11 @@ SaltwaterTermite:
   NumberAppearingLair:
     $diceroll: 1d6+1
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 SwampTermite:
@@ -4433,7 +5329,11 @@ SwampTermite:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 WeaselGiant:
@@ -4456,7 +5356,12 @@ WeaselGiant:
   NumberAppearingLair:
     $diceroll: 1d6
   TreasureType: 
-    $roll: TreasureTypeV
+    $roll:
+      $class: TreasureTypeV
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 KillerWhale:
@@ -4478,7 +5383,11 @@ KillerWhale:
   NumberAppearingLair:
     $diceroll: 1d6
   TreasureType: 
-    $roll: TreasureTypeV
+    $roll:
+      $class: TreasureTypeV
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Narwhal:
@@ -4500,7 +5409,11 @@ Narwhal:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeHorn
+    $roll:
+      $class: TreasureTypeHorn
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 SpermWhale:
@@ -4522,7 +5435,11 @@ SpermWhale:
   NumberAppearingLair:
     $diceroll: 1d3
   TreasureType: 
-    $roll: TreasureTypeV
+    $roll:
+      $class: TreasureTypeV
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Wight:
@@ -4545,7 +5462,12 @@ Wight:
   NumberAppearingLair:
     $diceroll: 1d8
   TreasureType: 
-    $roll: TreasureTypeB
+    $roll:
+      $class: TreasureTypeB
+      $bootstrap:
+        MaxNumberAppearingRoaming: 6 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 DireWolf:
@@ -4568,7 +5490,12 @@ DireWolf:
   NumberAppearingLair:
     $diceroll: 2d4
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 NormalWolf:
@@ -4591,7 +5518,12 @@ NormalWolf:
   NumberAppearingLair:
     $diceroll: 3d6
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 12
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Wraith:
@@ -4614,7 +5546,12 @@ Wraith:
   NumberAppearingLair:
     $diceroll: 1d6
   TreasureType: 
-    $roll: TreasureTypeE
+    $roll:
+      $class: TreasureTypeE
+      $bootstrap:
+        MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Wyvern:
@@ -4637,7 +5574,12 @@ Wyvern:
   NumberAppearingLair:
     $diceroll: 1d6
   TreasureType: 
-    $roll: TreasureTypeE
+    $roll:
+      $class: TreasureTypeE
+      $bootstrap:
+        MaxNumberAppearingRoaming: 2 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 YellowMould:
@@ -4660,7 +5602,12 @@ YellowMould:
   NumberAppearingLair:
     $diceroll: 1d4
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 8 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Zombie:
@@ -4683,4 +5630,9 @@ Zombie:
   NumberAppearingLair:
     $diceroll: 4d6
   TreasureType: 
-    $roll: TreasureTypeNone
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 8
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair

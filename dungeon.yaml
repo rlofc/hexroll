@@ -265,7 +265,7 @@ DungeonEncounter:
 
     ---
 
-    {%if not Monster.TreasureType.Empty%}
+    {%if not Monster.TreasureType.Empty and (Monster.TreasureType.Details|trim)!=''%}
     * Monster Hoard:
     {{Monster.TreasureType.Details}}
     {%else%}
@@ -315,6 +315,7 @@ DungeonContainers:
     - small
     - very big
     - big
+
   Trap:
     $roll:
       $class: ContainerTrap
