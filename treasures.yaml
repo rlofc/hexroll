@@ -14,7 +14,7 @@ TreasureType:
     {%if ep1000.Roll <= ep1000.Odds%} {%set gptotal.value = gptotal.value + 500*ep1000.Amount*PiecesFactor/factor.value%}{%endif%}
     {%if gp1000.Roll <= gp1000.Odds%} {%set gptotal.value = gptotal.value + 1000*gp1000.Amount*PiecesFactor/factor.value%}{%endif%}
     {%if pp1000.Roll <= pp1000.Odds%} {%set gptotal.value = gptotal.value + 5000*pp1000.Amount*PiecesFactor/factor.value%}{%endif%}
-    {%set items.list = items.list + [('__'+(gptotal.value|int|string)+'gp__') if gptotal.value > 1.0 else ('__'+((gptotal.value*10)|int|string)+'sp__')]%}
+    {%set items.list = items.list + [('__'+(gptotal.value|int|string)+'gp__') if gptotal.value > 1.0 else (('__'+((gptotal.value*10)|int|string)+'sp__') if gptotal.value > 0.1 else ('__'+((gptotal.value*100)|int|string)+'cp__'))]%}
     {%endif%}
     {%if Gems.Roll <= Gems.Odds%}
     {%set total = namespace(value = 0) %}
@@ -499,6 +499,10 @@ TreasureTypeG:
   MagicItem3:
     $roll:
       $class: RandomPotion
+  MagicItem4:
+    $roll:
+      $class: RandomPotion
+
 
 
 TreasureTypeH:
