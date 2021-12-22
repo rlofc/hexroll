@@ -78,7 +78,7 @@ DungeonDoorLocked:
         $namespace: key
         $values:
           Active: !jinja >
-            key (<span class='alchemy'>{{key.Sigil.Symbol}}</span>) to unlock the
+            __key (<span class='alchemy'>{{key.Sigil.Symbol}}</span>)__ to unlock the
             {{key.Link.Shape}} {{key.Link.Material}} door
             (to the {{key.DoorPosition}}) in area {{key.Ref}}
 

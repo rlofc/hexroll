@@ -392,6 +392,35 @@ DungeonFungi:
     $roll: RandomPotion
 
 
+RandomEquipmentOnBody:
+  $subclass: !avoid_repeating
+    - Club
+    - Dagger
+    - Mace
+    - ShortBow
+    - SilverDagger
+    - Sling
+    - Sword
+    - IronRations
+    - Mirror
+    - IronSpikes
+    - HolySymbol
+    - Garlic
+    - SmallSack
+    - Rope
+    - Pole
+    - Oil
+    - SmallHammer
+    - ThieveTools
+    - ClothingAdventurerBoots
+    - ClothingHighBoots
+    - ClothingWarmCloak
+    - ClothingLeatherHat
+
+RandomEquipmentOnBodyState:
+  - Usable
+  - Unusable
+
 DungeonRemains:
   Hint: 
     - There’s something lying on the floor
@@ -399,10 +428,42 @@ DungeonRemains:
 
   Description: !jinja >
     Lying on the floor is a __{{Remains}}__.
+    {%if (Treasure.Details | trim)=='' and EquipmentItems < 1 and not Key.Active%}
+    Searching it will uncover __nothing__.
+    {%else%}
     Searching it will uncover: {{Treasure.Details}}
-    
+
+    {%if EquipmentItems > 0%}    * __{{EquipmentItem1.Title | nobrackets}}__ ({{EquipmentItem1State}}){%endif%}  
+
+
+    {%if EquipmentItems > 1%}    * __{{EquipmentItem2.Title | nobrackets}}__ ({{EquipmentItem2State}}){%endif%}  
+
+
+    {%if EquipmentItems > 2%}    * __{{EquipmentItem3.Title | nobrackets}}__ ({{EquipmentItem3State}}){%endif%}  
+
+    {%if Key.Active%}    *  The {{Key.Active}} {%endif%}
+
+    {%endif%}
+
   Treasure:
     $roll: TreasureTypeBody
+
+  EquipmentItems:
+    $diceroll: 1d4-1
+  EquipmentItem1:
+    $roll: RandomEquipmentOnBody
+  EquipmentItem1State:
+    $roll: RandomEquipmentOnBodyState
+  EquipmentItem2:
+    $roll: RandomEquipmentOnBody
+  EquipmentItem2State:
+    $roll: RandomEquipmentOnBodyState
+  EquipmentItem3:
+    $roll: RandomEquipmentOnBody
+  EquipmentItem3State:
+    $roll: RandomEquipmentOnBodyState
+  Key:
+    $roll: DungeonDoorKey
 
   Remains: 
     - dust covered goblin skeleton
