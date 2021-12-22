@@ -17,16 +17,6 @@ Gear:
     - Wearables
 
 
-Wearables:
-  $extends: Gear
-  $subclass:
-    - Wolfsbane
-    - ClothesCommon
-    - ClothesFine
-    - ClothesAdventurer
-    - ClothesUniform
-
-
 Tools:
   $extends: Gear
   $subclass:
@@ -39,6 +29,78 @@ Tools:
     - Pole
     - Rope
     - Mirror
+    - SmallBell
+    - Canvas
+    - Chain
+    - FishingRod
+    - SewingNeedle
+    - MiningPickAxe
+    - BushcraftKnife
+    - SmokingPipe
+    - Inkvial
+    - Quill
+    - EmptyScroll
+    - Lens
+
+
+SmallBell:
+  Title: Small Bell
+  Cost: "1 gp"
+
+
+Canvas:
+  Title: Canvas (Sq. Yard)
+  Cost: "3 sp"
+
+
+Chain:
+  Title: Chain (Foot)
+  Cost: "3 gp"
+
+
+FishingRod:
+  Title: Fishing Rod
+  Cost: "1 gp"
+
+
+SewingNeedle:
+  Title: Sewing Needle
+  Cost: "3 sp"
+
+
+MiningPickAxe:
+  Title: Mining Pick Axe
+  Cost: "5 gp"
+
+
+BushcraftKnife:
+  Title: Bushcraft Knife
+  Cost: "12 gp"
+  
+
+SmokingPipe:
+  Title: Smoking Pipe
+  Cost: "1 gp"
+
+
+Inkvial:
+  Title: Ink Vial
+  Cost: "10 gp"
+
+
+Quill:
+  Title: Quill
+  Cost: "5 sp"
+
+
+EmptyScroll:
+  Title: Empty Scroll
+  Cost: "1 gp"
+    
+
+Lens:
+  Title: Lens
+  Cost: "12 gp"
 
 
 Lighting:
@@ -48,6 +110,7 @@ Lighting:
     - Oil
     - TinderBox
     - SixTorches
+    - Candles
 
 
 HolyItems:
@@ -73,6 +136,157 @@ Food:
     - Waterskin
     - Wine
     - Garlic
+    - FreshFruits
+    - DriedFruits
+    - Salt
+    - Grain
+    - Flour
+    - Nuts
+    - Honey
+    - FreshFishSmall
+    - FreshFishFillet
+    - PickledFish
+    - SmallShellFish
+    - Lobster
+    - FreshGame
+    - DriedMeat
+
+
+Fish:
+  $subclass:
+    - IronRations
+    - Rations
+    - Salt
+    - FreshFishSmall
+    - FreshFishFillet
+    - PickledFish
+    - SmallShellFish
+    - Lobster
+    - FishingRod
+
+
+MeatAndFish:
+  $subclass:
+    - IronRations
+    - Rations
+    - Salt
+    - Honey
+    - FreshFishSmall
+    - FreshFishFillet
+    - PickledFish
+    - SmallShellFish
+    - Lobster
+    - FreshGame
+    - DriedMeat
+
+
+FreshFruits:
+  Title: Fresh Fruits (1 lb)
+  Cost: "9 sp"
+
+
+DriedFruits:
+  Title: Dried Fruits (small bag)
+  Cost: "3 sp"
+
+
+Salt: 
+  Title: Salt (1 lb)
+  Cost: "2 gp"
+
+
+Grain: 
+  Title: Grain (1 lb)
+  Cost: "2 cp"
+
+
+Flour: 
+  Title: Flour (1 lb)
+  Cost: "4 sp"
+
+
+Nuts: 
+  Title: Nuts (small bag)
+  Cost: "1 sp"
+
+
+Honey: 
+  Title: Honey (jar)
+  Cost: "2 gp"
+
+
+FreshFishSmall:
+  Title: Fresh Fish, Small
+  Cost: "4 sp"
+
+
+FreshFishFillet:
+  Title: Fresh Fish Fillet
+  Cost: "8 sp"
+
+
+PickledFish:
+  Title: Pickled Fish (jar)
+  Cost: "1 gp"
+
+
+SmallShellFish: 
+  Title: Small Shell Fish
+  Cost: "3 sp"
+
+
+Lobster: 
+  Title: Lobster
+  Cost: "1 gp"
+
+
+FreshGame: 
+  Title: Fresh Game (1 lb)
+  Cost: "1 gp"
+
+
+DriedMeat: 
+  Title: Dried Meat (small pack)
+  Cost: "8 sp"
+
+
+Drinks:
+  $subclass:
+    - CommonBeer
+    - CraftBeer
+    - Cider
+    - CommonWine
+    - CraftWine
+    - RoyalWine
+
+
+CommonBeer:
+  Title: Common Beer (Barrel)
+  Cost: "5 gp"
+
+CraftBeer:
+  Title: Craft Beer (Barrel)
+  Cost: "12 gp"
+
+
+Cider:
+  Title: Cider (Barrel)
+  Cost: "8 gp"
+
+
+CommonWine:
+  Title: Common Wine (Barrel)
+  Cost: "15 gp"
+
+
+CraftWine:
+  Title: Craft Wine (Barrel)
+  Cost: "35 gp"
+
+
+RoyalWine:
+  Title: Royal Quality Wine (Barrel)
+  Cost: "150 gp"
 
 
 ArmorWeapon:
@@ -149,6 +363,11 @@ Lantern:
   Cost: "10 gp"
 
 
+Candles:
+  Title: 10 Candles
+  Cost: "1 gp"
+
+
 Mirror:
   Title: Mirror (hand-sized, steel)
   Cost: "5 gp"
@@ -217,31 +436,6 @@ Waterskin:
 Wine:
   Title: Wine (2 pints)
   Cost: "1 gp"
-
-
-Wolfsbane:
-  Title: Wolfsbane (1 bunch)
-  Cost: "10 gp"
-
-
-ClothesCommon:
-  Title: Clothes, Common
-  Cost: "10 gp"
-
-
-ClothesFine:
-  Title: Clothes, Fine
-  Cost: "10 gp"
-
-
-ClothesAdventurer:
-  Title: Clothes, Adventurer's
-  Cost: "10 gp"
-
-
-ClothesUniform:
-  Title: Clothes, Uniform
-  Cost: "10 gp"
 
 
 BattleAxe:
@@ -375,3 +569,369 @@ Warhammer:
   Title: Warhammer
   Damage: 1d6
   Cost: 5 gp
+
+
+Wearables:
+  $extends: Gear
+  $subclass: !avoid_repeating
+    - Wolfsbane
+    - ClothingCommonOutfit
+    - ClothingFineOutfit
+    - ClothingArtisanOutfit
+    - ClothingAdventurerOutfit
+    - ClothingUniformOutfit
+    - ClothingScholarOutfit
+    - ClothingNobleOutfit
+    - ClothingRoyalOutfit
+    - ClothingBelt
+    - ClothingSash
+    - ClothingSuspenders
+    - ClothingGirdle
+    - ClothingCape
+    - ClothingPlainCloak
+    - ClothingWarmCloak
+    - ClothingForestCloak
+    - ClothingJacket
+    - ClothingLeatherApron
+    - ClothingLeatherCoat
+    - ClothingBlouse
+    - ClothingGown
+    - ClothingCommonDress
+    - ClothingFineDress
+    - ClothingNobleDress
+    - ClothingRoyalDress
+    - ClothingKilt
+    - ClothingLeggings
+    - ClothingLeatherLeggings
+    - ClothingCommonRobe
+    - ClothingEmbrioderedRobe
+    - ClothingTunic
+    - ClothingCommonShirt
+    - ClothingArtisanShirt
+    - ClothingTrousers
+    - ClothingSkirt
+    - ClothingLeatherVest
+    - ClothingFurVest
+    - ClothingLeatherGloves
+    - ClothingWarmGloves
+    - CLothingMittens
+    - ClothingHighBoots
+    - ClothingAdventurerBoots
+    - ClothingLowBoots
+    - ClothingRidingBoots
+    - ClothingFineShoes
+    - ClothingFineShoes
+    - ClothingRoyalShoes
+    - ClothingFurHat
+    - ClothingVeil
+    - ClothingCap
+    - ClothingLeatherHat
+
+
+Hats:
+  $extends: Gear
+  $subclass: !avoid_repeating
+    - ClothingFurHat
+    - ClothingVeil
+    - ClothingCap
+    - ClothingLeatherHat
+
+
+LeatherMade:
+  $extends: Gear
+  $subclass: !avoid_repeating
+    - ClothingLeatherApron
+    - ClothingLeatherCoat
+    - ClothingLeatherLeggings
+    - ClothingLeatherVest
+    - ClothingLeatherGloves
+    - ClothingLeatherHat
+    - Storage
+
+
+Wolfsbane:
+  Title: Wolfsbane (1 bunch)
+  Cost: "10 gp"
+
+
+ClothingCommonOutfit:
+  Title: Common Outfit
+  Cost: "5 gp"
+
+
+ClothingFineOutfit:
+  Title: Fine Outfit
+  Cost: "7 gp"
+
+
+ClothingArtisanOutfit:
+  Title: Fine Outfit
+  Cost: "7 gp"
+
+
+ClothingAdventurerOutfit:
+  Title: Adventurer's Outfit
+  Cost: "10 gp"
+
+
+ClothingUniformOutfit:
+  Title: Uniform
+  Cost: "9 gp"
+
+
+ClothingScholarOutfit:
+  Title: Scholar Robe
+  Cost: "6 gp"
+
+
+ClothingNobleOutfit:
+  Title: Noble's Suit
+  Cost: "250 gp"
+
+
+ClothingRoyalOutfit:
+  Title: Royal Suit
+  Cost: "430 gp"
+
+
+ClothingBelt:
+  Title: Belt
+  Cost: "9 sp"
+
+
+ClothingSash:
+  Title: Sash
+  Cost: "4 sp"
+
+
+ClothingSuspenders:
+  Title: Suspenders
+  Cost: "5 sp"
+
+
+ClothingGirdle:
+  Title: Girdle
+  Cost: "4 gp"
+
+
+ClothingCape:
+  Title: Girdle
+  Cost: "4 gp"
+
+
+ClothingPlainCloak:
+  Title: Plain Cloak
+  Cost: "7 sp"
+
+
+ClothingWarmCloak:
+  Title: Warm Cloak
+  Cost: "9 sp"
+
+
+ClothingForestCloak:
+  Title: Forest Cloak
+  Cost: "9 sp"
+
+
+ClothingJacket:
+  Title: Jacket
+  Cost: "3 gp"
+
+
+ClothingLeatherApron:
+  Title: Leather Apron
+  Cost: "2 gp"
+
+
+ClothingLeatherCoat:
+  Title: Leather Coat
+  Cost: "5 gp"
+
+
+ClothingBlouse:
+  Title: Blouse
+  Cost: "1 sp"
+
+
+ClothingGown:
+  Title: Gown
+  Cost: "8 sp"
+
+
+ClothingCommonDress:
+  Title: Common Dress
+  Cost: "14 sp"
+
+
+ClothingFineDress:
+  Title: Fine Dress
+  Cost: "9 gp"
+
+
+ClothingNobleDress:
+  Title: Noble Dress
+  Cost: "120 gp"
+
+
+ClothingRoyalDress:
+  Title: Royal Dress
+  Cost: "450 gp"
+
+
+ClothingKilt:
+  Title: Kilt
+  Cost: "4 gp"
+
+
+ClothingLeggings:
+  Title: Leggings
+  Cost: "6 sp"
+
+
+ClothingLeatherLeggings:
+  Title: Leather Leggings
+  Cost: "5 gp"
+
+
+ClothingCommonRobe:
+  Title: Common Robe
+  Cost: "8 sp"
+
+
+ClothingEmbrioderedRobe:
+  Title: Embriodered Robe
+  Cost: "25 gp"
+
+
+ClothingTunic:
+  Title: Tunic
+  Cost: "9 sp"
+
+
+ClothingCommonShirt:
+  Title: Common Shirt
+  Cost: "7 sp"
+
+
+ClothingArtisanShirt:
+  Title: Artisan Shirt
+  Cost: "9 sp"
+
+
+ClothingTrousers:
+  Title: Trousers
+  Cost: "2 gp"
+
+
+ClothingSkirt:
+  Title: Skirt
+  Cost: "2 sp"
+
+
+ClothingLeatherVest:
+  Title: Leather Vest
+  Cost: "15 sp"
+
+
+ClothingFurVest:
+  Title: FurVest
+  Cost: "18 sp"
+
+
+ClothingLeatherGloves:
+  Title: Leather Gloves
+  Cost: "7 sp"
+
+
+ClothingWarmGloves:
+  Title: Warm Gloves
+  Cost: "9 sp"
+
+
+CLothingMittens:
+  Title: Mittens
+  Cost: "3 sp"
+
+
+ClothingHighBoots:
+  Title: High Boots
+  Cost: "3 gp"
+
+
+ClothingAdventurerBoots:
+  Title: Adventurer Boots
+  Cost: "5 gp"
+
+
+ClothingLowBoots:
+  Title: Low Boots
+  Cost: "2 gp"
+
+
+ClothingRidingBoots:
+  Title: Riding Boots
+  Cost: "4 gp"
+
+
+ClothingFineShoes:
+  Title: Common Shoes
+  Cost: "9 sp"
+
+
+ClothingFineShoes:
+  Title: Fine Shoes
+  Cost: "3 gp"
+
+
+ClothingRoyalShoes:
+  Title: Royal Shoes
+  Cost: "120 gp"
+
+
+ClothingFurHat:
+  Title: Fur Hat
+  Cost: "1 gp"
+
+
+ClothingVeil:
+  Title: Veil
+  Cost: "1 gp"
+
+
+ClothingCap:
+  Title: Cap
+  Cost: "5 sp"
+
+
+ClothingLeatherHat:
+  Title: Leather Hat
+  Cost: "9 sp"
+
+
+MusicalInstruments:
+  $subclass:
+    - SmallBell
+    - Flute
+    - Harp
+    - Lute
+    - HandDrum
+
+Flute:
+  Title: Flute
+  Cost: "20 gp"
+
+
+Harp:
+  Title: Harp
+  Cost: "25 gp"
+
+
+Lute:
+  Title: Lute
+  Cost: "50 gp"
+
+
+HandDrum:
+  Title: Hand Drum
+  Cost: "10 gp"

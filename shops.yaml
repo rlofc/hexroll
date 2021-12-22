@@ -22,6 +22,16 @@ Bakery:
 GeneralGoods:
   $extends: Shop
   Title: General Goods
+  Items:
+    $rollsome:
+      $class:
+        - Storage
+        - HolyItems
+        - Tools
+        - Lighting
+        - Wearables
+      $min: 6
+      $max: 10 
   Noun:
     - goods
     - supply
@@ -51,35 +61,91 @@ Grocer:
   
 
 Pet:
-  $subclass:
+  $subclass: !avoid_repeating
     - PetCat
     - PetDog
     - PetRaven
     - PetRat
+    - PetMonkey
+    - PetOwl
+    - PetWolf
+    - PetFish
+    - PetLizard
+    - PetParrot
+    - PetSnake
+    - PetSongBird
 
 
 PetCat:
   $extends: Pet
-  Title: Pet Cat
+  Title: Cat
   Cost: 1 gp
 
 
 PetDog:
   $extends: Pet
-  Title: Pet Dog
-  Cost: 2 gp
+  Title: Dog
+  Cost: 4 gp
 
 
 PetRaven:
   $extends: Pet
-  Title: Pet Raven
+  Title: Raven
   Cost: 3 gp
 
 
 PetRat:
   $extends: Pet
-  Title: Pet Rat
+  Title: Rat
+  Cost: 2 sp
+
+
+PetMonkey:
+  $extends: Pet
+  Title: Monkey
+  Cost: 10 gp
+
+
+PetOwl:
+  $extends: Pet
+  Title: Owl
+  Cost: 16 gp
+
+
+PetWolf:
+  $extends: Pet
+  Title: Wolf
+  Cost: 9 gp
+
+
+PetFish:
+  $extends: Pet
+  Title: Fish
+  Cost: 4 sp
+
+
+PetLizard:
+  $extends: Pet
+  Title: Lizard
+  Cost: 1 gp
+
+
+PetParrot:
+  $extends: Pet
+  Title: Parrot
+  Cost: 19 gp
+
+
+PetSnake:
+  $extends: Pet
+  Title: Snake
   Cost: 3 gp
+
+
+PetSongBird:
+  $extends: Pet
+  Title: Song Bird
+  Cost: 2 gp
 
 
 PetShop:
@@ -88,8 +154,8 @@ PetShop:
   Items:
     $rollsome:
       $class: Pet
-      $min: 1
-      $max: 3
+      $min: 2
+      $max: 5
   Noun:
     - petshop
     - sidekicks
@@ -182,6 +248,11 @@ ArmorWeapons:
 Hatter:
   $extends: Shop
   Title: Hatter
+  Items:
+    $rollsome:
+      $class: Hats
+      $min: 2
+      $max: 3
   Noun:
     - cap
     - top hat
@@ -190,6 +261,11 @@ Hatter:
 Butchery:
   $extends: Shop
   Title: Butchery
+  Items:
+    $rollsome:
+      $class: MeatAndFish
+      $min: 6
+      $max: 10 
   Noun:
     - beef & pork
     - prime cut
@@ -240,6 +316,11 @@ Barber:
 Liquor:
   $extends: Shop
   Title: Liquor
+  Items:
+    $rollsome:
+      $class: Drinks
+      $min: 2
+      $max: 6
   Noun:
     - liquor
     - spirits
@@ -248,6 +329,11 @@ Liquor:
 Craft:
   $extends: Shop
   Title: Craft
+  Items:
+    $rollsome:
+      $class: Tools
+      $min: 2
+      $max: 6
   Noun:
     - crafts
     - handmades
@@ -256,6 +342,11 @@ Craft:
 Music:
   $extends: Shop
   Title: Music
+  Items:
+    $rollsome:
+      $class: MusicalInstruments
+      $min: 1
+      $max: 3
   Noun:
     - instruments
     - guitar & flute
@@ -322,6 +413,11 @@ Occult:
 Winery:
   $extends: Shop
   Title: Winery
+  Items:
+    $rollsome:
+      $class: Drinks
+      $min: 1
+      $max: 3
   Noun:
     - wines
     - fine wines
@@ -330,6 +426,11 @@ Winery:
 Brewery:
   $extends: Shop
   Title: Brewery
+  Items:
+    $rollsome:
+      $class: Drinks
+      $min: 1
+      $max: 3
   Noun:
     - good stuff
     - brews
@@ -338,6 +439,11 @@ Brewery:
 Distillery:
   $extends: Shop
   Title: Distillery
+  Items:
+    $rollsome:
+      $class: Drinks
+      $min: 1
+      $max: 3
 
 
 Flower:
@@ -361,6 +467,11 @@ Cobbler:
 Tinkerer:
   $extends: Shop
   Title: Tinkerer
+  Items:
+    $rollsome:
+      $class: Tools
+      $min: 3
+      $max: 5
   Noun:
     - devices
     - fix-it-all
@@ -393,6 +504,11 @@ Veterinarian:
 
 BlackMarket:
   $extends: Shop
+  Items:
+    $rollsome:
+      $class: Gear
+      $min: 9
+      $max: 15 
   Title: Black Market
 
 
@@ -422,7 +538,7 @@ Leatherworker:
   Title: Leatherworker
   Items:
     $rollsome:
-      $class: Storage
+      $class: LeatherMade
       $min: 2
       $max: 6
   Noun:
@@ -475,6 +591,11 @@ TinWorker:
 IndoorMarket:
   $extends: Shop
   Title: Indoor Market
+  Items:
+    $rollsome:
+      $class: Gear
+      $min: 2
+      $max: 6
 
 
 Nightclub:
@@ -490,6 +611,11 @@ CityHall:
 FishMarket:
   $extends: Shop
   Title: Fish Market
+  Items:
+    $rollsome:
+      $class: Fish
+      $min: 2
+      $max: 4
 
 
 Nunnery:
