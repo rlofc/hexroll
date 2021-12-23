@@ -15,34 +15,47 @@ PoisonTrapDamage: &PoisonTrapDamage
 ContainerNeedleTrap:
   Description:
     - !jinja >
-      There's a __poisoned needle__ {{AgentLocation}}.  If undetected, there's
-      a __2 in 6__ chance of getting pricked.  {{Damage}}
+      There's a __poisoned needle__ {{AgentLocation}}.  If undetected,
+      there's a __2 in 6__ chance of getting pricked.  {{Damage}}
   Damage: *PoisonTrapDamage
 
 
 ContainerVapourTrap:
   Description:
     - !jinja >
-      There's a small __gas-filled blister__ made of goat's intestine
+      There's a small __gas-filled {{Vessel}}
       {{AgentLocation}}.  If undetected, there's a __2 in 6__ chance of popping
       it.  {{Damage}}
+  Vessel:
+    - blister__ made of goat's intestine
+    - blister__ made of lizard's intestine
+    - blister__ made of rat's intestine
+    - vial__ made of an extemley fragile glass
   Damage: *PoisonTrapDamage
 
 
 ContainerTouchTrap:
   Description:
     - !jinja > 
-      An acidic ointment was smeared on the {{Type}}.
+      {{Agent | articlize | capitalize}} was applied on the {{Type}}.
       If undetected, there's a __2 in 6__ chance of touching it.
-      __Save vs Petrification__ or sustain __1d6 damage__.
+      __Save vs Petrification__ or sustain __1d4 damage__.
+  Agent:
+    - highly corrosive ointment
+    - strong acid ooze
+
 
 ContainerRubbleTrap:
   Description:
     - !jinja > 
-      __Loose ruble__ is locked above the {{Type}}, released when a __switch__
-      {{AgentLocation}} is triggered.  If undetected, there's a __2 in 6__
-      chance the loose rubble will fall down.  __Save vs Petrification__ or
-      sustain __1d8 damage__.
+      __Loose {{Object}}__ is locked above the {{Type}}, released when a
+      __switch__ {{AgentLocation}} is triggered.  If undetected, there's a
+      __2 in 6__ chance the loose rubble will fall down.  __Save vs
+      Petrification__ or sustain __1d8 damage__.
+  Object:
+    - rubble
+    - debris
+    - stones
 
 
 AreaTrap:

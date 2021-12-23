@@ -201,6 +201,8 @@ DungeonDecor:
       the {{Part}} {{'have' if Part|last=='s' else 'has'}} {{Quantity}} {{Cover}} on
     - !jinja >
       the {{Part}} {{'are' if Part|last=='s' else 'is'}} covered with {{Cover}}
+    - !jinja >
+      the {{Part}} {{'are' if Part|last=='s' else 'is'}} {{State}}
 
   Part: !avoid_repeating
     - walls
@@ -216,6 +218,11 @@ DungeonDecor:
     - fractures
     - spots of green rot
     - spots of yellow ooze
+
+  State:
+    - deeply fractured
+    - scorched with burn marks
+    - carved with claw marks
 
   Recency:
     - old
@@ -293,11 +300,15 @@ DungeonContainers:
         Otherwise, this place was already looted earlier.{%endif%}
 
   Foreshadow: 
-    - A few single silver pieces could be found if examining the ground near
+    - !jinja >
+      A few single {{['silver', 'copper'] | random}} pieces could be found if examining the ground near
       the entrances to this area
     
     - Traces of something heavy dragged on the ground could be found if examining
       around the entrances to this area
+
+    - A torn canvas bag was left on the ground near an entrance to this area
+
 
   Type:
     - jar
@@ -359,7 +370,10 @@ DungeonTreasureTier4:
 
 
 DungeonFungi:
-  Hint: "Faint colorful light is emitting from the ground"
+  Hint:
+    - Faint colorful light is emitting from everywhere
+    - There’s also a colorful glow emitted from the ground
+
   Description: 
     - !jinja > 
       {{Quantity | capitalize}} green and purple bioluminescent mushrooms are
@@ -384,9 +398,9 @@ DungeonFungi:
     - countless
 
   Effect: !weighted
-    - might be severely poisoned (1d4 of damage until a successful saving throw per turn)
-    - will be paralized with mind twisting hallucinations for 1d6 turns^3
-    - will suffer a severe stomach ache and a -2 penalty to any roll for 1d6 turns^4
+    - might be severely __poisoned__ (__1d4 of damage__ until a successful saving throw per turn)
+    - will be __paralized__ with mind twisting hallucinations for __1d6 turns__^3
+    - will suffer a severe stomach ache and a __-2 penalty__ to attack rolls for __1d6 turns__^4
 
   PotionEffect:
     $roll: RandomPotion
@@ -422,9 +436,10 @@ RandomEquipmentOnBodyState:
   - Unusable
 
 DungeonRemains:
-  Hint: 
-    - There’s something lying on the floor
-    - You spot something quite big lying on the floor
+  Hint: !weighted
+    - There’s something lying on the floor^2
+    - You spot something quite big lying on the floor^2
+    - There’s a dead body here
 
   Description: !jinja >
     Lying on the floor is a __{{Remains}}__.
@@ -465,8 +480,10 @@ DungeonRemains:
   Key:
     $roll: DungeonDoorKey
 
-  Remains: 
-    - dust covered goblin skeleton
-    - dust covered human skeleton
+  Remains: !weighted 
+    - dust covered human skeleton^2
+    - dust covered skeleton of an orc
+    - dust covered skeleton of a goblin
+    - rotting human corpse^2
+    - rotting orc corpse
     - rotting goblin corpse
-    - rotting human corpse

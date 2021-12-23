@@ -79,8 +79,10 @@ DungeonEncounterHumanoids:
     {%else%}__footsteps__{%endif%}
     can be faintly heard from inside this area
   Hint: 
+    - There’s movement inside
     - You see glowing eyes staring at you from inside
-  Undead: False
+    - A violent shout in an unknown language in coming from inside
+    - You see the shimmer of a blade inside
 
 
 DungeonEncounterHumanoidsTier1:
@@ -98,10 +100,10 @@ DungeonEncounterVermins:
     area
 
   Hint: 
+    - There’s movement inside
     - There’s also a foul smell of decay and rot
     - Looking down, you see countless fragments of small animal skeletons
-
-  Undead: False
+    - Flies swarm off bones covered with rotting flesh on the ground
 
 
 DungeonEncounterVerminsTier1:
@@ -141,11 +143,12 @@ DungeonEncounterOozes:
     inside this area
 
   Hint: 
+    - There’s a strong burning sensation when breathing the air here
     - There’s also a very strong acidic stench here, making breathing almost
       unbearable
     - There are bones on the ground, clean bones.. almost bleach-white
+    - A strange sensation is creeping up your spine
 
-  Undead: False
 
 
 DungeonEncounterOozesTier1:
@@ -186,12 +189,14 @@ DungeonEncounterAbberations:
   Hint: 
     - !jinja >
       Red eyes are glowing inside like fire, and you hear a
-      {%-if Monster.Sound%} {{Monster.Sound}}{%else%}growl{%endif-%}
+      {%if Monster.Sound%} {{Monster.Sound}}{%else%}growl{%endif%}
     - Looking down, you realize you just stepped into a pool of blood
-    - You feel the warm stench of a monster's breath
+    - You feel the warm stench of a monster’s breath
+    - There’s something moving inside
+    - There’s movement inside
+    - You feel chills curling up your spine
 
 
-  Undead: False
 
 
 DungeonEncounterAbberationsTier1:
@@ -240,7 +245,6 @@ DungeonEncounterCultists:
     - There are humans wearing red robes inside
     - There are humans wearing dark robes inside
 
-  Undead: False
   Monster:
     $roll: DungeonEncounterCultistsClasses
 
@@ -266,7 +270,6 @@ DungeonEncounterTempleAnimals:
   Hint:
     - There’s some sort of a beast inside
 
-  Undead: False
   Monster:
     $roll: DungeonEncounterTempleAnimalsClasses
 
@@ -293,11 +296,12 @@ DungeonEncounterMagical:
     area
 
   Hint:
-    - You're not alone here
+    - You’re not alone here
     - This is not looking good
     - There’s something moving inside
+    - There’s movement inside
+    - A weird sensation is creeping up your spine
 
-  Undead: False
 
 
 DungeonEncounterMagicalTier2:
@@ -353,12 +357,16 @@ DungeonEncounterDragonsTier4:
 
 DungeonEncounterUndead:
   $extends: DungeonEncounter
+  Foreshadow: >
+    It is impossible to hear anything inside
+    
   Hint: 
-    - You feel the chill of death rising up your spine
-    - You hear nothing but the silence of death in here
+    - You feel the chill of death curling up your spine
+    - Other than that, there's a silence of death in here
     - Looking down, you realize you just stepped into a pool of blood
+    - A strange sensation is creeping up your spine
+    - Something here makes the hair at the back of the neck stand
 
-  Undead: True
   Monster:
     $roll: UndeadMonster
 
