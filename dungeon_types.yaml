@@ -72,6 +72,8 @@ Cavern:
         DungeonFeatureTier2: CaveFeatureTier2
         DungeonFeatureTier3: CaveFeatureTier3
         DungeonFeatureTier4: CaveFeatureTier3
+  WanderingMonsters:
+    $roll: DungeonWanderingMonsters
 
 
 TombFeatureTier1:
@@ -139,6 +141,8 @@ Tomb:
         DungeonFeatureTier2: TombFeatureTier2
         DungeonFeatureTier3: TombFeatureTier3
         DungeonFeatureTier4: TombFeatureTier4
+  WanderingMonsters:
+    $roll: DungeonWanderingMonsters
 
 
 TempleEncounterTier1:
@@ -217,3 +221,5 @@ Temple:
         DungeonFeatureTier2: TempleFeatureTier2
         DungeonFeatureTier3: TempleFeatureTier3
         DungeonFeatureTier4: TempleFeatureTier4
+  WanderingMonsters:
+    $roll: DungeonWanderingMonsters
