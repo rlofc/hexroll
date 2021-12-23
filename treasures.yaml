@@ -14,7 +14,7 @@ TreasureType:
     {%if ep1000.Roll <= ep1000.Odds%} {%set gptotal.value = gptotal.value + 500*ep1000.Amount*PiecesFactor/factor.value%}{%endif%}
     {%if gp1000.Roll <= gp1000.Odds%} {%set gptotal.value = gptotal.value + 1000*gp1000.Amount*PiecesFactor/factor.value%}{%endif%}
     {%if pp1000.Roll <= pp1000.Odds%} {%set gptotal.value = gptotal.value + 5000*pp1000.Amount*PiecesFactor/factor.value%}{%endif%}
-    {%set items.list = items.list + [('__'+(gptotal.value|int|string)+'gp__') if gptotal.value > 1.0 else (('__'+((gptotal.value*10)|int|string)+'sp__') if gptotal.value > 0.1 else ('__'+((gptotal.value*100)|int|string)+'cp__'))]%}
+    {%set items.list = items.list + [('__'+(gptotal.value | currency)+'__')]%}
     {%endif%}
     {%if Gems.Roll <= Gems.Odds%}
     {%set total = namespace(value = 0) %}
@@ -25,14 +25,14 @@ TreasureType:
     {%if gemroll >=16 and gemroll <=19%}{%set total.value = total.value + 500%}{%endif%}
     {%if gemroll == 20 %}{%set total.value = total.value + 1000%}{%endif%}
     {%endfor%}
-    {%set items.list = items.list + ['__'+(Gems.Amount|string)+' gems__ worth __'+((total.value/factor.value)|int|string)+'gp__ in total']%}
+    {%set items.list = items.list + ['__'+(Gems.Amount|string)+' gems__ worth __'+((total.value/factor.value)|currency)+'__ in total']%}
     {%endif%}
     {%if Jewellery.Roll <= Jewellery.Odds%}
     {%set total = namespace(value = 0) %}
     {%for g in range(Jewellery.Amount)%}{%set jroll = (range(1, 6)|random)+(range(1,6)|random)+(range(1,6) | random) %}
     {%set total.value = total.value + 100*jroll%}
     {%endfor%}
-    {%set items.list = items.list + ['__'+(Jewellery.Amount|string)+' jewellery items__ worth  __'+((total.value/factor.value)|int|string)+'gp__ in total']%}
+    {%set items.list = items.list + ['__'+(Jewellery.Amount|string)+' jewellery items__ worth  __'+((total.value/factor.value)|currency)+'__ in total']%}
     {%endif%}
     {%if MagicItems.Amount > 0 and MagicItems.Roll <= (MagicItems.Odds / 1)%} {%set items.list = items.list + ['__'+MagicItem1.Description+'__']%}{%endif%}
     {%if MagicItems.Amount > 1 and MagicItems.Roll <= (MagicItems.Odds / 2)%} {%set items.list = items.list + ['__'+MagicItem2.Description+'__']%}{%endif%}
