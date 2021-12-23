@@ -814,14 +814,21 @@ Shop:
   InvertedHandoutName: 
     - !jinja "__{{Title}}__ ({{Owner.Name.First}}'s {{Noun}})"
 
-  Inventory: !jinja |
+  Inventory: !jinja | 
     {% if Items %}
     Item | Price
-    ---- | -----{% for i in Items %}
-    {{i.Title}} | {{i.Cost}}{% endfor %}
+    ---- | -----{% for i in Items | unique(attribute='subclass_')%}
+    {{i.Title}} | {{((i.Cost|float) * PriceFactor)|currency}}{% endfor %}
 
     {% endif %}
 
+  PriceFactor:
+    - 0.8
+    - 0.9
+    - 1.0
+    - 1.1
+    - 1.2
+    - 1.4
 
 Service:
   OwnerTitle: Manager

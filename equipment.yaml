@@ -45,62 +45,62 @@ Tools:
 
 SmallBell:
   Title: Small Bell
-  Cost: "1 gp"
+  Cost: 1
 
 
 Canvas:
   Title: Canvas (Sq. Yard)
-  Cost: "3 sp"
+  Cost: 0.3
 
 
 Chain:
   Title: Chain (Foot)
-  Cost: "3 gp"
+  Cost: 3
 
 
 FishingRod:
   Title: Fishing Rod
-  Cost: "1 gp"
+  Cost: 1
 
 
 SewingNeedle:
   Title: Sewing Needle
-  Cost: "3 sp"
+  Cost: 0.3
 
 
 MiningPickAxe:
   Title: Mining Pick Axe
-  Cost: "5 gp"
+  Cost: 5
 
 
 BushcraftKnife:
   Title: Bushcraft Knife
-  Cost: "12 gp"
+  Cost: 12
   
 
 SmokingPipe:
   Title: Smoking Pipe
-  Cost: "1 gp"
+  Cost: 1
 
 
 Inkvial:
   Title: Ink Vial
-  Cost: "10 gp"
+  Cost: 10
 
 
 Quill:
   Title: Quill
-  Cost: "5 sp"
+  Cost: 0.5
 
 
 EmptyScroll:
   Title: Empty Scroll
-  Cost: "1 gp"
+  Cost: 1
     
 
 Lens:
   Title: Lens
-  Cost: "12 gp"
+  Cost: 12
 
 
 Lighting:
@@ -138,6 +138,9 @@ Food:
     - Garlic
     - FreshFruits
     - DriedFruits
+    - Bread
+    - Pie
+    - Cake
     - Salt
     - Grain
     - Flour
@@ -177,77 +180,107 @@ MeatAndFish:
     - SmallShellFish
     - Lobster
     - FreshGame
+    - FreshMeat
     - DriedMeat
 
 
 FreshFruits:
   Title: Fresh Fruits (1 lb)
-  Cost: "9 sp"
+  Cost: 0.9
 
 
 DriedFruits:
   Title: Dried Fruits (small bag)
-  Cost: "3 sp"
+  Cost: 0.3
 
 
 Salt: 
   Title: Salt (1 lb)
-  Cost: "2 gp"
+  Cost: 2
+
+
+Bread: 
+  Title: Bread (1 loaf)
+  Cost: 0.05
+
+
+Pie: 
+  Title: Pie (slice)
+  Cost: 0.04
+
+
+Cake: 
+  Title: Cake (slice)
+  Cost: 0.1
 
 
 Grain: 
   Title: Grain (1 lb)
-  Cost: "2 cp"
+  Cost: 0.02
 
 
 Flour: 
   Title: Flour (1 lb)
-  Cost: "4 sp"
+  Cost: 0.4
 
 
 Nuts: 
   Title: Nuts (small bag)
-  Cost: "1 sp"
+  Cost: 0.1
 
 
 Honey: 
   Title: Honey (jar)
-  Cost: "2 gp"
+  Cost: 2
 
 
 FreshFishSmall:
   Title: Fresh Fish, Small
-  Cost: "4 sp"
+  Cost: 0.4
 
 
 FreshFishFillet:
   Title: Fresh Fish Fillet
-  Cost: "8 sp"
+  Cost: 0.8
 
 
 PickledFish:
   Title: Pickled Fish (jar)
-  Cost: "1 gp"
+  Cost: 1
 
 
 SmallShellFish: 
   Title: Small Shell Fish
-  Cost: "3 sp"
+  Cost: 0.3
 
 
 Lobster: 
   Title: Lobster
-  Cost: "1 gp"
+  Cost: 1
 
 
 FreshGame: 
-  Title: Fresh Game (1 lb)
-  Cost: "1 gp"
+  Title: !jinja "Fresh Game ({{Type}}, 1 lb)"
+  Cost: 2
+  Type:
+    - Venison
+    - Rabbit
+    - Duck
+
+
+FreshMeat: 
+  Title: !jinja "Fresh Meat ({{Type}}, 1 lb)"
+  Cost: 1
+  Type:
+    - Pork
+    - Beef
+    - Chicken
+    - Lamb
 
 
 DriedMeat: 
   Title: Dried Meat (small pack)
-  Cost: "8 sp"
+  Cost: 0.8
 
 
 Drinks:
@@ -262,31 +295,31 @@ Drinks:
 
 CommonBeer:
   Title: Common Beer (Barrel)
-  Cost: "5 gp"
+  Cost: 5
 
 CraftBeer:
   Title: Craft Beer (Barrel)
-  Cost: "12 gp"
+  Cost: 12
 
 
 Cider:
   Title: Cider (Barrel)
-  Cost: "8 gp"
+  Cost: 8
 
 
 CommonWine:
   Title: Common Wine (Barrel)
-  Cost: "15 gp"
+  Cost: 15
 
 
 CraftWine:
   Title: Craft Wine (Barrel)
-  Cost: "35 gp"
+  Cost: 35
 
 
 RoyalWine:
   Title: Royal Quality Wine (Barrel)
-  Cost: "150 gp"
+  Cost: 150
 
 
 ArmorWeapon:
@@ -315,260 +348,260 @@ ArmorWeapon:
 
 Sword:
   Title: Sword
-  Cost: 5 gp
+  Cost: 5
 
 
 Backpack:
   Title: Backback
-  Cost: "5 gp"
+  Cost: 5
 
 
 Crowbar:
   Title: Crowbar
-  Cost: "10 gp"
+  Cost: 10
 
 
 Garlic:
   Title: Garlic
-  Cost: "5 gp"
+  Cost: 5
 
 
 GrapplingHook:
   Title: Grappling hook
-  Cost: "25 gp"
+  Cost: 25
 
 
 SmallHammer:
   Title: Hammer (small)
-  Cost: "2 gp"
+  Cost: 2
 
 
 HolySymbol:
   Title: Holy symbol
-  Cost: "25 gp"
+  Cost: 25
 
 
 HolyWater:
   Title: Holy water (vial)
-  Cost: "25 gp"
+  Cost: 25
 
 
 IronSpikes:
   Title: Iron spikes (12)
-  Cost: "1 gp"
+  Cost: 1
 
 
 Lantern:
   Title: Lantern
-  Cost: "10 gp"
+  Cost: 10
 
 
 Candles:
   Title: 10 Candles
-  Cost: "1 gp"
+  Cost: 1
 
 
 Mirror:
   Title: Mirror (hand-sized, steel)
-  Cost: "5 gp"
+  Cost: 5
 
 
 Oil:
   Title: Oil (1 flask)
-  Cost: "2 gp"
+  Cost: 2
 
 
 Pole:
   Title: Pole (10’ long, wooden)
-  Cost: "1 gp"
+  Cost: 1
 
 
 IronRations:
   Title: Rations (iron, 7 days)
-  Cost: "15 gp"
+  Cost: 15
 
 
 Rations:
   Title: Rations (standard, 7 days)
-  Cost: "5 gp"
+  Cost: 5
 
 
 Rope:
   Title: Rope (50’)
-  Cost: "1 gp"
+  Cost: 1
 
 
 SmallSack:
   Title: Sack (small)
-  Cost: "1 gp"
+  Cost: 1
 
 
 LargeSack:
   Title: Sack (large)
-  Cost: "2 gp"
+  Cost: 2
 
 
 StakesAndMallet:
   Title: Stakes (3) and mallet
-  Cost: "3 gp"
+  Cost: 3
 
 
 ThieveTools:
   Title: Thieves’ tools
-  Cost: "25 gp"
+  Cost: 25
 
 
 TinderBox:
   Title: Tinder box (flint & steel)
-  Cost: "3 gp"
+  Cost: 3
 
 
 SixTorches:
   Title: Torches (6)
-  Cost: "1 gp"
+  Cost: 1
 
 
 Waterskin:
   Title: Waterskin
-  Cost: "1 gp"
+  Cost: 1
 
 
 Wine:
   Title: Wine (2 pints)
-  Cost: "1 gp"
+  Cost: 1
 
 
 BattleAxe:
   $extends: ArmorWeapon
   Title: Battle Axe
   Damage: 1d8
-  Cost: 7 gp
+  Cost: 7
 
 
 Club:
   $extends: ArmorWeapon
   Title: Club
   Damage: 1d4
-  Cost: 3 gp
+  Cost: 3
 
 
 CrossBow:
   $extends: ArmorWeapon
   Title: Cross Bow
   Damage: 1d6
-  Cost: 30 gp
+  Cost: 30
 
 
 Dagger:
   $extends: ArmorWeapon
   Title: Dagger
   Damage: 1d4
-  Cost: 3 gp
+  Cost: 3
 
 
 HandAxe:
   $extends: ArmorWeapon
   Title: Hand Axe
   Damage: 1d6
-  Cost: 4 gp
+  Cost: 4
 
 
 Javelin:
   $extends: ArmorWeapon
   Title: Javelin
   Damage: 1d4
-  Cost: 1 gp
+  Cost: 1
 
 
 Lance:
   $extends: ArmorWeapon
   Title: Lance
   Damage: 1d6
-  Cost: 5 gp
+  Cost: 5
 
 
 LongBow:
   $extends: ArmorWeapon
   Title: Long Bow
   Damage: 1d6
-  Cost: 40 gp
+  Cost: 40
 
 
 Mace:
   $extends: ArmorWeapon
   Title: Mace
   Damage: 1d6
-  Cost: 5 gp
+  Cost: 5
 
 
 Polearm:
   $extends: ArmorWeapon
   Title: Polearm
   Damage: 1d10
-  Cost: 7 gp
+  Cost: 7
 
 
 ShortBow:
   $extends: ArmorWeapon
   Title: Short Bow
   Damage: 1d6
-  Cost: 25 gp
+  Cost: 25
 
 
 ShortSword:
   $extends: ArmorWeapon
   Title: Short Sword
   Damage: 1d6
-  Cost: 7 gp
+  Cost: 7
 
 
 SilverDagger:
   $extends: ArmorWeapon
   Title: Silver Dagger
   Damage: 1d4
-  Cost: 30 gp
+  Cost: 30
 
 
 Sling:
   $extends: ArmorWeapon
   Title: Sling
   Damage: 1d4
-  Cost: 2 gp
+  Cost: 2
 
 
 Spear:
   $extends: ArmorWeapon
   Title: Spear
   Damage: 1d6
-  Cost: 4 gp
+  Cost: 4
 
 
 Staff:
   $extends: ArmorWeapon
   Title: Staff
   Damage: 1d4
-  Cost: 2 gp
+  Cost: 2
 
 
 Sword:
   $extends: ArmorWeapon
   Title: Sword
   Damage: 1d8
-  Cost: 10 gp
+  Cost: 10
 
 
 TwoHandedSword:
   $extends: ArmorWeapon
   Title: Two-Handed Sword
   Damage: 1d10
-  Cost: 15 gp
+  Cost: 15
 
 
 Warhammer:
   $extends: ArmorWeapon
   Title: Warhammer
   Damage: 1d6
-  Cost: 5 gp
+  Cost: 5
 
 
 Wearables:
@@ -651,262 +684,262 @@ LeatherMade:
 
 Wolfsbane:
   Title: Wolfsbane (1 bunch)
-  Cost: "10 gp"
+  Cost: 10
 
 
 ClothingCommonOutfit:
   Title: Common Outfit
-  Cost: "5 gp"
+  Cost: 5
 
 
 ClothingFineOutfit:
   Title: Fine Outfit
-  Cost: "7 gp"
+  Cost: 7
 
 
 ClothingArtisanOutfit:
   Title: Fine Outfit
-  Cost: "7 gp"
+  Cost: 7
 
 
 ClothingAdventurerOutfit:
   Title: Adventurer's Outfit
-  Cost: "10 gp"
+  Cost: 10
 
 
 ClothingUniformOutfit:
   Title: Uniform
-  Cost: "9 gp"
+  Cost: 9
 
 
 ClothingScholarOutfit:
   Title: Scholar Robe
-  Cost: "6 gp"
+  Cost: 6
 
 
 ClothingNobleOutfit:
   Title: Noble's Suit
-  Cost: "250 gp"
+  Cost: 250
 
 
 ClothingRoyalOutfit:
   Title: Royal Suit
-  Cost: "430 gp"
+  Cost: 430
 
 
 ClothingBelt:
   Title: Belt
-  Cost: "9 sp"
+  Cost: 0.9
 
 
 ClothingSash:
   Title: Sash
-  Cost: "4 sp"
+  Cost: 0.4
 
 
 ClothingSuspenders:
   Title: Suspenders
-  Cost: "5 sp"
+  Cost: 0.5
 
 
 ClothingGirdle:
   Title: Girdle
-  Cost: "4 gp"
+  Cost: 4
 
 
 ClothingCape:
   Title: Girdle
-  Cost: "4 gp"
+  Cost: 4
 
 
 ClothingPlainCloak:
   Title: Plain Cloak
-  Cost: "7 sp"
+  Cost: 0.7
 
 
 ClothingWarmCloak:
   Title: Warm Cloak
-  Cost: "9 sp"
+  Cost: 0.9
 
 
 ClothingForestCloak:
   Title: Forest Cloak
-  Cost: "9 sp"
+  Cost: 0.9
 
 
 ClothingJacket:
   Title: Jacket
-  Cost: "3 gp"
+  Cost: 3
 
 
 ClothingLeatherApron:
   Title: Leather Apron
-  Cost: "2 gp"
+  Cost: 2
 
 
 ClothingLeatherCoat:
   Title: Leather Coat
-  Cost: "5 gp"
+  Cost: 5
 
 
 ClothingBlouse:
   Title: Blouse
-  Cost: "1 sp"
+  Cost: 0.1
 
 
 ClothingGown:
   Title: Gown
-  Cost: "8 sp"
+  Cost: 0.8
 
 
 ClothingCommonDress:
   Title: Common Dress
-  Cost: "14 sp"
+  Cost: 0.14
 
 
 ClothingFineDress:
   Title: Fine Dress
-  Cost: "9 gp"
+  Cost: 9
 
 
 ClothingNobleDress:
   Title: Noble Dress
-  Cost: "120 gp"
+  Cost: 120
 
 
 ClothingRoyalDress:
   Title: Royal Dress
-  Cost: "450 gp"
+  Cost: 450
 
 
 ClothingKilt:
   Title: Kilt
-  Cost: "4 gp"
+  Cost: 4
 
 
 ClothingLeggings:
   Title: Leggings
-  Cost: "6 sp"
+  Cost: 0.6
 
 
 ClothingLeatherLeggings:
   Title: Leather Leggings
-  Cost: "5 gp"
+  Cost: 5
 
 
 ClothingCommonRobe:
   Title: Common Robe
-  Cost: "8 sp"
+  Cost: 0.8
 
 
 ClothingEmbrioderedRobe:
   Title: Embriodered Robe
-  Cost: "25 gp"
+  Cost: 25
 
 
 ClothingTunic:
   Title: Tunic
-  Cost: "9 sp"
+  Cost: 0.9
 
 
 ClothingCommonShirt:
   Title: Common Shirt
-  Cost: "7 sp"
+  Cost: 0.7
 
 
 ClothingArtisanShirt:
   Title: Artisan Shirt
-  Cost: "9 sp"
+  Cost: 0.9
 
 
 ClothingTrousers:
   Title: Trousers
-  Cost: "2 gp"
+  Cost: 2
 
 
 ClothingSkirt:
   Title: Skirt
-  Cost: "2 sp"
+  Cost: 0.2
 
 
 ClothingLeatherVest:
   Title: Leather Vest
-  Cost: "15 sp"
+  Cost: 0.15
 
 
 ClothingFurVest:
   Title: FurVest
-  Cost: "18 sp"
+  Cost: 0.18
 
 
 ClothingLeatherGloves:
   Title: Leather Gloves
-  Cost: "7 sp"
+  Cost: 0.7
 
 
 ClothingWarmGloves:
   Title: Warm Gloves
-  Cost: "9 sp"
+  Cost: 0.9
 
 
 CLothingMittens:
   Title: Mittens
-  Cost: "3 sp"
+  Cost: 0.3
 
 
 ClothingHighBoots:
   Title: High Boots
-  Cost: "3 gp"
+  Cost: 3
 
 
 ClothingAdventurerBoots:
   Title: Adventurer Boots
-  Cost: "5 gp"
+  Cost: 5
 
 
 ClothingLowBoots:
   Title: Low Boots
-  Cost: "2 gp"
+  Cost: 2
 
 
 ClothingRidingBoots:
   Title: Riding Boots
-  Cost: "4 gp"
+  Cost: 4
 
 
 ClothingFineShoes:
   Title: Common Shoes
-  Cost: "9 sp"
+  Cost: 0.9
 
 
 ClothingFineShoes:
   Title: Fine Shoes
-  Cost: "3 gp"
+  Cost: 3
 
 
 ClothingRoyalShoes:
   Title: Royal Shoes
-  Cost: "120 gp"
+  Cost: 120
 
 
 ClothingFurHat:
   Title: Fur Hat
-  Cost: "1 gp"
+  Cost: 1
 
 
 ClothingVeil:
   Title: Veil
-  Cost: "1 gp"
+  Cost: 1
 
 
 ClothingCap:
   Title: Cap
-  Cost: "5 sp"
+  Cost: 0.5
 
 
 ClothingLeatherHat:
   Title: Leather Hat
-  Cost: "9 sp"
+  Cost: 0.9
 
 
 MusicalInstruments:
@@ -919,19 +952,19 @@ MusicalInstruments:
 
 Flute:
   Title: Flute
-  Cost: "20 gp"
+  Cost: 20
 
 
 Harp:
   Title: Harp
-  Cost: "25 gp"
+  Cost: 25
 
 
 Lute:
   Title: Lute
-  Cost: "50 gp"
+  Cost: 50
 
 
 HandDrum:
   Title: Hand Drum
-  Cost: "10 gp"
+  Cost: 10

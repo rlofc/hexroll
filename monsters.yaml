@@ -641,7 +641,7 @@ Camel:
       $bootstrap:
         NumberAppearingRoaming: !ref NumberAppearingRoaming
         NumberAppearingLair: !ref NumberAppearingLair
-  Cost: 100 gp
+  Cost: 100
 
 
 CarcassCrawler:
@@ -2613,7 +2613,7 @@ DraftHorse:
       $bootstrap:
         NumberAppearingRoaming: !ref NumberAppearingRoaming
         NumberAppearingLair: !ref NumberAppearingLair
-  Cost: 40 gp
+  Cost: 40
 
 
 RidingHorse:
@@ -2639,7 +2639,7 @@ RidingHorse:
       $bootstrap:
         NumberAppearingRoaming: !ref NumberAppearingRoaming
         NumberAppearingLair: !ref NumberAppearingLair
-  Cost: 75 gp
+  Cost: 75
 
 
 WarHorse:
@@ -2665,7 +2665,7 @@ WarHorse:
       $bootstrap:
         NumberAppearingRoaming: !ref NumberAppearingRoaming
         NumberAppearingLair: !ref NumberAppearingLair
-  Cost: 250 gp
+  Cost: 250
 
 
 WildHorse:
@@ -3485,7 +3485,7 @@ Mule:
         MaxNumberAppearingRoaming: 8 
         NumberAppearingRoaming: !ref NumberAppearingRoaming
         NumberAppearingLair: !ref NumberAppearingLair
-  Cost: 30 gp
+  Cost: 30
 
 
 Mummy:

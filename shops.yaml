@@ -10,13 +10,35 @@ MagicItems:
     - illusion
     - gremlin
 
+BakeryProducts:
+  $subclass:
+    - Bread
+    - Pie
+    - Cake
+    - Flour
+
+
 Bakery:
   $extends: Shop
   Title: Bakery
+  Items:
+    $rollsome:
+      $class: BakeryProducts
+      $min: 2
+      $max: 3 
   Noun:
     - loaf
     - bagette
     - bun
+
+
+GeneralGoodsProducts:
+  $subclass:
+    - Storage
+    - HolyItems
+    - Tools
+    - Lighting
+    - Wearables
 
 
 GeneralGoods:
@@ -24,22 +46,29 @@ GeneralGoods:
   Title: General Goods
   Items:
     $rollsome:
-      $class:
-        - Storage
-        - HolyItems
-        - Tools
-        - Lighting
-        - Wearables
-      $min: 6
+      $class: GeneralGoodsProducts
+      $min: 7
       $max: 10 
   Noun:
     - goods
     - supply
 
 
+BookstoreProducts:
+  $subclass:
+    - EmptyScroll
+    - Inkvial
+    - Quill
+
+
 Bookstore:
   $extends: Shop
   Title: Bookstore
+  Items:
+    $rollsome:
+      $class: BookstoreProducts
+      $min: 2
+      $max: 3 
   Noun:
     - scrolls
     - pages
@@ -52,8 +81,8 @@ Grocer:
   Items:
     $rollsome:
       $class: Food
-      $min: 2
-      $max: 3
+      $min: 7
+      $max: 10
   Noun:
     - groceries
     - tomato
@@ -79,19 +108,19 @@ Pet:
 PetCat:
   $extends: Pet
   Title: Cat
-  Cost: 1 gp
+  Cost: 1
 
 
 PetDog:
   $extends: Pet
   Title: Dog
-  Cost: 4 gp
+  Cost: 4
 
 
 PetRaven:
   $extends: Pet
   Title: Raven
-  Cost: 3 gp
+  Cost: 3
 
 
 PetRat:
@@ -103,49 +132,49 @@ PetRat:
 PetMonkey:
   $extends: Pet
   Title: Monkey
-  Cost: 10 gp
+  Cost: 10
 
 
 PetOwl:
   $extends: Pet
   Title: Owl
-  Cost: 16 gp
+  Cost: 16
 
 
 PetWolf:
   $extends: Pet
   Title: Wolf
-  Cost: 9 gp
+  Cost: 9
 
 
 PetFish:
   $extends: Pet
   Title: Fish
-  Cost: 4 sp
+  Cost: 0.4
 
 
 PetLizard:
   $extends: Pet
   Title: Lizard
-  Cost: 1 gp
+  Cost: 1
 
 
 PetParrot:
   $extends: Pet
   Title: Parrot
-  Cost: 19 gp
+  Cost: 19
 
 
 PetSnake:
   $extends: Pet
   Title: Snake
-  Cost: 3 gp
+  Cost: 3
 
 
 PetSongBird:
   $extends: Pet
   Title: Song Bird
-  Cost: 2 gp
+  Cost: 2
 
 
 PetShop:
@@ -154,7 +183,7 @@ PetShop:
   Items:
     $rollsome:
       $class: Pet
-      $min: 2
+      $min: 3
       $max: 5
   Noun:
     - petshop
@@ -236,8 +265,8 @@ ArmorWeapons:
   Items:
     $rollsome:
       $class: ArmorWeapon
-      $min: 2
-      $max: 6
+      $min: 5
+      $max: 10
   Noun:
     - blade
     - shield & sword
@@ -594,8 +623,8 @@ IndoorMarket:
   Items:
     $rollsome:
       $class: Gear
-      $min: 2
-      $max: 6
+      $min: 10
+      $max: 14
 
 
 Nightclub:
