@@ -575,7 +575,41 @@ DungeonFountain:
 
 
 DungeonDeadEndFeature:
-  $subclass:
-    - DungeonPortal
-    - AreaTrap
-    - DungeonFountain
+  Title: !jinja >
+    {% if Feature.class_=='DungeonPortal' %}
+    Dead End (Magical Portal)
+    {% elif Feature.class_=='AreaTrap' and Feature.Description %}
+    Dead End (Trap!)
+    {% elif Feature.class_=='DungeonFountain' %}
+    Dead End (Fountain)
+    {% elif Feature.class_=='DungeonRemains' %}
+    Dead End (Body)
+    {% else %}
+    Dead End
+    {% endif %}
+  Description: !jinja >
+    {% if Feature.Description %}
+    * {{Feature.Description}}
+    {% else %}
+    * There is nothing here.
+    {% endif %}
+  $context:
+    $attr: RoomContext
+    $values:
+      - Ref
+      - CounterSnapshot
+  Feature:
+    $roll:
+      $class:
+        - DungeonPortal
+        - AreaTrap
+        - DungeonFountain
+        - DungeonRemains
+      $bootstrap:
+        Origin: !ref Origin
+
+
+DungeonAlcoveFeature:
+  - There are oversized torches in the alcoves here.
+  - There are human-like statues in the alcoves here.
+  - There are hanging cages in the alcoves here. There are bare skeletons inside.
