@@ -39,8 +39,8 @@ Dungeon:
 
     #### Wandering Monsters
 
-    There is a __1 in 6 chance__ of encountering one of the
-    following wandering monsters, after __every 2 turns__.
+    Every __2 turns__, there is a __1 in 6 chance__ of encountering one of the
+    following wandering monsters:
 
 
     {{WanderingMonsters.Table}}
@@ -50,7 +50,9 @@ Dungeon:
   Title: !jinja "{{Name.Title}}"
 
 
+
 DungeonWanderingMonsters:
+  WanderingMonstersMaxHD: 3
   Encounters:
     $popsome:
       $collection: dungeon_monsters
@@ -60,12 +62,12 @@ DungeonWanderingMonsters:
     {%set counter = namespace(value=1)%}
     <table class='randenc'>
     <thead>
-    <tr><th>1d{{Encounters|length}}</th><th>Encounter</th><th>stats</th></tr>
+    <tr><th>1d{{Encounters | unique(attribute="subclass_") | rejectattr("Movement","equalto","0") | rejectattr("NumericHD","greaterthan",WanderingMonstersMaxHD)|list|length}}</th><th>Encounter</th><th>stats</th></tr>
     </thead>
     <tbody>
-    {%for e in Encounters%}
-    {%if e.NumberAppearingRoaming > 1%}
-    {%set number = namespace(value=(range(1, e.NumberAppearingRoaming) | random))%}
+    {%for e in Encounters | unique(attribute="subclass_") | rejectattr("Movement","equalto","0") | rejectattr("NumericHD","greaterthan",WanderingMonstersMaxHD)%}
+    {%if e.NumberAppearingRoaming > 4%}
+    {%set number = namespace(value=(range(1, (e.NumberAppearingRoaming / 2) | int) | random))%}
     {%else%}
     {%set number = namespace(value=1)%}
     {%endif%}

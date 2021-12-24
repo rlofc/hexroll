@@ -21,6 +21,7 @@ Acolyte:
   HitDice: "1 (4hp)"
   ExHitDice: 1
   HitDiceRoll: 1d8
+  NumericHD: 1
   Attacks: "1 × mace (1d6)"
   THAC0: "19 [0]"
   Movement: "60’ (20’)"
@@ -49,6 +50,7 @@ ApeWhite:
   HitDice: "4 (18hp)"
   ExHitDice: 4
   HitDiceRoll: 4d8
+  NumericHD: 4
   Attacks: "2 × claw(1d4) or 1 × thrown rock (1d6)"
   THAC0: "16 [+3]"
   Movement: "120’ (40’)"
@@ -77,6 +79,7 @@ Bandit:
   HitDice: "1 (4hp)"
   ExHitDice: 1
   HitDiceRoll: 1d8
+  NumericHD: 1
   Attacks: "1 × weapon (1d6 or by weapon)"
   THAC0: "19 [0]"
   Movement: "120’ (40’)"
@@ -105,6 +108,7 @@ Basilisk:
   HitDice: "6+1** (28hp)"
   ExHitDice: 6+1
   HitDiceRoll: 6d8+1
+  NumericHD: 6
   Attacks: "Att 1 × bite (1d10 + petrification), 1 × gaze (petrification)"
   THAC0: "13 [+6]"
   Movement: "60’ (20’)"
@@ -133,6 +137,7 @@ GiantBat:
   HitDice: "2 (9hp)"
   ExHitDice: 2
   HitDiceRoll: 2d8
+  NumericHD: 2
   Attacks: "1 × bite(1d4)"
   THAC0: "18 [+1]"
   Movement: "30’ (10’) /180’ (60’) flying"
@@ -161,6 +166,7 @@ GiantVampireBat:
   HitDice: "2 (9hp)"
   ExHitDice: 2
   HitDiceRoll: 2d8
+  NumericHD: 2
   Attacks: "1 × bite (1d4 + unconsciousness)"
   THAC0: "18 [+1]"
   Movement: "30’ (10’) / 180’ (60’) flying"
@@ -189,6 +195,7 @@ NormalBat:
   HitDice: "1hp"
   ExHitDice: 1hp
   HitDiceRoll: 1d1
+  NumericHD: 1
   Attacks: "1 × swarm (confusion)"
   THAC0: "20 [–1]"
   Movement: "9’ (3’) / 120’ (40’) flying"
@@ -217,6 +224,7 @@ BlackBear:
   HitDice: "4 (18hp)"
   ExHitDice: 4
   HitDiceRoll: 4d8
+  NumericHD: 4
   Attacks: "2 × claw(1d3), 1 × bite(1d6)"
   THAC0: "16 [+3]"
   Movement: "120’ (40’)"
@@ -245,6 +253,7 @@ CaveBear:
   HitDice: "7 (31hp)"
   ExHitDice: 7
   HitDiceRoll: 7d8
+  NumericHD: 7
   Attacks: "2 × claw(1d8), 1 × bite(2d6)"
   THAC0: "13 [+6]"
   Movement: "120’ (40’)"
@@ -273,6 +282,7 @@ GrizzlyBear:
   HitDice: "5 (22hp)"
   ExHitDice: 5
   HitDiceRoll: 5d8
+  NumericHD: 5
   Attacks: "2 × claw(1d4), 1 × bite(1d8)"
   THAC0: "15 [+4]"
   Movement: "120’ (40’)"
@@ -299,6 +309,7 @@ PolarBear:
   HitDice: "6 (27hp)"
   ExHitDice: 6
   HitDiceRoll: 6d8
+  NumericHD: 6
   Attacks: "2 × claw(1d6), 1 × bite(1d10)"
   THAC0: "14 [+5]"
   Movement: "120’ (40’)"
@@ -325,6 +336,7 @@ FireBeetle:
   HitDice: "1+2 (6hp)"
   ExHitDice: 1+2
   HitDiceRoll: 1d8+2
+  NumericHD: 1
   Attacks: "1 × bite(2d4)"
   THAC0: "18 [+1]"
   Movement: "120’ (40’)"
@@ -353,6 +365,7 @@ OilBeetle:
   HitDice: "2* (9hp)"
   ExHitDice: 2
   HitDiceRoll: 2d8
+  NumericHD: 2
   Attacks: "1 × bite (1d6)"
   THAC0: "18 [+1]"
   Movement: "120’ (40’)"
@@ -381,6 +394,7 @@ TigerBeetle:
   HitDice: "3+1 (14hp)"
   ExHitDice: 3+1
   HitDiceRoll: 3d8+1
+  NumericHD: 3
   Attacks: "1 × bite (2d6)"
   THAC0: "16 [+3]"
   Movement: "150’ (50’)"
@@ -409,6 +423,7 @@ Berserker:
   HitDice: "1+1* (5hp)"
   ExHitDice: 1+1
   HitDiceRoll: 1d8+1
+  NumericHD: 1
   Attacks: "1 × weapon (1d8 or by weapon)"
   THAC0: "18 [+1]"
   Movement: "120’ (40’)"
@@ -437,6 +452,7 @@ BlackPudding:
   HitDice: "10* (45hp)"
   ExHitDice: 10
   HitDiceRoll: 10d8
+  NumericHD: 10
   Attacks: "1 × touch (3d8)"
   THAC0: "11 [+8]"
   Movement: "60’ (20’)"
@@ -462,6 +478,7 @@ BlinkDog:
   HitDice: "4* (18hp)"
   ExHitDice: 4
   HitDiceRoll: 4d8
+  NumericHD: 4
   Attacks: "1 × bite (1d6)"
   THAC0: "16 [+3]"
   Movement: "120’ (40’)"
@@ -490,6 +507,7 @@ Boar:
   HitDice: "3 (13hp)"
   ExHitDice: 3
   HitDiceRoll: 3d8
+  NumericHD: 3
   Attacks: "1 × tusk(2d4)"
   THAC0: "17 [+2]"
   Movement: "150’ (50’)"
@@ -518,6 +536,7 @@ Brigand:
   HitDice: "1 (4hp)"
   ExHitDice: 1
   HitDiceRoll: 1d8
+  NumericHD: 1
   Attacks: "1 × weapon (1d6 or by weapon)"
   THAC0: "19 [0]"
   Movement: "120’ (40’)"
@@ -544,6 +563,7 @@ Buccaneer:
   HitDice: "1 (4hp)"
   ExHitDice: 1
   HitDiceRoll: 1d8
+  NumericHD: 1
   Attacks: "1 ×weapon (1d6 or by weapon)"
   THAC0: "19[0]"
   Movement: "120’ (40’)"
@@ -569,6 +589,7 @@ Bugbear:
   HitDice: "3+1 (14hp)"
   ExHitDice: 3+1
   HitDiceRoll: 3d8+1
+  NumericHD: 3
   Attacks: "1 × weapon (2d4 or by weapon +1)"
   THAC0: "16[+3]"
   Movement: "90’ (30’)"
@@ -597,6 +618,7 @@ Caecilia:
   HitDice: "6* (27hp)"
   ExHitDice: 6
   HitDiceRoll: 6d8
+  NumericHD: 6
   Attacks: "1 × bite (1d8)"
   THAC0: "14 [+5]"
   Movement: "60’ (20’)"
@@ -625,6 +647,7 @@ Camel:
   HitDice: "2 (9hp)"
   ExHitDice: 2
   HitDiceRoll: 2d8
+  NumericHD: 2
   Attacks: "1 × bite (1), 1 × hoof (1d4)"
   THAC0: "18 [+1]"
   Movement: "150’(50’)"
@@ -652,6 +675,7 @@ CarcassCrawler:
   HitDice: "3+1* (14hp)"
   ExHitDice: 3+1
   HitDiceRoll: 3d8+1
+  NumericHD: 3
   Attacks: "8 × tentacle (paralysis)"
   THAC0: "16 [+3]"
   Movement: "120’ (40’)"
@@ -680,6 +704,7 @@ Lion:
   HitDice: "5 (22hp)"
   ExHitDice: 5
   HitDiceRoll: 5d8
+  NumericHD: 5
   Attacks: "2 × claw (1d4+1), 1 × bite (1d10)"
   THAC0: "15 [+4]"
   Movement: "150’ (50’)"
@@ -708,6 +733,7 @@ MountainLion:
   HitDice: "3+2 (15hp)"
   ExHitDice: 3+2
   HitDiceRoll: 3d8+2
+  NumericHD: 3
   Attacks: "2 × claw (1d3), 1 × bite (1d6)"
   THAC0: "16 [+3]"
   Movement: "150’ (50’)"
@@ -736,6 +762,7 @@ Panther:
   HitDice: "4 (18hp)"
   ExHitDice: 4
   HitDiceRoll: 4d8
+  NumericHD: 4
   Attacks: "2 × claw (1d4), 1 × bite (1d8)"
   THAC0: "16 [+3]"
   Movement: "210’ (70’)"
@@ -764,6 +791,7 @@ SabreToothedTiger:
   HitDice: "8 (36hp)"
   ExHitDice: 8
   HitDiceRoll: 8d8
+  NumericHD: 8
   Attacks: "2 × claw (1d8), 1 × bite (2d8)"
   THAC0: "12 [+7]"
   Movement: "150’ (50’)"
@@ -792,6 +820,7 @@ Tiger:
   HitDice: "6 (27hp)"
   ExHitDice: 6
   HitDiceRoll: 6d8
+  NumericHD: 6
   Attacks: "2 × claw (1d6), 1 × bite (2d6)"
   THAC0: "14 [+5]"
   Movement: "150’ (50’)"
@@ -818,6 +847,7 @@ CaveLocust:
   HitDice: "2 (9hp)"
   ExHitDice: 2
   HitDiceRoll: 2d8
+  NumericHD: 2
   Attacks: "1 × bite (1d2) or 1 × jump (1d4) or 1 × spit (stench)"
   THAC0: "18 [+1]"
   Movement: "60’ (20’) / 180’ (60’) flying"
@@ -846,6 +876,7 @@ Centaur:
   HitDice: "4 (18hp)"
   ExHitDice: 4
   HitDiceRoll: 4d8
+  NumericHD: 4
   Attacks: "2 × hoof (1d6), 1 × weapon (1d6 or by weapon),"
   THAC0: "16 [+3]"
   Movement: "180’ (60’)"
@@ -872,6 +903,7 @@ CentipedeGiant:
   HitDice: "½* (2hp)"
   ExHitDice: ½
   HitDiceRoll: 1d4
+  NumericHD: 1
   Attacks: "1 × bite (poison)"
   THAC0: "19 [0]"
   Movement: "60’ (20’)"
@@ -900,6 +932,7 @@ Chimera:
   HitDice: "9** (40hp)"
   ExHitDice: 9
   HitDiceRoll: 9d8
+  NumericHD: 9
   Attacks: "2 × claw (1d3), goat: 1 × gore (2d4), lion: 1 × bite (2d4), dragon: 1 × bite (3d4) or 1 × breath (3d6)"
   THAC0: "12 [+7]"
   Movement: "120’ (40’) / 180’ (60’) flying"
@@ -928,6 +961,7 @@ Cockatrice:
   HitDice: "5** (22hp)"
   ExHitDice: 5
   HitDiceRoll: 5d8
+  NumericHD: 5
   Attacks: "1 × beak (1d6 + petrification)"
   THAC0: "15 [+4]"
   Movement: "90’ (30’) / 180’ (60’) flying"
@@ -956,6 +990,7 @@ CrabGiant:
   HitDice: "3 (13hp)"
   ExHitDice: 3
   HitDiceRoll: 3d8
+  NumericHD: 3
   Attacks: "2 × pincer (2d6)"
   THAC0: "17 [+2]"
   Movement: "60’ (20’)"
@@ -984,6 +1019,7 @@ GiantCrocodile:
   HitDice: "15 (67hp)"
   ExHitDice: 15
   HitDiceRoll: 15d8
+  NumericHD: 15
   Attacks: "1 × bite (3d8)"
   THAC0: "9 [+10]"
   Movement: "90’ (30’) / 90’ (30’) swimming"
@@ -1010,6 +1046,7 @@ LargeCrocodile:
   HitDice: "6 (27hp)"
   ExHitDice: 6
   HitDiceRoll: 6d8
+  NumericHD: 6
   Attacks: "1 × bite (2d8)"
   THAC0: "14 [+5]"
   Movement: "90’ (30’) / 90’ (30’) swimming"
@@ -1036,6 +1073,7 @@ NormalCrocodile:
   HitDice: "2 (9hp)"
   ExHitDice: 2
   HitDiceRoll: 2d8
+  NumericHD: 2
   Attacks: "1 × bite (1d8)"
   THAC0: "18 [+1]"
   Movement: "90’ (30’) / 90’ (30’) swimming"
@@ -1062,6 +1100,7 @@ Cyclops:
   HitDice: "13* (58hp)"
   ExHitDice: 13
   HitDiceRoll: 13d8
+  NumericHD: 13
   Attacks: "1 × club (3d10) or 1 × rock (3d6)"
   THAC0: "10 [+9]"
   Movement: "90’ (30’)"
@@ -1088,6 +1127,7 @@ Dervish:
   HitDice: "1 (4hp)"
   ExHitDice: 1
   HitDiceRoll: 1d8
+  NumericHD: 1
   Attacks: "1 × weapon (1d6 or by weapon)"
   THAC0: "19 [0]"
   Movement: "120’ (40’)"
@@ -1114,6 +1154,7 @@ DjinniLesser:
   HitDice: "7+1* (32hp)"
   ExHitDice: 7+1
   HitDiceRoll: 7d8+1
+  NumericHD: 7
   Attacks: "1 × fists (2d8), magic"
   THAC0: "12 [+7]"
   Movement: "90’ (30’) / 240’ (80’) flying"
@@ -1139,6 +1180,7 @@ Doppelgänger:
   HitDice: "4* (18hp)"
   ExHitDice: 4
   HitDiceRoll: 4d8
+  NumericHD: 4
   Attacks: "1 × bite (1d12)"
   THAC0: "16 [+3]"
   Movement: "90’ (30’)"
@@ -1167,6 +1209,7 @@ BlackDragon:
   HitDice: "7** (31hp)"
   ExHitDice: 7
   HitDiceRoll: 7d8
+  NumericHD: 7
   Attacks: "[2 × claw (1d4 + 1), 1 × bite (2d10)] or breath"
   THAC0: "13 [+6]"
   Movement: "90’ (30’) / 240’ (80’) flying"
@@ -1193,6 +1236,7 @@ BlueDragon:
   HitDice: "9** (40hp)"
   ExHitDice: 9
   HitDiceRoll: 9d8
+  NumericHD: 9
   Attacks: "[2 × claw (1d6 + 1), 1 × bite (3d10)] or breath"
   THAC0: "12 [+7]"
   Movement: "90’ (30’) / 240’ (80’) flying"
@@ -1219,6 +1263,7 @@ GoldDragon:
   HitDice: "11** (49hp)"
   ExHitDice: 11
   HitDiceRoll: 11d8
+  NumericHD: 11
   Attacks: "[2 × claw (2d4), 1 × bite (6d6)] or breath"
   THAC0: "11 [+8]"
   Movement: "90’ (30’) / 240’ (80’) flying"
@@ -1245,6 +1290,7 @@ GreenDragon:
   HitDice: "8** (36hp)"
   ExHitDice: 8
   HitDiceRoll: 8d8
+  NumericHD: 8
   Attacks: "[2 × claw (1d6), 1 × bite (3d8)] or breath"
   THAC0: "12 [+7]"
   Movement: "90’ (30’) / 240’ (80’) flying"
@@ -1273,6 +1319,7 @@ RedDragon:
   HitDice: "10** (45hp)"
   ExHitDice: 10
   HitDiceRoll: 10d8
+  NumericHD: 10
   Attacks: "[2 × claw (1d8), 1 × bite (4d8)] or breath"
   THAC0: "11 [+8]"
   Movement: "90’ (30’) / 240’ (80’) flying"
@@ -1299,6 +1346,7 @@ SeaDragon:
   HitDice: "8** (36hp)"
   ExHitDice: 8
   HitDiceRoll: 8d8
+  NumericHD: 8
   Attacks: "1 × bite (3d8) or breath"
   THAC0: "12 [+7]"
   Movement: "180’ (60’) swimming / 180’ (60’) gliding"
@@ -1325,6 +1373,7 @@ WhiteDragon:
   HitDice: "6** (27hp)"
   ExHitDice: 6
   HitDiceRoll: 6d8
+  NumericHD: 6
   Attacks: "[2 × claw (1d4), 1 × bite (2d8)] or breath"
   THAC0: "14 [+5]"
   Movement: "90’ (30’) / 240’ (80’) flying"
@@ -1353,6 +1402,7 @@ DragonTurtle:
   HitDice: "30* (135hp)"
   ExHitDice: 30
   HitDiceRoll: 30d8
+  NumericHD: 30
   Attacks: "2 × claw (1d8), 1 × bite (1d6 × 10) or breath"
   THAC0: "5 [+14]"
   Movement: "30’ (10’) / 90’ (30’) swimming"
@@ -1378,6 +1428,7 @@ DriverAnt:
   HitDice: "4* (18hp)"
   ExHitDice: 4
   HitDiceRoll: 4d8
+  NumericHD: 4
   Attacks: "1 × bite (2d6)"
   THAC0: "16 [+3]"
   Movement: "180’ (60’)"
@@ -1406,6 +1457,7 @@ Dryad:
   HitDice: "2* (9hp)"
   ExHitDice: 2
   HitDiceRoll: 2d8
+  NumericHD: 2
   Attacks: "1 × magic (charm)"
   THAC0: "18 [+1]"
   Movement: "120’ (40’)"
@@ -1432,6 +1484,7 @@ DwarfMonster:
   HitDice: "1 (4hp)"
   ExHitDice: 1
   HitDiceRoll: 1d8
+  NumericHD: 1
   Attacks: "1 × weapon (1d8 or by weapon)"
   THAC0: "19 [0]"
   Movement: "60’ (20’)"
@@ -1460,6 +1513,7 @@ EfreetiLesser:
   HitDice: "10* (45hp)"
   ExHitDice: 10
   HitDiceRoll: 10d8
+  NumericHD: 10
   Attacks: "1 × fists (2d8), magic"
   THAC0: "11 [+8]"
   Movement: "90’ (30’) / 240’ (80’) flying"
@@ -1485,6 +1539,7 @@ AirElemental:
   HitDice: "8/12/16* (36/54/72hp)"
   ExHitDice: 8/12/16
   HitDiceRoll: 12d8
+  NumericHD: 12
   Attacks: "1 × blow (1d8/2d8/3d8)"
   THAC0: "12 [+7] / 10 [+9] / 8 [+11]"
   Movement: "360’ (120’) flying"
@@ -1510,6 +1565,7 @@ EarthElemental:
   HitDice: "8/12/16* (36/54/72hp)"
   ExHitDice: 8/12/16
   HitDiceRoll: 12d8
+  NumericHD: 12
   Attacks: "1 × blow (1d8/2d8/3d8)"
   THAC0: "12 [+7] / 10 [+9] / 8 [+11]"
   Movement: "60’ (20’)"
@@ -1535,6 +1591,7 @@ FireElemental:
   HitDice: "8/12/16* (36/54/72hp)"
   ExHitDice: 8/12/16
   HitDiceRoll: 12d8
+  NumericHD: 12
   Attacks: "1 × blow (1d8/2d8/3d8)"
   THAC0: "12 [+7] / 10 [+9] / 8 [+11]"
   Movement: "120’ (40’)"
@@ -1560,6 +1617,7 @@ WaterElemental:
   HitDice: "8/12/16* (36/54/72hp)"
   ExHitDice: 8/12/16
   HitDiceRoll: 12d8
+  NumericHD: 12
   Attacks: "1 × blow (1d8/2d8/3d8)"
   THAC0: "12 [+7] / 10 [+9] / 8 [+11]"
   Movement: "60’ (20’) / 180’ (60’) swimming"
@@ -1585,6 +1643,7 @@ Elephant:
   HitDice: "9 (40hp)"
   ExHitDice: 9
   HitDiceRoll: 9d8
+  NumericHD: 9
   Attacks: "2 × tusk (2d4) or 1 × trample (4d8)"
   THAC0: "12 [+7]"
   Movement: "120’ (40’)"
@@ -1611,6 +1670,7 @@ ElfMonster:
   HitDice: "1+1* (5hp)"
   ExHitDice: 1+1
   HitDiceRoll: 1d8+1
+  NumericHD: 1
   Attacks: "1 × weapon (1d8 or by weapon)"
   THAC0: "18 [+1]"
   Movement: "120’ (40’)"
@@ -1639,6 +1699,7 @@ FerretGiant:
   HitDice: "1+1 (5hp)"
   ExHitDice: 1+1
   HitDiceRoll: 1d8+1
+  NumericHD: 1
   Attacks: "1 × bite (1d8)"
   THAC0: "18 [+1]"
   Movement: "150’ (50’)"
@@ -1667,6 +1728,7 @@ GiantBass:
   HitDice: "2 (9hp)"
   ExHitDice: 2
   HitDiceRoll: 2d8
+  NumericHD: 2
   Attacks: "1 × bite (1d6)"
   THAC0: "18 [+1]"
   Movement: "120’ (40’)"
@@ -1693,6 +1755,7 @@ GiantCatfish:
   HitDice: "8+3 (39hp)"
   ExHitDice: 8+3
   HitDiceRoll: 8d8+3
+  NumericHD: 8
   Attacks: "Att 1 × bite (2d8), 4 × feeler (1d4)"
   THAC0: "12 [+7]"
   Movement: "90’ (30’)"
@@ -1719,6 +1782,7 @@ GiantPiranha:
   HitDice: "3+3 (16hp)"
   ExHitDice: 3+3
   HitDiceRoll: 3d8+3
+  NumericHD: 3
   Attacks: "1 × bite (1d8)"
   THAC0: "16 [+3]"
   Movement: "150’ (50’)"
@@ -1745,6 +1809,7 @@ GiantRockfish:
   HitDice: "5+5* (27hp)"
   ExHitDice: 5+5
   HitDiceRoll: 5d8+5
+  NumericHD: 5
   Attacks: "4 × spine (1d4 + poison)"
   THAC0: "14 [+5]"
   Movement: "180’ (60’)"
@@ -1771,6 +1836,7 @@ GiantSturgeon:
   HitDice: "10+2* (47hp)"
   ExHitDice: 10+2
   HitDiceRoll: 10d8+2
+  NumericHD: 10
   Attacks: "1 × bite (2d10)"
   THAC0: "11 [+8]"
   Movement: "180’ (60’)"
@@ -1795,6 +1861,7 @@ Gargoyle:
   HitDice: "4 (18hp)"
   ExHitDice: 4
   HitDiceRoll: 4d8
+  NumericHD: 4
   Attacks: "2 × claw (1d3), 1 × bite (1d6), 1 × horn (1d4)"
   THAC0: "16 [+3]"
   Movement: "90’ (30’) / 150’ (50’) flying"
@@ -1823,6 +1890,7 @@ GelatinousCube:
   HitDice: "4* (18hp)"
   ExHitDice: 4
   HitDiceRoll: 4d8
+  NumericHD: 4
   Attacks: "1 × touch (2d4 + paralysis)"
   THAC0: "16 [+3]"
   Movement: "60’ (20’)"
@@ -1848,6 +1916,7 @@ Ghoul:
   HitDice: "2* (9hp)"
   ExHitDice: 2
   HitDiceRoll: 2d8
+  NumericHD: 2
   Attacks: "2 × claw (1d3 + paralysis), 1 × bite (1d3 + paralysis)"
   THAC0: "18 [+1]"
   Movement: "90’ (30’)"
@@ -1876,6 +1945,7 @@ CloudGiant:
   HitDice: "12+3 (57hp)"
   ExHitDice: 12+3
   HitDiceRoll: 12d8+3
+  NumericHD: 12
   Attacks: "1 × weapon (6d6) or 1 × boulder (3d6)"
   THAC0: "10 [+9]"
   Movement: "120’ (40’)"
@@ -1904,6 +1974,7 @@ FireGiant:
   HitDice: "11+2 (51hp)"
   ExHitDice: 11+2
   HitDiceRoll: 11d8+2
+  NumericHD: 11
   Attacks: "1 × weapon (5d6) or 1 × boulder (3d6)"
   THAC0: "10 [+9]"
   Movement: "120’ (40’)"
@@ -1932,6 +2003,7 @@ FrostGiant:
   HitDice: "10+1 (46hp)"
   ExHitDice: 10+1
   HitDiceRoll: 10d8+1
+  NumericHD: 10
   Attacks: "1 × weapon (4d6) or 1 × boulder (3d6)"
   THAC0: "11 [+8]"
   Movement: "120’ (40’)"
@@ -1960,6 +2032,7 @@ HillGiant:
   HitDice: "8 (36hp)"
   ExHitDice: 8
   HitDiceRoll: 8d8
+  NumericHD: 8
   Attacks: "1 × weapon (2d8)"
   THAC0: "12 [+7]"
   Movement: "120’ (40’)"
@@ -1988,6 +2061,7 @@ StoneGiant:
   HitDice: "9 (40hp)"
   ExHitDice: 9
   HitDiceRoll: 9d8
+  NumericHD: 9
   Attacks: "1 × weapon (3d6) or 1 × boulder (3d6)"
   THAC0: "12 [+7]"
   Movement: "120’ (40’)"
@@ -2016,6 +2090,7 @@ StormGiant:
   HitDice: "15 (67hp)"
   ExHitDice: 15
   HitDiceRoll: 15d8
+  NumericHD: 15
   Attacks: "1 × weapon (8d6), 1 × lightning bolt"
   THAC0: "9 [+10]"
   Movement: "150’ (50’)"
@@ -2042,6 +2117,7 @@ Gnoll:
   HitDice: "2 (9hp)"
   ExHitDice: 2
   HitDiceRoll: 2d8
+  NumericHD: 2
   Attacks: "1 × weapon (2d4 or by weapon + 1)"
   THAC0: "18 [+1]"
   Movement: "90’ (30’)"
@@ -2070,6 +2146,7 @@ Gnome:
   HitDice: "1 (4hp)"
   ExHitDice: 1
   HitDiceRoll: 1d8
+  NumericHD: 1
   Attacks: "1 × weapon (1d6 or by weapon)"
   THAC0: "19 [0]"
   Movement: "60’ (20’)"
@@ -2098,6 +2175,7 @@ Goblin:
   HitDice: "1–1 (3hp)"
   ExHitDice: 1–1
   HitDiceRoll: 1d8-1
+  NumericHD: 1
   Attacks: "1 × weapon (1d6 or by weapon)"
   THAC0: "19 [0]"
   Movement: "60’ (20’)"
@@ -2126,6 +2204,7 @@ AmberGolem:
   HitDice: "10** (45hp)"
   ExHitDice: 10
   HitDiceRoll: 10d8
+  NumericHD: 10
   Attacks: "2 × claw (2d6), 1 × bite (2d10)"
   THAC0: "11 [+8]"
   Movement: "180’ (60’)"
@@ -2151,6 +2230,7 @@ BoneGolem:
   HitDice: "8 (36hp)"
   ExHitDice: 8
   HitDiceRoll: 8d8
+  NumericHD: 8
   Attacks: "2 or 4 × weapon (1d6 or by weapon)"
   THAC0: "12 [+7]"
   Movement: "120’ (40’)"
@@ -2176,6 +2256,7 @@ BronzeGolem:
   HitDice: "20** (90hp)"
   ExHitDice: 20
   HitDiceRoll: 20d8
+  NumericHD: 20
   Attacks: "1 × fist (3d10 + 1d10 heat)"
   THAC0: "6 [+13]"
   Movement: "240’ (80’)"
@@ -2201,6 +2282,7 @@ WoodGolem:
   HitDice: "2+2 (11hp)"
   ExHitDice: 2+2
   HitDiceRoll: 2d8+2
+  NumericHD: 2
   Attacks: "1 × fist (1d8)"
   THAC0: "17 [+2]"
   Movement: "120’ (40’)"
@@ -2226,6 +2308,7 @@ Gorgon:
   HitDice: "8* (36hp)"
   ExHitDice: 8
   HitDiceRoll: 8d8
+  NumericHD: 8
   Attacks: "1 × gore (2d6) or 1 × breath (petrify)"
   THAC0: "12 [+7]"
   Movement: "120’ (40’)"
@@ -2254,6 +2337,7 @@ GreenSlime:
   HitDice: "2* (9hp)"
   ExHitDice: 2
   HitDiceRoll: 2d8
+  NumericHD: 2
   Attacks: "1 × touch (consume flesh)"
   THAC0: "18 [+1]"
   Movement: "3’ (1’)"
@@ -2279,6 +2363,7 @@ GreyOoze:
   HitDice: "3* (13hp)"
   ExHitDice: 3
   HitDiceRoll: 3d8
+  NumericHD: 3
   Attacks: "1 × touch (2d8)"
   THAC0: "17 [+2]"
   Movement: "10’ (3’)"
@@ -2304,6 +2389,7 @@ Griffon:
   HitDice: "7 (31hp)"
   ExHitDice: 7
   HitDiceRoll: 7d8
+  NumericHD: 7
   Attacks: "2 × claw (1d4), 1 × bite (2d8)"
   THAC0: "13 [+6]"
   Movement: "120’ (40’) / 360’ (120’) flying"
@@ -2330,6 +2416,7 @@ HalflingMonster:
   HitDice: "1–1 (3hp)"
   ExHitDice: 1–1
   HitDiceRoll: 1d8-1
+  NumericHD: 1
   Attacks: "1 × weapon (1d6 or by weapon)"
   THAC0: "19 [0]"
   Movement: "90’ (30’)"
@@ -2358,6 +2445,7 @@ Harpy:
   HitDice: "3* (13hp)"
   ExHitDice: 3
   HitDiceRoll: 3d8
+  NumericHD: 3
   Attacks: "2 × claw (1d4), 1 × weapon (1d6 or by weapon), 1 × song (charm)"
   THAC0: "17 [+2]"
   Movement: "60’ (20’) / 150’ (50’) flying"
@@ -2386,6 +2474,7 @@ GiantHawk:
   HitDice: "3+3 (16hp)"
   ExHitDice: 3+3
   HitDiceRoll: 3d8+3
+  NumericHD: 3
   Attacks: "1 × talons or beak (1d6)"
   THAC0: "16 [+3]"
   Movement: "450’ (150’) flying"
@@ -2412,6 +2501,7 @@ NormalHawk:
   HitDice: "½ (2hp)"
   ExHitDice: ½
   HitDiceRoll: 1d4
+  NumericHD: 1
   Attacks: "1 × talons or beak (1d2)"
   THAC0: "19 [0]"
   Movement: "480’ (160’) flying"
@@ -2438,6 +2528,7 @@ Hellhound:
   HitDice: "3 to 7* (13/18/22/27/ 31hp)"
   ExHitDice: 3
   HitDiceRoll: 3d8
+  NumericHD: 3
   Attacks: "1 × bite (1d6) or 1 × breath (1d6 per HD)"
   THAC0: "By HD (17 [+2] to 13 [+6])"
   Movement: "120’ (40’)"
@@ -2466,6 +2557,7 @@ LargeHerdAnimal:
   HitDice: "4 (18hp)"
   ExHitDice: 4
   HitDiceRoll: 4d8
+  NumericHD: 4
   Attacks: "1 × butt (1d8)"
   THAC0: "16 [+3]"
   Movement: "240’ (80’)"
@@ -2492,6 +2584,7 @@ MediumHerdAnimal:
   HitDice: "3 (13hp)"
   ExHitDice: 3
   HitDiceRoll: 3d8
+  NumericHD: 3
   Attacks: "1 × butt (1d6)"
   THAC0: "17 [+2]"
   Movement: "240’ (80’)"
@@ -2518,6 +2611,7 @@ SmallHerdAnimal:
   HitDice: "1 to 2 (4/9hp)"
   ExHitDice: 1
   HitDiceRoll: 1d8
+  NumericHD: 1
   Attacks: "1 × butt (1d4)"
   THAC0: "19 [0]/18 [+1]"
   Movement: "240’ (80’)"
@@ -2544,6 +2638,7 @@ Hippogriff:
   HitDice: "3+1 (14hp)"
   ExHitDice: 3+1
   HitDiceRoll: 3d8+1
+  NumericHD: 3
   Attacks: "2 × claw (1d6), 1 × bite (1d10)"
   THAC0: "16 [+3]"
   Movement: "180’ (60’) / 360’ (120’) flying"
@@ -2570,6 +2665,7 @@ Hobgoblin:
   HitDice: "1+1 (5hp)"
   ExHitDice: 1+1
   HitDiceRoll: 1d8+1
+  NumericHD: 1
   Attacks: "1 × weapon (1d8 or by weapon)"
   THAC0: "18 [+1]"
   Movement: "90’ (30’)"
@@ -2598,6 +2694,7 @@ DraftHorse:
   HitDice: "3 (13hp)"
   ExHitDice: 3
   HitDiceRoll: 3d8
+  NumericHD: 3
   Attacks: "None"
   THAC0: "17 [+2]"
   Movement: "90’ (30’)"
@@ -2624,6 +2721,7 @@ RidingHorse:
   HitDice: "2 (9hp)"
   ExHitDice: 2
   HitDiceRoll: 2d8
+  NumericHD: 2
   Attacks: "2 × hoof (1d4)"
   THAC0: "18 [+1]"
   Movement: "240’ (80’)"
@@ -2650,6 +2748,7 @@ WarHorse:
   HitDice: "3 (13hp)"
   ExHitDice: 3
   HitDiceRoll: 3d8
+  NumericHD: 3
   Attacks: "2 × hoof (1d6)"
   THAC0: "17 [+2]"
   Movement: "120’ (40’)"
@@ -2676,6 +2775,7 @@ WildHorse:
   HitDice: "2 (9hp)"
   ExHitDice: 2
   HitDiceRoll: 2d8
+  NumericHD: 2
   Attacks: "2 × hoof (1d4)"
   THAC0: "18 [+1]"
   Movement: "240’ (80’)"
@@ -2702,6 +2802,7 @@ Hydra:
   HitDice: "5 to 12 (8hp per HD)"
   ExHitDice: 5
   HitDiceRoll: 5d8
+  NumericHD: 5
   Attacks: "5 to 12 × bite (1d10)"
   THAC0: "By HD (15 [+4] to 10 [+9])"
   Movement: "120’ (40’)"
@@ -2727,6 +2828,7 @@ InsectSwarm:
   HitDice: "2 to 4 (9/13/18hp)"
   ExHitDice: 2
   HitDiceRoll: 2d8
+  NumericHD: 2
   Attacks: "1 × swarm (2 or 4hp)"
   THAC0: "18 [+1]/17 [+2]/16 [+3]"
   Movement: "30’ (10’) / 60’ (20’) flying"
@@ -2753,6 +2855,7 @@ InvisibleStalkerMonster:
   HitDice: "8* (36hp)"
   ExHitDice: 8
   HitDiceRoll: 8d8
+  NumericHD: 8
   Attacks: "1 × blow (4d4)"
   THAC0: "12 [+7]"
   Movement: "120’ (40’)"
@@ -2778,6 +2881,7 @@ KillerBee:
   HitDice: "½* (2hp)"
   ExHitDice: ½
   HitDiceRoll: 1d4
+  NumericHD: 1
   Attacks: "1 × sting (1d3 + poison + lodged stinger)"
   THAC0: "19 [0]"
   Movement: "150’ (50’) flying"
@@ -2806,6 +2910,7 @@ Kobold:
   HitDice: "½ (2hp)"
   ExHitDice: ½
   HitDiceRoll: 1d4
+  NumericHD: 1
   Attacks: "1 × weapon (1d4 or by weapon – 1)"
   THAC0: "19 [0]"
   Movement: "60’ (20’)"
@@ -2834,6 +2939,7 @@ LeechGiant:
   HitDice: "6 (27hp)"
   ExHitDice: 6
   HitDiceRoll: 6d8
+  NumericHD: 6
   Attacks: "1 × bite (1d6 + blood drain)"
   THAC0: "14 [+5]"
   Movement: "90’ (30’)"
@@ -2860,6 +2966,7 @@ Lich:
   HitDice: "12"
   ExHitDice: 12
   HitDiceRoll: 10d8+2
+  NumericHD: 10
   Attacks: "1 × touch, weapon or spell"
   THAC0: "14 [+5]"
   Movement: "90’ (30’)"
@@ -2885,6 +2992,7 @@ CrystalLivingStatue:
   HitDice: "3 (13hp)"
   ExHitDice: 3
   HitDiceRoll: 3d8
+  NumericHD: 3
   Attacks: "2 × blow (1d6)"
   THAC0: "17 [+2]"
   Movement: "90’ (30’)"
@@ -2913,6 +3021,7 @@ IronLivingStatue:
   HitDice: "4 (18hp)"
   ExHitDice: 4
   HitDiceRoll: 4d8
+  NumericHD: 4
   Attacks: "2 × blow (1d8)"
   THAC0: "16 [+3]"
   Movement: "30’ (10’)"
@@ -2941,6 +3050,7 @@ RockLivingStatue:
   HitDice: "5** (22hp)"
   ExHitDice: 5
   HitDiceRoll: 5d8
+  NumericHD: 5
   Attacks: "2 × magma jet (2d6)"
   THAC0: "15 [+4]"
   Movement: "60’ (20’)"
@@ -2969,6 +3079,7 @@ Draco:
   HitDice: "4+2 (20hp)"
   ExHitDice: 4+2
   HitDiceRoll: 4d8+2
+  NumericHD: 4
   Attacks: "1 × bite (1d10)"
   THAC0: "15 [+4]"
   Movement: "120’ (40’) / 210’ (70’) gliding"
@@ -2997,6 +3108,7 @@ Gecko:
   HitDice: "3+1 (14hp)"
   ExHitDice: 3+1
   HitDiceRoll: 3d8+1
+  NumericHD: 3
   Attacks: "1 × bite (1d8)"
   THAC0: "16 [+3]"
   Movement: "120’ (40’)"
@@ -3025,6 +3137,7 @@ HornedChameleon:
   HitDice: "5* (22hp)"
   ExHitDice: 5
   HitDiceRoll: 5d8
+  NumericHD: 5
   Attacks: "1 × tongue/bite (2d4), 1 × horn (1d6), 1 × tail (knock down"
   THAC0: "15 [+4]"
   Movement: "120’ (40’)"
@@ -3053,6 +3166,7 @@ Tuatara:
   HitDice: "6 (27hp)"
   ExHitDice: 6
   HitDiceRoll: 6d8
+  NumericHD: 6
   Attacks: "2 × claw (1d4)"
   THAC0: "14 [+5]"
   Movement: "90’ (30’)"
@@ -3081,6 +3195,7 @@ LizardMan:
   HitDice: "2+1 (10hp)"
   ExHitDice: 2+1
   HitDiceRoll: 2d8+1
+  NumericHD: 2
   Attacks: "1 × weapon (1d6+1 or by weapon + 1)"
   THAC0: "17 [+2]"
   Movement: "60’ (20’) / 120’ (40’) in water"
@@ -3109,6 +3224,7 @@ DevilSwine:
   HitDice: "9* (40hp)"
   ExHitDice: 9
   HitDiceRoll: 9d8
+  NumericHD: 9
   Attacks: "1 × gore (2d6) or 1 × weapon (1d6 or by weapon) or 1 × magic (charm)"
   THAC0: "12 [+7]"
   Movement: "180’ (60’) / 120’ (40’) in human form"
@@ -3137,6 +3253,7 @@ Werebear:
   HitDice: "6* (27hp)"
   ExHitDice: 6
   HitDiceRoll: 6d8
+  NumericHD: 6
   Attacks: "2 × claw (2d4), 1 × bite (2d8)"
   THAC0: "14 [+5]"
   Movement: "120’ (40’)"
@@ -3165,6 +3282,7 @@ Wereboar:
   HitDice: "4+1* (19hp)"
   ExHitDice: 4+1
   HitDiceRoll: 4d8+1
+  NumericHD: 4
   Attacks: "1 × tusk/bite (2d6)"
   THAC0: "15 [+4]"
   Movement: "150’ (50’)"
@@ -3193,6 +3311,7 @@ Wererat:
   HitDice: "3* (13hp)"
   ExHitDice: 3
   HitDiceRoll: 3d8
+  NumericHD: 3
   Attacks: "1 × bite (1d4) or 1 × weapon (1d6 or by weapon)"
   THAC0: "17 [+2]"
   Movement: "120’ (40’)"
@@ -3221,6 +3340,7 @@ Weretiger:
   HitDice: "5* (22hp)"
   ExHitDice: 5
   HitDiceRoll: 5d8
+  NumericHD: 5
   Attacks: "2 × claw (1d6), 1 × bite (2d6)"
   THAC0: "15 [+4]"
   Movement: "150’ (50’)"
@@ -3249,6 +3369,7 @@ Werewolf:
   HitDice: "4* (18hp)"
   ExHitDice: 4
   HitDiceRoll: 4d8
+  NumericHD: 4
   Attacks: "1 × bite (2d4)"
   THAC0: "16 [+3]"
   Movement: "180’ (60’)"
@@ -3277,6 +3398,7 @@ Manticore:
   HitDice: "6+1 (28hp)"
   ExHitDice: 6+1
   HitDiceRoll: 6d8+1
+  NumericHD: 6
   Attacks: "[2 × claw (1d4), 1 × bite (2d4)] or 6 × tail spike (1d6)"
   THAC0: "13 [+6]"
   Movement: "120’ (40’) / 180’ (60’) flying"
@@ -3305,6 +3427,7 @@ Mastodon:
   HitDice: "15 (67hp)"
   ExHitDice: 15
   HitDiceRoll: 15d8
+  NumericHD: 15
   Attacks: "2 × tusk (2d6) or 1 × trample (4d8)"
   THAC0: "9 [+10]"
   Movement: "120’ (40’)"
@@ -3331,6 +3454,7 @@ Medium:
   HitDice: "1** (4hp)"
   ExHitDice: 1
   HitDiceRoll: 1d8
+  NumericHD: 1
   Attacks: "1 × dagger (1d4) or 1 × spell"
   THAC0: "19 [0]"
   Movement: "120’ (40’)"
@@ -3359,6 +3483,7 @@ Medusa:
   HitDice: "4** (18hp)"
   ExHitDice: 4
   HitDiceRoll: 4d8
+  NumericHD: 4
   Attacks: "1 × snakebites (1d6 + poison)"
   THAC0: "16 [+3]"
   Movement: "90’ (30’)"
@@ -3387,6 +3512,7 @@ Merchant:
   HitDice: "1 (4hp)"
   ExHitDice: 1
   HitDiceRoll: 1d8
+  NumericHD: 1
   Attacks: "1 × weapon (1d6 or by weapon)"
   THAC0: "19 [0]"
   Movement: "90’ (30’)"
@@ -3413,6 +3539,7 @@ Merman:
   HitDice: "1 (4hp)"
   ExHitDice: 1
   HitDiceRoll: 1d8
+  NumericHD: 1
   Attacks: "1 × weapon (1d6 or by weapon)"
   THAC0: "19 [0]"
   Movement: "120’ (40’)"
@@ -3439,6 +3566,7 @@ Minotaur:
   HitDice: "6 (27hp)"
   ExHitDice: 6
   HitDiceRoll: 6d8
+  NumericHD: 6
   Attacks: "[1 × gore (1d6), 1 × bite] or 1 × weapon (1d6 + 2 or by weapon + 2)"
   THAC0: "14 [+5]"
   Movement: "120’ (40’)"
@@ -3467,6 +3595,7 @@ Mule:
   HitDice: "2 (9hp)"
   ExHitDice: 2
   HitDiceRoll: 2d8
+  NumericHD: 2
   Attacks: "1 × kick (1d4) or 1 × bite (1d3)"
   THAC0: "18 [+1]"
   Movement: "120’ (40’)"
@@ -3496,6 +3625,7 @@ Mummy:
   HitDice: "5+1* (23hp)"
   ExHitDice: 5+1
   HitDiceRoll: 5d8+1
+  NumericHD: 5
   Attacks: "1 × touch (1d12 + disease)"
   THAC0: "14 [+5]"
   Movement: "60’ (20’)"
@@ -3524,6 +3654,7 @@ NeanderthalCaveman:
   HitDice: "2 (9hp)"
   ExHitDice: 2
   HitDiceRoll: 2d8
+  NumericHD: 2
   Attacks: "1 × weapon (2d4 or by weapon + 1)"
   THAC0: "18 [+1]"
   Movement: "120’ (40’)"
@@ -3552,6 +3683,7 @@ Nixie:
   HitDice: "1 (4hp)"
   ExHitDice: 1
   HitDiceRoll: 1d8
+  NumericHD: 1
   Attacks: "1 × weapon (1d4) or 1 × group spell (charm)"
   THAC0: "19 [0]"
   Movement: "120’ (40’)"
@@ -3578,6 +3710,7 @@ Noble:
   HitDice: "3 (13hp)"
   ExHitDice: 3
   HitDiceRoll: 3d8
+  NumericHD: 3
   Attacks: "1 × weapon (1d8 or by weapon)"
   THAC0: "17 [+2]"
   Movement: "60’ (20’)"
@@ -3606,6 +3739,7 @@ Nomad:
   HitDice: "1 (4hp)"
   ExHitDice: 1
   HitDiceRoll: 1d8
+  NumericHD: 1
   Attacks: "1 × weapon (1d6 or by weapon)"
   THAC0: "19 [0]"
   Movement: "120’ (40’)"
@@ -3632,6 +3766,7 @@ NormalHuman:
   HitDice: "½ (2hp)"
   ExHitDice: ½
   HitDiceRoll: 1d4
+  NumericHD: 1
   Attacks: "1 × weapon (1d6 or by weapon)"
   THAC0: "20 [–1]"
   Movement: "120’ (40’)"
@@ -3660,6 +3795,7 @@ OchreJelly:
   HitDice: "5* (22hp)"
   ExHitDice: 5
   HitDiceRoll: 5d8
+  NumericHD: 5
   Attacks: "1 × touch (2d6)"
   THAC0: "15 [+4]"
   Movement: "30’ (10’)"
@@ -3685,6 +3821,7 @@ OctopusGiant:
   HitDice: "8 (36hp)"
   ExHitDice: 8
   HitDiceRoll: 8d8
+  NumericHD: 8
   Attacks: "8 × tentacle (1d3 + constriction), 1 × bite (1d6)"
   THAC0: "12 [+7]"
   Movement: "90’ (30’)"
@@ -3711,6 +3848,7 @@ Ogre:
   HitDice: "4+1 (19hp)"
   ExHitDice: 4+1
   HitDiceRoll: 4d8+1
+  NumericHD: 4
   Attacks: "1 × club (1d10)"
   THAC0: "15 [+4]"
   Movement: "90’ (30’)"
@@ -3739,6 +3877,7 @@ Orc:
   HitDice: "1 (4hp)"
   ExHitDice: 1
   HitDiceRoll: 1d8
+  NumericHD: 1
   Attacks: "1 × weapon (1d6 or by weapon)"
   THAC0: "19 [0]"
   Movement: "120’ (40’)"
@@ -3767,6 +3906,7 @@ OwlBear:
   HitDice: "5 (22hp)"
   ExHitDice: 5
   HitDiceRoll: 5d8
+  NumericHD: 5
   Attacks: "2 × claw (1d8), 1 × bite (1d8)"
   THAC0: "15 [+4]"
   Movement: "120’ (40’)"
@@ -3795,6 +3935,7 @@ Pegasus:
   HitDice: "2+2 (11hp)"
   ExHitDice: 2+2
   HitDiceRoll: 2d8+2
+  NumericHD: 2
   Attacks: "2 × hoof (1d6)"
   THAC0: "17 [+2]"
   Movement: "240’ (80’) / 480’ (160’) flying"
@@ -3821,6 +3962,7 @@ Pirate:
   HitDice: "1 (4hp)"
   ExHitDice: 1
   HitDiceRoll: 1d8
+  NumericHD: 1
   Attacks: "1 × weapon (1d6 or by weapon)"
   THAC0: "19 [0]"
   Movement: "120’ (40’)"
@@ -3846,6 +3988,7 @@ Pixie:
   HitDice: "1* (4hp)"
   ExHitDice: 1
   HitDiceRoll: 1d8
+  NumericHD: 1
   Attacks: "1 × dagger (1d4)"
   THAC0: "19 [0]"
   Movement: "90’ (30’) / 180’ (60’) flying"
@@ -3874,6 +4017,7 @@ Pteranodon:
   HitDice: "5 (22hp)"
   ExHitDice: 5
   HitDiceRoll: 5d8
+  NumericHD: 5
   Attacks: "1 × bite (1d12)"
   THAC0: "15 [+4]"
   Movement: "240’ (80’) flying"
@@ -3900,6 +4044,7 @@ Pterodactyl:
   HitDice: "1 (4hp)"
   ExHitDice: 1
   HitDiceRoll: 1d8
+  NumericHD: 1
   Attacks: "1 × bite (1d3)"
   THAC0: "19 [0]"
   Movement: "180’ (60’) flying"
@@ -3926,6 +4071,7 @@ PurpleWorm:
   HitDice: "15* (67hp)"
   ExHitDice: 15
   HitDiceRoll: 15d8
+  NumericHD: 15
   Attacks: "1 × bite (2d8), 1 × sting (1d8 + poison)"
   THAC0: "9 [+10]"
   Movement: "60’ (20’)"
@@ -3954,6 +4100,7 @@ GiantRat:
   HitDice: "½ (2hp)"
   ExHitDice: ½
   HitDiceRoll: 1d4
+  NumericHD: 1
   Attacks: "1 × bite (1d3 + disease)"
   THAC0: "19 [0]"
   Movement: "120’ (40’) / 60’ (20’) swimming"
@@ -3983,6 +4130,7 @@ NormalRat:
   HitDice: "1hp"
   ExHitDice: 1hp
   HitDiceRoll: 1d1
+  NumericHD: 1
   Attacks: "1 × bite per pack (1d6 + disease)"
   THAC0: "19 [0]"
   Movement: "60’ (20’) / 30’ (10’) swimming"
@@ -4012,6 +4160,7 @@ Rhagodessa:
   HitDice: "4+2 (20hp)"
   ExHitDice: 4+2
   HitDiceRoll: 4d8+2
+  NumericHD: 4
   Attacks: "1 × sucker (grab), 1 × bite (2d8)"
   THAC0: "15 [+4]"
   Movement: "150’ (50’)"
@@ -4040,6 +4189,7 @@ NormalRhinoceros:
   HitDice: "6 (27hp)"
   ExHitDice: 6
   HitDiceRoll: 6d8
+  NumericHD: 6
   Attacks: "1 × horn (2d4) or 1 × trample (2d8)"
   THAC0: "14 [+5]"
   Movement: "120’ (40’)"
@@ -4066,6 +4216,7 @@ WoollyRhinoceros:
   HitDice: "8 (36hp)"
   ExHitDice: 8
   HitDiceRoll: 8d8
+  NumericHD: 8
   Attacks: "1 × horn (2d6) or 1 × trample (2d12)"
   THAC0: "12 [+7]"
   Movement: "120’ (40’)"
@@ -4092,6 +4243,7 @@ RobberFly:
   HitDice: "2 (9hp)"
   ExHitDice: 2
   HitDiceRoll: 2d8
+  NumericHD: 2
   Attacks: "1 × bite (1d8)"
   THAC0: "18 [+1]"
   Movement: "90’ (30’) / 180’ (60’) flying"
@@ -4120,6 +4272,7 @@ GiantRoc:
   HitDice: "36 (162hp)"
   ExHitDice: 36
   HitDiceRoll: 36d8
+  NumericHD: 36
   Attacks: "2 × claw (3d6), 1 × bite (8d6)"
   THAC0: "5 [+14]"
   Movement: "60’ (20’) / 480’ (160’) flying"
@@ -4145,6 +4298,7 @@ LargeRoc:
   HitDice: "12 (54hp)"
   ExHitDice: 12
   HitDiceRoll: 12d8
+  NumericHD: 12
   Attacks: "2 × claw (1d8), 1 × bite (2d10)"
   THAC0: "10 [+9]"
   Movement: "60’ (20’) / 480’ (160’) flying"
@@ -4171,6 +4325,7 @@ SmallRoc:
   HitDice: "6 (27hp)"
   ExHitDice: 6
   HitDiceRoll: 6d8
+  NumericHD: 6
   Attacks: "2 × claw (1d4+1), 1 × bite (2d6)"
   THAC0: "14 [+5]"
   Movement: "60’ (20’) / 480’ (160’) flying"
@@ -4197,6 +4352,7 @@ RockBaboon:
   HitDice: "2 (9hp)"
   ExHitDice: 2
   HitDiceRoll: 2d8
+  NumericHD: 2
   Attacks: "1 × club (1d6), 1 × bite (1d3)"
   THAC0: "18 [+1]"
   Movement: "120’ (40’)"
@@ -4225,6 +4381,7 @@ RustMonster:
   HitDice: "5 (22hp)"
   ExHitDice: 5
   HitDiceRoll: 5d8
+  NumericHD: 5
   Attacks: "1 × feeler (rusting)"
   THAC0: "15 [+4]"
   Movement: "120’ (40’)"
@@ -4253,6 +4410,7 @@ FlameSalamander:
   HitDice: "8* (36hp)"
   ExHitDice: 8
   HitDiceRoll: 8d8
+  NumericHD: 8
   Attacks: "2 × claw (1d4), 1 × bite (1d8), 1 × heat aura (1d8)"
   THAC0: "12 [+7]"
   Movement: "120’ (40’)"
@@ -4281,6 +4439,7 @@ FrostSalamander:
   HitDice: "12* (54hp)"
   ExHitDice: 12
   HitDiceRoll: 12d8
+  NumericHD: 12
   Attacks: "4 × claw (1d6), 1 × bite (2d6), 1 × cold aura (1d8)"
   THAC0: "10 [+9]"
   Movement: "120’ (40’)"
@@ -4309,6 +4468,7 @@ ScorpionGiant:
   HitDice: "4* (18hp)"
   ExHitDice: 4
   HitDiceRoll: 4d8
+  NumericHD: 4
   Attacks: "2 × claw (1d10), 1 × sting (1d4 + poison)"
   THAC0: "16 [+3]"
   Movement: "150’ (50’)"
@@ -4337,6 +4497,7 @@ SeaSerpentLesser:
   HitDice: "6 (27hp)"
   ExHitDice: 6
   HitDiceRoll: 6d8
+  NumericHD: 6
   Attacks: "1 × bite (2d6) or 1 × squeeze (1d10 hull damage)"
   THAC0: "14 [+5]"
   Movement: "150’ (50’)"
@@ -4363,6 +4524,7 @@ Shadow:
   HitDice: "2+2* (11hp)"
   ExHitDice: 2+2
   HitDiceRoll: 2d8+2
+  NumericHD: 2
   Attacks: "1 × touch (1d4 + strength drain)"
   THAC0: "17 [+2]"
   Movement: "90’ (30’)"
@@ -4391,6 +4553,7 @@ BullShark:
   HitDice: "2 (9hp)"
   ExHitDice: 2
   HitDiceRoll: 2d8
+  NumericHD: 2
   Attacks: "1 × bite (2d4) or 1 × ram (stun)"
   THAC0: "18 [+1]"
   Movement: "180’ (60’)"
@@ -4417,6 +4580,7 @@ GreatWhiteShark:
   HitDice: "8 (36hp)"
   ExHitDice: 8
   HitDiceRoll: 8d8
+  NumericHD: 8
   Attacks: "1 × bite (2d10)"
   THAC0: "12 [+7]"
   Movement: "180’ (60’)"
@@ -4443,6 +4607,7 @@ MakoShark:
   HitDice: "4 (18hp)"
   ExHitDice: 4
   HitDiceRoll: 4d8
+  NumericHD: 4
   Attacks: "1 × bite (2d6)"
   THAC0: "16 [+3]"
   Movement: "180’ (60’)"
@@ -4469,6 +4634,7 @@ ShrewGiant:
   HitDice: "1 (4hp)"
   ExHitDice: 1
   HitDiceRoll: 1d8
+  NumericHD: 1
   Attacks: "2 × bite (1d6)"
   THAC0: "19 [0]"
   Movement: "180’ (60’)"
@@ -4497,6 +4663,7 @@ Shrieker:
   HitDice: "3 (13hp)"
   ExHitDice: 3
   HitDiceRoll: 3d8
+  NumericHD: 3
   Attacks: "None"
   THAC0: "17 [+2]"
   Movement: "9’ (3’)"
@@ -4524,6 +4691,7 @@ Skeleton:
   HitDice: "1 (4hp)"
   ExHitDice: 1
   HitDiceRoll: 1d8
+  NumericHD: 1
   Attacks: "1 × weapon (1d6 or by weapon)"
   THAC0: "19 [0]"
   Movement: "60’ (20’)"
@@ -4552,6 +4720,7 @@ GiantRattler:
   HitDice: "4* (18hp)"
   ExHitDice: 4
   HitDiceRoll: 4d8
+  NumericHD: 4
   Attacks: "2 × bite (1d4 + poison)"
   THAC0: "16 [+3]"
   Movement: "120’ (40’)"
@@ -4580,6 +4749,7 @@ PitViper:
   HitDice: "2* (9hp)"
   ExHitDice: 2
   HitDiceRoll: 2d8
+  NumericHD: 2
   Attacks: "1 × bite (1d4 + poison)"
   THAC0: "18 [+1]"
   Movement: "90’ (30’)"
@@ -4608,6 +4778,7 @@ RockPython:
   HitDice: "5* (22hp)"
   ExHitDice: 5
   HitDiceRoll: 5d8
+  NumericHD: 5
   Attacks: "1 × bite (1d4 + constriction)"
   THAC0: "15 [+4]"
   Movement: "90’ (30’)"
@@ -4636,6 +4807,7 @@ SeaSnake:
   HitDice: "3* (13hp)"
   ExHitDice: 3
   HitDiceRoll: 3d8
+  NumericHD: 3
   Attacks: "1 × bite (1hp + poison)"
   THAC0: "17 [+2]"
   Movement: "90’ (30’)"
@@ -4664,6 +4836,7 @@ SpittingCobra:
   HitDice: "1* (4hp)"
   ExHitDice: 1
   HitDiceRoll: 1d8
+  NumericHD: 1
   Attacks: "1 × spit (blindness) or 1 × bite (1d3 + poison)"
   THAC0: "19 [0]"
   Movement: "90’ (30’)"
@@ -4692,6 +4865,7 @@ Spectre:
   HitDice: "6** (27hp)"
   ExHitDice: 6
   HitDiceRoll: 6d8
+  NumericHD: 6
   Attacks: "1 × touch (1d8 + energy drain)"
   THAC0: "14 [+5]"
   Movement: "150’ (50’) / 300’ (100’) flying"
@@ -4720,6 +4894,7 @@ BlackWidow:
   HitDice: "3* (13hp)"
   ExHitDice: 3
   HitDiceRoll: 3d8
+  NumericHD: 3
   Attacks: "1 × bite (2d6 + poison)"
   THAC0: "17 [+2]"
   Movement: "60’ (20’) / 120’ (40’) in webs"
@@ -4748,6 +4923,7 @@ CrabSpider:
   HitDice: "2* (9hp)"
   ExHitDice: 2
   HitDiceRoll: 2d8
+  NumericHD: 2
   Attacks: "1 × bite (1d8 + poison)"
   THAC0: "18 [+1]"
   Movement: "120’ (40’)"
@@ -4776,6 +4952,7 @@ Tarantella:
   HitDice: "4* (18hp)"
   ExHitDice: 4
   HitDiceRoll: 4d8
+  NumericHD: 4
   Attacks: "1 × bite (1d8 + poison)"
   THAC0: "16 [+3]"
   Movement: "120’ (40’)"
@@ -4804,6 +4981,7 @@ Sprite:
   HitDice: "½* (2hp)"
   ExHitDice: ½
   HitDiceRoll: 1d4
+  NumericHD: 1
   Attacks: "1 × spell (curse)"
   THAC0: "19 [0]"
   Movement: "60’ (20’) / 180’ (60’) flying"
@@ -4832,6 +5010,7 @@ SquidGiant:
   HitDice: "6 (27hp)"
   ExHitDice: 6
   HitDiceRoll: 6d8
+  NumericHD: 6
   Attacks: "8 × small tentacle (1d4 + constriction), 2 × large tentacle (1d4 + constriction or 1d10 hull damage), 1 × beak (1d10 or 2 hull damage)"
   THAC0: "14 [+5]"
   Movement: "120’ (40’)"
@@ -4858,6 +5037,7 @@ Stegosaurus:
   HitDice: "11 (49hp)"
   ExHitDice: 11
   HitDiceRoll: 11d8
+  NumericHD: 11
   Attacks: "1 × tail (2d8) or 1 × trample (2d8)"
   THAC0: "11 [+8]"
   Movement: "60’ (20’)"
@@ -4884,6 +5064,7 @@ Stirge:
   HitDice: "1* (4hp)"
   ExHitDice: 1
   HitDiceRoll: 1d8
+  NumericHD: 1
   Attacks: "1 × beak (1d3 + blood sucking)"
   THAC0: "19 [0]"
   Movement: "30’ (10’) / 180’ (60’) flying"
@@ -4913,6 +5094,7 @@ Thoul:
   HitDice: "3** (13hp)"
   ExHitDice: 3
   HitDiceRoll: 3d8
+  NumericHD: 3
   Attacks: "2 × claw (1d3 + paralysis) or 1 × weapon (1d6 or by weapon)"
   THAC0: "17 [+2]"
   Movement: "120’ (40’)"
@@ -4941,6 +5123,7 @@ Titanothere:
   HitDice: "12 (54hp)"
   ExHitDice: 12
   HitDiceRoll: 12d8
+  NumericHD: 12
   Attacks: "1 × butt (2d6) or 1 × trample (3d8)"
   THAC0: "10 [+9]"
   Movement: "120’ (40’)"
@@ -4967,6 +5150,7 @@ ToadGiant:
   HitDice: "2+2 (11hp)"
   ExHitDice: 2+2
   HitDiceRoll: 2d8+2
+  NumericHD: 2
   Attacks: "1 × bite (1d4+1)"
   THAC0: "17 [+2]"
   Movement: "90’ (30’)"
@@ -4995,6 +5179,7 @@ Trader:
   HitDice: "1 (4hp)"
   ExHitDice: 1
   HitDiceRoll: 1d8
+  NumericHD: 1
   Attacks: "1 × weapon (1d6 or by weapon)"
   THAC0: "19 [0]"
   Movement: "120’ (40’)"
@@ -5023,6 +5208,7 @@ Treant:
   HitDice: "8 (36hp)"
   ExHitDice: 8
   HitDiceRoll: 8d8
+  NumericHD: 8
   Attacks: "2 × fist (2d6)"
   THAC0: "12 [+7]"
   Movement: "60’ (20’)"
@@ -5049,6 +5235,7 @@ Triceratops:
   HitDice: "11 (49hp)"
   ExHitDice: 11
   HitDiceRoll: 11d8
+  NumericHD: 11
   Attacks: "1 × gore (3d6) or 1 × trample (3d6)"
   THAC0: "11 [+8]"
   Movement: "90’ (30’)"
@@ -5075,6 +5262,7 @@ Troglodyte:
   HitDice: "2* (9hp)"
   ExHitDice: 2
   HitDiceRoll: 2d8
+  NumericHD: 2
   Attacks: "Att 2 x claw (1d4), 1 x bite (1d4)"
   THAC0: "18 [+1]"
   Movement: "120’ (40’)"
@@ -5103,6 +5291,7 @@ Troll:
   HitDice: "6+3* (30hp)"
   ExHitDice: 6+3
   HitDiceRoll: 6d8+3
+  NumericHD: 6
   Attacks: "2 × talon (1d6), 1 × bite (1d10)"
   THAC0: "13 [+6]"
   Movement: "120’ (40’)"
@@ -5130,6 +5319,7 @@ TyrannosaurusRex:
   HitDice: "20 (90hp)"
   ExHitDice: 20
   HitDiceRoll: 20d8
+  NumericHD: 20
   Attacks: "1 × bite (6d6)"
   THAC0: "6 [+13]"
   Movement: "120’ (40’)"
@@ -5154,6 +5344,7 @@ Unicorn:
   HitDice: "4* (18hp)"
   ExHitDice: 4
   HitDiceRoll: 4d8
+  NumericHD: 4
   Attacks: "2 × hoof (1d8), 1 × horn (1d8)"
   THAC0: "16 [+3]"
   Movement: "240’ (80’)"
@@ -5182,6 +5373,7 @@ Vampire:
   HitDice: "7 to 9** (31/36/40hp)"
   ExHitDice: 7
   HitDiceRoll: 7d8
+  NumericHD: 7
   Attacks: "1 × touch (1d10 + energy drain) or 1 × gaze (charm)"
   THAC0: "13 [+6]/12 [+7]/12 [+7]"
   Movement: "120’ (40’)"
@@ -5210,6 +5402,7 @@ Veteran:
   HitDice: "1 to 3 (4/9/13hp)"
   ExHitDice: 1
   HitDiceRoll: 1d8
+  NumericHD: 1
   Attacks: "1 × weapon (1d8 or by weapon)"
   THAC0: "19 [0]"
   Movement: "60’ (20’)"
@@ -5238,6 +5431,7 @@ WarpBeast:
   HitDice: "6* (27hp)"
   ExHitDice: 6
   HitDiceRoll: 6d8
+  NumericHD: 6
   Attacks: "2 × tentacle (2d4)"
   THAC0: "14 [+5]"
   Movement: "150’ (50’)"
@@ -5266,6 +5460,7 @@ FreshwaterTermite:
   HitDice: "2+1 (10hp)"
   ExHitDice: 2+1
   HitDiceRoll: 2d8+1
+  NumericHD: 2
   Attacks: "1 × bite (1d4) or 1 × spray (stun)"
   THAC0: "17 [+2]"
   Movement: "120’ (40’)"
@@ -5292,6 +5487,7 @@ SaltwaterTermite:
   HitDice: "4 (18hp)"
   ExHitDice: 4
   HitDiceRoll: 4d8
+  NumericHD: 4
   Attacks: "1 × bite (1d6) or 1 × spray (stun)"
   THAC0: "16 [+3]"
   Movement: "180’ (60’)"
@@ -5318,6 +5514,7 @@ SwampTermite:
   HitDice: "1+1 (5hp)"
   ExHitDice: 1+1
   HitDiceRoll: 1d8+1
+  NumericHD: 1
   Attacks: "1 × bite (1d3) or 1 × spray (stun)"
   THAC0: "18 [+1]"
   Movement: "90’ (30’)"
@@ -5344,6 +5541,7 @@ WeaselGiant:
   HitDice: "4+4 (22hp)"
   ExHitDice: 4+4
   HitDiceRoll: 4d8+4
+  NumericHD: 4
   Attacks: "1 × bite (2d4 + blood sucking)"
   THAC0: "15 [+4]"
   Movement: "150’ (50’)"
@@ -5372,6 +5570,7 @@ KillerWhale:
   HitDice: "6 (27hp)"
   ExHitDice: 6
   HitDiceRoll: 6d8
+  NumericHD: 6
   Attacks: "1 × bite (1d20)"
   THAC0: "14 [+5]"
   Movement: "240’ (80’)"
@@ -5398,6 +5597,7 @@ Narwhal:
   HitDice: "12 (54hp)"
   ExHitDice: 12
   HitDiceRoll: 12d8
+  NumericHD: 12
   Attacks: "1 × bite (1d8), 1 × horn (2d6)"
   THAC0: "10 [+9]"
   Movement: "180’ (60’)"
@@ -5424,6 +5624,7 @@ SpermWhale:
   HitDice: "36 (162hp)"
   ExHitDice: 36
   HitDiceRoll: 36d8
+  NumericHD: 36
   Attacks: "1 × bite (3d20) or 1 × ram (6d6 hull damage)"
   THAC0: "5 [+14]"
   Movement: "180’ (60’)"
@@ -5450,6 +5651,7 @@ Wight:
   HitDice: "3* (13hp)"
   ExHitDice: 3
   HitDiceRoll: 3d8
+  NumericHD: 3
   Attacks: "1 × touch (energy drain)"
   THAC0: "17 [+2]"
   Movement: "90’ (30’)"
@@ -5478,6 +5680,7 @@ DireWolf:
   HitDice: "4+1 (19hp)"
   ExHitDice: 4+1
   HitDiceRoll: 4d8+1
+  NumericHD: 4
   Attacks: "1 × bite (2d4)"
   THAC0: "15 [+4]"
   Movement: "150’ (50’)"
@@ -5506,6 +5709,7 @@ NormalWolf:
   HitDice: "2+2 (11hp)"
   ExHitDice: 2+2
   HitDiceRoll: 2d8+2
+  NumericHD: 2
   Attacks: "1 × bite (1d6)"
   THAC0: "17 [+2]"
   Movement: "180’ (60’)"
@@ -5534,6 +5738,7 @@ Wraith:
   HitDice: "4** (18hp)"
   ExHitDice: 4
   HitDiceRoll: 4d8
+  NumericHD: 4
   Attacks: "1 × touch (1d6 + energy drain)"
   THAC0: "16 [+3]"
   Movement: "120’ (40’) / 240’ (80’) flying"
@@ -5562,6 +5767,7 @@ Wyvern:
   HitDice: "7* (31hp)"
   ExHitDice: 7
   HitDiceRoll: 7d8
+  NumericHD: 7
   Attacks: "1 × bite (2d8), 1 × sting (1d6 + poison)"
   THAC0: "13 [+6]"
   Movement: "90’ (30’) / 240’ (80’) flying"
@@ -5590,6 +5796,7 @@ YellowMould:
   HitDice: "2* (9hp)"
   ExHitDice: 2
   HitDiceRoll: 2d8
+  NumericHD: 2
   Attacks: "1 × spores (1d6 + choking)"
   THAC0: "18 [+1]"
   Movement: "0"
@@ -5618,6 +5825,7 @@ Zombie:
   HitDice: "2 (9hp)"
   ExHitDice: 2
   HitDiceRoll: 2d8
+  NumericHD: 2
   Attacks: "1 × weapon (1d8 or by weapon)"
   THAC0: "18 [+1]"
   Movement: "60’ (20’)"
