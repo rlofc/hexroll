@@ -555,7 +555,7 @@ DungeonPortal:
         $values:
           Active: !jinja >
             {{portal.Portal | articlize | capitalize}} is a magical portal.
-            Anyone steppping into the portal will be magically teleported into
+            Anyone stepping into the portal will be magically teleported into
             __area {{portal.Origin}}__
 
   Portal:
