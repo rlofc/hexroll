@@ -52,7 +52,7 @@ Dungeon:
 
 
 DungeonWanderingMonsters:
-  WanderingMonstersMaxHD: 3
+  WanderingMonstersMaxHD: !parameter highest_wandering_monster_hitdice_in_dungeons
   Encounters:
     $popsome:
       $collection: dungeon_monsters

@@ -52,6 +52,8 @@ defaults:
     # - Mine
     # - Ruins
 
+  highest_wandering_monster_hitdice_in_dungeons: 3
+
   faction_classes: !weighted
     - Cult
     - Militia
@@ -59,3 +61,5 @@ defaults:
     #- Smugglers
     #- Thieves
     #- Tribe
+
+  unpack_similar_biomes_in_hex_map: false
