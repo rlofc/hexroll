@@ -37,12 +37,6 @@ Dungeon:
 
     %%begin_div
 
-    #### Wandering Monsters
-
-    Every __2 turns__, there is a __1 in 6 chance__ of encountering one of the
-    following wandering monsters:
-
-
     {{WanderingMonsters.Table}}
 
     {{Map.Details}}
@@ -59,10 +53,19 @@ DungeonWanderingMonsters:
       $min: 6
       $max: 6
   Table: !jinja > 
+    {%set count = namespace(value=(Encounters | unique(attribute="subclass_") | rejectattr("Movement","equalto","0") | rejectattr("NumericHD","greaterthan",WanderingMonstersMaxHD)|list|length))%}
+    {%if count.value > 0%}
+    
+    #### Wandering Monsters
+
+    Every __2 turns__, there is a __1 in 6 chance__ of encountering one of the
+    following wandering monsters:
+
+
     {%set counter = namespace(value=1)%}
     <table class='randenc'>
     <thead>
-    <tr><th>1d{{Encounters | unique(attribute="subclass_") | rejectattr("Movement","equalto","0") | rejectattr("NumericHD","greaterthan",WanderingMonstersMaxHD)|list|length}}</th><th>Encounter</th><th>stats</th></tr>
+    <tr><th>1d{{count.value}}</th><th>Encounter</th><th>stats</th></tr>
     </thead>
     <tbody>
     {%for e in Encounters | unique(attribute="subclass_") | rejectattr("Movement","equalto","0") | rejectattr("NumericHD","greaterthan",WanderingMonstersMaxHD)%}
@@ -75,6 +78,7 @@ DungeonWanderingMonsters:
     {%-set counter.value = counter.value+1-%}{%-endfor%}
     </tbody>
     </table>
+    {%endif%}
 
 
 AreaDescription:
