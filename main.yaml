@@ -3,9 +3,9 @@ $main:
     $roll: Realm
 
   Output: !jinja |
-    # {{Realm.Title}}
+    # <a name="{{uuid}}"></a> {{Realm.Title}}
 
-    <a href='{{uuid}}.webp'><img alt='Realm hex map' src='{{uuid}}.webp'/></a>
+    {{svg}}
 
     ## Background
 

@@ -32,7 +32,7 @@ Dungeon:
     ### <a name='{{uuid}}'></a>{{Name.Title}}
 
 
-    <a href='{{uuid}}.webp'><img src='{{uuid}}.webp'/></a>
+    {{svg}}
 
 
     %%begin_div
