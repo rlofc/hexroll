@@ -9,7 +9,7 @@ Terrain:
 
 Mountains:
   Name: Mountains
-  Flair:
+  Flair: !avoid_repeating
     - A thundering waterfall drops hundreds of feet down from an overhang in the
       steep slopes, forming a cloud of raging water at the base. 
 
@@ -56,7 +56,7 @@ Mountains:
 
 Forest:
   Name: Forest
-  Flair:
+  Flair: !avoid_repeating
     - Giant red, purple and blue mushrooms grow beside the trees here, their
       colors are vibrant and bright, much like gem stones.
 
@@ -112,7 +112,7 @@ Forest:
 
 Coast:
   Name: Coast
-  Flair:
+  Flair: !avoid_repeating
     - The ruins of an abandoned lighthouse stand on a rock on the edge of a
       cove, now a temporary home to a flock sea birds.
 
@@ -152,8 +152,8 @@ Coast:
 
 Desert:
   Name: Desert
-  Flair:
-    - The sand here is as dark as the night. Not a fire nor a vulcano could have
+  Flair: !avoid_repeating
+    - The sand here is as dark as the night. Not a fire nor a volcano could have
       been the cause.
 
     - You can clearly see bones revealing under the sand when the wind shifts
@@ -172,7 +172,7 @@ Desert:
       desert trees provide enough shadow to rest or camp under.
 
     - Vast dunes stretch in all directions, shimmering in the desert heat. The
-      sun makes the sand scroching hot.
+      sun makes the sand scorching hot.
 
   Location: 
     - on the dunes sands
@@ -182,7 +182,7 @@ Desert:
 
 Plains:
   Name: Plains
-  Flair:
+  Flair: !avoid_repeating
     - There are several large craters in the green fields here. Something
       violent must have hit the ground from the sky in the past.
 

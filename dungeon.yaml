@@ -424,7 +424,7 @@ DungeonTreasureTier4:
 DungeonFungi:
   Hint:
     - Faint colorful light is emitting from everywhere
-    - There’s also a colorful glow emitted from the ground
+    - There’s also a colorful glow emitting from the ground
 
   Description: 
     - !jinja > 
