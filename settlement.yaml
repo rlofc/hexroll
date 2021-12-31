@@ -187,12 +187,93 @@ Hut:
   Description: None
   Details: "..."
 
+TavernDish:
+  Description: !jinja >
+    {{Type}} {{Kind}} __{{MainIngrediant}}__,
+    {{Style}} __{{SecondIngrediant}}__ and {{Addition}}
+    __{{ThirdIngrediant}}__ for
+    __{{(Price*(DistrictContext.CostFactor if DistrictContext is defined else 1.0)) | currency}}__
+
+  Type:
+    - Stewed
+    - Barbecued
+    - Cooked
+
+  Kind:
+    - tenders of
+    - fillet of
+    - slices of
+    - chunks of
+
+  MainIngrediant:
+    - meat
+    - fish
+    - shellfish
+    - chicken
+    - pork
+
+  Style:
+    - marinated in
+    - glazed with
+
+  SecondIngrediant:
+    - ale
+    - red wine
+    - white wine
+    - honey and herbs
+    - garlic and wine
+
+  Addition:
+    - served with
+  
+  ThirdIngrediant:
+    - mashed potatoes
+    - baked potatoes
+    - cooked rice
+    - steamed vegetables
+    - fresh salad
+
+  Price:
+    - 0.15
+    - 0.2
+    - 0.25
+
+
+TavernMenu:
+  Details: !jinja >
+    {{Dishes | join('&#11037;', attribute='Description')}}
+
+  Dishes:
+    $rollsome:
+      $class: TavernDish
+      $min: 1
+      $max: 4
 
 Tavern:
   Name:
     $roll: TavernName
   Title: !jinja "<a name='{{uuid}}'></a>{{Name.Full}}"
   Description: !jinja |
+    ###### Keeper
+    
+    Owned and managed by {{keeper.Description}}
+    
+    ###### Staff
+
+    {%for s in staff%}
+
+    {{s.Description}}
+
+    {%endfor%}
+
+    ###### Menu
+
+    | 1d4 | Menu |
+    | --- | ------ |
+    | 1 | {{menus[0].Details}} |
+    | 2 | {{menus[1].Details}} |
+    | 3 | {{menus[2].Details}} |
+    | 4 | {{menus[3].Details}} |
 
     ###### Patrons & Visitors
 
@@ -239,6 +320,28 @@ Tavern:
     <br/>
 
     %%begin_div
+  menus:
+    $rollsome:
+      $class: TavernMenu
+      $min: 4
+      $max: 4
+
+  keeper:
+    $roll:
+      $class: Character
+      $inject:
+        $values:
+          Story2: ''
+
+  staff:
+    $rollsome:
+      $class: Character
+      $min: 1
+      $max: 3
+      $inject:
+        $values:
+          Story2: ''
+
   visitors:
     $rollsome:
       $class: TavernVisitor
@@ -378,6 +481,13 @@ CityDistrict:
 VillageDistrict:
   $extends: District
 
+  CostFactor: 0.9
+
+  $context:
+    $attr: DistrictContext
+    $values:
+      - CostFactor
+
   shops:
     $rollsome:
       $class: TownShops
@@ -390,6 +500,13 @@ VillageDistrict:
 
 TownDistrict:
   $extends: District
+
+  CostFactor: 1.0
+
+  $context:
+    $attr: DistrictContext
+    $values:
+      - CostFactor
 
   shops:
     $rollsome:
@@ -408,6 +525,14 @@ ResidentialDistrict:
     - Common District
     - The Dwellers District
 
+  CostFactor: 0.8
+
+  $context:
+    $attr: DistrictContext
+    $values:
+      - CostFactor
+
+
   $extends: District
 
   shops:
@@ -423,6 +548,14 @@ ResidentialDistrict:
 PalaceDistrict:
   $extends: District
   Title: Palace District
+
+  CostFactor: 2.0
+
+  $context:
+    $attr: DistrictContext
+    $values:
+      - CostFactor
+
   shops:
     $rollsome:
       $class: PalaceDistrictShop
@@ -447,6 +580,12 @@ CastleDistrict:
 TempleDistrict:
   $extends: District
   Title: Temple District
+  CostFactor: 1.5
+
+  $context:
+    $attr: DistrictContext
+    $values:
+      - CostFactor
   shops:
     $rollsome:
       $class: TempleDistrictShop
@@ -459,6 +598,12 @@ TempleDistrict:
 CraftingDistrict:
   $extends: District
   Title: Crafting District
+  CostFactor: 1.0
+
+  $context:
+    $attr: DistrictContext
+    $values:
+      - CostFactor
   shops:
     $rollsome:
       $class: CraftingDistrictShop
@@ -471,6 +616,12 @@ CraftingDistrict:
 HarborDistrict:
   $extends: District
   Title: Harbor District
+  CostFactor: 0.9
+
+  $context:
+    $attr: DistrictContext
+    $values:
+      - CostFactor
   shops:
     $rollsome:
       $class: HarborDistrictShop
@@ -483,6 +634,12 @@ HarborDistrict:
 MarketDistrict:
   $extends: District
   Title: Market District
+  CostFactor: 0.9
+
+  $context:
+    $attr: DistrictContext
+    $values:
+      - CostFactor
   shops:
     $rollsome:
       $class: MarketDistrictShop
