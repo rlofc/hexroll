@@ -50,7 +50,7 @@ QuestSecret:
 
 TreasureQuestSecret:
   $extends: QuestSecret
-  Details: !jinja |
+  Details: !jinja >
     * {{FolkContext.Name.Full}}’s {{Artifact.Item}}
       is in area {{Location.RoomContext.Ref}} in the
       {{Location.DungeonContext.Name.Title}}
@@ -58,12 +58,13 @@ TreasureQuestSecret:
 
 TreasureQuest:
   $extends: Quest
-  Description: !jinja |
+  Description: !jinja >
     * __{{Artifact.Appearance | title}}__ is lost (or so claimed).
      (Secret: This is actually __{{Artifact.ActualItem | articlize}}__
      and it is currently somewhere in the
-     __{{Location.DungeonContext.Name.Title}}__)
-    * Reward is __{{Reward}}__
+     [__{{Location.DungeonContext.Name.Title}}__](#{{Location.DungeonContext.HexUUID}}))
+
+        * Reward is __{{Reward}}__
 
   Rumor:
     $roll:
@@ -75,7 +76,7 @@ TreasureQuest:
             [__{{quest.FolkContext.Name.Full}}’s__](#{{quest.FolkContext.uuid}})
             __{{quest.Artifact.Appearance | title}}__ (actually
             __{{quest.Artifact.ActualItem | articlize}}__) is somewhere in the
-            {{quest.Location.DungeonContext.Name.Title}}
+            [{{quest.Location.DungeonContext.Name.Title}}](#{{quest.Location.DungeonContext.HexUUID}})
   Advert:
     $roll:
       $class: Advert
@@ -91,6 +92,10 @@ TreasureQuest:
             - !jinja >
               “__Item LOST!__ A possession of mine was lost. 
               Finders reward is guaranteed.
+              [__{{quest.FolkContext.Name.Full}}__](#{{quest.FolkContext.uuid}})”
+            - !jinja >
+              “__Stolen!__  Something very dear to me was stolen.
+              Please reach out if you can help.
               [__{{quest.FolkContext.Name.Full}}__](#{{quest.FolkContext.uuid}})”
 
 
@@ -108,7 +113,7 @@ TreasureQuest:
       $inject:
         $namespace: quest
         $values:
-          Active: !jinja |
+          Active: !jinja >
             {{quest.TreasureContainer}} contains 
             [__{{quest.FolkContext.Name.Full}}’s__](#{{quest.FolkContext.uuid}})
             (from __{{quest.CityContext.NamePart|title}}__) 
@@ -126,7 +131,7 @@ TreasureQuest:
 
 MissingPersonQuestSecret:
   $extends: QuestSecret
-  Details: !jinja |
+  Details: !jinja >
     * {{Relation.Name.Full}}’s {{Relation.Type}}
       is held captive in {{Location.DungeonContext.Name.Title | title}}
 
@@ -202,9 +207,9 @@ MissingPersonQuestCell:
 
 MissingPersonQuest:
   $extends: Quest
-  Description: !jinja |
+  Description: !jinja >
     * {{Relation.Type}} is missing since last week.  (Secret:
-      Held captive in the {{Location.DungeonContext.Name.Title}})
+      Held captive in the [{{Location.DungeonContext.Name.Title}}](#{{Location.DungeonContext.HexUUID}}))
 
   Timeframe:
     - two days ago
@@ -220,7 +225,7 @@ MissingPersonQuest:
           Details: !jinja >
             [__{{quest.FolkContext.Name.Full}}’s__](#{{quest.FolkContext.uuid}})
             __{{quest.Relation.Type}}__ is held captive in the
-            __{{quest.Location.DungeonContext.Name.Title | title}}__
+            [__{{quest.Location.DungeonContext.Name.Title | title}}__](#{{quest.Location.DungeonContext.HexUUID}})
 
   Advert:
     $roll:
@@ -260,7 +265,7 @@ MissingPersonQuest:
       $inject:
         $namespace: quest
         $values:
-          Active: !jinja |
+          Active: !jinja >
             The __chained person__ is 
             [__{{quest.FolkContext.Name.Full}}’s__](#{{quest.FolkContext.uuid}})
             __{{quest.Relation.Type}}__ from {{quest.CityContext.NamePart|title}}
