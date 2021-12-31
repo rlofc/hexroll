@@ -33,6 +33,7 @@ DungeonProxy:
       $class: Dungeon
       $bootstrap:
         Hex: !jymbol "{{Hex.subclass_}}"
+        HexUUID: !jymbol "{{Hex.uuid}}"
   Rumor:
     $roll:
       $class: Rumor

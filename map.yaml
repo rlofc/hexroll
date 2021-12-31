@@ -105,15 +105,15 @@ Hex:
     $value: 1
   Details: !jinja |
     {%if DungeonDesc%}
-    #### {{MapRef}} Hex {{'%02d' %  HexCounter}}: {{DungeonDesc}}
+    #### {{MapRef}} <a name="{{uuid}}"></a>Hex {{'%02d' %  HexCounter}}: {{DungeonDesc}}
     {%elif SettlementDesc%}
-    #### {{MapRef}} Hex {{'%02d' %  HexCounter}}: {{SettlementDesc}}
+    #### {{MapRef}} <a name="{{uuid}}"></a>Hex {{'%02d' %  HexCounter}}: {{SettlementDesc}}
     {%elif InnDesc%}
-    #### {{MapRef}} Hex {{'%02d' %  HexCounter}}: {{InnDesc}}
+    #### {{MapRef}} <a name="{{uuid}}"></a>Hex {{'%02d' %  HexCounter}}: {{InnDesc}}
     {%elif EncounterDesc%}
-    #### {{MapRef}} Hex {{'%02d' %  HexCounter}}: {{EncounterName}}
+    #### {{MapRef}} <a name="{{uuid}}"></a>Hex {{'%02d' %  HexCounter}}: {{EncounterName}}
     {%else%}
-    #### {{MapRef}} Hex {{'%02d' %  HexCounter}}: {{Feature.Name}}
+    #### {{MapRef}} <a name="{{uuid}}"></a>Hex {{'%02d' %  HexCounter}}: {{Feature.Name}}
     {%endif%}
 
     {{Thumb}}

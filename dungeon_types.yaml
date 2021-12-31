@@ -59,6 +59,7 @@ Cavern:
     $values:
       - Name
       - Hex
+      - HexUUID
 
   $collections:
     dungeon_encounters:
@@ -126,6 +127,7 @@ Tomb:
     $values: 
       - Name
       - Hex
+      - HexUUID
 
   $collections:
     dungeon_encounters:
@@ -208,6 +210,7 @@ Temple:
     $values:
       - Name
       - Hex
+      - HexUUID
 
   $collections:
     dungeon_encounters:

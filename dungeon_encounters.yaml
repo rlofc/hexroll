@@ -129,8 +129,8 @@ DungeonEncounterVerminsTier3:
         $namespace: encounter
         $values:
           Details: !jinja >
-            There’s __{{encounter.Monster.Title | articlize}}__ in
-            __{{encounter.DungeonContext.Name.Title | title}}__
+            There’s __{{encounter.Monster.Title | articlize}}__ in the
+            [__{{encounter.DungeonContext.Name.Title | title}}__](#{{encounter.DungeonContext.HexUUID}})
 
 
 
@@ -174,8 +174,8 @@ DungeonEncounterOozesTier3:
         $namespace: encounter
         $values:
           Details: !jinja >
-            There’s __{{encounter.Monster.Title | articlize}}__ in
-            __{{encounter.DungeonContext.Name.Title | title}}__
+            There’s __{{encounter.Monster.Title | articlize}}__ in the
+            [__{{encounter.DungeonContext.Name.Title | title}}__](#{{encounter.DungeonContext.HexUUID}})
 
 
 
@@ -222,8 +222,8 @@ DungeonEncounterAbberationsTier3:
         $namespace: encounter
         $values:
           Details: !jinja >
-            There’s __{{encounter.Monster.Title | articlize}}__ in
-            __{{encounter.DungeonContext.Name.Title | title}}__
+            There’s __{{encounter.Monster.Title | articlize}}__ in the
+            [__{{encounter.DungeonContext.Name.Title | title}}__](#{{encounter.DungeonContext.HexUUID}})
 
 
 
@@ -321,8 +321,8 @@ DungeonEncounterMagicalTier3:
         $namespace: encounter
         $values:
           Details: !jinja >
-            There’s __{{encounter.Monster.Title | articlize}}__ in
-            __{{encounter.DungeonContext.Name.Title | title}}__
+            There’s __{{encounter.Monster.Title | articlize}}__ in the
+            [__{{encounter.DungeonContext.Name.Title | title}}__](#{{encounter.DungeonContext.HexUUID}})
 
 
 DungeonEncounterDragonsTier3:
@@ -336,8 +336,8 @@ DungeonEncounterDragonsTier3:
         $namespace: encounter
         $values:
           Details: !jinja >
-            There’s __{{encounter.Monster.Title | articlize}}__ in
-            __{{encounter.DungeonContext.Name.Title | title}}__
+            There’s __{{encounter.Monster.Title | articlize}}__ in the
+            [__{{encounter.DungeonContext.Name.Title | title}}__](#{{encounter.DungeonContext.HexUUID}})
 
 
 DungeonEncounterDragonsTier4:
@@ -351,8 +351,8 @@ DungeonEncounterDragonsTier4:
         $namespace: encounter
         $values:
           Details: !jinja >
-            There’s __{{encounter.Monster.Title | articlize}}__ in
-            __{{encounter.DungeonContext.Name.Title | title}}__
+            There’s __{{encounter.Monster.Title | articlize}}__ in the
+            [__{{encounter.DungeonContext.Name.Title | title}}__](#{{encounter.DungeonContext.HexUUID}})
 
 
 DungeonEncounterUndead:
@@ -383,8 +383,8 @@ DungeonEncounterUndeadTier3:
         $namespace: encounter
         $values:
           Details: !jinja >
-            There’s __{{encounter.Monster.Title | articlize}}__ in
-            __{{encounter.DungeonContext.Name.Title | title}}__
+            There’s __{{encounter.Monster.Title | articlize}}__ in the
+            [__{{encounter.DungeonContext.Name.Title | title}}__](#{{encounter.DungeonContext.HexUUID}})
 
 
 DungeonEncounterUndeadTier4:
@@ -399,6 +399,6 @@ DungeonEncounterUndeadTier4:
         $namespace: encounter
         $values:
           Details: !jinja >
-            There’s __{{encounter.Monster.Title | articlize}}__ in
-            __{{encounter.DungeonContext.Name.Title | title}}__
+            There’s __{{encounter.Monster.Title | articlize}}__ in the
+            [__{{encounter.DungeonContext.Name.Title | title}}__](#{{encounter.DungeonContext.HexUUID}})
 
