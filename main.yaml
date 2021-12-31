@@ -2,12 +2,42 @@ $main:
   Realm:
     $roll: Realm
 
+  ToC: !jinja >
+    * [{{Realm.Title}}](#{{uuid}})
+        * [Background](#toc-background)
+        * [Regions](#toc-regions)
+    {% for r in regions %}
+            * [{{r.Name.Full}} {{r.Suffix}}](#{{r.uuid}})
+    {% endfor %}
+        * [Settlements](#toc-settlements)
+    {% for s in settlements %}
+            * [{{s.subclass_|capitalize}} of {{s.NamePart|title}}](#{{s.uuid}})
+    {% endfor %}
+        * [Inns](#toc-inns)
+    {% for i in inns %}
+            * [{{i.Name.Full}}](#{{i.uuid}})
+    {% endfor %}
+        * [Dungeons](#toc-dungeons)
+    {% for d in dungeons %}
+            * [{{d.Name.Title}}](#{{d.uuid}})
+    {% endfor %}
+        * [Factions](#toc-factions)
+    {% for f in factions %}
+            * [The {{f.Name_Prefix|title}} {{f.Name_Suffix|title}}](#{{f.uuid}})
+    {% endfor %}
+        * [Breakglass](#toc-breakglass)
+            * [Rumors](#toc-rumors)
+            * [Secrets](#toc-secrets)
+        * [Legal](#toc-legal)
+            * [Designation of Open Game Content](#toc-doogc)
+            * [OGL](#toc-ogl)
+
   Output: !jinja |
     # <a name="{{uuid}}"></a> {{Realm.Title}}
 
     {{svg}}
 
-    ## Background
+    ## <a name="toc-background"></a>Background
 
     %%begin_div
 
@@ -19,7 +49,7 @@ $main:
 
     %%end_div
     
-    ## Regions
+    ## <a name="toc-regions"></a>Regions
 
     %%begin_div
 
@@ -28,7 +58,7 @@ $main:
 
     %%end_div
     
-    ## Settlements
+    ## <a name="toc-settlements"></a>Settlements
 
     %%begin_div
 
@@ -37,7 +67,7 @@ $main:
 
     %%end_div
     
-    ## Inns
+    ## <a name="toc-inns"></a>Inns
 
     %%begin_div
 
@@ -46,7 +76,7 @@ $main:
 
     %%end_div
     
-    ## Dungeons
+    ## <a name="toc-dungeons"></a>Dungeons
 
     %%begin_div
 
@@ -55,7 +85,7 @@ $main:
 
     %%end_div
     
-    ## Factions
+    ## <a name="toc-factions"></a>Factions
 
     %%begin_div
 
@@ -65,23 +95,23 @@ $main:
 
     %%end_div
     
-    ## Breakglass
+    ## <a name="toc-breakglass"></a>Breakglass
 
     %%begin_div
 
-    ### Rumors
+    ### <a name="toc-rumors"></a>Rumors
     {% for r in rumors %}
     * {{r.Details}}{% endfor %}    
 
-    ### Secrets
+    ### <a name="toc-secrets"></a>Secrets
     {% for s in secrets %}
     {{s.Details}}{% endfor %}    
 
     %%end_div
     
-    ## Legal
+    ## <a name="toc-legal"></a>Legal
 
-    ### Designation of Open Game Content
+    ### <a name="toc-doogc"></a>Designation of Open Game Content
     This document contains Open Game Content, subject
     to the Open Game License, released under the Open Game License,
     Version 1.0a (reproduced below), as described in Section 1(d)
@@ -89,7 +119,7 @@ $main:
     All other content in this generated sandbox remains the property of
     the copyright holder.
 
-    ### OGL
+    ### <a name="toc-ogl"></a>OGL
 
     OPEN GAME LICENSE Version 1.0a
 
