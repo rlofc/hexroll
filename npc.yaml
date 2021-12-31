@@ -194,8 +194,8 @@ Character:
 
   Description: !jinja |
     {{Name.Full}}.
-    {{Gender.Pronoun|capitalize}} {{Gender.Pos}} {{Gender.Feature}}, {{Feature1}} and {{Feature2}}.
-    (*{{State}}*)
+    {{Gender.Pronoun|capitalize}} {{Gender.Pos}} {{Gender.Feature}}, {{Feature1}} and {{Feature2}}
+    (*{{State}}*).
 
     {{Association}}
     {{Story2.Description}}
