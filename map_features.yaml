@@ -48,10 +48,9 @@ DungeonProxy:
 
 SettlementProxy:
   Name: Settlement
-  Probability:
-    The chance to finding it is 2 in 6 (accidental) or 4 in 6 (when searching)
   Settlement:
-    $roll: Settlement
+    $roll:
+      $class: Settlement
   Hex:
     $popone:
         $collection: hexs
@@ -67,6 +66,8 @@ SettlementProxy:
                 {{sproxy.Settlement.Flair}}
               SettlementDetails: !jinja |
                 {{sproxy.Settlement.Description}}
+              SettlementPrefix: !jinja |
+                {{sproxy.Settlement.Prefix}}
               SettlementConnector: !jinja |
                 {{sproxy.Settlement.Connector}}
 
@@ -125,6 +126,7 @@ Encounter:
     - the ruins of an abandoned stronghold
     - the ruins of a forgotten keep
     - the nearest dungeon
+
 
   Hex:
     $popone:

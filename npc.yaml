@@ -191,17 +191,42 @@ Character:
       $class: Name
       $bootstrap:
         Gender: !ref Gender
+  TavernText: 
+    - !jinja >
+      {%if t is defined%}
+      * {{Name.First}} is frequenting the {{t.Full}} on {{Gender.Pronoun2}} time off.
+      {%endif%}
+    - !jinja >
+      {%if t is defined%}
+      * {{Name.First}} likes spending {{Gender.Pronoun2}} time in the {{t.Full}}.
+      {%endif%}
+    - !jinja >
+      {%if t is defined%}
+      * {{Name.First}} enjoys dining with {{Gender.Pronoun2}} friends in the {{t.Full}}.
+      {%endif%}
+    - !jinja >
+      {%if t is defined%}
+      * On {{Gender.Pronoun2}} time off, {{Name.First}} will enjoy a drink or two in the {{t.Full}}.
+      {%endif%}
+    - !jinja >
+      {%if t is defined%}
+      * {{Name.First}} is usually eating {{Gender.Pronoun2}} meals in the {{t.Full}}.
+      {%endif%}
+
+  Appearance:
+    - !jinja >
+      {{Gender.Feature}}, {{Feature1}} and {{Feature2}}
+    - !jinja >
+      {{Feature1}}, {{Gender.Feature}} and {{Feature2}}
 
   Description: !jinja |
     {{Name.Full}}.
-    {{Gender.Pronoun|capitalize}} {{Gender.Pos}} {{Gender.Feature}}, {{Feature1}} and {{Feature2}}
+    {{Gender.Pronoun|capitalize}} {{Gender.Pos}} {{Appearance}}
     (*{{State}}*).
 
     {{Association}}
     {{Story2.Description}}
-    {%if t is defined%}
-    * {{Name.First}} likes spending {{Gender.Pronoun2}} time in the {{t.Full}}.
-    {%endif%}
+    {{TavernText}}
 
   FeatureX1:
     - !jinja >

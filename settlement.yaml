@@ -19,13 +19,17 @@ Settlement:
   NamePart:
     $roll: TownName
 
-
 Village:
   $extends: Settlement
   Title: !jinja "village of {{NamePart | title}}"
+
+  Population: !jinja "{{District.Population}}"
+
   Details: !jinja >
 
     ### <a name='{{uuid}}'></a>{{subclass_|capitalize}} of {{NamePart|title}}
+
+    Population: {{Population}} villagers
 
     #### Village Shops & Services
 
@@ -53,8 +57,22 @@ Village:
       - NamePart
       - Title
 
+  Prefix:
+    - thriving
+    - bustling
+    - sleepy
+    - flourishing
+    - lively
+    - struggling
+    - growing
+    - withering
+    - prospering
+    - expanding
+
   Connector: 
-    - blends seamlessly with its surroundings
+    - blends seamlessly
+    - sits quietly
+    - rests peacefully
 
   District:
     $roll: VillageDistrict
@@ -63,9 +81,14 @@ Village:
 Town:
   $extends: Settlement
   Title: !jinja "town of {{NamePart | title}}"
+  PopulationMultiplier:
+    $diceroll: 2d4+1
+  Population: !jinja "{{(District.Population|int) * PopulationMultiplier}}"
   Details: !jinja >
 
     ### <a name='{{uuid}}'></a>{{subclass_|capitalize}} of {{NamePart|title}}
+
+    Population: {{Population}} townsfolk
 
     #### Town Shops & Services
 
@@ -105,9 +128,128 @@ City:
   $extends: Settlement
   Title: !jinja "city of {{NamePart | title}}"
 
+  PopulationMultiplier:
+    $diceroll: 5d4+1
+
+  Population: !jinja "{{(districts | map(attribute='Population') | map('int') | sum)*PopulationMultiplier}}"
+
+  $collections:
+    all_shops:
+      $collect: Shop
+
+  $context:
+    $attr: CityContext
+    $values:
+      - NamePart
+      - Title
+
+  districts:
+    $rollsome:
+      $class: CityDistrict
+      $min: 4
+      $max: 10
+
+  CitySpeciality: !jinja >
+    {% set x = namespace(count=1, title=[]) %}
+    {% for t in  (all_shops | groupby("Title") | map(attribute="list")) %}
+    {% if (t | length) > x.count %}
+    {% set x.title = [t[0].Title] %}
+    {% set x.count = (t | length) %}
+    {% endif %}
+    {% if (t | length) == x.count and x.count > 1 %}
+    {% set _ = x.title.append(t[0].Title) %}
+    {% endif %}
+    {% endfor %}
+    The city is also known for its fine {{x.title | unique | list | listize}} shops.
+
+
+  CityRulerNPC:
+    $roll:
+      $class: !weighted
+        - FighterLevel10
+        - FighterLevel11
+        - ClericLevel10
+        - ClericLevel11
+        - ElfLevel8
+        - ElfLevel9
+        - DwarfLevel9
+        - DwarfLevel10
+        - HalflingLevel7^2
+
+  CityRulerTitle:
+    - Mayor
+    - Baron
+
+  CityRulerDescriptor: !avoid_repeating
+    - fanatic, power hungry
+    - despised, power hungry
+    - corrupted, power hungry
+    - hated, power hungry
+    - despised tyrant
+    - fanatic tyrant
+    - power hungry tyrant
+    - hated tyrant
+    - tyrant and corrupt
+    - hated and corrupt
+    - honest but weak
+    - honest and just
+    - honest and canny
+    - noble but weak
+    - noble and just
+    - beloved but weak
+    - beloved and just
+    - beloved and canny
+    - cherished but weak
+    - cherished and just
+    - cherished and canny
+
+  CityFeature:
+    - beautiful hanging gardens
+    - cheerful taverns
+    - developed culture life
+    - helpful residents
+    - unsafe streets
+    - annual summer festival
+    - solstice festival of lights
+    - annual horse show
+    - fine crafts and art
+    - industrious residents
+    - odd laws and regulations
+
+
+  Flair: !jinja |
+    {{NamePart|title}} is ruled by the {{CityRulerDescriptor}}
+    {{CityRulerTitle}} {{CityRulerNPC.Name.Full}},
+    and is known for its {{CityFeature}}.
+
+  ConnectorTerm2b:
+    - its tall walls
+    - its massive walls
+  ConnectorTerm2a:
+    - protected behind
+    - covered by
+    - behind
+    - surrounded by
+  ConnectorTerm1:
+    - stands
+    - stands boldly,
+    - stands majestically,
+    - decorates the horizon,
+    - is situated here,
+
+  Connector: !jinja "{{ConnectorTerm1}} {{ConnectorTerm2a}} {{ConnectorTerm2b}}"
+
   Details: !jinja >
 
     ### <a name='{{uuid}}'></a>{{subclass_|capitalize}} of {{NamePart|title}}
+
+    Population: {{Population}} residents
+
+
+    {{Flair}}
+
+    {{CitySpeciality}}
+
 
     #### Shops & services overview
 
@@ -149,37 +291,6 @@ City:
 
     {% endfor %}
 
-  $context:
-    $attr: CityContext
-    $values:
-      - NamePart
-      - Title
-
-  Flair: !jinja |
-    {{NamePart|title}} is ruled by {{CityRuler}} and
-    is known for its {{CityFeature}}.
-
-  CityRuler:
-    - a fanatic cult leader
-    - an honest but weak mayor
-
-  CityFeature:
-    - beautiful hanging gardens
-    - cheerful taverns
-    - developed culture life
-    - helpful by naive habitats
-
-
-  Connector: 
-    - stands majestically
-    - stands boldly behinds its tall walls
-    - decorates the horizon
-
-  districts:
-    $rollsome:
-      $class: CityDistrict
-      $min: 4
-      $max: 10
 
 
 Hut:
@@ -402,6 +513,11 @@ District:
       #- GardenDistrict
       #- CultureDistrict
       #- CouncilDistrict
+  PeoplePerShopOrService:
+    #$diceroll: 15d6
+    $diceroll: 10d4+10
+  Population: !jinja "{{(shops | length)*PeoplePerShopOrService}}"
+
   Index: !jinja >
     [__{{Tavern.Name.Type}}__ ({{Tavern.Name.Full}})](#{{Tavern.uuid}}),
     [__Guards__ ({{Guards | map(attribute='Name.First') | join(', ')}})](#{{uuid}}_guards),
