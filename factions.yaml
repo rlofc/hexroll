@@ -9,6 +9,9 @@ Faction:
 
     The {{subclass_}} leader is a {{Leader.Description}}
 
+    {{Leader.Name.First | capitalize}} {{Leader.Gender.Pos}} a special interest 
+    of an unknown nature in {{LeaderSpecialInterest.Details}}.
+
     __{{Leader.Name.Full}}__ (Level {{Leader.Level}} {{Leader.Class}})
 
     ---
@@ -69,6 +72,10 @@ Faction:
           Association: !jinja >
             * Member of the [__{{faction.FullName}}__](#{{faction.uuid}}).
           Alignment: !jinja "{{faction.AcceptedAlignment}}"
+
+  LeaderSpecialInterest:
+    $roll: FactionLeaderInterest
+
 
   $subclass: !parameter faction_classes
 
@@ -220,3 +227,24 @@ Militia:
         $values:
           Alignment: Neutral  
 
+FactionLeaderInterest:
+  $subclass:
+    - FactionLeaderNPCInterest
+    - FactionLeaderItemInterest
+
+FactionLeaderNPCInterest:
+  Details: !jinja >
+    [__{{NPC.Name.Full}}__](#{{NPC.uuid}})
+
+  NPC:
+    $pickone:
+      $collection: characters
+
+FactionLeaderItemInterest:
+  Details: !jinja >
+    [__{{LostItem.FolkContext.Name.Full}}’s__](#{{LostItem.FolkContext.uuid}})
+    __{{LostItem.Appearance}}__
+
+  LostItem:
+    $pickone:
+      $collection: lost_items

@@ -14,7 +14,6 @@ Quest:
     - NoQuest^10
     - MissingPersonQuest
     - TreasureQuest
-    - DeliveryQuest
 
   Reward:
     - 1000gp
@@ -514,6 +513,7 @@ LostItemScarab:
 ShopQuest:
   $subclass: !weighted
     - NoQuest^6
+    - DeliveryQuest
 
 
 DeliveryQuest:
@@ -538,7 +538,7 @@ DeliveryQuest:
     a {{PackagePrefix}} {{PackageObject}}
 
   Description: !jinja >
-    {%if Destination.CityContext.NamePart != CityContext.NamePart %}
+    {%if Destination.CityContext.NamePart != ShopContext.Owner.CityContext.NamePart %}
     * Looking for someone to deliver {{Package}} to 
       [__{{Destination.Name.Full}}__](#{{Destination.uuid}})
       in __{{Destination.CityContext.NamePart}}__.
@@ -554,24 +554,24 @@ DeliveryQuest:
         $values:
           Details:
             - !jinja >
-              {%if quest.Destination.CityContext.NamePart != quest.CityContext.NamePart %}
+              {%if quest.Destination.CityContext.NamePart != quest.ShopContext.Owner.CityContext.NamePart %}
               “__Job offer!__ I have a package to deliver in {{quest.Destination.CityContext.NamePart | title}}. 
               Payment guaranteed at destination upon delivery.
               Yours, 
-              [__{{quest.FolkContext.Name.Full}}__](#{{quest.FolkContext.uuid}})”
+              [__{{quest.ShopContext.Owner.Name.Full}}__](#{{quest.ShopContext.Owner.uuid}})”
               {%endif%}
             - !jinja >
-              {%if quest.Destination.CityContext.NamePart != quest.CityContext.NamePart %}
+              {%if quest.Destination.CityContext.NamePart != quest.ShopContext.Owner.CityContext.NamePart %}
               “__Traveling to {{quest.Destination.CityContext.NamePart | title}}?__
               I will pay you for carrying a package for me.
               Yours, 
-              [__{{quest.FolkContext.Name.Full}}__](#{{quest.FolkContext.uuid}})”
+              [__{{quest.ShopContext.Owner.Name.Full}}__](#{{quest.ShopContext.Owner.uuid}})”
               {%endif%}
             - !jinja >
-              {%if quest.Destination.CityContext.NamePart != quest.CityContext.NamePart %}
+              {%if quest.Destination.CityContext.NamePart != quest.ShopContext.Owner.CityContext.NamePart %}
               “__Heading to {{quest.Destination.CityContext.NamePart | title}}?__
               Payment guaranteed to a trusty courier. 
-              Ask for [__{{quest.FolkContext.Name.First}}__](#{{quest.FolkContext.uuid}})”
+              Ask for [__{{quest.ShopContext.Owner.Name.First}}__](#{{quest.ShopContext.Owner.uuid}})”
               {%endif%}
   Rumor:
     $roll:
@@ -580,8 +580,8 @@ DeliveryQuest:
         $namespace: quest
         $values:
           Details: !jinja >
-            {%if quest.Destination.CityContext.NamePart != quest.CityContext.NamePart %}
-            [__{{quest.FolkContext.Name.Full}}__](#{{quest.FolkContext.uuid}})
+            {%if quest.Destination.CityContext.NamePart != quest.ShopContext.Owner.CityContext.NamePart %}
+            [__{{quest.ShopContext.Owner.Name.Full}}__](#{{quest.ShopContext.Owner.uuid}})
             is willing to pay well for a delivery job.
             {%endif%}
 

@@ -236,6 +236,7 @@ $main:
 
       Hexroll is copyright © 2021 pendicepaper.com.
 
+
   Handout: !jinja |
     # {{Realm.Title}}
 
@@ -279,6 +280,9 @@ $main:
 
     characters:
       $collect: Character
+
+    lost_items:
+      $collect: LostItem
 
     cells:
       $collect: MissingPersonQuestCell
@@ -327,6 +331,7 @@ $main:
         $class: SettlementProxy
         $min: !parameter minimum_number_of_settlements
         $max: !parameter maximum_number_of_settlements
+
 
     encounterproxies:
       $rollsome:

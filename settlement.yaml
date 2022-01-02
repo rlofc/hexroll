@@ -566,6 +566,8 @@ District:
 
     {{s.Owner.Description}}
 
+    {{s.Quest.Description}}
+
     {% endfor %}
 
   Guards:
@@ -1103,6 +1105,13 @@ Shop:
     - 1.1
     - 1.2
     - 1.4
+  $context:
+    $attr: ShopContext
+    $values:
+      - Owner
+
+  Quest:
+    $roll: ShopQuest
 
 Service:
   OwnerTitle: Manager
@@ -1125,6 +1134,13 @@ Service:
     {{i.Title}} | {{i.Cost}}{% endfor %}
 
     {% endif %}
+  $context:
+    $attr: ShopContext
+    $values:
+      - Owner
+
+  Quest:
+    $roll: ShopQuest
 
 Guild:
   GuildHead:
