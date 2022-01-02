@@ -340,7 +340,7 @@ NPC:
   $extends: Character
   Description: !jinja |
     __{{Name.Full}}__, a level {{Level}} {{Class}}.
-    {{Gender.Pronoun|capitalize}} {{Gender.Pos}} {{Gender.Feature}}, {{Feature1}} and {{Feature2}}.
+    {{Gender.Pronoun|capitalize}} {{Gender.Pos}} {{Appearance}}
   
   UNUSED1: >
     {{Name.First}} likes spending {{Gender.Pronoun2}} time in the dark inn.
