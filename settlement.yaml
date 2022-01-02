@@ -679,7 +679,7 @@ ResidentialDistrictShop:
     - Weaver
     - Scribe
     - Veterinarian
-    - BlackMarket
+    - DarkMarket
     - Bank
     - Physician
     - School
@@ -792,7 +792,7 @@ CraftingDistrictShop:
     - Tinkerer
     - Weaver
     - Scribe
-    - BlackMarket
+    - DarkMarket
     - GlassBlower
     - Leatherworker
     - TinWorker
@@ -845,7 +845,7 @@ HarborDistrictShop:
     - Weaver
     - Scribe
     - Veterinarian
-    - BlackMarket
+    - DarkMarket
     - Brothel
     - Bank
     - GlassBlower
@@ -915,7 +915,7 @@ MarketDistrictShop:
     - Weaver
     - Scribe
     - Veterinarian
-    - BlackMarket
+    - DarkMarket
     - Brothel
     - Bank
     - GlassBlower
@@ -1053,7 +1053,7 @@ DistrictShop:
     - Weaver
     - Scribe
     - Veterinarian
-    - BlackMarket
+    - DarkMarket
     - Brothel
     - Bank
     - GlassBlower

@@ -531,14 +531,14 @@ Veterinarian:
     - sheep whisperer
 
 
-BlackMarket:
+DarkMarket:
   $extends: Shop
   Items:
     $rollsome:
       $class: Gear
       $min: 9
       $max: 15 
-  Title: Black Market
+  Title: Dark Market
 
 
 Brothel:
