@@ -406,9 +406,9 @@ Tavern:
 
     %%end_div
 
-    {%if adverts|length > 0%}
+    {%if adverts|rejectattr("Details","equalto","")|list|length > 0%}
     | Bulletin |
-    | ------ |{%for a in (adverts|shuffle)%}
+    | ------ |{%for a in (adverts|rejectattr("Details","equalto","")|shuffle)%}
     | {{a.Details}} |{%endfor%}
     {%endif%}
 
@@ -418,12 +418,12 @@ Tavern:
     d6 | Rumor
     ---- | -----
     {%-if rumors-%}
-    {%-for r in rumors-%}
+    {%-for r in rumors | rejectattr("Details","equalto","")-%}
     {%-set counter.value = counter.value+1%}
     {{counter.value}} | {{r.Details}}
     {%-endfor-%}
     {%-endif-%}
-    {%-for r in (gc_rumors|shuffle)[:6-counter.value]-%}
+    {%-for r in (gc_rumors|shuffle|rejectattr("Details","equalto","")|list)[:6-counter.value]-%}
     {%-set counter.value = counter.value+1%}
     {{counter.value}} | {{r.Details}}
     {%-endfor%}

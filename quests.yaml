@@ -14,6 +14,7 @@ Quest:
     - NoQuest^10
     - MissingPersonQuest
     - TreasureQuest
+    - DeliveryQuest
 
   Reward:
     - 1000gp
@@ -510,3 +511,81 @@ LostItemScarab:
   ActualItem:
     - Scarab of Protection
 
+ShopQuest:
+  $subclass: !weighted
+    - NoQuest^6
+
+
+DeliveryQuest:
+  $extends: Quest
+  Reward:
+    - 500 gp
+    - 600 gp
+    - 700 gp
+
+  PackagePrefix:
+    - sealed
+    - mysterious
+
+  PackageObject:
+    - bottle
+    - box
+    - chest
+    - crate
+    - casket
+
+  Package: !jinja >
+    a {{PackagePrefix}} {{PackageObject}}
+
+  Description: !jinja >
+    {%if Destination.CityContext.NamePart != CityContext.NamePart %}
+    * Looking for someone to deliver {{Package}} to 
+      [__{{Destination.Name.Full}}__](#{{Destination.uuid}})
+      in __{{Destination.CityContext.NamePart}}__.
+
+        * Reward is __{{Reward}}__
+    {%endif%}
+
+  Advert:
+    $roll:
+      $class: Advert
+      $inject:
+        $namespace: quest
+        $values:
+          Details:
+            - !jinja >
+              {%if quest.Destination.CityContext.NamePart != quest.CityContext.NamePart %}
+              “__Job offer!__ I have a package to deliver in {{quest.Destination.CityContext.NamePart | title}}. 
+              Payment guaranteed at destination upon delivery.
+              Yours, 
+              [__{{quest.FolkContext.Name.Full}}__](#{{quest.FolkContext.uuid}})”
+              {%endif%}
+            - !jinja >
+              {%if quest.Destination.CityContext.NamePart != quest.CityContext.NamePart %}
+              “__Traveling to {{quest.Destination.CityContext.NamePart | title}}?__
+              I will pay you for carrying a package for me.
+              Yours, 
+              [__{{quest.FolkContext.Name.Full}}__](#{{quest.FolkContext.uuid}})”
+              {%endif%}
+            - !jinja >
+              {%if quest.Destination.CityContext.NamePart != quest.CityContext.NamePart %}
+              “__Heading to {{quest.Destination.CityContext.NamePart | title}}?__
+              Payment guaranteed to a trusty courier. 
+              Ask for [__{{quest.FolkContext.Name.First}}__](#{{quest.FolkContext.uuid}})”
+              {%endif%}
+  Rumor:
+    $roll:
+      $class: Rumor
+      $inject:
+        $namespace: quest
+        $values:
+          Details: !jinja >
+            {%if quest.Destination.CityContext.NamePart != quest.CityContext.NamePart %}
+            [__{{quest.FolkContext.Name.Full}}__](#{{quest.FolkContext.uuid}})
+            is willing to pay well for a delivery job.
+            {%endif%}
+
+  Destination:
+    $pickone:
+      $collection: characters
+      
