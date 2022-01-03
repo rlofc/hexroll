@@ -103,7 +103,7 @@ $main:
 
     ### <a name="toc-rumors"></a>Rumors
     {% for r in rumors %}
-    * {{r.Details}}{% endfor %}    
+    {%if r.Details!=''%}* {{r.Details}}{%endif%}{% endfor %}    
 
     ### <a name="toc-secrets"></a>Secrets
     {% for s in secrets %}
