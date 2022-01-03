@@ -372,13 +372,13 @@ Tavern:
   Description: !jinja |
     ###### Keeper
     
-    Owned and managed by {{keeper.Description}}
+    Owned and managed by <a name="{{keeper.uuid}}"></a>{{keeper.Description}}
     
     ###### Staff
 
     {%for s in staff%}
 
-    {{s.Description}}
+    <a name="{{s.uuid}}"></a>{{s.Description}}
 
     {%endfor%}
 
