@@ -1152,10 +1152,10 @@ Service:
     - !jinja "*{{Title}}*"
 
   InvertedName: 
-    - !jinja "[__{{Title}}__ ({{Owner.Name.First}}'s {{Noun}})](#{{Owner.uuid}})"
+    - !jinja "[__{{Title}}__](#{{Owner.uuid}})"
 
   InvertedHandoutName: 
-    - !jinja "__{{Title}}__ ({{Owner.Name.First}}'s {{Noun}})"
+    - !jinja "__{{Title}}__"
 
   Inventory: !jinja |
     {% if Services %}

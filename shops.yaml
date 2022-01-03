@@ -27,9 +27,9 @@ Bakery:
       $min: 2
       $max: 3 
   Noun:
-    - loaf
-    - bagette
-    - bun
+    - Loaf
+    - Bagette
+    - Bun
 
 
 GeneralGoodsProducts:
@@ -50,8 +50,8 @@ GeneralGoods:
       $min: 7
       $max: 10 
   Noun:
-    - goods
-    - supply
+    - Goods
+    - Supply
 
 
 BookstoreProducts:
@@ -84,9 +84,9 @@ Grocer:
       $min: 7
       $max: 10
   Noun:
-    - groceries
-    - tomato
-    - supply
+    - Groceries
+    - Tomato
+    - Supply
   
 
 Pet:
@@ -296,9 +296,9 @@ Butchery:
       $min: 6
       $max: 10 
   Noun:
-    - beef & pork
-    - prime cut
-    - steak
+    - Beef & Pork
+    - Prime Cut
+    - Steak
 
 
 Clothing:
@@ -310,21 +310,21 @@ Clothing:
       $min: 2
       $max: 6
   Noun:
-    - fashion
-    - wearables
-    - boutique
+    - Fashion
+    - Wearables
+    - Boutique
 
 
 Blacksmith:
   $extends: Shop
   Title: Blacksmith
   Noun:
-    - anvil
-    - iron
-    - blade
-    - forge
-    - hammer
-    - fire
+    - Anvil
+    - Iron
+    - Blade
+    - Forge
+    - Hammer
+    - Fire
    
   Items:
     $rollsome:
@@ -337,9 +337,9 @@ Barber:
   $extends: Shop
   Title: Barber
   Noun:
-    - scissors
-    - razor
-    - salon
+    - Scissors
+    - Razor
+    - Salon
 
 
 Liquor:
@@ -351,8 +351,8 @@ Liquor:
       $min: 2
       $max: 6
   Noun:
-    - liquor
-    - spirits
+    - Liquor
+    - Spirits
 
 
 Craft:
@@ -364,8 +364,8 @@ Craft:
       $min: 2
       $max: 6
   Noun:
-    - crafts
-    - handmades
+    - Crafts
+    - Handmades
 
 
 Music:
@@ -377,25 +377,25 @@ Music:
       $min: 1
       $max: 3
   Noun:
-    - instruments
-    - guitar & flute
-    - harp & lute
+    - Instruments
+    - Guitar & Flute
+    - Harp & Lute
 
 
 Salon:
   $extends: Shop
   Title: Salon
   Noun:
-    - salon
-    - styles
+    - Salon
+    - Styles
 
 
 Cartographer:
   $extends: Shop
   Title: Cartographer
   Noun:
-    - maps
-    - mapmakers
+    - Maps
+    - Mapmakers
     - cartography
 
 
@@ -403,40 +403,40 @@ Spice:
   $extends: Shop
   Title: Spices
   Noun:
-    - spices
-    - salt & pepper
+    - Spices
+    - Salt & Pepper
 
 
 Bathhouse:
   $extends: Shop
   Title: Bathhouse
   Noun:
-    - baths
-    - steam & bath
+    - Baths
+    - Steam & Bath
 
 
 Casino:
   $extends: Shop
   Title: Casino
   Noun:
-    - easy-money
-    - casino
-    - dicerollers
+    - Easy-money
+    - Casino
+    - Dicerollers
 
 
 AnimalSupplies:
   $extends: Shop
   Title: Animal Supplies
   Noun:
-    - barn & yarn
+    - Barn & Yarn
 
 
 Occult:
   $extends: Shop
   Title: Occult
   Noun:
-    - ritual goods
-    - witchcraft materials
+    - Ritual Goods
+    - Witchcraft Materials
 
 
 Winery:
@@ -448,8 +448,8 @@ Winery:
       $min: 1
       $max: 3
   Noun:
-    - wines
-    - fine wines
+    - Wines
+    - Fine Wines
 
 
 Brewery:
@@ -461,8 +461,8 @@ Brewery:
       $min: 1
       $max: 3
   Noun:
-    - good stuff
-    - brews
+    - Good Stuff
+    - Brews
 
 
 Distillery:
@@ -479,18 +479,18 @@ Flower:
   $extends: Shop
   Title: Flower Shop
   Noun:
-    - bouquets
-    - flowers
-    - roses
-    - tulips
+    - Bouquets
+    - Flowers
+    - Roses
+    - Tulips
 
 
 Cobbler:
   $extends: Shop
   Title: Cobbler
   Noun:
-    - shoes
-    - shoemakers
+    - Shoes
+    - Shoemakers
 
 
 Tinkerer:
@@ -502,33 +502,33 @@ Tinkerer:
       $min: 3
       $max: 5
   Noun:
-    - devices
-    - fix-it-all
+    - Devices
+    - Fix-it-All
 
 
 Weaver:
   $extends: Shop
   Title: Weaver
   Noun:
-    - fabrics
-    - garments
+    - Fabrics
+    - Garments
 
 
 Scribe:
   $extends: Shop
   Title: Scribe
   Noun:
-    - copywriters
-    - ink & feather
+    - Copywriters
+    - Ink & Feather
 
 
 Veterinarian:
   $extends: Shop
   Title: Veterinarian
   Noun:
-    - pet hospital
-    - horse healers
-    - sheep whisperer
+    - Pet Hospital
+    - Horse Healers
+    - Sheep Whisperer
 
 
 DarkMarket:
@@ -545,7 +545,7 @@ Brothel:
   $extends: Shop
   Title: Brothel
   Noun:
-    - companions
+    - Companions
 
 
 Bank:
@@ -557,9 +557,9 @@ GlassBlower:
   $extends: Shop
   Title: Glass Blower
   Noun:
-    - glassworks
-    - tubes
-    - bottlemakers
+    - Glassworks
+    - Tubes
+    - Bottlemakers
 
 
 Leatherworker:
@@ -571,15 +571,15 @@ Leatherworker:
       $min: 2
       $max: 6
   Noun:
-    - leathers
-    - bags and such
+    - Leathers
+    - Bags and Such
 
 
 Physician:
   $extends: Shop
   Title: Physician
   Noun:
-    - clinic
+    - Clinic
 
 
 Barracks:
@@ -610,7 +610,9 @@ Library:
 Lawyer:
   $extends: Shop
   Title: Lawyer
-
+  Noun:
+    - Will Makers
+    - Soliciters
 
 TinWorker:
   $extends: Shop
@@ -645,6 +647,10 @@ FishMarket:
       $class: Fish
       $min: 2
       $max: 4
+  Noun:
+    - Fresh Fish
+    - Sea Products
+    - Daily Catch
 
 
 Nunnery:
@@ -660,6 +666,10 @@ Tailor:
       $class: Wearables
       $min: 2
       $max: 6
+  Noun:
+    - Fashion
+    - Handmade Shirts and More
+    - Fine Clothes
 
 
 Prison:
@@ -700,12 +710,21 @@ Mill:
 Smokehouse:
   $extends: Shop
   Title: Smokehouse
+  Noun:
+    - Smoked Goods
+    - Smoked Fish And More
+    - Smoked Meat And More
 
 
 GameShop:
   $extends: Shop
   Title: Game Shop
-
+  Noun:
+    - Games
+    - Pawns and Dice
+    - Cards and Balls
+    - Cards
+    - Dice
 
 Theater:
   $extends: Service
@@ -725,7 +744,10 @@ College:
 PrintingPress:
   $extends: Shop
   Title: Printing Press
-
+  Noun:
+    - Print Shop
+    - Prints
+    - Press
 
 AnimalPound:
   $extends: Service
@@ -775,7 +797,10 @@ Archive:
 FortuneTeller:
   $extends: Shop
   Title: Fortune Teller
-
+  Noun:
+    - Eye
+    - Third Eye
+    - Visions
 
 Matchmaker:
   $extends: Shop
