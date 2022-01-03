@@ -223,13 +223,16 @@ City:
     and is known for its {{CityFeature}}.
 
   ConnectorTerm2b:
-    - its tall walls
-    - its massive walls
+    - guarded walls
+    - impenetrable walls
+    - tall walls
+    - massive walls
   ConnectorTerm2a:
     - protected behind
-    - covered by
+    - covered behind
     - behind
     - surrounded by
+    - secured within its
   ConnectorTerm1:
     - stands
     - stands boldly,
