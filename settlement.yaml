@@ -160,7 +160,9 @@ City:
     {% set _ = x.title.append(t[0].Title) %}
     {% endif %}
     {% endfor %}
+    {% if (x.title | length) < 3 %}
     The city is also known for its fine {{x.title | unique | list | listize}} shops.
+    {%endif%}
 
 
   CityRulerNPC:
@@ -203,10 +205,10 @@ City:
     - cherished and just
     - cherished and canny
 
-  CityFeature:
+  CityFeature: !avoid_duplicates
     - beautiful hanging gardens
     - cheerful taverns
-    - developed culture life
+    - developed cultural life
     - helpful residents
     - unsafe streets
     - annual summer festival
@@ -589,8 +591,12 @@ District:
 
 
 CityDistrict:
-  $subclass: !weighted
-    - ResidentialDistrict^4
+  $subclass: !avoid_duplicates
+    - ResidentialDistrict1
+    - ResidentialDistrict2
+    - ResidentialDistrict3
+    - ResidentialDistrict4
+    - ResidentialDistrict5
     - PalaceDistrict
       #- CastleDistrict
     - TempleDistrict
@@ -638,6 +644,21 @@ TownDistrict:
   Tavern:
     $roll: DistrictTavern
 
+ResidentialDistrict1:
+  $subclass:
+    - ResidentialDistrict
+ResidentialDistrict2:
+  $subclass:
+    - ResidentialDistrict
+ResidentialDistrict3:
+  $subclass:
+    - ResidentialDistrict
+ResidentialDistrict4:
+  $subclass:
+    - ResidentialDistrict
+ResidentialDistrict5:
+  $subclass:
+    - ResidentialDistrict
 
 ResidentialDistrict:
   Title:
@@ -771,7 +792,7 @@ MarketDistrict:
 
 
 ResidentialDistrictShop:
-  $subclass:
+  $subclass: !avoid_duplicates
     - Bakery
     - GeneralGoods
     - Bookstore
@@ -813,7 +834,7 @@ ResidentialDistrictShop:
 
 
 PalaceDistrictShop:
-  $subclass:
+  $subclass: !avoid_duplicates
     - Bookstore
     - ExoticGoods
     - Jeweler
@@ -857,7 +878,7 @@ PalaceDistrictGuild:
 
 
 TempleDistrictShop:
-  $subclass:
+  $subclass: !avoid_duplicates
     - Bakery
     - GeneralGoods
     - Bookstore
@@ -891,7 +912,7 @@ TempleDistrictGuild:
 
 
 CraftingDistrictShop:
-  $subclass:
+  $subclass: !avoid_duplicates
     - GeneralGoods
     - Bookstore
     - Herbalist
@@ -931,7 +952,7 @@ CraftingDistrictGuild:
 
 
 HarborDistrictShop:
-  $subclass:
+  $subclass: !avoid_duplicates
     - Bakery
     - GeneralGoods
     - Bookstore
@@ -1001,7 +1022,7 @@ HarborDistrictGuild:
 
 
 MarketDistrictShop:
-  $subclass:
+  $subclass: !avoid_duplicates
     - Bakery
     - GeneralGoods
     - Bookstore
@@ -1130,6 +1151,12 @@ Service:
   Name: 
     - !jinja "*{{Title}}*"
 
+  InvertedName: 
+    - !jinja "[__{{Title}}__ ({{Owner.Name.First}}'s {{Noun}})](#{{Owner.uuid}})"
+
+  InvertedHandoutName: 
+    - !jinja "__{{Title}}__ ({{Owner.Name.First}}'s {{Noun}})"
+
   Inventory: !jinja |
     {% if Services %}
     Service | Price
@@ -1151,7 +1178,7 @@ Guild:
 
 
 DistrictShop:
-  $subclass:
+  $subclass: !avoid_duplicates
     - Bakery
     - GeneralGoods
     - Bookstore
@@ -1250,7 +1277,7 @@ DistrictGuilds:
 
 
 TownShops:
-  $subclass:
+  $subclass: !avoid_duplicates
     - Bakery
     - GeneralGoods
     - Bookstore
