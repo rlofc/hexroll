@@ -9,8 +9,8 @@ Faction:
 
     The {{subclass_}} leader is a {{Leader.Description}}
 
-    {{Leader.Name.First | capitalize}} {{Leader.Gender.Pos}} a special interest 
-    of an unknown nature in {{LeaderSpecialInterest.Details}}.
+    {%if LeaderSpecialInterest.Details!=''%}{{Leader.Name.First | capitalize}} {{Leader.Gender.Pos}} a special interest 
+    of an unknown nature in {{LeaderSpecialInterest.Details}}.{%endif%}
 
     __{{Leader.Name.Full}}__ (Level {{Leader.Level}} {{Leader.Class}})
 
@@ -48,7 +48,6 @@ Faction:
             [__{{faction.FullName}}__](#{{faction.uuid}}) are {{faction.Verb}}
             __{{faction.Purpose}}__.
 
-
   Collaborators:
     $popsome: 
       $collection: characters
@@ -59,7 +58,6 @@ Faction:
         $values:
           Association: !jinja >
             * Collaborates with the [__{{faction.FullName}}__](#{{faction.uuid}}).
-
 
   Members:
     $popsome: 
@@ -143,6 +141,7 @@ Cult:
       $inject:
         $values:
           Alignment: Chaotic  
+
   Lair:
     $pop:
       - temples
@@ -227,10 +226,17 @@ Militia:
         $values:
           Alignment: Neutral  
 
+
 FactionLeaderInterest:
-  $subclass:
+  $subclass: !weighted
+    - FactionLeaderHasNoSpecialIterest^2
     - FactionLeaderNPCInterest
     - FactionLeaderItemInterest
+
+
+FactionLeaderHasNoSpecialIterest:
+  Details: ''
+
 
 FactionLeaderNPCInterest:
   Details: !jinja >
@@ -240,10 +246,13 @@ FactionLeaderNPCInterest:
     $pickone:
       $collection: characters
 
+
 FactionLeaderItemInterest:
   Details: !jinja >
+    {%if LostItem %}
     [__{{LostItem.FolkContext.Name.Full}}’s__](#{{LostItem.FolkContext.uuid}})
     __{{LostItem.Appearance}}__
+    {%endif%}
 
   LostItem:
     $pickone:

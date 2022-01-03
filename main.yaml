@@ -282,7 +282,7 @@ $main:
       $collect: Character
 
     lost_items:
-      $collect: LostItem
+      $collect: LostItemHighTier
 
     cells:
       $collect: MissingPersonQuestCell

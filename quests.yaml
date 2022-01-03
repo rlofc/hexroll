@@ -285,8 +285,13 @@ LostItem:
   Description: !jinja >
     __{{Appearance | title}}__ (actually __{{ActualItem | articlize}}__)
   $subclass: !weighted
-    - LostItemSword^11
-    - LostItemArmor^5
+    - LostItemSword^10
+    - LostItemArmor^7
+    - LostItemHighTier^4
+
+
+LostItemHighTier:
+  $subclass: !weighted
     - LostItemBoots^3
     - LostItemClothing^3
     - LostItemHelm^4
@@ -303,10 +308,10 @@ LostItem:
     - LostItemMirror
     - LostItemRope
     - LostItemScarab
-
+  
 
 LostItemBag:
-  $extends: LostItem
+  $extends: LostItemHighTier
   Appearance:
     - decorated leather bag
     - reinforced leather bag
@@ -317,7 +322,7 @@ LostItemBag:
 
 
 LostItemBoots:
-  $extends: LostItem
+  $extends: LostItemHighTier
   Appearance:
     - sturdy leather boots
     - custom-made leather boots
@@ -329,7 +334,7 @@ LostItemBoots:
 
 
 LostItemAmulet:
-  $extends: LostItem
+  $extends: LostItemHighTier
   Appearance:
     - family amulet
 
@@ -339,7 +344,7 @@ LostItemAmulet:
 
 
 LostItemBroom:
-  $extends: LostItem
+  $extends: LostItemHighTier
   Appearance:
     - handcrafted broom
 
@@ -348,7 +353,7 @@ LostItemBroom:
 
 
 LostItemClothing:
-  $extends: LostItem
+  $extends: LostItemHighTier
   Appearance:
     - embroided cloak
 
@@ -383,7 +388,7 @@ LostItemSword:
 
 
 LostItemHelm:
-  $extends: LostItem
+  $extends: LostItemHighTier
   Appearance:
     - decorated helm
     - golden helm
@@ -396,7 +401,7 @@ LostItemHelm:
 
 
 LostItemGauntlets:
-  $extends: LostItem
+  $extends: LostItemHighTier
   Appearance:
     - golden gauntlets
     - decorated gauntlets
@@ -418,7 +423,7 @@ LostItemArmor:
 
 
 LostItemCrystalBall:
-  $extends: LostItem
+  $extends: LostItemHighTier
   Appearance:
     - glass ball
   
@@ -429,7 +434,7 @@ LostItemCrystalBall:
 
 
 LostItemDrums:
-  $extends: LostItem
+  $extends: LostItemHighTier
   Appearance:
     - drums
 
@@ -438,7 +443,7 @@ LostItemDrums:
 
 
 LostItemBottle:
-  $extends: LostItem
+  $extends: LostItemHighTier
   Appearance:
     - bottle of sentimental value
 
@@ -447,7 +452,7 @@ LostItemBottle:
 
 
 LostItemDevice:
-  $extends: LostItem
+  $extends: LostItemHighTier
   Appearance:
     - contraption
 
@@ -459,7 +464,7 @@ LostItemDevice:
 
 
 LostItemCarpet:
-  $extends: LostItem
+  $extends: LostItemHighTier
   Appearance:
     - colorful carpet
     - wool carpet
@@ -470,7 +475,7 @@ LostItemCarpet:
 
 
 LostItemGirdle:
-  $extends: LostItem
+  $extends: LostItemHighTier
   Appearance:
     - girdle
   ActualItem:
@@ -478,7 +483,7 @@ LostItemGirdle:
 
 
 LostItemHorn:
-  $extends: LostItem
+  $extends: LostItemHighTier
   Appearance:
     - horn
 
@@ -487,7 +492,7 @@ LostItemHorn:
 
 
 LostItemMirror:
-  $extends: LostItem
+  $extends: LostItemHighTier
   Appearance:
     - makeup mirror
     - mirror
@@ -496,7 +501,7 @@ LostItemMirror:
 
 
 LostItemRope:
-  $extends: LostItem
+  $extends: LostItemHighTier
   Appearance:
     - strong rope
   ActualItem:
@@ -504,7 +509,7 @@ LostItemRope:
 
 
 LostItemScarab:
-  $extends: LostItem
+  $extends: LostItemHighTier
   Appearance:
     - scarab
   ActualItem:
