@@ -83,7 +83,7 @@ TreasureQuest:
       $inject:
         $namespace: quest
         $values:
-          Details:
+          Details: !avoid_repeating
             - !jinja >
               “__Help requested!__  A heirloom of sentimental value was stolen
               from me.  I will reward anyone who is kind enough to get it back.
@@ -233,7 +233,7 @@ MissingPersonQuest:
       $inject:
         $namespace: quest
         $values:
-          Details:
+          Details: !avoid_repeating
             - !jinja >
               “__Please Help!__
               My dear {{quest.Relation.Type}} is missing.
