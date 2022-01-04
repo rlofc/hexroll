@@ -54,6 +54,7 @@ Village:
   $context:
     $attr: CityContext
     $values:
+      - uuid
       - NamePart
       - Title
 
@@ -113,6 +114,7 @@ Town:
   $context:
     $attr: CityContext
     $values:
+      - uuid
       - NamePart
       - Title
 
@@ -140,6 +142,7 @@ City:
   $context:
     $attr: CityContext
     $values:
+      - uuid
       - NamePart
       - Title
 
@@ -411,9 +414,9 @@ Tavern:
 
     %%end_div
 
-    {%if adverts|rejectattr("Details","equalto","")|list|length > 0%}
+    {%if adverts|list|length > 0%}
     | Bulletin |
-    | ------ |{%for a in (adverts|rejectattr("Details","equalto","")|shuffle)%}
+    | ------ |{%for a in (adverts|shuffle)%}
     | {{a.Details}} |{%endfor%}
     {%endif%}
 
@@ -423,12 +426,12 @@ Tavern:
     d6 | Rumor
     ---- | -----
     {%-if rumors-%}
-    {%-for r in rumors | rejectattr("Details","equalto","")-%}
+    {%-for r in rumors-%}
     {%-set counter.value = counter.value+1%}
     {{counter.value}} | {{r.Details}}
     {%-endfor-%}
     {%-endif-%}
-    {%-for r in (gc_rumors|shuffle|rejectattr("Details","equalto","")|list)[:6-counter.value]-%}
+    {%-for r in (gc_rumors|shuffle|list)[:6-counter.value]-%}
     {%-set counter.value = counter.value+1%}
     {{counter.value}} | {{r.Details}}
     {%-endfor%}
