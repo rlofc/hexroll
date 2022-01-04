@@ -664,11 +664,26 @@ ResidentialDistrict5:
     - ResidentialDistrict
 
 ResidentialDistrict:
-  Title:
-    - Peasants District
-    - Townsfolk District
-    - Common District
-    - The Dwellers District
+  Title: !jinja "{{TitlePrefix}} {{TitleNoun}} District"
+
+  TitleNoun:
+    - Peasants
+    - Townsfolk
+    - Common
+    - Commoners
+    - Dwellers
+    - Townsfolk
+    - Miners
+    - ""
+
+  TitlePrefix:
+    - Northside
+    - Southside
+    - Westside
+    - Eastside
+    - Upper
+    - Lower
+    - ""
 
   CostFactor: 0.8
 
