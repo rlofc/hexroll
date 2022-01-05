@@ -51,7 +51,7 @@ KeySecret:
   $extends: Secret
   Details: !jinja >
     {% if Key %}
-    * The key to unlock the {{Link.Shape}} {{Link.Material}} in area {{Ref}}
+    * The key to unlock the {{Link.Shape}} {{Link.Material}} door in area {{Ref}}
       in the {{DungeonContext.Name.Title | title}} is in area {{Key.RoomContext.Ref}} 
     {% endif %}
 

@@ -167,7 +167,7 @@ Militia:
 
     The {{Name_Prefix|title}} {{Name_Suffix|title}} 
     {{subclass_}} are {{Verb}} {{Purpose}}.
-    The {{subclass_}} usual gathering venue is __{{Tavern.Name.Full}}__ in
+    The {{subclass_ | lower}}’s usual gathering venue is __{{Tavern.Name.Full}}__ in
     {%if Tavern.CityContext%}__{{Tavern.CityContext.NamePart|title}}__{%else%}
     {{Tavern.RegionValue}}
     {%endif%}
