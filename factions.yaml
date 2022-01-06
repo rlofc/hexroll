@@ -142,10 +142,24 @@ Cult:
         $values:
           Alignment: Chaotic  
 
+  #Lair:
+  #  $pop:
+  #    - temples
+  #    - lairs
+
   Lair:
-    $pop:
-      - temples
-      - lairs
+    $popone:
+      $collection:
+        - temples
+        - lairs
+      $inject:
+        $namespace: faction
+        $values:
+          Faction: !jinja >
+            [__{{faction.FullName}}__](#{{faction.uuid}}) are using this dungeon, and theres
+            a 2 in 6 chance to find [__{{faction.Leader.Name.Full}}__](#{{faction.Leader.uuid}})
+            together with {{faction.Leader.Gender.Pronoun2}} acolytes or mediums here.
+            
 
   LairRumor:
     $roll:
@@ -213,6 +227,12 @@ Militia:
   Tavern:
     $popone:
       $collection: taverns
+      $inject:
+        $namespace: faction
+        $values:
+          Faction: !jinja >
+            [__{{faction.FullName}}__](#{{faction.uuid}}) are using this place
+            as a meeting place from time to time.
 
   Leader:
     $roll:

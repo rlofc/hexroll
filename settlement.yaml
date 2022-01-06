@@ -396,6 +396,8 @@ Tavern:
 
     ###### Patrons & Visitors
 
+    {{Faction}}
+
     {%for p in patrons%}
 
     ---
