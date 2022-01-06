@@ -60,7 +60,13 @@ Cavern:
 
   $collections:
     dungeon_encounters:
-      $collect: DungeonEncounter
+      $collect: Monster
+    dungeon_captives:
+      $collect: MissingPersonQuestCell
+    dungeon_treasure:
+      $collect: TreasureType
+    dungeon_quest_treasures:
+      $collect: QuestTreasureHiding
 
   Map:
     $roll: 
@@ -125,7 +131,13 @@ Tomb:
 
   $collections:
     dungeon_encounters:
-      $collect: DungeonEncounter
+      $collect: Monster
+    dungeon_captives:
+      $collect: MissingPersonQuestCell
+    dungeon_treasure:
+      $collect: TreasureType
+    dungeon_quest_treasures:
+      $collect: QuestTreasureHiding
 
   Map:
     $roll: 
@@ -205,7 +217,14 @@ Temple:
 
   $collections:
     dungeon_encounters:
-      $collect: DungeonEncounter
+      $collect: Monster
+    dungeon_captives:
+      $collect: MissingPersonQuestCell
+    dungeon_treasure:
+      $collect: TreasureType
+    dungeon_quest_treasures:
+      $collect: QuestTreasureHiding
+
 
   Map:
     $roll: 
