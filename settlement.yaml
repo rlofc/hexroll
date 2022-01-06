@@ -576,7 +576,9 @@ District:
 
     {{s.Owner.Description}}
 
+
     {{s.Quest.Description}}
+
 
     {% endfor %}
 
