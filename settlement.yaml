@@ -678,7 +678,6 @@ ResidentialDistrict:
     - Dwellers
     - Townsfolk
     - Miners
-    - ""
 
   TitlePrefix:
     - Northside
