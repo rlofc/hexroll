@@ -1081,7 +1081,8 @@ NormalCrocodile:
   Morale: "7"
   Alignment: "Neutral"
   XP: "20"
-  NumberAppearingRoaming: 0 
+  NumberAppearingRoaming:
+    $diceroll: 1d4
   NumberAppearingLair:
     $diceroll: 1d8
   TreasureType: 
