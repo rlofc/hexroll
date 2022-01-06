@@ -16,7 +16,7 @@ Faction:
 
     ---
 
-    {{Leader.Stats}}
+    <a name="{{Leader.uuid}}"></a>{{Leader.Stats}}
 
     ---
 
