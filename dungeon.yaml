@@ -20,8 +20,32 @@ Dungeon:
     dungeon_portal_destinations:
       $collect: DungeonPortalDestination
 
-    dungeon_monsters:
-      $collect: Monster
+  Encounters: !jinja >
+    {% for hitdice, monsters in dungeon_encounters | groupby("NumericHD")%}
+    __{{'<svg width="29px" height="29px" style="color:#333333"><use href="#skull-svg"/></svg>'*hitdice}}__
+    {% for title, monsters_of_title in monsters | groupby("Title")%}
+    {% set sum = monsters_of_title | map(attribute="NumberAppearingRoaming") | sum %}
+    __{{sum if sum>1}} {{title}}{{'s' if sum>1}}__
+    {%if (monsters_of_title | rejectattr("RoomContext.Ref","equalto","0") | list |length) > 0%}
+    (area {{ monsters_of_title | rejectattr("RoomContext.Ref","equalto","0") | map(attribute="RoomContext.Ref") | join(", area ")}})
+    {%endif%}
+    {%endfor%}
+    <br/>
+    {%endfor%}
+
+  Treasure: !jinja >
+    {{dungeon_treasure | map(attribute="GoldValue") | map("float") | sum | currency(suffix=" in coins.")}}
+
+    {{dungeon_treasure | map(attribute="GemsValue") | map("float") | sum | currency(suffix=" in gems.")}}
+
+    {{dungeon_treasure | map(attribute="JewelleryValue") | map("float") | sum | currency(suffix=" in jewellery.") }}
+
+
+    {{dungeon_quest_treasures | rejectattr("Conspectus","none") | map(attribute="Conspectus") | join("<br/>")}}
+
+  Captives: !jinja >
+    {{dungeon_captives | rejectattr("Conspectus","none") | map(attribute="Conspectus") | join("<br/>")}}
+
 
   Details: !jinja >
 
@@ -37,6 +61,23 @@ Dungeon:
 
     %%begin_div
 
+    #### Conspectus
+    
+    {{Faction}}
+
+
+    {{Captives}}
+
+
+    ##### Encounters
+
+    {{Encounters}}
+    
+    ##### Treasure
+
+    {{Treasure}}
+
+
     {{WanderingMonsters.Table}}
 
     {{Map.Details}}
@@ -44,12 +85,11 @@ Dungeon:
   Title: !jinja "{{Name.Title}}"
 
 
-
 DungeonWanderingMonsters:
   WanderingMonstersMaxHD: !parameter highest_wandering_monster_hitdice_in_dungeons
   Encounters:
-    $popsome:
-      $collection: dungeon_monsters
+    $picksome:
+      $collection: dungeon_encounters
       $min: 6
       $max: 6
   Table: !jinja > 
@@ -84,15 +124,9 @@ DungeonWanderingMonsters:
 AreaDescription:
   Title: !jinja "{{RoomType.Title}}"
 
-  Description: !jinja >
-    ##### Description
-
-    > {{RoomType.Preface}} and {{Decor.Description}}.
-    {{Feature.Hint}}{%if Cell.Active%} and {{Cell.Hint}}{%endif%}.
-
-
-    {%if AreaTrap.Description and Feature.subclass_=='DungeonRemains' -%}
-    * {{AreaTrap.Description}} 
+  AreaPropertiesText: !jinja >
+    {%if Feature.subclass_=='DungeonRemains' and Feature.AreaTrap.Description-%}
+    * {{Feature.AreaTrap.Description}} 
     {%-endif%}
 
 
@@ -116,8 +150,8 @@ AreaDescription:
 
     {%if Cell.Active%}
     * {{Cell.Active}}.
-      {%if AreaTrap.Description 
-           and Feature.subclass_=='DungeonRemains'
+      {%if Feature.subclass_=='DungeonRemains'
+        and Feature.AreaTrap.Description 
            and (range(1,3+1) | random)==3-%}
       Though {{Cell.Pronoun2}} mouth is gagged, {{Cell.Pronoun}} will
       try to warn about the trap.{%-endif%}
@@ -126,6 +160,14 @@ AreaDescription:
     {%if PortalDestination.Active%}
     * {{PortalDestination.Active}}.
     {%endif%}
+  Description: !jinja >
+    ##### Description
+
+    > {{RoomType.Preface}} and {{Decor.Description}}.
+    {{Feature.Hint}}{%if Cell.Active%} and {{Cell.Hint}}{%endif%}.
+
+
+    {{AreaPropertiesText}}
 
   Debris:
     $roll: DungeonDebris
@@ -140,9 +182,6 @@ AreaDescription:
     $roll:
       $class: !indirect FeatureLevelClass
 
-
-  AreaTrap:
-    $roll: AreaTrap
 
   Key:
     $roll: DungeonDoorKey
@@ -492,6 +531,9 @@ DungeonRemains:
     - There’s something lying on the floor^2
     - You spot something quite big lying on the floor^2
     - There’s a dead body here
+
+  AreaTrap:
+    $roll: AreaTrap
 
   Description: !jinja >
     Lying on the floor is a __{{Remains}}__.

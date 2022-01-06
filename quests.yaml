@@ -4,6 +4,7 @@ Advert:
 
 QuestTreasureHiding:
   Active: null
+  Conspectus: null
   Listening: ""
   Hint: "There’s a chest"
   Description: "Inside the chest you find a treasure"
@@ -119,6 +120,9 @@ TreasureQuest:
             (from __{{quest.CityContext.NamePart|title}}__) 
             __{{quest.Artifact.Appearance | title}}__
             (actually __{{quest.Artifact.ActualItem | articlize}}__)
+          Conspectus: !jinja >
+            [__{{quest.FolkContext.Name.Full}}’s__](#{{quest.FolkContext.uuid}})
+            __{{quest.Artifact.Appearance | title}}__ is in area {{RoomContext.Ref}}
 
   Secret:
     $roll:
@@ -203,7 +207,7 @@ MissingPersonHusband:
 MissingPersonQuestCell:
   Hint: "a person is chained to the wall"
   Active: null
-
+  Conspectus: null
 
 MissingPersonQuest:
   $extends: Quest
@@ -269,6 +273,9 @@ MissingPersonQuest:
             The __chained person__ is 
             [__{{quest.FolkContext.Name.Full}}’s__](#{{quest.FolkContext.uuid}})
             __{{quest.Relation.Type}}__ from {{quest.CityContext.NamePart|title}}
+          Conspectus: !jinja >
+            [__{{quest.FolkContext.Name.Full}}’s__](#{{quest.FolkContext.uuid}})
+            __{{quest.Relation.Type}}__ is in area {{RoomContext.Ref}}
           Pronoun: !jinja "{{quest.Relation.Gender.Pronoun}}"
           Pronoun2: !jinja "{{quest.Relation.Gender.Pronoun2}}"
 
@@ -595,4 +602,5 @@ DeliveryQuest:
             - !jinja >
               [__{{quest.ShopContext.Owner.Name.Full}}__](#{{quest.ShopContext.Owner.uuid}})
               {{quest.ShopContext.Owner.Gender.Pos}} a {{quest.PackageObject}} 
-              to deliver to {{quest.Destination.CityContext.NamePart | title}}
+              {{quest.ShopContext.Owner.Gender.Pronoun}} would like delivered to
+              {{quest.Destination.CityContext.NamePart | title}}
