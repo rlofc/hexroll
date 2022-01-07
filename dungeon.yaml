@@ -20,6 +20,8 @@ Dungeon:
     dungeon_portal_destinations:
       $collect: DungeonPortalDestination
 
+  IncludeConspectus: !parameter generate_dungeon_conspectus
+
   Encounters: !jinja >
     {% for hitdice, monsters in dungeon_encounters | groupby("NumericHD")%}
     __{{'<svg width="29px" height="29px" style="color:#333333"><use href="#skull-svg"/></svg>'*hitdice}}__
@@ -61,6 +63,8 @@ Dungeon:
 
     %%begin_div
 
+    {%if IncludeConspectus%}
+    
     #### Conspectus
     
     {{Faction}}
@@ -76,6 +80,7 @@ Dungeon:
     ##### Treasure
 
     {{Treasure}}
+    {%endif%}
 
 
     {{WanderingMonsters.Table}}

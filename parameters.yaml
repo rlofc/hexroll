@@ -54,6 +54,8 @@ defaults:
 
   highest_wandering_monster_hitdice_in_dungeons: 3
 
+  generate_dungeon_conspectus: true
+
   faction_classes: !weighted
     - Cult
     - Militia
