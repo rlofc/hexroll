@@ -86,7 +86,7 @@ Cult:
 
     The {{Name_Prefix|title}} {{Name_Suffix|title}} 
     {{subclass_}} are {{Purpose}}.
-    The {{subclass_}} hideout is the {{Lair.Name.Title}}.
+    The {{subclass_}} hideout is the __[{{Lair.Name.Title}}](#{{Lair.HexUUID}})__.
 
   AcceptedAlignment:
     - Chaotic
