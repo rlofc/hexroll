@@ -1139,7 +1139,7 @@ Shop:
     {% if Items %}
     Item | Price
     ---- | -----{% for i in Items | unique(attribute='subclass_')%}
-    {{i.Title}} | {{((i.Cost|float) * PriceFactor)|currency}}{% endfor %}
+    {{i.Title}} | {{((i.Cost|float) * PriceFactor * DistrictContext.CostFactor)|currency}}{% endfor %}
 
     {% endif %}
 
