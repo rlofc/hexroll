@@ -150,7 +150,7 @@ Hex:
 
     | 1d4 | Encounter | Stats | 
     | --- | --------- | ----- |{%for e in OtherEncounters%}
-    | {{counter.value}} | {{e.PluralizedTitleByLair}} | {{e.Stats}} |
+    | {{counter.value}} | {{e.TitlePluralizedByLair}} | {{e.Stats}} |
     {%-set counter.value = counter.value+1-%}{%-endfor%}
 
 

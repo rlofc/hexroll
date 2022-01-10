@@ -12,9 +12,10 @@ Monster:
   TitlePluralizedByRoaming: !jinja |
     {{Title}}{%if NumberAppearingRoaming > 1%}s{%endif%}
 
-  PluralizedTitleByLair: !jinja >
+  TitlePluralizedByLair: !jinja >
     __{{Title}}{%if NumberAppearingLair>RandomEncountersNumberAppearingFactor%}s__
     ({{"%d" | format((NumberAppearingLair/RandomEncountersNumberAppearingFactor) | round(method='ceil'))}}){%else%}__{%endif%}
+
   RandomEncountersNumberAppearingFactor: 3
 
 Acolyte:
