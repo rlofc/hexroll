@@ -27,7 +27,7 @@ Village:
 
   Details: !jinja >
 
-    ### <a name='{{uuid}}'></a>{{subclass_|capitalize}} of {{NamePart|title}}
+    ### {{subclass_|capitalize}} of {{NamePart|title}} <a name='{{uuid}}'></a>
 
     Population: {{Population}} villagers
 
@@ -45,7 +45,7 @@ Village:
 
   Handout: !jinja >
 
-    ### <a name='{{uuid}}'></a>{{subclass_|capitalize}} of {{NamePart|title}}
+    ### {{subclass_|capitalize}} of {{NamePart|title}} <a name='{{uuid}}'></a>
 
     #### Village Shops & Services
 
@@ -87,7 +87,7 @@ Town:
   Population: !jinja "{{(District.Population|int) * PopulationMultiplier}}"
   Details: !jinja >
 
-    ### <a name='{{uuid}}'></a>{{subclass_|capitalize}} of {{NamePart|title}}
+    ### {{subclass_|capitalize}} of {{NamePart|title}} <a name='{{uuid}}'></a>
 
     Population: {{Population}} townsfolk
 
@@ -105,7 +105,7 @@ Town:
 
   Handout: !jinja >
 
-    ### <a name='{{uuid}}'></a>{{subclass_|capitalize}} of {{NamePart|title}}
+    ### {{subclass_|capitalize}} of {{NamePart|title}} <a name='{{uuid}}'></a>
 
     #### Town Shops & Services
 
@@ -249,7 +249,7 @@ City:
 
   Details: !jinja >
 
-    ### <a name='{{uuid}}'></a>{{subclass_|capitalize}} of {{NamePart|title}}
+    ### {{subclass_|capitalize}} of {{NamePart|title}} <a name='{{uuid}}'></a>
 
     Population: {{Population}} residents
 
@@ -287,7 +287,7 @@ City:
 
   Handout: !jinja >
 
-    ### <a name='{{uuid}}'></a>{{subclass_|capitalize}} of {{NamePart|title}}
+    ### {{subclass_|capitalize}} of {{NamePart|title}} <a name='{{uuid}}'></a>
 
     #### Shops & services overview
 
@@ -371,7 +371,7 @@ TavernMenu:
 Tavern:
   Name:
     $roll: TavernName
-  Title: !jinja "<a name='{{uuid}}'></a>{{Name.Full}}"
+  Title: !jinja "{{Name.Full}}<a name='{{uuid}}'></a>"
   Description: !jinja |
     ###### Keeper
     
@@ -386,6 +386,8 @@ Tavern:
     {%endfor%}
 
     ###### Menu
+
+    <div class="print_condensed"></div>
 
     | 1d4 | Menu |
     | --- | ------ |
@@ -541,7 +543,7 @@ District:
 
   Description: !jinja >
 
-    ##### <a name='{{uuid}}_guards'></a>Guards
+    ##### Guards <a name='{{uuid}}_guards'></a>
 
     {% set counter = namespace(value=0) %}
     {% for g in Guards %}
@@ -568,7 +570,7 @@ District:
     
     {% for s in shops %}
 
-    ##### <a name="{{s.Owner.uuid}}"></a>{{s.Name}}
+    ##### {{s.Name}} <a name="{{s.Owner.uuid}}"></a>
 
     {{s.Inventory}}
 

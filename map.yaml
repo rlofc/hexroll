@@ -1,6 +1,6 @@
 Region:
   Description: !jinja |
-    ### <a name="{{uuid}}"></a> {{Name.Full}} {{Suffix}}
+    ### {{Name.Full}} {{Suffix}} <a name="{{uuid}}"></a>
     {% for hex in Hexmap %}
     {{hex.Details}}
     {% endfor %}
@@ -105,15 +105,15 @@ Hex:
     $value: 1
   Details: !jinja |
     {%if DungeonDesc%}
-    #### {{MapRef}} <a name="{{uuid}}"></a>Hex {{'%02d' %  HexCounter}}: {{DungeonDesc}}
+    #### Hex {{'%02d' %  HexCounter}}: {{DungeonDesc}} {{MapRef}} <a name="{{uuid}}"></a>
     {%elif SettlementDesc%}
-    #### {{MapRef}} <a name="{{uuid}}"></a>Hex {{'%02d' %  HexCounter}}: {{SettlementDesc}}
+    #### Hex {{'%02d' %  HexCounter}}: {{SettlementDesc}} {{MapRef}} <a name="{{uuid}}"></a>
     {%elif InnDesc%}
-    #### {{MapRef}} <a name="{{uuid}}"></a>Hex {{'%02d' %  HexCounter}}: {{InnDesc}}
+    #### Hex {{'%02d' %  HexCounter}}: {{InnDesc}} {{MapRef}} <a name="{{uuid}}"></a>
     {%elif EncounterDesc%}
-    #### {{MapRef}} <a name="{{uuid}}"></a>Hex {{'%02d' %  HexCounter}}: {{EncounterName}}
+    #### Hex {{'%02d' %  HexCounter}}: {{EncounterName}} {{MapRef}} <a name="{{uuid}}"></a>
     {%else%}
-    #### {{MapRef}} <a name="{{uuid}}"></a>Hex {{'%02d' %  HexCounter}}: {{Feature.Name}}
+    #### Hex {{'%02d' %  HexCounter}}: {{Feature.Name}} {{MapRef}} <a name="{{uuid}}"></a>
     {%endif%}
 
     {{Thumb}}
@@ -145,16 +145,14 @@ Hex:
     There's a __1 in 6__ chance when exploring (or __2 in 6__ chance if camping overnight) to be ambushed or preyed upon by:
 
     {%set counter = namespace(value=1)%}
-    <table class='randenc'>
-    <thead>
-    <tr><th>1d4</th><th>Encounter</th><th>stats</th></tr>
-    </thead>
-    <tbody>
-    {%for e in OtherEncounters%}
-    <tr><td>{{counter.value}}</td><td><strong>{{e.Title}}{%if e.NumberAppearingLair>RandomEncountersNumberAppearingFactor%}s</strong> ({{"%d" | format((e.NumberAppearingLair/RandomEncountersNumberAppearingFactor) | round(method='ceil'))}}){%else%}</strong>{%endif%}</td><td> {{e.Stats}}</td></tr>
+
+    <div class='condensed'></div>
+
+    | 1d4 | Encounter | Stats | 
+    | --- | --------- | ----- |{%for e in OtherEncounters%}
+    | {{counter.value}} | {{e.PluralizedTitleByLair}} | {{e.Stats}} |
     {%-set counter.value = counter.value+1-%}{%-endfor%}
-    </tbody>
-    </table>
+
 
     {%endif%}
   $sublcass:
@@ -171,7 +169,6 @@ Hex:
   InnDesc: null
   EncounterDesc: null
   HexNumber: !jinja "{{'%02d' % HexCounter}}"
-  RandomEncountersNumberAppearingFactor: 3
 
 
 MountainsHex:

@@ -5,13 +5,17 @@
 Monster:
   Stats: !jinja >
     <span class='monsterstats'>
-    <strong>Armour Class:</strong> {{ArmourClass}} <strong>Hit Dice:</strong> {{ExHitDice}} <strong>Attacks:</strong> {{Attacks}}
-    <strong>THAC0:</strong> {{THAC0}} <strong>Movement:</strong> {{Movement}} <strong>Saving Throws:</strong> {{SavingThrows}}
-    <strong>Morale:</strong> {{Morale}} <strong>Alignment:</strong> {{Alignment}} <strong>XP:</strong> {{XP}} 
+    __Armour Class:__ {{ArmourClass}} __Hit Dice:__ {{ExHitDice}} __Attacks:__ {{Attacks}}
+    __THAC0:__ {{THAC0}} __Movement:__ {{Movement}} __Saving Throws:__ {{SavingThrows}}
+    __Morale:__ {{Morale}} __Alignment:__ {{Alignment}} __XP:__ {{XP}} 
     </span>
   TitlePluralizedByRoaming: !jinja |
     {{Title}}{%if NumberAppearingRoaming > 1%}s{%endif%}
 
+  PluralizedTitleByLair: !jinja >
+    __{{Title}}{%if NumberAppearingLair>RandomEncountersNumberAppearingFactor%}s__
+    ({{"%d" | format((NumberAppearingLair/RandomEncountersNumberAppearingFactor) | round(method='ceil'))}}){%else%}__{%endif%}
+  RandomEncountersNumberAppearingFactor: 3
 
 Acolyte:
   $extends: Monster

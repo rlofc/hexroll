@@ -346,8 +346,8 @@ NPC:
     {{Name.First}} likes spending {{Gender.Pronoun2}} time in the dark inn.
 
   Stats: !jinja |
-    {% set CONMod = {3:-3,4:-2,5:-2,6:-1,7:-1,8:-1,9:0,10:0,11:0,12:0,13:+1,14:+1,15:+1,16:+2,17:+2,18:+3} %}
-    {% set HPRolls = HD.split('d')[0] | int %}
+    {%- set CONMod = {3:-3,4:-2,5:-2,6:-1,7:-1,8:-1,9:0,10:0,11:0,12:0,13:+1,14:+1,15:+1,16:+2,17:+2,18:+3} -%}
+    {%- set HPRolls = HD.split('d')[0] | int -%}
 
     __Armour Class__ {{Armor.Format}}
     __Hit Points__ {{HP+CONMod[CON]*HPRolls}}
@@ -358,32 +358,31 @@ NPC:
     __Alignment__ {{Alignment}}
     __STR__ {{STR}} __INT__ {{INT}} __WIS__ {{WIS}}
     __DEX__ {{DEX}} __CON__ {{CON}} __CHA__ {{CHA}}
-    __Spells__ 
-    {%if Spell1%}{{Spell1}}{%endif%}
-    {%if Spell2%}, {{Spell2}}{%endif%}
-    {%if Spell3%}, {{Spell3}}{%endif%}
-    {%if Spell4%}, {{Spell4}}{%endif%}
-    {%if Spell5%}, {{Spell5}}{%endif%}
-    {%if Spell6%}, {{Spell6}}{%endif%}
-    {%if Spell7%}, {{Spell7}}{%endif%}
-    {%if Spell8%}, {{Spell8}}{%endif%}
-    {%if Spell9%}, {{Spell9}}{%endif%}
-    {%if Spell10%}, {{Spell10}}{%endif%}
-    {%if Spell11%}, {{Spell11}}{%endif%}
-    {%if Spell12%}, {{Spell12}}{%endif%}
-    {%if Spell13%}, {{Spell13}}{%endif%}
-    {%if Spell14%}, {{Spell14}}{%endif%}
-    {%if Spell15%}, {{Spell15}}{%endif%}
-    {%if Spell16%}, {{Spell16}}{%endif%}
-    {%if Spell17%}, {{Spell17}}{%endif%}
-    {%if Spell18%}, {{Spell18}}{%endif%}
-    {%if Spell19%}, {{Spell19}}{%endif%}
-    {%if Spell20%}, {{Spell20}}{%endif%}
-    {%if Spell21%}, {{Spell21}}{%endif%}
-    {%if Spell22%}, {{Spell22}}{%endif%}
-    {%if Spell23%}, {{Spell23}}{%endif%}
-    {%if Spell24%}, {{Spell24}}{%endif%}
-    {%if Spell25%}, {{Spell25}}{%endif%}
+    __Spells__ {%if Spell1%}{{Spell1}}{%endif-%}
+    {%-if Spell2%}, {{Spell2}}{%endif-%}
+    {%-if Spell3%}, {{Spell3}}{%endif-%}
+    {%-if Spell4%}, {{Spell4}}{%endif-%}
+    {%-if Spell5%}, {{Spell5}}{%endif-%}
+    {%-if Spell6%}, {{Spell6}}{%endif-%}
+    {%-if Spell7%}, {{Spell7}}{%endif-%}
+    {%-if Spell8%}, {{Spell8}}{%endif-%}
+    {%-if Spell9%}, {{Spell9}}{%endif-%}
+    {%-if Spell10%}, {{Spell10}}{%endif-%}
+    {%-if Spell11%}, {{Spell11}}{%endif-%}
+    {%-if Spell12%}, {{Spell12}}{%endif-%}
+    {%-if Spell13%}, {{Spell13}}{%endif-%}
+    {%-if Spell14%}, {{Spell14}}{%endif-%}
+    {%-if Spell15%}, {{Spell15}}{%endif-%}
+    {%-if Spell16%}, {{Spell16}}{%endif-%}
+    {%-if Spell17%}, {{Spell17}}{%endif-%}
+    {%-if Spell18%}, {{Spell18}}{%endif-%}
+    {%-if Spell19%}, {{Spell19}}{%endif-%}
+    {%-if Spell20%}, {{Spell20}}{%endif-%}
+    {%-if Spell21%}, {{Spell21}}{%endif-%}
+    {%-if Spell22%}, {{Spell22}}{%endif-%}
+    {%-if Spell23%}, {{Spell23}}{%endif-%}
+    {%-if Spell24%}, {{Spell24}}{%endif-%}
+    {%-if Spell25%}, {{Spell25}}{%endif-%}
 
 
   $collection: npcs

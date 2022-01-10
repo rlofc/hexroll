@@ -33,11 +33,11 @@ $main:
             * [OGL](#toc-ogl)
 
   Output: !jinja |
-    # <a name="{{uuid}}"></a> {{Realm.Title}}
+    # {{Realm.Title}} <a name="{{uuid}}"></a>
 
     {{svg}}
 
-    ## <a name="toc-background"></a>Background
+    ## Background <a name="toc-background"></a>
 
     %%begin_div
 
@@ -51,7 +51,7 @@ $main:
 
     %%end_div
     
-    ## <a name="toc-regions"></a>Regions
+    ## Regions <a name="toc-regions"></a>
 
     %%begin_div
 
@@ -60,7 +60,7 @@ $main:
 
     %%end_div
     
-    ## <a name="toc-settlements"></a>Settlements
+    ## Settlements <a name="toc-settlements"></a>
 
     %%begin_div
 
@@ -69,7 +69,7 @@ $main:
 
     %%end_div
     
-    ## <a name="toc-inns"></a>Inns
+    ## Inns <a name="toc-inns"></a>
 
     %%begin_div
 
@@ -78,7 +78,7 @@ $main:
 
     %%end_div
     
-    ## <a name="toc-dungeons"></a>Dungeons
+    ## Dungeons <a name="toc-dungeons"></a>
 
     %%begin_div
 
@@ -87,7 +87,7 @@ $main:
 
     %%end_div
     
-    ## <a name="toc-factions"></a>Factions
+    ## Factions <a name="toc-factions"></a>
 
     %%begin_div
 
@@ -97,23 +97,23 @@ $main:
 
     %%end_div
     
-    ## <a name="toc-breakglass"></a>Breakglass
+    ## Breakglass <a name="toc-breakglass"></a>
 
     %%begin_div
 
-    ### <a name="toc-rumors"></a>Rumors
+    ### Rumors <a name="toc-rumors"></a>
     {% for r in rumors %}
     {%if r.Details!=''%}* {{r.Details}}{%endif%}{% endfor %}    
 
-    ### <a name="toc-secrets"></a>Secrets
+    ### Secrets <a name="toc-secrets"></a>
     {% for s in secrets %}
     {{s.Details}}{% endfor %}    
 
     %%end_div
     
-    ## <a name="toc-legal"></a>Legal
+    ## Legal <a name="toc-legal"></a>
 
-    ### <a name="toc-doogc"></a>Designation of Open Game Content
+    ### Designation of Open Game Content <a name="toc-doogc"></a>
     This document contains Open Game Content, subject
     to the Open Game License, released under the Open Game License,
     Version 1.0a (reproduced below), as described in Section 1(d)
@@ -121,7 +121,7 @@ $main:
     All other content in this generated sandbox remains the property of
     the copyright holder.
 
-    ### <a name="toc-ogl"></a>OGL
+    ### OGL <a name="toc-ogl"></a>
 
     OPEN GAME LICENSE Version 1.0a
 

@@ -55,7 +55,7 @@ Dungeon:
 
     <div class='pagebreak'> </div>
 
-    ### <a name='{{uuid}}'></a>{{Name.Title}}
+    ### {{Name.Title}} <a name='{{uuid}}'></a>
 
 
     {{svg}}
@@ -108,21 +108,23 @@ DungeonWanderingMonsters:
 
 
     {%set counter = namespace(value=1)%}
-    <table class='randenc'>
-    <thead>
-    <tr><th>1d{{count.value}}</th><th>Encounter</th><th>stats</th></tr>
-    </thead>
-    <tbody>
+
+    <div class='condensed'></div>
+
+
+    | 1d{{count.value}} | Encounter | Stats |
+
+    | ----------------  | --------- | ----- |
     {%for e in Encounters | unique(attribute="subclass_") | rejectattr("Movement","equalto","0") | rejectattr("NumericHD","greaterthan",WanderingMonstersMaxHD)%}
     {%if e.NumberAppearingRoaming > 4%}
     {%set number = namespace(value=(range(1, (e.NumberAppearingRoaming / 2) | int) | random))%}
     {%else%}
     {%set number = namespace(value=1)%}
     {%endif%}
-    <tr><td>{{counter.value}}</td><td><strong>{{e.Title}}{% if number.value>1%}s</strong> ({{number.value}}){%endif%}</strong></td><td> {{e.Stats}}</td></tr>
+
+    | {{counter.value}} | __{{e.Title}}{% if number.value>1%}s__ ({{number.value}}){%else%}__{%endif%} | {{e.Stats}} |
+
     {%-set counter.value = counter.value+1-%}{%-endfor%}
-    </tbody>
-    </table>
     {%endif%}
 
 

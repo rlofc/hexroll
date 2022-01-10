@@ -83,7 +83,7 @@ Inn:
     __{{Name.Full}}__ is welcoming travellers and adventurers
   Details: !jinja |
 
-    ### <a name='{{uuid}}'></a>{{Name.Full }}
+    ### {{Name.Full }} <a name='{{uuid}}'></a>
 
     {{Tavern.Description}}
   Hex:

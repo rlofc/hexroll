@@ -82,7 +82,7 @@ Cult:
   $extends: Faction
   Header: !jinja |
     
-    ### <a name='{{uuid}}'></a>The {{Name_Prefix|title}} {{Name_Suffix|title}}
+    ### The {{Name_Prefix|title}} {{Name_Suffix|title}} <a name='{{uuid}}'></a>
 
     The {{Name_Prefix|title}} {{Name_Suffix|title}} 
     {{subclass_}} are {{Purpose}}.
@@ -176,7 +176,7 @@ Militia:
   $extends: Faction
   Header: !jinja >
     
-    ### <a name='{{uuid}}'></a> The {{Name_Prefix|title}} {{Name_Suffix|title}}
+    ### The {{Name_Prefix|title}} {{Name_Suffix|title}}<a name='{{uuid}}'></a> 
 
 
     The {{Name_Prefix|title}} {{Name_Suffix|title}} 
