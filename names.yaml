@@ -13,6 +13,7 @@ Name:
     - Ashar
     - Azier
     - Berner
+    - Dorith
     - Edmar
     - Grimhar
     - Guther
@@ -24,6 +25,7 @@ Name:
     - Hogar
     - Holfgar
     - Huger
+    - Ithamar
     - Ithar
     - Lotar
     - Lugar
@@ -839,43 +841,6 @@ RegionNames:
 
 
 TownNameAsLastName:
-  - Aqualin
-  - Arazar
-  - Azdar
-  - Ashamar
-  - Albadir
-  - Blackshadow
-  - Blazing Wind
-  - Briul
-  - Cessesta
-  - Cevarra
-  - Dreyolla
-  - Devilhorn
-  - Bazuul
-  - Brewfish
-  - Bullshire
-  - Erabor
-  - Thalanor
-  - Fercenta
-  - Tallamor
-  - Goldwell
-  - Greenfell
-  - Lillin
-  - Ferabor
-  - Odrea
-  - Thelema
-  - Oshar
-  - Edria
-  - Zofara
-  - Zosaal
-  - Saal-Nivana
-  - Nivana
-  - Boroxxa
-  - Willowdale
-  - Earfar
-  - Everdale
-  - Farglen
-  - Silverbend
   - aberius
   - afari
   - agadar
@@ -883,73 +848,116 @@ TownNameAsLastName:
   - akaana
   - akeba
   - akkis
+  - albadir
   - albor
   - ankar
   - aphaki
+  - aqualin
+  - aquareen
   - aral
+  - arazar
+  - arelon
   - arga
   - arkon
   - arkonna
+  - ashamar
   - ashra
   - askia
   - askias
   - askin
   - atali
+  - azdar
   - azem
   - azira
   - aziri
+  - azmaar
   - azora
   - bahari
-  - barin
-  - belesa
-  - beserker
   - balaal
-  - bokka
+  - balaz’s wish
+  - barin
+  - battleshield
+  - bazuul
+  - belesa
   - berak
+  - beserker
+  - blackshadow
+  - blazing wind
+  - bokka
+  - boroxxa
+  - brewfish
+  - briul
   - brokar
+  - bullshire
+  - bulmaar
   - caaran
   - caer
   - cahal
   - caladon
+  - calazi
   - calidar
   - calissa
-  - calazi
   - canedar
   - capeya
   - cazar
+  - cerran
+  - cessesta
+  - cevarra
   - citara
+  - coalfield
   - cobir
+  - cona’s vale
+  - crimson hawk
+  - darkhold
   - darza
+  - devilhorn
+  - devillia
   - devilmask
   - devilville
-  - devillia
   - dokar
+  - dorith
   - dragonia
-  - ellal
+  - dreyolla
+  - earfar
+  - ecrean
+  - edria
   - ekkar
+  - ellal
   - envar
   - enza
   - ephosia
+  - erabor
+  - eramoor
   - erdon
+  - everdale
   - fal
+  - farglen
   - farin
+  - farrwater
   - feki
+  - ferabor
+  - fercenta
   - feria
+  - firebell
+  - frostfyord
   - fryda
   - galaka
-  - gezai
+  - gandar
   - gayan
   - gazal
   - gazali
-  - gandar
+  - gezai
+  - gilli's outpost
+  - goldenclover
+  - goldwell
   - gorah
   - gorm
   - gorn
+  - greenfell
   - guja
   - gura
   - halfboot
   - hammering
-  - sevenhand
   - handsworth
   - hannes
   - haraan
@@ -963,13 +971,18 @@ TownNameAsLastName:
   - heldra
   - hellgate
   - hellhorn
+  - hogsfoot
+  - hollyheart
+  - icemeld
   - innara
   - inndera
+  - ironfort
   - ironhead
+  - ithamar
   - ithar
   - izan
-  - jandar
   - jaluba
+  - jandar
   - jiral
   - jokka
   - kaan
@@ -983,7 +996,9 @@ TownNameAsLastName:
   - khari
   - khaza
   - khezal
+  - kingstown
   - kirah
+  - knifeblade
   - koja
   - kojar
   - komor
@@ -995,6 +1010,7 @@ TownNameAsLastName:
   - kull
   - laan
   - lafai
+  - lakesail
   - lankar
   - lantis
   - larsha
@@ -1015,7 +1031,10 @@ TownNameAsLastName:
   - makkan
   - marook
   - medes
+  - millrock
   - mishara
+  - moonglow
+  - moundfar
   - nadan
   - nafar
   - naka
@@ -1029,82 +1048,101 @@ TownNameAsLastName:
   - narxes
   - natalas
   - nightfel
+  - nivana
+  - northhaven
   - northland
   - nyaro
-  - oldun
+  - oakslide
+  - obeshire
+  - odrea
   - ofelia
   - ogashu
+  - oldun
   - olfey
   - onher
   - ophar
   - orkhan
   - orova
+  - oshar
   - overa
   - overi
-  - palatea
+  - oziryn
   - palaia
+  - palatea
+  - palemoon
   - panjani
   - partha
   - patil
-  - paulherman
   - payin
   - pellia
   - petia
+  - pinepass
   - preya
   - qona
   - qurra
   - ragor
+  - rahdor
   - raihna
   - rakha
   - rayk
   - reyk
   - reza
-  - rahdor
   - riverborne
   - rockfel
   - rognar
   - rohmer
   - ryku
+  - saal-nivana
   - sadeka
   - sagoth
   - samari
-  - sarai
   - saraga
   - saragol
+  - sarai
   - sargon
   - sathan
-  - socubba
   - scrya
   - sephania
+  - sevenhand
   - shadizar
+  - sheva
   - sibuyan
   - sicca
   - sidena
   - sigatona
+  - silverbend
+  - silvercrest
   - silvergray
+  - socubba
+  - sorak's well
   - sorath
   - sothar
   - spearhorn
   - spidera
+  - springvale
   - starfield
   - starra
   - sulis
+  - swordgrip
   - syro
   - taia
   - tair
   - taleka
+  - talima
+  - tallamor
   - tamir
   - tanasu
-  - tenza
   - taramis
-  - turan
-  - talima
+  - tenza
+  - thalanor
   - thalia
   - thalis
+  - thelema
   - thenara
   - thodar
   - thoga
   - thoraka
+  - turan
   - tuzan
   - tybor
   - ulthar
@@ -1122,14 +1160,18 @@ TownNameAsLastName:
   - vezia
   - villehard
   - wakla
+  - westpass
+  - whitecliff
   - wikana
   - wildslide
+  - willfell
+  - willowdale
   - willya
+  - windhead
   - wolfa
   - wolfraven
   - wolfshead
   - woolfel
-  - willfell
   - xapur
   - xara
   - xathar
@@ -1137,10 +1179,11 @@ TownNameAsLastName:
   - xothal
   - xul
   - xuthil
+  - ya'eer
+  - yaara
   - yaja
   - yakadar
   - yakkis
-  - yaara
   - yaruk
   - yateli
   - yazar
@@ -1152,87 +1195,12 @@ TownNameAsLastName:
   - zamoria
   - zelata
   - zeriti
+  - zofara
+  - zosaal
   - zutan
-  - Arelon
-  - Aquareen
-  - Eramoor
-  - Azmaar
-  - Battleshield
-  - Bulmaar
-  - Cerran
-  - Coalfield
-  - Darkhold
-  - Northhaven
-  - Ecrean
-  - Farrwater
-  - Firebell
-  - Frostfyord
-  - Silvercrest
-  - Goldenclover
-  - Sorak's Well
-  - Moundfar
-  - Hogsfoot
-  - Hollyheart
-  - Icemeld
-  - Ironfort
-  - Gilli's Outpost
-  - Cona’s Vale
-  - Knifeblade
-  - Lakesail
-  - Millrock
-  - Moonglow
-  - Westpass
-  - Oakslide
-  - Obeshire
-  - Oziryn
-  - Balaz’s Wish
-  - Pinepass
-  - Kingstown
-  - Crimson Hawk
-  - Swordgrip
-  - Whitecliff
-  - Windhead
-  - Springvale
 
 
 TownName: !avoid_duplicates
-  - Aqualin
-  - Arazar
-  - Azdar
-  - Ashamar
-  - Albadir
-  - Blackshadow
-  - Blazing Wind
-  - Briul
-  - Cessesta
-  - Cevarra
-  - Dreyolla
-  - Devilhorn
-  - Bazuul
-  - Brewfish
-  - Bullshire
-  - Erabor
-  - Thalanor
-  - Fercenta
-  - Tallamor
-  - Goldwell
-  - Greenfell
-  - Lillin
-  - Ferabor
-  - Odrea
-  - Thelema
-  - Oshar
-  - Edria
-  - Zofara
-  - Zosaal
-  - Saal-Nivana
-  - Nivana
-  - Boroxxa
-  - Willowdale
-  - Earfar
-  - Everdale
-  - Farglen
-  - Silverbend
   - aberius
   - afari
   - agadar
@@ -1240,73 +1208,116 @@ TownName: !avoid_duplicates
   - akaana
   - akeba
   - akkis
+  - albadir
   - albor
   - ankar
   - aphaki
+  - aqualin
+  - aquareen
   - aral
+  - arazar
+  - arelon
   - arga
   - arkon
   - arkonna
+  - ashamar
   - ashra
   - askia
   - askias
   - askin
   - atali
+  - azdar
   - azem
   - azira
   - aziri
+  - azmaar
   - azora
   - bahari
-  - barin
-  - belesa
-  - beserker
   - balaal
-  - bokka
+  - balaz’s wish
+  - barin
+  - battleshield
+  - bazuul
+  - belesa
   - berak
+  - beserker
+  - blackshadow
+  - blazing wind
+  - bokka
+  - boroxxa
+  - brewfish
+  - briul
   - brokar
+  - bullshire
+  - bulmaar
   - caaran
   - caer
   - cahal
   - caladon
+  - calazi
   - calidar
   - calissa
-  - calazi
   - canedar
   - capeya
   - cazar
+  - cerran
+  - cessesta
+  - cevarra
   - citara
+  - coalfield
   - cobir
+  - cona’s vale
+  - crimson hawk
+  - darkhold
   - darza
+  - devilhorn
+  - devillia
   - devilmask
   - devilville
-  - devillia
   - dokar
+  - dorith
   - dragonia
-  - ellal
+  - dreyolla
+  - earfar
+  - ecrean
+  - edria
   - ekkar
+  - ellal
   - envar
   - enza
   - ephosia
+  - erabor
+  - eramoor
   - erdon
+  - everdale
   - fal
+  - farglen
   - farin
+  - farrwater
   - feki
+  - ferabor
+  - fercenta
   - feria
+  - firebell
+  - frostfyord
   - fryda
   - galaka
-  - gezai
+  - gandar
   - gayan
   - gazal
   - gazali
-  - gandar
+  - gezai
+  - gilli's outpost
+  - goldenclover
+  - goldwell
   - gorah
   - gorm
   - gorn
+  - greenfell
   - guja
   - gura
   - halfboot
   - hammering
-  - sevenhand
   - handsworth
   - hannes
   - haraan
@@ -1320,13 +1331,18 @@ TownName: !avoid_duplicates
   - heldra
   - hellgate
   - hellhorn
+  - hogsfoot
+  - hollyheart
+  - icemeld
   - innara
   - inndera
+  - ironfort
   - ironhead
+  - ithamar
   - ithar
   - izan
-  - jandar
   - jaluba
+  - jandar
   - jiral
   - jokka
   - kaan
@@ -1340,7 +1356,9 @@ TownName: !avoid_duplicates
   - khari
   - khaza
   - khezal
+  - kingstown
   - kirah
+  - knifeblade
   - koja
   - kojar
   - komor
@@ -1352,6 +1370,7 @@ TownName: !avoid_duplicates
   - kull
   - laan
   - lafai
+  - lakesail
   - lankar
   - lantis
   - larsha
@@ -1372,7 +1391,10 @@ TownName: !avoid_duplicates
   - makkan
   - marook
   - medes
+  - millrock
   - mishara
+  - moonglow
+  - moundfar
   - nadan
   - nafar
   - naka
@@ -1386,82 +1408,101 @@ TownName: !avoid_duplicates
   - narxes
   - natalas
   - nightfel
+  - nivana
+  - northhaven
   - northland
   - nyaro
-  - oldun
+  - oakslide
+  - obeshire
+  - odrea
   - ofelia
   - ogashu
+  - oldun
   - olfey
   - onher
   - ophar
   - orkhan
   - orova
+  - oshar
   - overa
   - overi
-  - palatea
+  - oziryn
   - palaia
+  - palatea
+  - palemoon
   - panjani
   - partha
   - patil
-  - paulherman
   - payin
   - pellia
   - petia
+  - pinepass
   - preya
   - qona
   - qurra
   - ragor
+  - rahdor
   - raihna
   - rakha
   - rayk
   - reyk
   - reza
-  - rahdor
   - riverborne
   - rockfel
   - rognar
   - rohmer
   - ryku
+  - saal-nivana
   - sadeka
   - sagoth
   - samari
-  - sarai
   - saraga
   - saragol
+  - sarai
   - sargon
   - sathan
-  - socubba
   - scrya
   - sephania
+  - sevenhand
   - shadizar
+  - sheva
   - sibuyan
   - sicca
   - sidena
   - sigatona
+  - silverbend
+  - silvercrest
   - silvergray
+  - socubba
+  - sorak's well
   - sorath
   - sothar
   - spearhorn
   - spidera
+  - springvale
   - starfield
   - starra
   - sulis
+  - swordgrip
   - syro
   - taia
   - tair
   - taleka
+  - talima
+  - tallamor
   - tamir
   - tanasu
-  - tenza
   - taramis
-  - turan
-  - talima
+  - tenza
+  - thalanor
   - thalia
   - thalis
+  - thelema
   - thenara
   - thodar
   - thoga
   - thoraka
+  - turan
   - tuzan
   - tybor
   - ulthar
@@ -1479,14 +1520,18 @@ TownName: !avoid_duplicates
   - vezia
   - villehard
   - wakla
+  - westpass
+  - whitecliff
   - wikana
   - wildslide
+  - willfell
+  - willowdale
   - willya
+  - windhead
   - wolfa
   - wolfraven
   - wolfshead
   - woolfel
-  - willfell
   - xapur
   - xara
   - xathar
@@ -1494,10 +1539,11 @@ TownName: !avoid_duplicates
   - xothal
   - xul
   - xuthil
+  - ya'eer
+  - yaara
   - yaja
   - yakadar
   - yakkis
-  - yaara
   - yaruk
   - yateli
   - yazar
@@ -1509,48 +1555,9 @@ TownName: !avoid_duplicates
   - zamoria
   - zelata
   - zeriti
+  - zofara
+  - zosaal
   - zutan
-  - Arelon
-  - Aquareen
-  - Eramoor
-  - Azmaar
-  - Battleshield
-  - Bulmaar
-  - Cerran
-  - Coalfield
-  - Darkhold
-  - Northhaven
-  - Ecrean
-  - Farrwater
-  - Firebell
-  - Frostfyord
-  - Silvercrest
-  - Goldenclover
-  - Sorak's Well
-  - Moundfar
-  - Hogsfoot
-  - Hollyheart
-  - Icemeld
-  - Ironfort
-  - Gilli's Outpost
-  - Cona’s Vale
-  - Knifeblade
-  - Lakesail
-  - Millrock
-  - Moonglow
-  - Westpass
-  - Oakslide
-  - Obeshire
-  - Oziryn
-  - Balaz’s Wish
-  - Pinepass
-  - Kingstown
-  - Crimson Hawk
-  - Swordgrip
-  - Whitecliff
-  - Windhead
-  - Springvale
-
     
 CavernName:
   $extends: DungeonName

@@ -117,7 +117,7 @@ TreasureQuest:
           Active: !jinja >
             {{quest.TreasureContainer}} contains 
             [__{{quest.FolkContext.Name.Full}}’s__](#{{quest.FolkContext.uuid}})
-            (from __{{quest.CityContext.NamePart|title}}__) 
+            (from __{{quest.CityContext.NamePart | title}}__) 
             __{{quest.Artifact.Appearance | title}}__
             (actually __{{quest.Artifact.ActualItem | articlize}}__)
           Conspectus: !jinja >
@@ -272,7 +272,7 @@ MissingPersonQuest:
           Active: !jinja >
             The __chained person__ is 
             [__{{quest.FolkContext.Name.Full}}’s__](#{{quest.FolkContext.uuid}})
-            __{{quest.Relation.Type}}__ from {{quest.CityContext.NamePart|title}}
+            __{{quest.Relation.Type}}__ from {{quest.CityContext.NamePart | title}}
           Conspectus: !jinja >
             [__{{quest.FolkContext.Name.Full}}’s__](#{{quest.FolkContext.uuid}})
             __{{quest.Relation.Type}}__ is in area {{RoomContext.Ref}}
@@ -564,7 +564,7 @@ DeliveryQuest:
   Description: !jinja >
     * Looking for someone to deliver {{Package}} to 
       [__{{Destination.Name.Full}}__](#{{Destination.uuid}})
-      in __{{Destination.CityContext.NamePart}}__.
+      in __{{Destination.CityContext.NamePart | title}}__.
 
         * Reward is __{{Reward}}__
 
