@@ -212,8 +212,8 @@ MissingPersonQuestCell:
 MissingPersonQuest:
   $extends: Quest
   Description: !jinja >
-    * {{Relation.Type}} is missing since last week.  (Secret:
-      Held captive in the [{{Location.DungeonContext.Name.Title}}](#{{Location.DungeonContext.HexUUID}}))
+    * __{{Relation.Type | capitalize}}__ is missing since last week.  (Secret:
+      Held captive in the __[{{Location.DungeonContext.Name.Title}}]__(#{{Location.DungeonContext.HexUUID}}))
 
   Timeframe:
     - two days ago
