@@ -408,7 +408,7 @@ Tavern:
     {{v.Stats}}
     {%endfor%}
 
-    %%end_div
+    %%end_two_columns_layout_when_printing
 
     {%if adverts|list|length > 0%}
     | Bulletin |
@@ -434,7 +434,7 @@ Tavern:
 
     <br/>
 
-    %%begin_div
+    %%begin_two_columns_layout_when_printing
   menus:
     $rollsome:
       $class: TavernMenu

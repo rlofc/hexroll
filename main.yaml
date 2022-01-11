@@ -39,7 +39,7 @@ $main:
 
     ## Background <a name="toc-background"></a>
 
-    %%begin_div
+    %%begin_two_columns_layout_when_printing
 
     {{Realm.Background}}
 
@@ -49,57 +49,57 @@ $main:
 
     {{Realm.Ruler.NPC.Stats}}
 
-    %%end_div
+    %%end_two_columns_layout_when_printing
     
     ## Regions <a name="toc-regions"></a>
 
-    %%begin_div
+    %%begin_two_columns_layout_when_printing
 
     {% for r in regions %}
     {{r.Description}}{% endfor %}    
 
-    %%end_div
+    %%end_two_columns_layout_when_printing
     
     ## Settlements <a name="toc-settlements"></a>
 
-    %%begin_div
+    %%begin_two_columns_layout_when_printing
 
     {% for s in settlements %}
     {{s.Details}}{% endfor %}    
 
-    %%end_div
+    %%end_two_columns_layout_when_printing
     
     ## Inns <a name="toc-inns"></a>
 
-    %%begin_div
+    %%begin_two_columns_layout_when_printing
 
     {% for i in inns %}
     {{i.Details}}{% endfor %}    
 
-    %%end_div
+    %%end_two_columns_layout_when_printing
     
     ## Dungeons <a name="toc-dungeons"></a>
 
-    %%begin_div
+    %%begin_two_columns_layout_when_printing
 
     {% for d in dungeons %}
     {{d.Details}}{% endfor %}    
 
-    %%end_div
+    %%end_two_columns_layout_when_printing
     
     ## Factions <a name="toc-factions"></a>
 
-    %%begin_div
+    %%begin_two_columns_layout_when_printing
 
     {% for f in factions %}
     {{f.Header}}
     {{f.Details}}{% endfor %}    
 
-    %%end_div
+    %%end_two_columns_layout_when_printing
     
     ## Breakglass <a name="toc-breakglass"></a>
 
-    %%begin_div
+    %%begin_two_columns_layout_when_printing
 
     ### Rumors <a name="toc-rumors"></a>
     {% for r in rumors %}
@@ -109,7 +109,7 @@ $main:
     {% for s in secrets %}
     {{s.Details}}{% endfor %}    
 
-    %%end_div
+    %%end_two_columns_layout_when_printing
     
     ## Legal <a name="toc-legal"></a>
 

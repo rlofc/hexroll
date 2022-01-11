@@ -51,7 +51,7 @@ Dungeon:
 
   Details: !jinja |
 
-    %%end_div
+    %%end_two_columns_layout_when_printing
 
     <div class='pagebreak'> </div>
 
@@ -59,7 +59,7 @@ Dungeon:
 
     {{svg}}
 
-    %%begin_div
+    %%begin_two_columns_layout_when_printing
     {%if IncludeConspectus%}
     #### Conspectus
     
