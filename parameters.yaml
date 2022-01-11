@@ -65,3 +65,5 @@ defaults:
     #- Tribe
 
   unpack_similar_biomes_in_hex_map: false
+
+  accentuate_hex_map_colors: false
