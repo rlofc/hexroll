@@ -49,7 +49,7 @@ Dungeon:
     {{dungeon_captives | rejectattr("Conspectus","none") | map(attribute="Conspectus") | join("<br/>")}}
 
 
-  Details: !jinja >
+  Details: !jinja |
 
     %%end_div
 
@@ -57,21 +57,15 @@ Dungeon:
 
     ### {{Name.Title}} <a name='{{uuid}}'></a>
 
-
     {{svg}}
 
-
     %%begin_div
-
     {%if IncludeConspectus%}
-    
     #### Conspectus
     
     {{Faction}}
 
-
     {{Captives}}
-
 
     ##### Encounters
 
@@ -81,7 +75,6 @@ Dungeon:
 
     {{Treasure}}
     {%endif%}
-
 
     {{WanderingMonsters.Table}}
 
@@ -134,41 +127,50 @@ AreaDescription:
   AreaPropertiesText: !jinja >
     {%if Feature.subclass_=='DungeonRemains' and Feature.AreaTrap.Description-%}
     * {{Feature.AreaTrap.Description}} 
-    {%-endif%}
 
 
+    {%endif-%}
     * {{Feature.Description}}
-
 
     * {{Debris.Description}}
 
-
     {%if Key.Active%}
+
     * Searching will uncover {{KeyHide}} holding the {{Key.Active}}
-    {%endif%}
 
-    {%if Lever.Active%}
+    {%endif-%}
+
+    {%-if Lever.Active%}
+
     * There’s {{Lever.Active | articlize}}
-    {%endif%}
 
-    {%if TreasureHiding.Active%}
+    {%endif-%}
+
+    {%-if TreasureHiding.Active%}
+
     * {{TreasureHiding.Active}}
-    {%endif%}
 
-    {%if Cell.Active%}
+    {%endif-%}
+
+    {%-if Cell.Active%}
+
     * {{Cell.Active}}.
       {%if Feature.subclass_=='DungeonRemains'
         and Feature.AreaTrap.Description 
            and (range(1,3+1) | random)==3-%}
       Though {{Cell.Pronoun2}} mouth is gagged, {{Cell.Pronoun}} will
       try to warn about the trap.{%-endif%}
-    {%endif%}
 
-    {%if PortalDestination.Active%}
+    {%endif-%}
+
+    {%-if PortalDestination.Active%}
+
     * {{PortalDestination.Active}}.
+
     {%endif%}
   Description: !jinja >
     ##### Description
+
 
     > {{RoomType.Preface}} and {{Decor.Description}}.
     {{Feature.Hint}}{%if Cell.Active%} and {{Cell.Hint}}{%endif%}.
@@ -219,25 +221,21 @@ AreaDescription:
     
     ##### Foreshadowing
 
-    {% if Feature.Foreshadow%}
+    {%if Feature.Foreshadow%}
+
     * {{Feature.Foreshadow}}.
     {%endif%}
+    {% if Cell.Active %}{% if Feature.Monster%}
 
-    {% if Cell.Active %}
-    {% if Feature.Monster %}
     * A successful listening roll will {{'also' if Feature.Foreshadow else
-      ''}} reveal __screams of fear__ coming from inside this area.
-
+    ''}} reveal __screams of fear__ coming from inside this area.
     {%else%}
 
     * A successful listening roll will {{'also' if Feature.Foreshadow else
-      ''}} reveal a faint __sound of crying__ coming from inside this area.
-
+    ''}} reveal a faint __sound of crying__ coming from inside this area.
     {%endif%}
     {%endif%}
-
     {%endif%}
-
 
 RoomDescription:
   $extends: AreaDescription
@@ -355,26 +353,35 @@ DungeonFeatureExtreme:
 
 
 DungeonEncounter:
-  Description: !jinja |
+  Description: !jinja >
     {%if Monster.NumberAppearingRoaming==1%}There’s {{Monster.Title | articlize}}{%else%} There are {{Monster.NumberAppearingRoaming}} {{Monster.Title}}s {%endif%} inside.
     {%if Monster.Intelligent %}Roll or decide for reaction.
     {%else%}{%if Monster.NumberAppearingRoaming==1%}It {%else%} They {%endif%} will attack anyone stepping in. {%endif%}
 
+
     __{{Monster.Title}}__
+
 
     ---
 
+
     {{Monster.Stats}}
+
+
     {%if Monster.NumberAppearingRoaming<10%}{%for m in range(Monster.NumberAppearingRoaming)%}
     <sub>{% for hp in range(Monster.HitDiceRoll | diceroll) %}❏{%endfor%}</sub><br/> {%endfor%}{%endif%}
 
+
     ---
+
 
     {%if not Monster.TreasureType.Empty and (Monster.TreasureType.Details|trim)!=''%}
     * Monster Hoard:
     {{Monster.TreasureType.Details}}
-    {%else%}
+
+    {%else-%}
     * There is no hoard.
+
     {%endif%}
 
 
@@ -393,15 +400,17 @@ DungeonContainers:
     {%if Trap.Description%}The {{Type}}{{' is' if Quantity=='single' else 's are'}} trapped. {{Trap.Description}}
 
 
-    * {%-endif%} {%if (Treasure.Details | trim)==''%} The treasure here, if any, was __already looted__.{%else%}There’s a 2-in-6 chance the {{Type}}{{'' if Quantity=='single' else 's'}}
-      contain{{'s' if Quantity=='single' else ''}}:  {{Treasure.Details}}
-        Otherwise, this place was already looted earlier.{%endif%}
+    * {%endif%}{%if (Treasure.Details | trim)==''%}The treasure here, if any, was __already looted__.
+    {%else%}There’s a 2-in-6 chance the {{Type}}{{'' if Quantity=='single' else 's'}} contain{{'s' if Quantity=='single' else ''}}:  {{Treasure.Details}}
+
+      Otherwise, this place was already looted earlier.
+    {%endif%}
 
   Foreshadow: 
     - !jinja >
       A few single {{['silver', 'copper'] | random}} pieces could be found if examining the ground near
       the entrances to this area
-    
+
     - Traces of something heavy dragged on the ground could be found if examining
       around the entrances to this area
 
@@ -548,17 +557,14 @@ DungeonRemains:
     Searching it will uncover __nothing__.
     {%else%}
     Searching it will uncover: {{Treasure.Details}}
-
-    {%if EquipmentItems > 0%}    * __{{EquipmentItem1.Title | nobrackets}}__ ({{EquipmentItem1State}}){%endif%}  
-
-
-    {%if EquipmentItems > 1%}    * __{{EquipmentItem2.Title | nobrackets}}__ ({{EquipmentItem2State}}){%endif%}  
-
-
-    {%if EquipmentItems > 2%}    * __{{EquipmentItem3.Title | nobrackets}}__ ({{EquipmentItem3State}}){%endif%}  
-
-    {%if Key.Active%}    *  The {{Key.Active}} {%endif%}
-
+    {%-if EquipmentItems > 0%}
+        * __{{EquipmentItem1.Title | nobrackets}}__ ({{EquipmentItem1State}}){%endif%}
+    {%-if EquipmentItems > 1%}
+        * __{{EquipmentItem2.Title | nobrackets}}__ ({{EquipmentItem2State}}){%endif%}
+    {%-if EquipmentItems > 2%}
+        * __{{EquipmentItem3.Title | nobrackets}}__ ({{EquipmentItem3State}}){%endif%}
+    {%-if Key.Active%}
+        *  The {{Key.Active}} {%endif%}
     {%endif%}
 
   Treasure:
@@ -643,7 +649,7 @@ DungeonDeadEndFeature:
     Dead End
     {% endif %}
   Description: !jinja >
-    {% if Feature.Description %}
+    {% if Feature.Description%}
     * {{Feature.Description}}
     {% else %}
     * There is nothing here.

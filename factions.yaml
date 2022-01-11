@@ -4,8 +4,7 @@ Faction:
   FullName: !jinja >
     The {{Name_Prefix|title}} {{Name_Suffix|title}}
 
-  Details: !jinja |
-
+  Details: !jinja >
 
     The {{subclass_}} leader is a {{Leader.Description}}
 
@@ -14,18 +13,21 @@ Faction:
 
     __{{Leader.Name.Full}}__ (Level {{Leader.Level}} {{Leader.Class}})
 
+
     ---
+
 
     <a name="{{Leader.uuid}}"></a>{{Leader.Stats}}
 
+
     ---
+
 
     #### Members
 
     {% for m in Members %}
 
     * [{{m.Name.Full}}](#{{m.uuid}}) {{m.Profession if m.Profession}}{%if m.CityContext%} from the {{m.CityContext.Title}}{%endif%}
-
     {% endfor %}
 
 
@@ -34,7 +36,6 @@ Faction:
     {% for c in Collaborators %}
 
     * {{c.Name.Full}} {{c.Profession if c.Profession}}{%if c.CityContext%} from the {{c.CityContext.Title}}{%endif%}
-
     {% endfor %}
 
 
@@ -57,6 +58,7 @@ Faction:
         $namespace: faction
         $values:
           Association: !jinja >
+
             * Collaborates with the [__{{faction.FullName}}__](#{{faction.uuid}}).
 
   Members:
@@ -68,7 +70,9 @@ Faction:
         $namespace: faction
         $values:
           Association: !jinja >
+
             * Member of the [__{{faction.FullName}}__](#{{faction.uuid}}).
+
           Alignment: !jinja "{{faction.AcceptedAlignment}}"
 
   LeaderSpecialInterest:

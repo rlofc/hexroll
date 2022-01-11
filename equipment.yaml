@@ -1,11 +1,9 @@
 # This document contains Open Game Content, subject to the Open Game License,
 # released un the Open Game License, Version 1.0a (enclosed in the LICENSE
 # file), as described in Section 1(d) of the License.
-
 Equipment:
   $subclass:
     - Gear
-
 
 Gear:
   $subclass:

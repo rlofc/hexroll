@@ -53,18 +53,18 @@ TreasureQuestSecret:
   $extends: QuestSecret
   Details: !jinja >
     * {{FolkContext.Name.Full}}’s {{Artifact.Item}}
-      is in area {{Location.RoomContext.Ref}} in the
-      {{Location.DungeonContext.Name.Title}}
+    is in area {{Location.RoomContext.Ref}} in the
+    {{Location.DungeonContext.Name.Title}}
 
 
 TreasureQuest:
   $extends: Quest
   Description: !jinja >
-    * __{{Artifact.Appearance | title}}__ is lost (or so claimed).
-     (Secret: This is actually __{{Artifact.ActualItem | articlize}}__
-     and it is currently somewhere in the
-     [__{{Location.DungeonContext.Name.Title}}__](#{{Location.DungeonContext.HexUUID}}))
 
+    * __{{Artifact.Appearance | title}}__ is lost (or so claimed).
+    (Secret: This is actually __{{Artifact.ActualItem | articlize}}__
+    and it is currently somewhere in the
+    [__{{Location.DungeonContext.Name.Title}}__](#{{Location.DungeonContext.HexUUID}}))
         * Reward is __{{Reward}}__
 
   Rumor:
@@ -137,7 +137,7 @@ MissingPersonQuestSecret:
   $extends: QuestSecret
   Details: !jinja >
     * {{Relation.Name.Full}}’s {{Relation.Type}}
-      is held captive in {{Location.DungeonContext.Name.Title | title}}
+    is held captive in {{Location.DungeonContext.Name.Title | title}}
 
 
 MissingPersonRelation:
@@ -212,8 +212,9 @@ MissingPersonQuestCell:
 MissingPersonQuest:
   $extends: Quest
   Description: !jinja >
+
     * __{{Relation.Type | capitalize}}__ is missing since last week.  (Secret:
-      Held captive in the __[{{Location.DungeonContext.Name.Title}}]__(#{{Location.DungeonContext.HexUUID}}))
+    Held captive in the __[{{Location.DungeonContext.Name.Title}}]__(#{{Location.DungeonContext.HexUUID}}))
 
   Timeframe:
     - two days ago
@@ -562,10 +563,10 @@ DeliveryQuest:
     a {{PackagePrefix}} {{PackageObject}}
 
   Description: !jinja >
-    * Looking for someone to deliver {{Package}} to 
-      [__{{Destination.Name.Full}}__](#{{Destination.uuid}})
-      in __{{Destination.CityContext.NamePart | title}}__.
 
+    * Looking for someone to deliver {{Package}} to 
+    [__{{Destination.Name.Full}}__](#{{Destination.uuid}})
+    in __{{Destination.CityContext.NamePart | title}}__.
         * Reward is __{{Reward}}__
 
   Advert:

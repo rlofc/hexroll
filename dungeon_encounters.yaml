@@ -93,7 +93,7 @@ DungeonEncounterHumanoidsTier1:
 
 DungeonEncounterVermins:
   $extends: DungeonEncounter
-  Foreshadow: !jinja |
+  Foreshadow: !jinja >
     A succesfull listening roll could detect the __sounds__ that the
     __{{Monster.TitlePluralizedByRoaming}}__ {%if
     Monster.NumberAppearingRoaming>1%}are{%else%}is{%endif%} making inside this
@@ -357,9 +357,8 @@ DungeonEncounterDragonsTier4:
 
 DungeonEncounterUndead:
   $extends: DungeonEncounter
-  Foreshadow: >
-    It is impossible to hear anything inside
-    
+  Foreshadow: It is impossible to hear anything inside
+
   Hint: 
     - You feel the chill of death curling up your spine
     - Other than that, there's a silence of death in here

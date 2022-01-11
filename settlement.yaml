@@ -378,13 +378,9 @@ Tavern:
     Owned and managed by <a name="{{keeper.uuid}}"></a>{{keeper.Description}}
     
     ###### Staff
-
     {%for s in staff%}
-
     <a name="{{s.uuid}}"></a>{{s.Description}}
-
     {%endfor%}
-
     ###### Menu
 
     <div class="print_condensed"></div>
@@ -401,19 +397,15 @@ Tavern:
     {{Faction}}
 
     {%for p in patrons%}
-
     ---
 
     [{{p.Name.Full}}](#{{p.uuid}}) (when not in shop)
-
     {%endfor%}{%for v in visitors%}
-
     ---
 
     <a name='{{v.uuid}}'></a>{{v.Description}}
 
     {{v.Stats}}
-
     {%endfor%}
 
     %%end_div
@@ -549,7 +541,6 @@ District:
     {% for g in Guards %}
     {% set counter.value = counter.value + 1 %}
 
-
     <a name="{{g.uuid}}"></a> __Guard #{{counter.value}}__
 
 
@@ -564,8 +555,6 @@ District:
 
     ---
 
-
-
     {% endfor %}
     
     {% for s in shops %}
@@ -575,12 +564,8 @@ District:
     {{s.Inventory}}
 
     __{{s.OwnerTitle}}:__
-
     {{s.Owner.Description}}
-
-
     {{s.Quest.Description}}
-
 
     {% endfor %}
 

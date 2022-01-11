@@ -50,9 +50,9 @@ DungeonDoorState:
 KeySecret:
   $extends: Secret
   Details: !jinja >
-    {% if Key %}
+    {%if Key-%}
     * The key to unlock the {{Link.Shape}} {{Link.Material}} door in area {{Ref}}
-      in the {{DungeonContext.Name.Title | title}} is in area {{Key.RoomContext.Ref}} 
+    in the {{DungeonContext.Name.Title | title}} is in area {{Key.RoomContext.Ref}}
     {% endif %}
 
 
@@ -60,8 +60,8 @@ LeverSecret:
   $extends: Secret
   Details: !jinja >
     * The lever to open the secret door in area {{Ref}}
-      in the {{DungeonContext.Name.Title | title}} is in area
-      {{Lever.RoomContext.Ref}}
+    in the {{DungeonContext.Name.Title | title}} is in area
+    {{Lever.RoomContext.Ref}}
 
 
 DungeonDoorLocked:

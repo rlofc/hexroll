@@ -143,7 +143,7 @@ Encounter:
                 {%if Monster.Alignment=='Chaotic'%}{{proxy.ChaoticState}}
                 {%else%}{{proxy.NeutralState}}{%endif%}
               EncounterProbability: !jinja >
-                There’s a __2-in-6__ chance of encountering 
+                There’s a __2-in-6__ chance of encountering
                 {%if Monster.NumberAppearingLair==1%}it.
                 {%else%}at least one of them outside
                 (the rest will be in their lair inside {{proxy.Lair}}).{%endif%}

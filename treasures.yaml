@@ -35,27 +35,26 @@ TreasureType:
     {{total.value/factor.value}}
 
   Details: !jinja >
-    {%set factor = namespace(value = (1 if (not RoomContext or not MaxNumberAppearingRoaming) else MaxNumberAppearingRoaming/NumberAppearingRoaming))%}
-    {%set items = namespace(list = [])%}
-    {%set gptotal = namespace(value = 0) %}
-    {%if cp1000.Roll <= cp1000.Odds or sp1000.Roll <= sp1000.Odds or ep1000.Roll <= ep1000.Odds or gp1000.Roll <= gp1000.Odds or pp1000.Roll <= pp1000.Odds%}
-    {%set items.list = items.list + [('__'+(GoldValue | float | currency)+'__')]%}
-    {%endif%}
-    {%if Gems.Roll <= Gems.Odds%}
-    {%set items.list = items.list + ['__'+(Gems.Amount|string)+' gems__ worth __'+(GemsValue | float |currency)+'__ in total']%}
-    {%endif%}
-    {%if Jewellery.Roll <= Jewellery.Odds%}
-    {%set items.list = items.list + ['__'+(Jewellery.Amount|string)+' jewellery items__ worth  __'+(JewelleryValue | float |currency)+'__ in total']%}
-    {%endif%}
-    {%if MagicItems.Amount > 0 and MagicItems.Roll <= (MagicItems.Odds / 1)%} {%set items.list = items.list + ['__'+MagicItem1.Description+'__']%}{%endif%}
-    {%if MagicItems.Amount > 1 and MagicItems.Roll <= (MagicItems.Odds / 2)%} {%set items.list = items.list + ['__'+MagicItem2.Description+'__']%}{%endif%}
-    {%if MagicItems.Amount > 2 and MagicItems.Roll <= (MagicItems.Odds / 3)%} {%set items.list = items.list + ['__'+MagicItem3.Description+'__']%}{%endif%}
-    {%if MagicItems.Amount > 3 and MagicItems.Roll <= (MagicItems.Odds / 4)%} {%set items.list = items.list + ['__'+MagicItem4.Description+'__']%}{%endif%}
-    {%if MagicItems.Amount > 4 and MagicItems.Roll <= (MagicItems.Odds / 5)%} {%set items.list = items.list + ['__'+MagicItem5.Description+'__']%}{%endif%}
-    {%if MagicItems.Amount > 5 and MagicItems.Roll <= (MagicItems.Odds / 6)%} {%set items.list = items.list + ['__'+MagicItem6.Description+'__']%}{%endif%}
-    {%for i in items.list%}
-        * {{i}}
-    {%endfor%}
+    {%-set factor = namespace(value = (1 if (not RoomContext or not MaxNumberAppearingRoaming) else MaxNumberAppearingRoaming/NumberAppearingRoaming))-%}
+    {%-set items = namespace(list = [])-%}
+    {%-set gptotal = namespace(value = 0)-%}
+    {%-if cp1000.Roll <= cp1000.Odds or sp1000.Roll <= sp1000.Odds or ep1000.Roll <= ep1000.Odds or gp1000.Roll <= gp1000.Odds or pp1000.Roll <= pp1000.Odds-%}
+    {%-set items.list = items.list + [('__'+(GoldValue | float | currency)+'__')]-%}
+    {%-endif-%}
+    {%-if Gems.Roll <= Gems.Odds-%}
+    {%-set items.list = items.list + ['__'+(Gems.Amount|string)+' gems__ worth __'+(GemsValue | float |currency)+'__ in total']-%}
+    {%-endif-%}
+    {%-if Jewellery.Roll <= Jewellery.Odds-%}
+    {%-set items.list = items.list + ['__'+(Jewellery.Amount|string)+' jewellery items__ worth  __'+(JewelleryValue | float |currency)+'__ in total']-%}
+    {%-endif-%}
+    {%-if MagicItems.Amount > 0 and MagicItems.Roll <= (MagicItems.Odds / 1)%} {%set items.list = items.list + ['__'+MagicItem1.Description+'__']%}{%endif-%}
+    {%-if MagicItems.Amount > 1 and MagicItems.Roll <= (MagicItems.Odds / 2)%} {%set items.list = items.list + ['__'+MagicItem2.Description+'__']%}{%endif-%}
+    {%-if MagicItems.Amount > 2 and MagicItems.Roll <= (MagicItems.Odds / 3)%} {%set items.list = items.list + ['__'+MagicItem3.Description+'__']%}{%endif-%}
+    {%-if MagicItems.Amount > 3 and MagicItems.Roll <= (MagicItems.Odds / 4)%} {%set items.list = items.list + ['__'+MagicItem4.Description+'__']%}{%endif-%}
+    {%-if MagicItems.Amount > 4 and MagicItems.Roll <= (MagicItems.Odds / 5)%} {%set items.list = items.list + ['__'+MagicItem5.Description+'__']%}{%endif-%}
+    {%-if MagicItems.Amount > 5 and MagicItems.Roll <= (MagicItems.Odds / 6)%} {%set items.list = items.list + ['__'+MagicItem6.Description+'__']%}{%endif-%}
+    {%-for i in items.list%}
+        * {{i}}{%endfor%}
 
 
 TreasureTypeIndividuals:
