@@ -214,7 +214,7 @@ MissingPersonQuest:
   Description: !jinja >
 
     * __{{Relation.Type | capitalize}}__ is missing since last week.  (Secret:
-    Held captive in the __[{{Location.DungeonContext.Name.Title}}]__(#{{Location.DungeonContext.HexUUID}}))
+    Held captive in the __[{{Location.DungeonContext.Name.Title}}](#{{Location.DungeonContext.HexUUID}})__)
 
   Timeframe:
     - two days ago
