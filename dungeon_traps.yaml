@@ -48,14 +48,20 @@ ContainerTouchTrap:
 ContainerRubbleTrap:
   Description:
     - !jinja > 
-      __Loose {{Object}}__ is locked above the {{Type}}, released when a
+      __Loose {{Object.noun}}__ {{Object.aux}} locked above the {{Type}}, released when a
       __switch__ {{AgentLocation}} is triggered.  If undetected, there's a
-      __2 in 6__ chance the loose rubble will fall down.  __Save vs
+      __2 in 6__ chance for the {{Object.noun}} to drop down.  __Save vs
       Petrification__ or sustain __1d8 damage__.
   Object:
-    - rubble
-    - debris
-    - stones
+    - Rubble:
+      noun: rubble
+      aux: is
+    - Debris:
+      noun: debris
+      aux: is
+    - Stones:
+      noun: stones
+      aux: are
 
 
 AreaTrap:
