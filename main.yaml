@@ -26,6 +26,7 @@ $main:
             * [The {{f.Name_Prefix|title}} {{f.Name_Suffix|title}}](#{{f.uuid}})
     {% endfor %}
         * [Breakglass](#toc-breakglass)
+            * [NPCs](#toc-npc-index)
             * [Rumors](#toc-rumors)
             * [Secrets](#toc-secrets)
         * [Legal](#toc-legal)
@@ -108,7 +109,16 @@ $main:
     ### Secrets <a name="toc-secrets"></a>
     {% for s in secrets %}
     {{s.Details}}{% endfor %}    
+    
+    ### NPCs <a name="toc-npc-index"></a>
+    {% for l in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" | list %} [{{l}}](#npc_index_{{l}}) {% endfor %}
 
+    {% for l,cl in gc_characters | groupby("Name.Initial") %}
+    
+    #### {{l | capitalize}} <a name="npc_index_{{l}}"></a>
+    {{ cl | sort(attribute="Name.Last") | map(attribute="LinkedName")  |  join(", ") }}
+
+    {% endfor %}
     %%end_two_columns_layout_when_printing
     
     ## Legal <a name="toc-legal"></a>

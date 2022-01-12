@@ -191,6 +191,7 @@ Character:
       $class: Name
       $bootstrap:
         Gender: !ref Gender
+  LinkedName: !jinja "[{{Name.Full}}](#{{uuid}})"
   TavernText: 
     - !jinja >
       {%if t is defined%}
