@@ -369,7 +369,7 @@ DungeonEncounter:
 
 
     {%if Monster.NumberAppearingRoaming<10%}{%for m in range(Monster.NumberAppearingRoaming)%}
-    <sub>{% for hp in range(Monster.HitDiceRoll | diceroll) %}❏{%endfor%}</sub><br/> {%endfor%}{%endif%}
+    <sub>{% for hp in range(Monster.HitDiceRoll | diceroll) %}&#x274F;{%endfor%}</sub><br/> {%endfor%}{%endif%}
 
 
     ---

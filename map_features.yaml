@@ -159,7 +159,7 @@ Encounter:
 
 
                 {%for m in range(Monster.NumberAppearingLair)%}
-                <sub>{% for hp in range(Monster.HitDiceRoll | diceroll) %}❏{%endfor%}</sub><br/>{%endfor%}
+                <sub>{% for hp in range(Monster.HitDiceRoll | diceroll) %}&#x274F;{%endfor%}</sub><br/>{%endfor%}
                 {%endif%}
 
 
