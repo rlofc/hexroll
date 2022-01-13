@@ -27,7 +27,15 @@ Village:
 
   Details: !jinja >
 
-    ### {{subclass_|capitalize}} of {{NamePart|title}} <a name='{{uuid}}'></a>
+    %%end_two_columns_layout_when_printing
+
+    <div class='pagebreak'> </div>
+
+    ### {{subclass_|capitalize}} of {{NamePart|title}} <a name='{{uuid}}'></a> <h3 class="sticky"> {{Name}} </h3>
+
+
+    %%begin_two_columns_layout_when_printing
+
 
     Population: {{Population}} villagers
 
@@ -87,7 +95,15 @@ Town:
   Population: !jinja "{{(District.Population|int) * PopulationMultiplier}}"
   Details: !jinja >
 
-    ### {{subclass_|capitalize}} of {{NamePart|title}} <a name='{{uuid}}'></a>
+    %%end_two_columns_layout_when_printing
+
+    <div class='pagebreak'> </div>
+
+    ### {{subclass_|capitalize}} of {{NamePart|title}} <a name='{{uuid}}'></a> <h3 class="sticky"> {{Name}} </h3>
+
+
+    %%begin_two_columns_layout_when_printing
+
 
     Population: {{Population}} townsfolk
 
@@ -249,7 +265,15 @@ City:
 
   Details: !jinja >
 
-    ### {{subclass_|capitalize}} of {{NamePart|title}} <a name='{{uuid}}'></a>
+    %%end_two_columns_layout_when_printing
+
+    <div class='pagebreak'> </div>
+
+    ### {{subclass_|capitalize}} of {{NamePart|title}} <a name='{{uuid}}'></a> <h3 class="sticky"> {{Name}} </h3>
+
+
+    %%begin_two_columns_layout_when_printing
+
 
     Population: {{Population}} residents
 

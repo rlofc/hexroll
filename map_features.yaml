@@ -83,7 +83,7 @@ Inn:
     __{{Name.Full}}__ is welcoming travellers and adventurers
   Details: !jinja |
 
-    ### {{Name.Full }} <a name='{{uuid}}'></a>
+    ### {{Name.Full }} <a name='{{uuid}}'></a> <h3 class="sticky"> {{Name.Full}} </h3>
 
     {{Tavern.Description}}
   Hex:
@@ -158,8 +158,8 @@ Encounter:
                 {%if Monster.NumberAppearingLair<10%}
 
 
-                {%for m in range(Monster.NumberAppearingLair)%}
-                <sub>{% for hp in range(Monster.HitDiceRoll | diceroll) %}&#x274F;{%endfor%}</sub><br/>{%endfor%}
+                <div class="hpmarks">{%for m in range(Monster.NumberAppearingLair)%}
+                <sub>{% for hp in range(Monster.HitDiceRoll | diceroll) %}&#x274F;{%endfor%}</sub><br/>{%endfor%}</div>
                 {%endif%}
 
 

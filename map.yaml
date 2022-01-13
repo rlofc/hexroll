@@ -1,6 +1,13 @@
 Region:
   Description: !jinja |
-    ### {{Name.Full}} {{Suffix}} <a name="{{uuid}}"></a>
+    %%end_two_columns_layout_when_printing
+
+    <div class='pagebreak'> </div>
+
+    ### {{Name.Full}} {{Suffix}} <a name="{{uuid}}"></a> <h3 class="sticky">{{Name.Full}} {{Suffix}}</h3>
+
+    %%begin_two_columns_layout_when_printing
+
     {% for hex in Hexmap %}
     {{hex.Details}}
     {% endfor %}

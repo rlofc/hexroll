@@ -86,7 +86,11 @@ Cult:
   $extends: Faction
   Header: !jinja |
     
-    ### The {{Name_Prefix|title}} {{Name_Suffix|title}} <a name='{{uuid}}'></a>
+    %%end_two_columns_layout_when_printing
+    
+    ### The {{Name_Prefix|title}} {{Name_Suffix|title}} <a name='{{uuid}}'></a> <h3 class="sticky"> The {{Name_Prefix|title}} {{Name_Suffix|title}} </h3>
+
+    %%begin_two_columns_layout_when_printing
 
     The {{Name_Prefix|title}} {{Name_Suffix|title}} 
     {{subclass_}} are {{Purpose}}.
@@ -180,8 +184,11 @@ Militia:
   $extends: Faction
   Header: !jinja >
     
-    ### The {{Name_Prefix|title}} {{Name_Suffix|title}}<a name='{{uuid}}'></a> 
+    %%end_two_columns_layout_when_printing
 
+    ### The {{Name_Prefix|title}} {{Name_Suffix|title}}<a name='{{uuid}}'></a> <h3 class="sticky"> The {{Name_Prefix|title}} {{Name_Suffix|title}} </h3>
+
+    %%begin_two_columns_layout_when_printing
 
     The {{Name_Prefix|title}} {{Name_Suffix|title}} 
     {{subclass_}} are {{Verb}} {{Purpose}}.

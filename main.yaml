@@ -102,16 +102,8 @@ $main:
 
     %%begin_two_columns_layout_when_printing
 
-    ### Rumors <a name="toc-rumors"></a>
-    {% for r in rumors %}
-    {%if r.Details!=''%}* {{r.Details}}{%endif%}{% endfor %}    
-
-    ### Secrets <a name="toc-secrets"></a>
-    {% for s in secrets %}
-    {{s.Details}}{% endfor %}    
-    
-    ### NPCs <a name="toc-npc-index"></a>
-    {% for l in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" | list %} [{{l}}](#npc_index_{{l}}) {% endfor %}
+    ### NPCs <a name="toc-npc-index"></a> <h3 class="sticky"> NPCs </h3>
+    {% for l in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" | list %}[{{l}}](#npc_index_{{l}}){% endfor %}
 
     {% for l,cl in gc_characters | groupby("Name.Initial") %}
     
@@ -119,11 +111,20 @@ $main:
     {{ cl | sort(attribute="Name.Last") | map(attribute="LinkedName")  |  join(", ") }}
 
     {% endfor %}
+    
+    ### Rumors <a name="toc-rumors"></a> <h3 class="sticky"> Rumors </h3>
+    {% for r in rumors %}
+    {%if r.Details!=''%}* {{r.Details}}{%endif%}{% endfor %}    
+
+    ### Secrets <a name="toc-secrets"></a> <h3 class="sticky"> Secrets </h3>
+    {% for s in secrets %}
+    {{s.Details}}{% endfor %}    
+
     %%end_two_columns_layout_when_printing
     
     ## Legal <a name="toc-legal"></a>
 
-    ### Designation of Open Game Content <a name="toc-doogc"></a>
+    ### Designation of Open Game Content <a name="toc-doogc"></a> <h3 class="sticky"> Designation of Open Game Content </h3>
     This document contains Open Game Content, subject
     to the Open Game License, released under the Open Game License,
     Version 1.0a (reproduced below), as described in Section 1(d)
@@ -131,7 +132,7 @@ $main:
     All other content in this generated sandbox remains the property of
     the copyright holder.
 
-    ### OGL <a name="toc-ogl"></a>
+    ### OGL <a name="toc-ogl"></a> <h3 class="sticky"> OGL </h3>
 
     OPEN GAME LICENSE Version 1.0a
 

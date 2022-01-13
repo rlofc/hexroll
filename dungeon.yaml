@@ -55,12 +55,15 @@ Dungeon:
 
     <div class='pagebreak'> </div>
 
-    ### {{Name.Title}} <a name='{{uuid}}'></a>
+    ### {{Name.Title}} <a name='{{uuid}}'></a> <h3 class="sticky"> {{Name.Title}} </h3>
 
     {{svg}}
 
-    %%begin_two_columns_layout_when_printing
     {%if IncludeConspectus%}
+    <div class='pagebreak'> </div>
+
+    %%begin_two_columns_layout_when_printing
+
     #### Conspectus
     
     {{Faction}}
@@ -74,6 +77,8 @@ Dungeon:
     ##### Treasure
 
     {{Treasure}}
+    {%else%}
+    %%begin_two_columns_layout_when_printing
     {%endif%}
 
     {{WanderingMonsters.Table}}
@@ -368,8 +373,8 @@ DungeonEncounter:
     {{Monster.Stats}}
 
 
-    {%if Monster.NumberAppearingRoaming<10%}{%for m in range(Monster.NumberAppearingRoaming)%}
-    <sub>{% for hp in range(Monster.HitDiceRoll | diceroll) %}&#x274F;{%endfor%}</sub><br/> {%endfor%}{%endif%}
+    {%if Monster.NumberAppearingRoaming<10%}<div class="hpmarks">{%for m in range(Monster.NumberAppearingRoaming)%}
+    <sub>{% for hp in range(Monster.HitDiceRoll | diceroll) %}&#x274F;{%endfor%}</sub><br/> {%endfor%}</div>{%endif%}
 
 
     ---
