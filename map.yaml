@@ -107,7 +107,7 @@ CoastRegion:
 
 
 HexProxy:
-  HexCounter: null  
+  default: null  
 
 
 Hex:
@@ -201,6 +201,7 @@ Hex:
       $class: HexProxy
       $bootstrap:
         HexCounter: !ref HexCounter
+        HexUUID: !ref uuid
 
 
 MountainsHex:
