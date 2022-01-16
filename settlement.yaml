@@ -591,6 +591,7 @@ District:
     __{{s.OwnerTitle}}:__
     {{s.Owner.Description}}
     {{s.Quest.Description}}
+    {{s.HexQuest.Description if s.HexQuest}}
 
     {% endfor %}
 

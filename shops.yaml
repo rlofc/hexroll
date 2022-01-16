@@ -198,6 +198,17 @@ Herbalist:
     - greens
     - weeds
     - mushroom
+  
+  HexQuestMission:
+    - harvest exotic herbs
+    - forage exotic mushrooms
+  $context:
+    $attr: ShopContext
+    $values:
+      - Owner
+      - HexQuestMission
+  HexQuest:
+    $roll: EscortQuest
 
 
 Potion:
@@ -211,6 +222,15 @@ ExoticGoods:
   Noun:
     - exotic
     - curiosities
+  HexQuestMission:
+    - acquire exotic artifacts
+  $context:
+    $attr: ShopContext
+    $values:
+      - Owner
+      - HexQuestMission
+  HexQuest:
+    $roll: EscortQuest
 
 
 Jeweler:
@@ -299,6 +319,15 @@ Butchery:
     - Beef & Pork
     - Prime Cut
     - Steak
+  HexQuestMission:
+    - hunt for rare game
+  $context:
+    $attr: ShopContext
+    $values:
+      - Owner
+      - HexQuestMission
+  HexQuest:
+    $roll: EscortQuest
 
 
 Clothing:

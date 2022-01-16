@@ -605,3 +605,28 @@ DeliveryQuest:
               {{quest.ShopContext.Owner.Gender.Pos}} a {{quest.PackageObject}} 
               {{quest.ShopContext.Owner.Gender.Pronoun}} would like delivered to
               {{quest.Destination.CityContext.NamePart | title}}
+
+
+EscortQuest:
+  Destination:
+    $pickone:
+      $collection: hex_proxies
+
+  Frequency:
+    - Once a season
+    - Twice a season
+    - Twice a year
+
+  Description: !jinja >
+
+    * {{Frequency}}, {{ShopContext.Owner.Name.First}} will want to __{{ShopContext.HexQuestMission}}__ at
+    __[hex {{Destination.HexCounter}}](#{{Destination.uuid}})__ in __{{Destination.Region.Name.Full}} {{Destination.Region.Suffix}}__
+    and will look for someone to protect {{ShopContext.Owner.Gender.Pronoun3}} throughout the
+    journey.
+
+  Reward:
+    - 500 gp
+    - 600 gp
+    - 700 gp
+
+

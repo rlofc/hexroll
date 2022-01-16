@@ -106,6 +106,10 @@ CoastRegion:
       $max: !parameter maximum_tiles_per_coast_region
 
 
+HexProxy:
+  HexCounter: null  
+
+
 Hex:
   $inc:
     $global: HexCounter
@@ -192,6 +196,11 @@ Hex:
   InnDesc: null
   EncounterDesc: null
   HexNumber: !jinja "{{'%02d' % HexCounter}}"
+  HexProxy:
+    $roll:
+      $class: HexProxy
+      $bootstrap:
+        HexCounter: !ref HexCounter
 
 
 MountainsHex:

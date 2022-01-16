@@ -307,6 +307,9 @@ $main:
     temples:
       $collect: Temple
 
+    hex_proxies:
+      $collect: HexProxy
+
     settlements:
       $collect: Settlement
 
