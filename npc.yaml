@@ -233,6 +233,7 @@ Character:
   InThePocket:
     $roll: InThePocket
 
+
   Description: !jinja >
     {{Name.Full}}.
 
@@ -241,6 +242,7 @@ Character:
 
     {{Association}}
     {{Story2.Description}}
+    {{Relation.Description}}
     {{TavernText}}
 
 
@@ -274,11 +276,6 @@ Character:
     - an earring
     - a neck band
  
-
-  $context:
-    $attr: CharacterContext
-    $values:
-      - Name
 
   State:
     $roll: NPCState
