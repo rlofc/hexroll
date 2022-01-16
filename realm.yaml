@@ -154,6 +154,8 @@ Noble:
       $inject:
         $values:
           Weapon: !ref Weapon
+          InThePocket: 
+            Details: ''
 
 
 Bishop:
@@ -169,6 +171,8 @@ Bishop:
       $inject:
         $values:
           Weapon: !ref Weapon
+          InThePocket: 
+            Details: ''
 
 
 RulerSword:
@@ -212,6 +216,8 @@ Monarch:
       $inject:
         $values:
           Weapon: !ref Weapon
+          InThePocket: 
+            Details: ''
 
 
 Warexpert:
@@ -237,6 +243,8 @@ Warexpert:
       $inject:
         $values:
           Weapon: !ref Weapon
+          InThePocket: 
+            Details: ''
 
 
 Necromancer:
@@ -252,3 +260,5 @@ Necromancer:
       $inject:
         $values:
           Weapon: !ref Weapon
+          InThePocket: 
+            Details: ''
