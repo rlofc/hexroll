@@ -224,16 +224,20 @@ Character:
       {{Gender.Feature}}, {{Feature1}} and {{Feature2}}
     - !jinja >
       {{Feature1}}, {{Gender.Feature}} and {{Feature2}}
+  
+  InThePocket:
+    $roll: InThePocket
 
   Description: !jinja >
     {{Name.Full}}.
 
     {{Gender.Pronoun|capitalize}} {{Gender.Pos}} {{Appearance}}
-    (*{{State}}*).
+    (*{{State}}*). {{InThePocket.Details}}
 
     {{Association}}
     {{Story2.Description}}
     {{TavernText}}
+
 
   FeatureX1:
     - !jinja >
@@ -345,9 +349,10 @@ PlatemailArmorWithShield:
 
 NPC:
   $extends: Character
-  Description: !jinja |
+  Description: !jinja >
     __{{Name.Full}}__, a level {{Level}} {{Class}}.
     {{Gender.Pronoun|capitalize}} {{Gender.Pos}} {{Appearance}}
+    (*{{State}}*). {{InThePocket.Details}}
   
   UNUSED1: >
     {{Name.First}} likes spending {{Gender.Pronoun2}} time in the dark inn.

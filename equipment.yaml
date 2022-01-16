@@ -966,3 +966,39 @@ Lute:
 HandDrum:
   Title: Hand Drum
   Cost: 10
+
+
+
+InThePocket:
+  $subclass: !weighted
+    - EmptyPocket
+    - PocketContent^10
+
+EmptyPocket:
+  Details: ''
+
+PocketContent:
+  Items:
+    - !jinja "__{{Item1}}__, __{{Item2}}__ and __{{Item3}}__"
+    - !jinja "__{{Item1}}__ and __{{Item2}}__"
+    - !jinja "__{{Item1}}__"
+
+  Item1:
+    - a quill
+    - a comb
+    - 3 cp
+
+  Item2:
+    - a magnifying glass
+    - spectacles
+    - an empty vial
+    - 2 sp
+
+  Item3:
+    - a dagger
+    - a key
+    - a vial with a dark liquid
+    - 1 gp
+  Details: !jinja >
+
+    <small>In the pocket: {{Items}}.</small>
