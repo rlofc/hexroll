@@ -986,19 +986,36 @@ PocketContent:
   Item1:
     - a quill
     - a comb
+    - dice
+    - a deck of cards
+    - a dirty handkerchief
+    - 1 cp
+    - 2 cp
     - 3 cp
 
   Item2:
     - a magnifying glass
     - spectacles
     - an empty vial
+    - a smoking pipe
     - 2 sp
+    - 3 sp
+    - 4 sp
+    - 5 sp
 
   Item3:
     - a dagger
     - a key
     - a vial with a dark liquid
+    - a small flute
     - 1 gp
+    - 2 gp
+    - a small gem (worth 10 gp)
+    - a death threat note
+    - a love note
+    - a ransom note
+    - a passphrase note
+
   Details: !jinja >
 
     <small>In the pocket: {{Items}}.</small>
