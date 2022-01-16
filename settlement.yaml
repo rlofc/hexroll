@@ -1117,35 +1117,6 @@ MarketDistrictGuild:
     - ThievesGuild
     - MerchantsGuild
 
-PossibleRelation:
-  $subclass: !weighted
-    - NoRelation^9
-    - Relation
-
-NoRelation:
-  Description: ""
-
-Relation:
-  Description: !jinja >
-
-    * {{FolkContext.Name.First}} {{FolkContext.Gender.Pos}} {{What}}
-    [__{{OtherCharacter.Name.Full}}__](#{{OtherCharacter.uuid}}).
-
-  What:
-    - some __unfinished business__ with
-    - a severe __dispute__ with
-    - a __grudge__ against
-    - __bad blood__ with
-    - a __vendetta__ against
-    - an __affair__ with
-    - a __special interest__ in
-    - is __in love__ with
-
-  OtherCharacter:
-    $pickone:
-      $collection: characters
-
-
 Folk:
   $extends: Character
   $context:
@@ -1156,9 +1127,6 @@ Folk:
       - uuid
   Story2:
     $roll: Quest
-  Relation:
-    $roll: PossibleRelation
-
 
 
 Shop:
