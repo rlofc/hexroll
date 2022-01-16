@@ -503,7 +503,8 @@ DistrictTavern:
       $max: 5
       $inject:
         $values:
-          t: !ref Name
+          TavernOfChoiceUUID: !ref uuid
+          TavernOfChoice: !ref Name
 
   adverts:
     $popsome: 

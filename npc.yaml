@@ -194,29 +194,34 @@ Character:
   LinkedName: !jinja "[{{Name.Full}}](#{{uuid}})"
   TavernText: 
     - !jinja >
-      {%if t is defined%}
+      {%if TavernOfChoice is defined%}
 
-      * {{Name.First}} is frequenting the {{t.Full}} on {{Gender.Pronoun2}} time off.
+      * {{Name.First}} is frequenting the [{{TavernOfChoice.Full}}](#{{TavernOfChoiceUUID}})
+      on {{Gender.Pronoun2}} time off.
       {%endif%}
     - !jinja >
-      {%if t is defined%}
+      {%if TavernOfChoice is defined%}
 
-      * {{Name.First}} likes spending {{Gender.Pronoun2}} time in the {{t.Full}}.
+      * {{Name.First}} likes spending {{Gender.Pronoun2}} time
+      in the [{{TavernOfChoice.Full}}](#{{TavernOfChoiceUUID}}).
       {%endif%}
     - !jinja >
-      {%if t is defined%}
+      {%if TavernOfChoice is defined%}
 
-      * {{Name.First}} enjoys dining with {{Gender.Pronoun2}} friends in the {{t.Full}}.
+      * {{Name.First}} enjoys dining with {{Gender.Pronoun2}} friends
+      in the [{{TavernOfChoice.Full}}](#{{TavernOfChoiceUUID}}).
       {%endif%}
     - !jinja >
-      {%if t is defined%}
+      {%if TavernOfChoice is defined%}
 
-      * On {{Gender.Pronoun2}} time off, {{Name.First}} will enjoy a drink or two in the {{t.Full}}.
+      * On {{Gender.Pronoun2}} time off, {{Name.First}} will enjoy
+      a drink or two in the [{{TavernOfChoice.Full}}](#{{TavernOfChoiceUUID}}).
       {%endif%}
     - !jinja >
-      {%if t is defined%}
+      {%if TavernOfChoice is defined%}
 
-      * {{Name.First}} is usually eating {{Gender.Pronoun2}} meals in the {{t.Full}}.
+      * {{Name.First}} is usually eating {{Gender.Pronoun2}} meals
+      in the [{{TavernOfChoice.Full}}](#{{TavernOfChoiceUUID}}).
       {%endif%}
 
   Appearance:
