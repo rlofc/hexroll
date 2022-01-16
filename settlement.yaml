@@ -37,7 +37,9 @@ Village:
     %%begin_two_columns_layout_when_printing
 
 
-    Population: {{Population}} villagers
+    * Located in: {{HexLink}}
+
+    * Population: {{Population}} villagers
 
     #### Village Shops & Services
 
@@ -105,7 +107,9 @@ Town:
     %%begin_two_columns_layout_when_printing
 
 
-    Population: {{Population}} townsfolk
+    * Located in: {{HexLink}}
+
+    * Population: {{Population}} townsfolk
 
     #### Town Shops & Services
 
@@ -275,7 +279,9 @@ City:
     %%begin_two_columns_layout_when_printing
 
 
-    Population: {{Population}} residents
+    * Located in: {{HexLink}}
+
+    * Population: {{Population}} residents
 
 
     {{Flair}}
