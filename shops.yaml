@@ -320,7 +320,7 @@ Butchery:
     - Prime Cut
     - Steak
   HexQuestMission:
-    - hunt for rare game
+    - go on a big-game hunt
   $context:
     $attr: ShopContext
     $values:
@@ -409,7 +409,15 @@ Music:
     - Instruments
     - Guitar & Flute
     - Harp & Lute
-
+  HexQuestMission:
+    - find exquisite tonewood
+  $context:
+    $attr: ShopContext
+    $values:
+      - Owner
+      - HexQuestMission
+  HexQuest:
+    $roll: EscortQuest
 
 Salon:
   $extends: Shop
@@ -466,6 +474,15 @@ Occult:
   Noun:
     - Ritual Goods
     - Witchcraft Materials
+  HexQuestMission:
+    - explore for mysterious artifacts
+  $context:
+    $attr: ShopContext
+    $values:
+      - Owner
+      - HexQuestMission
+  HexQuest:
+    $roll: EscortQuest
 
 
 Winery:
