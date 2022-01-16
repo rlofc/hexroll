@@ -17,18 +17,6 @@ Quest:
     - TreasureQuest
     - Relation
 
-  Reward:
-    - 1000gp
-    - 1500gp
-    - 2000gp
-    - 2500gp
-    - 3000gp
-    - 3500gp
-    - 4000gp
-    - 4500gp
-    - 5000gp
-    - 5500gp
-
 
 NoQuest:
   Description: ""
@@ -66,7 +54,8 @@ TreasureQuest:
     (Secret: This is actually __{{Artifact.ActualItem | articlize}}__
     and it is currently somewhere in the
     [__{{Location.DungeonContext.Name.Title}}__](#{{Location.DungeonContext.HexUUID}}))
-        * Reward is __{{Reward}}__
+        * Finder’s reward is __{{Artifact.Reward}}__
+
 
   Rumor:
     $roll:
@@ -205,6 +194,28 @@ MissingPersonHusband:
         Gender: !ref Gender
 
 
+MissingPersonQuestReward:
+  $subclass:
+    - MissingPersonQuestItemReward
+    - MissingPersonQuestTreasureReward
+
+MissingPersonQuestItemReward:
+  Details: !jinja >
+    __{{Reward.Appearance | articlize}}__ (actually __{{Reward.ActualItem | articlize}}__)
+  Reward:
+    $roll: LostItem
+
+
+MissingPersonQuestTreasureReward:
+  Details: !jinja "__{{Reward}}__"
+  Reward:
+    - 200 gp
+    - 800 gp
+    - 1200 gp
+    - 1700 gp
+    - 2200 gp
+    - 2300 gp
+
 MissingPersonQuestCell:
   Hint: "a person is chained to the wall"
   Active: null
@@ -216,6 +227,10 @@ MissingPersonQuest:
 
     * __{{Relation.Type | capitalize}}__ is missing since last week.  (Secret:
     Held captive in the __[{{Location.DungeonContext.Name.Title}}](#{{Location.DungeonContext.HexUUID}})__)
+        * Recovery reward is {{Reward.Details}}.
+
+  Reward:
+    $roll: MissingPersonQuestReward
 
   Timeframe:
     - two days ago
@@ -317,7 +332,12 @@ LostItemHighTier:
     - LostItemMirror
     - LostItemRope
     - LostItemScarab
-  
+  Reward:
+    - 1200gp
+    - 1700gp
+    - 2200gp
+    - 2300gp
+
 
 LostItemBag:
   $extends: LostItemHighTier
@@ -373,6 +393,11 @@ LostItemClothing:
 
 LostItemSword:
   $extends: LostItem
+  Reward:
+    - 230gp
+    - 440gp
+    - 390gp
+    - 320gp
   Appearance:
     - decorated sword
     - custom sword
@@ -421,6 +446,11 @@ LostItemGauntlets:
 
 LostItemArmor:
   $extends: LostItem
+  Reward:
+    - 230gp
+    - 440gp
+    - 390gp
+    - 320gp
   Appearance:
     - custom-fit armor
     - decorated armor
