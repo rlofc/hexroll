@@ -8,8 +8,10 @@ Faction:
 
     The {{subclass_}} leader is a {{Leader.Description}}
 
+
     {%if LeaderSpecialInterest.Details!=''%}{{Leader.Name.First | capitalize}} {{Leader.Gender.Pos}} a special interest 
     of an unknown nature in {{LeaderSpecialInterest.Details}}.{%endif%}
+
 
     __{{Leader.Name.Full}}__ (Level {{Leader.Level}} {{Leader.Class}})
 
