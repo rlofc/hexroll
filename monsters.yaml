@@ -2678,7 +2678,7 @@ Hobgoblin:
   SavingThrows: "D12 W13 P14 B15 S16 (1)"
   Morale: "8 (10 with king)"
   Alignment: "Chaotic"
-  XP: "15 (bodyguard: 75"
+  XP: "15 (bodyguard: 75)"
   NumberAppearingRoaming:
     $diceroll: 1d6 
   NumberAppearingLair:
