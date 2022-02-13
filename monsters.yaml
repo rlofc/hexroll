@@ -2678,7 +2678,7 @@ Hobgoblin:
   SavingThrows: "D12 W13 P14 B15 S16 (1)"
   Morale: "8 (10 with king)"
   Alignment: "Chaotic"
-  XP: "15 (bodyguard: 75"
+  XP: "15 (bodyguard: 75)"
   NumberAppearingRoaming:
     $diceroll: 1d6 
   NumberAppearingLair:
@@ -3890,7 +3890,7 @@ Orc:
   SavingThrows: "D12 W13 P14 B15 S16 (1)"
   Morale: "6 (8 with leader)"
   Alignment: "Chaotic"
-  XP: "10 (leader: 10"
+  XP: "10 (leader: 10)"
   NumberAppearingRoaming:
     $diceroll: 2d4 
   NumberAppearingLair:
