@@ -3890,7 +3890,7 @@ Orc:
   SavingThrows: "D12 W13 P14 B15 S16 (1)"
   Morale: "6 (8 with leader)"
   Alignment: "Chaotic"
-  XP: "10 (leader: 10"
+  XP: "10 (leader: 10)"
   NumberAppearingRoaming:
     $diceroll: 2d4 
   NumberAppearingLair:
