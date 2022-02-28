@@ -41,9 +41,11 @@ Village:
 
     * Population: {{Population}} villagers
 
+
     #### Village Shops & Services
 
     <small>{{District.Index}}</small>
+
 
     ##### {{District.Tavern.Title}}
 
@@ -111,9 +113,11 @@ Town:
 
     * Population: {{Population}} townsfolk
 
+
     #### Town Shops & Services
 
     <small>{{District.Index}}</small>
+
 
     ##### {{District.Tavern.Title}}
 
