@@ -70,7 +70,7 @@ Cavern:
 
   Map:
     $roll: 
-      $class: DungeonCaveShape
+      $class: !parameter cave_maps
       $bootstrap:
         DungeonFeatureTier1: CaveFeatureTier1
         DungeonFeatureTier2: CaveFeatureTier2
@@ -141,9 +141,7 @@ Tomb:
 
   Map:
     $roll: 
-      $class: !weighted
-        - DungeonShape^2
-        - DungeonIrregularShape
+      $class: !parameter tomb_maps
       $bootstrap:
         DungeonFeatureTier1: TombFeatureTier1
         DungeonFeatureTier2: TombFeatureTier2
@@ -228,7 +226,7 @@ Temple:
 
   Map:
     $roll: 
-      $class: DungeonShape
+      $class: !parameter temple_maps
       $bootstrap:
         DungeonFeatureTier1: TempleFeatureTier1
         DungeonFeatureTier2: TempleFeatureTier2

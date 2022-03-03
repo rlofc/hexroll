@@ -49,8 +49,20 @@ defaults:
     - Cavern
     - Temple
     - Tomb
-    # - Mine
-    # - Ruins
+
+  tomb_maps: !weighted
+    - TombMapSmall^3
+    - TombMapMedium^3
+    - TombMapLarge^2
+
+  temple_maps: !weighted
+    - TempleMapSmall^3
+    - TempleMapMedium^3
+    - TempleMapLarge^2
+
+  cave_maps: !weighted
+    - CaveMapSmall^2
+    - CaveMapMedium
 
   highest_wandering_monster_hitdice_in_dungeons: 3
 
