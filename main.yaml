@@ -1,3 +1,30 @@
+$include:
+  - hexroll/parameters.yaml
+  - hexroll/dungeon.yaml
+  - hexroll/dungeon_area_types.yaml
+  - hexroll/dungeon_doors.yaml
+  - hexroll/dungeon_encounters.yaml
+  - hexroll/dungeon_entrance.yaml
+  - hexroll/dungeon_traps.yaml
+  - hexroll/dungeon_types.yaml
+  - hexroll/encounters.yaml
+  - hexroll/equipment.yaml
+  - hexroll/factions.yaml
+  - hexroll/magic_items.yaml
+  - hexroll/map.yaml
+  - hexroll/map_features.yaml
+  - hexroll/monster_groups.yaml
+  - hexroll/monsters.yaml
+  - hexroll/names.yaml
+  - hexroll/npc.yaml
+  - hexroll/quests.yaml
+  - hexroll/realm.yaml
+  - hexroll/settlement.yaml
+  - hexroll/shops.yaml
+  - hexroll/sigils.yaml
+  - hexroll/terrains.yaml
+  - hexroll/treasures.yaml
+
 $main:
   Realm:
     $roll: Realm
