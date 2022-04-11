@@ -26,6 +26,8 @@ MountainsRegion:
     - Range
     - Peaks
     - Teeth
+    - Crags
+    - Cliffs
   $context:
     $attr: Region
     $values:
@@ -42,6 +44,10 @@ PlainsRegion:
   $extends: Region
   Suffix:
     - Plains
+    - Prairie
+    - Steppe
+    - Meadows
+    - Fields
   $context:
     $attr: Region
     $values:
@@ -59,6 +65,8 @@ ForestRegion:
   Suffix:
     - Forest
     - Woods
+    - Timberlands
+    - Grove
   $context:
     $attr: Region
     $values:
@@ -77,6 +85,9 @@ DesertRegion:
     - Dunes
     - Desert
     - Wastelands
+    - Barrens
+    - Desolation
+    - Wastes
   $context:
     $attr: Region
     $values:
@@ -94,6 +105,10 @@ CoastRegion:
   Suffix:
     - Coastline
     - Shores
+    - Beaches
+    - Strands
+    - Banks
+    - Reef
   $context:
     $attr: Region
     $values:
