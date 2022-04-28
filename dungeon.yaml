@@ -271,6 +271,7 @@ DungeonDebris:
     - near the wall on the left
     - near the wall on the right
     - near the wall on the far end
+    - in an alcove
 
   Debris2Location:
     - next to it
@@ -283,6 +284,48 @@ DungeonDebris:
     - a rusty short sword
     - a burnt torch
     - an old broken mirror
+    - a wicker basket
+    - a torn hide armor
+    - a small empty bottle
+    - a broken wooden box
+    - an empty drinking flask
+    - a rusted pile of chains
+    - a dirty stuffed doll
+    - a pile of cockroaches
+    - a figure made of sticks and twine
+    - several large direty pillows
+    - a nest of straw and blankets
+    - many candles, burnt out in a pile of wax
+    - a ring of fist-sized stones
+    - a broken talisman
+    - a torn cloak
+    - a brighly spotted mushroom
+    - a collection of offerings, long ago forgotten
+    - several iron bars, each about a foot in length
+    - a boquet of flowers
+    - a muddy puddle
+    - knitting needles and yarn
+    - a pile of papers
+    - the rotting hide of a large animal
+    - a pile of gravel and small stones
+    - three large bird skulls
+    - the skull of a strange animal
+    - an carved ivory or bone idol
+    - a pile of bones
+    - a bundle of sticks
+    - a broken table
+    - a tangle of vines
+    - many shoes, piled together
+    - a tall pointy hat
+    - a boot, skeletal foot still inside
+    - a bucket of guts
+    - a pouch of dice
+    - feathers
+    - a blanket, laid out and covering something small
+    - a broken music box
+    - vomit
+    - small bell
+    - an eyeball in a sealed jar
 
   Debris2:
     - broken pieces of wood
@@ -292,6 +335,23 @@ DungeonDebris:
     - ripped pieces of old rope
     - traces of fur
     - garlic leftovers
+    - hundreds of tiny bones
+    - feathers
+    - cube shaped stones
+    - shreded pieces of clothing
+    - shreded pages of a book
+    - shreded pieces of a map
+    - small mounds ashes
+    - dried flowers
+    - brightly colored leaves
+    - tiny mushrooms
+    - thick spiderwebs
+    - shattered glass
+    - marbles
+    - dead mice
+    - seeds
+    - carved figurines
+    - damp leaves
 
 
 DungeonDecor:
