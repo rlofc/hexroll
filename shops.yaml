@@ -126,7 +126,7 @@ PetRaven:
 PetRat:
   $extends: Pet
   Title: Rat
-  Cost: 2 sp
+  Cost: 2
 
 
 PetMonkey:
