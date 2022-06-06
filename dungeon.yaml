@@ -264,13 +264,13 @@ DungeonDebris:
   Description: 
     - !jinja >
       There’s also {{Debris1}} {{Debris1Location}} and some {{Debris2}}
-      {{Debris2Location}}
+      {{Debris2Location}}.
 
     - !jinja >
-      {{Debris2}} litter the room
+      {{Debris2 | capitalize}} litter the room.
 
     - !jinja >
-      {{Debris1}} can be found {{Debris1Location}}
+      {{Debris1 | capitalize}} can be found {{Debris1Location}}.
 
   Debris1Location:
     - in the far corner
