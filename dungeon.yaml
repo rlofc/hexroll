@@ -232,11 +232,11 @@ AreaDescription:
     {%endif%}
     {% if Cell.Active %}{% if Feature.Monster%}
 
-    * A successful listening roll will {{'also' if Feature.Foreshadow else
+    * A successful listen roll will {{'also' if Feature.Foreshadow else
     ''}} reveal __screams of fear__ coming from inside this area.
     {%else%}
 
-    * A successful listening roll will {{'also' if Feature.Foreshadow else
+    * A successful listen roll will {{'also' if Feature.Foreshadow else
     ''}} reveal a faint __sound of crying__ coming from inside this area.
     {%endif%}
     {%endif%}
