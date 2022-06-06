@@ -37,6 +37,9 @@ Mountains:
     - The narrow and winding trails here are on the faces of the cliffs.
       Carelessness or combat are especially risky here.
 
+    - The path here leads to a cliffside, more than a hundrad feet tall. Planks
+      of wood attached against the rocky wall form the only way ahead.
+
     - The passages here are surrounded with steep vertical cliffs and are
       branching to all directions like a fractured maze.
       
@@ -50,6 +53,16 @@ Mountains:
     - Small unexplained earthquakes tremble the rocks here a few times a day.
       Loose rocks and boulders may block the pathways, or even worse, fall
       from above unexpectedly.
+
+    - Dense fog makes traveling on the trails here difficult and slow.
+      The reduced visibility renders it almost impossible to scout for danger.
+
+    - Weird colorful crystal formations are decorating the rocksy walls here,
+      bouncing mesmerising rays of light all around.
+
+    - giant thin pillars of rocks are barely supporting an even bigger plates
+      of stone. Some of these huge mushroom-like formations have already
+      collapsed. The others are likely to fall as well soon.
 
 
   Location:
@@ -89,8 +102,11 @@ Forest:
       phosphorescent fungi are growing near the base of the trunks, creating a
       luminous colorful glow above the ground.
 
-    - Dense ivy and vegetation cover an old dragon skeleton, as if sleeping
-      peacefully in a clearing surrounded by the trees. 
+    - !jinja >
+      Dense ivy and vegetation cover an old skeleton of a {{ [
+      'dragon, as if sleeping peacefully',
+      'giant humanoid, lying face down',
+      ] | random}} in a clearing surrounded by the trees. 
 
     - Ropes tangle down from the branches here. On some of them, humanoid- size
       straw-made figures are hanging by their canvas covered heads.
@@ -100,9 +116,15 @@ Forest:
       frozen expression of agony.
 
     - !jinja >
-      An oversized statue of {{StatusSubject | articlize}} holding a sword against the
-      ground stands proudly in a clearing here. Fresh flowers were recently
-      placed near its base.
+      An oversized statue of {{StatusSubject | articlize}} holding a sword
+      against the ground stands proudly in a clearing here.
+      Fresh flowers were recently placed near its base.
+
+    - There's a stream of clear water here, flowing gently between the woods,
+      over the smooth rocky ground.
+
+    - Colorful flowers, berry shrubs and mushrooms grow under the woods
+      here - almost dense enough to completely cover too many bones.
 
   StatusSubject:
     - warrior
@@ -194,9 +216,8 @@ Desert:
     - A giant perfect wall of stones stands lonely an unconnected in the middle
       of the wasteland, with only empty stretches of sand to surround it.
 
-    - Gusts of warm desert wind sweep and swirl the sands here. Looking
-      carefully one could see mysterious creatures formed in the air by the
-      sand.
+    - Gusts of warm desert wind sweep and swirl the sands, creating ghost-like
+      clouds of desert dust.
 
   Location: 
     - on the dunes sands
@@ -233,6 +254,15 @@ Plains:
     - A pile of stones form a pyramid of steps, tall enough to provide a better
       vantage point over the region. At its top, a rusted old sword is planted 
       with its blade in the ground.
+
+    - The grasslands here are lush and green, but every now and then there's a
+      perfectly dug cubic pit in the mud, much like a fresh and ready grave.
+
+    - Giant iron sharpnels, as big as trees trunks, erect from the ground every
+      hundrad feet or so. It is as if they fell down from the sky.
+
+    - Carcasses of farm animal are scattered around, some in worse shape than
+      others. Swarms of flies are hovering over them like dark veils in the wind.
 
   Location:
     - in a valley
