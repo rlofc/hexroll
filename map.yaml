@@ -86,7 +86,6 @@ DesertRegion:
     - Desert
     - Wastelands
     - Barrens
-    - Desolation
     - Wastes
   $context:
     $attr: Region
