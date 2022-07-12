@@ -267,7 +267,7 @@ DungeonDebris:
       {{Debris2Location}}.
 
     - !jinja >
-      {{Debris2 | capitalize}} litter the room.
+      {{Debris2 | capitalize}} litter the area.
 
     - !jinja >
       {{Debris1 | capitalize}} can be found {{Debris1Location}}.
