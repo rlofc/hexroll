@@ -178,7 +178,7 @@ City:
 
   CitySpeciality: !jinja >
     {% set x = namespace(count=1, title=[]) %}
-    {% for t in  (all_shops | groupby("Title") | map(attribute="list")) %}
+    {% for t in  (all_shops | reject('undefined') | groupby("Title") | map(attribute="list")) %}
     {% if (t | length) > x.count %}
     {% set x.title = [t[0].Title] %}
     {% set x.count = (t | length) %}
