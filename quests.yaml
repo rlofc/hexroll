@@ -41,7 +41,7 @@ QuestSecret:
 TreasureQuestSecret:
   $extends: QuestSecret
   Details: !jinja >
-    * {{FolkContext.Name.Full}}’s {{Artifact.Item}}
+    * {{FolkContext.Name.Full}}’s {{Artifact.Appearance}}
     is in area {{Location.RoomContext.Ref}} in the
     {{Location.DungeonContext.Name.Title}}
 
