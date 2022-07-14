@@ -183,9 +183,6 @@ AreaDescription:
 
     {{AreaPropertiesText}}
 
-  Debris:
-    $roll: DungeonDebris
-
   $context:
     $attr: RoomContext
     $values:
@@ -250,6 +247,10 @@ RoomDescription:
   RoomType:
     $roll: RoomType
 
+  Debris:
+    $roll: RoomDebris
+
+
 
 CaveDescription:
   $extends: AreaDescription
@@ -259,6 +260,34 @@ CaveDescription:
   RoomType:
     $roll: CaveType
 
+  Debris:
+    $roll: CaveDebris
+
+
+RoomDebris:
+  $extends: DungeonDebris
+
+  Debris1Location:
+    - in the far corner
+    - in the near corner
+    - near the wall on the left
+    - near the wall on the right
+    - near the wall on the far end
+    - in an alcove
+    - on an altar
+    - below an arch
+    - in a large basin
+
+CaveDebris:
+  $extends: DungeonDebris
+
+  Debris1Location:
+    - in the far corner
+    - in the near corner
+    - near the wall on the left
+    - near the wall on the right
+    - near the wall on the far end
+    - in a large basin
 
 DungeonDebris:
   Description: 
@@ -272,16 +301,6 @@ DungeonDebris:
     - !jinja >
       {{Debris1 | capitalize}} can be found {{Debris1Location}}.
 
-  Debris1Location:
-    - in the far corner
-    - in the near corner
-    - near the wall on the left
-    - near the wall on the right
-    - near the wall on the far end
-    - in an alcove
-    - on an altar
-    - below an arch
-    - in a large basin
 
   Debris2Location:
     - next to it
@@ -350,7 +369,7 @@ DungeonDebris:
     - ripped pieces of old rope
     - traces of fur
     - garlic leftovers
-    - hundreds of tiny bones
+    - hundred tiny bones
     - feathers
     - cube shaped stones
     - shreded pieces of clothing
@@ -361,13 +380,13 @@ DungeonDebris:
     - brightly colored leaves
     - tiny mushrooms
     - thick spiderwebs
-    - shattered glass
+    - shattered pieces of glass
     - marbles
     - dead mice
     - seeds
     - carved figurines
     - damp leaves
-    - small stones with runes etched on one side
+    - small stones with runes etchings
     - broken arrows
     - small iron cages
 
