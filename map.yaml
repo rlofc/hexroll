@@ -65,6 +65,7 @@ ForestRegion:
   Suffix:
     - Forest
     - Woods
+    - Woodlands
     - Timberlands
     - Grove
   $context:

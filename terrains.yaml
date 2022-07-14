@@ -44,7 +44,7 @@ Mountains:
       branching to all directions like a fractured maze.
       
     - Two giant stone figures of guards, gazing into the sky and holding a sword 
-      against the ground are carved on the both cliff sides of the valley
+      against the ground are carved on both cliffsides of the valley
       here. 
 
     - The rock formations here are sharp, pointy and dark. Walking here
@@ -57,8 +57,8 @@ Mountains:
     - Dense fog makes traveling on the trails here difficult and slow.
       The reduced visibility renders it almost impossible to scout for danger.
 
-    - Weird colorful crystal formations are decorating the rocksy walls here,
-      bouncing mesmerising rays of light all around.
+    - Weird colorful crystal formations are decorating the rocky walls here.
+      Mesmerising rays of light are bouncing from their countless facets.
 
     - giant thin pillars of rocks are barely supporting an even bigger plates
       of stone. Some of these huge mushroom-like formations have already
@@ -125,6 +125,9 @@ Forest:
 
     - Colorful flowers, berry shrubs and mushrooms grow under the woods
       here - almost dense enough to completely cover too many bones.
+
+    - A small pond sits between the woods here. At night, countless
+      mysterious forms glow an eeree purple light deep in the water.
 
   StatusSubject:
     - warrior
@@ -210,8 +213,8 @@ Desert:
     - Tall pillars of rock emerge from the sands here, like giant columns to
       support the cloudless sky.
 
-    - The sand here is riddled with small craters. Was it hail in the desert
-      or something less natural perhaps?
+    - The sand here is riddled with small craters, as if a rain of rocks fell
+      violently from above.
 
     - A giant perfect wall of stones stands lonely an unconnected in the middle
       of the wasteland, with only empty stretches of sand to surround it.
@@ -263,6 +266,12 @@ Plains:
 
     - Carcasses of farm animal are scattered around, some in worse shape than
       others. Swarms of flies are hovering over them like dark veils in the wind.
+
+    - A small lake sits between the lush green hills here. At night, countless
+      mysterious forms glow an eeree blue light in its deep water.
+
+    - A small lake sits between the black rocky hills here, its water darker
+      than night. Some dead fish are floating near its banks.
 
   Location:
     - in a valley
