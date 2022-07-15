@@ -874,7 +874,6 @@ ResidentialDistrictShop:
     - Nunnery
     - Tailor
     - Orphanage
-    - Restaurant
 
 
 PalaceDistrictShop:
@@ -909,7 +908,6 @@ PalaceDistrictShop:
     - Enchanter
     - Theater
     - EventPlanner
-    - Restaurant
     - Registry
     - TradePost
     - Archive
@@ -1049,7 +1047,6 @@ HarborDistrictShop:
     - GameShop
     - PrintingPress
     - AnimalPound
-    - Restaurant
     - Tanner
     - Registry
     - TradePost
@@ -1116,7 +1113,6 @@ MarketDistrictShop:
     - GameShop
     - PrintingPress
     - AnimalPound
-    - Restaurant
     - Tanner
     - TradePost
     - VehicleMaker
@@ -1295,7 +1291,6 @@ DistrictShop:
     - AnimalPound
     - EventPlanner
     - Mortician
-    - Restaurant
     - Tanner
     - Registry
     - TradePost
@@ -1376,7 +1371,6 @@ TownShops:
     - PrintingPress
     - AnimalPound
     - Mortician
-    - Restaurant
     - Tanner
     - Registry
     - TradePost
