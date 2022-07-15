@@ -70,9 +70,9 @@ Bookstore:
       $min: 2
       $max: 3 
   Noun:
-    - scrolls
-    - pages
-    - books
+    - Scrolls
+    - Pages
+    - Books
 
 
 Grocer:
@@ -186,18 +186,18 @@ PetShop:
       $min: 3
       $max: 5
   Noun:
-    - petshop
-    - sidekicks
-    - friends
+    - Petshop
+    - Sidekicks
+    - Friends
 
 
 Herbalist:
   $extends: Shop
   Title: Herbalist
   Noun:
-    - greens
-    - weeds
-    - mushroom
+    - Greens
+    - Weeds
+    - Mushroom
   
   HexQuestMission:
     - harvest exotic herbs
@@ -220,8 +220,8 @@ ExoticGoods:
   $extends: Shop
   Title: Exotic Goods
   Noun:
-    - exotic
-    - curiosities
+    - Exotica
+    - Curiosities
   HexQuestMission:
     - acquire exotic artifacts
   $context:
@@ -237,9 +237,10 @@ Jeweler:
   $extends: Shop
   Title: Jeweler
   Noun:
-    - gems
-    - jewels
-    - sparkly things
+    - Gems
+    - Jewels
+    - Sparkly Things
+    - Sparkly Things and Such
 
 
 Bunkhouse:
@@ -251,9 +252,9 @@ Carpenter:
   $extends: Shop
   Title: Carpenter
   Noun:
-    - carpentry
-    - woodcraft
-    - workshop
+    - Carpentry
+    - Woodcraft
+    - Workshop
 
 
 Mount:
@@ -274,9 +275,9 @@ Stables:
       $min: 2
       $max: 6
   Noun:
-    - mounts
-    - stallions
-    - riders
+    - Mounts
+    - Stallions
+    - Riders
 
 
 ArmorWeapons:
@@ -288,10 +289,10 @@ ArmorWeapons:
       $min: 5
       $max: 10
   Noun:
-    - blade
-    - shield & sword
-    - spear
-    - archer
+    - Blade
+    - Shield & Sword
+    - Spear
+    - Archer
 
 
 Hatter:
@@ -303,8 +304,8 @@ Hatter:
       $min: 2
       $max: 3
   Noun:
-    - cap
-    - top hat
+    - Caps
+    - Top Hat
    
 
 Butchery:
@@ -803,36 +804,62 @@ AnimalPound:
 EventPlanner:
   $extends: Shop
   Title: Event Planner
+  Noun:
+    - Events
+    - Parties
+    - Feasts
+    - Celebrations
+    - Festivals
 
 
 Mortician:
   $extends: Service
   Title: Mortician
-
-
-Restaurant:
-  $extends: Shop
-  Title: Restaurant
+  Noun:
+    - Grave Diggers
+    - Graves and Tombstones
+    - Eternal Sleep
+    - Crates and Shovels
 
 
 Tanner:
   $extends: Shop
   Title: Tanner
+  Noun:
+    - Leathers
+    - Hides and Leathers
+    - Beast Skins
 
 
 Registry:
   $extends: Service
   Title: Registery
+  Noun:
+    - Registry
+    - Registrars
+    - House of Records
+    - Records
+    - Signatures Keep
+    - Records Vault
 
 
 TradePost:
   $extends: Shop
   Title: Trade Post
+  Noun:
+    - Barters
+    - Traders
+    - Buying and Selling
+    - Marketplace
 
 
 VehicleMaker:
   $extends: Shop
   Title: Vehicle Maker
+  Noun:
+    - Wheels
+    - Vehicles
+    - Carts and Wagons
 
 
 Archive:
@@ -848,9 +875,14 @@ FortuneTeller:
     - Third Eye
     - Visions
 
+
 Matchmaker:
   $extends: Shop
   Title: Matchmaker
+  Noun:
+    - House of Roses
+    - House of Hearts
+    - Matchmaking Services
 
 
 ArtistsGuild:
