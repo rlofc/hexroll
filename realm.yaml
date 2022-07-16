@@ -79,6 +79,13 @@ Realm:
       A rumor of a legal heir raised as a commoner somewhere in
       the {{subclass_}} brings hope to most, but is a threat to some.
 
+    - !jinja >
+      {{Ruler.Title | title}} {{Ruler.NPC.Name.First}} fell under the charm of a
+      stranger from afar, whose true intentions could be anyone's guess.
+
+    - !jinja A mysterious object fireballed down from the sky during a stormy
+      night, emitting a shock-wave of fears and rumors all around the realm.
+
   $subclass:
     - Empire
     - Kingdom
