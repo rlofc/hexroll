@@ -74,7 +74,7 @@ Realm:
       from the gods while others blame the wrongdoing of a faction.
 
     - !jinja >
-      The seamingly childless {{Ruler.Title | title}} {{Ruler.NPC.Name.First}}
+      The seemingly childless {{Ruler.Title | title}} {{Ruler.NPC.Name.First}}
       is on {{Ruler.NPC.Gender.Pronoun2}} deathbed.
       A rumor of a legal heir raised as a commoner somewhere in
       the {{subclass_}} brings hope to most, but is a threat to some.
