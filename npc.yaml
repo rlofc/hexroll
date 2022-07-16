@@ -380,8 +380,7 @@ NPC:
                       Spell18, Spell19, Spell20, Spell21, Spell22, Spell23, Spell24, Spell25]
                       | reject('undefined') | list |  count_identical -%}
     {%- if Spells | list | length > 0 %} __Spells__ {%endif-%}
-    {%- for Spell in Spells -%}
-    &#10022; {{Spells[Spell] ~ ' &times;' if Spells[Spell]>1}} {{Spell}}
+    {%- for Spell in Spells %} &#10022; {{Spells[Spell] ~ ' &times;' if Spells[Spell]>1}} {{Spell}}
     {%-endfor-%}
 
 
