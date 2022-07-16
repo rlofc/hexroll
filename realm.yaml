@@ -85,6 +85,54 @@ Realm:
     - Duchy
     - Lands
 
+  RulerEntourage: !jinja >
+
+
+
+
+    {%if Ruler.HasChiefCommander%}
+    Commanding the realm's forces is
+    {{Ruler.EntourageChiefCommand.NPC.Description}}
+
+
+
+    {{Ruler.EntourageChiefCommand.NPC.Stats}}
+
+
+    ---
+
+
+    {%endif%}
+    {%if Ruler.HasClergy%}
+    Heading the temple is {{Ruler.EntourageClergy.NPC.Description}}
+
+
+
+    {{Ruler.EntourageClergy.NPC.Stats}}
+
+
+    ---
+
+
+    {%endif%}
+    {%if Ruler.HasSage%}
+    {{Ruler.NPC.Name.First}}'s sage is {{Ruler.EntourageSage.NPC.Description}}
+
+
+
+    {{Ruler.EntourageSage.NPC.Stats}}
+
+
+    ---
+
+    {%endif%}
+    {%if Ruler.HasConfidant%}
+    {{Ruler.NPC.Name.First}}'s confidant is
+    {{Ruler.EntourageConfidant.NPC.Description}}
+
+
+    {{Ruler.EntourageConfidant.NPC.Stats}}
+    {%endif%}
 
 Empire:
   $extends: Realm
@@ -130,6 +178,42 @@ Ruler:
     - Warexpert
     - Necromancer
 
+  EntourageChiefCommand:
+    NPC:
+      $roll:
+        $class:
+          - FighterLevel10
+          - FighterLevel11
+          - DwarfLevel10
+          - ElfLevel9
+
+  EntourageClergy:
+    NPC:
+      $roll:
+        $class:
+          - ClericLevel10
+          - ClericLevel11
+
+  EntourageSage:
+    NPC:
+      $roll:
+        $class:
+          - Magic-userLevel10
+          - Magic-userLevel11
+          - ElfLevel9
+
+  EntourageConfidant:
+    NPC:
+      $roll:
+        $class:
+          - HalflingLevel7
+          - DwarfLevel10
+          - ElfLevel9
+          - ThiefLevel10
+          - ThiefLevel11
+
+
+
 
 Noble:
   $extends: Ruler
@@ -156,6 +240,11 @@ Noble:
           Weapon: !ref Weapon
           InThePocket: 
             Details: ''
+  HasChiefCommander: True
+  HasClergy: True
+  HasSage: True
+  HasConfidant: True
+
 
 
 Bishop:
@@ -173,6 +262,10 @@ Bishop:
           Weapon: !ref Weapon
           InThePocket: 
             Details: ''
+  HasChiefCommander: True
+  HasClergy: False
+  HasSage: True
+  HasConfidant: True
 
 
 RulerSword:
@@ -218,7 +311,10 @@ Monarch:
           Weapon: !ref Weapon
           InThePocket: 
             Details: ''
-
+  HasChiefCommander: True
+  HasClergy: True
+  HasSage: True
+  HasConfidant: True
 
 Warexpert:
   $extends: Ruler
@@ -245,6 +341,10 @@ Warexpert:
           Weapon: !ref Weapon
           InThePocket: 
             Details: ''
+  HasChiefCommander: False
+  HasClergy: True
+  HasSage: True
+  HasConfidant: True
 
 
 Necromancer:
@@ -262,3 +362,7 @@ Necromancer:
           Weapon: !ref Weapon
           InThePocket: 
             Details: ''
+  HasChiefCommander: True
+  HasClergy: True
+  HasSage: False
+  HasConfidant: True

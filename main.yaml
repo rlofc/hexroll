@@ -73,9 +73,20 @@ $main:
 
     Population: {{settlements | map(attribute='Population') | map('int') | sum}} residents
 
-    Ruled by __{{Realm.Ruler.Title}}__ {{Realm.Ruler.NPC.Description}}
+    #### {{Realm.Ruler.Title}} {{Realm.Ruler.NPC.Name.Full}}
+
+
+    {{Realm.Name}} is ruled by __{{Realm.Ruler.Title}}__ {{Realm.Ruler.NPC.Description}}
+
+    ---
 
     {{Realm.Ruler.NPC.Stats}}
+
+    ---
+
+    ##### {{Realm.Ruler.Title | capitalize}} {{Realm.Ruler.NPC.Name.Full}}'s entourage
+
+    {{Realm.RulerEntourage}}
 
     %%end_two_columns_layout_when_printing
     
