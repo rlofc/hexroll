@@ -283,7 +283,7 @@ $main:
     15. COPYRIGHT NOTICE Open Game License v 1.0 Copyright 2000, Wizards of the
       Coast, Inc.
 
-      Hexroll is copyright © 2021 pendicepaper.com.
+      Hexroll is copyright &copy; 2021,2022 pendicepaper.com.
 
 
   Handout: !jinja |
@@ -308,7 +308,7 @@ $main:
     {% endfor %}
     {% endfor %}
 
-    Hexroll is copyright © 2021 pendicepaper.com.
+    Hexroll is copyright &copy; 2021,2022 pendicepaper.com.
 
   $set:
     $global: HexCounter
