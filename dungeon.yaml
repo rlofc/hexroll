@@ -471,7 +471,7 @@ DungeonEncounter:
 
 
     {%if Monster.NumberAppearingRoaming<10%}<div class="hpmarks">{%for m in range(Monster.NumberAppearingRoaming)%}
-    <sub>{% for hp in range(Monster.HitDiceRoll | diceroll) %}&#x274F;{%endfor%}</sub><br/> {%endfor%}</div>{%endif%}
+    {% for hp in range(Monster.HitDiceRoll | diceroll) %}<input type="checkbox"/>{%endfor%}<br/> {%endfor%}</div>{%endif%}
 
 
     ---
