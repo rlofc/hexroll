@@ -233,7 +233,6 @@ Character:
   InThePocket:
     $roll: InThePocket
 
-
   Description: !jinja >
     {{Name.Full}}.
 
@@ -245,27 +244,28 @@ Character:
     {{TavernText}}
 
 
-  FeatureX1:
-    - !jinja >
-      {%if Alignment=='Lawful'%}wise{%endif%}{%if Alignment=='Chaotic'%}evil{%endif%} dark eyes
-    - !jinja >
-      {%if Alignment=='Lawful'%}warm{%else%}cold{%endif%} dark eyes
-    - crystal blue eyes
-    - deep blue eyes
-    - !jinja >
-      {%if Alignment=='Lawful'%}enchanting{%else%}mesmerising{%endif%} green eyes
-    - wild green eyes
-    - !jinja >
-      {%if Alignment=='Lawful'%}wise{%else%}piercing{%endif%} brown eyes
+  Feature1: !weighted
+    - "wise dark eyes^2"
+    - "cold dark eyes^2"
+    - "crystal blue eyes^2"
+    - "deep blue eyes^2"
+    - "enchanting green eyes^2"
+    - "wild green eyes^2"
+    - "wise brown eyes^2"
+    - "piercing blue eyes^2"
+    - "piercing black eyes^2"
+    - "piercing green eyes^2"
+    - "piercing dark eyes^2"
+    - "piercing brown eyes^2"
+    - "bulging dark eyes"
+    - "bulging blue eyes"
+    - "bulging red eyes"
+    - "tiny eyes"
+    - "crazy-looking eyes"
+    - "tired brown eyes"
+    - "tired looking eyes"
+    - "tired red-looking eyes"
 
-  Feature1:
-    - wise dark eyes
-    - cold dark eyes
-    - crystal blue eyes
-    - deep blue eyes
-    - enchanting green eyes
-    - wild green eyes
-    - wise brown eyes
 
   Feature2:
     - a nose ring
@@ -278,7 +278,12 @@ Character:
     - a limp
     - a missing tooth
     - a peg leg
- 
+    - a golden tooth
+    - a missing tooth
+    - a smelly breath
+    - a double chin
+    - stained clothes
+
 
   State:
     $roll: NPCState
@@ -1358,7 +1363,9 @@ MasculineFeature:
   $extends: GenderFeature
   Feature: !weighted
     - !jinja "a {{HairLength}} {{HairColor}} beard^3"
+    - !jinja "a heavy {{HairColor}} beard^3"
     - !jinja "short {{HairColor}} hair^5"
+    - !jinja "thin {{HairColor}} hair^5"
     - no hair
     - thick bushy eyebrows
     - a strong, prominent chin
@@ -1369,17 +1376,31 @@ MasculineFeature:
     - a frowny expression
     - a long smoking pipe in his mouth
     - a big round belly
-
+    - a deep, commanding voice
+    - a hoarse voice
+    - a hairy chest
+    - a chiseled chin
+    - thick sideburns
+    - thin greying hair
 
 FeminineFeature:
   $extends: GenderFeature
-  Feature:
-    - !jinja "{{HairLength}} and {{HairTrait}} {{HairColor}} hair"
-    - !jinja "{{HairLength}} {{HairColor}} hair"
-    - !jinja "{{HairTrait}} {{HairColor}} hair"
-    - !jinja "{{HairLength}} {{HairColor}} pony-tail"
-    - soft gentle features
-    - delicate features
+  Feature: !weighted
+    - !jinja "{{HairLength}} and {{HairTrait}} {{HairColor}} hair^3"
+    - !jinja "{{HairLength}} {{HairColor}} hair^3"
+    - !jinja "{{HairTrait}} {{HairColor}} hair^3"
+    - !jinja "{{HairLength}} {{HairColor}} pony-tail^3"
+    - "soft gentle features^3"
+    - "delicate features^3"
+    - "soft voice^3"
+    - "warm voice^3"
+    - "painted skin decorations^3"
+    - "delicate makeup^3"
+    - "heavy makeup^3"
+    - "a beauty mark above the lips"
+    - "ample breasts"
+    - "ample hips"
+
   HairTrait:
     - silky
     - flowing
