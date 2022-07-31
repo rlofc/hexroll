@@ -222,6 +222,7 @@ Landmark:
     - Wagons
     - AbandonedVillage
     - Altar
+    - SacrificialSite
 #   - Stronghold?
 #   - CaravansPark
 
@@ -272,3 +273,14 @@ DeadAdventurers:
     - six
   Description:
     - !jinja "The bodies of {{Number}} dead adventurers were thrown to rot"
+
+SacrificialSite:
+  Name: Sacrificial Grounds
+  Description: !jinja |
+    There's a sacrificial site with burnt {{Subject}} remains
+  Subject:
+    - human
+    - animal
+    - and unrecognizable
+
+
