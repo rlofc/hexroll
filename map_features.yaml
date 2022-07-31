@@ -164,7 +164,7 @@ Encounter:
 
 
                 <div class="hpmarks">{%for m in range(Monster.NumberAppearingLair)%}
-                {% for hp in range(Monster.HitDiceRoll | diceroll) %}<input type="checkbox"/>{%endfor%}<br/>{%endfor%}</div>
+                <sub>{% for hp in range(Monster.HitDiceRoll | diceroll) %}&#x274F;{%endfor%}</sub><br/>{%endfor%}</div>
                 {%endif%}
 
 
