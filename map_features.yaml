@@ -75,6 +75,9 @@ SettlementProxy:
               SettlementConnector: !jinja |
                 {{sproxy.Settlement.Connector}}
 
+  $watabou:
+    GenerateMap: !parameter generate_settlement_maps_using_watabou
+
 
 Nothing:
   Name: Nothing  

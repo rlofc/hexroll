@@ -19,6 +19,8 @@ Settlement:
   NamePart:
     $roll: TownName
 
+  IsMapGenerated: !parameter generate_settlement_maps_using_watabou
+
 Village:
   $extends: Settlement
   Title: !jinja "village of {{NamePart | title}}"
@@ -32,6 +34,13 @@ Village:
     <div class='pagebreak'> </div>
 
     ### {{subclass_|capitalize}} of {{NamePart|title}} <a name='{{uuid}}'></a> <h3 class="sticky"> {{Name}} </h3>
+
+    {%if IsMapGenerated%}
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1280 1280" >
+    <image width="1280" height="1280" xlink:href="{{sproxy.uuid}}.png">
+    </image>
+    </svg>
+    {%endif%}
 
 
     %%begin_two_columns_layout_when_printing
@@ -104,6 +113,13 @@ Town:
     <div class='pagebreak'> </div>
 
     ### {{subclass_|capitalize}} of {{NamePart|title}} <a name='{{uuid}}'></a> <h3 class="sticky"> {{Name}} </h3>
+
+    {%if IsMapGenerated%}
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1280 1280" >
+    <image width="1280" height="1280" xlink:href="{{sproxy.uuid}}.png">
+    </image>
+    </svg>
+    {%endif%}
 
 
     %%begin_two_columns_layout_when_printing
@@ -278,6 +294,13 @@ City:
     <div class='pagebreak'> </div>
 
     ### {{subclass_|capitalize}} of {{NamePart|title}} <a name='{{uuid}}'></a> <h3 class="sticky"> {{Name}} </h3>
+
+    {%if IsMapGenerated%}
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1280 1280" >
+    <image width="1280" height="1280" xlink:href="{{sproxy.uuid}}.png">
+    </image>
+    </svg>
+    {%endif%}
 
 
     %%begin_two_columns_layout_when_printing

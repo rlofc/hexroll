@@ -79,3 +79,5 @@ defaults:
   unpack_similar_biomes_in_hex_map: false
 
   accentuate_hex_map_colors: false
+
+  generate_settlement_maps_using_watabou: false
