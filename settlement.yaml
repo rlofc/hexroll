@@ -37,7 +37,7 @@ Village:
 
     {%if IsMapGenerated%}
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1280 1280" >
-    <image width="1280" height="1280" xlink:href="{{sproxy.uuid}}.png">
+    <image width="1280" height="1280" xlink:href="{{sproxy.uuid}}.webp">
     </image>
     </svg>
     {%endif%}
@@ -116,7 +116,7 @@ Town:
 
     {%if IsMapGenerated%}
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1280 1280" >
-    <image width="1280" height="1280" xlink:href="{{sproxy.uuid}}.png">
+    <image width="1280" height="1280" xlink:href="{{sproxy.uuid}}.webp">
     </image>
     </svg>
     {%endif%}
@@ -297,7 +297,7 @@ City:
 
     {%if IsMapGenerated%}
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1280 1280" >
-    <image width="1280" height="1280" xlink:href="{{sproxy.uuid}}.png">
+    <image width="1280" height="1280" xlink:href="{{sproxy.uuid}}.webp">
     </image>
     </svg>
     {%endif%}
