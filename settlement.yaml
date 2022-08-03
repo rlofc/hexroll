@@ -40,6 +40,7 @@ Village:
     <image width="1280" height="1280" xlink:href="{{sproxy.uuid}}.webp">
     </image>
     </svg> <img style="display:none;" src="{{sproxy.uuid}}.webp"/>
+    <a style="font-size:50%;" href="{{url}}"> {{url}}</a>
     {%endif%}
 
 
@@ -119,6 +120,7 @@ Town:
     <image width="1280" height="1280" xlink:href="{{sproxy.uuid}}.webp">
     </image>
     </svg> <img style="display:none;" src="{{sproxy.uuid}}.webp"/>
+    <a style="font-size:50%;" href="{{url}}"> {{url}}</a>
     {%endif%}
 
 
@@ -300,6 +302,7 @@ City:
     <image width="1280" height="1280" xlink:href="{{sproxy.uuid}}.webp">
     </image>
     </svg> <img style="display:none;" src="{{sproxy.uuid}}.webp"/>
+    <a style="font-size:50%;" href="{{url}}"> {{url}}</a>
     {%endif%}
 
 
