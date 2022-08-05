@@ -1,6 +1,6 @@
 CaveEncounterTier1:
-  $subclass:
-    - DungeonEncounterHumanoidsTier1
+  $subclass: !weighted
+    - DungeonEncounterHumanoidsTier1^2
     - DungeonEncounterVerminsTier1
     - DungeonEncounterOozesTier1
     - DungeonEncounterAbberationsTier1
@@ -8,6 +8,7 @@ CaveEncounterTier1:
 
 CaveEncounterTier2:
   $subclass:
+    - DungeonEncounterHumanoidsTier1
     - DungeonEncounterVerminsTier2
     - DungeonEncounterOozesTier2
     - DungeonEncounterAbberationsTier2
@@ -83,6 +84,7 @@ Cavern:
 TombFeatureTier1:
   $subclass: !weighted
     - DungeonEncounterVerminsTier1^3
+    - DungeonEncounterHumanoidsTier1^2
     - DungeonTreasureTier1
     - DungeonRemains
     - DungeonFungi
