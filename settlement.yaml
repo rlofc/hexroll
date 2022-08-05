@@ -205,7 +205,7 @@ City:
     {% set _ = x.title.append(t[0].Title) %}
     {% endif %}
     {% endfor %}
-    {% if (x.title | length) < 3 %}
+    {% if (x.title | length) < 3 and (x.title | length) > 0 %}
     The city is also known for its fine {{x.title | unique | list | listize}} shops.
     {%endif%}
 
