@@ -141,12 +141,12 @@ $main:
     %%begin_two_columns_layout_when_printing
 
     ### NPCs <a name="toc-npc-index"></a> <h3 class="sticky"> NPCs </h3>
-    {% for l in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" | list %}[{{l}}](#npc_index_{{l}}){% endfor %}
+    {% for l in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" | list %}[{{l}}](#npc_index_{{l}}) {% endfor %}
 
     {% for l,cl in gc_characters | groupby("Name.Initial") %}
     
     #### {{l | capitalize}} <a name="npc_index_{{l}}"></a>
-    {{ cl | sort(attribute="Name.Last") | map(attribute="LinkedName")  |  join(", ") }}
+    {{ cl | sort(attribute="Name.Last") | map(attribute="LinkedName")  |  join(" &#128909; ") }}
 
     {% endfor %}
     
