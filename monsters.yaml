@@ -250,6 +250,33 @@ BlackBear:
         NumberAppearingLair: !ref NumberAppearingLair
 
 
+DarkHag:
+  $extends: Monster
+  Title: "Dark Hag"
+  Intelligent: True
+  ArmourClass: "0 [19]"
+  HitDice: "8* (36hp)"
+  ExHitDice: 8
+  HitDiceRoll: 8d8
+  NumericHD: 8
+  Attacks: "2 × talon(1d8 + 3), 1 × bite(1d8 + 3)"
+  THAC0: "12 [+7]"
+  Movement: "150’ (50’)"
+  SavingThrows: "D8 W9 P10 B10 S12(8)"
+  Morale: "10"
+  Alignment: "Chaotic"
+  XP: "1,200"
+  NumberAppearingRoaming: 1
+  NumberAppearingLair: 1
+  TreasureType:
+    $roll:
+      $class: TreasureTypeD
+      $bootstrap:
+        MaxNumberAppearingRoaming: 1
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
+
+
 CaveBear:
   $extends: Monster
   Title: "Cave Bear"
@@ -1726,6 +1753,60 @@ FerretGiant:
         NumberAppearingLair: !ref NumberAppearingLair
 
 
+FlailSnail:
+  $extends: Monster
+  Title: "FlailSnail"
+  Intelligent: False
+  ArmourClass: "0 [19]"
+  HitDice: "4 (18hp)"
+  ExHitDice: 4
+  HitDiceRoll: 4d8
+  NumericHD: 4
+  Attacks: "4 to 6 × club tentacle (1d8)"
+  THAC0: "16 [+3]"
+  Movement: "30’ (10’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "10 (7)"
+  Alignment: "Neutral"
+  XP: "125"
+  NumberAppearingRoaming: 1
+  NumberAppearingLair: 0
+  TreasureType:
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 1
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
+
+
+GelatinousCube:
+  $extends: Monster
+  Title: "Gelatinous Cube"
+  Intelligent: False
+  ArmourClass: "8 [11]"
+  HitDice: "4 (18hp)"
+  ExHitDice: 4
+  HitDiceRoll: 4d8
+  NumericHD: 4
+  Attacks: "1 × touch (2d4 + paralysis)"
+  THAC0: "16 [+3]"
+  Movement: "60’ (20’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (2)"
+  Morale: "12"
+  Alignment: "Neutral"
+  XP: "125"
+  NumberAppearingRoaming: 1
+  NumberAppearingLair: 0
+  TreasureType:
+    $roll:
+      $class: TreasureTypeV
+      $bootstrap:
+        MaxNumberAppearingRoaming: 1
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
+
+
 GiantBass:
   $extends: Monster
   Title: "Giant Bass"
@@ -2111,6 +2192,33 @@ StormGiant:
     $roll:
       $class: TreasureTypeE # + 5,000gp
       $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
+
+
+GibberingMouther:
+  $extends: Monster
+  Title: "Gibbering Mouther"
+  Intelligent: True
+  ArmourClass: "0 [19]"
+  HitDice: "4+3*** (21hp)"
+  ExHitDice: 4+3
+  HitDiceRoll: 4d8+3
+  NumericHD: 4
+  Attacks: "6 × bite (1hp + attach + slip)"
+  THAC0: "15 [+4]"
+  Movement: "30’ (10’)"
+  SavingThrows: "D12 W13 P13 B15 S15 (2)"
+  Morale: "10"
+  Alignment: "Neutral"
+  XP: "350"
+  NumberAppearingRoaming: 1
+  NumberAppearingLair: 1
+  TreasureType:
+    $roll:
+      $class: TreasureTypeL
+      $bootstrap:
+        MaxNumberAppearingRoaming: 1
         NumberAppearingRoaming: !ref NumberAppearingRoaming
         NumberAppearingLair: !ref NumberAppearingLair
 
@@ -3952,7 +4060,35 @@ Pegasus:
   NumberAppearingRoaming: 0 
   NumberAppearingLair:
     $diceroll: 1d12
-  TreasureType: 
+  TreasureType:
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
+
+
+Piercer:
+  $extends: Monster
+  Title: "Piercer"
+  Intelligent: False
+  ArmourClass: "3 [16]"
+  HitDice: "1 to 4 (4/9/13/19hp)"
+  ExHitDice: 4
+  HitDiceRoll: 4d8
+  NumericHD: 4
+  Attacks: "1 × drop (1d6 per HD)"
+  THAC0: "By HD: 19 [0] to 16 [+3]"
+  Movement: "10’ (3’)"
+  SavingThrows: "D12 W13 P14 B15 S16 (1 to 2)"
+  Morale: "12"
+  Alignment: "Neutral"
+  XP: "10/20/35/75"
+  NumberAppearingRoaming:
+    $diceroll: 3d6 
+  NumberAppearingLair:
+    $diceroll: 1d4
+  TreasureType:
     $roll:
       $class: TreasureTypeNone
       $bootstrap:
