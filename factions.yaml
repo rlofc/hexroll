@@ -29,7 +29,7 @@ Faction:
 
     {% for m in Members %}
 
-    * [{{m.Name.Full}}](#{{m.uuid}}) {{m.Profession if m.Profession}}{%if m.CityContext%} from the {{m.CityContext.Title}}{%endif%}
+    * [__{{m.Name.Full}}__](#{{m.uuid}}) {{m.Profession if m.Profession}}{%if m.CityContext%} from the {{m.CityContext.Title}}{%endif%}
     {% endfor %}
 
 
@@ -37,7 +37,7 @@ Faction:
 
     {% for c in Collaborators %}
 
-    * {{c.Name.Full}} {{c.Profession if c.Profession}}{%if c.CityContext%} from the {{c.CityContext.Title}}{%endif%}
+    * [__{{c.Name.Full}}__](#{{c.uuid}}) {{c.Profession if c.Profession}}{%if c.CityContext%} from the {{c.CityContext.Title}}{%endif%}
     {% endfor %}
 
 
