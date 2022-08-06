@@ -57,12 +57,15 @@ Village:
     <small>{{District.Index}}</small>
 
 
-    ##### {{District.Tavern.Title}}
+    {%for tavern in District.Taverns%}
+
+    ##### {{tavern.Title}}
 
 
-    {{District.Tavern.Description}}
+    {{tavern.Description}}
 
 
+    {% endfor %}
     {{District.Description}}
 
   Handout: !jinja >
@@ -137,12 +140,15 @@ Town:
     <small>{{District.Index}}</small>
 
 
-    ##### {{District.Tavern.Title}}
+    {%for tavern in District.Taverns%}
+
+    ##### {{tavern.Title}}
 
 
-    {{District.Tavern.Description}}
+    {{tavern.Description}}
 
 
+    {% endfor %}
     {{District.Description}}
 
   Handout: !jinja >
@@ -336,11 +342,14 @@ City:
 
     <small>{{d.Index}}</small>
 
-    ##### {{d.Tavern.Title}}
+    {%for tavern in d.Taverns%}
 
-    {{d.Tavern.Description}}
+    ##### {{tavern.Title}}
+
+    {{tavern.Description}}
 
 
+    {% endfor %}
     {{d.Description}}
 
     {% endfor %}
@@ -584,12 +593,12 @@ District:
   Population: !jinja "{{(shops | length)*PeoplePerShopOrService}}"
 
   Index: !jinja >
-    [__{{Tavern.Name.Type}}__ ({{Tavern.Name.Full}})](#{{Tavern.uuid}}),
+    {% for tavern in Taverns%}[__{{tavern.Name.Type}}__ ({{tavern.Name.Full}})](#{{tavern.uuid}}),{% endfor %}
     [__Guards__ ({{Guards | map(attribute='Name.First') | join(', ')}})](#{{uuid}}_guards),
     {{ shops | map(attribute='InvertedName') | reject('undefined') | join(', ')}}
 
   Handout: !jinja >
-    __{{Tavern.Name.Type}}__ ({{Tavern.Name.Full}}),
+    {% for tavern in Taverns%}__{{tavern.Name.Type}}__ ({{tavern.Name.Full}}),{%endfor%}
     __Guards__ ({{Guards | map(attribute='Name.First') | join(', ')}}),
     {{ shops | map(attribute='InvertedHandoutName') | reject('undefined') | join(', ')}}
 
@@ -677,8 +686,11 @@ VillageDistrict:
       $min: 5
       $max: 19
 
-  Tavern:
-    $roll: DistrictTavern
+  Taverns:
+    $rollsome:
+      $class: DistrictTavern
+      $min: 1
+      $max: 1
 
 
 TownDistrict:
@@ -697,8 +709,11 @@ TownDistrict:
       $min: 12
       $max: 34
 
-  Tavern:
-    $roll: DistrictTavern
+  Taverns:
+    $rollsome:
+      $class: DistrictTavern
+      $min: 1
+      $max: 1
 
 ResidentialDistrict1:
   $subclass:
@@ -753,8 +768,12 @@ ResidentialDistrict:
       $min: 2
       $max: 5
 
-  Tavern:
-    $roll: DistrictTavern
+  Taverns:
+    $rollsome:
+      $class: DistrictTavern
+      $min: 1
+      $max: 1
+
 
 
 PalaceDistrict:
@@ -773,8 +792,11 @@ PalaceDistrict:
       $class: PalaceDistrictShop
       $min: 2
       $max: 5
-  Tavern:
-    $roll: DistrictTavern
+  Taverns:
+    $rollsome:
+      $class: DistrictTavern
+      $min: 1
+      $max: 1
 
 
 CastleDistrict:
@@ -785,8 +807,11 @@ CastleDistrict:
       $class: CastleDistrictShop
       $min: 2
       $max: 5
-  Tavern:
-    $roll: DistrictTavern
+  Taverns:
+    $rollsome:
+      $class: DistrictTavern
+      $min: 1
+      $max: 1
 
 
 TempleDistrict:
@@ -803,8 +828,11 @@ TempleDistrict:
       $class: TempleDistrictShop
       $min: 2
       $max: 4
-  Tavern:
-    $roll: DistrictTavern
+  Taverns:
+    $rollsome:
+      $class: DistrictTavern
+      $min: 1
+      $max: 1
 
 
 CraftingDistrict:
@@ -821,8 +849,11 @@ CraftingDistrict:
       $class: CraftingDistrictShop
       $min: 7
       $max: 10
-  Tavern:
-    $roll: DistrictTavern
+  Taverns:
+    $rollsome:
+      $class: DistrictTavern
+      $min: 1
+      $max: 1
 
 
 HarborDistrict:
@@ -839,8 +870,11 @@ HarborDistrict:
       $class: HarborDistrictShop
       $min: 4
       $max: 7
-  Tavern:
-    $roll: DistrictTavern
+  Taverns:
+    $rollsome:
+      $class: DistrictTavern
+      $min: 1
+      $max: 1
 
 
 MarketDistrict:
@@ -857,8 +891,11 @@ MarketDistrict:
       $class: MarketDistrictShop
       $min: 10
       $max: 20
-  Tavern:
-    $roll: DistrictTavern
+  Taverns:
+    $rollsome:
+      $class: DistrictTavern
+      $min: 1
+      $max: 1
 
 
 ResidentialDistrictShop:
