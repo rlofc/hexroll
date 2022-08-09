@@ -299,7 +299,7 @@ ArmorClass:
     {{AC+1}} [{{AAC-1}}] {{Text}}
     {%elif NPC.DEX >=13 and NPC.DEX <=15 %}
     {{AC-1}} [{{AAC+1}}] {{Text}}
-    {%elif NPC.DEX >=17 and NPC.DEX <=17 %}
+    {%elif NPC.DEX >=16 and NPC.DEX <=17 %}
     {{AC-2}} [{{AAC+2}}] {{Text}}
     {%elif NPC.DEX >17 %}
     {{AC-3}} [{{AAC+3}}] {{Text}}
