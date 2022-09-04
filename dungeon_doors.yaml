@@ -12,7 +12,9 @@ DungeonDoorPassphrase:
 
 DungeonDoor:
   Description: !jinja >
-    {{Shape}} {{Material}} door (__{{State.Description}}__)
+    {{Shape}} {{Material}} door (__{{State.Description}}__){%if State.Extra%}
+
+    {{State.Extra}}{%endif%}
 
   Material: !weighted
     - wooden^4
@@ -40,13 +42,13 @@ DungeonDoor:
         Ref: !ref Ref
         DoorPosition: !ref DoorPosition
 
-
 DungeonDoorState:
-  $subclass:
-    - DungeonDoorLocked
-    - DungeonDoorStuck
-    - DungeonDoorBarricaded
-    - DungeonDoorHalfBroken
+  $subclass: !weighted
+    - DungeonDoorLocked^3
+    - DungeonDoorStuck^3
+    - DungeonDoorBarricaded^3
+    - DungeonDoorHalfBroken^3
+    - DungeonDoorTrapped
 
 
 KeySecret:
@@ -102,6 +104,14 @@ DungeonDoorBarricaded:
 
 DungeonDoorHalfBroken:
   Description: Half-broken
+
+DungeonDoorTrapped:
+  Description: Trapped
+  Extra: !jinja "    * {{Trap.Description}}"
+
+  Trap:
+    $roll:
+      $class: DoorTrap
 
 
 DungeonSecretDoor:
@@ -269,3 +279,5 @@ DungeonSecretDoorLever:
     - rope-pull
     - crank
     - pressure plate
+
+

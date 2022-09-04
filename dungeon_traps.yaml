@@ -198,3 +198,59 @@ VapourTrap:
   PoisonDamage: *PoisonTrapDamage
 
   Trigger: *TrapTriggers
+
+
+DoorTrapCrossingTriggers: &DoorTrapCrossingTriggers
+  - when crossing, a __pressure plate__ is stepped on
+  - stepping through an almost invisible __trip wire__
+
+
+DoorTrapHandlingTriggers: &DoorTrapHandlingTriggers
+  - unlocking it's __fake door lock__ with any key
+  - it's ring shaped __door handle__ is pulled
+  - pulling a __wooden lever__ fixed on the wall beside it
+
+
+DoorTrap:
+  Title: trap
+  $subclass: !weighted
+    - DoorBladeTrap
+    - DoorMagicalTrap
+    - DoorPitTrap
+
+
+DoorBladeTrap:
+  Description:
+    - !jinja >
+      There's a giant blade locked inside a cavity above the door.
+      If undetected, there's a 2 in 6 chance of triggering it if
+      {{Trigger}}.
+      __Save vs Petrification__ or sustain __1d8 damage__.
+
+  Trigger: *DoorTrapCrossingTriggers
+
+
+DoorMagicalTrap:
+  Description:
+    - !jinja >
+      This doorway is magically trapped.
+      If undetected, there's a 2 in 6 chance of triggering it
+      when crossing.
+      __Save vs Spells__ or {{Damage}}.
+
+  Damage:
+    - __forget__ one memorized spell
+    - anything carried made of __gold will turn to wood__
+    - suffer a __-2 AC penalty__
+    - __teleport__ to a random area
+
+
+DoorPitTrap:
+  Description:
+    - !jinja >
+      There's a concealed 10 foot deep pit next to the door.
+      If undetected, there's a 2 in 6 chance of triggering it if
+      {{Trigger}}.
+      __Save vs Petrification__ or sustain __1d8 damage__.
+
+  Trigger: *DoorTrapHandlingTriggers
