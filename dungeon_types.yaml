@@ -55,6 +55,7 @@ Cavern:
   $context:
     $attr: DungeonContext
     $values:
+      - uuid
       - Name
       - Hex
       - HexUUID
@@ -127,6 +128,7 @@ Tomb:
   $context:
     $attr: DungeonContext
     $values: 
+      - uuid
       - Name
       - Hex
       - HexUUID
@@ -211,6 +213,7 @@ Temple:
   $context:
     $attr: DungeonContext
     $values:
+      - uuid
       - Name
       - Hex
       - HexUUID

@@ -2,11 +2,13 @@ DungeonDoorKey:
   Title: Key
   Active: null
 
-
 DungeonDoorLever:
   Title: Lever
   Active: null
 
+DungeonDoorPassphrase:
+  Title: Lever
+  Active: null
 
 DungeonDoor:
   Description: !jinja >
@@ -104,7 +106,8 @@ DungeonDoorHalfBroken:
 
 DungeonSecretDoor:
   Description: !jinja >
-    secret door (operated by {{SecretDoorTrigger.Description}})
+    secret door ({{SecretDoorTrigger.Description}})
+  Details: !jinja "{{SecretDoorTrigger.Details}}"
 
   SecretDoorTrigger:
     $roll:
@@ -118,15 +121,133 @@ DungeonSecretDoorTrigger:
   $subclass:
     - DungeonSecretDoorLever
     - DungeonSecretDoorPassphrase
+    - DungeonSecretDoorConcealed
+
+
+DungeonSecretDoorPassphraseType:
+  $subclass:
+    - DungeonSecretDoorPassphraseWhisper
+    - DungeonSecretDoorPassphraseScream
+    - DungeonSecretDoorPassphraseSing
+    - DungeonSecretDoorPassphraseCarve
+    - DungeonSecretDoorPassphraseMime
+
+
+DungeonSecretDoorPassphraseWhisper:
+  Hint: If detected, a soft whisper will sound the word
+  Action: Whisper its words to open
+
+
+DungeonSecretDoorPassphraseScream:
+  Hint: If detected, a sudden scream will say
+  Action: Scream the phrase to open
+
+
+DungeonSecretDoorPassphraseSing:
+  Hint: If detected, a gentle voice will sing
+  Action: Sing or use the phrase in a song to open
+
+
+DungeonSecretDoorPassphraseCarve:
+  Hint: If detected, a carving on the wall will spell
+  Action: Carve and complete the phrase to open
+
+
+DungeonSecretDoorPassphraseMime:
+  Hint: If detected, one of the characters will uncontrollably gesture or act the word
+  Action: Gesture or mime the complete passphrase to open
 
 
 DungeonSecretDoorPassphrase:
-  Description: a passphrase
+  Description: !jinja "requiring a __passphrase__"
+  Hint:
+    - !jinja "{{Noun|capitalize}}"
+    - !jinja "{{Adj|capitalize}}"
+  Action:
+    $roll: DungeonSecretDoorPassphraseType
+
+  Details:
+    - !jinja >
+      {{Action.Hint}} __"{{Hint}}"__. The full passphrase is in
+      [area __{{Passphrase.RoomContext.Ref}}__](#{{DungeonContext.uuid}}_area_{{Passphrase.RoomContext.Ref}}).
+      {{Action.Action}}.
+
+  Passphrase:
+    $pop:
+      $collection: dungeon_passphrases
+      $inject:
+        $namespace: passphrase
+        $values:
+          Active: !jinja >
+            The words __"{{passphrase.Text|title}}"__ in {{passphrase.Language}} {{passphrase.Form}}.
+            It is the passphrase for the secret door in area {{passphrase.Ref}} ({{passphrase.DoorPosition}})
+  Text:
+    - !jinja "{{Adj}} {{Noun}}"
+
+  Form:
+    - are carved on one of the walls
+    - are graffitied on the ceiling
+    - were written down on a torn piece of parchment
+    - were inscribed on wooden plaque fixed to a wall
+
+  Language:
+    - Common language
+    - Deepcommon language
+    - Lawful symbols
+    - Neutral symbols
+    - Chaotic symbols
+    - Elvish script
+    - Dwarvish language
+    - Gargoyle language
+    - Dragon language
+
+  Noun:
+    - dagger
+    - gods
+    - flames
+    - spirit
+    - soul
+    - heart
+    - heretic
+    - traitor
+    - wizard
+    - horror
+    - bones
+    - goblin
+    - fiend
+
+  Adj:
+    - wondrous
+    - exiled
+    - blessed
+    - eternal
+    - dark
+    - dreaded
+    - fearful
+    - forbidden
+    - painful
+    - darkened
+    - shadowy
+    - sorrowful
+    - violent
+    - cruel
+    - hopeless
+    - terrifying
+    - miraculous
+    - dead
+    - magical
+
+
+DungeonSecretDoorConcealed:
+  Description: __concealed__
+  Details:
+    - This doorway is concealed behind a thin layer of plaster
+    - This doorway is concealed as part of a fresco on the wall
 
 
 DungeonSecretDoorLever:
   Description: !jinja >
-    {{Type | articlize}} lever somewhere in the dungeon
+    operated by {{Type | articlize}} lever somewhere in the dungeon
   Lever:
     $pop:
       $collection: dungeon_levers

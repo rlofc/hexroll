@@ -17,6 +17,9 @@ Dungeon:
     dungeon_levers:
       $collect: DungeonDoorLever
 
+    dungeon_passphrases:
+      $collect: DungeonDoorPassphrase
+
     dungeon_portal_destinations:
       $collect: DungeonPortalDestination
 
@@ -151,6 +154,12 @@ AreaDescription:
 
     {%endif-%}
 
+    {%-if Passphrase.Active%}
+
+    * {{Passphrase.Active}}
+
+    {%endif-%}
+
     {%-if TreasureHiding.Active%}
 
     * {{TreasureHiding.Active}}
@@ -208,6 +217,9 @@ AreaDescription:
 
   Lever:
     $roll: DungeonDoorLever
+
+  Passphrase:
+    $roll: DungeonDoorPassphrase
 
   Cell:
     $roll: MissingPersonQuestCell
