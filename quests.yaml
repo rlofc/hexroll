@@ -198,6 +198,7 @@ MissingPersonQuestReward:
   $subclass:
     - MissingPersonQuestItemReward
     - MissingPersonQuestTreasureReward
+    - MissingPersonQuestTreasureMapReward
 
 MissingPersonQuestItemReward:
   Details: !jinja >
@@ -215,6 +216,12 @@ MissingPersonQuestTreasureReward:
     - 1700 gp
     - 2200 gp
     - 2300 gp
+
+MissingPersonQuestTreasureMapReward:
+  Details: !jinja "a __Treasure Map__ leading to [__area {{Treasure.RoomContext.Ref}}__](#{{Treasure.DungeonContext.uuid}}_area_{{Treasure.RoomContext.Ref}}) in the [__{{Treasure.DungeonContext.Name.Title}}__]({{Treasure.DungeonContext.uuid}})"
+  Treasure:
+    $pickone:
+      $collection: treasures
 
 MissingPersonQuestCell:
   Hint: "a person is chained to the wall"

@@ -370,6 +370,9 @@ $main:
     dungeons:
       $collect: Dungeon
 
+    treasures:
+      $collect: DungeonTreasureTier3
+
     dungeonproxies:
       $rollsome:
         $debug: Generating dungeons
