@@ -86,6 +86,27 @@ Realm:
     - !jinja A mysterious object fireballed down from the sky during a stormy
       night, emitting a shock-wave of fears and rumors all around the realm.
 
+    - !jinja >
+      After receiving a mysterious message, {{Ruler.Title | title}} {{Ruler.NPC.Name.First}}
+      fell into a numbing depression. {{Ruler.NPC.Gender.Pronoun2}} court is now in quarrel,
+      and the {{subclass_ | title}} is on the verge of chaos.
+
+    - !jinja >
+      Twelve years ago, {{Ruler.Title | title}} {{Ruler.NPC.Name.First}}'s
+      new born child was cursed. An evil sorcerer destined the child to never
+      reach thirteen years of age. This day is now near.
+
+    - !jinja >
+      {{Title}} is in blissful equilibrium. {{Ruler.Title | title}} {{Ruler.NPC.Name.First}}'s
+      and {{Ruler.NPC.Gender.Pronoun2}} his loyal forces keep any evil at bay and away.
+      But an greater, more sinister darkenss is approaching from far far away.
+
+    - !jinja >
+      {{Ruler.Title | title}} {{Ruler.NPC.Name.First}} is a bloved ruler,
+      admired for his wise and thoughtful ruling.
+      Is there anyone in the {{subclass_ | title}} who knows {{Ruler.NPC.Gender.Pronoun2}}
+      very dark secret?
+
   $subclass:
     - Empire
     - Kingdom
