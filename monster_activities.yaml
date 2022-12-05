@@ -20,7 +20,7 @@ HumanoidActivity:
     - cleaning their weapons
     - alert and ready for combat
     - !jinja >
-        cooking a rat using {%if NumberAppearingRoaming>1%}their
+        roasting a rat using {%if NumberAppearingRoaming>1%}their
         torches{%else%}its torch{%endif%}
     - trying to light some torches
     - looking through some rubble
