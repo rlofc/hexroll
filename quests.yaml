@@ -218,7 +218,7 @@ MissingPersonQuestTreasureReward:
     - 2300 gp
 
 MissingPersonQuestTreasureMapReward:
-  Details: !jinja "a __Treasure Map__ leading to [__area {{Treasure.RoomContext.Ref}}__](#{{Treasure.DungeonContext.uuid}}_area_{{Treasure.RoomContext.Ref}}) in the [__{{Treasure.DungeonContext.Name.Title}}__](#{{Treasure.DungeonContext.uuid}})"
+  Details: !jinja "a __Treasure Map__{%if Treasure%} leading to [__area {{Treasure.RoomContext.Ref}}__](#{{Treasure.DungeonContext.uuid}}_area_{{Treasure.RoomContext.Ref}}) in the [__{{Treasure.DungeonContext.Name.Title}}__](#{{Treasure.DungeonContext.uuid}}){%endif%}"
   Treasure:
     $pickone:
       $collection: treasures
