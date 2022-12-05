@@ -1,0 +1,84 @@
+MinionActivity:
+  Dungeon:
+    - standing and chanting
+    - preparing an altar for sacrifice
+    - drinking from a ceremonial bowl
+    - dancing in ecstasy
+    - carving graffiti on the walls
+
+  Wilderness:
+    - digging a grave
+    - preparing an altar for sacrifice
+    - skinning a dead animal
+    - sharpening wooden stakes
+
+
+HumanoidActivity:
+  Dungeon:
+    - frantically searching for something
+    - eating a piece of rotting meat
+    - cleaning their weapons
+    - alert and ready for combat
+    - !jinja >
+        cooking a rat using {%if NumberAppearingRoaming>1%}their
+        torches{%else%}its torch{%endif%}
+    - trying to light some torches
+    - looking through some rubble
+    - hammering on the wall, trying to find something
+    - fighting over a flask
+    - carving graffiti on the walls
+
+  Wilderness:
+    - preparing a rudimentary trap
+    - trying to light a fire
+    - digging a grave
+    - skinning a dead animal
+    - drumming and dancing in circles
+    - teasing and toying with a trapped bunny
+    - fighting over a flask
+    - sharpening wooden stakes
+
+
+OversizedHumanoidActivity:
+  Dungeon:
+    - frantically searching for something
+    - eating a piece of rotting meat
+    - !jinja >
+        cleaning {%if NumberAppearingRoaming>1%}their{%else%}its{%endif%} weapons
+    - alert and ready for combat
+
+  Wilderness:
+    - preparing a rudimentary trap
+    - trying to start a fire
+    - practicing javelin throwing
+    - dragging a realistic statue of a humanoid with a rope
+    - eating an over-sized fish
+    - teasing and toying with a trapped fox
+    - stomping a miserable villager
+    - tracking someone or something
+
+MimicActivity:
+  Dungeon:
+    - appearing in the form of a treasure chest
+    - appearing as a fake wooden door
+    - appearing as a wooden table
+    - appearing as a stone table
+    - appearing as a stone pillar
+
+VerminActivity:
+  Dungeon:
+    - feasting over some rotting remains of a goblin
+    - digging into what is left of a dead adventurer
+    - dragging around torn pieces of flesh
+    - feeding on some dead or dying adventurer
+    - ripping an old torn sack of rotting potatoes
+    - creeping back into a corner
+    - trying to climb on a shadowed wall
+    
+  Wilderness:
+    - feasting over rotting remains of rats
+    - digging into what is left of a dead adventurer
+    - creeping into an opening in the ground
+    - dragging around torn pieces of flesh
+    - feeding on some dead or dying adventurer
+    - ripping an old torn sack of rotting potatoes

@@ -128,6 +128,7 @@ OozeHD3:
 OozeHD4:
   $subclass:
     - GelatinousCube
+    - GibberingMouther
 
 
 OozeHD5:
@@ -162,6 +163,9 @@ HumanoidHD6:
   $subclass:
     - Hobgoblin
 
+HumanoidHD8:
+  $subclass:
+    - DarkHag
 
 HumanHD1:
   $subclass:
@@ -229,7 +233,6 @@ MagicalHD4:
 MagicalHD5:
   $subclass:
     - RustMonster
-    - HornedChameleon
     - Cockatrice
     - RockLivingStatue
 
@@ -239,6 +242,7 @@ MagicalHD8:
     - BoneGolem
     - Gorgon
     - InvisibleStalkerMonster
+    - DarkHag
 
 
 MagicalHD10:

@@ -468,7 +468,7 @@ DungeonFeatureExtreme:
 
 DungeonEncounter:
   Description: !jinja >
-    {%if Monster.NumberAppearingRoaming==1%}There’s {{Monster.Title | articlize}}{%else%} There are {{Monster.NumberAppearingRoaming}} {{Monster.Title}}s {%endif%} inside.
+    {%if Monster.NumberAppearingRoaming==1%}There’s {{Monster.Title | articlize}}{%else%} There are {{Monster.NumberAppearingRoaming}} {{Monster.Title}}s {%endif%} inside{%if Monster.Activity%}, {{Monster.Activity.Dungeon}}{%endif%}.
     {%if Monster.Intelligent %}Roll or decide for reaction.
     {%else%}{%if Monster.NumberAppearingRoaming==1%}It {%else%} They {%endif%} will attack anyone stepping in. {%endif%}
 

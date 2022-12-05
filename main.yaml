@@ -14,6 +14,7 @@ $include:
   - hexroll/map.yaml
   - hexroll/map_features.yaml
   - hexroll/monster_groups.yaml
+  - hexroll/monster_activities.yaml
   - hexroll/monsters.yaml
   - hexroll/names.yaml
   - hexroll/npc.yaml

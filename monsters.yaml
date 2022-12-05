@@ -45,6 +45,12 @@ Acolyte:
         MaxNumberAppearingRoaming: 8
         NumberAppearingRoaming: !ref NumberAppearingRoaming
         NumberAppearingLair: !ref NumberAppearingLair
+  Activity:
+    $roll:
+      $class: MinionActivity
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 ApeWhite:
@@ -724,6 +730,12 @@ CarcassCrawler:
       $class: TreasureTypeB
       $bootstrap:
         MaxNumberAppearingRoaming: 3 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
+  Activity:
+    $roll:
+      $class: VerminActivity
+      $bootstrap:
         NumberAppearingRoaming: !ref NumberAppearingRoaming
         NumberAppearingLair: !ref NumberAppearingLair
 
@@ -1480,6 +1492,12 @@ DriverAnt:
         MaxNumberAppearingRoaming: 8 
         NumberAppearingRoaming: !ref NumberAppearingRoaming
         NumberAppearingLair: !ref NumberAppearingLair
+  Activity:
+    $roll:
+      $class: VerminActivity
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Dryad:
@@ -1755,7 +1773,7 @@ FerretGiant:
 
 FlailSnail:
   $extends: Monster
-  Title: "FlailSnail"
+  Title: "Flail Snail"
   Intelligent: False
   ArmourClass: "0 [19]"
   HitDice: "4 (18hp)"
@@ -2250,6 +2268,12 @@ Gnoll:
         MaxNumberAppearingRoaming: 6 
         NumberAppearingRoaming: !ref NumberAppearingRoaming
         NumberAppearingLair: !ref NumberAppearingLair
+  Activity:
+    $roll:
+      $class: HumanoidActivity
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Gnome:
@@ -2306,6 +2330,12 @@ Goblin:
       $class: TreasureTypeR # (C)
       $bootstrap:
         MaxNumberAppearingRoaming: 4 
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
+  Activity:
+    $roll:
+      $class: HumanoidActivity
+      $bootstrap:
         NumberAppearingRoaming: !ref NumberAppearingRoaming
         NumberAppearingLair: !ref NumberAppearingLair
 
@@ -2798,6 +2828,12 @@ Hobgoblin:
         MaxNumberAppearingRoaming: 6 
         NumberAppearingRoaming: !ref NumberAppearingRoaming
         NumberAppearingLair: !ref NumberAppearingLair
+  Activity:
+    $roll:
+      $class: HumanoidActivity
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 DraftHorse:
@@ -3041,6 +3077,12 @@ Kobold:
       $class: TreasureTypeP # (J)
       $bootstrap:
         MaxNumberAppearingRoaming: 18
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
+  Activity:
+    $roll:
+      $class: HumanoidActivity
+      $bootstrap:
         NumberAppearingRoaming: !ref NumberAppearingRoaming
         NumberAppearingLair: !ref NumberAppearingLair
 
@@ -3587,6 +3629,12 @@ Medium:
         MaxNumberAppearingRoaming: 4 
         NumberAppearingRoaming: !ref NumberAppearingRoaming
         NumberAppearingLair: !ref NumberAppearingLair
+  Activity:
+    $roll:
+      $class: MinionActivity
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Medusa:
@@ -3672,6 +3720,39 @@ Merman:
         NumberAppearingLair: !ref NumberAppearingLair
 
 
+Mimic:
+  $extends: Monster
+  Title: "Mimic"
+  Intelligent: True
+  ArmourClass: "6 [13]"
+  HitDice: "9* (40hp)"
+  ExHitDice: 9
+  HitDiceRoll: 9d8
+  NumericHD: 9
+  Attacks: "[1 × pseudopod (3d4)"
+  THAC0: "12 [+7]"
+  Movement: "30’ (10’)"
+  SavingThrows: "D10 W11 P12 B13 S14 (5)"
+  Morale: "9"
+  Alignment: "Neutral"
+  XP: "1,600"
+  NumberAppearingRoaming: 1
+  NumberAppearingLair: 0
+  TreasureType:
+    $roll:
+      $class: TreasureTypeNone
+      $bootstrap:
+        MaxNumberAppearingRoaming: 1
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
+  Activity:
+    $roll:
+      $class: MimicActivity
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
+
+
 Minotaur:
   $extends: Monster
   Title: "Minotaur"
@@ -3699,6 +3780,13 @@ Minotaur:
         MaxNumberAppearingRoaming: 6 
         NumberAppearingRoaming: !ref NumberAppearingRoaming
         NumberAppearingLair: !ref NumberAppearingLair
+  Activity:
+    $roll:
+      $class: OversizedHumanoidActivity
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
+
 
 
 Mule:
@@ -3981,6 +4069,12 @@ Ogre:
         MaxNumberAppearingRoaming: 6 
         NumberAppearingRoaming: !ref NumberAppearingRoaming
         NumberAppearingLair: !ref NumberAppearingLair
+  Activity:
+    $roll:
+      $class: OversizedHumanoidActivity
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Orc:
@@ -4008,6 +4102,12 @@ Orc:
       $class: TreasureTypeD
       $bootstrap:
         MaxNumberAppearingRoaming: 8
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
+  Activity:
+    $roll:
+      $class: HumanoidActivity
+      $bootstrap:
         NumberAppearingRoaming: !ref NumberAppearingRoaming
         NumberAppearingLair: !ref NumberAppearingLair
 
@@ -4262,6 +4362,12 @@ GiantRat:
         NumberAppearingRoaming: !ref NumberAppearingRoaming
         NumberAppearingLair: !ref NumberAppearingLair
   Sound: shriek
+  Activity:
+    $roll:
+      $class: VerminActivity
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 NormalRat:
@@ -4292,6 +4398,12 @@ NormalRat:
         NumberAppearingRoaming: !ref NumberAppearingRoaming
         NumberAppearingLair: !ref NumberAppearingLair
   Sound: shriek
+  Activity:
+    $roll:
+      $class: VerminActivity
+      $bootstrap:
+        NumberAppearingRoaming: !ref NumberAppearingRoaming
+        NumberAppearingLair: !ref NumberAppearingLair
 
 
 Rhagodessa:

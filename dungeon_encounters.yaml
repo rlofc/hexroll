@@ -50,6 +50,7 @@ MonstersAbberationTier2:
   $subclass:
     - AbberationHD3
     - AbberationHD5
+    - AbberationHD6
 
 
 MonstersAbberationTier3:
@@ -401,3 +402,48 @@ DungeonEncounterUndeadTier4:
             There’s __{{encounter.Monster.Title | articlize}}__ in the
             [__{{encounter.DungeonContext.Name.Title | title}}__](#{{encounter.DungeonContext.HexUUID}})
 
+
+DungeonEncounterMimic:
+  $extends: DungeonEncounter
+
+  Monster:
+    $roll: Mimic
+
+  Foreshadow: !jinja >
+    A succesfull search roll could detect the sticky substance that the
+    Mimic discharged
+
+  Hint:
+    - The ground under your feet feels a bit sticky
+    - Your boots and feet feel sticky as you step forward
+    - There is an unfamiliar stench in the air
+    - There is a very unpleasent smell around here
+
+
+DungeonEncounterCaveSpecific:
+  $extends: DungeonEncounter
+  Foreshadow:
+    - It is impossible to hear anything inside
+    - You hear echoing droplets of water
+
+  Hint:
+    - You feel as if you're being watched
+    - A strange sensation is creeping up your spine
+    - Something here makes the hair at the back of the neck stand
+
+DungeonEncounterCaveSpecificTier1:
+  $extends: DungeonEncounterCaveSpecific
+  Monster:
+    $roll:
+      - GiantBat
+      - CaveLocust
+      - CentipedeGiant
+      - Rhagodessa
+
+DungeonEncounterCaveSpecificTier2:
+  $extends: DungeonEncounterCaveSpecific
+  Monster:
+    $roll:
+      - Piercer
+      - FlailSnail
+      - LeechGiant

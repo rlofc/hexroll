@@ -4,6 +4,7 @@ CaveEncounterTier1:
     - DungeonEncounterVerminsTier1
     - DungeonEncounterOozesTier1
     - DungeonEncounterAbberationsTier1
+    - DungeonEncounterCaveSpecificTier1
 
 
 CaveEncounterTier2:
@@ -12,6 +13,7 @@ CaveEncounterTier2:
     - DungeonEncounterVerminsTier2
     - DungeonEncounterOozesTier2
     - DungeonEncounterAbberationsTier2
+    - DungeonEncounterCaveSpecificTier2
 
 
 CaveEncounterTier3:
@@ -156,19 +158,22 @@ Tomb:
 
 
 TempleEncounterTier1:
-  $subclass:
-    - DungeonEncounterCultists
+  $subclass: !weighted
+    - DungeonEncounterCultists^2
     - DungeonEncounterTempleAnimals
 
 
 TempleEncounterTier2:
   $subclass:
     - DungeonEncounterMagicalTier2
+    - DungeonEncounterAbberationsTier2
 
 
 TempleEncounterTier3:
-  $subclass:
-    - DungeonEncounterMagicalTier3
+  $subclass: !weighted
+    - DungeonEncounterMagicalTier3^4
+    - DungeonEncounterAbberationsTier3^4
+    - DungeonEncounterMimic
 
 
 TempleEncounterTier4:
