@@ -20,6 +20,7 @@ $include:
   - hexroll/npc.yaml
   - hexroll/quests.yaml
   - hexroll/realm.yaml
+  - hexroll/residency.yaml
   - hexroll/settlement.yaml
   - hexroll/shops.yaml
   - hexroll/sigils.yaml
@@ -349,6 +350,9 @@ $main:
     hex_proxies:
       $collect: HexProxy
 
+    residencies:
+      $collect: Residency
+
     settlements:
       $collect: Settlement
 
@@ -380,6 +384,13 @@ $main:
         $class: DungeonProxy
         $min: !parameter minimum_number_of_dungeons
         $max: !parameter maximum_number_of_dungeons
+
+    residencyproxies:
+      $rollsome:
+        $debug: Generating residencies
+        $class: ResidencyProxy
+        $min: !parameter minimum_number_of_residencies
+        $max: !parameter maximum_number_of_residencies
 
     settlementproxies:
       $rollsome:

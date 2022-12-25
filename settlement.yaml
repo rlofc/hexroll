@@ -370,10 +370,6 @@ City:
 
 
 
-Hut:
-  $extends: Settlement
-  Description: None
-  Details: "..."
 
 TavernDish:
   Description: !jinja >

@@ -1,0 +1,182 @@
+Residency:
+  $collection: residencies
+
+  $subclass: !parameter residency_classes
+  NamePart: null
+  Connector: 
+    - is situated
+    - is located
+    - can be found
+
+  Header: !jinja "{{Resident.Name.First}}'s {{Type.Name}}"
+  Description: !jinja |
+    <a name="{{Resident.uuid}}"></a>
+    The {{Prefix}} {{Type.Name}} of __{{Resident.Name.Full}}__
+
+
+Hut:
+  Name: Hut
+  Motivation: 
+    - hiding here as a fugitive
+    - living in solitude here
+
+Cottage:
+  Name: Cottage
+  Motivation:
+    - finding refuge from the world
+    - seeking solitude
+    - spending retirement here 
+
+Farmhouse:
+  Name: Farmhouse
+  Motivation:
+    - trying to sustain independently here
+    - growing a unique specie of smoking-pipe leaves
+
+House:
+  Prefix:
+    - aging
+    - well-maintained
+    - decorated
+    - barricaded
+  $extends: Residency
+  Type:
+    $roll:
+      $class:
+        - Hut
+        - Cottage
+        - Farmhouse
+
+
+  Population: 1
+
+  $context:
+    $attr: CityContext
+    $values:
+      - uuid
+      - NamePart
+
+  Resident:
+    $roll:
+      $class:
+        - Folk
+
+  Details:
+    - !jinja >
+
+      {{Resident.Name.First}} {{Resident.Gender.Link}} {{Type.Motivation}}.
+
+      {{Resident.Gender.Pronoun|capitalize}} {{Resident.Gender.Pos}} {{Resident.Appearance}}
+      (*{{Resident.State}}*). {{Resident.InThePocket.Details}}
+
+      {{Resident.Association}}
+      {{Resident.Story2.Description}}
+
+Stronghold:
+  $subclass:
+    - Tower
+
+Academy:
+  Name: 
+    - Academy of Magic
+    - School of the Arcana
+    - School of Sorcery
+  Motivation:
+    - teaching the art of magic
+    - documenting and teaching the history of magic
+  Mediums:
+    $rollsome:
+      $class:
+        - Magic-userLevel1
+        - Magic-userLevel2
+      $min: 3
+      $max: 6
+  Details: !jinja >
+    ##### Mediums
+    {%for m in Mediums%}
+
+
+    {{m.Description}}
+
+
+    {%endfor%}
+
+
+Observatory:
+  Name: Observatory
+  Motivation: 
+    - trying to unlock the secrets of the universe
+    - searching for a mysterious celestial entity
+    - researching celestial magic
+  Details: ""
+
+
+Laboratory:
+  Name: Laboratory
+  Motivation: 
+    - brewing extraordinary potions
+    - researching exceptional magic-items
+  Assistant:
+    $roll:
+      $class:
+        - Magic-userLevel1
+        - Magic-userLevel2
+  Details: !jinja >
+    ##### Assistant
+
+
+    {{Assistant.Description}}
+
+
+Tower:
+  Prefix:
+    - magically-hidden
+    - glass-made
+    - dark-colored tower
+
+  $extends: Residency
+
+  $context:
+    $attr: CityContext
+    $values:
+      - uuid
+      - NamePart
+
+  Type:
+    $roll:
+      $class:
+        - Academy
+        - Observatory
+        - Laboratory
+
+  Population: 1
+
+
+  Resident:
+    $roll:
+      $class:
+        - Magic-userLevel11
+        - Magic-userLevel12
+
+  Details:
+    - !jinja >
+
+      {{Resident.Name.First}}, a level {{Resident.Level}} {{Resident.Class}},
+      is {{Type.Motivation}}.
+      {{Resident.Gender.Pronoun|capitalize}} {{Resident.Gender.Pos}} {{Resident.Appearance}}
+      (*{{Resident.State}}*). {{Resident.InThePocket.Details}}
+
+      {{Resident.Association}}
+
+      
+      ---
+
+
+      {{Resident.Stats}}
+
+
+      ---
+
+
+      {{Type.Details}}
+

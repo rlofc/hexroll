@@ -133,6 +133,8 @@ Hex:
 
     {%if DungeonDesc-%}
     #### Hex {{'%02d' %  HexCounter}}: {{DungeonDesc}} {{MapRef}} <a name="{{uuid}}"></a>
+    {%elif ResidencyDesc-%}
+    #### Hex {{'%02d' %  HexCounter}}: {{ResidencyHeader}} {{MapRef}} <a name="{{uuid}}"></a>
     {%elif SettlementDesc-%}
     #### Hex {{'%02d' %  HexCounter}}: {{SettlementDesc}} {{MapRef}} <a name="{{uuid}}"></a>
     {%elif InnDesc-%}
@@ -159,6 +161,9 @@ Hex:
 
     {{DungeonEntrance}}
 
+    {%elif ResidencyDesc-%}
+    {{ResidencyDesc}} {{ResidencyConnector}} {{Terrain.Location}}.
+    {{ResidencyDetails}}
     {%elif SettlementDesc-%}
     The {{SettlementPrefix}} [__{{SettlementDetails}}__](#{{SettlementUUID}}) {{SettlementConnector}} {{Terrain.Location}}.
     {{SettlementFlair}}

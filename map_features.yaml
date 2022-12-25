@@ -45,6 +45,33 @@ DungeonProxy:
             __{{proxy.Hex.Terrain.Location}}, somewhere in
             {{proxy.Hex.Region.Name.Full}} {{proxy.Hex.Region.Suffix}}__
 
+ResidencyProxy:
+  Name: Residency
+  Residency:
+    $roll:
+      $class: Residency
+      $inject:
+        $namespace: rproxy
+        $values:
+          HexLink: !jinja "[Hex {{rproxy.Hex.HexCounter}}](#{{rproxy.Hex.uuid}})"
+  Hex:
+    $popone:
+        $collection: hexs
+        $inject:
+            $namespace: rproxy
+            $values:
+              ResidencyUUID: !jinja "{{rproxy.Residency.uuid}}"
+              ResidencyClass: !jymbol >
+                {{Residency.subclass_}}
+              ResidencyHeader: !jinja |
+                {{rproxy.Residency.Header}}
+              ResidencyDesc: !jinja |
+                {{rproxy.Residency.Description}}
+              ResidencyDetails: !jinja |
+                {{rproxy.Residency.Details}}
+              ResidencyConnector: !jinja |
+                {{rproxy.Residency.Connector}}
+
 
 SettlementProxy:
   Name: Settlement

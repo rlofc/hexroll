@@ -1417,6 +1417,7 @@ Male:
   Pronoun2: his
   Pronoun3: him
   Pos: has
+  Link: is
   Feature: !jinja "{{GenderFeature.Feature}}"
   GenderFeature:
     $roll:
@@ -1431,6 +1432,7 @@ Female:
   Pronoun2: her
   Pronoun3: her
   Pos: has
+  Link: is
   Feature: !jinja "{{GenderFeature.Feature}}"
   GenderFeature:
     $roll:
@@ -1445,6 +1447,7 @@ Fluid:
   Pronoun2: their
   Pronoun3: them
   Pos: have
+  Link: are
   Feature: !jinja "{{GenderFeature.Feature}}"
   GenderFeature:
     $roll:

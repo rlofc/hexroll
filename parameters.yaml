@@ -20,6 +20,9 @@ defaults:
   minimum_number_of_dungeons: 9
   maximum_number_of_dungeons: 13
 
+  minimum_number_of_residencies: 3
+  maximum_number_of_residencies: 5
+
   minimum_number_of_settlements: 6
   maximum_number_of_settlements: 9
 

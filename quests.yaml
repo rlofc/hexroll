@@ -107,7 +107,7 @@ TreasureQuest:
           Active: !jinja >
             {{quest.TreasureContainer}} contains 
             [__{{quest.FolkContext.Name.Full}}’s__](#{{quest.FolkContext.uuid}})
-            (from __{{quest.CityContext.NamePart | title}}__) 
+            {%if quest.CityContext.NamePart%}(from __{{quest.CityContext.NamePart | title}}__){%endif%}
             __{{quest.Artifact.Appearance | title}}__
             (actually __{{quest.Artifact.ActualItem | articlize}}__)
           Conspectus: !jinja >
@@ -296,7 +296,7 @@ MissingPersonQuest:
           Active: !jinja >
             The __chained person__ is 
             [__{{quest.FolkContext.Name.Full}}’s__](#{{quest.FolkContext.uuid}})
-            __{{quest.Relation.Type}}__ from {{quest.CityContext.NamePart | title}}
+            __{{quest.Relation.Type}}__ {%if quest.CityContext.NamePart%} from {{quest.CityContext.NamePart | title}}{%endif%}
           Conspectus: !jinja >
             [__{{quest.FolkContext.Name.Full}}’s__](#{{quest.FolkContext.uuid}})
             __{{quest.Relation.Type}}__ is in area {{RoomContext.Ref}}
@@ -604,7 +604,7 @@ DeliveryQuest:
 
     * Looking for someone to deliver {{Package}} to 
     [__{{Destination.Name.Full}}__](#{{Destination.uuid}})
-    in __{{Destination.CityContext.NamePart | title}}__.
+    {%if Destination.CityContext.NamePart%}in __{{Destination.CityContext.NamePart | title}}__.{%endif%}
         * Reward is __{{Reward}}__
 
   Advert:
@@ -615,17 +615,17 @@ DeliveryQuest:
         $values:
           Details: !avoid_repeating
             - !jinja >
-              “__Job offer!__ I have a package to deliver in {{quest.Destination.CityContext.NamePart | title}}. 
+              “__Job offer!__ I have a package to deliver {%if quest.Destination.CityContext.NamePart%}in {{quest.Destination.CityContext.NamePart | title}}{%endif%}. 
               Payment guaranteed at destination upon delivery.
               Yours, 
               [__{{quest.ShopContext.Owner.Name.Full}}__](#{{quest.ShopContext.Owner.uuid}})”
             - !jinja >
-              “__Traveling to {{quest.Destination.CityContext.NamePart | title}}?__
+              “__Traveling{%if quest.Destination.CityContext.NamePart%} to {{quest.Destination.CityContext.NamePart | title}}{%endif%}?__
               I will pay you for carrying a package for me.
               Yours, 
               [__{{quest.ShopContext.Owner.Name.Full}}__](#{{quest.ShopContext.Owner.uuid}})”
             - !jinja >
-              “__Heading to {{quest.Destination.CityContext.NamePart | title}}?__
+              {%if quest.Destination.CityContext.NamePart%}“__Heading to {{quest.Destination.CityContext.NamePart | title}}?__{%else%}__Heading away?__{%endif%}
               Payment guaranteed to a trusty courier. 
               Ask for [__{{quest.ShopContext.Owner.Name.First}}__](#{{quest.ShopContext.Owner.uuid}})”
   Rumor:
@@ -641,8 +641,8 @@ DeliveryQuest:
             - !jinja >
               [__{{quest.ShopContext.Owner.Name.Full}}__](#{{quest.ShopContext.Owner.uuid}})
               {{quest.ShopContext.Owner.Gender.Pos}} a {{quest.PackageObject}} 
-              {{quest.ShopContext.Owner.Gender.Pronoun}} would like delivered to
-              {{quest.Destination.CityContext.NamePart | title}}
+              {{quest.ShopContext.Owner.Gender.Pronoun}} would like delivered
+              {%if quest.Destination.CityContext.NamePart%}to {{quest.Destination.CityContext.NamePart | title}}{%endif%}
 
 
 EscortQuest:
@@ -672,8 +672,9 @@ Relation:
   $extends: Quest
   Description: !jinja >
 
+    {%if Related.uuid!=FolkContext.uuid%}
     * {{FolkContext.Name.First}} {{FolkContext.Gender.Pos}} {{What}}
-    [__{{Related.Name.Full}}__](#{{Related.uuid}}).
+    [__{{Related.Name.Full}}__](#{{Related.uuid}}).{%endif%}
 
   What:
     - some __unfinished business__ with
