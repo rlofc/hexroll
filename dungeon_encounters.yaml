@@ -95,7 +95,7 @@ DungeonEncounterHumanoidsTier1:
 DungeonEncounterVermins:
   $extends: DungeonEncounter
   Foreshadow: !jinja >
-    A succesfull listening roll could detect the __sounds__ that the
+    A successful listening roll could detect the __sounds__ that the
     __{{Monster.TitlePluralizedByRoaming}}__ {%if
     Monster.NumberAppearingRoaming>1%}are{%else%}is{%endif%} making inside this
     area
@@ -183,7 +183,7 @@ DungeonEncounterOozesTier3:
 DungeonEncounterAbberations:
   $extends: DungeonEncounter
   Foreshadow: !jinja >
-    A succesfull listening roll could detect the __sounds__
+    A successful listening roll could detect the __sounds__
     that the __{{Monster.TitlePluralizedByRoaming}}__
     {%if Monster.NumberAppearingRoaming>1%}are{%else%}is{%endif%}
     making inside this area
@@ -237,7 +237,7 @@ DungeonEncounterCultistsClasses:
 DungeonEncounterCultists:
   $extends: DungeonEncounter
   Foreshadow: >
-    If listening to one of the doors here is successfull, the faint voices
+    If listening to one of the doors here is successful, the faint voices
     of __chanting by cultists__ could be heard
 
   Hint:
@@ -263,7 +263,7 @@ DungeonEncounterTempleAnimalsClasses:
 DungeonEncounterTempleAnimals:
   $extends: DungeonEncounter
   Foreshadow: !jinja >
-    A succesfull listening roll could detect the __sounds__ that the
+    A successful listening roll could detect the __sounds__ that the
     __{{Monster.TitlePluralizedByRoaming}}__ {%if
     Monster.NumberAppearingRoaming>1%}are{%else%}is{%endif%} making inside this
     area
@@ -291,7 +291,7 @@ MonstersMagicalTier3:
 DungeonEncounterMagical:
   $extends: DungeonEncounter
   Foreshadow: !jinja >
-    A succesfull listening roll could detect the sounds that the
+    A successful listening roll could detect the sounds that the
     {{Monster.TitlePluralizedByRoaming}} {%if
     Monster.NumberAppearingRoaming>1%}are{%else%}is{%endif%} making inside this
     area
@@ -410,7 +410,7 @@ DungeonEncounterMimic:
     $roll: Mimic
 
   Foreshadow: !jinja >
-    A succesfull search roll could detect the sticky substance that the
+    A successful search roll could detect the sticky substance that the
     Mimic discharged
 
   Hint:
