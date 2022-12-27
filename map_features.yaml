@@ -184,8 +184,9 @@ Encounter:
               EncounterFlair: !jinja >
 
 
-                __{{Monster.Title}}__
+                __{{Monster.Title}}__ <a class="npc-note-icon" onclick="note(this,'{{uuid}}_note');">✎ </a>
 
+                <div id="{{uuid}}_note_container"></div>
 
                 ---
 

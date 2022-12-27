@@ -473,7 +473,9 @@ DungeonEncounter:
     {%else%}{%if Monster.NumberAppearingRoaming==1%}It {%else%} They {%endif%} will attack anyone stepping in. {%endif%}
 
 
-    __{{Monster.Title}}__
+    __{{Monster.Title}}__ <a class="npc-note-icon" onclick="note(this,'{{uuid}}_note');">✎ </a>
+
+    <div id="{{uuid}}_note_container"></div>
 
 
     ---

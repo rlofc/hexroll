@@ -234,10 +234,13 @@ Character:
     $roll: InThePocket
 
   Description: !jinja >
-    {{Name.Full}}.
-
+    {{Name.Full}}<a class="npc-note-icon" onclick="note(this,'{{uuid}}_note');">✎ </a>.
     {{Gender.Pronoun|capitalize}} {{Gender.Pos}} {{Appearance}}
     (*{{State}}*). {{InThePocket.Details}}
+
+
+    <div id="{{uuid}}_note_container"></div>
+
 
     {{Association}}
     {{Story2.Description}}
@@ -360,9 +363,11 @@ PlatemailArmorWithShield:
 NPC:
   $extends: Character
   Description: !jinja >
-    __{{Name.Full}}__, a level {{Level}} {{Class}}.
+    __{{Name.Full}}__, a level {{Level}} {{Class}}.<a class="npc-note-icon" onclick="note(this,'{{uuid}}_note');">✎ </a>
     {{Gender.Pronoun|capitalize}} {{Gender.Pos}} {{Appearance}}
     (*{{State}}*). {{InThePocket.Details}}
+
+    <div id="{{uuid}}_note_container"></div>
   
   UNUSED1: >
     {{Name.First}} likes spending {{Gender.Pronoun2}} time in the dark inn.
