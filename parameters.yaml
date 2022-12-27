@@ -42,11 +42,14 @@ defaults:
     - DesertRegion^3
     - CoastRegion^2
 
+  residency_classes: !weighted
+    - House
+    - Stronghold
+
   settlement_classes: !weighted
     - Village^3
     - Town^3
     - City^2
-    # - Hut
     
   dungeon_classes: !weighted
     - Cavern
