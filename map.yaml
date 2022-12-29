@@ -150,6 +150,7 @@ Hex:
 
 
     {{Terrain.Flair}}
+    {%if QuestObject.Findable%}{{QuestObject.HexDescription}}{%endif%}
 
 
     {%if DungeonDesc-%}
@@ -163,7 +164,14 @@ Hex:
 
     {%elif ResidencyDesc-%}
     {{ResidencyDesc}} {{ResidencyConnector}} {{Terrain.Location}}.
-    {{ResidencyDetails}}
+    {{ResidencyDetails}} {%if ResidencyEncounter == "Yes"%}
+
+        *  There's a 2 in 6 chance (daily) of encountering {{OtherEncounters[0].TitlePluralizedByLair}} here.
+            
+           ------
+
+           {{OtherEncounters[0].Stats}} 
+    {%endif%}
     {%elif SettlementDesc-%}
     The {{SettlementPrefix}} [__{{SettlementDetails}}__](#{{SettlementUUID}}) {{SettlementConnector}} {{Terrain.Location}}.
     {{SettlementFlair}}
@@ -216,6 +224,14 @@ Hex:
   InnDesc: null
   EncounterDesc: null
   HexNumber: !jinja "{{'%02d' % HexCounter}}"
+  QuestObject:
+    $roll:
+      $class:
+        - Plant
+        - Shard
+      $bootstrap:
+        HexCounter: !ref HexCounter
+        HexUUID: !ref uuid
   HexProxy:
     $roll:
       $class: HexProxy

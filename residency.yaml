@@ -12,6 +12,7 @@ Residency:
   Description: !jinja |
     <a name="{{Resident.uuid}}"></a>
     The {{Prefix}} {{Type.Name}} of __{{Resident.Name.Full}}__
+  Encounter: "No"
 
 
 Hut:
@@ -24,8 +25,9 @@ Cottage:
   Name: Cottage
   Motivation:
     - finding refuge from the world
-    - seeking solitude
+    - seeking solitude from others
     - spending retirement here 
+    - looking for some peace and quiet
 
 Farmhouse:
   Name: Farmhouse
@@ -40,13 +42,13 @@ House:
     - decorated
     - barricaded
   $extends: Residency
+  Encounter: "Yes"
   Type:
     $roll:
       $class:
         - Hut
         - Cottage
         - Farmhouse
-
 
   Population: 1
 
@@ -61,6 +63,10 @@ House:
       $class:
         - Folk
 
+  Quest:
+    - !jinja Feeling someone or something is lukring around the {{Type.Name}} 
+    - !jinja Hearing strange noises at night and fearing someone or something will raid the {{Type.Name}}
+
   Details:
     - !jinja >
 
@@ -72,9 +78,73 @@ House:
       {{Resident.Association}}
       {{Resident.Story2.Description}}
 
+      *  {{Quest}}.
+
 Stronghold:
   $subclass:
     - Tower
+    - FighterCastle
+
+FighterCastle:
+  Prefix:
+    - majestic
+    - impressive
+    - immense
+
+  $extends: Residency
+
+  $context:
+    $attr: CityContext
+    $values:
+      - uuid
+      - NamePart
+
+  Type:
+    Name: Castle
+
+  Population: 1
+  Resident:
+    $roll:
+      $class:
+        - FighterLevel4
+        - FighterLevel5
+        - FighterLevel6
+        - FighterLevel7
+        - FighterLevel8
+        - FighterLevel9
+        - FighterLevel10
+        - FighterLevel11
+  Motivation:
+    - !jinja >
+      {{Resident.Gender.Pos}} acquired the lands surrounding the castle and is developing it 
+      as {{Resident.Gender.Pronoun}} barony
+    - !jinja took over the lands here after a bloody battle
+
+  Details:
+    - !jinja >
+
+      {{Resident.Name.First}}, a level {{Resident.Level}} {{Resident.Class}},
+      {{Motivation}}.
+      {{Resident.Gender.Pronoun|capitalize}} {{Resident.Gender.Pos}} {{Resident.Appearance}}
+      (*{{Resident.State}}*). {{Resident.InThePocket.Details}}
+
+      {{Resident.Association}}
+
+      {%if Quest%}
+      *  {{Resident.Name.First}} {{Resident.Gender.Link}} {{Quest}}
+      {%endif%}
+
+      
+      __{{Resident.Name.Full}}__
+
+
+      ---
+
+
+      {{Resident.Stats}}
+
+
+      ---
 
 Academy:
   Name: 
@@ -110,6 +180,23 @@ Observatory:
     - researching celestial magic
   Details: ""
 
+  Reward:
+    $roll: RandomPotion
+
+  Shard:
+    $pickone:
+      $collection: shards
+      $inject:
+        $values:
+          Findable: true
+
+  Quest:
+    - !jinja >
+      hoping to research {{Shard.Name}}, thought to be found in
+      [Hex {{Shard.HexCounter}}](#{{Shard.HexUUID}}).
+
+          * Finders reward is __{{Reward.Description}}__
+
 
 Laboratory:
   Name: Laboratory
@@ -126,6 +213,24 @@ Laboratory:
 
 
     {{Assistant.Description}}
+
+  Component:
+    $pickone:
+      $collection: plants
+      $inject:
+        $values:
+          Findable: true
+  Reward:
+    $roll: RandomPotion
+
+  Quest:
+    - !jinja >
+      looking for the __{{Component.Name}}__, a unique potion component, rumored to be
+      found in [Hex {{Component.HexCounter}}](#{{Component.HexUUID}}). Searching for the {{Component.Name}} will increase the
+      chance for an encounter in that hex.
+
+          * Reward is __{{Reward.Description}}__
+
 
 
 Tower:
@@ -168,7 +273,14 @@ Tower:
 
       {{Resident.Association}}
 
+      {%if Type.Quest%}
+      *  {{Resident.Name.First}} {{Resident.Gender.Link}} {{Type.Quest}}
+      {%endif%}
+
       
+      __{{Resident.Name.Full}}__
+
+
       ---
 
 

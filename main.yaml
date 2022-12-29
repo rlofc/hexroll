@@ -350,6 +350,12 @@ $main:
     hex_proxies:
       $collect: HexProxy
 
+    plants:
+      $collect: Plant
+
+    shards:
+      $collect: Shard
+
     residencies:
       $collect: Residency
 

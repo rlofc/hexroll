@@ -71,6 +71,7 @@ ResidencyProxy:
                 {{rproxy.Residency.Details}}
               ResidencyConnector: !jinja |
                 {{rproxy.Residency.Connector}}
+              ResidencyEncounter: !jinja "{{rproxy.Residency.Encounter}}"
 
 
 SettlementProxy:

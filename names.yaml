@@ -1650,3 +1650,96 @@ DungeonNameAdjective: !avoid_duplicates
   - twisted
   - ruthless
   - furious
+
+
+JibrishWord:
+  Text:
+    - !jinja "{{Part1}}{{Part2}}{{Part3}}"
+    - !jinja "{{Part2}}{{Part1}}{{Part3}}"
+    - !jinja "{{Part3}}{{Part2}}{{Part1}}"
+    - !jinja "{{Part1}}{{Part2}}{{Part3}} {{Part4}} {{Part5}}{{Part6}}{{Part7}}"
+    - !jinja "{{Part2}}{{Part1}}{{Part3}} {{Part4}} {{Part6}}{{Part7}}{{Part5}}"
+    - !jinja "{{Part3}}{{Part2}}{{Part1}} {{Part4}} {{Part7}}{{Part5}}{{Part6}}"
+  Part1:
+    - ga
+    - ba
+    - ka
+    - za
+  Part2:
+    - ru
+    - du
+    - vu
+    - mu
+  Part3:
+    - xa
+    - sa
+    - ja
+  Part4:
+    - un
+    - il
+    - wa
+    - ju
+  Part5:
+    - ri
+    - xi
+    - bi
+    - ni
+  Part6:
+    - ge
+    - me
+    - te
+    - ye
+  Part7:
+    - ko
+    - po
+    - ao
+
+
+Shard:
+  Name:
+    - Blue Meteor Shards 
+    - Blood Crystal Shards
+    - Lightning Stone
+  HexDescription: !jinja >
+    There's a __2 in 6__ chance of finding a __{{Name}}__
+    reservoir when searching minerals here.
+
+Plant:
+  PrefixPartA1:
+    - Orcish
+    - Dragon's
+    - Ogre's
+    - Elven
+    - Highlands
+
+  PrefixPartA2:
+    - Black
+    - Spell
+    - Pale
+    - Dark
+    - Deep
+  
+  PrefixPartB:
+    - night
+    - blood
+    - fire
+    - bolt
+    - blade
+    - wind
+    - death
+
+  Suffix:
+    - Berry
+    - Root
+    - Cane
+    - Flower
+    - Weed
+    - Moss
+    - Vine
+
+  Name:
+    - !jinja "{{PrefixPartA1}}-{{PrefixPartB}} {{Suffix}}"
+    - !jinja "{{PrefixPartA2}}{{PrefixPartB}} {{Suffix}}"
+  HexDescription: !jinja >
+    The __{{Name}}__ grows here and there's a __2 in 6__
+    chance of finding it when searching.
