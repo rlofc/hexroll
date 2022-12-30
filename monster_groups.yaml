@@ -425,19 +425,19 @@ DynoHD20:
     - TyrannosaurusRex
 
 
-AbberationHD1:
+AberrationHD1:
   $subclass:
     - Stirge
 
 
-AbberationHD3:
+AberrationHD3:
   $subclass:
     - Hellhound
    #- Shrieker
     - Harpy
 
 
-AbberationHD5:
+AberrationHD5:
   $subclass:
     - Hydra
     - OwlBear
@@ -446,28 +446,28 @@ AbberationHD5:
     - Cockatrice
 
 
-AbberationHD6:
+AberrationHD6:
   $subclass:
     - Minotaur
     - WarpBeast
 
 
-AbberationHD8:
+AberrationHD8:
   $subclass:
     - Gorgon
 
 
-AbberationHD9:
+AberrationHD9:
   $subclass:
     - DevilSwine
 
 
-AbberationHD13:
+AberrationHD13:
   $subclass:
     - Cyclops
 
 
-AbberationHD15:
+AberrationHD15:
   $subclass:
     - PurpleWorm
 

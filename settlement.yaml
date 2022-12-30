@@ -373,9 +373,9 @@ City:
 
 TavernDish:
   Description: !jinja >
-    {{Type}} {{Kind}} __{{MainIngrediant}}__,
-    {{Style}} __{{SecondIngrediant}}__ and {{Addition}}
-    __{{ThirdIngrediant}}__ for
+    {{Type}} {{Kind}} __{{MainIngredient}}__,
+    {{Style}} __{{SecondIngredient}}__ and {{Addition}}
+    __{{ThirdIngredient}}__ for
     __{{(Price*(DistrictContext.CostFactor if DistrictContext is defined else 1.0)) | currency}}__
 
   Type:
@@ -389,7 +389,7 @@ TavernDish:
     - slices of
     - chunks of
 
-  MainIngrediant:
+  MainIngredient:
     - meat
     - fish
     - shellfish
@@ -400,7 +400,7 @@ TavernDish:
     - marinated in
     - glazed with
 
-  SecondIngrediant:
+  SecondIngredient:
     - ale
     - red wine
     - white wine
@@ -410,7 +410,7 @@ TavernDish:
   Addition:
     - served with
   
-  ThirdIngrediant:
+  ThirdIngredient:
     - mashed potatoes
     - baked potatoes
     - cooked rice

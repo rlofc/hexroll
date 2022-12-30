@@ -16,14 +16,14 @@ Hexroll is an OSR sandbox generator designed to provide a backdrop for table-top
 
 | Entity                               | File                    |
 | ------------------------------------ | ----------------------- |
-| AbberationHD1 | monster_groups.yaml|
-| AbberationHD3 | monster_groups.yaml|
-| AbberationHD5 | monster_groups.yaml|
-| AbberationHD6 | monster_groups.yaml|
-| AbberationHD8 | monster_groups.yaml|
-| AbberationHD9 | monster_groups.yaml|
-| AbberationHD13 | monster_groups.yaml|
-| AbberationHD15 | monster_groups.yaml|
+| AberrationHD1 | monster_groups.yaml|
+| AberrationHD3 | monster_groups.yaml|
+| AberrationHD5 | monster_groups.yaml|
+| AberrationHD6 | monster_groups.yaml|
+| AberrationHD8 | monster_groups.yaml|
+| AberrationHD9 | monster_groups.yaml|
+| AberrationHD13 | monster_groups.yaml|
+| AberrationHD15 | monster_groups.yaml|
 | Acolyte | monsters.yaml|
 | AdventurersGuild | shops.yaml|
 | Advert | quests.yaml|
@@ -187,10 +187,10 @@ Hexroll is an OSR sandbox generator designed to provide a backdrop for table-top
 | DungeonDoorState | dungeon_doors.yaml|
 | DungeonDoorStuck | dungeon_doors.yaml|
 | DungeonDoor | dungeon_doors.yaml|
-| DungeonEncounterAbberationsTier1 | dungeon_encounters.yaml|
-| DungeonEncounterAbberationsTier2 | dungeon_encounters.yaml|
-| DungeonEncounterAbberationsTier3 | dungeon_encounters.yaml|
-| DungeonEncounterAbberations | dungeon_encounters.yaml|
+| DungeonEncounterAberrationsTier1 | dungeon_encounters.yaml|
+| DungeonEncounterAberrationsTier2 | dungeon_encounters.yaml|
+| DungeonEncounterAberrationsTier3 | dungeon_encounters.yaml|
+| DungeonEncounterAberrations | dungeon_encounters.yaml|
 | DungeonEncounterCultistsClasses | dungeon_encounters.yaml|
 | DungeonEncounterCultists | dungeon_encounters.yaml|
 | DungeonEncounterHumanoidsTier1 | dungeon_encounters.yaml|
@@ -549,9 +549,9 @@ Hexroll is an OSR sandbox generator designed to provide a backdrop for table-top
 | MonsterHD13 | monster_groups.yaml|
 | MonsterHD15 | monster_groups.yaml|
 | MonsterHD20 | monster_groups.yaml|
-| MonstersAbberationTier1 | dungeon_encounters.yaml|
-| MonstersAbberationTier2 | dungeon_encounters.yaml|
-| MonstersAbberationTier3 | dungeon_encounters.yaml|
+| MonstersAberrationTier1 | dungeon_encounters.yaml|
+| MonstersAberrationTier2 | dungeon_encounters.yaml|
+| MonstersAberrationTier3 | dungeon_encounters.yaml|
 | MonstersHumanoidTier1 | dungeon_encounters.yaml|
 | MonstersMagicalTier2 | dungeon_encounters.yaml|
 | MonstersMagicalTier3 | dungeon_encounters.yaml|

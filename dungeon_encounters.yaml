@@ -41,24 +41,24 @@ MonstersOozeTier3:
     - OozeHD10
 
 
-MonstersAbberationTier1:
+MonstersAberrationTier1:
   $subclass:
-    - AbberationHD1
+    - AberrationHD1
 
 
-MonstersAbberationTier2:
+MonstersAberrationTier2:
   $subclass:
-    - AbberationHD3
-    - AbberationHD5
-    - AbberationHD6
+    - AberrationHD3
+    - AberrationHD5
+    - AberrationHD6
 
 
-MonstersAbberationTier3:
+MonstersAberrationTier3:
   $subclass:
-    - AbberationHD6
-    - AbberationHD8
-    - AbberationHD9
-    - AbberationHD13
+    - AberrationHD6
+    - AberrationHD8
+    - AberrationHD9
+    - AberrationHD13
 
 
 MonstersDragonsTier3:
@@ -180,7 +180,7 @@ DungeonEncounterOozesTier3:
 
 
 
-DungeonEncounterAbberations:
+DungeonEncounterAberrations:
   $extends: DungeonEncounter
   Foreshadow: !jinja >
     A successful listening roll could detect the __sounds__
@@ -200,22 +200,22 @@ DungeonEncounterAbberations:
 
 
 
-DungeonEncounterAbberationsTier1:
-  $extends: DungeonEncounterAbberations
+DungeonEncounterAberrationsTier1:
+  $extends: DungeonEncounterAberrations
   Monster:
-    $roll: MonstersAbberationTier1
+    $roll: MonstersAberrationTier1
 
 
-DungeonEncounterAbberationsTier2:
-  $extends: DungeonEncounterAbberations
+DungeonEncounterAberrationsTier2:
+  $extends: DungeonEncounterAberrations
   Monster:
-    $roll: MonstersAbberationTier2
+    $roll: MonstersAberrationTier2
 
 
-DungeonEncounterAbberationsTier3:
-  $extends: DungeonEncounterAbberations
+DungeonEncounterAberrationsTier3:
+  $extends: DungeonEncounterAberrations
   Monster:
-    $roll: MonstersAbberationTier3
+    $roll: MonstersAberrationTier3
   Rumor:
     $roll:
       $class: Rumor
@@ -417,7 +417,7 @@ DungeonEncounterMimic:
     - The ground under your feet feels a bit sticky
     - Your boots and feet feel sticky as you step forward
     - There is an unfamiliar stench in the air
-    - There is a very unpleasent smell around here
+    - There is a very unpleasant smell around here
 
 
 DungeonEncounterCaveSpecific:
