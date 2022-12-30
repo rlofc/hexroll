@@ -117,7 +117,7 @@ FighterCastle:
   Motivation:
     - !jinja >
       {{Resident.Gender.Pos}} acquired the lands surrounding the castle and is developing it 
-      as {{Resident.Gender.Pronoun}} barony
+      as {{Resident.Gender.Pronoun2}} barony
     - !jinja took over the lands here after a bloody battle
 
   Details:
