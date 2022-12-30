@@ -48,17 +48,17 @@ MonstersAbberationTier1:
 
 MonstersAbberationTier2:
   $subclass:
-    - AbberationHD3
-    - AbberationHD5
-    - AbberationHD6
+    - AberrationHD3
+    - AberrationHD5
+    - AberrationHD6
 
 
-MonstersAbberationTier3:
+MonstersAberrationTier3:
   $subclass:
-    - AbberationHD6
-    - AbberationHD8
-    - AbberationHD9
-    - AbberationHD13
+    - AberrationHD6
+    - AberrationHD8
+    - AberrationHD9
+    - AberrationHD13
 
 
 MonstersDragonsTier3:
