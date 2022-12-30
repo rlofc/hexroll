@@ -102,7 +102,7 @@ Realm:
       But an greater, more sinister darkenss is approaching from far far away.
 
     - !jinja >
-      {{Ruler.Title | title}} {{Ruler.NPC.Name.First}} is a bloved ruler,
+      {{Ruler.Title | title}} {{Ruler.NPC.Name.First}} is a beloved ruler,
       admired for his wise and thoughtful ruling.
       Is there anyone in the {{subclass_ | title}} who knows {{Ruler.NPC.Gender.Pronoun2}}
       very dark secret?
