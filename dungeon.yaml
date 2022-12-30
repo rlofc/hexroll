@@ -721,7 +721,7 @@ DungeonPortal:
   Description: !jinja >
     {{Portal | articlize | capitalize}} is a magical portal.
     Anyone stepping into the portal will be magically teleported
-    into __area {{Destination.Location}}__
+    into __[area {{Destination.Location}}](#{{DungeonContext.uuid}}_area_{{Destination.Location}})__
   Destination: 
     $pop:
       $collection: dungeon_portal_destinations
@@ -731,7 +731,7 @@ DungeonPortal:
           Active: !jinja >
             {{portal.Portal | articlize | capitalize}} is a magical portal.
             Anyone stepping into the portal will be magically teleported into
-            __area {{portal.Origin}}__
+            __[area {{portal.Origin}}](#{{DungeonContext.uuid}}_area_{{portal.Origin}})__
 
   Portal:
     - __painting of a door__ on the wall
