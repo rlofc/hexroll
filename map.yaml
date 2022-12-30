@@ -210,7 +210,7 @@ Hex:
 
 
     {%endif%}
-  $sublcass:
+  $subclass:
     - MountainsHex
     - PlainsHex
     - ForestHex
