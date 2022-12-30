@@ -833,7 +833,7 @@ Tanner:
 
 Registry:
   $extends: Service
-  Title: Registery
+  Title: Registry
   Noun:
     - Registry
     - Registrars

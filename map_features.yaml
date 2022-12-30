@@ -203,7 +203,7 @@ Encounter:
                 ---
 
                 {%if not Monster.TreasureType.Empty%}
-                * __Lair__ hoard (__1-in-6__ base chance of finding if an encouter occured):
+                * __Lair__ hoard (__1-in-6__ base chance of finding if an encounter occurred):
                 {{Monster.TreasureType.Details}}
                 {%endif%}
 
