@@ -3,7 +3,7 @@ CaveEncounterTier1:
     - DungeonEncounterHumanoidsTier1^2
     - DungeonEncounterVerminsTier1
     - DungeonEncounterOozesTier1
-    - DungeonEncounterAbberationsTier1
+    - DungeonEncounterAbberationTier1
     - DungeonEncounterCaveSpecificTier1
 
 
@@ -12,7 +12,7 @@ CaveEncounterTier2:
     - DungeonEncounterHumanoidsTier1
     - DungeonEncounterVerminsTier2
     - DungeonEncounterOozesTier2
-    - DungeonEncounterAbberationsTier2
+    - DungeonEncounterAbberationTier2
     - DungeonEncounterCaveSpecificTier2
 
 
@@ -20,7 +20,7 @@ CaveEncounterTier3:
   $subclass:
     - DungeonEncounterVerminsTier3
     - DungeonEncounterOozesTier3
-    - DungeonEncounterAbberationsTier3
+    - DungeonEncounterAbberationTier3
     - DungeonEncounterDragonsTier3
 
 
