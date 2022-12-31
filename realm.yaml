@@ -98,12 +98,12 @@ Realm:
 
     - !jinja >
       {{Title}} is in blissful equilibrium. {{Ruler.Title | title}} {{Ruler.NPC.Name.First}}'s
-      and {{Ruler.NPC.Gender.Pronoun2}} his loyal forces keep any evil at bay and away.
+      and {{Ruler.NPC.Gender.Pronoun2}} loyal forces keep any evil at bay and away.
       But an greater, more sinister darkness is approaching from far far away.
 
     - !jinja >
       {{Ruler.Title | title}} {{Ruler.NPC.Name.First}} is a beloved ruler,
-      admired for his wise and thoughtful ruling.
+      admired for {{Ruler.NPC.Gender.Pronoun2}} wise and thoughtful ruling.
       Is there anyone in the {{subclass_ | title}} who knows {{Ruler.NPC.Gender.Pronoun2}}
       very dark secret?
 
