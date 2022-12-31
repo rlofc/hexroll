@@ -173,7 +173,7 @@ Encounter:
                 {%if Monster.NumberAppearingLair==1%}{{Monster.Title | articlize | capitalize}}
                 {%else%}{{Monster.Title}}s{%endif%}
               EncounterDesc: !jinja >
-                {%if Monster.NumberAppearingLair==1%}{{Monster.Title}} is
+                {%if Monster.NumberAppearingLair==1%}{{Monster.Title | articlize | capitalize}} is
                 {%else%}{{Monster.NumberAppearingLair}} {{Monster.Title}}s are{%endif%}
                 {%if Monster.Alignment=='Chaotic'%}{{proxy.ChaoticState}}
                 {%else%}{{proxy.NeutralState}}{%endif%}

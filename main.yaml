@@ -310,7 +310,7 @@ $main:
     {% endfor %}
     {% endfor %}
 
-    Hexroll is copyright &copy; 2021,2022 pendicepaper.com.
+    Hexroll is copyright &copy; 2021,2022,2023 pendicepaper.com.
 
   $set:
     $global: HexCounter
