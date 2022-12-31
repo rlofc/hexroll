@@ -202,8 +202,8 @@ Encounter:
 
                 ---
 
-                {%if not Monster.TreasureType.Empty%}
-                * __Lair__ hoard (__1-in-6__ base chance of finding if an encounter occurred):
+                {%if not Monster.TreasureType.Empty and (Monster.TreasureType.Details|trim)!=''%}
+                * __Lair__ hoard (__1-in-6__ base chance of finding if an encounter occured):
                 {{Monster.TreasureType.Details}}
                 {%endif%}
 
@@ -255,8 +255,8 @@ Landmark:
     - AbandonedVillage
     - Altar
     - SacrificialSite
-#   - Stronghold?
-#   - CaravansPark
+    - SignalingTower
+    - DeadMonster
 
 
 Watchtower:
@@ -273,12 +273,95 @@ CaravansPark:
   Description: There’s a colorful and noisy caravans park
 
 
+BridgeEncounter:
+  Desc: !jinja |
+    {{Motive}} {%if Monster.NumberAppearingLair==1%} __{{Monster.Title}}__
+    {%else%}__{{Monster.Title}}s__{%endif%}
+
+    ---
+
+    {{Monster.Stats}}
+    {%if Monster.NumberAppearingLair<10 and Monster.NumericHD<6%}
+
+
+    <div class="hpmarks">{%for m in range(Monster.NumberAppearingLair)%}
+    <sub>{% for hp in range(Monster.HitDiceRoll | diceroll) %}&#x274F;{%endfor%}</sub><br/>{%endfor%}</div>
+    {%endif%}
+
+
+    ---
+
+    {%if not Monster.TreasureType.Empty and (Monster.TreasureType.Details|trim)!=''%}
+    * __Lair__ hoard (if found through tracking, deception or any other reasonable way):
+    {{Monster.TreasureType.Details}}
+    {%endif%}
+
+
+BridgeTroll:
+  $extends: BridgeEncounter
+  Motive:
+    - an extortionist
+    - a hungry
+    - a greedy
+  Monster:
+    $roll:
+      $class: Troll
+      $inject:
+        $values:
+          NumberAppearingLair: 1
+
+
+BridgeOgre:
+  $extends: BridgeEncounter
+  Motive:
+    - a hungry
+    - a deranged
+  Monster:
+    $roll:
+      $class: Ogre
+      $inject:
+        $values:
+          NumberAppearingLair: 1
+
+BridgeThugs:
+  $extends: BridgeEncounter
+  Motive:
+    - thieving
+    - murderous
+    - brutal
+    - violent
+  Monster:
+    $roll: 
+      $class: !weighted
+        - Bandit^3
+        - Goblin
+        - Gnoll
+        - Orc
+
+
+BridgeUnguarded:
+  $extends: BridgeEncounter
+  Motive: null
+  Monster: null
+  Desc: null
+
+
 Bridge:
   Name: Bridge
   Description:
     - There’s a half-broken stone bridge
-    - There’s a recently built wood bridge
+    - There’s a recently built wooden bridge
     - There’s a dangerous looking rope bridge
+  GuardedBy:
+    $roll:
+      $class: !weighted
+        - BridgeTroll
+        - BridgeOgre
+        - BridgeThugs^3
+        - BridgeUnguarded^5
+  Flair:
+    - !jinja >
+      {%if GuardedBy.Monster%}The bridge is guarded by {{GuardedBy.Desc}}{%endif%}
 
 AbandonedVillage:
   Name: Abandoned Village
@@ -291,10 +374,25 @@ Altar:
   Description:
     - The crumbling ruins of an ancient altar could be found
 
+SignalingTower:
+  Name: Signaling Tower
+  Description:
+    - There’s a stone-made signaling tower
+    - There’s a wood-made signaling tower
+  Flair:
+    - Finding the tower will eliminate any risk of getting lost in this region.
+
 Wagons:
   Name: Wagons
+  Number:
+    - three
+    - four
+    - five
+    - six
   Description:
-    - There are several abandoned and half-broken wagons
+    - !jinja "There are {{Number}} abandoned and half-broken wagons"
+    - !jinja "{{Number | capitalize}} wagons were abandoned and looted"
+    - !jinja "{{Number | capitalize}} heavily damaged wagons were left to decay"
 
 DeadAdventurers:
   Name: Dead Adventurers
@@ -305,6 +403,7 @@ DeadAdventurers:
     - six
   Description:
     - !jinja "The bodies of {{Number}} dead adventurers were thrown to rot"
+    - !jinja "{{Number | capitalize}} unfortunate adventurers met their death"
 
 SacrificialSite:
   Name: Sacrificial Grounds
@@ -315,4 +414,11 @@ SacrificialSite:
     - animal
     - and unrecognizable
 
+DeadMonster:
+  Name: !jinja Dead {{FeatureMonster.Title}} Remains
 
+  Description:
+    - !jinja The headless remains of {{FeatureMonster.Title | articlize}} can be found 
+    - !jinja The headless rotting remains of a beheaded {{FeatureMonster.Title}} can be found 
+    - !jinja The chopped head of {{FeatureMonster.Title | articlize}} was left to rot
+    - !jinja The brutalized remains of {{FeatureMonster.Title | articlize}} were left to rot

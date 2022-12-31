@@ -218,8 +218,6 @@ Hex:
     - ForestHex
     - DesertHex
     - CoastHex
-  Feature:
-    $roll: Feature
 
   DungeonDesc: null
   SettlementDesc: null
@@ -253,6 +251,11 @@ MountainsHex:
       $class: MountainsRandomEncounter
       $min: 4
       $max: 4
+  Feature:
+    $roll:
+      $class: Feature
+      $bootstrap:
+        FeatureMonster: !ref Monster
 
 
 PlainsHex:
@@ -266,6 +269,11 @@ PlainsHex:
       $class: MountainsRandomEncounter
       $min: 4
       $max: 4
+  Feature:
+    $roll:
+      $class: Feature
+      $bootstrap:
+        FeatureMonster: !ref Monster
 
 
 ForestHex:
@@ -279,6 +287,11 @@ ForestHex:
       $class: ForestRandomEncounter
       $min: 4
       $max: 4
+  Feature:
+    $roll:
+      $class: Feature
+      $bootstrap:
+        FeatureMonster: !ref Monster
 
 
 DesertHex:
@@ -292,6 +305,11 @@ DesertHex:
       $class: DesertRandomEncounter
       $min: 4
       $max: 4
+  Feature:
+    $roll:
+      $class: Feature
+      $bootstrap:
+        FeatureMonster: !ref Monster
 
 
 CoastHex:
@@ -305,3 +323,8 @@ CoastHex:
       $class: MountainsRandomEncounter
       $min: 4
       $max: 4
+  Feature:
+    $roll:
+      $class: Feature
+      $bootstrap:
+        FeatureMonster: !ref Monster
