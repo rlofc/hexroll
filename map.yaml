@@ -166,7 +166,9 @@ Hex:
     {{ResidencyDesc}} {{ResidencyConnector}} {{Terrain.Location}}.
     {{ResidencyDetails}} {%if ResidencyEncounter == "Yes"%}
 
-        *  There's a 2 in 6 chance (daily) of encountering {{OtherEncounters[0].TitlePluralizedByLair}} here.
+        *  There's a 2 in 6 chance (daily) of encountering
+        {%if OtherEncounters[0].NumberAppearingLair >1%}{{OtherEncounters[0].TitlePluralizedByLair}}
+        {%else%}{{OtherEncounters[0].TitlePluralizedByLair | articlize}}{%endif%} here.
             
            ------
 
